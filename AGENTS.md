@@ -4,6 +4,12 @@
 
 Repozitář slouží středoškolskému učiteli matematiky k tvorbě učebnice, příprav na vyučování, testů a pracovních listů. Výsledné výukové materiály vytvářej v českém jazyce a v LaTeXu, pokud uživatel výslovně nepožaduje jinak. Vždy respektuj požadovaný ročník, úroveň žáků, rozsah učiva a účel dokumentu. Neznámé důležité parametry si vyjasni; u drobností zvol přiměřený předpoklad a uveď jej.
 
+## Organizace projektu a tematické plány
+
+Primární struktura projektu je podle ročníků (`1_rocnik/` až `4_rocnik/`) a uvnitř podle tematických celků. Jejich názvy a pořadí určují skutečné tematické plány; nepředpokládej je podle obecného kurikula. Každý ročník může mít v `tematicke_plany/` dva plány: SPŠ (společný pro strojírenské a informatické obory) a GYM (gymnázium). Při práci s konkrétním ročníkem prostuduj relevantní plán, pokud je dostupný, a zohledni návaznost učiva a časovou dotaci. Rozdíly mezi plány případně uveď, ale neber je jako nepřekročitelnou hranici obsahu či obtížnosti.
+
+Učebnice, přípravy a pracovní listy jsou společné pro SPŠ i gymnázium; nerozděluj je automaticky podle typu školy. Materiály vybírá a přizpůsobuje učitel podle konkrétní třídy. Tematický celek může podle potřeby obsahovat `ucebnice/`, `pripravy/`, `pracovni_listy/` a `testy/`, ale nevytvářej prázdné struktury bez důvodu. Stávající kořenové složky se mohou používat do dokončení reorganizace; nic z nich nepřesouvej bez schválení. Původní repozitář `~/ucebnice/` slouží jako archiv a zdroj inspirace; bez výslovného pokynu jej neupravuj.
+
 ## Existující podklady a šablony
 
 Než začneš tvořit nebo upravovat dokument, prohlédni související soubory, šablony, makra a vzorové materiály dostupné v repozitáři. Přednost mají skutečné soubory projektu před obecnými pravidly uvedenými zde. Nevydávej níže popsané zvyklosti za ověřené vlastnosti projektu, dokud nenajdeš odpovídající soubory. Pokud podklady chybějí, stručně upozorni, že pracuješ bez vzoru.
@@ -22,11 +28,13 @@ Při pokračování učebnice si přečti navazující části a ověř, jak jso
 
 Výklad má být odborně přesný, ale přístupný středoškolákům. Vysvětluj motivaci, podmínky platnosti a význam prováděných kroků; nepřeskakuj podstatné úvahy. Historické poznámky a citace používej jen s doložitelným zdrojem, nikdy je nevymýšlej.
 
-## Testy
+## Testy a varianty
 
 Před vytvořením testu vyhledej aktuální šablonu. Použij existující rozložení a hlavičku. Pokud je relevantní autorova šablona se dvěma testy formátu A5 na jedné A4 na šířku, zachovej tento způsob sazby; nevnucuj jej ale každému zadání. Hlavička podle používaného vzoru obsahuje jméno, třídu, datum, body a známku.
 
-Při požadavku na varianty A/B zajisti srovnatelnou obtížnost, časovou náročnost, rozsah a bodování. Varianty nemají být pouhým přeznačením bez kontroly náročnosti. Připrav řešení a případně bodovací schéma odděleně od zadání pro žáky. Nepřidávej kalkulačku, tabulky ani jiné pomůcky, pokud jejich použití nebylo povoleno.
+Varianty tvoř pouze v požadovaném rozsahu. Používej dvojice A/B, C/D a E/F pro standardní obtížnost (primárně SPŠ) a G/H, I/J a K/L pro vyšší obtížnost (primárně GYM). Toto rozdělení je výchozí konvence, nikoli zákaz použít libovolnou variantu v jiné třídě. V každé dvojici zajisti srovnatelnou obtížnost, časovou náročnost, rozsah a bodování. Není nutné měnit pouze čísla; různé úlohy však musí testovat srovnatelné dovednosti. Nepředpokládej, že jsou vždy požadovány všechny varianty.
+
+Připrav řešení a případně bodovací schéma odděleně od zadání pro žáky. Nepřidávej kalkulačku, tabulky ani jiné pomůcky, pokud jejich použití nebylo povoleno. Jestliže chybí informace zásadní pro zadání testu (například rozsah látky nebo povolené pomůcky), vyžádej si ji před tvorbou.
 
 ## Pracovní listy
 
@@ -34,7 +42,7 @@ Vycházej z probíraného tématu a úrovně žáků. Pokud uživatel neurčí j
 
 ## Přípravy na hodiny
 
-Vycházej z učebnice a zadaného ročníku, délky hodiny a výukového cíle. Podle potřeby navrhni motivaci, návaznost na předchozí učivo, výklad, typické chyby, otázky pro žáky, aktivitu, procvičení a orientační časový plán. Nepovažuj časové odhady za zaručené; upozorni, pokud je navržený obsah na danou hodinu příliš rozsáhlý. Rozlišuj interní metodickou přípravu učitele od materiálu pro žáky.
+Vycházej z učebnice, relevantního tematického plánu a zadaného ročníku, délky hodiny a výukového cíle. Podle potřeby navrhni motivaci, návaznost na předchozí učivo, výklad, typické chyby, otázky pro žáky, aktivitu, procvičení a orientační časový plán. Nepovažuj časové odhady za zaručené; upozorni, pokud je navržený obsah na danou hodinu příliš rozsáhlý. Rozlišuj interní metodickou přípravu učitele od materiálu pro žáky.
 
 ## Matematická kontrola
 
