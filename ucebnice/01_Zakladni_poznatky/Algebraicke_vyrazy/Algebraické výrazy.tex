@@ -1,0 +1,1114 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+\usepackage{polynom}
+
+\title{Základní matematické poznatky}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Algebraické výrazy}
+
+S algebraickými výrazy jsme se v matematice již mnohokrát setkali.  
+Jsou to například:
+\[
+3x + 5, \quad 2a^2b - \tfrac{1}{3}a, \quad \frac{x^2 - 1}{x+3}, \quad |x-5| + 2, \quad \tfrac{1}{3}\pi r^2 v
+\]
+
+\noindent
+Každý algebraický výraz obsahuje dvě základní složky.  
+\important{Konstanty} jsou čísla, která mají pevnou hodnotu a nemění se.  
+\important{Proměnné} jsou písmena, která zastupují čísla z určité množiny, a tato množina se nazývá \important{obor proměnné}.  
+
+\begin{examplebox}
+Výraz $\tfrac{1}{3}\pi r^2 v$ udává objem rotačního kužele o výšce $v$ a poloměru podstavy $r$.  
+\[
+V = \tfrac{1}{3}\pi r^2 v
+\]
+
+\begin{itemize}
+    \item Konstanty jsou zde $\tfrac{1}{3}$ a $\pi$.  
+    \item Proměnné jsou $r$ a $v$, protože jejich hodnota se může měnit.  
+\end{itemize}
+\end{examplebox}
+
+\noindent
+S výrazy se dá dále pracovat. Často potřebujeme \important{upravit výraz}, tj. nahradit jej jiným tvarem, který má pro všechny hodnoty proměnných ve svém oboru stejnou hodnotu. Úpravami obvykle získáme jednodušší nebo vhodnější tvar, se kterým se lépe počítá.  
+
+\begin{examplebox}
+Mějme výraz pro objem kužele:
+\[
+V = \tfrac{1}{3}\pi r^2 v.
+\]
+
+Pokud víme, že výška kužele je $1{,}5$-násobkem poloměru, tedy $v = 1{,}5r$,  
+můžeme tento vztah dosadit přímo do výrazu:  
+\[
+V = \tfrac{1}{3}\pi r^2 \cdot (1{,}5r) = \tfrac{1}{2}\pi r^3.
+\]
+
+Původní výraz jsme \uv{upravili} na jednodušší tvar, který už závisí pouze na poloměru $r$.  
+\end{examplebox}
+
+\noindent
+Je důležité neplést si, co je konstanta a co proměnná. Například:
+\begin{itemize}
+    \item číslo $\pi$ je vždy konstanta,  
+    \item písmeno $p$ však může být proměnnou (například značí-li délku strany čtverce).  
+\end{itemize}
+
+\noindent
+Když do výrazu dosazujeme čísla, musíme vždy brát v úvahu, pro jaké hodnoty má výraz smysl. Například nesmíme dělit nulou nebo odmocňovat záporná čísla (v oboru reálných čísel). Množina všech čísel, která lze do výrazu dosadit, se nazývá \important{definiční obor výrazu}.  
+
+\begin{examplebox}
+Zjistěme, pro jaké hodnoty proměnných dávají následující výrazy smysl:
+
+\[
+a)\; \frac{x}{3-x} \qquad b)\; \frac{\sqrt{y-3}}{x^2-4}
+\]
+
+\textbf{Řešení:}
+
+\begin{itemize}
+    \item[a)] Výraz $\frac{x}{3-x}$ má ve jmenovateli $3-x$. Tento jmenovatel nesmí být nulový:  
+    \[
+    3 - x \neq 0 \;\;\Rightarrow\;\; x \neq 3.
+    \]
+    Definiční obor je tedy množina všech reálných čísel kromě $x=3$:  
+    \[
+    D = \mathbb{R} \setminus \{3\}.
+    \]
+
+    \item[b)] Výraz $\frac{\sqrt{y-3}}{x^2-4}$ má dvě podmínky:
+    \begin{enumerate}
+        \item Argument odmocniny musí být nezáporný: $y - 3 \geq 0 \;\Rightarrow\; y \geq 3$.
+        \item Jmenovatel nesmí být nulový: $x^2 - 4 \neq 0 \;\Rightarrow\; x \neq \pm 2$.
+    \end{enumerate}
+
+    Definiční obor je tedy:  
+    \[
+    D = \{(x,y) \in \mathbb{R}^2 \;|\; y \geq 3, \; x \neq -2, \; x \neq 2 \}.
+    \]
+\end{itemize}
+\end{examplebox}
+
+
+
+\section{Mnohočleny (polynomy)}
+
+Zvláštním případem algebraických výrazů jsou \important{mnohočleny}, nebo také \important{polynomy}.
+Podle toho, kolik proměnných obsahují, rozlišujeme mnohočleny s jednou, či více proměnnými. 
+Příkladem takových mnohočlenů jsou:
+\[
+2x^3y - 5xy^2 + y - 1, \quad x^3 - x^2y + 3xy^2 - y^2, \quad x^2 - 3y^2 + \sqrt{3}
+\]
+
+Jedná se o výrazy, kde proměnná vystupuje pouze s nezápornými celočíselnými exponenty.  
+
+\begin{definitionbox}
+    Obecný tvar mnohočlenu je:
+    \[
+    P(x) = a_0 + a_1x + a_2x^2 + \dots + a_nx^n,
+    \]
+    kde $a_0, a_1, \dots, a_n \in \mathbb{R}$ jsou \important{koeficienty mnohočlenu}, $a_n \neq 0$ a $n \in \mathbb{N}_0$ je \important{stupeň mnohočlenu}.  
+\end{definitionbox}
+
+\newpage
+Stupeň mnohočlenu s více proměnnými udává nejvyšší součet mocnitelů proměnných v určitém členu. 
+Stupeň mnohočlenu značíme $\operatorname{st}(P(x))$ nebo $\deg P(x)$. 
+
+\begin{examplebox}
+\begin{itemize}
+    \item $P(x) = x^3 + 3x^2 + 3x + 1$ je mnohočlen třetího stupně.
+    \item $M(x) = x^2 - \tfrac{3}{7}x + \sqrt{2}$ je mnohočlen druhého stupně.
+    \item $N(x,y) = x^3 + 3x^2y + y^3$ je mnohočlen dvou proměnných, třetího stupně.
+    \item $x^2 + \tfrac{1}{x} + 2$ není mnohočlen, protože obsahuje zápornou mocninu $x^{-1}$.
+\end{itemize}
+\end{examplebox}
+
+
+Podle stupně rozlišujeme zvláštní typy mnohočlenů:
+\begin{examplebox}
+\begin{itemize}
+    \item $A(x) = 7$ je mnohočlen 0. stupně (konstantní mnohočlen).  
+    \item $B(x) = 2x + 3$ je mnohočlen 1. stupně (lineární).  
+    \item $C(x) = 3x^2 + x + 6$ je mnohočlen 2. stupně (kvadratický).  
+    \item $D(x) = 3x^3 - 1$ je mnohočlen 3. stupně (kubický).  
+    \item $Z(x) = 0$ nazýváme \important{nulový mnohočlen}, jehož stupeň se někdy definuje jako $-\infty$.  
+\end{itemize}
+\end{examplebox}
+
+
+\subsubsection*{Dosazování do mnohočlenů}
+
+Do mnohočlenu můžeme dosazovat za proměnné různé číselné hodnoty.  
+Pokud za proměnnou dosadíme konkrétní číslo, získáme číselný výsledek.  
+Takto můžeme například ověřit, zda dva různé zápisy představují tentýž mnohočlen,  
+nebo jednoduše spočítat jeho hodnotu pro zadanou proměnnou.
+
+\begin{examplebox}
+Mějme mnohočlen
+\[
+P(x) = 2x^3 - 5x^2 + 3x - 7.
+\]
+
+Chceme určit jeho hodnotu pro $x=2$ a $x=-1$.
+
+\[
+P(2) = 2\cdot 2^3 - 5\cdot 2^2 + 3\cdot 2 - 7 = 16 - 20 + 6 - 7 = -5,
+\]
+
+\[
+P(-1) = 2\cdot (-1)^3 - 5\cdot (-1)^2 + 3\cdot (-1) - 7 = -2 - 5 - 3 - 7 = -17.
+\]
+
+Výsledky ukazují, že hodnota mnohočlenu se mění podle dosazené hodnoty proměnné.
+\end{examplebox}
+
+\newpage
+\subsection{Operace s mnohočleny}
+\subsubsection*{Sčítání a odčítání mnohočlenů}
+
+Sčítání a odčítání mnohočlenů vychází z úpravy \important{stejných mocnin} proměnné.  
+Koeficienty u členů se stejným exponentem se sečtou nebo odečtou, ostatní členy se jen opíší.
+
+\begin{examplebox}
+Mějme mnohočleny:
+\[
+A(x) = 3x^3 + 3, \qquad B(x) = x^3 + 2x^2 - 6x - 1.
+\]
+
+Součet je:
+\[
+A(x) + B(x) = (3x^3 + 3) + (x^3 + 2x^2 - 6x - 1) = 4x^3 + 2x^2 - 6x + 2.
+\]
+
+Rozdíl je:
+\[
+A(x) - B(x) = (3x^3 + 3) - (x^3 + 2x^2 - 6x - 1) = 2x^3 - 2x^2 + 6x + 4.
+\]
+\end{examplebox}
+
+\subsubsection*{Opačný mnohočlen}
+
+K danému mnohočlenu $P(x)$ definujeme \important{opačný mnohočlen} $-P(x)$ tak,
+ že změníme znaménko u každého koeficientu.
+Mějme:
+\[
+P(x) = 2x^3 - 5x^2 + 3x - 7
+\]
+  
+Pak opačný mnohočlen je:
+\[
+-P(x) = -2x^3 + 5x^2 - 3x + 7.
+\]
+
+Opačný mnohočlen se využívá zejména při odčítání mnohočlenů. Například:
+\[
+A(x) - B(x) = A(x) + \big(-B(x)\big).
+\]
+
+Platí také, že součet mnohočlenu a jeho opačného mnohočlenu je vždy \important{nulový mnohočlen}:
+\[
+P(x) + (-P(x)) = 0.
+\]
+
+\begin{examplebox}
+Pro $P(x) = 2x^2 - x + 4$ platí:
+\[
+P(x) + (-P(x)) = (2x^2 - x + 4) + (-2x^2 + x - 4) = 0.
+\]
+\end{examplebox}
+
+
+
+\subsubsection*{Násobení polynomů}
+
+Při násobení polynomů násobíme \important{každý člen jednoho mnohočlenu každým členem druhého mnohočlenu}.  
+Koeficienty násobíme jako reálná čísla, exponenty u stejné proměnné sečítáme.
+
+\begin{examplebox}
+\[
+A(x) = 5x^3 + 6x - 1, \qquad B(x) = x + 2
+\]
+
+\[
+A(x)\cdot B(x) = (5x^3 + 6x - 1)(x+2) = 5x^4 + 10x^3 + 6x^2 + 11x - 2.
+\]
+
+Výsledkem je mnohočlen 4. stupně.
+\end{examplebox}
+
+Opakovaným násobením pak lze odvodit i umocňování mnohočlenů.
+Například dvojčlen $A(x,y)=x+y$, který bychom chtěli umocnit na druhou mocninu $A^2(x,y)$ můžeme rozepsat jako součin dvou stejných závorek:  
+
+\[
+(x+y)^2 = (x+y)(x+y).
+\]
+
+Použitím distributivního zákona dostáváme:
+\[
+(x+y)(x+y) = x^2 + xy + yx + y^2 = x^2 + 2xy + y^2.
+\]
+
+Podobně lze odvodit i další často používané vzorce. 
+Tyto vzorce nazýváme \important{algebraické vzorce} a jsou velmi užitečné při úpravách mnohočlenů.
+
+\begin{notebox}
+    \textbf{Algebraické vzorce:}
+    \[
+    \begin{array}{rl}
+        (a+b)^2 &= a^2 + 2ab + b^2 \\[6pt]
+        (a-b)^2 &= a^2 - 2ab + b^2 \\[6pt]
+        (a+b)(a-b) &= a^2 - b^2 \\[6pt]
+        (a+b)^3 &= a^3 + 3a^2b + 3ab^2 + b^3 \\[6pt]
+        (a-b)^3 &= a^3 - 3a^2b + 3ab^2 - b^3 \\[6pt]
+        a^3 + b^3 &= (a+b)\cdot (a^2 - ab + b^2) \\[6pt]
+        a^3 - b^3 &= (a-b)\cdot (a^2 + ab + b^2)
+    \end{array}
+    \]
+    Dvojčleny $(a+b)^n$ lze umocňovat užitím tzv \important{Binomické věty}, která je rozepsána v kapitole o kombinatorice.
+\end{notebox}
+
+Tyto vzorce si lze nejen pamatovat, ale také kdykoliv znovu odvodit pomocí násobení mnohočlenů.  
+Právě proto je znalost násobení a distributivního zákona tak důležitá.
+
+
+\subsubsection*{Dělení mnohočlenu jednočlenem}
+
+Pokud dělíme mnohočlenu jednočlenem, vydělíme jím \important{každý člen zvlášť} a zbylé podíly sečteme.
+Zároveň je dobré si uvědomit, že ne vždy musí podíl mnohočlenů vyjít opět mnohočlen.
+\newpage
+\begin{examplebox}
+Mějme mnohočlen
+\[
+A(x) = 4x^6 + 8x^3 + 2x^2,
+\]
+který chceme vydělit jednočlenem $2x^2$:  
+
+\[
+\frac{4x^6 + 8x^3 + 2x^2}{2x^2}
+= \frac{4x^6}{2x^2} + \frac{8x^3}{2x^2} + \frac{2x^2}{2x^2}
+= 2x^4 + 4x + 1.
+\]
+
+Výsledkem je mnohočlen $2x^4 + 4x + 1$.
+
+\medskip
+Naopak, když vezmeme mnohočlen:
+\[
+A(x) = 9x^3 - 18x^2 + 27x - \tfrac{1}{9},
+\]
+a budeme ho dělit jednočlenem $-9x$, tak dostáváme:
+
+\[
+= \frac{9x^3}{-9x} + \frac{-18x^2}{-9x} + \frac{27x}{-9x} + \frac{-\tfrac{1}{9}}{-9x}
+= -x^2 + 2x - 3 + \frac{1}{81x}.
+\]
+
+Zde již výsledkem není mnohočlen, ale racionální lomený výraz,  
+protože se objevil člen $\frac{1}{81x}$, který má proměnnou ve jmenovateli a tudíž nemá mocninu v z množiny přirozených čísel, neboť $\frac{1}{81x} = (81x)^{-1}$ . 
+\end{examplebox}
+
+
+
+\subsubsection*{Dělení mnohočlenu mnohočlenem}
+
+Pokud dělíme mnohočlenu mnohočlenem, používáme algoritmus \important{dlouhého dělení}.  
+Ten postupuje podobně jako písemné dělení čísel.
+
+\begin{enumerate}[label=\arabic*.]
+    \item Vydělíme \emph{první člen dělence} prvním členem dělitele.  
+    \item Výsledek zapíšeme do podílu.  
+    \item Tento výsledek vynásobíme celým dělitelem a odečteme od dělence.  
+    \item Pokračujeme, dokud nelze vydělit další členy.  
+\end{enumerate}
+
+Při dělení polynomu polynomem může nastat jedna ze dvou možností:
+\begin{itemize}
+    \item \important{Dělení beze zbytku} – pokud dělitel přesně „pasuje“ do dělence, výsledkem je opět polynom.  
+    \[
+    \frac{x^2 - 1}{x-1} = x+1
+    \]
+    \item \important{Dělení se zbytkem} – pokud dělitel není přesným dělitelem, získáme podíl a k tomu nenulový zbytek.  
+    Výsledek pak zapisujeme ve tvaru
+    \[
+    \frac{A(x)}{B(x)} = Q(x) + \frac{R(x)}{B(x)},
+    \]
+    kde $A(x)$ je dělenec, $B(x)$ dělitel, $Q(x)$ podíl a $R(x)$ zbytek.  
+    V příkladu výše vidíme právě tento případ.
+\end{itemize}
+
+Uvedeme si to napříkladu:
+
+\begin{examplebox}
+Určete podíl mnohočlenů
+\[
+(5 - 13x + 2x^3 - x^2) : (2x + 5).
+\]
+Oba mnohočleny musíme mít uspořádáné sestupně, čili je upravíme do tvaru:
+\[
+(2x^3 - x^2 - 13x + 5) : (2x + 5).
+\]
+Nyní první člen dělence vydělíme prvním členem dělitele, tj:
+
+\[
+2x^3 : 2x = x^2,
+\]
+získaným jednočlenem $x^2$ poté vynásobíme všechny člene dělitele:
+
+\[
+(2x + 5)\cdot(x^2)=2x^3 + 5x^2
+\]
+a vzniklý mnohočlen odečteme od dělence:
+\[
+(2x^3 - x^2 - 13x + 5)-(2x^3 + 5x^2) = -6x^2 - 13x + 5.
+\]
+
+Tento postup, kterým jsme dospěli k tomuto částečnému výsledku, obvykle zapisujeme následujícím způsobem:
+
+\[
+\begin{array}{rl}
+    (2x^3 - \phantom{5}x^2 - 13x + 5) : (2x + 5) &= x^2 \\
+    \underline{-(2x^3 + 5x^2)} \phantom{- 13x + 5) : (2x + 5) } & \\
+    -6x^2 - 13x + 5 \phantom{) : (2x + 5) } & \\
+\end{array}    
+\]
+Protože stupeň dělitele $2x + 5$ není vyšší než stupeň mnohočlenu $-6x^2 - 13x + 5$, pokračujeme v dělení,
+až do momentu, kdy je mnohočlen nulový, nebo má stupeň menší, než je stupeň dělitele. Celý postup pro dělení
+je z následujícího zápisu patrný:
+
+\[
+\begin{array}{rl}
+    (2x^3 - \phantom{5}x^2 - 13x + 5) : (2x + 5) &= x^2 - 3x +1 \\
+    \underline{-(2x^3 + 5x^2)} \phantom{- 13x + 5) : (2x + 5) } & \\
+    -6x^2 - 13x \phantom{\;+ 5) : (2x + 5) } & \\
+    \underline{-(-6x^2 -15x)} \phantom{ + 5) : (2x + 5) } & \\
+    2x+5 \phantom{): (2x + 5) } & \\
+    \underline{-(2x+5)} \phantom{)) (2x + 5) } & \\
+    0 \phantom{): (2x + 5) } & \\
+\end{array}    
+\]
+Máme tedy výsledek: pro všechna $x\in \mathbb{R}$, pro než je $2x^3 - x^2 - 13x + 5 \neq 0$, platí
+$(2x^3 - \phantom{5}x^2 - 13x + 5) : (2x + 5) = x^2 - 3x +1$.
+\end{examplebox}
+
+V tomto případě, kdy dělení vyšlo bezezbytku, je podílem obou mnohočlenů mnohočlen. O správnosti se můžeme přesvědčit zkouškou,
+kterou provádíme tak, že výsledný podíl vynásobíme dělitelem a musí nám vyjít dělenec.
+
+Platí, že stupeň zbytku je vždy \important{menší než stupeň dělitele}.  
+
+\newpage
+\subsection{Rozklad mnohočlenů}
+
+U úprav výrazů se velmi často dostaneme k situaci, kdy potřebujeme daný mnohočlen zapsat ve tvaru součinu několika jednodušších výrazů, obvykle mnohočlenů nižšího stupně.  
+Této úpravě říkáme \important{rozklad mnohočlenů}.  
+
+\noindent
+Rozkládáme tak dlouho, dokud získaný tvar není dále snadno rozložitelný.  
+Podobně jako u čísel hledáme prvočíselný rozklad, u mnohočlenů se snažíme najít „základní stavební kameny“ (nerozložitelné polynomy).  
+
+\medskip
+Nejčastěji se používají dvě metody:
+\begin{itemize}
+    \item \important{vytýkání před závorku} – z jednotlivých členů mnohočlenu vybereme jejich společný dělitel a zapíšeme jej před závorku,
+    \item \important{užití algebraických vzorců} – využijeme známé vzorce, například \((a+b)^2 = a^2 + 2ab + b^2\), nebo \((a+b)(a-b) = a^2 - b^2\).
+\end{itemize}
+
+Někdy je nutné tyto metody zkombinovat: nejprve část výrazu vytkneme, a zbylý výraz pak rozložíme pomocí vhodného vzorce.
+
+\begin{examplebox}
+Rozložte mnohočlen
+\[
+x^5 + x^3 - x^2 - 1.
+\]
+
+\textbf{Řešení:}
+
+Nejprve si výraz vhodně seskupíme:
+\[
+(x^5 + x^3) - (x^2 + 1).
+\]
+
+V první závorce můžeme vytknout $x^3$, ve druhé závorce $1$:
+\[
+x^3(x^2+1) - 1(x^2+1).
+\]
+
+Nyní je v obou členech společný výraz \((x^2+1)\), který vytkneme:
+\[
+(x^2+1)(x^3 - 1).
+\]
+
+Vidíme, že mnohočlen se rozložil na součin dvou výrazů. Druhý výraz lze ještě dále rozložit jako \emph{rozdíl krychlí}:
+\[
+x^3 - 1 = (x-1)(x^2+x+1).
+\]
+
+Celý rozklad tedy je:
+\[
+x^5 + x^3 - x^2 - 1 = (x^2+1)(x-1)(x^2+x+1).
+\]
+\end{examplebox}
+
+\newpage
+\begin{examplebox}
+Rozložte mnohočlen
+\[
+7a^3bc - 14a^3b^2c^2 - 21ab^4.
+\]
+
+\textbf{Řešení:}
+
+Podívejme se na všechny členy a hledejme jejich největší společný dělitel.  
+V číselných koeficientech je společným dělitelem číslo \(7\).  
+Vidíme také, že všechny členy obsahují násobek \(ab\).  
+
+Vytkneme tedy \(7ab\):
+\[
+7a^3bc - 14a^3b^2c^2 - 21ab^4 = 7ab \bigl(a^2c - 2a^2bc^2 - 3b^3\bigr).
+\]
+
+V závorkách už nemají všechny členy společný činitel, a proto zde končíme.  
+
+Celý rozklad je:
+\[
+7a^3bc - 14a^3b^2c^2 - 21ab^4 = 7ab(a^2c - 2a^2bc^2 - 3b^3).
+\]
+
+\medskip
+Podívejme se ještě na jiný příklad:
+\[
+a^n + a^{n+1}.
+\]
+
+Oba členy obsahují násobek \(a^n\). Vytkneme jej:
+\[
+a^n + a^{n+1} = a^n(1+a).
+\]
+
+Tento výraz už dále rozložit nejde.  
+\end{examplebox}
+
+
+\section{Lomené výrazy}
+
+Mezi algebraické výrazy se dále řadí také \important{lomené výrazy}.  
+Jsou to výrazy ve tvaru zlomku, kde čitatel i jmenovatel jsou mnohočleny.  
+Mnohočleny, které jsme dosud probírali, můžeme nazývat také \important{racionální celistvé výrazy},  
+protože obsahují pouze celé mocniny proměnných. Pokud se jeden mnohočlen ocitne v čitateli  
+a druhý v jmenovateli, vzniká \important{racionální lomený výraz}:
+
+\[
+\frac{A(x)}{B(x)}, \qquad B(x) \neq 0.
+\]
+
+Například:
+\[
+\frac{2x+3}{x-1}, \quad \frac{x^2-4}{x^2+2x+1}, \quad \frac{3a^2b}{5ab^2-1}.
+\]
+
+Stejně jako u běžných zlomků i zde platí, že \important{jmenovatel nesmí být nulový}.  
+Proto je u lomených výrazů vždy nutné určit \important{definiční obor}, 
+tj. množinu všech hodnot proměnné, pro které má výraz smysl, stejně jako u algebraických výrazů.
+
+\subsubsection*{Definiční obor lomeného výrazu}
+
+Stejně jako u běžných zlomků platí i zde, že \important{jmenovatel nesmí být nulový}.  
+Proto je u každého lomeného výrazu nutné určit \important{definiční obor}, tj. množinu všech hodnot proměnné,  
+pro které má daný výraz smysl.
+
+\begin{examplebox}
+Určete definiční obor výrazu
+\[
+\frac{x^2 - 9}{x^2 - 5x + 6}.
+\]
+
+Jmenovatel je $x^2 - 5x + 6$, což lze rozložit na $(x-2)(x-3)$.  
+Výraz nemá smysl pro $x=2$ a $x=3$, protože v těchto bodech by byl jmenovatel nulový.
+
+Definiční obor je tedy:
+\[
+D = \mathbb{R} \setminus \{2,3\}.
+\]
+\end{examplebox}
+
+\subsubsection*{Úpravy lomených výrazů}
+
+S lomenými výrazy pracujeme podobně jako se zlomky:  
+\begin{itemize}
+    \item můžeme je \important{zkracovat}, pokud mají čitatel a jmenovatel společný dělitel,
+    \item můžeme je \important{sčítat a odčítat}, pokud je převedeme na společný jmenovatel,
+    \item můžeme je \important{násobit a dělit} stejně jako zlomky,
+    \item při úpravách musíme stále hlídat, zda se definiční obor nezmenší.
+\end{itemize}
+
+\begin{examplebox}
+Zkraťte výraz
+\[
+\frac{x^2 - 4}{x^2 - 2x}.
+\]
+
+Čitatel lze rozložit jako $(x-2)(x+2)$, jmenovatel jako $x(x-2)$.  
+Pro $x \neq 0,2$ lze výraz zkrátit:
+
+\[
+\frac{(x-2)(x+2)}{x(x-2)} = \frac{x+2}{x}, \quad x \neq 0,2.
+\]
+\end{examplebox}
+
+\begin{examplebox}
+Sečtěte výrazy
+\[
+\frac{2}{x-1} + \frac{3}{x+1}.
+\]
+
+Společný jmenovatel je $(x-1)(x+1)$. Po úpravě:
+
+\[
+\frac{2(x+1)}{(x-1)(x+1)} + \frac{3(x-1)}{(x-1)(x+1)} = \frac{2x+2 + 3x-3}{(x-1)(x+1)} = \frac{5x-1}{x^2-1}.
+\]
+
+Výraz má smysl pro všechna $x \in \mathbb{R}$ kromě $x=\pm 1$.
+\end{examplebox}
+
+
+
+\subsubsection*{Krácení a rozšiřování}
+
+Základní vlastnost lomených výrazů je možnost \important{krácení} a \important{rozšiřování}.  
+Pro výrazy $V_1, V_2, V_3$ a pro všechny hodnoty proměnných, pro které $V_2 \neq 0$ a $V_3 \neq 0$, platí:
+
+\[
+\overset{\xrightarrow{\ \large \text{krácení}\ }}%
+{\underset{\xleftarrow{\ \large \text{rozšiřování}\ }}%
+{\dfrac{V_1\cdot V_3}{V_2\cdot V_3} \;=\; \dfrac{V_1}{V_2}}}
+\]
+
+
+\begin{itemize}
+    \item Přechod zleva doprava nazýváme \important{krácení} – čitatel a jmenovatel mají společný činitel $V_3$, který můžeme vykrátit.
+    \item Přechod zprava doleva nazýváme \important{rozšiřování} – čitatel i jmenovatel vynásobíme stejným nenulovým činitelem $V_3$.
+\end{itemize}
+
+
+\subsubsection*{Sčítání a odčítání lomených výrazů}
+
+Abychom mohli sčítat nebo odčítat dva lomené výrazy, musíme je převést na \important{společný jmenovatel}.  
+Pro výrazy $V_1, V_2, V_3, V_4$ platí:
+\begin{definitionbox}
+    \[
+    \frac{V_1}{V_2} \;+\; \frac{V_3}{V_4}
+    = \frac{V_1\cdot V_4}{V_2\cdot V_4} + \frac{V_3\cdot V_2}{V_4\cdot V_2}
+    = \frac{V_1\cdot V_4 + V_3\cdot V_2}{V_2\cdot V_4},
+    \]
+
+    \[
+    \frac{V_1}{V_2} \;-\; \frac{V_3}{V_4}
+    = \frac{V_1\cdot V_4 - V_3\cdot V_2}{V_2\cdot V_4},
+    \]
+
+    přičemž musí být $V_2 \neq 0$, $V_4 \neq 0$.
+\end{definitionbox}
+
+
+\begin{examplebox}
+\[
+\frac{2}{x-1} + \frac{3}{x+1}
+= \frac{2(x+1) + 3(x-1)}{(x-1)(x+1)}
+= \frac{5x-1}{x^2-1}, \quad x \neq \pm 1.
+\]
+\end{examplebox}
+
+
+\subsubsection*{Násobení a dělení lomených výrazů}
+
+Při násobení lomených výrazů násobíme čitatele mezi sebou a jmenovatele mezi sebou.  
+Pro výrazy $V_1, V_2, V_3, V_4$ platí:
+
+\[
+\frac{V_1}{V_2} \cdot \frac{V_3}{V_4}
+= \frac{V_1\cdot V_3}{V_2\cdot V_4}, 
+\qquad V_2 \neq 0, \; V_4 \neq 0.
+\]
+
+Při dělení lomených výrazů dělíme tak, že první výraz násobíme převráceným druhým:  
+
+\[
+\frac{V_1}{V_2} : \frac{V_3}{V_4}
+= \frac{V_1}{V_2} \cdot \frac{V_4}{V_3}
+= \frac{V_1\cdot V_4}{V_2\cdot V_3},
+\qquad V_2, V_3 \neq 0.
+\]
+
+\begin{examplebox}
+\[
+\frac{x-1}{2x} \cdot \frac{4x}{x^2-1}
+= \frac{(x-1)\cdot 4x}{2x(x-1)(x+1)}
+= \frac{2}{x+1}, \quad x \neq 0, \; \pm 1.
+\]
+\end{examplebox}
+
+
+\subsubsection*{Umocňování a úpravy složených lomených výrazů}
+
+Lomené výrazy můžeme také \important{umocňovat} a \important{zjednodušovat složené tvary}.  
+Platí obdobná pravidla jako pro zlomky:
+
+\[
+\left(\frac{V_1}{V_2}\right)^n = \frac{V_1^n}{V_2^n}, \quad V_2 \neq 0, \; n \in \mathbb{N}.
+\]
+
+
+\begin{examplebox}
+Vypočítejte
+\[
+\left(\frac{2a}{3b}\right)^3.
+\]
+
+Umocňujeme zvlášť čitatel i jmenovatel:
+\[
+\left(\frac{2a}{3b}\right)^3
+= \frac{(2a)^3}{(3b)^3}
+= \frac{8a^3}{27b^3}, \quad b \neq 0.
+\]
+\end{examplebox}
+
+
+U složených lomených výrazů využíváme pravidlo pro \important{dělení zlomků}:
+\[
+\dfrac{\dfrac{V_1}{V_2}}{\dfrac{V_3}{V_4}}
+= \frac{V_1}{V_2} : \frac{V_3}{V_4}
+= \frac{V_1}{V_2} \cdot \frac{V_4}{V_3}
+= \frac{V_1 \cdot V_4}{V_2 \cdot V_3},
+\qquad V_2, V_3 \neq 0.
+\]
+\begin{examplebox}
+Upravte výraz
+\[
+\dfrac{\dfrac{x}{y}}{\dfrac{2x}{3y}}.
+\]
+
+Použijeme pravidlo pro dělení zlomků:
+\[
+\dfrac{\dfrac{x}{y}}{\dfrac{2x}{3y}}
+= \frac{x}{y} \cdot \frac{3y}{2x}
+= \frac{3}{2}, \quad x,y \neq 0.
+\]
+\end{examplebox}
+
+
+\newpage
+\section{Vyjádření neznámé ze vzorce}
+
+\noindent
+Velmi častým úkolem v matematice, fyzice či technických oborech je \important{vyjádření neznámé ze vzorce}.  
+Máme-li vzorec, který vyjadřuje vztah mezi několika veličinami, můžeme vhodnými úpravami „izolovat“ jednu z nich,  
+abychom ji mohli snadno vypočítat, pokud známe ostatní.
+
+Základním pravidlem je, že při těchto úpravách používáme pouze \important{ekvivalentní úpravy rovnic} –  
+tj. úpravy, které nemění platnost rovnice. Mezi ně patří:
+\begin{itemize}
+    \item sčítání/odčítání stejného výrazu na obou stranách rovnice,
+    \item násobení/dělení obou stran stejným nenulovým číslem či výrazem,
+    \item použití inverzní operace (např. druhá odmocnina jako inverze ke druhé mocnině).
+\end{itemize}
+
+\subsubsection*{Příklad – obecný vzorec}
+
+Mějme vzorec pro obvod obdélníku:
+\[
+o = 2a + 2b.
+\]
+
+Chceme vyjádřit neznámou $a$.
+
+\[
+o = 2a + 2b \quad \Rightarrow \quad o - 2b = 2a \quad \Rightarrow \quad a = \frac{o - 2b}{2}.
+\]
+
+\subsubsection*{Příklad – technický vzorec}
+
+Z fyziky známe vztah pro hustotu:
+\[
+\rho = \frac{m}{V},
+\]
+kde $m$ je hmotnost, $V$ objem a $\rho$ hustota.
+
+\begin{itemize}
+    \item Vyjádříme-li hmotnost $m$:
+    \[
+    m = \rho \cdot V.
+    \]
+
+    \item Vyjádříme-li objem $V$:
+    \[
+    V = \frac{m}{\rho}, \quad \rho \neq 0.
+    \]
+\end{itemize}
+
+\begin{examplebox}
+Ohmův zákon: $U = R \cdot I$.
+
+\begin{itemize}
+    \item Proud $I$: \quad $I = \dfrac{U}{R}, \quad R \neq 0.$
+    \item Odpor $R$: \quad $R = \dfrac{U}{I}, \quad I \neq 0.$
+\end{itemize}
+\end{examplebox}
+\medskip
+\begin{examplebox}
+Rotační kužel (pravý kruhový kužel): objem je dán vztahem
+\[
+V \;=\; \frac{1}{3}\,\pi r^{2} h \quad (r>0,\; h>0).
+\]
+Z tohoto vztahu vyjádříme poloměr podstavy $r$ jako
+\[
+\\,r \;=\; \sqrt{\dfrac{3V}{\pi h}}\,\quad (V>0,\; h>0).
+\]
+\end{examplebox}
+
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+
+\exercisepart
+\setcounter{section}{1}
+
+
+% =========================
+% ÚLOHA 1
+% =========================
+\begin{exercise}[Definiční obor výrazu]
+    Určete, pro které hodnoty proměnných mají následující výrazy smysl:
+    \begin{tasks}(2)
+        \task $\dfrac{x}{3-x}$
+        \task $\dfrac{\sqrt{\,y-3\,}}{x^2 - 4}$
+        \task $\dfrac{1}{x^2+y^2-1}$
+        \task $\dfrac{\sqrt{\,4-z^2\,}}{z-2}$
+        \task $\dfrac{\sqrt{x-1}}{\left(y-1\right)\left(y+2\right)}$
+        \task $\sqrt{\dfrac{x-2}{|x-2|}} + \sqrt{x}$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 2
+% =========================
+\begin{exercise}[Přepis slovních zadání na algebraické výrazy]
+    Pomocí vhodně zvolených proměnných (např. $x$, $y$) zapište výrazy, které představují:
+    \begin{tasks}(1)
+        \task součet trojnásobku druhé mocniny jednoho čísla a poloviny druhé odmocniny druhého čísla
+        \task rozdíl druhé mocniny trojnásobku jednoho čísla a druhé odmocniny poloviny druhého čísla
+        \task druhou mocninu součinu trojnásobku jednoho čísla a poloviny druhé odmocniny druhého čísla
+        \task podíl absolutní hodnoty trojnásobku jednoho čísla a poloviny druhé odmocniny absolutní hodnoty druhého čísla
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 3
+% =========================
+\begin{exercise}[Objem komolého jehlanu se čtvercovými podstavami]
+    Přepište následující slovní popis výpočtu do algebraického výrazu pomocí vhodně zvolených proměnných:
+
+    \smallskip
+    \emph{\uv{Objem useknuté pyramidy vypočítáš tak, že změříš stranu dolního čtverce, 
+    stranu horního čtverce a svislou vzdálenost obou čtverců. 
+    První dvě čísla vynásob navzájem a ještě každé samo sebou, 
+    tyto tři výsledky sečti a co vyjde, vynásob třetinou třetího čísla.}}
+
+    \smallskip
+    Text vychází z historického nálezu, přesněji ze staroegypského (Moscow papyrus) postupu pro výpočet objemu komolého jehlanu se čtvercovými podstavami.
+\end{exercise}
+
+
+\setcounter{section}{2}
+% =========================
+% ÚLOHA 4
+% =========================
+\begin{exercise}[Rozhodněte, zda se jedná o mnohočlen a určete jeho stupeň]
+    Určete, zda je výraz mnohočlenem (a v jakých proměnných). Pokud ano, napište jeho stupeň.
+    \begin{tasks}(2)
+        \task $3x^2 + 1$
+        \task $x+y$
+        \task $2x^2+xy-3$
+        \task $5x^2y - 2xy + 3x + 1$
+        \task $xy^2 + 6xy - 3$
+        \task $x^4 + 7y^3 - x^2 - 2x^{-2} + \sqrt{2y}$
+        \task $x^2+3y\sqrt{x}+y^2$
+        \task $x^2-\tfrac{3}{4}x+\sqrt{3}$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 5
+% =========================
+\begin{exercise}[Seřazení mnohočlenů]
+    Uspořádejte členy do konvenčního pořadí (sestupně podle mocnin; pro více proměnných $x \succ y \succ z$).
+    \begin{tasks}(1)
+        \task $A(x) = 2x - x^2\sqrt{3} + 2 + x^4$
+        \task $B(x,y) = x^2y - 2x + 4x^3 + 2xy + 2 - 3x^2$
+        \task $C(x,y) = -3xy^2 + 5x^3y - 2y + x^2 - 7$
+        \task $D(x,y,z) = 2z - 3x^2y + 4x^3 - y^2 + xz$
+        \task $E(x) = -5 + 3x^5 - 2x^3 + x^4 - x$
+        \task $F(x,y) = 7 - 2xy + y + 3x^2y^2 - x^3$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 6
+% =========================
+\begin{exercise}[Opačný polynom]
+    Najděte opačný polynom k následujícím mnohočlenům:
+    \begin{tasks}(1)
+        \task $P_1(x) = 4x^6 - 3x^5 + 2x^4 - x^3 + 5x^2 - 7x + 9$
+        \task $P_2(x,y) = 2x^3y - 5x^2y^2 + 7xy - 3x + 4y^3 - 6y^2 + 8$
+        \task $P_3(x,y,z) = x^4 - 2x^3y + 3x^2y^2 - 4xy^3 + 5y^4 + 2xz - 3yz + z^2 - 1$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 7
+% =========================
+\begin{exercise}[Sčítání a odčítání mnohočlenů]
+    Sečtěte a odečtěte následující mnohočleny (výsledek uveďte v konvenčním pořadí).
+    \begin{tasks}(1)
+        \task $A(x)=3x^2+1,\quad B(x,y)=2x^2+xy-3$
+        \task $C(x,y)=x+y,\quad D(x,y)=3x^2-xy+2x-2$
+        \task $E(x,y)=4x^2y - 2xy - \sqrt{3}x + 3,\quad F(x,y)=2x^2y+5xy-y^2+1$
+        \task $G(x)=x^4-2x^3+x^2-1,\quad H(x)=3x^3+2x^2-4$
+        \task $I(x,y,z)=2x^2y-3xz+z^2,\quad J(x,y,z)=-x^2y+4xz-2z^2+5$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 8
+% =========================
+\begin{exercise}[Zjednodušování mnohočlenů]
+    Zjednodušte následující výrazy:
+    \begin{tasks}(1)
+        \task $2x^2 + 3x - 2 + 2(x^2 + 1) - (3x^2 - 2x + 1)$
+        \task $2x^4 - 3x + x(x^3 - 2x + 2) - x^2(3x^2 - x - 2)$
+        \task $(3x^2 - 2x + 1) - (2x^2 - 5x - 4) + 3(x-2)$
+        \task $(x^3 - 2x^2 + x) + (2x^2 - 5x + 7) - (x^3 - x + 1)$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9
+% =========================
+\begin{exercise}[Roznásobování mnohočlenů]
+    Použijte distributivní zákon a roznásobte následující výrazy:
+    \begin{tasks}(2)
+        \task $(3x^2 + 4x)\cdot 5x^2$
+        \task $(x^3 - 2x)(4x^2 - 7x)$
+        \task $(x+y)(a+b)$
+        \task $(2a+b)(3a^2+4a-b)$
+        \task $c(1-c)(1-c^3)$
+        \task $(6x)(x^2 - 3x + 4)$
+        \task $(2x - 1)(3y + 1)(5z - 3)$
+        \task $(x - x^2)(xy - x^3)(y - 5x)$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 10
+% =========================
+\begin{exercise}[Roznásobování mnohočlenů – těžší]
+    Roznásobte a zjednodušte následující výrazy:
+    \begin{tasks}(1)
+        \task $\bigl[(7 - a)3 - 5(a - a)\bigr]\cdot 4$
+        \task $5\cdot\bigl[7(x - 2y) - 6(2x - y)\bigr]$
+        \task $(x^2 + y^2)\cdot x - xy\cdot(2y)$
+        \task $(0{,}2y - 0{,}5b)\cdot 7a - (0{,}4a + 0{,}6b)\cdot 3b$
+        \task $4(x-1)^2 (2x + 2)^3 \cdot 2 + (2x+2)^4 \cdot 2(x+1)$
+        \task $(x^2 - 4)(x^2 + 4)(2x + 8) - (x^2 + 8x - 4)(4x^3)$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 11
+% =========================
+\begin{exercise}[Dělení mnohočlenu jednočlenem]
+    Vydělte mnohočlen jednočlenem (zapište výsledek v konvenčním pořadí):
+    \begin{tasks}(2)
+        \task $(2x^2 - 4x) : 2x$
+        \task $(xy^4 - x^4y^3 + y^2) : y^2$
+        \task $(8a^4b^3 - 16a^3b^2 + a^2b - a) : 2a$
+        \task $(-14u^2v^3 - 6u^4v^2) : -u^2v^2$
+        \task $(15m^5n^2 - 10m^3n^4 + 25m^2n) : 5mn$
+        \task $(12p^6q^3 - 9p^4q^2 + 3p^2q) : 3p^2q$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 12
+% =========================
+\begin{exercise}[Dělení mnohočlenu mnohočlenem]
+    Rozdělte polynomy pomocí dlouhého dělení. Pokud je výsledek se zbytkem, uveďte i zbytek:
+    \begin{tasks}(2)
+        \task $(2x^3 + 3x^2 + x + 6) : (x + 2)$
+        \task $(x^3 - 2x^2 + 1) : (x - 1)$
+        \task $(-x^4 + x^3 - 4x^2 + 7x - 3) : (-x + 1)$
+        \task $(x^4 + x^3 - x - 1) : (x^2 - 1)$
+        \task $(9x^3 + 18x^2 - 18x - 9) : (3x - 3)$
+        \task $(2x^3 - 27x^2 + 74x - 14) : (2x - 7)$
+        \task $(x^4 - 5x^3 + 5x^2 - 5x - 3) : (x - 4)$
+        \task $(6x^3 - 7x^2 + 5) : (2x - 1)$
+    \end{tasks}
+\end{exercise}
+
+% =========================
+% ÚLOHA 13
+% =========================
+\begin{exercise}[Dělení mnohočlenu mnohočlenem - těžší]
+    Rozdělte polynomy pomocí dlouhého dělení. Pokud je výsledek se zbytkem, uveďte i zbytek:
+    \begin{tasks}(1)
+        \task $(14t^5 + 4t^4 - t^3 +2t^2 +3t +5):(2t^2 -1)$
+        \task $(2x^7 - 5x^6 + 3x^5 + 3x^4 - 8x^3 + 6x^2 + x - 2) : (2 - x + x^3 - x^4)$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 14
+% =========================
+\begin{exercise}[Rozklad mnohočlenů]
+    Rozložte následující výrazy na součin (použijte vytýkání, seskupování, vzorce apod.):
+    \begin{tasks}(2)
+        \task $xr - yr - x^2 + 2xy - y^2$
+        \task $(a^2 + b^2 - c^2)^2 - 4a^2b^2$
+        \task $9(2a - x)^2 - 4(3a - x)^2$
+        \task $a^2y - aby + a^3y - ab^2y$
+        % — obtížnější
+        \task $(a-b)c^2 + (b-a)c^4$
+        \task $(v^2 + 1)^2 - (v^2 - 2v - 1)^2$
+        \task $(x+1)^4 - x^4 + 2x^2 - 1$
+        \task $(x-y)^3 - x^3 + y^3$
+        \task $36 - 9x^4 - 4x^2 + x^6$
+        \task $(a^2 +b^2 +c^2)^2 -4a^2b^2$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 15
+% =========================
+\begin{exercise}[Rozklad mnohočlenů]
+    Rozložte na součin (využijte vhodné substituce a algebraické vzorce):
+    \begin{tasks}(2)
+        \task $x^2 + 4x + 4$
+        \task $(x + y)^4 - x^4$
+        \task $x^6 - y^6$
+        \task $(x + y + r)^3 - (x + y - r)^3$
+        \task $(x^2 - 2x + 3)^2 - (x^2 - 2x - 3)^2$
+        \task $a^4 + b^4$ \; \;\emph{ - Sofiina identita}
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{3}
+% =========================
+% ÚLOHA 16
+% =========================
+\begin{exercise}[Zjednodušování výrazů]
+    Upravte výrazy a určete podmínky (proměnné, pro něž mají výrazy smysl – zejména nenulové jmenovatele):
+    \begin{tasks}(1)
+        \task \(\displaystyle \dfrac{a}{a-1} + \dfrac{b}{b-1} - \dfrac{a+b}{ab - a - b + 1}\)
+        \task \(\displaystyle \dfrac{x^2 - 4}{x - 2}\cdot\dfrac{x+2}{x^2 - 1}\)
+        \task \(\displaystyle \left(\dfrac{a}{b} - \dfrac{b}{a}\right) : \left(\dfrac{a^2 - b^2}{ab}\right)\)
+        \task \(\displaystyle \left(\dfrac{x}{y} + \dfrac{y}{x}\right) : \left(\dfrac{x^2 + y^2}{xy}\right)\)
+        \task \(\displaystyle \dfrac{1}{x-1} - \dfrac{1}{x+1} : \dfrac{2x}{x^2 - 1}\)
+        \task \(\displaystyle \left(\dfrac{m}{m-n} + \dfrac{n}{m+n}\right) : \dfrac{2mn}{\,m^2 - n^2\,}\)
+        \task $\left(\dfrac{2ax}{yz}\right) : \left( \dfrac{3bx}{ay} : \dfrac{9b^{2}z}{8a^{2}xy} \right)$
+        \task $(a^2 - 1)\cdot\left(\dfrac{1}{a-1} - \dfrac{1}{a+1} - 1\right)$
+        \task $\left( \dfrac{5y}{x+y} + \dfrac{5x}{\,y-x\,} + \dfrac{10xy}{\,y^{2}-x^{2}\,} \right)\cdot
+               \left( \dfrac{y}{y+x} + \dfrac{x}{\,y-x\,} - \dfrac{2xy}{\,y^{2}-x^{2}\,} \right)$
+        
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 17
+% =========================
+\begin{exercise}[Zjednodušování výrazů]
+    Upravte výrazy a určete podmínky:
+    \begin{tasks}(3)
+        \task \(\displaystyle \dfrac{\dfrac{a+b}{a-b}}{\dfrac{(a+b)^2}{a^2-b^2}}\)
+        \task $\dfrac{1-x}{1- \frac{x}{x+1}}$
+        \task $\dfrac{t- \frac{t-1}{t+1}}{1+ \frac{t\left(t-1\right)}{t+1}}$
+        \task $\dfrac{a- \frac{x^2}{a}}{x- \frac{a^2}{x}}$
+        \task $\dfrac{1- \frac{2y}{x} + \frac{y^2}{x^2}}{x-y}$
+        \task $\dfrac{r}{1+ \frac{1}{r+1}}$
+        \task $\dfrac{\frac{x+y}{x-y}+\frac{x-y}{x+y}}{\frac{1}{\left(x+y\right)^2} + \frac{1}{\left(x-y\right)^2}}$
+        \task $\frac{\frac{1-x}{1-x+x^2} + \frac{1+x}{1+x+x^2}}{\frac{1+x}{1+x+x^2} - \frac{1-x}{1-x+x^2}}$
+        \task $\dfrac{1}{a+ \dfrac{1}{a- \tfrac{1}{a- \frac{1}{a}}}}$
+    \end{tasks}
+\end{exercise}
+
+
+\newpage
+\setcounter{section}{4}
+% =========================
+% ÚLOHA 18
+% =========================
+\begin{exercise}[Vyjádření neznámé ze vzorce – geometrie]
+    Vyjádřete uvedenou veličinu.
+    \begin{tasks}(2)
+        \task $c^2 = a^2 + b^2 \hfill \rightarrow a$
+        \task $S = 2\pi r\,(r+v) \hfill \rightarrow r$
+        \task $V = \dfrac{1}{3}\pi r^2 h \hfill \rightarrow r$
+        \task $S_{\triangle} = \dfrac{(a+b)}{2}\,v \hfill \rightarrow v$
+        \task $o_{\circ} = 2\pi r \hfill \rightarrow r$
+        \task $V=\frac{1}{3}v\left(S_1 + \sqrt{S_1S_2} + S_2\right)\hfill \rightarrow S_2$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 19
+% =========================
+\begin{exercise}[Vyjádření neznámé ze vzorce – fyzika a chemie]
+    Vyjádřete veličinu uvedenou v závorce.
+    \begin{tasks}(2)
+        \task $U = R\,I \hfill \rightarrow (R)$
+        \task $\dfrac{1}{f} = \dfrac{1}{a} + \dfrac{1}{b} \hfill \rightarrow (b)$
+        \task $c = \dfrac{n}{V} \hfill \rightarrow (n)$
+        \task $E_k = \dfrac{1}{2} m v^2 \hfill \rightarrow (v)$
+        \task $pV = nRT \hfill \rightarrow (T)$
+        \task $F = \dfrac{G m_1 m_2}{r^2} \hfill \rightarrow (r)$
+        \task $Q = m c (t_2 - t_1) \hfill \rightarrow (m)$
+        \task $T = 2\pi \sqrt{\dfrac{l}{g}} \hfill \rightarrow (l)$
+        \task $v = \sqrt{\dfrac{2qU}{m}} \hfill \rightarrow (m)$
+        \task $R = R_0(1 + \alpha \Delta t) \hfill \rightarrow (\Delta t)$
+        \task $E = h f - W \hfill \rightarrow (f)$
+        \task $p = \dfrac{F}{S} + \rho g h \hfill \rightarrow (h)$
+        \task $E = \sigma \varepsilon T^4 \hfill \rightarrow (T)$
+        \task $\eta = 1 - \dfrac{T_2}{T_1} \hfill \rightarrow (T_2)$
+        \task $\Delta G = \Delta H - T\Delta S \hfill \rightarrow (T)$
+        \task $E = \dfrac{hc}{\lambda} \hfill \rightarrow (\lambda)$
+        \task $A = A_0 e^{-k t} \hfill \rightarrow (k)$
+        \task $N = N_0 e^{-\lambda t} \hfill \rightarrow (t)$
+        \task $p = \dfrac{nRT}{V - nb} - a\!\left(\dfrac{n}{V}\right)^2 \hfill \rightarrow (V)$
+        \task $\rho = \dfrac{1}{r_vT}\big[p-p_p\left(1-\frac{r_v}{r_p}\right)\big] \hfill \rightarrow (r_v)$
+    \end{tasks}
+\end{exercise}
+
+\end{document}

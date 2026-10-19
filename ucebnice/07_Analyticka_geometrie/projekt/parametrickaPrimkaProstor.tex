@@ -1,0 +1,458 @@
+\subsection{Parametrické vyjádření přímky v prostoru}
+\label{subsec:Parametric_line_in_space}
+
+V předchozí části jsme si připomněli, že přímku můžeme určit jedním jejím
+bodem a směrem. V prostoru budeme tento směr, stejně jako v rovině,
+popisovat pomocí nenulového směrového vektoru.
+
+Uvažujme tedy přímku $p$, která prochází bodem
+\[
+    A[x_A;y_A;z_A]
+\]
+a má směrový vektor
+\[
+    \vec{u}=(u_x;u_y;u_z).
+\]
+
+Zvolme nyní libovolný bod $X[x;y;z]$ této přímky. Protože body $A$ a $X$
+leží na stejné přímce, je vektor
+\[
+    \overrightarrow{AX}
+\]
+rovnoběžný se směrovým vektorem $\vec{u}$. Musí tedy existovat reálné číslo
+$t$ takové, že
+\[
+    \overrightarrow{AX}=t\vec{u}.
+\]
+
+Zároveň víme, že
+\[
+    \overrightarrow{AX}=X-A.
+\]
+Po dosazení proto dostáváme
+\[
+    X-A=t\vec{u},
+\]
+a tedy
+\begin{equation}
+    X=A+t\vec{u}.
+    \label{eq:Parametric_line_in_space_vector}
+\end{equation}
+
+Tento vztah má jednoduchý geometrický význam. Začneme v pevném bodě $A$
+a přičítáme k němu různé reálné násobky směrového vektoru $\vec{u}$.
+Tím získáváme postupně všechny body přímky.
+
+Po rozepsání vztahu~\eqref{eq:Parametric_line_in_space_vector} do
+jednotlivých souřadnic dostáváme
+\[
+    [x;y;z]
+    =
+    [x_A;y_A;z_A]
+    +
+    t(u_x;u_y;u_z),
+\]
+tedy
+\[
+\begin{aligned}
+    p: x&=x_A+t u_x,\\
+    y&=y_A+t u_y,\\
+    z&=z_A+t u_z; t\in\mathbb{R}.
+\end{aligned}
+\]
+
+\begin{definition}
+    \label{def:Parametric_line_in_space}
+    Nechť $A[x_A;y_A;z_A]$ je bod v prostoru a
+    $\vec{u}=(u_x;u_y;u_z)$ je nenulový vektor.
+    Přímka $p$ procházející bodem $A$ a mající směrový vektor $\vec{u}$
+    je množina všech bodů $X[x;y;z]$, které lze vyjádřit ve tvaru
+    \[
+        X=A+t\vec{u},\qquad t\in\mathbb{R}.
+    \]
+    V souřadnicích tedy
+    \begin{equation}
+        \begin{aligned}
+            p: x&=x_A+t u_x,\\
+            y&=y_A+t u_y,\\
+            z&=z_A+t u_z; t\in\mathbb{R}.
+        \end{aligned}
+        \label{eq:Parametric_line_in_space_coordinates}
+    \end{equation}
+
+    Číslo $t$ nazýváme \textbf{parametrem} a vektor $\vec{u}$
+    \textbf{směrovým vektorem} přímky.
+\end{definition}
+
+Podmínka $\vec{u}\neq\vec{0}$ je nezbytná. Kdyby byl směrový vektor nulový,
+potom by pro každé $t\in\mathbb{R}$ platilo
+\[
+    X=A+t\vec{0}=A.
+\]
+Místo celé přímky bychom tak získali pouze jediný bod.
+
+Geometrický význam parametru $t$ můžeme vidět na
+obrázku~\ref{fig:Parametric_line_in_space}. Pro $t=0$ dostáváme přímo bod
+$A$. Pro kladné hodnoty $t$ se z bodu $A$ pohybujeme ve směru vektoru
+$\vec{u}$ a pro záporné hodnoty v opačném směru.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.95]
+
+        % Kladné části os
+        \draw[->] (0,0,0) -- (5,0,0) node[right] {$x$};
+        \draw[->] (0,0,0) -- (0,4.5,0) node[above] {$y$};
+        \draw[->] (0,0,0) -- (0,0,4) node[below left] {$z$};
+
+        % Záporné části os
+        \draw[->, dashed] (0,0,0) -- (-2,0,0);
+        \draw[->, dashed] (0,0,0) -- (0,-2,0);
+        \draw[->, dashed] (0,0,0) -- (0,0,-2);
+
+        \node[above left] at (0,0,0) {$O$};
+
+        % Body ležící na přímce
+        \coordinate (P1) at (-0.6,-0.2,0);
+        \coordinate (Xm) at (0.6,0.7,0.75);
+        \coordinate (A)  at (1.8,1.6,1.5);
+        \coordinate (Xp) at (3,2.5,2.25);
+        \coordinate (P2) at (4.2,3.4,3);
+        \coordinate (P0) at (-1.5,-0.87,-0.56);
+
+        % Přímka
+        \draw[thick] (P1) -- (P2)
+            node[pos=0.96, above] {$p$};
+        \draw[thick, dashed] (P0) -- (P1);
+
+        % Směrový vektor
+        \draw[vector] (A) -- (Xp)
+            node[midway, sloped, above] {$\vec{u}$};
+
+        % Body
+        \fill (A) circle (2pt)
+            node[below right] {$A=X_0$};
+
+        \fill (Xm) circle (1.7pt)
+            node[above left] {$X_{-1}$};
+
+        \fill (Xp) circle (1.7pt)
+            node[below right] {$X_1$};
+
+    \end{tikzpicture}
+    \caption{Změnou hodnoty parametru $t$ získáváme jednotlivé body
+    přímky $p$.}
+    \label{fig:Parametric_line_in_space}
+\end{figure}
+
+Ze vztahu
+\[
+    \overrightarrow{AX}=t\vec{u}
+\]
+navíc vidíme, že absolutní hodnota parametru souvisí se vzdáleností bodu
+$X$ od bodu $A$. Platí totiž
+\[
+    |\overrightarrow{AX}|
+    =
+    |t\vec{u}|
+    =
+    |t|\cdot|\vec{u}|.
+\]
+Například pro $t=2$ se tedy z bodu $A$ posuneme ve směru vektoru
+$\vec{u}$ o dvojnásobek jeho velikosti, zatímco pro $t=-2$ o stejnou
+vzdálenost v opačném směru.
+
+\begin{example}
+    \label{exa:Parametric_line_in_space_point_direction}
+    Určete parametrické vyjádření přímky $p$, která prochází bodem
+    \[
+        A[1;-2;3]
+    \]
+    a má směrový vektor
+    \[
+        \vec{u}=(2;1;-1).
+    \]
+
+    Použijeme vztah
+    \[
+        X=A+t\vec{u}.
+    \]
+    Po dosazení získáme
+    \begin{align*}
+        X
+        &=[1;-2;3]+t(2;1;-1)\\
+        &=[1+2t;-2+t;3-t].
+    \end{align*}
+
+    Parametrické vyjádření přímky je tedy
+    \[
+        \begin{aligned}
+            p: x&=1+2t,\\
+            y&=-2+t,\\
+            z&=3-t; t\in\mathbb{R},
+        \end{aligned}
+    \]
+    nebo také ve vektorovém tvaru
+    \[
+        X=\left\{[1;-2;3]+t(2;1;-1); t\in\mathbb{R}\right\}.
+    \]
+\end{example}
+
+Z parametrického vyjádření můžeme naopak snadno určit jeden bod přímky
+a její směrový vektor. Konstantní členy odpovídají souřadnicím bodu, který
+získáme pro $t=0$, zatímco koeficienty u parametru tvoří souřadnice
+směrového vektoru.
+
+\begin{example}
+    \label{exa:Reading_line_in_space}
+    Je dána přímka
+    \[
+        \begin{aligned}
+            q: x&=-3+4t,\\
+            y&=2-2t,\\
+            z&=1+3t; t\in\mathbb{R}.
+        \end{aligned}
+    \]
+    Určete jeden bod přímky $q$ a její směrový vektor.
+
+    Pro $t=0$ dostáváme
+    \[
+        x=-3 + 4\cdot 0 = -3,\qquad y=2 - 2\cdot 0 = 2,\qquad z=1 + 3\cdot 0 = 1,
+    \]
+    a tedy například bod
+    \[
+        B[-3;2;1].
+    \]
+
+    Souřadnice směrového vektoru jsou dány koeficienty u parametru $t$:
+    \[
+        \vec{v}=(4;-2;3).
+    \]
+
+    Přímka $q$ tedy prochází bodem $B[-3;2;1]$ a má směrový vektor
+    $\vec{v}=(4;-2;3)$.
+\end{example}
+
+Je důležité si uvědomit, že parametrické vyjádření přímky není určeno
+jednoznačně. Bod $A$ v zápisu
+\[
+    X=A+t\vec{u}
+\]
+může být kterýkoli bod přímky a směrový vektor můžeme nahradit libovolným
+jeho nenulovým reálným násobkem.
+
+Je-li tedy $\vec{u}$ směrovým vektorem přímky, potom je jejím směrovým
+vektorem také
+\[
+    k\vec{u},
+    \qquad
+    k\in\mathbb{R}\setminus\{0\}.
+\]
+
+Například přímku
+\[
+    \begin{aligned}
+        p: x&=1+2t,\\
+        y&=-2+t,\\
+        z&=3-t; t\in\mathbb{R}
+    \end{aligned}
+\]
+můžeme zapsat také pomocí bodu odpovídajícího hodnotě $t=2$:
+\[
+    B[5;0;1].
+\]
+Jako nový směrový vektor můžeme zvolit například
+\[
+    -2\vec{u}=(-4;-2;2).
+\]
+Dostáváme proto jiné parametrické vyjádření
+\[
+    \begin{aligned}
+        p: x&=5-4s,\\
+        y&=-2s,\\
+        z&=1+2s; s\in\mathbb{R},
+    \end{aligned}
+\]
+které však popisuje tutéž přímku.
+
+Pomocí parametru můžeme také jednoduše určovat další body přímky. Stačí
+za něj dosadit libovolné reálné číslo.
+
+\begin{example}
+    \label{exa:Points_on_parametric_line_space}
+    Určete body přímky
+    \[
+        \begin{aligned}
+            p: x&=1+2t,\\
+            y&=-2+t,\\
+            z&=3-t; t\in\mathbb{R}
+        \end{aligned}
+    \]
+    odpovídající hodnotám $t=-1$, $t=0$ a $t=2$.
+
+    Pro $t=-1$ dostáváme
+    \[
+        X_{-1}
+        =
+        [1+2(-1);-2+1(-1);3-1(-1)]
+        =
+        [-1;-3;4].
+    \]
+
+    Pro $t=0$ dostáváme
+    \[
+        X_0 
+        = 
+        [1+2(0);-2+1(0);3-1(0)] 
+        =
+        [1;-2;3].
+    \]
+
+    Pro $t=2$ dostáváme
+    \[
+        X_2
+        =
+        [1+2(2);-2+1(2);3-1(2)]
+        =
+        [5;0;1].
+    \]
+\end{example}
+
+Opačnou úlohou je rozhodnout, zda zadaný bod na přímce leží. Bod
+$P[x_P;y_P;z_P]$ leží na přímce právě tehdy, když existuje jedna hodnota
+parametru $t$, pro kterou současně platí všechny tři parametrické rovnice.
+
+\begin{example}
+    \label{exa:Point_membership_line_space}
+    Rozhodněte, zda body
+    \[
+        B[5;0;1]
+        \qquad\text{a}\qquad
+        C[3;0;2]
+    \]
+    leží na přímce
+    \[
+        \begin{aligned}
+            p: x&=1+2t,\\
+            y&=-2+t,\\
+            z&=3-t; t\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Nejprve dosadíme souřadnice bodu $B[5;0;1]$:
+    \begin{align*}
+        5&=1+2t &&\Rightarrow t=2,\\
+        0&=-2+t &&\Rightarrow t=2,\\
+        1&=3-t &&\Rightarrow t=2.
+    \end{align*}
+
+    Ze všech tří rovnic vyšla stejná hodnota parametru $t=2$, a proto
+    bod $B$ na přímce leží:
+    \[
+        B\in p.
+    \]
+
+    Nyní dosadíme souřadnice bodu $C[3;0;2]$:
+    \begin{align*}
+        3&=1+2t &&\Rightarrow t=1,\\
+        0&=-2+t &&\Rightarrow t=2,\\
+        2&=3-t &&\Rightarrow t=1.
+    \end{align*}
+
+    Neexistuje jediná hodnota parametru, která by současně vyhovovala
+    všem třem rovnicím. Proto bod $C$ na přímce neleží:
+    \[
+        C\notin p.
+    \]
+\end{example}
+
+Stejnou podmínku můžeme vyjádřit také pomocí vektorů. Je-li přímka určena
+bodem $A$ a směrovým vektorem $\vec{u}$, potom bod $P$ leží na této
+přímce právě tehdy, když je vektor
+\[
+    \overrightarrow{AP}
+\]
+reálným násobkem směrového vektoru $\vec{u}$, tedy když existuje
+$t\in\mathbb{R}$ takové, že
+\[
+    \overrightarrow{AP}=t\vec{u}.
+\]
+
+Přímka nemusí být vždy zadána bodem a směrovým vektorem. Velmi často
+známe dva různé body
+\[
+    A[x_A;y_A;z_A],
+    \qquad
+    B[x_B;y_B;z_B],
+\]
+kterými má přímka procházet.
+
+Protože dvěma různými body prochází právě jedna přímka, můžeme její
+směrový vektor získat přímo jako
+\[
+    \overrightarrow{AB}
+    =
+    (x_B-x_A;y_B-y_A;z_B-z_A).
+\]
+
+Dosadíme-li tento vektor do vztahu $X=A+t\vec{u}$, dostáváme
+\[
+    X=A+t\overrightarrow{AB}.
+\]
+Po rozepsání do souřadnic tedy
+\[
+    \begin{aligned}
+        p: x&=x_A+t(x_B-x_A),\\
+        y&=y_A+t(y_B-y_A),\\
+        z&=z_A+t(z_B-z_A); t\in\mathbb{R}.
+    \end{aligned}
+\]
+
+\begin{example}
+    \label{exa:Parametric_line_in_space_two_points}
+    Určete parametrické vyjádření přímky $r$, která prochází body
+    \[
+        K[-1;2;4]
+        \qquad\text{a}\qquad
+        L[3;-2;1].
+    \]
+
+    Nejprve určíme směrový vektor přímky:
+    \[
+        \overrightarrow{KL}
+        =
+        (3-(-1);-2-2;1-4)
+        =
+        (4;-4;-3).
+    \]
+
+    Použijeme například bod $K[-1;2;4]$ a směrový vektor
+    $\overrightarrow{KL}=(4;-4;-3)$. Dostáváme
+    \[
+        \begin{aligned}
+            r: x&=-1+4t,\\
+            y&=2-4t,\\
+            z&=4-3t; t\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Pro $t=0$ získáme bod $K$ a pro $t=1$ bod
+    \[
+        [-1+4;2-4;4-3]
+        =
+        [3;-2;1]
+        =
+        L.
+    \]
+    Přímka tedy skutečně prochází oběma zadanými body.
+\end{example}
+
+Při určování přímky dvěma body bychom mohli stejně dobře použít bod $L$
+a opačný vektor
+\[
+    \overrightarrow{LK}
+    =
+    -\overrightarrow{KL}.
+\]
+Výsledné parametrické vyjádření by vypadalo jinak, ale popisovalo by
+stejnou přímku.

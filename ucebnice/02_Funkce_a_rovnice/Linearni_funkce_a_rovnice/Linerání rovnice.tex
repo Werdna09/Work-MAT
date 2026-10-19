@@ -1,0 +1,3361 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+
+\title{Lineární rovnice, nerovnice a soustavy rovnic}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Úvod}
+
+\begin{quotebox}
+{„Možná se ti bude zdát téma této knihy obtížné, protože dosud není známé a začátečníkova mysl se snadno splete chybou; ale s tvou zvídavostí a mým vedením se ti jej podaří rychle ovládnout, neboť bystrý rozum podporovaný dobrým učením je nejkratší cestou k poznání.“}
+{Diofantos z Alexandrie, \textit{Aritmetika (3. století n. l.)}}
+\end{quotebox}
+
+\noindent
+Tato kapitola nás zavede do světa \important{rovnic a nerovnic} — jednoho z nejzákladnějších a zároveň nejmocnějších nástrojů celé algebry.  
+Na příkladech lineárních rovnic si ukážeme, jak matematicky zachytit vztahy mezi neznámými veličinami, jak je analyzovat a jak hledat jejich řešení.  
+Od jednoduchých rovnic o jedné neznámé přejdeme k soustavám rovnic, kde se neznámé prolínají navzájem, a nakonec i k rovnicím s absolutní hodnotou, které přinášejí do problému nový geometrický rozměr.  
+Cílem není pouze „vyřešit“ rovnici, ale především \textbf{pochopit}, co samotný pojem rovnosti vyjadřuje a jaké důsledky má pro matematické myšlení.
+
+\begin{historicalbox}
+Pojem rovnice má své kořeny již ve starověku.  
+V \textbf{egyptských papyrech} (např. v Ahmesově – Rhindově papyru, cca 1650 př. n. l.) nacházíme úlohy typu „něco a jeho sedmina dají dohromady 19“, které odpovídají dnešní lineární rovnici o jedné neznámé.  
+Později \textbf{Babylonští matematici} dokázali řešit i kvadratické a soustavy rovnic pomocí tabulek a geometrických metod.  
+
+Zásadní krok však přinesl \textbf{Diofantos z Alexandrie}, jehož dílo \textit{Aritmetika} (3. století n. l.) představuje první systematické pojednání o rovnicích a neznámých veličinách.  
+Diofantos navázal na tradici řecké aritmetiky, ale překročil její geometrická omezení: začal místo geometrických představ pracovat se \important{symboly} a s abstraktním počtem.  
+Zavedl označení pro neznámou, mocniny a některé operace, čímž vytvořil základy \textbf{symbolické algebry}.  
+V jeho úlohách se často neřešily jen konkrétní čísla, ale hledaly se celé \textbf{množiny čísel, která splňují danou podmínku} — což dnes nazýváme \important{diofantické rovnice}.  
+Tyto rovnice, v nichž se požaduje, aby řešení byla celá čísla, tvoří dodnes významnou oblast teorie čísel a přímé dědictví jeho práce.
+
+O více než tisíc let později na jeho myšlenky navázal \textbf{Muhammad ibn Músá al-Chvárizmí}, který ve svém spisu \textit{Al-džabr wa’l-muqábala} popsal obecný postup pro řešení lineárních a kvadratických rovnic.  
+Z jeho pojmu \textit{al-džabr} (doplňování, vyrovnávání) vznikl samotný název \textbf{algebra}.  
+Teprve v 17. století \textbf{René Descartes} sjednotil geometrické a algebraické myšlení a zavedl symbolické zápisy rovnic, jak je známe dnes.  
+Od té doby se algebra stala univerzálním jazykem, jímž dokážeme popsat prakticky jakýkoli vztah či jev ve světě.  
+
+V českém prostředí se pojem \textbf{rovnice} objevuje až v raném novověku, kdy se začínají šířit překlady evropských učebnic matematiky.  
+Zvláštní zásluhu na rozvoji matematického myšlení má \textbf{Jan Ámos Komenský}, jenž v \textit{Didaktice} zdůrazňuje význam názornosti a logické stavby učiva – zásady, které se naplno projevují právě v práci s rovnicemi.  
+V 19. století pak čeští matematici jako \textbf{Bernard Bolzano}, \textbf{Karel Zahradník} či \textbf{František Josef Studnička} rozvíjejí přesnou logickou formulaci rovnic a vztahů mezi nimi, čímž dávají základ moderní výuce matematiky na našem území.  
+
+Tak se příběh rovnic, započatý v prachu nilských polí a přepsaný v alexandrijských skriptoriích, uzavírá v prostředí našich školních lavic – a pokračuje v rukou každého, kdo se odhodlá porozumět tomu, co znamená, že dvě věci si jsou rovny.
+\end{historicalbox}
+
+
+
+
+
+
+
+
+
+\section{Lineární rovnice o jedné neznámé}
+
+
+S lineárními rovnicemi o jedné neznámé jste se již setkali na základní škole, kde jste je řešili převážně mechanicky — přenášením členů a dělením koeficientem u neznámé.  
+V této kapitole se však na rovnice podíváme \important{systematicky a matematicky}, tedy nejen s cílem „najít výsledek“, ale také pochopit, \textbf{proč} určité kroky děláme a jaké mají logické zdůvodnění.  
+Zároveň se naučíme přesně formulovat, co znamená, že číslo je \textit{řešením} rovnice, a jak se tato řešení zapisují pomocí matematické symboliky.
+
+\begin{definitionbox}
+    \important{Lineární rovnice o jedné neznámé} je každá rovnice, kterou lze převést do tvaru
+    \[
+    ax + b = 0,
+    \]
+    kde $a, b \in \mathbb{R}$ a $a \neq 0$.
+\end{definitionbox}
+
+
+Lineární rovnice tohoto typu úzce souvisí s \textbf{lineární funkcí} $y = ax + b$, o které jsme psali v předchozí kapitole.  
+Hledáme-li řešení rovnice $ax + b = 0$, ptáme se vlastně:  
+\emph{„Pro jaké $x$ se hodnota funkce $y = ax + b$ rovná nule?“}  
+
+Graficky to znamená, že hledáme \textbf{průsečík přímky} $y = ax + b$ \textbf{s osou $x$}, tedy bod, v němž přímka protíná osu $x$.  
+Proto v rovnici symbolicky „dosazujeme“ $y = 0$.  
+Řešení rovnice $ax + b = 0$ tak představuje \textbf{x-ovou souřadnici bodu, kde přímka protíná osu $x$}.  
+
+
+Číslo $x$ označujeme jako \important{neznámou}, zatímco čísla $a$ a $b$ nazýváme \important{koeficienty} rovnice.  
+Řešením rovnice rozumíme takové číslo $x_0$, které po dosazení do rovnice způsobí, že se obě její strany stanou \textbf{rovny}, tedy platí
+\[
+a x_0 + b = 0.
+\]
+
+Říkáme pak, že „\textbf{číslo $x_0$ rovnici splňuje}“ nebo také, že „\textbf{rovnici vyhovuje}“.  
+Všechna čísla, která danou rovnici splňují, tvoří tzv. \important{množinu řešení} (též \textbf{množinu kořenů}) dané rovnice.  
+Tuto množinu obvykle označujeme písmenem $\mathbf{M}$, případně $\mathbf{R}$ 
+(z anglického \textit{roots}) či $\mathbf{K}$ (z českého \textit{kořeny}).  
+
+\begin{examplebox}
+    Například rovnice
+    \[
+    2x - 6 = 0
+    \]
+    má po úpravě $x = 3$.  
+    Řekneme tedy, že číslo $3$ \textbf{rovnici splňuje}, a zapíšeme to jako
+    \[
+    M = \{3\}.
+    \]
+    Z geometrického hlediska to znamená, že přímka $y = 2x - 6$ protíná osu $x$ právě v bodě $(3, 0)$.
+
+    \begin{center}
+    \begin{axisgraph}[
+        xmin=-1, xmax=6,
+        ymin=-7, ymax=5,
+        axis lines=middle,
+        axis line style={thick},
+        xlabel={$x$}, ylabel={$y$},
+        title={Graf funkce $y = 2x - 6$},
+        width=0.75\linewidth,
+        height=6cm,
+        samples=100,
+        xtick={0,1,2,3,4,5,6},
+        ytick={-6,-4,-2,0,2,4},
+        grid=none
+    ]
+        % přímka
+        \addplot[thick, blue, domain=-1:6] {2*x - 6};
+        % průsečík
+        \addplot[only marks, mark=*, blue] coordinates {(3,0)};
+        \node[above right, blue] at (axis cs:3.2,0) {$[3;\,0]$};
+    \end{axisgraph}
+    \end{center}
+\end{examplebox}
+
+Vyřešit rovnici tedy znamená \important{najít všechna čísla, která tuto rovnici splňují}, a zapsat je jako množinu všech řešení.  
+Tato množina může být prázdná, obsahovat jedno číslo nebo nekonečně mnoho čísel — podle toho, jaký typ rovnice řešíme.
+
+
+
+
+\subsection{Ekvivalentní úpravy rovnic}
+
+Při řešení rovnic se snažíme vyjádřit neznámou tak, aby stála „osamoceně“ na jedné straně rovnice.  
+Abychom toho dosáhli, provádíme různé úpravy — přičítáme, odečítáme, násobíme či dělíme.  
+Tyto úpravy jsou ale povoleny pouze tehdy, \important{pokud nezmění množinu řešení rovnice}.  
+Každá úprava, která zachová rovnost obou stran, se nazývá \textbf{ekvivalentní úprava}.  
+
+
+\begin{definitionbox}
+    \textbf{Ekvivalentní úpravy rovnic jsou:}
+    \begin{itemize}
+        \item přičítání a odečítání reálného čísla,  
+        \item přičítání a odečítání neznámé (nebo výrazu obsahujícího neznámou),  
+        \item násobení reálným číslem kromě nuly,  
+        \item násobení neznámou (nebo výrazem obsahujícím neznámou), pokud je různá od nuly (nebo výraz je různý od nuly),  
+        \item dělení reálným číslem kromě nuly,  
+        \item dělení neznámou (nebo výrazem obsahujícím neznámou), pokud je různá od nuly (nebo výraz je různý od nuly).
+    \end{itemize}
+\end{definitionbox}
+
+Z matematického hlediska je každá z těchto úprav oprávněná, protože zachovává 
+\textbf{rovnost} obou stran — tedy vztah, který říká, že levá a pravá strana mají stejnou hodnotu.  
+Díky tomu se nemění ani množina všech čísel, která danou rovnici splňují.
+
+\begin{examplebox}
+    Vyřeš rovnici
+    \[
+    2x - 5 = \frac{x + 2}{2}.
+    \]
+
+    \textbf{Řešení:}
+
+    \begin{alignat*}{3}
+        2x - 5 &= \frac{x + 2}{2} &&\quad | \cdot 2\\
+        2(2x - 5) &= 2 \cdot \frac{x + 2}{2}\\
+        4x - 10 &= x + 2\\
+        4x - 10 &= x + 2 &&\quad | -x\\
+        4x - 10 - x &= x + 2 - x\\
+        3x - 10 &= 2\\
+        3x - 10 &= 2 &&\quad | +10\\
+        3x - 10 + 10 &= 2 + 10\\
+        3x &= 12 &&\quad | :3\\
+        \frac{3x}{3} &= \frac{12}{3}\\
+        x &= 4
+    \end{alignat*}
+
+    \textbf{Závěr:} Rovnice má jediné řešení $x = 4$, tedy množina řešení je
+    \[
+    K = \{4\}.
+    \]
+\end{examplebox}
+
+
+
+Z geometrického hlediska platí, že každá ekvivalentní úprava \textbf{neposouvá průsečík přímky s osou $x$},  
+ale pouze mění způsob, jakým je přímka algebraicky zapsána.  
+Přičtení či odčítání členů tedy odpovídá posunu přímky nahoru nebo dolů,  
+zatímco dělení či násobení mění její sklon, aniž by změnilo samotný bod průsečíku.
+
+\begin{center}
+    \begin{axisgraph}[
+        xmin=-1, xmax=7,
+        ymin=-8, ymax=8,
+        axis lines=middle,
+        xlabel={$x$}, ylabel={$y$},
+        title={Rovnice $3x - 7 = 11$ a její ekvivalentní tvary},
+        width=0.75\linewidth,
+        height=6cm,
+        samples=100,
+        grid=none,
+        xtick={0,2,4,6},
+        ytick={-6,-3,0,3,6}
+    ]
+        % původní přímka
+        \addplot[thick, gray!70!black, domain=-1:7] {3*x - 7};
+        % posunutá (po +7)
+        \addplot[dashed, gray!40, domain=-1:7] {3*x};
+        % výsledná po dělení 3
+        \addplot[thick, pastelorange!80!black, domain=-1:7] {3*x - 7 - 11};
+        % průsečík
+        \addplot[only marks, mark=*, pastelorange!80!black] coordinates {(6,0)};
+        \node[above right, pastelorange!80!black] at (axis cs:2.2,0) {$[6;\,0]$};
+    \end{axisgraph}
+\end{center}
+
+Každá z těchto úprav rovnice vede ke stejné odpovědi $x = 6$ — ať už rovnici zapisujeme 
+jako $3x - 7 = 11$, nebo po úpravě $3x = 18$, nebo konečně $x = 6$.
+
+\begin{notebox}
+    Ekvivalentní úpravy fungují díky základní vlastnosti rovnosti:  
+    \textit{jestliže jsou dvě veličiny stejné, zůstanou stejné i po přičtení, odčtení, násobení nebo dělení stejnou nenulovou hodnotou.}  
+    Je to tedy obdoba principu zachování rovnováhy.
+\end{notebox}
+
+
+
+\subsection{Zkouška správnosti výsledku}
+
+Vyřešit rovnici znamená najít všechna čísla, která ji splňují.  
+Po nalezení řešení je proto vhodné provést tzv. \textbf{zkoušku}, 
+při níž ověříme, že nalezené číslo skutečně vyhovuje původní rovnici.
+
+Postupujeme tak, že dosadíme nalezené řešení (tzv. \textbf{kořen}) postupně do levé a 
+pravé strany původní rovnice a vypočítáme jejich hodnoty:
+\[
+\begin{aligned}
+L(\text{kořen}) &= [\text{dosazený výraz pro levou stranu}]\\
+L(\text{kořen}) &= \text{výsledná hodnota levé strany}\\[6pt]
+P(\text{kořen}) &= [\text{dosazený výraz pro pravou stranu}]\\
+P(\text{kořen}) &= \text{výsledná hodnota pravé strany}\\[6pt]
+L(\text{kořen}) &\stackrel{?}{=} P(\text{kořen})
+\end{aligned}
+\]
+
+
+Pokud jsou obě hodnoty stejné, můžeme výsledek označit jako \textbf{správný}.  
+Zapisujeme pak například:
+\[
+L(4) = P(4) = 3x - 7 = 11 \;\;\Rightarrow\;\; \text{rovnice je splněna.}
+\]
+
+\begin{examplebox}
+Proveďte zkoušku pro rovnici
+\[
+2x - 5 = \frac{x + 2}{2}
+\]
+a nalezené řešení $x = 4$.
+
+\textbf{Zkouška:}
+\[
+L(4) = 2 \cdot 4 - 5 = 8 - 5 = 3
+\]
+\[
+P(4) = \frac{4 + 2}{2} = \frac{6}{2} = 3
+\]
+\[
+L(4) = P(4)
+\]
+
+Proto je nalezené řešení $x = 4$ správné.
+\end{examplebox}
+
+\medskip
+Zkouška není vždy nutná u jednoduchých rovnic, ale u složitějších výrazů
+(zejména se zlomky, absolutními hodnotami nebo odmocninami) 
+může pomoci odhalit chybu nebo \textbf{zdánlivé řešení}, 
+které sice vychází výpočtem, ale původní rovnici ve skutečnosti nesplňuje.
+
+
+
+
+
+\subsubsection*{Častá chyba: dělení výrazem, který může být roven nule}
+
+Při řešení rovnic je nutné mít na paměti, že \textbf{dělení výrazem obsahujícím neznámou}
+je povoleno pouze tehdy, pokud tento výraz \textbf{nemůže nabýt hodnoty nula}.  
+V opačném případě bychom mohli některá řešení původní rovnice ztratit.
+
+\medskip
+Například u rovnice
+\[
+(x + 1)(x - 3) = x + 1
+\]
+se někteří studenti snaží rovnici zjednodušit dělením výrazem $(x + 1)$:
+\[
+(x + 1)(x - 3) = x + 1 \quad | : (x + 1)
+\]
+tím však dostanou pouze rovnici
+\[
+x - 3 = 1,
+\]
+jejímž řešením je $x = 4$.  
+Jenže jsme zapomněli, že dělení $(x + 1)$ je povoleno pouze tehdy, pokud $x + 1 \neq 0$, tedy $x \neq -1$.  
+Původní rovnice ale při dosazení $x = -1$ stále platí, a proto má ve skutečnosti \textbf{dvě řešení: $x = -1$ a $x = 4$}.  
+
+\medskip
+Správný postup, který zachovává všechna řešení, je například:
+
+\begin{align*}
+(x + 1)(x - 3) &= x + 1 &&\quad | - (x + 1)\\
+(x + 1)(x - 3) - (x + 1) &= 0\\
+(x + 1)\bigl((x - 3) - 1\bigr) &= 0\\
+(x + 1)(x - 4) &= 0
+\end{align*}
+
+Tato rovnice má řešení $x = -1$ a $x = 4$, která odpovídají i původní rovnici.
+
+\medskip
+Abychom si ověřili, že obě tato řešení skutečně platí, provedeme \textbf{zkoušku správnosti:}
+
+\textbf{Pro } $x = -1$:
+
+\begin{align*}
+L(-1) &= (-1 + 1)(-1 - 3) = 0 \cdot (-4) = 0\\
+P(-1) &= (-1) + 1 = 0\\
+L(-1) &\stackrel{?}{=} P(-1) \;\Rightarrow\; 0 = 0 \;\text{splňuje}
+\end{align*}
+
+\medskip
+\textbf{Pro } $x = 4$:
+
+\begin{align*}
+L(4) &= (4 + 1)(4 - 3) = 5 \cdot 1 = 5\\
+P(4) &= 4 + 1 = 5\\
+L(4) &\stackrel{?}{=} P(4) \;\Rightarrow\; 5 = 5 \;\text{splňuje}
+\end{align*}
+
+\noindent
+Vidíme, že obě nalezená řešení rovnici skutečně splňují.  
+Pokud bychom ale rovnici upravili dělením $(x + 1)$, přišli bychom o první z nich,
+protože bychom dělením odstranili situaci, kdy je $x = -1$.
+
+\begin{notebox}
+Při dělení výrazem obsahujícím neznámou vždy ověřte, zda tento výraz nemůže být roven nule.  
+\textbf{Zkouška} je nejjistější způsob, jak ověřit, že nalezené řešení skutečně odpovídá původní rovnici.
+\end{notebox}
+
+
+\begin{examplebox}
+Uvažujme rovnici se odmocninou:
+\[
+\sqrt{x + 16} = x + 4.
+\]
+
+\textbf{Řešení:}
+
+Nejprve odstraníme odmocninu umocněním obou stran na druhou:
+\begin{align*}
+(\sqrt{x + 16})^2 &= (x + 4)^2\\
+x + 16 &= x^2 + 8x + 16\\
+0 &= x^2 + 7x\\
+x(x + 7) &= 0
+\end{align*}
+
+\noindent
+Odtud dostáváme dvě možná řešení:
+\[
+x_1 = 0, \quad x_2 = -7.
+\]
+
+\medskip
+Protože jsme během řešení rovnici umocňovali, musíme provést \textbf{zkoušku}, abychom ověřili,
+ zda obě hodnoty původní rovnici skutečně splňují.
+
+\medskip
+\textbf{Zkouška pro } $x = 0$:
+\begin{align*}
+L(0) &= \sqrt{0 + 16} = \sqrt{16} = 4\\
+P(0) &= 0 + 4 = 4\\
+L(0) &\stackrel{?}{=} P(0) \;\Rightarrow\; 4 = 4 \;\text{splňuje}
+\end{align*}
+
+\medskip
+\textbf{Zkouška pro } $x = -7$:
+\begin{align*}
+L(-7) &= \sqrt{-7 + 16} = \sqrt{9} = 3\\
+P(-7) &= -7 + 4 = -3\\
+L(-7) &\stackrel{?}{=} P(-7) \;\Rightarrow\; 3 \neq -3 \;\text{nesplňuje}
+\end{align*}
+
+\noindent
+Výsledek $x = -7$ tedy vznikl umocněním (které může rozšířit množinu řešení),  
+a proto je pouze \textbf{zdánlivým řešením}.  
+Správné řešení je pouze:
+\[
+K = \{0\}.
+\]
+
+\begin{notebox}
+Při umocňování, odmocňování nebo jiných nelineárních úpravách může vzniknout tzv. \textbf{zdánlivé řešení}.  
+Proto je vždy nutné provést zkoušku a ověřit, zda nalezené hodnoty původní rovnici opravdu splňují.
+\end{notebox}
+\end{examplebox}
+
+
+\subsubsection*{Příklady řešení lineárních rovnic}
+
+\begin{examplebox}
+Vyřeš rovnici:
+\[
+2(x - 3) - (x - 4) = 3x - 10.
+\]
+
+\textbf{Řešení:}
+
+\begin{align*}
+2(x - 3) - (x - 4) &= 3x - 10\\
+2x - 6 - x + 4 &= 3x - 10\\
+x - 2 &= 3x - 10 &&| -x\\
+-2 &= 2x - 10 &&| +10\\
+8 &= 2x &&| :2\\
+x &= 4
+\end{align*}
+
+\textbf{Zkouška:}
+\begin{align*}
+L(4) &= 2(4 - 3) - (4 - 4) = 2(1) - 0 = 2\\
+P(4) &= 3 \cdot 4 - 10 = 12 - 10 = 2\\
+L(4) &\stackrel{?}{=} P(4) \;\Rightarrow\; 2 = 2 \;\text{splňuje}
+\end{align*}
+
+Rovnice má jediné řešení $x = 4$.
+\end{examplebox}
+
+
+\begin{examplebox}
+Vyřeš rovnici se zlomky:
+\[
+\frac{2x - 1}{3} = \frac{x + 2}{6}.
+\]
+
+\textbf{Řešení:}
+
+Nejprve odstraníme zlomky — nejmenší společný jmenovatel je $6$.
+\begin{align*}
+\frac{2x - 1}{3} &= \frac{x + 2}{6} &&| \cdot 6\\
+6 \cdot \frac{2x - 1}{3} &= 6 \cdot \frac{x + 2}{6}\\
+2(2x - 1) &= x + 2\\
+4x - 2 &= x + 2 &&| -x\\
+3x - 2 &= 2 &&| +2\\
+3x &= 4 &&| :3\\
+x &= \frac{4}{3}
+\end{align*}
+
+\textbf{Zkouška:}
+\begin{align*}
+L\!\left(\tfrac{4}{3}\right) &= \frac{2 \cdot \tfrac{4}{3} - 1}{3} = \frac{\tfrac{8}{3} - 1}{3} = \frac{\tfrac{5}{3}}{3} = \tfrac{5}{9}\\
+P\!\left(\tfrac{4}{3}\right) &= \frac{\tfrac{4}{3} + 2}{6} = \frac{\tfrac{4}{3} + \tfrac{6}{3}}{6} = \frac{\tfrac{10}{3}}{6} = \tfrac{5}{9}\\
+L\!\left(\tfrac{4}{3}\right) &\stackrel{?}{=} P\!\left(\tfrac{4}{3}\right) \;\Rightarrow\; \tfrac{5}{9} = \tfrac{5}{9} \;\text{splňuje}
+\end{align*}
+
+Rovnice má řešení $x = \frac{4}{3}$.
+\end{examplebox}
+
+
+\begin{examplebox}
+\textbf{Úloha:}  
+Na parkovišti je celkem 50 vozidel.  
+Počet automobilů je třikrát větší než počet motocyklů.  
+Kolik je na parkovišti motocyklů a kolik automobilů?
+
+\medskip
+\textbf{Řešení:}
+
+Označme počet motocyklů $x$.  
+Potom počet automobilů je $3x$ a dohromady platí:
+\[
+x + 3x = 50.
+\]
+\begin{align*}
+4x &= 50 &&| :4\\
+x &= 12{,}5
+\end{align*}
+
+Protože počet vozidel musí být celé číslo, úloha v dané podobě nemá smysluplné řešení.  
+Pokud by šlo o přibližný odhad, pak by na parkovišti bylo asi $13$ motocyklů a $37$ automobilů.
+
+\begin{notebox}
+Slovní úlohy často obsahují skrytou podmínku (např. že výsledek musí být celé nebo kladné číslo).  
+Takové podmínky je třeba po vyřešení rovnice vždy zkontrolovat.
+\end{notebox}
+\end{examplebox}
+
+
+
+
+
+\newpage
+\section{Lineární nerovnice o jedné neznámé}
+
+
+Zatímco rovnice vyjadřovala rovnost dvou výrazů, \textbf{nerovnice} popisuje situace, kdy je hodnota jednoho výrazu \emph{menší}, \emph{větší}, \emph{menší nebo rovna}, případně \emph{větší nebo rovna} hodnotě výrazu druhého.  
+Výsledkem řešení nerovnice proto obvykle není jediné číslo, nýbrž \textbf{množina čísel}, která daný vztah splňují; v praxi ji zapisujeme intervalem a často ji také znázorňujeme na číselné ose či pomocí grafu související lineární funkce.
+
+\begin{definitionbox}
+\important{Lineární nerovnice o jedné neznámé} je každá nerovnice, kterou lze převést do tvaru
+\[
+ax + b \,\square\, 0,
+\]
+kde $a,b\in\mathbb{R}$, $a\neq 0$ a symbol $\square$ je jeden z $\{<,\,>,\,\le,\,\ge\}$.
+
+Při úpravách používáme \textbf{ekvivalentní úpravy nerovnic}:
+\begin{itemize}
+  \item přičtení/odečtení stejného (reálného) čísla na obou stranách,
+  \item přičtení/odečtení výrazu s neznámou na obou stranách,
+  \item násobení/dělení obou stran \textbf{kladným} číslem (směr nerovnosti se \emph{nemění}),
+  \item násobení/dělení obou stran \textbf{záporným} číslem (směr nerovnosti se \emph{obrací}),
+  \item algebraické zjednodušování výrazů a odstraňování závorek.
+\end{itemize}
+\end{definitionbox}
+
+\subsection*{Řešení krok za krokem a změna směru nerovnosti}
+\begin{examplebox}
+Vyřeš nerovnici se zlomkem:
+\[
+2x - 5 \le \frac{x + 2}{2}.
+\]
+
+\textbf{Řešení:}
+
+Nejprve odstraníme zlomek – nejmenší společný jmenovatel je $2$.
+\begin{align*}
+2x - 5 &\le \frac{x + 2}{2} &&| \cdot 2\\
+2(2x - 5) &\le x + 2\\
+4x - 10 &\le x + 2 &&| -x\\
+3x - 10 &\le 2 &&| +10\\
+3x &\le 12 &&| :3\\
+x &\le 4
+\end{align*}
+
+\noindent
+\textbf{Výsledek:} $K = (-\infty,\,4\rangle$.
+\end{examplebox}
+
+\begin{examplebox}
+Vyřeš nerovnici s neznámou na obou stranách:
+\[
+3x - 7 \le 5x - 13.
+\]
+
+\textbf{Řešení:}
+\begin{align*}
+3x - 7 &\le 5x - 13 &&| -3x\\
+-7 &\le 2x - 13 &&| +13\\
+6 &\le 2x &&| :2\\
+3 &\le x
+\end{align*}
+
+\noindent
+\textbf{Výsledek:} $K = \langle3,\infty)$.
+\end{examplebox}
+
+\subsubsection*{Typické chyby}
+\begin{itemize}
+  \item Zapomenutí \textbf{obrátit nerovnost} při dělení nebo násobení \textbf{záporným} číslem.
+  \item Mechanické „přenášení členů“ bez ohledu na znaménko a následná záměna směru.
+  \item Nesprávný zápis výsledku: chybné použití \emph{otevřeného} vs. \emph{uzavřeného} krajního bodu.
+  \item U zlomků dělení výrazem, který může být nulový (v takovém případě je třeba pracovat s podmínkami).
+\end{itemize}
+
+\subsubsection*{Příklady řešení lineárních rovnic}
+
+\begin{examplebox}
+Vyřeš nerovnici
+\[
+5x - 7 \ge 3.
+\]
+
+\textbf{Řešení:}
+\begin{align*}
+5x - 7 &\ge 3 &&| +7\\
+5x &\ge 10 &&| :5\\
+x &\ge 2
+\end{align*}
+
+\noindent
+\textbf{Výsledek:} $M = [2,\infty)$.
+\end{examplebox}
+
+\newpage
+\begin{examplebox}
+Vyřeš nerovnici
+\[
+2(x-3) - (x+1) < 5 - x.
+\]
+
+\textbf{Řešení:}
+\begin{align*}
+2x - 6 - x - 1 &< 5 - x\\
+x - 7 &< 5 - x &&| +x\\
+2x - 7 &< 5 &&| +7\\
+2x &< 12 &&| :2\\
+x &< 6
+\end{align*}
+
+\noindent
+\textbf{Výsledek:} $M = (-\infty,6)$.
+\end{examplebox}
+
+\begin{examplebox}
+Vyřeš nerovnici
+\[
+\frac{2x-1}{3} \le \frac{x+5}{6}.
+\]
+
+\textbf{Řešení:} Nejmenší společný jmenovatel je $6$.
+\begin{align*}
+\frac{2x-1}{3} &\le \frac{x+5}{6} &&| \cdot 6\\
+6\cdot \frac{2x-1}{3} &\le 6\cdot \frac{x+5}{6}\\
+2(2x-1) &\le x+5\\
+4x - 2 &\le x + 5 &&| -x\\
+3x - 2 &\le 5 &&| +2\\
+3x &\le 7 &&| :3\\
+x &\le \frac{7}{3}
+\end{align*}
+
+\noindent
+\textbf{Výsledek:} $M = (-\infty,\,7/3]$.
+\end{examplebox}
+
+\begin{examplebox}
+Vyřeš nerovnici
+\[
+-4x + 3 > 2x - 9.
+\]
+
+\textbf{Řešení:}
+\begin{align*}
+-4x - 2x &> -9 - 3 &&\quad \text{(převedeme vše s $x$ vlevo, čísla vpravo)}\\
+-6x &> -12 &&| :(-6) \quad \text{(dělíme záporným číslem)}\\
+x &< 2
+\end{align*}
+
+\noindent
+\textbf{Výsledek:} $M = (-\infty,2)$.
+\end{examplebox}
+
+\begin{notebox}
+\textbf{Proč se nerovnost při dělení záporným číslem obrací?}
+
+Představme si dvě čísla $a < b$.  
+Pokud od obou stran odečteme $a + b$, dostaneme
+\[
+a - a - b < b - a - b \;\Rightarrow\; -b < -a.
+\]
+Tím vidíme, že po \textbf{násobení nebo dělení záporným číslem} se směr nerovnosti skutečně \textbf{obrací}.  
+To odpovídá i intuici: pokud čísla vynásobíme $-1$, zrcadlí se na číselné ose — menší číslo se stane větším a naopak.
+\end{notebox}
+
+
+\subsection*{Zápis a grafické znázornění výsledků}
+
+Řešení nerovnic představuje \textbf{množinu čísel}, která splňují daný vztah.  
+Tyto množiny zapisujeme pomocí \textbf{intervalů} a znázorňujeme na \textbf{číselné ose}.  
+
+\medskip
+\noindent
+\textbf{Základní význam symbolů:}
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{ccl}
+\textbf{Symbol} & \textbf{Význam} & \textbf{Zápis intervalu (evropský)}\\
+$a < x < b$ & $x$ je mezi $a$ a $b$ & $\langle a;\,b\rangle$ — oba body otevřené\\
+$a \le x \le b$ & $x$ je mezi $a$ a $b$, včetně krajů & $\langle a;\,b\rangle$ — oba body uzavřené\\
+$x > a$ & $x$ je větší než $a$ & $\langle a;\,+\infty)$\\
+$x \ge a$ & $x$ je větší nebo rovno $a$ & $\langle a;\,+\infty)$ (uzavřeno vlevo)\\
+$x < a$ & $x$ je menší než $a$ & $(-\infty;\,a\rangle$\\
+$x \le a$ & $x$ je menší nebo rovno $a$ & $(-\infty;\,a\rangle$ (uzavřeno vpravo)\\
+\end{tabular}
+\end{center}
+
+\medskip
+\noindent
+\textbf{Značení na číselné ose:}
+
+\begin{center}
+\begin{tabular}{cc}
+% --- 1. graf: x < 2 ---
+\begin{axisgraph}[
+    xmin=-3, xmax=7,
+    ymin=0, ymax=1,
+    axis x line=middle,
+    axis y line=none,
+    width=0.45\linewidth,
+    height=2.2cm,
+    ytick=\empty,
+    xtick={-2,0,2,4,6},
+    xticklabels={},
+    clip=false
+]
+% interval vlevo
+\draw[thick, pastelorange, <-] (axis cs:-2,0.5) -- (axis cs:1.87,0.5);
+% otevřený bod
+\draw[thick, pastelorange] (axis cs:2,0.5) circle (2.5pt);
+% popisek
+\node[above, pastelorange!80!black] at (axis cs:0,0.55) {$x<2$};
+\end{axisgraph}
+&
+% --- 2. graf: x ≤ 2 ---
+\begin{axisgraph}[
+    xmin=-3, xmax=7,
+    ymin=0, ymax=1,
+    axis x line=middle,
+    axis y line=none,
+    width=0.45\linewidth,
+    height=2.2cm,
+    ytick=\empty,
+    xtick={-2,0,2,4,6},
+    xticklabels={},
+    clip=false
+]
+\draw[thick, pastelblue, <-] (axis cs:-2,0.5) -- (axis cs:2,0.5);
+\filldraw[pastelblue] (axis cs:2,0.5) circle (2.5pt);
+\node[above, pastelblue!70!black] at (axis cs:0,0.55) {$x\le2$};
+\end{axisgraph}
+\\[1em]
+% --- 3. graf: x > 4 ---
+\begin{axisgraph}[
+    xmin=-3, xmax=7,
+    ymin=0, ymax=1,
+    axis x line=middle,
+    axis y line=none,
+    width=0.45\linewidth,
+    height=2.2cm,
+    ytick=\empty,
+    xtick={-2,0,2,4,6},
+    xticklabels={},
+    clip=false
+]
+\draw[thick, pastelgreen, ->] (axis cs:4.15,0.5) -- (axis cs:6,0.5);
+\draw[thick, pastelgreen] (axis cs:4,0.5) circle (2.5pt);
+\node[above, pastelgreen!80!black] at (axis cs:5,0.55) {$x>4$};
+\end{axisgraph}
+&
+% --- 4. graf: x ≥ 4 ---
+\begin{axisgraph}[
+    xmin=-3, xmax=7,
+    ymin=0, ymax=1,
+    axis x line=middle,
+    axis y line=none,
+    width=0.45\linewidth,
+    height=2.2cm,
+    ytick=\empty,
+    xtick={-2,0,2,4,6},
+    xticklabels={},
+    clip=false
+]
+\draw[thick, pastelviolet, ->] (axis cs:4,0.5) -- (axis cs:6,0.5);
+\filldraw[pastelviolet] (axis cs:4,0.5) circle (2.5pt);
+\node[above, pastelviolet!70!black] at (axis cs:5,0.55) {$x\ge4$};
+\end{axisgraph}
+\end{tabular}
+\end{center}
+
+
+\medskip
+\noindent
+\textbf{Interpretace:}
+\begin{itemize}
+  \item Otevřený bod (prázdné kolečko) znamená, že \textbf{krajní hodnota do množiny nepatří}.
+  \item Plný bod znamená, že \textbf{krajní hodnota je součástí množiny řešení}.
+  \item Směr šipky určuje, zda jsou řešením čísla \textbf{menší} (vlevo) nebo \textbf{větší} (vpravo) než daná hodnota.
+  \item Dvojitá nerovnice (např. $1 < x \le 4$) odpovídá úseku $\langle 1;4\rangle$ — uzavřenému vpravo, otevřenému vlevo.
+\end{itemize}
+
+\begin{notebox}
+\textbf{Poznámka k evropskému zápisu:}  
+V české matematické praxi zapisujeme intervaly pomocí \textbf{hranatých} a \textbf{špičatých závorek}:  
+$\langle a;b\rangle$, $\langle a;b)$, $(a;b\rangle$, $(a;b)$.  
+Naopak souřadnice bodů zapisujeme jako \textbf{[x;y]} — hranaté závorky tedy patří bodům,  
+špičaté intervalům.
+\end{notebox}
+
+
+
+
+\section{Grafické řešení lineárních rovnic a nerovnic}
+
+
+Každou lineární rovnici nebo nerovnici můžeme chápat také \textbf{graficky}.  
+Pokud si uvědomíme, že výrazy na obou stranách rovnice představují \textbf{funkce proměnné} \(x\),  
+pak řešení rovnice odpovídá \textbf{průsečíku jejich grafů}.  
+
+\medskip
+
+Například rovnici
+\[
+2x + 1 = -x + 3
+\]
+můžeme chápat jako soustavu dvou lineárních funkcí:
+\[
+y_1 = 2x + 1, \qquad y_2 = -x + 3.
+\]
+
+\begin{examplebox}
+\textbf{Řešení:}
+
+Zapsaná rovnice \(2x + 1 = -x + 3\) říká, že hledáme takové \(x\), pro které jsou hodnoty obou funkcí stejné,  
+tedy jejich grafy se protínají.
+
+\begin{align*}
+2x + 1 &= -x + 3\\
+3x &= 2\\
+x &= \tfrac{2}{3}
+\end{align*}
+
+
+\textbf{Řešením rovnice je tedy průsečík:}
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-2, xmax=3,
+    ymin=-1, ymax=5,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    grid=none,
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    domain=-2:3,
+    legend style={at={(0.95,0.95)}, anchor=north east, font=\small}
+]
+% přímky
+\addplot[thick, pastelblue, domain=-2:3]{2*x + 1};
+\addplot[thick, pastelorange, domain=-2:3]{-x + 3};
+
+% svislá pomocná čára k ose x
+\addplot[dashed, gray!70] coordinates {(0.6667, 0) (0.6667, 2.3333)};
+
+% průsečík
+\addplot[only marks, mark=*, mark size=2.5pt, pastelgreen!70!black] coordinates {(0.6667, 2.3333)};
+
+% popisek pouze na ose x
+\node[below, gray!70!black] at (axis cs:0.6667, 0) {$\tfrac{2}{3}$};
+\end{axisgraph}
+\end{center}
+
+\textbf{Interpretace:}  
+Grafické řešení rovnice znamená najít bod, v němž se obě přímky protínají.  
+Každá další rovnice představuje „posunutí“ nebo „naklonění“ těchto přímek –  
+pokud mají různé směrnice, protínají se právě v jednom bodě; pokud jsou rovnoběžné, nemají řešení;  
+a pokud splývají, mají nekonečně mnoho společných bodů, tedy nekonečně mnoho řešení.
+\end{examplebox}
+
+
+\begin{notebox}
+\textbf{Shrnutí:}  
+- Rovnice \(f(x) = g(x)\) má řešení v těch \(x\), kde se grafy funkcí \(y=f(x)\) a \(y=g(x)\) protínají.  
+- Počet řešení závisí na poloze přímek:
+  \begin{itemize}
+    \item různé směrnice → jeden průsečík (jedno řešení),
+    \item shodné směrnice, různé posunutí → žádný průsečík (žádné řešení),
+    \item shodné přímky → nekonečně mnoho řešení.
+  \end{itemize}
+\end{notebox}
+
+
+\newpage
+\section{Lineárně lomené rovnice}
+
+V této kapitole se zaměříme na rovnice, ve kterých se neznámá nachází ve \textbf{jmenovateli zlomku}.  
+Takové rovnice označujeme jako \important{lineárně lomené} nebo též \important{rovnice v podílovém tvaru}.  
+
+\medskip
+Na první pohled vypadají složitěji, ale ve skutečnosti se po vhodných úpravách dají převést na běžné lineární rovnice.  
+Jediným rozdílem je, že je nutné nejprve určit tzv. \textbf{podmínky řešitelnosti} — hodnoty, pro které \textbf{jmenovatel nesmí být roven nule}.
+
+\begin{definitionbox}
+\textbf{Lineárně lomená rovnice} je rovnice, která obsahuje zlomky s neznámou ve jmenovateli, např.:
+\[
+\frac{2x - 5}{x - 3} = 1.
+\]
+\end{definitionbox}
+
+\textbf{Postup řešení:}
+%\begin{enumerate}[label=\arabic*.]
+%  \item Určíme \textbf{podmínky řešitelnosti}: výrazy ve jmenovateli nesmí být nulové.
+%  \item Násobíme obě strany rovnice \textbf{nejmenším společným jmenovatelem (NSJ)}.
+%  \item Získanou rovnici upravíme na běžnou lineární rovnici.
+%  \item Vyřešíme ji a ověříme, zda získané řešení splňuje podmínky (nevede k dělení nulou).
+%\end{enumerate}
+
+
+\medskip 
+Uvažujme rovnici
+\[
+\frac{2x - 5}{x - 3} = 1.
+\]
+
+Než začneme rovnici upravovat, stanovíme \textbf{podmínku řešitelnosti}.  
+Ve jmenovateli se nachází výraz \(x - 3\), který nesmí být nulový:
+\begin{align*}
+  x - 3 &\neq 0\\
+  x &\neq 3
+\end{align*}
+
+Tím jsme určili hodnotu, kterou \(x\) nesmí nabývat — jinak by došlo k dělení nulou.
+
+\medskip
+Nyní odstraníme jmenovatel.  
+Rovnici vynásobíme výrazem \(x - 3\), který je (dle podmínky) nenulový:
+\[
+(x - 3)\cdot\frac{2x - 5}{x - 3} = (x - 3)\cdot 1.
+\]
+
+Po úpravě se jmenovatelé zkrátí:
+\[
+2x - 5 = x - 3.
+\]
+
+Získali jsme běžnou lineární rovnici, kterou už vyřešíme obvyklým způsobem:
+\begin{align*}
+  2x - 5 &= x - 3 \\
+  2x - x &= -3 + 5 \\
+  x &= 2
+\end{align*}
+
+Nakonec ověříme, že nalezené řešení neporušuje podmínku \(x \neq 3\).  
+Protože \(x = 2\) je povolené, můžeme výsledek přijmout.
+
+\[
+\textbf{Řešení:} \quad x = 2.
+\]
+
+\[
+\textbf{Množina řešení:} \quad K = \{2\}.
+\]
+
+\medskip
+Vidíme, že kromě běžného postupu přibylo jen jedno pravidlo:  
+vždy je třeba zkontrolovat, zda nalezené řešení nevede k dělení nulou.  
+Pokud by tomu tak bylo, musíme jej \textbf{vyloučit} jako \textbf{zdánlivé řešení}.
+
+\medskip
+Podívejme se nyní na situaci, kdy nalezené řešení nevyhovuje podmínce — vznikne tak \textbf{zdánlivé řešení}.
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Vyřešte rovnici
+\[
+\frac{x + 2}{x - 1} = \frac{3x - 1}{x - 1}.
+\]
+
+\textbf{Podmínka:}  
+Jmenovatel nesmí být nulový, tedy \(x - 1 \neq 0 \Rightarrow x \neq 1.\)
+
+\textit{Rovnici vynásobíme jmenovatelem \((x - 1)\) a upravíme:}
+\begin{align*}
+(x - 1)\cdot \frac{x + 2}{x - 1} &= (x - 1)\cdot \frac{3x - 1}{x - 1}\\[-2pt]
+x + 2 &= 3x - 1\\
+3 &= 2x\\
+x &= \tfrac{3}{2}.
+\end{align*}
+
+\textbf{Zkouška:}  
+Pro \(x = \tfrac{3}{2}\) je jmenovatel \(x - 1 = \tfrac{1}{2} \neq 0\), takže řešení je platné.  
+Pokud by vyšlo \(x = 1\), nebylo by přípustné (dělení nulou).
+
+\[
+\textbf{Řešení:}\; x = \tfrac{3}{2} \qquad
+\textbf{Množina řešení:}\; K = \left\{\tfrac{3}{2}\right\}.
+\]
+\end{examplebox}
+
+
+\begin{notebox}
+\textbf{Shrnutí postupu:}
+\begin{enumerate}
+  \item Urč podmínky, za kterých mají všechny jmenovatele smysl (nesmí být nulové).
+  \item Rovnici vynásob nejmenším společným jmenovatelem (NSJ) – tím odstraníš zlomky.
+  \item Vyřeš vzniklou lineární rovnici.
+  \item Každé nalezené řešení ověř: pokud ruší jmenovatel, je \textbf{zdánlivé}.
+\end{enumerate}
+
+\textbf{Pozor:} Každá rovnice s neznámou ve jmenovateli musí mít \textbf{zkoušku},  
+jinak hrozí, že mezi řešeními zůstane hodnota, pro kterou je rovnice nedefinovaná.
+\end{notebox}
+
+
+
+\newpage
+\section{Soustavy lineárních rovnic}
+\subsection{Soustava dvou rovnic o dvou neznámých}
+
+
+Zatímco při řešení jedné rovnice hledáme hodnotu jedné neznámé,  
+v soustavách rovnic se snažíme nalézt \important{společné řešení} pro více neznámých najednou.  
+Takové úlohy se v praxi objevují velmi často – od hledání průsečíku dvou přímek, přes rovnováhu sil v mechanice,  
+až po analýzu hospodářských vztahů v ekonomii.  
+
+\medskip
+Každou z rovnic můžeme chápat jako \textbf{podmínku}, kterou mají neznámé splňovat.  
+Hledáme tedy takové hodnoty, které vyhovují \textbf{všem} rovnicím zároveň.
+
+\begin{definitionbox}
+\textbf{Soustava dvou lineárních rovnic o dvou neznámých} je dvojice rovnic tvaru
+\[
+\begin{cases}
+a_1x + b_1y = c_1,\\[4pt]
+a_2x + b_2y = c_2,
+\end{cases}
+\]
+kde \(a_1, b_1, c_1, a_2, b_2, c_2 \in \mathbb{R}\), přičemž alespoň jeden z koeficientů \(a_i, b_i\) je nenulový.
+
+\medskip
+\textbf{Řešením soustavy} nazýváme každou uspořádanou dvojici \([x_0;y_0]\), která splňuje \textbf{obě rovnice zároveň}.  
+Množinu všech řešení označujeme písmenem \(K\).
+\end{definitionbox}
+
+\noindent
+Je-li některá z rovnic soustavy neplatná nebo nadbytečná, může to ovlivnit existenci řešení celé soustavy:
+
+\begin{itemize}
+  \item Pokud \(a_1 = b_1 = c_1 = 0\), pak první rovnice neobsahuje žádnou informaci  
+  a soustavu můžeme \textbf{zredukovat na jedinou rovnici} (tedy řešení přechází na soustavu s jednou rovnicí o dvou neznámých).  
+  Takové případy budeme řešit dále při studiu \textbf{jedné lineární rovnice s více neznámými}.
+  
+  \item Pokud \(a_1 = b_1 = 0\) a zároveň \(c_1 \neq 0\), pak první rovnice představuje \textbf{nesmyslné tvrzení}  
+  (například \(0 = 5\)), čili rovnice nemá řešení a tedy ani soustava \textbf{nemá žádné řešení}, protože nelze splnit všechny podmínky zároveň.
+\end{itemize}
+
+
+Každou z těchto rovnic můžeme chápat jako přímku v rovině.  
+Řešení soustavy pak odpovídá \textbf{průsečíku těchto přímek} – tedy bodu, který \textbf{leží na obou přímkách zároveň}.
+
+\subsubsection*{Z geometrického hlediska tedy platí:}
+
+\begin{notebox}
+Každá lineární rovnice o dvou neznámých představuje v rovině přímku.  
+Řešení soustavy dvou lineárních rovnic o dvou neznámých odpovídá bodu (nebo více bodům), které leží \textbf{na obou přímkách zároveň}.
+\end{notebox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  % Osy
+  \draw[->, thick] (-1,0)--(5,0) node[right]{$x$};
+  \draw[->, thick] (0,-1)--(0,4) node[above]{$y$};
+  
+  % Přímky
+  \draw[thick, pastelorange!90!black] (-0.5,2.25)--(4.5,0.75) node[right, black]{$a_1x + b_1y = c_1$};
+  \draw[thick, pastelgreen!70!black] (-0.5,0.5)--(4.5,3.5) node[right, black]{$a_2x + b_2y = c_2$};
+  
+  % Průsečík
+  \filldraw[orange] (1.45,1.66) circle (2pt) node[below right] {$[x_0;y_0]$};
+\end{tikzpicture}
+\end{center}
+
+
+Podle vzájemné polohy těchto přímek mohou nastat tři základní situace:
+
+\begin{enumerate}[label=\arabic*.]
+  \item \textbf{Průsečík existuje právě jeden} — přímky se protínají v jednom bodě.  
+  Soustava má \important{jediné řešení}.
+
+  \item \textbf{Přímky se kryjí} — každá hodnota, která vyhovuje jedné rovnici, vyhovuje i druhé.  
+  Soustava má \important{nekonečně mnoho řešení}.
+
+  \item \textbf{Přímky jsou rovnoběžné} — žádný bod nevyhovuje oběma rovnicím současně.  
+  Soustava \important{nemá řešení}.
+\end{enumerate}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.75]
+  % 1. Jedno řešení
+  \begin{scope}
+    \draw[->] (-1,0)--(3,0);
+    \draw[->] (0,-1)--(0,3);
+    \draw[pastelorange!90!black, thick] (-0.5,2)--(2.5,0.5);
+    \draw[pastelgreen!70!black, thick] (-0.5,0.5)--(2.5,2);
+    \filldraw[orange] (1,1.25) circle (2pt);
+    \node at (1,-1.3) {\small jedno řešení};
+  \end{scope}
+
+  % 2. Nekonečně mnoho řešení
+  \begin{scope}[xshift=5cm]
+    \draw[->] (-1,0)--(3,0);
+    \draw[->] (0,-1)--(0,3);
+    \draw[pastelorange!90!black, thick] (-0.5,0.5)--(2.5,2);
+    \draw[pastelgreen!70!black, thick, dashed] (-0.5,0.5)--(2.5,2);
+    \node at (1,-1.3) {\small nekonečně mnoho řešení};
+  \end{scope}
+
+  % 3. Žádné řešení
+  \begin{scope}[xshift=10cm]
+    \draw[->] (-1,0)--(3,0);
+    \draw[->] (0,-1)--(0,3);
+    \draw[pastelorange!90!black, thick] (-0.5,0.5)--(2.5,2);
+    \draw[pastelgreen!70!black, thick] (-0.5,0)--(2.5,1.5);
+    \node at (1,-1.3) {\small žádné řešení};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+
+V dalších kapitolách si ukážeme tři základní metody řešení soustav lineárních rovnic:
+\begin{enumerate}[label=\arabic*.]
+    \item \textbf{Sčítací metodou} – úpravou a sečtením rovnic odstraníme jednu neznámou.
+    \item \textbf{Dosazovací metodou} – z jedné rovnice vyjádříme neznámou a dosadíme do druhé.
+    \item \textbf{Substituční metodou} – zavedením nové proměnné zjednodušíme zápis soustavy;  
+    u lineárních rovnic se však s touto metodou setkáme jen výjimečně – častěji ji využijeme  
+    při řešení \important{kvadratických} nebo \important{exponenciálních} rovnic, kde pomáhá odstranit složitější členy.
+    \item \textbf{Grafickou metodou} – nalezením průsečíku přímek v souřadnicové rovině.
+\end{enumerate}
+
+
+
+
+\subsection{Metody řešení soustav}
+
+\subsubsection*{Sčítací metoda}
+
+Tato metoda se používá zejména tehdy, když všechny koeficienty \(a_1, a_2, b_1, b_2\) jsou nenulové.  
+Princip spočívá v tom, že soustavu upravíme tak, aby se jedna z neznámých po sečtení (nebo odečtení) rovnic \textbf{vyrušila}.  
+Tím získáme rovnici pouze s jednou neznámou, kterou snadno určíme.
+
+\begin{align*}
+x - 5y &= 12,\\
+x - 4y &= 15.
+\end{align*}
+
+První rovnici vynásobíme \(-1\), abychom získali opačný koeficient u neznámé \(x\):
+
+\begin{align*}
+-x + 5y &= -12,\\ 
+x - 4y &= 15.
+\end{align*}
+
+Když již máme tuto podobu soustavy, můžeme rovnice sečíst:
+
+\[
+(-x + 5y) + (x - 4y) = -12 + 15.
+\]
+
+Tím dostaneme:
+
+\[
+-x + x + 5y - 4y = 3,
+\]
+
+a po úpravě:
+
+\[
+y = 3.
+\]
+
+Tuto hodnotu nyní dosadíme do jedné z původních rovnic, například do první:
+
+\begin{align*}
+x - 5y &= 12,\\
+x - 5\cdot 3 &= 12,\\
+x - 15 &= 12 \quad | +15,\\
+x &= 27.
+\end{align*}
+
+\textbf{Řešení soustavy:} \quad \(x = 27,\; y = 3\)
+
+\medskip
+\textbf{Množina řešení:} \quad \(K = \{[27;3]\}\)
+
+\medskip
+Vidíme tedy, že po vhodné úpravě jedné rovnice a následném sečtení obou jsme získali přímou hodnotu jedné z neznámých.  
+Tento postup je velmi efektivní zejména tehdy, když se koeficienty jednotlivých neznámých dají snadno převést na opačné hodnoty.
+
+\begin{examplebox}
+\textbf{Sčítací metoda}
+
+Řešme soustavu rovnic:
+\[
+\begin{cases}
+3x + 2y = -4,\\
+2x - 3y = 19.
+\end{cases}
+\]
+
+\textit{Postup řešení:}
+\begin{align*}
+3x + 2y &= -4 \quad | \cdot 3,\\
+2x - 3y &= 19 \quad | \cdot 2,\\[-4pt]
+\multicolumn{2}{c}{\rule{4cm}{0.3pt}} \\[-2pt]
+9x + 6y &= -12,\\
+4x - 6y &= 38,\\[-4pt]
+\multicolumn{2}{c}{\rule{4cm}{0.3pt}} \\[-2pt]
+13x &= 26 \quad | :13,\\
+x &= 2.
+\end{align*}
+
+Dosadíme do první rovnice:
+\begin{align*}
+3x + 2y &= -4,\\
+3\cdot2 + 2y &= -4,\\
+6 + 2y &= -4 \quad | -6,\\
+2y &= -10 \quad | :2,\\
+y &= -5.
+\end{align*}
+
+\textbf{Řešení soustavy:} \quad \(x = 2,\; y = -5\)
+
+\medskip
+\textbf{Množina řešení:} \quad \(K = \{[2;-5]\}\)
+\end{examplebox}
+
+
+
+\subsubsection*{Dosazovací metoda}
+
+Tato metoda je založena na tom, že z jedné rovnice vyjádříme jednu neznámou pomocí druhé  
+a tento výraz \textbf{dosadíme do druhé rovnice}. Tím získáme opět jedinou rovnici s jednou neznámou.
+
+\begin{align*}
+x - 5y &= 12,\\
+x - 4y &= 15.
+\end{align*}
+
+Z první rovnice vyjádříme neznámou \(x\):
+
+\[
+x = 12 + 5y.
+\]
+
+Tento výraz dosadíme do druhé rovnice místo \(x\):
+
+\begin{align*}
+(12 + 5y) - 4y &= 15,\\
+12 + y &= 15.
+\end{align*}
+
+Po úpravě dostaneme:
+
+\[
+y = 3.
+\]
+
+Nyní dosadíme tuto hodnotu do výrazu \(x = 12 + 5y\):
+
+\begin{align*}
+x &= 12 + 5\cdot 3\\
+x &= 12 + 15\\
+x &= 27
+\end{align*}
+
+\textbf{Řešení soustavy:} \quad \(x = 27,\; y = 3\)
+
+\medskip
+\textbf{Množina řešení:} \quad \(K = \{[27;3]\}\)
+
+\medskip
+Vidíme tedy, že po vyjádření jedné neznámé z první rovnice a jejím dosazení do druhé  
+jsme získali přímé vyjádření druhé neznámé. Tento postup bývá obzvláště vhodný, pokud má některá z rovnic jednoduchý koeficient u jedné z neznámých (např. \(1\) nebo \(-1\)).
+
+\begin{examplebox}
+\textbf{Dosazovací metoda:}
+
+Řešme následující soustavu rovnic:
+\[
+\begin{cases}
+2x + 7y = 0,\\
+5y = -3.
+\end{cases}
+\]
+
+\textit{Postup řešení:}
+\begin{align*}
+  2x + 7y &= 0\\
+  5y &= -3 \quad \Rightarrow y=-\frac{3}{5}\\[-4pt]
+  \multicolumn{2}{c}{\rule{4cm}{0.3pt}} \\[-2pt]
+  2x + 7y &= 0\\
+  2x + 7\left(-\frac{3}{5}\right) &= 0\\
+  2x - \frac{21}{5} &= 0 \quad | +\frac{21}{5}\\
+  2x &= \frac{21}{5} \quad | :2\\
+  x &= \frac{21}{10}
+\end{align*}
+
+\textbf{Řešení soustavy:} \quad \(x = \tfrac{21}{10},\; y = -\tfrac{3}{5}\)
+
+\medskip
+\textbf{Množina řešení:} \quad \(K = \left\{\left[\tfrac{21}{10}; -\tfrac{3}{5}\right]\right\}\)
+\end{examplebox}
+
+\newpage
+\begin{examplebox}
+\textbf{Nekonečně mnoho řešení (rovnice jsou násobky)}
+
+Řešme soustavu:
+\[
+\begin{cases}
+x + 2y = 3,\\
+2x + 4y = 6.
+\end{cases}
+\]
+
+\textit{Postup: vynásobíme první rovnici $2$ a odečteme od druhé.}
+\begin{align*}
+x + 2y &= 3 \quad |\cdot 2,\\
+2x + 4y &= 6,\\[-4pt]
+\multicolumn{2}{c}{\rule{4cm}{0.3pt}}\\[-2pt]
+2x + 4y &= 6,\\
+2x + 4y &= 6 \quad | \cdot(-1),\\[-4pt]
+\multicolumn{2}{c}{\rule{4cm}{0.3pt}}\\[-2pt]
+2x + 4y &= 6,\\
+-2x - 4y &= -6 \\[-4pt]
+\multicolumn{2}{c}{\rule{4cm}{0.3pt}}\\[-2pt]
+0 &= 0.
+\end{align*}
+
+Dostali jsme tautologii \(0=0\) — druhá rovnice je \textbf{lineární kombinací} první, takže soustava má \textbf{nekonečně mnoho řešení}: všechny body na přímce \(x + 2y = 3\).
+
+\medskip
+\textbf{Zápis množiny řešení:}
+\newline
+Klasický zápis:
+\[
+K=\emptyset
+\]
+nebo parametricky
+\[
+K = \bigl\{\, [\,3-2t;\; t\,] \;\big|\; t\in\mathbb{R} \,\bigr\}.
+\]
+\end{examplebox}
+
+
+
+\newpage
+\section{Soustavy lineárních nerovnic}
+
+Zatímco \textbf{soustavy rovnic} hledají takové hodnoty, které \emph{vyhovují všem rovnicím zároveň} a tedy představují \textbf{průsečík přímek},  
+\textbf{soustavy nerovnic} určují \textbf{množinu všech bodů}, které \emph{splňují všechny nerovnosti současně}.  
+
+V rovině proto místo jednoho bodu často získáváme \textbf{oblast} – například trojúhelník, pás nebo polorovinu.
+
+\begin{definitionbox}
+\textbf{Soustava lineárních nerovnic o dvou neznámých} je dvojice (nebo více) nerovnic tvaru
+\[
+\begin{cases}
+a_1x + b_1y \,\square\, c_1,\\[4pt]
+a_2x + b_2y \,\square\, c_2,\\[2pt]
+\end{cases}
+\]
+kde \(a_1, b_1, c_1, a_2, b_2, c_2  \in \mathbb{R}\) a symbol \(\square \in \{<,\,>,\,\le,\,\ge\}\).  
+
+\textbf{Řešením soustavy} rozumíme všechny dvojice \([x_0;y_0]\), které splňují \emph{všechny} nerovnosti současně.  
+Množinu všech řešení značíme obvykle písmenem \(K\).
+\end{definitionbox}
+
+\noindent
+Z geometrického hlediska představuje každá z těchto nerovnic jednu \textbf{polorovinu},  
+a řešení soustavy je jejich \textbf{průnik}.
+
+\begin{notebox}
+Každá lineární nerovnice o dvou neznámých představuje v rovině \textbf{polorovinu},  
+jejíž hranici tvoří přímka \(a_i x + b_i y = c_i\).  
+Pokud je nerovnost ostrá (\(<\) nebo \(>\)), hranice do řešení \textbf{nepatří};  
+pokud je neostrá (\(\le\) nebo \(\ge\)), hranice je \textbf{součástí} řešení.
+\end{notebox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.8]
+  % Osy
+  \draw[->, thick] (-1,0)--(5,0) node[right]{$x$};
+  \draw[->, thick] (0,-1)--(0,4) node[above]{$y$};
+  % Přímka
+  \draw[thick, pastelblue!80!black] (-0.5,1.5)--(4.5,3) node[right, black]{$x + 2y = 4$};
+  % Vybarvená oblast
+  \fill[pastelblue!30, opacity=0.4] (-1,-1)--(5,-1)--(5,3.15)--(-1,1.35)--cycle;
+  \node[below right] at (1,0.5) {\small $x + 2y < 4$};
+\end{tikzpicture}
+\end{center}
+
+\noindent
+Vidíme, že každá lineární nerovnice rozdělí rovinu na dvě části – jednu, která danou nerovnici splňuje, a druhou, která ji nesplňuje.  
+Při řešení soustavy hledáme oblast, která vyhovuje všem nerovnicím současně.
+
+\begin{examplebox}
+\textbf{Příklad:}
+
+Řešme soustavu nerovnic:
+\[
+\begin{cases}
+x + y \le 4,\\
+x - y \ge 0.
+\end{cases}
+\]
+
+\textbf{Řešení:}
+
+1. Přepíšeme nerovnice do tvaru funkcí:
+\[
+y \le -x + 4, \qquad y \le x.
+\]
+2. Každá z těchto nerovnic představuje oblast pod (nebo nad) danou přímkou.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  % Osy
+  \draw[->, thick] (-1,0)--(5,0) node[right]{$x$};
+  \draw[->, thick] (0,-1)--(0,5) node[above]{$y$};
+  
+  % Přímky
+  \draw[thick, pastelblue!80!black] (-0.5,4.5)--(4.5,-0.5) node[right]{$y=-x+4$};
+  \draw[thick, pastelgreen!70!black] (-0.5,-0.5)--(4.5,4.5) node[right]{$y=x$};
+
+  % Vybarvení oblasti
+  \fill[pastelorange!30, opacity=0.4] (0,0)--(2,2)--(4,0)--cycle;
+\end{tikzpicture}
+\end{center}
+
+\textbf{Výsledek:}  
+Řešením soustavy je trojúhelníková oblast ohraničená přímkami \(y = -x + 4\), \(y = x\) a osou \(x\).
+\end{examplebox}
+
+\begin{notebox}
+\textbf{Shrnutí:}  
+Při řešení soustav nerovnic hledáme oblast, která splňuje všechny podmínky zároveň.  
+Typicky jde o průnik několika polorovin – oblast může mít tvar trojúhelníku, čtyřúhelníku nebo pruhu mezi dvěma rovnoběžkami.
+\end{notebox}
+
+
+\newpage
+\section{Jedna lineární rovnice o dvou neznámých}
+
+Při řešení lineárních rovnic jsme zatím hledali \textbf{jedinou hodnotu neznámé}, která rovnici splňuje.  
+Nyní se zaměříme na rovnice, které obsahují \textbf{dvě neznámé} – například \(x\) a \(y\).  
+Tyto rovnice již nemají jediné řešení, ale \textbf{nekonečně mnoho řešení} tvořících určitý geometrický útvar v rovině.
+
+\begin{definitionbox}
+\textbf{Lineární rovnice o dvou neznámých} je každá rovnice, kterou lze převést do tvaru
+\[
+a x + b y = c,
+\]
+kde \(a, b, c \in \mathbb{R}\) a alespoň jeden z koeficientů \(a\) nebo \(b\) je nenulový.
+\end{definitionbox}
+
+Každé řešení této rovnice představuje \textbf{uspořádanou dvojici čísel} \([x_0; y_0]\), která po dosazení splňuje vztah \(a x_0 + b y_0 = c\).  
+Množinu všech těchto dvojic označujeme \(K\).
+
+\medskip
+Zatímco lineární rovnice o jedné neznámé má řešení v podobě \textbf{bodů na číselné ose},  
+rovnice o dvou neznámých má řešení v podobě \textbf{bodů v rovině}.  
+Tato množina bodů tvoří \textbf{přímku}.
+
+\begin{notebox}
+Každá lineární rovnice o dvou neznámých představuje v rovině \textbf{přímku}.  
+Každý bod této přímky odpovídá jednomu řešení rovnice.
+\end{notebox}
+
+\medskip
+Rovnici \(a x + b y = c\) můžeme vyjádřit také ve tvaru
+\[
+y = -\frac{a}{b}x + \frac{c}{b},
+\]
+pokud \(b \neq 0\). Tento tvar známe z lineární funkce \(y = kx + q\),  
+kde směrnice přímky je \(k = -\frac{a}{b}\) a průsečík s osou \(y\) je \(q = \frac{c}{b}\).
+
+\begin{examplebox}
+\textbf{Příklad:}
+
+Uvažujme rovnici
+\[
+2x + 3y = 6.
+\]
+
+Vyjádříme \(y\) pomocí \(x\):
+\[
+3y = -2x + 6 \quad \Rightarrow \quad y = -\frac{2}{3}x + 2.
+\]
+
+Rovnice tedy představuje přímku se směrnicí \(k = -\frac{2}{3}\)  
+a průsečíkem s osou \(y\) v bodě \([0;2]\).
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-1, xmax=6,
+    ymin=-1, ymax=4,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    width=0.75\linewidth,
+    height=6cm,
+    samples=100,
+    domain=-1:6,
+    grid=none,
+    title={Graf rovnice $2x + 3y = 6$}
+]
+    \addplot[thick, pastelblue!80!black, domain=-1:6]{-2/3*x + 2};
+    \addplot[only marks, mark=*, pastelblue!80!black] coordinates {(0,2) (3,0)};
+    \node[above right, pastelblue!80!black] at (axis cs:3,0) {$[3;0]$};
+    \node[right, pastelblue!80!black] at (axis cs:0,2) {$[0;2]$};
+\end{axisgraph}
+\end{center}
+
+\textbf{Výsledek:}  
+Množinu všech řešení tvoří přímka procházející body \([0;2]\) a \([3;0]\).
+
+\[
+K = \{[x;y] \in \mathbb{R}^2 ; 2x + 3y = 6\}.
+\]
+
+Ekvivalentně můžeme množinu řešení vyjádřit i tak, že jedna proměnná je volná a druhou dopočítáme z rovnice.  
+Z výrazu \(y = -\frac{2}{3}x + 2\) tedy platí:
+\[
+K = \left\{[x;\,-\tfrac{2}{3}x + 2] ; x \in \mathbb{R}\right\}.
+\]
+
+\medskip
+Tento zápis zdůrazňuje, že každé reálné číslo \(x\) určuje právě jeden bod \([x;y]\) na přímce —  
+množinu všech takových bodů pak tvoří celá přímka, která je řešením dané rovnice.
+
+\end{examplebox}
+
+\medskip
+Z geometrického hlediska tedy platí, že každá rovnice o dvou neznámých popisuje všechny body, které leží na určité přímce v rovině.  
+Pokud k této rovnici přidáme druhou (tedy vytvoříme soustavu), hledáme \textbf{průsečík} těchto přímek – právě ten odpovídá společnému řešení.
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+    \item Rovnice o jedné neznámé → řešením jsou body na číselné ose.
+    \item Rovnice o dvou neznámých → řešením je přímka v rovině.
+    \item Soustava dvou rovnic → řešením je průsečík dvou přímek.
+\end{itemize}
+\end{notebox}
+
+
+
+
+
+\newpage
+\section{Lineární rovnice s absolutní hodnotou}
+
+V předchozích kapitolách jsme řešili rovnice, ve kterých se neznámá vyskytovala v lineárním tvaru, tedy bez mocnin či jiných operací.  
+Nyní se setkáme s případy, kdy je neznámá součástí \textbf{absolutní hodnoty}.  
+Takové rovnice se sice tváří jednoduše, ale vyžadují určitou pozornost, protože \textbf{absolutní hodnota může skrývat dvě různé situace}.  
+
+\medskip
+Absolutní hodnota čísla vyjadřuje jeho \textbf{vzdálenost od nuly} na číselné ose —  
+nezáleží tedy na tom, zda je číslo kladné, nebo záporné, výsledná hodnota je vždy nezáporná.  
+Například \(|3| = 3\) a \(|-3| = 3\).
+
+\begin{definitionbox}
+\textbf{Absolutní hodnota reálného čísla} \(a\) je definována takto:
+\[
+|a| =
+\begin{cases}
+a, & \text{je-li } a \ge 0,\\[4pt]
+-a, & \text{je-li } a < 0.
+\end{cases}
+\]
+\end{definitionbox}
+
+\noindent
+Z této definice můžeme odvodit několik základních vlastností,  
+které nám usnadní práci při výpočtech s absolutní hodnotou.
+
+\begin{notebox}
+\textbf{Vlastnosti absolutní hodnoty:}
+\[
+\begin{aligned}
+|a| &\ge 0, \\[4pt]
+|a| &= |-a|, \\[4pt]
+|a \cdot b| &= |a| \cdot |b|, \\[4pt]
+\left|\frac{a}{b}\right| &= \frac{|a|}{|b|}, \quad \text{je-li } b \neq 0.
+\end{aligned}
+\]
+\end{notebox}
+
+\noindent
+Z geometrického hlediska tedy absolutní hodnota představuje \textbf{vzdálenost bodu} s souřadnicí \(a\) od počátku souřadnicového systému.  
+Proto je výsledkem vždy nezáporné číslo.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[->, thick] (-4,0)--(5,0) node[right]{$x$};
+  \foreach \x in {-3,-2,-1,0,1,2,3,4}
+    \draw (\x,0.1)--(\x,-0.1) node[below]{\small \x};
+  \draw[thick, pastelblue, fill=pastelblue!30] (3,0) circle (2pt);
+  \draw[thick, pastelblue, fill=pastelblue!30] (-3,0) circle (2pt);
+  \draw[<->, gray!70] (-3,0.4)--(0,0.4) node[midway, above]{$3$};
+  \draw[<->, gray!70] (0,0.4)--(3,0.4) node[midway, above]{$3$};
+\end{tikzpicture}
+\end{center}
+
+\noindent
+Například čísla \(-3\) a \(3\) mají od nuly stejnou vzdálenost — právě tuto vzdálenost zachycuje absolutní hodnota.  
+
+\begin{notebox}
+Absolutní hodnota čísla představuje jeho vzdálenost od nuly,  
+a proto je výsledkem vždy číslo \textbf{nezáporné}.
+\end{notebox}
+
+\medskip
+Pokud se absolutní hodnota objeví v rovnici, musíme rozlišit,  
+\textbf{zda je výraz uvnitř kladný, nebo záporný}.  
+To znamená, že každá taková rovnice vede na \textbf{dvě lineární rovnice},  
+které řešíme samostatně.
+
+\begin{definitionbox}
+\textbf{Obecný tvar lineární rovnice s absolutní hodnotou:}
+\[
+|ax + b| = c,
+\]
+kde \(a, b, c \in \mathbb{R}\).
+
+\textbf{Řešení:}
+\begin{itemize}
+  \item pokud \(c < 0\), rovnice nemá řešení (absolutní hodnota nemůže být záporná);
+  \item pokud \(c \ge 0\), řešíme dvojici rovnic:
+  \[
+  \begin{cases}
+  ax + b = c,\\[4pt]
+  ax + b = -c.
+  \end{cases}
+  \]
+\end{itemize}
+\end{definitionbox}
+
+\noindent
+Tyto dvě rovnice řešíme obvyklým způsobem a jejich řešení pak spojíme do jedné množiny.
+
+\medskip
+Nyní si ukážeme základní příklad, na kterém si princip řešení vysvětlíme krok za krokem.
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Vyřešte rovnici
+\[
+|x - 5| = 2.
+\]
+
+\textbf{1. Algebraický postup:}
+
+Podle definice absolutní hodnoty rozlišíme dva případy:
+\[
+\begin{cases}
+x - 5 = 2,\\[4pt]
+x - 5 = -2.
+\end{cases}
+\]
+
+\textbf{Výsledek:}
+
+\[
+K = \{3, 7\},
+\begin{cases}
+x = 7,\\[4pt]
+x = 3.
+\end{cases}
+\]
+
+\medskip
+\textbf{2. Geometrická představa:}
+
+Absolutní hodnota vyjadřuje vzdálenost.  
+Rovnice \(|x - 5| = 2\) říká, že hledáme všechna čísla, jejichž vzdálenost od čísla \(5\) je rovna \(2\).
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+  \draw[->, thick] (-1,0)--(9,0) node[right]{$x$};
+  \foreach \x in {0,1,...,8}
+    \draw (\x,0.1)--(\x,-0.1) node[below]{\small \x};
+  % body
+  \filldraw[pastelblue] (5,0) circle (2pt) node[above=3pt]{$5$};
+  \filldraw[pastelorange] (3,0) circle (2pt) node[above=3pt]{$3$};
+  \filldraw[pastelorange] (7,0) circle (2pt) node[above=3pt]{$7$};
+  % vzdálenosti
+  \draw[<->, gray!70] (3,0.6)--(5,0.6) node[midway, above]{$2$};
+  \draw[<->, gray!70] (5,0.6)--(7,0.6) node[midway, above]{$2$};
+\end{tikzpicture}
+\end{center}
+
+Z grafu je zřejmé, že od bodu \(5\) leží dva body ve vzdálenosti \(2\) – tedy \(x = 3\) a \(x = 7\).  
+Tyto hodnoty odpovídají i algebraickému řešení.
+
+\end{examplebox}
+
+\noindent
+Vidíme tedy, že algebraický a geometrický přístup dávají stejný výsledek –  
+zatímco algebraické řešení vychází z definice absolutní hodnoty,  
+geometrická představa zdůrazňuje význam jako \textbf{vzdálenosti na číselné ose}.
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+  \item Absolutní hodnota představuje vzdálenost od nuly, a proto je vždy nezáporná.
+  \item Rovnici \(|ax + b| = c\) řešíme rozborem dvou případů:
+  \[
+  \begin{cases}
+  ax + b = c,\\[4pt]
+  ax + b = -c.
+  \end{cases}
+  \]
+  \item Geometricky hledáme všechny body, jejichž vzdálenost od bodu s souřadnicí \(-\tfrac{b}{a}\) je rovna \(\tfrac{c}{|a|}\).
+\end{itemize}
+\end{notebox}
+
+
+Mějme například tuto rovnici:
+\[
+|x - 2| + |2x - 8| = 5.
+\]
+
+Tento příklad je složitější, protože obsahuje \textbf{dvě absolutní hodnoty}.  
+V takovém případě už nestačí jen rozdělit na dva případy –  
+musíme nejprve zjistit, \textbf{v jakých intervalech mají výrazy uvnitř absolutních hodnot kladné nebo záporné hodnoty}.  
+
+\medskip
+Každá absolutní hodnota se mění v bodě, kde je její vnitřní výraz nulový:
+
+\[
+\begin{aligned}
+x - 2 &= 0 \quad \Rightarrow \quad x = 2,\\
+2x - 8 &= 0 \quad \Rightarrow \quad x = 4.
+\end{aligned}
+\]
+
+Těmito body si tedy rozdělíme číselnou osu na tři intervaly:
+\[
+(-\infty, 2), \quad \langle 2, 4), \quad \langle 4, \infty).
+\]
+
+V každém z nich má výraz uvnitř absolutní hodnoty jiná znaménka,  
+a proto musíme v každém intervalu rovnici rozepsat zvlášť.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[->, thick] (-3,0)--(8,0) node[right]{$x$};
+  \foreach \x in {-2,-1,0,1,2,3,4,5,6,7}
+    \draw (\x,0.1)--(\x,-0.1) node[below]{\small \x};
+  % body
+  \filldraw[pastelorange!80!black] (2,0) circle (2pt) node[above=3pt]{$2$};
+  \filldraw[pastelorange!80!black] (4,0) circle (2pt) node[above=3pt]{$4$};
+  % intervals
+  \node[above, pastelorange!80!black] at (0.2,0.3) {\small $x<2$};
+  \node[above, pastelorange!80!black] at (3,0.3) {\small $2\le x<4$};
+  \node[above, pastelorange!80!black] at (6,0.3) {\small $x\ge4$};
+\end{tikzpicture}
+\end{center}
+
+\textbf{1. interval:} \(x < 2\)
+
+Oba výrazy jsou záporné, proto oba měníme na opačné:
+\[
+-(x - 2) - (2x - 8) = 5.
+\]
+\[
+-x + 2 - 2x + 8 = 5 \quad \Rightarrow \quad -3x + 10 = 5 \quad \Rightarrow \quad x = \tfrac{5}{3}.
+\]
+Tento výsledek patří do intervalu \((- \infty, 2)\), takže jej přijímáme.
+
+\[
+\Rightarrow \; x_1 = \tfrac{5}{3}.
+\]
+
+\medskip
+\textbf{2. interval:} \(2 \le x < 4\)
+
+Zde první výraz \((x - 2)\) je kladný, druhý \((2x - 8)\) je záporný.
+\[
+(x - 2) - (2x - 8) = 5.
+\]
+\[
+x - 2 - 2x + 8 = 5 \quad \Rightarrow \quad -x + 6 = 5 \quad \Rightarrow \quad x = 1.
+\]
+Tento výsledek však do intervalu \(\langle 2, 4)\) nepatří, proto ho \textbf{nepřijímáme.}
+
+\medskip
+\textbf{3. interval:} \(x \ge 4\)
+
+Oba výrazy jsou kladné:
+\[
+(x - 2) + (2x - 8) = 5.
+\]
+\[
+3x - 10 = 5 \quad \Rightarrow \quad x = 5.
+\]
+Tento výsledek do intervalu \(\langle 4, \infty)\) patří, takže ho přijímáme.
+
+\[
+\Rightarrow \; x_2 = 5.
+\]
+
+\medskip
+\textbf{Výsledek:}
+\[
+K = \left\{\tfrac{5}{3},\,5\right\}.
+\]
+
+
+\noindent
+Vidíme, že u rovnic s více absolutními hodnotami musíme nejprve určit intervaly,  
+ve kterých se výrazy uvnitř absolutních hodnot nemění ve znaménku.  
+Teprve poté lze správně sestavit jednotlivé lineární rovnice a určit všechna řešení.
+
+\begin{notebox}
+\textbf{Postup řešení rovnic s více absolutními hodnotami:}
+\begin{enumerate}[label=\arabic*.]
+  \item Najdi body, ve kterých se vnitřní výrazy rovnají nule.
+  \item Rozděl číselnou osu podle těchto bodů na intervaly.
+  \item V každém intervalu nahraď absolutní hodnoty příslušnými výrazy se správným znaménkem.
+  \item Řeš vzniklé lineární rovnice a ověř, zda výsledky do daných intervalů patří.
+\end{enumerate}
+\end{notebox}
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Vyřešte rovnici
+\[
+|x - 2| = |x + 1|.
+\]
+
+Nulové body jednotlivých absolutních hodnot jsou \(x = 2\) a \(x = -1\).  
+Číselnou osu si tedy rozdělíme na tři intervaly:
+\[
+(-\infty, -1), \quad \langle -1, 2), \quad \langle 2, \infty).
+\]
+
+\newpage
+\textbf{1. interval:} \(x < -1\)
+
+Oba výrazy jsou záporné:
+\[
+-(x - 2) = -(x + 1) \quad \Rightarrow \quad -x + 2 = -x - 1.
+\]
+Tato rovnost neplatí (žádné řešení).
+
+\medskip
+\textbf{2. interval:} \(-1 \le x < 2\)
+
+Zde první výraz \((x - 2)\) je záporný a druhý \((x + 1)\) kladný:
+\[
+-(x - 2) = x + 1 \quad \Rightarrow \quad -x + 2 = x + 1 \quad \Rightarrow \quad 2x = 1 \quad \Rightarrow \quad x = \tfrac{1}{2}.
+\]
+Tento výsledek do intervalu patří, tedy jej přijímáme.
+
+\medskip
+\textbf{3. interval:} \(x \ge 2\)
+
+Oba výrazy jsou kladné:
+\[
+x - 2 = x + 1 \quad \Rightarrow \quad -2 = 1,
+\]
+což není pravda (žádné řešení).
+
+\medskip
+\textbf{Výsledek:}
+\[
+K = \left\{\tfrac{1}{2}\right\}.
+\]
+\end{examplebox}
+
+
+
+
+\subsection{Lineární nerovnice s absolutní hodnotou}
+
+Stejně jako u rovnic, i u nerovnic se může absolutní hodnota objevit v různých tvarech.  
+Připomeňme si, že \textbf{absolutní hodnota vyjadřuje vzdálenost od nuly} –  
+a proto je vždy \textbf{nezáporná}.  
+
+\begin{definitionbox}
+\textbf{Absolutní hodnota reálného čísla} \(a\) je definována:
+\[
+|a| =
+\begin{cases}
+a, & a \ge 0,\\[4pt]
+-a, & a < 0.
+\end{cases}
+\]
+
+Z toho plyne, že:
+\[
+|a| \ge 0 \quad \text{pro všechna } a \in \mathbb{R}.
+\]
+\end{definitionbox}
+
+V nerovnicích absolutní hodnota určuje, jak \textbf{daleko} od určitého bodu může být hodnota proměnné.  
+To znamená, že místo jednoho nebo dvou konkrétních řešení hledáme celou \textbf{množinu čísel}, která vyhovují dané podmínce.
+
+
+\begin{notebox}
+\textbf{Základní princip:}
+
+Mějme nerovnici tvaru
+\[
+|x - a| < b,
+\]
+kde \(b > 0\).
+
+\medskip
+Tato nerovnice říká, že „vzdálenost mezi číslem \(x\) a číslem \(a\) je menší než \(b\)“.  
+Tedy \(x\) leží v intervalu:
+\[
+a - b < x < a + b.
+\]
+
+Naopak, pro nerovnici
+\[
+|x - a| > b
+\]
+platí, že \(x\) leží \textbf{mimo tento interval}, tedy:
+\[
+x < a - b \quad \text{nebo} \quad x > a + b.
+\]
+\end{notebox}
+
+
+\begin{examplebox}
+\textbf{Příklad 1:}  
+Vyřešte nerovnici
+\[
+|x - 3| < 2.
+\]
+
+\textbf{Řešení:}  
+Tato nerovnice říká, že \(x\) má být od čísla \(3\) vzdálen méně než \(2\).  
+Podle definice tedy:
+\[
+-2 < x - 3 < 2.
+\]
+
+Po přičtení čísla \(3\):
+\[
+1 < x < 5.
+\]
+
+\textbf{Výsledek:}
+\[
+K = \langle 1; 5 \rangle.
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[->, thick] (-1,0)--(7,0) node[right]{$x$};
+  \foreach \x in {0,1,2,3,4,5,6}
+    \draw (\x,0.1)--(\x,-0.1) node[below]{\small \x};
+  % interval
+  \draw[thick, pastelorange, line width=1pt] (1,0)--(5,0);
+  % otevřené body
+  \draw[thick, pastelorange!80!black] (1,0) circle (2pt);
+  \draw[thick, pastelorange!80!black] (5,0) circle (2pt);
+  \node[above, pastelorange!80!black] at (3,0.3) {\small $|x-3|<2$};
+\end{tikzpicture}
+\end{center}
+\end{examplebox}
+
+
+\begin{examplebox}
+\textbf{Příklad 2:}  
+Vyřešte nerovnici
+\[
+|x - 1| \ge 3.
+\]
+
+\textbf{Řešení:}  
+Tato nerovnice znamená, že \(x\) je od čísla \(1\) vzdálen alespoň o \(3\).  
+Podle definice tedy:
+\[
+x - 1 \ge 3 \quad \text{nebo} \quad x - 1 \le -3.
+\]
+
+Z toho:
+\[
+x \ge 4 \quad \text{nebo} \quad x \le -2.
+\]
+
+\textbf{Výsledek:}
+\[
+K = (-\infty, -2\rangle \cup \langle 4, \infty).
+\]
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+  \draw[->, thick] (-5,0)--(7,0) node[right]{$x$};
+  \foreach \x in {-4,-3,-2,-1,0,1,2,3,4,5,6}
+    \draw (\x,0.1)--(\x,-0.1) node[below]{\small \x};
+  % intervals
+  \draw[thick, pastelblue, line width=1pt, ->] (4,0)--(6.5,0);
+  \draw[thick, pastelblue, line width=1pt, <-] (-4.5,0)--(-2,0);
+  % body
+  \filldraw[pastelblue!80!black] (4,0) circle (2pt);
+  \filldraw[pastelblue!80!black] (-2,0) circle (2pt);
+  \node[above, pastelblue!80!black] at (1,0.3) {\small $|x-1|\ge3$};
+\end{tikzpicture}
+\end{center}
+\end{examplebox}
+
+\newpage
+\begin{notebox}
+\textbf{Shrnutí:}
+
+\[
+\begin{array}{rcll}
+|x - a| < b & \Rightarrow & a - b < x < a + b & \text{(vzdálenost menší než $b$)}\\[4pt]
+|x - a| \le b & \Rightarrow & a - b \le x \le a + b &\\[4pt]
+|x - a| > b & \Rightarrow & x < a - b \;\text{nebo}\; x > a + b &\\[4pt]
+|x - a| \ge b & \Rightarrow & x \le a - b \;\text{nebo}\; x \ge a + b &
+\end{array}
+\]
+
+
+\medskip
+\noindent
+Tyto vzorce platí pro všechna \(b > 0\).  
+Pokud by \(b < 0\), nerovnice nemá žádné řešení, protože absolutní hodnota je vždy nezáporná.
+\end{notebox}
+
+
+
+\newpage
+\subsection{Lineární rovnice s parametrem}
+
+V některých rovnicích se kromě neznámé \(x\) objevuje i další proměnná,  
+která není určena — tzv. \textbf{parametr}.  
+Parametr označujeme zpravidla písmeny \(m, a, k, p\) apod.  
+Mění-li se hodnota parametru, mění se i samotná rovnice,  
+a tedy i \textbf{počet nebo tvar řešení}.  
+
+\medskip
+Takové rovnice nám umožňují nejen hledat konkrétní řešení,  
+ale také zkoumat, \textbf{za jakých podmínek vůbec řešení existuje}.  
+
+\begin{definitionbox}
+\textbf{Lineární rovnice s parametrem} je rovnice, ve které se kromě neznámé vyskytuje i další proměnná – parametr.  
+Obecný tvar je:
+\[
+(a + b m)x = c m + d,
+\]
+kde \(m\) je parametr a \(a, b, c, d \in \mathbb{R}\).
+\end{definitionbox}
+
+
+Rovnici s parametrem řešíme podobně jako běžnou lineární rovnici,  
+ale zároveň musíme zohlednit, zda některé hodnoty parametru nevedou k \textbf{nesmyslnému} nebo \textbf{neurčitému} vztahu —  
+například k dělení nulou nebo k rovnosti \(0 = 0\).  
+
+\textbf{Rozbor možných situací:}
+\begin{itemize}
+  \item Pokud se po úpravě objeví tvar \(a x = b\) a \(a \neq 0\),  
+        má rovnice \textbf{jedno řešení}.
+  \item Pokud \(a = 0\) a zároveň \(b \neq 0\),  
+        dostáváme \textbf{nesmyslnou rovnici} (např. \(0 = 5\)) — žádné řešení.
+  \item Pokud \(a = 0\) a \(b = 0\),  
+        vyjde \textbf{pravdivé tvrzení} \(0 = 0\) — nekonečně mnoho řešení.
+\end{itemize}
+
+
+\textbf{Příklad 1 (komentovaný):}
+
+Uvažujme rovnici
+\[
+(m - 1)x = 3m + 2.
+\]
+
+Vidíme, že parametr \(m\) ovlivňuje koeficient u \(x\).  
+Abychom zjistili, kdy rovnice má či nemá řešení,  
+rozdělíme úlohu podle hodnoty výrazu \(m - 1\).
+
+\begin{itemize}
+  \item \textbf{Případ 1:} \(m - 1 \neq 0\), tj. \(m \neq 1\)
+
+  Potom můžeme rovnici normálně vydělit:
+  \[
+  x = \frac{3m + 2}{m - 1}.
+  \]
+  Rovnice má právě \textbf{jedno řešení} pro každé \(m \neq 1\).
+
+  \item \textbf{Případ 2:} \(m - 1 = 0\), tj. \(m = 1\)
+
+  Dosadíme do původní rovnice:
+  \[
+  (1 - 1)x = 3(1) + 2 \quad \Rightarrow \quad 0 = 5.
+  \]
+  To je nepravdivé tvrzení – rovnice tedy \textbf{nemá řešení.}
+\end{itemize}
+
+\textbf{Shrnutí:}
+\[
+\begin{array}{l|l}
+\text{Hodnota parametru } m & \text{Počet řešení}\\
+\hline
+m \neq 1 & 1 \text{ řešení},\\
+m = 1 & \text{žádné řešení.}
+\end{array}
+\]
+
+\textbf{Množina řešení:} \quad
+\(K_m = \left\{\left[\dfrac{3m+2}{m-1}\right]\right\}, \; m \neq 1.\)
+
+
+\begin{examplebox}
+\textbf{Příklad 2}
+
+Určete, pro jaké hodnoty parametru \(a \in \mathbb{R}\) má rovnice
+\[
+(a - 2)x = 4a - 8
+\]
+žádné, jedno nebo nekonečně mnoho řešení.
+
+\textit{Postup:}
+\begin{align*}
+(a - 2)x &= 4a - 8,\\
+\multicolumn{2}{c}{\rule{6cm}{0.3pt}}\\[-2pt]
+\text{Pokud } a - 2 \neq 0 &\Rightarrow x = \dfrac{4a - 8}{a - 2},\\
+\text{Pokud } a - 2 = 0 &\Rightarrow a = 2,\\
+0 \cdot x &= 4\cdot2 - 8 \;\Rightarrow\; 0 = 0.
+\end{align*}
+
+Dostáváme tedy:
+\[
+\begin{array}{l|l}
+\text{Hodnota parametru } a & \text{Počet řešení}\\
+\hline
+a \neq 2 & 1 \text{ řešení},\\
+a = 2 & \text{nekonečně mnoho řešení.}
+\end{array}
+\]
+
+\textbf{Množina řešení:}
+\[
+K_a =
+\begin{cases}
+\displaystyle \left\{\left[\frac{4a-8}{a-2}\right]\right\}, & a \neq 2,\\[8pt]
+\mathbb{R}, & a = 2.
+\end{cases}
+\]
+\end{examplebox}
+
+
+Vidíme, že parametrické rovnice nám umožňují nejen vypočítat konkrétní řešení,  
+ale i analyzovat chování celé rodiny rovnic v závislosti na hodnotě parametru.  
+Takový přístup se později uplatní i při řešení \textbf{soustav lineárních rovnic},  
+kde se o počtu řešení rozhoduje podle hodnot determinantů nebo parametrů v matici.
+
+
+
+
+
+\newpage
+\section{Soustava tří LR o třech neznámých}
+
+Zatímco soustava dvou rovnic o dvou neznámých představovala průsečík dvou přímek v rovině,  
+soustava tří rovnic o třech neznámých odpovídá hledání \textbf{průsečíku tří rovin v prostoru}.  
+Tak jako se dvě přímky mohou protínat, být rovnoběžné nebo splývat,  
+mohou se i tři roviny protínat v jednom bodě, v přímce, nebo se vůbec neprotínat.
+
+\begin{definitionbox}
+\textbf{Soustava tří lineárních rovnic o třech neznámých} má tvar
+\[
+\begin{cases}
+a_1x + b_1y + c_1z = d_1,\\
+a_2x + b_2y + c_2z = d_2,\\
+a_3x + b_3y + c_3z = d_3,
+\end{cases}
+\]
+kde \(a_i, b_i, c_i, d_i \in \mathbb{R}\).
+
+\medskip
+\textbf{Řešením} soustavy je každá trojice \([x_0; y_0; z_0]\), která vyhovuje všem třem rovnicím zároveň.
+\end{definitionbox}
+
+\noindent
+Z geometrického hlediska tedy každá rovnice představuje rovinu v prostoru,  
+a jejich společný průsečík je řešení celé soustavy.
+
+\begin{center}
+\tdplotsetmaincoords{70}{110}
+
+\begin{minipage}{0.47\textwidth}
+\begin{tikzpicture}[tdplot_main_coords, scale=0.9, font=\sffamily]
+
+% --- roviny ---
+\filldraw[fill=pastelorange!80, draw=pastelorange!80!black, opacity=0.5]
+  (-3,0,-3) -- (-3,0,3) -- (3,0,3) -- (3,0,-3) -- cycle; % xy
+
+\filldraw[fill=pastelblue!80, draw=pastelblue!70!black, opacity=0.5]
+  (-3,-3,0) -- (-3,3,0) -- (3,3,0) -- (3,-3,0) -- cycle; % xz
+
+\filldraw[fill=pastelgreen!80, draw=pastelgreen!70!black, opacity=0.5]
+  (2,-3,-3) -- (2,3,-3) -- (-2,3,3) -- (-2,-3,3) -- cycle; % šikmá
+
+% --- průsečnice ---
+\draw[very thick, black] (-3,0,0) -- (3,0,0);
+\draw[very thick, black] (0,-3,0) -- (0,3,0);
+\draw[very thick, black] (0,-0.75,-4) -- (0,0.75,4);
+
+% --- průsečík ---
+\filldraw[red!80!black] (0,0,0) circle (2.5pt);
+\node[below right, red!80!black] at (0,0,0) {\small $[x_0;\,y_0;\,z_0]$};
+
+% --- popisek ---
+\node[anchor=south west, align=left] (txt) at (4,4,3.5)
+  {\small \textbf{Průsečík}\\ tří rovin};
+\draw[-latex, thick, red!70!black]
+  (txt) to[out=180, in=60] (0.2,0.2,0.1);
+
+\end{tikzpicture}
+
+\vspace{3pt}
+\centering
+\small\textit{Soustava má jedno řešení – roviny se protínají v jediném bodě.}
+\end{minipage}
+\hfill
+\begin{minipage}{0.47\textwidth}
+\begin{tikzpicture}[tdplot_main_coords, scale=0.9, font=\sffamily]
+
+% --- roviny ---
+\filldraw[fill=pastelorange!80, draw=pastelorange!80!black, opacity=0.5]
+  (-3,-1,-3) -- (-3,1,3) -- (3,1,3) -- (3,-1,-3) -- cycle;
+
+\filldraw[fill=pastelblue!80, draw=pastelblue!70!black, opacity=0.5]
+  (-3,-3,0) -- (-3,3,0) -- (3,3,0) -- (3,-3,0) -- cycle;
+
+\filldraw[fill=pastelgreen!80, draw=pastelgreen!70!black, opacity=0.5]
+  (3,3,-3) -- (-3,3,-3) -- (-3,-3,3) -- (3,-3,3) -- cycle;
+
+% --- průsečnice (roviny se protínají v přímce) ---
+\draw[very thick, black] (-3,0,0) -- (3,0,0);
+
+% --- průsečná přímka (nekonečně mnoho řešení) ---
+\draw[ultra thick, red!70!black] (-3,0,0) -- (3,0,0);
+\node[below right, red!80!black] at (1.8,0,0) {\small průsečná přímka};
+
+\end{tikzpicture}
+
+\vspace{3pt}
+\centering
+\small\textit{Soustava má nekonečně mnoho řešení – roviny se protínají v přímce.}
+\end{minipage}
+\end{center}
+
+
+
+
+\begin{notebox}
+\textbf{Z geometrického hlediska:}
+\begin{itemize}
+  \item Průsečík tří rovin → jedno řešení.
+  \item Společná přímka → nekonečně mnoho řešení.
+  \item Rovnoběžné nebo nespojitě položené roviny → žádné řešení.
+\end{itemize}
+\end{notebox}
+
+
+\newpage
+\subsection{Řešení klasickým postupem}
+
+Uvažujme soustavu:
+\[
+\begin{cases}
+x + y + z = 6,\\
+2x - y + 3z = 14,\\
+-x + 2y + z = 2.
+\end{cases}
+\]
+
+Z první rovnice vyjádříme \(x\):
+\[
+x = 6 - y - z.
+\]
+
+Dosadíme do zbývajících dvou rovnic:
+\[
+\begin{cases}
+2(6 - y - z) - y + 3z = 14,\\
+-(6 - y - z) + 2y + z = 2.
+\end{cases}
+\]
+
+Po úpravách:
+\[
+\begin{cases}
+12 - 2y - 2z - y + 3z = 14,\\
+-6 + y + z + 2y + z = 2.
+\end{cases}
+\]
+
+\[
+\begin{cases}
+-3y + z = 2,\\
+3y + 2z = 8.
+\end{cases}
+\]
+
+Tím jsme získali soustavu dvou rovnic o dvou neznámých.  
+Sečteme je:
+\[
+(-3y + z) + (3y + 2z) = 2 + 8 \quad \Rightarrow \quad 3z = 10 \quad \Rightarrow \quad z = \tfrac{10}{3}.
+\]
+
+Dosadíme do první rovnice:
+\[
+-3y + \tfrac{10}{3} = 2 \quad \Rightarrow \quad -3y = -\tfrac{4}{3} \quad \Rightarrow \quad y = \tfrac{4}{9}.
+\]
+
+A nakonec do \(x = 6 - y - z\):
+\[
+x = 6 - \tfrac{4}{9} - \tfrac{10}{3} = \tfrac{40}{9}.
+\]
+
+\[
+\textbf{Řešení soustavy:} \quad x = \tfrac{40}{9},\; y = \tfrac{4}{9},\; z = \tfrac{10}{3}.
+\]
+
+\[
+K = \left\{\left[\tfrac{40}{9}; \tfrac{4}{9}; \tfrac{10}{3}\right]\right\}.
+\]
+
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Vyřešte soustavu tří lineárních rovnic o třech neznámých:
+\[
+\begin{cases}
+2x + y - z = 8,\\
+x - 2y + 3z = -4,\\
+3x + y + 2z = 10.
+\end{cases}
+\]
+
+\textbf{Řešení:}
+
+Z první rovnice vyjádříme \(y\):
+\[
+y = 8 - 2x + z.
+\]
+
+Dosadíme do druhé a třetí rovnice:
+\[
+\begin{cases}
+x - 2(8 - 2x + z) + 3z = -4,\\
+3x + (8 - 2x + z) + 2z = 10.
+\end{cases}
+\]
+
+Po úpravě:
+\[
+\begin{cases}
+x - 16 + 4x - 2z + 3z = -4,\\
+3x + 8 - 2x + z + 2z = 10.
+\end{cases}
+\]
+
+\[
+\begin{cases}
+5x + z = 12,\\
+x + 3z = 2.
+\end{cases}
+\]
+
+Vynásobíme druhou rovnici \(-5\) a přičteme k první:
+\[
+(5x + z) + (-5x - 15z) = 12 - 10 \quad \Rightarrow \quad -14z = 2 \quad \Rightarrow \quad z = -\tfrac{1}{7}.
+\]
+
+Dosadíme \(z = -\tfrac{1}{7}\) do \(x + 3z = 2\):
+\[
+x + 3\left(-\tfrac{1}{7}\right) = 2 \quad \Rightarrow \quad x = 2 + \tfrac{3}{7} = \tfrac{17}{7}.
+\]
+
+Dosadíme \(x, z\) do \(y = 8 - 2x + z\):
+\[
+y = 8 - 2\cdot\tfrac{17}{7} - \tfrac{1}{7} = \tfrac{56 - 34 - 1}{7} = \tfrac{21}{7} = 3.
+\]
+
+\[
+\textbf{Řešení:} \quad x = \tfrac{17}{7},\; y = 3,\; z = -\tfrac{1}{7}.
+\]
+
+\[
+\textbf{Množina řešení:} \quad K = \left\{\left[\tfrac{17}{7};\,3;\,-\tfrac{1}{7}\right]\right\}.
+\]
+\end{examplebox}
+
+
+
+\subsection{Maticový zápis soustavy}
+
+Předchozí postup je funkční, ale zdlouhavý.  
+Pro přehlednější zápis a jednodušší práci se zavádí pojem \textbf{matice}.
+
+Každou soustavu lineárních rovnic lze zapsat ve tvaru:
+\[
+A \cdot X = B,
+\]
+kde:
+\[
+A =
+\begin{bmatrix}
+a_1 & b_1 & c_1\\
+a_2 & b_2 & c_2\\
+a_3 & b_3 & c_3
+\end{bmatrix},
+\quad
+X =
+\begin{bmatrix}
+x\\y\\z
+\end{bmatrix},
+\quad
+B =
+\begin{bmatrix}
+d_1\\d_2\\d_3
+\end{bmatrix}.
+\]
+
+\noindent
+Pro praktické výpočty používáme \textbf{rozšířenou matici}:
+\[
+\left[
+\begin{array}{ccc|c}
+a_1 & b_1 & c_1 & d_1\\
+a_2 & b_2 & c_2 & d_2\\
+a_3 & b_3 & c_3 & d_3
+\end{array}
+\right].
+\]
+
+
+\subsection{Gaussova eliminační metoda (GEM)}
+
+\textbf{Princip:}  
+Pomocí elementárních úprav řádků převedeme rozšířenou matici na jednodušší tvar,  
+ze kterého lze snadno dopočítat jednotlivé neznámé.
+
+\begin{notebox}
+\textbf{Povolené úpravy:}
+\begin{itemize}
+  \item násobení řádku nenulovým číslem,
+  \item přičtení násobku jednoho řádku k jinému,
+  \item prohození dvou řádků.
+\end{itemize}
+\end{notebox}
+
+\textbf{Cíl:}  
+Získat tzv. \textbf{horní trojúhelníkový tvar}, tj. tvar s nulami pod hlavní diagonálou:
+\[
+\begin{bmatrix}
+1 & * & * & *\\
+0 & 1 & * & *\\
+0 & 0 & 1 & *
+\end{bmatrix}.
+\]
+Z takové matice už snadno určíme \(z\), poté \(y\), nakonec \(x\) — tzv. \textbf{zpětnou substitucí}.
+
+\begin{examplebox}
+\textbf{Řešení soustavy tří rovnic:}
+
+Řešme soustavu:
+\[
+\begin{cases}
+2x + y - z = 8,\\
+x - 2y + 3z = -4,\\
+3x + y + 2z = 10.
+\end{cases}
+\]
+
+\textit{Z první rovnice vyjádříme } \(y\):
+\[
+y = 8 - 2x + z.
+\]
+
+Dosadíme do zbývajících dvou rovnic:
+\begin{align*}
+x - 2(8 - 2x + z) + 3z &= -4,\\
+3x + (8 - 2x + z) + 2z &= 10,\\[-4pt]
+\multicolumn{2}{c}{\rule{6cm}{0.3pt}}\\[-2pt]
+x - 16 + 4x - 2z + 3z &= -4,\\
+3x + 8 - 2x + z + 2z &= 10,\\[-4pt]
+\multicolumn{2}{c}{\rule{6cm}{0.3pt}}\\[-2pt]
+5x + z &= 12,\\
+x + 3z &= 2.
+\end{align*}
+
+Máme tedy soustavu dvou rovnic o dvou neznámých:
+\[
+\begin{cases}
+5x + z = 12,\\
+x + 3z = 2.
+\end{cases}
+\]
+
+\textit{Upravíme druhou rovnici a přičteme:}
+\begin{align*}
+5x + z &= 12,\\
+x + 3z &= 2 \quad | \cdot(-5),\\[-4pt]
+\multicolumn{2}{c}{\rule{6cm}{0.3pt}}\\[-2pt]
+5x + z - 5x - 15z &= 12 - 10,\\
+-14z &= 2 \quad | :(-14),\\
+z &= -\tfrac{1}{7}.
+\end{align*}
+
+Dosadíme \(z = -\tfrac{1}{7}\) do \(x + 3z = 2\):
+\begin{align*}
+x + 3z &= 2,\\
+x + 3\left(-\tfrac{1}{7}\right) &= 2,\\
+x - \tfrac{3}{7} &= 2 \quad | +\tfrac{3}{7},\\
+x &= \tfrac{17}{7}.
+\end{align*}
+
+Dosadíme \(x, z\) do \(y = 8 - 2x + z\):
+\begin{align*}
+y &= 8 - 2x + z,\\
+y &= 8 - 2\cdot\tfrac{17}{7} - \tfrac{1}{7},\\
+y &= \tfrac{56 - 34 - 1}{7},\\
+y &= \tfrac{21}{7} = 3.
+\end{align*}
+
+\textbf{Řešení soustavy:} \quad \(x = \tfrac{17}{7},\; y = 3,\; z = -\tfrac{1}{7}\)
+
+\medskip
+\textbf{Množina řešení:} \quad \(K = \left\{\left[\tfrac{17}{7};\,3;\,-\tfrac{1}{7}\right]\right\}\)
+\end{examplebox}
+
+
+
+
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1} % případně uprav dle předchozího číslování
+
+
+% =========================
+% ÚLOHA 1
+% =========================
+\begin{exercise}[Lineární rovnice]
+  Řešte následující jednoduché lineární rovnice s neznámou \(x \in \mathbb{R}\) a proveďte zkoušku správnosti řešení.
+  \begin{tasks}(3)
+    \task $2x - 7 = 5$
+    \task $3x + 6 = 8$
+    \task $\pi x + 3= 4$
+    \task \(\dfrac{x}{2} + 6 = 12\)
+    \task \(0{,}83\,x + 32 = 160\)
+    \task $1-\sqrt{3}x=\sqrt{3}$
+    \task \(5 - x\sqrt{3} = 2\)
+    \task \(x\sqrt{5} - \sqrt{5} = 5\)
+    \task $2x - \sqrt{5} = \sqrt{3}$
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 2
+% =========================
+\begin{exercise}[Lineární rovnice se zlomky]
+  Řešte následující rovnice obsahující zlomky a proveďte zkoušku.
+  \begin{tasks}(2)
+    \task \(\dfrac{3y - 1}{5} = \dfrac{1}{10}\)
+    \task \(2 + \dfrac{y - 1}{2} - y = 1\)
+    \task \(\dfrac{4x - 5}{2} = x - \left(\dfrac{5}{2} - x\right)\)
+    \task \(\dfrac{4x - 5}{2} = x - (1 - x)\)
+    \task \(\dfrac{3 - 2x}{4} + \dfrac{x}{2} = 1\)
+    \task \(\dfrac{5y + 1}{3} - \dfrac{y - 2}{6} = 2\)
+    \task \(\dfrac{7 - 3t}{5} = \dfrac{t + 8}{10}\)
+    \task \(1 - \dfrac{2x - 3}{4} = \dfrac{x}{2}\)
+    \task \(\dfrac{3(x - 1)}{8} + \dfrac{1}{2} = \dfrac{x}{4}\)
+    \task $\dfrac{4x - 7}{2} - \dfrac{x - 4}{6} = 2x - 3 $
+    %\task $\dfrac{x+1}{x-1} + \dfrac{2}{x+2} - 1 = \dfrac{6}{x^2 + x - 2} $
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 3
+% =========================
+\begin{exercise}[Lineární rovnice s neznámou na obou stranách]
+  Vyřešte následující rovnice, ve kterých se neznámá nachází na obou stranách rovnosti.  
+  Každé řešení ověřte zkouškou dosazením do původní rovnice.
+  \begin{tasks}(2)
+    \task \(2x - 3 = 5x + 1\)
+    \task \(\pi x + 4 = x - \pi\)
+    \task \(x\sqrt{2} + 7 = x\sqrt{3} - 2\)
+    \task \(10x + 5 = 20x - 5\)
+    \task \(4 - \sqrt{2}\,x = 2x + 1\)
+    \task \((3 - \pi)x + 2 = (1 + \pi)x - 5\)
+    \task \(5(2x - 1) = 3x + 7\)
+    \task \(\sqrt{3}\,x - 2 = \sqrt{5}\,x + 1\)
+    \task \(7x + 4 = 3(2x + 1) + 1\)
+    \task* \(3[2(3x - 6) - 2(4x - 5) + 1] = 6[3 - 8(x - 3)]\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 4
+% =========================
+\begin{exercise}[Lineární rovnice]
+  Řešte dané rovnice.
+  \begin{tasks}(2)
+    \task \(3(2x + 5) + 15 = x + 85\)
+    \task \(2(2x + 1) - (1 - x) = 5(x + 3)\)
+    \task \((x - 2)^2 + (x + 1)^2 = (2x + 3)(x - 1)\)
+    \task \(4(x + 3)^2 - (2x + 1)^2 = 4(5x + 8) + 3\)
+    \task \((3x + 1)^2 + (4x + 1)^2 = (5x + 1)^2 + 1\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 5
+% =========================
+\begin{exercise}[Složené rovnice a identity]
+  Řešte následující rovnice obsahující složené výrazy a závorky různých řádů.  
+  Použijte vhodné úpravy a proveďte zkoušku správnosti řešení.
+  \begin{tasks}(1)
+    \task \((x-3)(x+2) = (x-2)(x-1)\)
+    \task \(5\{ 5[ 5(5x-4)-4] -4\}  = 5\)
+    \task \(3\bigl[\,2(3x - 6) - 2(4x - 5) + 1\,\bigr] = 6\bigl[\,3 - 8(x - 3)\,\bigr]\)
+    \task \(x - (2x - 0{,}2)^2 = 5{,}8 - (2x + 0{,}1)(2x - 0{,}1)\)
+    \task \((x-1)^3 + (x-2)^3 + (x-3)^3 = 3(x-1)(x-2)(x-3)\)
+    \task \(\dfrac{x}{2} - \dfrac{s - \tfrac{s}{2}}{2}
+            - \dfrac{\left(x - \tfrac{s}{2}\right) - \tfrac12\left(2 + \tfrac{x}{2}\right)}{2}
+            = \tfrac12\!\left(x - \tfrac{x}{2}\right)\!\cdot \tfrac12\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 6
+% =========================
+\begin{exercise}[Rovnice MIX]
+  Vyřešte následující rovnice.
+  \begin{tasks}
+    \task \((x + 1)^3 - (x - 1)^3 = 6(x + 2)(x - 1) + 9(x + 1) - 9(x - 1)\)
+    \task \(\dfrac{3 - 2x}{2} - \left(\dfrac{3 + x}{3} - \dfrac{2x - 3}{4}\right) + 2
+    = x - \left(\dfrac{x + 1}{6} - \dfrac{2 - x}{12}\right)\)
+    \task \(\dfrac{x + \dfrac{x + \dfrac{2x + 3}{2}}{3}}{3} = \dfrac{x - \dfrac{x - \dfrac{x - 2}{2}}{3}}{4}\) % pro vizuálně čistou strukturu
+    \task \(\dfrac{9n - 0{,}7}{4} - \dfrac{5n - 1{,}5}{7}  = \dfrac{7n - 1{,}1}{3} - \dfrac{5(0{,}4 - 2n)}{6}\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 7
+% =========================
+\begin{exercise}[Rovnice se zlomky – obtížnější]
+  Vyřešte následující rovnice a výsledné řešení ověřte zkouškou.
+  \begin{tasks}
+    % dlouhá rovnice přes celou šířku
+    \task \(\dfrac{4-x}{2}
+              - \left(\dfrac{2+7x}{8} - \dfrac{8-x}{6}\right)
+              + \dfrac{x+2}{4}
+              - \dfrac{8-x}{3}
+              + x - 1 = 0\)
+
+    \task \(\dfrac{y-4}{5} - \dfrac{7(3y-2)}{5}
+           = \dfrac{9}{13}\,(9-2y) - (3y-5)\)
+
+    \task \(\dfrac{3(z+1)}{2} - \left(\dfrac{z+9}{4} - 1\right)
+           = \dfrac{5z+1}{7} - \left(\dfrac{3z+1}{2} - 4\right)\)
+
+    % podobný nový příklad
+    \task \(\dfrac{2(t-3)}{5}
+           - \left(\dfrac{t+4}{3} - \dfrac{2-t}{6}\right)
+           + \dfrac{3t-1}{4}
+           = \dfrac{t}{2} - \left(\dfrac{5t-7}{10} - 1\right)\)
+  \end{tasks}
+\end{exercise}
+
+\newpage
+% =========================
+% ÚLOHA 8
+% =========================
+\begin{exercise}[Rovnice s mocninami a rozvinutím závorek]
+  Řešte následující rovnice, ve kterých vystupují kvadráty a kubické členy a proveďte následné zjednodušení výrazů.
+  \begin{tasks}(1)
+    \task \((3u - 1)^2 - 5(2u + 1)^2 + 2(6u - 3)(u + 1) = (u - 1)^2 + 3(2u - 1)\)
+    \task \((v + 1)^3 - (v - 1)^3 = 6(v + 2)(v - 1) - 2(v + 1) + 2(v - 1)\)
+    \task \((2x - 3)^2 - 4(x + 1)(x - 2) = (x - 3)^2 - (x + 2)^2 + 5x\)
+    \task \((4y + 1)^2 - 2(3y - 2)^2 + 5(2y + 1) = (y - 1)(5y + 3)\)
+    \task \((p - 2)^3 + (p + 1)^3 = 3(p - 1)(p + 2)(p - 2) + 9p\)
+    \task \((t + 2)^2 - (t - 3)^2 = 5(2t - 1) - (t + 4)(t - 2)\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9
+% =========================
+\begin{exercise}[Součinové rovnice]
+  Vyřešte následující součinové rovnice.
+  \begin{tasks}(2)
+    \task \((x+1)(x-3)(x+\pi)=0\)
+    \task \(x(3x+1)(x+\sqrt{2})(4x-\pi)=0\)
+    \task \((3x+2)(x\sqrt{2}+1)(\pi^{2}x+\pi)=0\)
+    \task $\bigl(x\sqrt{2}-x-1\bigr)\,(\pi x+\sqrt{2})\,(x^{2}+1)=0$
+    \task \((2x-5)(x+1)(x-\pi)=0\)
+    \task \((x-4)(\sqrt{3}\,x+2)(x^{2}+4)=0\)
+    \task $\bigl(5x+\pi\bigr)\bigl(x-\sqrt{5}\bigr)(2x+1)=0$
+    \task \(x(x-1)(x+1)(\pi x-2)=0\)
+    \task \((3x-2)\bigl(x+\sqrt{7}\bigr)\,(\pi^{2}x-1)=0\)
+    \task $9 - x^2 = 3 - x$
+  \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{2}
+% =========================
+% ÚLOHA 10
+% =========================
+\begin{exercise}[Rovnice s absolutní hodnotou]
+  Řešte následující rovnice s absolutní hodnotou neznámé \(x \in \mathbb{R}\). 
+  Každé řešení ověřte zkouškou.
+  \begin{tasks}(3)
+    \task \(|x| = 7\)
+    \task \(|x| = \tfrac{2}{3}\)
+    \task \(|x - 1| = 3\)
+    \task \(|x + 4| = 1\)
+    \task \(|x + \pi| = 6\)
+    \task \(|2x - 3| = 6\)
+    \task \(|6 - x| = 2\)
+    \task \(|\,x - \sqrt{3} + 1\,| = 2 - \sqrt{2}\)
+    \task \(|x - 5\sqrt{11}| = 0\)
+    \task \(|4x - 7| = -1\)
+    \task $|x - \sqrt{3}| = 2 + 5\sqrt{3}$
+    \task $\dfrac{|x+3|}{2}=1$
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 11
+% =========================
+\begin{exercise}[Rovnice s absolutní hodnotou a lineárním výrazem]
+  Vyřešte následující rovnice.
+  \begin{tasks}(2)
+    \task \(|x - 7| = x - 7\)
+    \task \(|x - 2| = 2 - x\)
+    \task \(|8 - 5x| = 5x - 8\)
+    \task \(|2x - 3| = x\)
+    \task $|x + 4| = 3x$
+    \task \(|2x - 5| = 1 - 3x\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 12
+% =========================
+\begin{exercise}[Rovnice s více absolutními hodnotami]
+  Řešte následující rovnice, které obsahují dvě nebo více absolutních hodnot a kontrolujte správnost nalezených řešení.
+  \begin{tasks}(2)
+    \task \(|4 - x| - |2x + 3| = 7\)
+    \task $|2x - 1| - |3 - x| = x$
+    \task \(|2x - 4| - |x + 3| = 2 - |x - 5|\)
+    \task \(|x - 1| + 3|2 - x| = x - |1 - x|\)
+    \task \(|x - 4| + |2x - 1| = |x| + 3\)
+    \task \(|x + 2| = 4|x - 3|\)
+  \end{tasks}
+\end{exercise}
+
+\setcounter{section}{3}
+% =========================
+% ÚLOHA 13
+% =========================
+\begin{exercise}[Základní nerovnice]
+  Vyřešte následující jednoduché nerovnice v oboru reálných čísel \(\mathbb{R}\).  
+  Určete množinu všech řešení a ověřte, zda mají smysl.
+  \begin{tasks}(3)
+    \task \(0\cdot x \le 0\)
+    \task \(0\cdot x < 0\)
+    \task \(0\cdot x \le -3\)
+    \task \(3x < 0\)
+    \task \(-5x \le 0\)
+    \task $2 \ge 0$
+    \task $-3x < 0$
+    \task $2x \le 2$
+    \task $0x \ge 0$
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 14
+% =========================
+\begin{exercise}[Lineární nerovnice s různými neznámými]
+  Řešte následující lineární nerovnice obsahující jednu neznámou.
+  \begin{tasks}(3)
+    \task \(7 - 2x > 0\)
+    \task \(y + 1 \ge y\)
+    \task \(x - 7 < 8 - x\)
+    \task \(2z + 1 > 1 - z\)
+    \task \(3x - 7 \le 5x - 13\)
+    \task \(x + 3 \le 2x - 7\)
+    \task \(2y + 5 < 2y + 3\)
+    \task \(5(x + 1) < 2x - 4\)
+    \task $4x + 1 > 2x + 3$
+    \task \(x + 3 \ge 7 + \sqrt{2}\,x\)
+    \task \(\sqrt{3}\,x + 3 \ge 2 - x\)
+    \task \(x\sqrt{2} + 1 > \sqrt{3} + x\)
+    \task \(2x - \sqrt{2} < x\sqrt{2} - 2\)
+    \task \(2\pi z > 1\)
+    \task \(3x - 1 \le 5 + \pi x\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 15
+% =========================
+\begin{exercise}[Lineární nerovnice se zlomky]
+  Řešte následující nerovnice obsahující zlomky.  
+  \begin{tasks}(2)
+    \task \(\dfrac{4x}{3} \le \dfrac{2}{3} + x\)
+    \task $\dfrac{2+3x}{18} \le 0$
+    \task $\dfrac{x+2}{3} > \dfrac{x-2}{3}$
+    \task $\dfrac{x+2}{3} \le \dfrac{x-2}{3}$
+    \task \(2 - \dfrac{x+2}{3} > x - \dfrac{x+3}{3}\)
+    \task \(6x + 1 > 2(x - 5) - 1\)
+    \task \(\dfrac{4x - 7}{2} - \dfrac{x - 4}{3} \ge 2x - 3\)
+    \task \(\dfrac{x+1}{4} - \dfrac{x-3}{3} < \dfrac{x+4}{6} + \dfrac{7 - 3x}{12}\)
+    \task $\dfrac{7}{6} - \dfrac{x}{2} > \dfrac{3}{7}x + \dfrac{39}{14}-x$
+    \task $\dfrac{2x}{3} - 3 > \dfrac{16x}{21} - \dfrac{13}{3} - \dfrac{2x}{15}$
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 16
+% =========================
+\begin{exercise}[Kvadratické a mocninné nerovnice]
+  Vyřešte následující nerovnice obsahující kvadráty či vyšší mocniny.
+  \begin{tasks}(2)
+    \task \((4 - t)t > 24 - t^{2}\)
+    \task \((3n - 5)^{2} + (4n - 3)^{2} \ge (5n - 4)^{2}\)
+    \task \((u - 3)^{2} + 3(u - 1) \le (u + 3)(u - 3)\)
+    \task \((x - 1)^{2} - (x + 1)^{2} < 8\)
+    \task \((x + 1)^{2} - (x - 1)^{2} + 2 \ge 2(x + 1)\)
+    \task \((x - 2)^{2} \ge (x + 1)(x - 5)\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 17
+% =========================
+\begin{exercise}[Součinové nerovnice – intervalová metoda]
+  Řešte následující součinové nerovnice pomocí metody intervalů.  
+  \begin{tasks}(2)
+    \task \((x-2)(x+1) > 0\)
+    \task \((x-2)(x+3) \ge 0\)
+    \task \((y+3)\!\left(y-\tfrac{1}{2}\right) \ge 0\)
+    \task \(\left(z+\tfrac{1}{2}\right)\!\left(z-\tfrac{1}{2}\right) \le 0\)
+    \task \((1-x)(x+\sqrt{2}) > 0\)
+    \task \((3-5y)(3+5y) \le 0\)
+    \task \(\left(2z-\tfrac{1}{3}\right)\!\left(z+\tfrac{2}{3}\right) < 0\)
+    \task \((2u-5)\bigl(3u-\sqrt{2}\bigr) \le 0\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 18
+% =========================
+\begin{exercise}[Součinové nerovnice vyššího řádu]
+  Vyřešte následující součinové nerovnice s více činiteli nebo s vyššími mocninami.
+  \begin{tasks}(2)
+    \task \((x-1)(x-2)(x-3) > 0\)
+    \task \((2x+1)2x(2x-1) \le 0\)
+    \task \((2-z)(3-z)(4-z)(5-z) < 0\)
+    \task \((3-z)(2-z)(1-z)\,z \ge 0\)
+    \task \((4x^{2}-3)\,(4-5x)\,(x-2) < 0\)
+    \task \((3-x)^{2}(x-1)\,(\sqrt{2}-x) \ge 0\)
+    \task \((4-7x)(x+1)(10x-7)(\pi-x) \le 0\)
+  \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{4}
+% =========================
+% ÚLOHA 19
+% =========================
+\begin{exercise}[Lineární nerovnice s absolutní hodnotou]
+  Řešte následující jednoduché nerovnice s absolutní hodnotou pro \(x \in \mathbb{R}\).  
+  \begin{tasks}(3)
+    \task \(|x| < 5\)
+    \task \(|x| \ge 3\)
+    \task \(|x - 2| \le 4\)
+    \task \(|x + 3| > 6\)
+    \task \(|x - \pi| < 2\)
+    \task \(|x - \sqrt{3}| \ge 1\)
+    \task \(|2x - 5| < 3\)
+    \task \(|3x + 2| \ge 4\)
+    \task \(|x - 1| + 2 > 5\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 20
+% =========================
+\begin{exercise}[Složenější nerovnice s absolutní hodnotou]
+  Vyřešte následující nerovnice, které obsahují více absolutních hodnot.  
+  \begin{tasks}(2)
+    \task \(|2x - 3| \le |x + 1|\)
+    \task \(|x - 4| > |2x + 1|\)
+    \task \(|x - 1| + |x + 2| \le 5\)
+    \task \(|2x - 3| - |x + 1| > 1\)
+    \task \(|x + 1| + 1 < 2|x - 1|\)
+    \task \(|3x - 2| \ge 2|x + 1|\)
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 21
+% =========================
+\begin{exercise}[Nerovnice s absolutní hodnotou]
+  Vyřešte následující nerovnice s absolutní hodnotou převodem na ekvivalentní soustavy lineárních nerovnic.
+  \begin{tasks}(2)
+    \task \(|x - 2| < 3x - 1\)
+    \task \(|2x + 1| > 3 - x\)
+    \task \(|x - 5| \le 2x + 1\)
+    \task \(|3x - 2| \ge 2x - 1\)
+    \task \(|x + 4| + 1 \le 3x\)
+    \task \(|2x - 1| > |x| + 2\)
+  \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{5}
+% =========================
+% ÚLOHA 22
+% =========================
+\begin{exercise}[Racionální rovnice]
+  Řešte následující rovnice, určete definiční obor a proveďte zkoušku.
+  \begin{tasks}(3)
+    \task \(\dfrac{2x + 5}{3x - 6} = 0\)
+    \task \(\dfrac{3x - 2}{x + 5} = 0\)
+    \task \(\dfrac{7x + 3}{x + \sqrt{2}} = 0\)
+    \task \(\dfrac{4x - 9}{2x - 3} = 0\)
+    \task \(\dfrac{x - 5\sqrt{3}}{x - 1} = 0\)
+    \task \(\dfrac{5x - 4}{7x + 2} = 0\)
+    \task \(\dfrac{2x + 7}{x - \pi} = 0\)
+    \task \(\dfrac{9 - 3x}{2x + 1} = 0\)
+    \task \(\dfrac{4x + 1}{x - \tfrac{1}{2}} = 0\)
+  \end{tasks}
+\end{exercise}
+
+
+
+% =========================
+% ÚLOHA 23
+% =========================
+\begin{exercise}[Racionální rovnice]
+  Řešte rovnice, ve kterých je zlomek roven dané konstantě.  
+  Určete definiční obor a proveďte zkoušku správnosti řešení.
+  \begin{tasks}(3)
+    \task \(\dfrac{3x + 6}{x + 2} = 3\)
+    \task \(\dfrac{3x + 6}{x + 2} = 5\)
+    \task \(\dfrac{x - 3}{x - 4} = \tfrac{1}{2}\)
+    \task \(\dfrac{x + 2}{3x - 1} = \tfrac{1}{3}\)
+    \task \(\dfrac{x - 3}{x - 4} = 1\)
+    \task \(\dfrac{x - \sqrt{5}}{x + \sqrt{5}} = \sqrt{5}\)
+    \task \(\dfrac{2x - 7}{x + 1} = -3\)
+    \task \(\dfrac{4x + 1}{2x - 5} = 2\)
+    \task \(\dfrac{5x - 3}{x - 4} = \pi\)
+  \end{tasks}
+\end{exercise}
+
+
+
+% =========================
+% ÚLOHA 24
+% =========================
+\begin{exercise}[Racionální rovnice – rovnost dvou podílů]
+  Vyřešte rovnice, ve kterých se rovnají dva racionální výrazy.  
+  Určete podmínky jmenovatelů a proveďte křížové násobení.
+  \begin{tasks}(2)
+    \task \(\dfrac{x - 1}{x - 3} = \dfrac{x + 3}{x - 6}\)
+    \task \(\dfrac{(3 - x)(2 + x)}{(4 + x)(x - 3)} = \dfrac{2 + x}{x - 3}\)
+    \task \(\dfrac{\tfrac{1}{3}y + \tfrac{3}{4}}{\tfrac{1}{3}y - \tfrac{3}{4}} = \dfrac{y + 3}{y - 4}\)
+    \task \(\dfrac{2x + 1}{x - 2} = \dfrac{3x - 4}{2x + 5}\)
+    \task \(\dfrac{x - 5}{x + 2} = \dfrac{2x + 3}{x - 1}\)
+    \task \(\dfrac{3x + 4}{x - \pi} = \dfrac{x - 2}{x + \pi}\)
+    \task \(\dfrac{x + \sqrt{2}}{2x - 3} = \dfrac{3x - 1}{x + \sqrt{2}}\)
+    \task \(\dfrac{2x - 5}{x + 1} = \dfrac{3x + 4}{2x - 3}\)
+    \task \(\dfrac{n + \sqrt{2}}{n - \sqrt{2}} = \dfrac{49 - 14\sqrt{2}}{47}\)
+    \task \(\dfrac{n + \sqrt{2}}{n - \sqrt{2}} = \dfrac{51 + 14\sqrt{2}}{47}\)
+  \end{tasks}
+\end{exercise}
+
+
+
+% =========================
+% ÚLOHA 25
+% =========================
+\begin{exercise}[Racionální rovnice – součty a rozdíly podílů]
+  Řešte rovnice, které obsahují součty nebo rozdíly racionálních výrazů.  
+  Stanovte podmínky definičního oboru a proveďte zkoušku.  
+  Využijte například rozklad \(x^{2} + x - 2 = (x + 2)(x - 1)\).
+  \begin{tasks}(2)
+    \task \(\dfrac{x - 1}{x - 2} + \dfrac{x + 1}{x - 4} = 2\)
+    \task $\dfrac{5}{x+1} - 1 = \dfrac{8-x}{x-1}$
+    \task \(\dfrac{2x + 3}{x - 1} - \dfrac{x - 5}{x + 2} = 4\)
+    \task $5 + \dfrac{3}{3x-12} = \dfrac{5-x}{x-4}$
+    \task $\dfrac{3}{x+1} - 1 = \dfrac{6-3x}{x-1}$
+    \task $\dfrac{4x-1}{x-2} + 1 = \dfrac{3-5x}{2-x}$
+    \task \(\dfrac{3x - 2}{x + 4} + \dfrac{x + 6}{x - 4} = 5\)
+    \task \(\dfrac{x + 2}{x - 2} - \dfrac{x - 2}{x + 2} = 1\)
+    \task $\dfrac{x-4}{2(x-1)} + \dfrac{x+4}{2(x+1)} = 1$
+    \task \(\dfrac{2}{x} + \dfrac{3}{x - 1} = \dfrac{5}{x^{2} - x}\)
+    \task \(\dfrac{x + 1}{x + 3} + \dfrac{x - 1}{x - 3} = \dfrac{2x}{x^{2} - 9}\)
+    \task \(\dfrac{1}{x - 3} + \dfrac{2}{x + 1} = \dfrac{3}{x^{2} - 2x - 3}\)  
+    \task \(\dfrac{x + 1}{x - 1} + \dfrac{2}{x + 2} - 1 = \dfrac{6}{x^{2} + x - 2}\)  
+    \task $\frac{-1 + k + \dfrac{2 - x}{3}}{-1 - k + \dfrac{2 + k}{4}} = \dfrac{8}{11}$
+  \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 26
+% =========================
+\begin{exercise}[BONUS: Racionální rovnice]
+  Řešte rovnici a proveďte zkoušku.
+  \begin{tasks}(2)
+    \task \(\dfrac{9}{x - \dfrac{3}{x - \dfrac{9}{x - 3}}} = 3\)
+    \task \(\dfrac{5}{5 - \dfrac{30}{6 - \dfrac{5}{6 - x}}} = x\)
+    \task \(\dfrac{8}{2 - \dfrac{16}{x + 1 - \dfrac{4}{x}}} = x\)
+    \task \(\dfrac{4}{3 - \dfrac{12}{2 - \dfrac{6}{x - 1}}} = x\)
+  \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{6}
+% =========================
+% ÚLOHA 27
+% =========================
+\begin{exercise}[Lineární rovnice s více neznámými]
+  Řešte následující lineární rovnice s více neznámými.
+  \begin{tasks}(2)
+    \task \(2x + 3y = 12\)
+    \task $x - \frac{1}{2}x = 4$
+    \task $-3x - 2y = -5$
+    \task $0x + 4y = 7$
+    \task $-x + 0y = 3$
+    \task $0x - 2y = 0$
+    \task $0x + 0y = -4$
+    \task \(2x + y - 2 = x + 3y + 3\)
+    \task \(3(x+y) - x + 2 = \sqrt{2}\,x + y\)
+    \task \(-\tfrac{3}{4}x - y = \tfrac{3}{2} - y\)
+    \task \(4x - y + 10 = y + 10\)
+    \task \(\dfrac{x+1}{\,y-3\,} = 2\)
+    \task \(2x - 3y + z - 5 = 0\)
+    \task \(x - 2y + 3z + 3 = 2x + 3y + 3z\)
+  \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{7}
+
+% =========================
+% ÚLOHA 28
+% =========================
+\begin{exercise}[Soustavy lineárních rovnic – základní]
+Řešte následující soustavy rovnic v reálných číslech. Zapište řešení (pokud existuje) jako uspořádanou dvojici/trojici, případně popište množinu řešení.
+\begin{tasks}(3)
+
+\task $\begin{cases}
+-x + 5y = -12\\
+x - 4y = 15
+\end{cases}$
+
+\task $\begin{cases}
+3u + 2v = -4\\
+2u - 3v = 19
+\end{cases}$
+
+\task $\begin{cases}
+7x - 3y = 15\\
+5y +6y = 27
+\end{cases}$
+
+\task $\begin{cases}
+3x + 2y = 20\\
+2x + 3y = 20
+\end{cases}$
+
+\task $\begin{cases}
+3u + 2v = -4\\
+2u - 3v = 19
+\end{cases}$
+
+\task $\begin{cases}
+3u + 2v = -4\\
+2u - 3v = 19
+\end{cases}$
+
+\task $\begin{cases}
+3u + 2v = -4\\
+2u - 3v = 19
+\end{cases}$
+
+\task $\begin{cases}
+3u + 2v = -4\\
+2u - 3v = 19
+\end{cases}$
+
+\task $\begin{cases}
+u - 2v = \sqrt{2}\\
+2u + v = 3\sqrt{2}
+\end{cases}$
+
+\task $\begin{cases}
+2x - 3y = 1\\
+-x + \tfrac{3}{2}y = -\tfrac{1}{2}
+\end{cases}$
+
+\task $\begin{cases}
+y + \sqrt{3}\,z = 1\\
+2y + 2\sqrt{3}\,z = 3
+\end{cases}$
+
+\task $\begin{cases}
+0\cdot x + 3y = 1\\
+-x - y = 0
+\end{cases}$
+
+\task $\begin{cases}
+\sqrt{2}\,x + 2y = -2\\
+3x + 0\cdot y = 4
+\end{cases}$
+
+\task $\begin{cases}
+u = 4 - 2v\\
+v = 3 + u
+\end{cases}$
+
+\task $\begin{cases}
+4t = 5 + 2s\\
+6 + 2x = 4t
+\end{cases}$
+
+\end{tasks}
+\end{exercise}
+
+
+
+\newpage
+% =========================
+% ÚLOHA 29
+% =========================
+\begin{exercise}[Soustavy lineárních rovnic – obtížnější a směs typů]
+Řešte soustavy.
+\begin{tasks}(1)
+
+\task $\begin{cases}
+3(x+4) - 2(x+y) = 4\\
+5(x-y) + 6(x-2) - 2 = 0
+\end{cases}$
+
+\task $\begin{cases}
+(x+4)(s-2) - (x-5)(s+4) = 0\\
+(x+6)(s-1) - (x-1)(s+2) = 0
+\end{cases}$
+
+\task $\begin{cases}
+(x+4)(y-2) = (x-2)(y+13) \\
+(x-1)(y-3) = (x+2)(y-5)
+\end{cases}$
+
+\task $\begin{cases}
+\tfrac{1}{3}(2x-3y) - \tfrac{1}{4}(x-2y+3) = 3\\
+\tfrac{3}{4}(x+1) + \tfrac{1}{3}(4x-2y-3) = 6 + y
+\end{cases}$
+
+\task $\begin{cases}
+(x-1)(y+4) = (x+3)(y-1)\\
+(x-2)(y+2) = x(y-2)
+\end{cases}$
+
+\task $\begin{cases}
+(x-y)^2 - (x+y)^2 = 2x(1-2y) - y\\
+(x-y)(x+y) - 2y(x-1) = (x-y)^2 + 4x - 2y^2
+\end{cases}$
+
+\task $\begin{cases}
+\sqrt{2}\,x - \sqrt{3}\,y = 1\\
+(2\sqrt{2}-\sqrt{3})x + (\sqrt{2}-2\sqrt{3})y = 0
+\end{cases}$
+
+\task $\begin{cases}
+\tfrac{x}{2} - \tfrac{y}{3} = 1\\
+\tfrac{3x}{4} + \tfrac{y}{6} = \tfrac{5}{2}
+\end{cases}$
+
+\task $\begin{cases}
+(x+1)(y-2) - (x-1)(y+2) = 7\\
+(2x-3)(y+1) + (x+4)(y-2) = 1
+\end{cases}$
+
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 31
+% =========================
+\begin{exercise}[Soustavy lineárních rovnic – soustavy o třech neznámých]
+Řešte následující soustavy rovnic. Uveďte, zda mají právě jedno řešení, žádné řešení, nebo nekonečně mnoho řešení (a případně parametrický tvar).
+\begin{tasks}(3)
+
+\task $\begin{cases}
+4x + y + 2z = 2\\
+2y - z = 1\\
+z = 7
+\end{cases}$
+
+\task $\begin{cases}
+x + y + z = 1\\
+x + 2y + 2z = 2\\
+2x + 2y + z = 3
+\end{cases}$
+
+\task $\begin{cases}
+x - y + z = 2\\
+x + 2y - 2z = 3\\
+6x - 3y + 3z = 14
+\end{cases}$
+
+\task $\begin{cases}
+x - y + 2z = 2\\
+x + 2y - 2z = 3\\
+6x - 3y + 8z = 13
+\end{cases}$
+
+\task $\begin{cases}
+3x + 2y + 3z = 10\\
+5x - y + 4z = 2\\
+2x - 3y + 5z = -3
+\end{cases}$
+
+\task $\begin{cases}
+-2x + y + 4z = -2\\
+x - 2y - 2z = 0\\
+x + y - 2z = 2
+\end{cases}$
+
+\task $\begin{cases}
+5x + 5y + 4z = 2\\
+3x + 4y - 3z = 1\\
+-2x - y - 4z = 0
+\end{cases}$
+
+\task $\begin{cases}
+2x + 3y = 2\\
+3x + 2z = 1\\
+3y + 4z = 2
+\end{cases}$
+
+\task $\begin{cases}
+x + y + 2z = -1\\
+2x - y + 2z = -4\\
+4x + y + 4z = -2
+\end{cases}$
+
+\task $\begin{cases}
+2x + y - z = 0\\
+4x + 2y + z = 0\\
+x - y + 3z = 0
+\end{cases}$
+
+\task $\begin{cases}
+2x - y = 6\\
+y + 4z = 8\\
+x - z = 1
+\end{cases}$
+
+\task $\begin{cases}
+(x-2z)+(y+z)=3\\
+2(x-y)-(y-3z)=4\\
+x+y+z=2
+\end{cases}$
+
+\task $\begin{cases}
+x-2y+z=1\\
+-x+3y+2z=5\\
+2x-y+5z=5
+\end{cases}$
+
+
+\task $\begin{cases}
+-2y+z=1\\
+2x+y-2z=5\\
+x+2y-4z=-14
+\end{cases}$
+
+\task $\begin{cases}
+x+y-2z=-2\sqrt{2}\\
+2x+2y+3z=3\sqrt{2}\\
+5x+5y+4z=4\sqrt{2}
+\end{cases}$
+
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 31
+% =========================
+\begin{exercise}[Řešte soustavy rovnic]
+\begin{tasks}(2)
+
+\task $\begin{cases}
+\dfrac{x+1}{y+1} = 2\\[6pt]
+\dfrac{y+2}{z+1} = 4\\[6pt]
+\dfrac{z+3}{x+1} = \frac{1}{2}\\[6pt]
+\end{cases}$
+
+\task $\begin{cases}
+\dfrac{3x+y}{z+1} = 2\\[6pt]
+\dfrac{3y+z}{x+1} = 2\\[6pt]
+\dfrac{3z+x}{y+1} = 2
+\end{cases}$
+
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 32
+% =========================
+\begin{exercise}[Řešte soustavy rovnic se čtyřmi neznámými \(x, y, z, u\)]
+\begin{tasks}(2)
+
+\task $\begin{cases}
+x + y + z + u = 10\\
+x + y - z - u = -4\\
+x - y - z + u = 0\\
+-x + y + z + u = 8
+\end{cases}$
+
+\task $\begin{cases}
+x - 2z + u = 3\\
+2x - y + z = 5\\
+x - y - 2u = 1\\
+2y + z - u = -3
+\end{cases}$
+
+\end{tasks}
+\end{exercise}
+
+
+\end{document}

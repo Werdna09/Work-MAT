@@ -1,0 +1,782 @@
+\subsubsection{Vzájemná poloha přímek zadaných v různých tvarech}
+\label{subsubsec:Relative_position_mixed_line_forms}
+
+V předchozích částech byly obě přímky zadány stejným způsobem.
+V úlohách však mohou být jednotlivé přímky zadány také různými tvary.
+
+Jedna přímka může být například zadána parametricky a druhá obecnou
+rovnicí. V takovém případě můžeme jednu z nich převést do stejného
+tvaru jako druhou pomocí postupů uvedených v podsekci
+\ref{subsec:Conversions_between_line_forms}. Úplný převod však není
+vždy nutný. Často postačí z obou zápisů určit údaj popisující směr
+přímky a tyto údaje porovnat.
+
+Při určování vzájemné polohy budeme používat především následující
+informace:
+
+\begingroup
+\renewcommand{\arraystretch}{1.6}
+\[
+\begin{array}{c|c|c}
+    \text{způsob zadání}
+    &
+    \text{údaj určující směr}
+    &
+    \text{další užitečný údaj}
+    \\
+    \hline
+    \text{parametrické vyjádření}
+    &
+    \vec{u}=(u_x;u_y)
+    &
+    A[x_A;y_A]
+    \\[1mm]
+    \text{obecná rovnice}
+    &
+    \vec{n}=(a;b)
+    &
+    \vec{u}=(-b;a)
+    \\[1mm]
+    \text{směrnicový tvar}
+    &
+    k
+    &
+    \vec{u}=(1;k),\quad Q[0;q]
+\end{array}
+\]
+\endgroup
+
+Při řešení tedy můžeme postupovat dvěma způsoby:
+
+\begin{enumerate}
+    \item jednu přímku převedeme do stejného tvaru jako druhou
+    a použijeme již známý postup;
+    \item bez úplného převodu porovnáme směrové nebo normálové vektory,
+    případně směrnice, a průsečík určíme přímým dosazením jednoho
+    zápisu do druhého.
+\end{enumerate}
+
+Druhý postup bývá zpravidla kratší, protože využívá pouze ty údaje,
+které jsou pro určení vzájemné polohy skutečně potřebné.
+
+
+\paragraph{Parametrické vyjádření a obecná rovnice}
+
+Uvažujme přímku $p$ zadanou parametricky
+\begin{equation}\label{eq:Mixed_parametric_general_p}
+    \begin{aligned}
+        p:\quad x&=x_A+t u_x,\\
+                 y&=y_A+t u_y,
+                 \qquad t\in\mathbb{R},
+    \end{aligned}
+\end{equation}
+a přímku $q$ zadanou obecnou rovnicí
+\begin{equation}\label{eq:Mixed_parametric_general_q}
+    q:\quad ax+by+c=0.
+\end{equation}
+
+Směr přímky $p$ je určen směrovým vektorem
+\[
+    \vec{u}_p=(u_x;u_y),
+\]
+zatímco přímka $q$ má normálový vektor
+\[
+    \vec{n}_q=(a;b).
+\]
+
+Přímky mají stejný směr právě tehdy, když je směrový vektor přímky
+$p$ kolmý k normálovému vektoru přímky $q$. Tuto podmínku můžeme
+zapsat jako
+\begin{equation}\label{eq:Mixed_parametric_general_parallel_condition}
+    \vec{u}_p\cdot\vec{n}_q
+    =
+    au_x+bu_y
+    =
+    0.
+\end{equation}
+
+Jestliže
+\[
+    au_x+bu_y\neq0,
+\]
+přímky nemají stejný směr, a jsou proto různoběžné.
+
+Jestliže naopak
+\[
+    au_x+bu_y=0,
+\]
+mají přímky stejný směr. Potom musíme ještě rozhodnout, zda jsou
+rovnoběžné, nebo totožné. Stačí ověřit, zda zvolený bod
+$A[x_A;y_A]$ parametricky zadané přímky leží také na přímce $q$:
+
+\[
+\begin{array}{c|c}
+    ax_A+by_A+c\neq0
+    &
+    p\parallel q
+    \\[1mm]
+    ax_A+by_A+c=0
+    &
+    p=q
+\end{array}
+\]
+
+Průsečík různoběžných přímek můžeme určit bez převodu celé rovnice.
+Parametrické rovnice přímky $p$ dosadíme přímo do obecné rovnice
+přímky $q$:
+\begin{align*}
+    a(x_A+t u_x)+b(y_A+t u_y)+c&=0,\\
+    ax_A+at u_x+by_A+bt u_y+c&=0,\\
+    t(au_x+bu_y)+ax_A+by_A+c&=0.
+\end{align*}
+
+Je-li $au_x+bu_y\neq0$, získáme jedinou hodnotu parametru
+\begin{equation}\label{eq:Mixed_parametric_general_intersection_parameter}
+    t
+    =
+    -\frac{ax_A+by_A+c}{au_x+bu_y}.
+\end{equation}
+Po jejím dosazení do parametrického vyjádření přímky $p$ získáme
+souřadnice průsečíku.
+
+\begin{remark}\label{rem:Mixed_parametric_general_equation_meaning}
+    Rovnice vzniklá dosazením parametrického vyjádření do obecné
+    rovnice může mít tři různé podoby:
+
+    \begin{itemize}
+        \item má právě jedno řešení pro $t$; přímky jsou různoběžné;
+        \item vznikne nepravdivý výrok, například $5=0$; přímky jsou
+        rovnoběžné a různé;
+        \item vznikne pravdivý výrok, například $0=0$; každý bod
+        parametricky zadané přímky splňuje obecnou rovnici, a přímky
+        jsou proto totožné.
+    \end{itemize}
+\end{remark}
+
+Kolmost lze určit také přímo. Přímka $q$ je kolmá ke svému normálovému
+vektoru $\vec{n}_q$. Proto platí
+\[
+    p\perp q
+\]
+právě tehdy, když jsou vektory $\vec{u}_p$ a $\vec{n}_q$ rovnoběžné.
+
+\begin{example}\label{exa:Mixed_parametric_general_intersection}
+    Určete vzájemnou polohu přímek
+    \[
+        \begin{aligned}
+            p:\quad x&=1+2t,\\
+                     y&=2-t,
+                     \qquad t\in\mathbb{R},
+        \end{aligned}
+    \]
+    a
+    \[
+        q:\quad x+y-4=0.
+    \]
+    Jsou-li přímky různoběžné, určete jejich průsečík.
+
+    Směrový vektor přímky $p$ a normálový vektor přímky $q$ jsou
+    \[
+        \vec{u}_p=(2;-1),
+        \qquad
+        \vec{n}_q=(1;1).
+    \]
+
+    Vypočítáme jejich skalární součin:
+    \[
+        \vec{u}_p\cdot\vec{n}_q
+        =
+        (2;-1)\cdot(1;1)
+        =
+        2-1
+        =
+        1.
+    \]
+
+    Skalární součin není roven nule, takže směrový vektor přímky $p$
+    není kolmý k normálovému vektoru přímky $q$. Přímky tedy nemají
+    stejný směr a jsou různoběžné.
+
+    Průsečík určíme dosazením parametrických rovnic přímky $p$ do
+    obecné rovnice přímky $q$:
+    \begin{align*}
+        (1+2t)+(2-t)-4&=0,\\
+        1+2t+2-t-4&=0,\\
+        t-1&=0,\\
+        t&=1.
+    \end{align*}
+
+    Hodnotu $t=1$ dosadíme do parametrického vyjádření:
+    \begin{align*}
+        x&=1+2\cdot1=3,\\
+        y&=2-1=1.
+    \end{align*}
+
+    Průsečíkem přímek je bod
+    \[
+        P[3;1].
+    \]
+
+    Výsledek ověříme dosazením do obecné rovnice:
+    \[
+        3+1-4=0.
+    \]
+
+    Platí tedy
+    \[
+        p\cap q=\{P[3;1]\}.
+    \]
+\end{example}
+
+
+\paragraph{Parametrické vyjádření a směrnicový tvar}
+
+Uvažujme přímku $p$ zadanou parametricky
+\begin{equation}\label{eq:Mixed_parametric_slope_p}
+    \begin{aligned}
+        p:\quad x&=x_A+t u_x,\\
+                 y&=y_A+t u_y,
+                 \qquad t\in\mathbb{R},
+    \end{aligned}
+\end{equation}
+a přímku $q$ ve směrnicovém tvaru
+\begin{equation}\label{eq:Mixed_parametric_slope_q}
+    q:\quad y=kx+q_0.
+\end{equation}
+
+Směrový vektor přímky $p$ je
+\[
+    \vec{u}_p=(u_x;u_y),
+\]
+zatímco jako směrový vektor přímky $q$ můžeme zvolit
+\[
+    \vec{u}_q=(1;k).
+\]
+
+Přímky mají stejný směr právě tehdy, když jsou jejich směrové vektory
+rovnoběžné. Jestliže $u_x\neq0$, můžeme tuto podmínku zapsat jako
+\[
+    \frac{u_y}{u_x}=k.
+\]
+
+Podmínku lze zapsat také bez dělení:
+\begin{equation}\label{eq:Mixed_parametric_slope_parallel_condition}
+    u_y-ku_x=0.
+\end{equation}
+
+Tento zápis je výhodný také při rozlišování svislé přímky. Je-li
+$u_x=0$, potom musí platit $u_y\neq0$, a proto
+\[
+    u_y-ku_x=u_y\neq0.
+\]
+Svislá parametricky zadaná přímka tedy nemůže být rovnoběžná s přímkou
+ve směrnicovém tvaru a vždy ji protíná.
+
+Jestliže
+\[
+    u_y-ku_x\neq0,
+\]
+jsou přímky různoběžné.
+
+Jestliže
+\[
+    u_y-ku_x=0,
+\]
+mají přímky stejný směr. Jejich totožnost ověříme dosazením bodu
+$A[x_A;y_A]$ do směrnicové rovnice:
+\[
+\begin{array}{c|c}
+    y_A\neq kx_A+q_0
+    &
+    p\parallel q
+    \\[1mm]
+    y_A=kx_A+q_0
+    &
+    p=q
+\end{array}
+\]
+
+Průsečík různoběžných přímek určíme dosazením parametrických rovnic
+do směrnicového tvaru:
+\begin{align*}
+    y_A+t u_y
+    &=
+    k(x_A+t u_x)+q_0,\\
+    y_A+t u_y
+    &=
+    kx_A+kt u_x+q_0,\\
+    t(u_y-ku_x)
+    &=
+    kx_A+q_0-y_A.
+\end{align*}
+
+Je-li $u_y-ku_x\neq0$, dostáváme
+\begin{equation}\label{eq:Mixed_parametric_slope_intersection_parameter}
+    t
+    =
+    \frac{kx_A+q_0-y_A}{u_y-ku_x}.
+\end{equation}
+
+Kolmost přímek můžeme určit pomocí skalárního součinu jejich směrových
+vektorů:
+\[
+    \vec{u}_p\cdot\vec{u}_q
+    =
+    (u_x;u_y)\cdot(1;k)
+    =
+    u_x+ku_y.
+\]
+Proto platí
+\begin{equation}\label{eq:Mixed_parametric_slope_perpendicular_condition}
+    p\perp q
+    \quad\Longleftrightarrow\quad
+    u_x+ku_y=0.
+\end{equation}
+
+\begin{example}\label{exa:Mixed_parametric_slope_parallel_coincident}
+    Je dána parametricky zadaná přímka
+    \[
+        \begin{aligned}
+            p:\quad x&=1+2t,\\
+                     y&=2+t,
+                     \qquad t\in\mathbb{R},
+        \end{aligned}
+    \]
+    a přímky ve směrnicovém tvaru
+    \[
+        q:\quad y=\frac12x+3,
+    \]
+    \[
+        r:\quad y=\frac12x+\frac32.
+    \]
+
+    Určete vzájemnou polohu dvojic přímek $p$, $q$ a přímek $p$, $r$.
+
+    Směrový vektor přímky $p$ je
+    \[
+        \vec{u}_p=(2;1),
+    \]
+    a její směrnice je proto
+    \[
+        k_p=\frac12.
+    \]
+
+    Přímky $q$ i $r$ mají rovněž směrnici
+    \[
+        k_q=k_r=\frac12.
+    \]
+    Všechny tři přímky tedy mají stejný směr.
+
+    Nejprve ověříme, zda bod $A[1;2]$ přímky $p$ leží na přímce $q$:
+    \[
+        \frac12\cdot1+3
+        =
+        \frac72
+        \neq
+        2.
+    \]
+    Bod $A$ na přímce $q$ neleží. Přímky $p$ a $q$ mají stejný směr,
+    ale nejsou totožné, a proto
+    \[
+        p\parallel q.
+    \]
+
+    Nyní dosadíme bod $A[1;2]$ do rovnice přímky $r$:
+    \[
+        \frac12\cdot1+\frac32
+        =
+        2.
+    \]
+    Bod $A$ na přímce $r$ leží. Přímky $p$ a $r$ mají stejný směr
+    a společný bod, a proto jsou totožné:
+    \[
+        p=r.
+    \]
+\end{example}
+
+
+\paragraph{Obecná rovnice a směrnicový tvar}
+
+Uvažujme přímku $p$ zadanou obecnou rovnicí
+\begin{equation}\label{eq:Mixed_general_slope_p}
+    p:\quad ax+by+c=0
+\end{equation}
+a přímku $q$ ve směrnicovém tvaru
+\begin{equation}\label{eq:Mixed_general_slope_q}
+    q:\quad y=kx+q_0.
+\end{equation}
+
+Normálový vektor přímky $p$ je
+\[
+    \vec{n}_p=(a;b),
+\]
+zatímco směrový vektor přímky $q$ můžeme zvolit jako
+\[
+    \vec{u}_q=(1;k).
+\]
+
+Přímky mají stejný směr právě tehdy, když je směrový vektor přímky
+$q$ kolmý k normálovému vektoru přímky $p$:
+\[
+    \vec{n}_p\cdot\vec{u}_q
+    =
+    (a;b)\cdot(1;k)
+    =
+    a+bk.
+\]
+
+Podmínka stejného směru tedy je
+\begin{equation}\label{eq:Mixed_general_slope_parallel_condition}
+    a+bk=0.
+\end{equation}
+
+Je-li $b=0$, obecná rovnice popisuje svislou přímku. Protože potom
+$a\neq0$, platí
+\[
+    a+bk=a\neq0.
+\]
+Svislá přímka se tedy s každou přímkou ve směrnicovém tvaru protíná.
+
+Jestliže
+\[
+    a+bk\neq0,
+\]
+jsou přímky různoběžné.
+
+Jestliže
+\[
+    a+bk=0,
+\]
+mají přímky stejný směr. K rozlišení rovnoběžnosti a totožnosti
+použijeme například bod
+\[
+    Q[0;q_0],
+\]
+který leží na přímce $q$. Po dosazení do obecné rovnice přímky $p$
+dostáváme
+\[
+\begin{array}{c|c}
+    bq_0+c\neq0
+    &
+    p\parallel q
+    \\[1mm]
+    bq_0+c=0
+    &
+    p=q
+\end{array}
+\]
+
+Průsečík různoběžných přímek získáme dosazením směrnicové rovnice do
+obecné rovnice:
+\begin{align*}
+    ax+b(kx+q_0)+c&=0,\\
+    ax+bkx+bq_0+c&=0,\\
+    (a+bk)x+bq_0+c&=0.
+\end{align*}
+
+Je-li $a+bk\neq0$, dostáváme
+\begin{equation}\label{eq:Mixed_general_slope_intersection_x}
+    x
+    =
+    -\frac{bq_0+c}{a+bk}.
+\end{equation}
+Druhou souřadnici průsečíku určíme ze vztahu
+\[
+    y=kx+q_0.
+\]
+
+Kolmost můžeme určit porovnáním směrových vektorů. Jako směrový vektor
+přímky $p$ můžeme zvolit
+\[
+    \vec{u}_p=(-b;a),
+\]
+zatímco pro přímku $q$ máme
+\[
+    \vec{u}_q=(1;k).
+\]
+Přímky jsou kolmé právě tehdy, když
+\[
+    \vec{u}_p\cdot\vec{u}_q
+    =
+    (-b;a)\cdot(1;k)
+    =
+    -b+ak
+    =
+    0.
+\]
+Tedy
+\begin{equation}\label{eq:Mixed_general_slope_perpendicular_condition}
+    p\perp q
+    \quad\Longleftrightarrow\quad
+    ak-b=0.
+\end{equation}
+
+\begin{example}\label{exa:Mixed_general_slope_perpendicular}
+    Určete vzájemnou polohu přímek
+    \[
+        p:\quad x+2y-5=0
+    \]
+    a
+    \[
+        q:\quad y=2x.
+    \]
+    Jsou-li přímky různoběžné, určete jejich průsečík.
+
+    Pro obecnou rovnici přímky $p$ platí
+    \[
+        a=1,
+        \qquad
+        b=2,
+        \qquad
+        c=-5.
+    \]
+    Směrnice přímky $q$ je
+    \[
+        k=2,
+        \qquad
+        q_0=0.
+    \]
+
+    Nejprve ověříme podmínku stejného směru:
+    \[
+        a+bk
+        =
+        1+2\cdot2
+        =
+        5.
+    \]
+    Výsledek není roven nule, takže přímky nemají stejný směr a jsou
+    různoběžné.
+
+    Současně platí
+    \[
+        ak-b
+        =
+        1\cdot2-2
+        =
+        0.
+    \]
+    Přímky jsou tedy kolmé.
+
+    Průsečík určíme dosazením rovnice $y=2x$ do obecné rovnice:
+    \begin{align*}
+        x+2(2x)-5&=0,\\
+        x+4x-5&=0,\\
+        5x&=5,\\
+        x&=1.
+    \end{align*}
+
+    Druhou souřadnici získáme ze směrnicové rovnice:
+    \[
+        y=2\cdot1=2.
+    \]
+
+    Průsečíkem je bod
+    \[
+        P[1;2].
+    \]
+
+    Platí tedy
+    \[
+        p\perp q
+        \qquad\text{a}\qquad
+        p\cap q=\{P[1;2]\}.
+    \]
+\end{example}
+
+\begin{example}\label{exa:Mixed_line_forms_summary}
+    Jsou dány tři přímky, z nichž je každá zadaná jiným způsobem:
+    \[
+        \begin{aligned}
+            p:\quad x&=t,\\
+                     y&=2t,
+                     \qquad t\in\mathbb{R},
+        \end{aligned}
+    \]
+    \[
+        q:\quad 2x-y+5=0,
+    \]
+    \[
+        r:\quad y=-\frac12x+\frac52.
+    \]
+
+    Určete vzájemnou polohu každé dvojice přímek. U různoběžných
+    přímek určete také jejich průsečík.
+
+    \begin{enumerate}[label=\alph*)]
+        \item Přímky $p$ a $q$,
+        \item přímky $p$ a $r$,
+        \item přímky $q$ a $r$.
+    \end{enumerate}
+
+    Nejprve z jednotlivých zápisů získáme údaje popisující směr
+    přímek.
+
+    Přímka $p$ má směrový vektor
+    \[
+        \vec{u}_p=(1;2).
+    \]
+
+    Přímka $q$ má normálový vektor
+    \[
+        \vec{n}_q=(2;-1),
+    \]
+    a proto jako její směrový vektor můžeme zvolit
+    \[
+        \vec{u}_q=(1;2).
+    \]
+
+    Přímka $r$ má směrnici
+    \[
+        k_r=-\frac12.
+    \]
+    Jako její směrový vektor můžeme zvolit
+    \[
+        \vec{u}_r=(2;-1).
+    \]
+
+    \begin{enumerate}[label=\alph*), leftmargin=2em]
+
+        \item \textbf{Přímky $p$ a $q$}
+
+        Směrové vektory přímek jsou totožné:
+        \[
+            \vec{u}_p=\vec{u}_q=(1;2).
+        \]
+        Přímky tedy mají stejný směr.
+
+        Bod $A[0;0]$ leží na přímce $p$. Dosadíme jej do obecné rovnice
+        přímky $q$:
+        \[
+            2\cdot0-0+5=5\neq0.
+        \]
+        Bod $A$ na přímce $q$ neleží, a proto jsou přímky rovnoběžné
+        a různé:
+        \[
+            p\parallel q.
+        \]
+
+        \item \textbf{Přímky $p$ a $r$}
+
+        Vypočítáme skalární součin jejich směrových vektorů:
+        \[
+            \vec{u}_p\cdot\vec{u}_r
+            =
+            (1;2)\cdot(2;-1)
+            =
+            2-2
+            =
+            0.
+        \]
+        Přímky jsou tedy kolmé, a proto různoběžné.
+
+        Průsečík určíme dosazením parametrického vyjádření přímky $p$
+        do směrnicové rovnice přímky $r$:
+        \begin{align*}
+            2t
+            &=
+            -\frac12t+\frac52,\\
+            \frac52t
+            &=
+            \frac52,\\
+            t&=1.
+        \end{align*}
+
+        Pro $t=1$ dostáváme
+        \[
+            P[1;2].
+        \]
+
+        Platí tedy
+        \[
+            p\perp r
+            \qquad\text{a}\qquad
+            p\cap r=\{P[1;2]\}.
+        \]
+
+        \item \textbf{Přímky $q$ a $r$}
+
+        Přímka $q$ má směrový vektor
+        \[
+            \vec{u}_q=(1;2),
+        \]
+        zatímco přímka $r$ má směrový vektor
+        \[
+            \vec{u}_r=(2;-1).
+        \]
+        Jejich skalární součin je
+        \[
+            (1;2)\cdot(2;-1)=2-2=0.
+        \]
+        Přímky jsou tedy také kolmé.
+
+        Průsečík určíme dosazením směrnicové rovnice přímky $r$ do
+        obecné rovnice přímky $q$:
+        \begin{align*}
+            2x-\left(-\frac12x+\frac52\right)+5&=0,\\
+            2x+\frac12x-\frac52+5&=0,\\
+            \frac52x+\frac52&=0,\\
+            x&=-1.
+        \end{align*}
+
+        Druhou souřadnici dopočítáme ze směrnicové rovnice:
+        \[
+            y
+            =
+            -\frac12(-1)+\frac52
+            =
+            \frac12+\frac52
+            =
+            3.
+        \]
+
+        Průsečíkem je bod
+        \[
+            Q[-1;3].
+        \]
+
+        Platí tedy
+        \[
+            q\perp r
+            \qquad\text{a}\qquad
+            q\cap r=\{Q[-1;3]\}.
+        \]
+
+    \end{enumerate}
+
+    Výsledky můžeme shrnout:
+    \[
+    \begin{array}{c|c|c}
+        \text{dvojice přímek}
+        &
+        \text{vzájemná poloha}
+        &
+        \text{průsečík}
+        \\
+        \hline
+        p,\ q
+        &
+        \text{rovnoběžné}
+        &
+        \varnothing
+        \\[1mm]
+        p,\ r
+        &
+        \text{kolmé}
+        &
+        P[1;2]
+        \\[1mm]
+        q,\ r
+        &
+        \text{kolmé}
+        &
+        Q[-1;3]
+    \end{array}
+    \]
+\end{example}
+
+Při určování vzájemné polohy přímek zadaných různými způsoby tedy není
+nutné vždy provádět úplný převod. Často stačí z každého zápisu získat
+směrový nebo normálový vektor, případně směrnici, a průsečík určit
+přímým dosazením. Volba postupu závisí na konkrétním zadání a na tom,
+který zápis vede k nejjednoduššímu výpočtu.

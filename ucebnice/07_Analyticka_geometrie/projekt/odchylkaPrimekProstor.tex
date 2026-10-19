@@ -1,0 +1,710 @@
+\subsection{Odchylka dvou přímek v prostoru}
+\label{subsec:Angle_between_lines_space}
+
+Při zkoumání vzájemné polohy přímek jsme určovali, zda mají stejný
+směr a zda mají společný bod. Nyní nás nebude zajímat jejich poloha,
+ale pouze to, jaký úhel jejich směry svírají.
+
+V rovině jsme odchylku dvou různoběžných přímek chápali jako velikost
+ostrého, případně pravého úhlu, který přímky svírají. U rovnoběžných
+přímek byla jejich odchylka rovna nule.
+
+V prostoru však nastává nová situace. Dvě přímky mohou být
+\textbf{mimoběžné}, a tedy nemají žádný společný bod. Nemůžeme proto
+jejich odchylku určit přímo jako úhel vznikající v jejich průsečíku.
+
+Přesto mají obě přímky jednoznačně určené směry. Odchylku mimoběžných
+přímek proto můžeme určit tak, že jednu z nich rovnoběžně posuneme tak,
+aby se s druhou přímkou protínala. Její směr se tím nezmění, a nezmění
+se tedy ani hledaná odchylka.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+
+
+
+        % Bod na přímce p
+        \coordinate (A) at (0,0,0);
+        \coordinate (B) at (0,3,0);
+
+        % Přímka p
+        \draw[thick]
+            (-3,0,0) -- (3,0,0)
+            node[right] {$p$};
+
+        % Mimoběžná přímka q
+        \draw[thick]
+            (-3,3,3) -- (3,3,-3)
+            node[right] {$q$};
+
+        % Rovnoběžná kopie q vedená bodem A
+        \draw[dashed, thick]
+            (-3,0,3) -- (3,0,-3)
+            node[right] {$q'$};
+
+        % Posunutí
+        \draw[dashed] (A) -- (B);
+
+        % Bod A
+        \fill (A) circle (2pt) node[below left] {$A$};
+        \fill (B) circle (2pt) node[above left] {$B$};
+
+        % Směrové vektory
+        \draw[vector]
+            (A) -- (2.5,0,0)
+            node[midway, below] {$\vec{u}$};
+
+        \draw[vector]
+            (A) -- (2,0,-2)
+            node[midway, above right] {$\vec{v}$};
+
+        % Symbol odchylky
+        \node at (0.7,0,-0.27) {$\varphi$};
+
+        % Úhel mezi přímkami
+        \draw[-, thick] (1.25,0,0) arc (0:20:1);
+
+        \node at (-1.1,1.1,0.2) {$q'\parallel q$};
+
+    \end{tikzpicture}
+    \caption{Odchylku mimoběžných přímek určíme pomocí rovnoběžného
+    posunutí jedné z nich.}
+    \label{fig:Angle_skew_lines_space}
+\end{figure}
+
+\begin{definition}
+    \label{def:Angle_between_lines_space}
+    \textbf{Odchylkou dvou přímek} $p$ a $q$ v prostoru nazýváme
+    velikost ostrého nebo pravého úhlu mezi jejich směry.
+
+    Odchylku označujeme $\varphi$ a platí
+    \[
+        \varphi\in\left\langle 0^\circ;90^\circ\right\rangle.
+    \]
+
+    Jsou-li přímky rovnoběžné nebo totožné, je jejich odchylka
+    \[
+        \varphi=0^\circ.
+    \]
+\end{definition}
+
+Odchylka přímek tedy nezávisí na tom, kde se přímky v prostoru
+nacházejí, ale pouze na jejich směrech. K jejímu výpočtu proto
+potřebujeme pouze jejich směrové vektory.
+
+Uvažujme přímky
+\[
+    p:\ X=A+t\vec{u}
+\]
+a
+\[
+    q:\ X=B+s\vec{v},
+\]
+kde
+\[
+    \vec{u}=(u_x;u_y;u_z)
+    \qquad\text{a}\qquad
+    \vec{v}=(v_x;v_y;v_z)
+\]
+jsou jejich nenulové směrové vektory.
+
+Z kapitoly o skalárním součinu vektorů
+(viz vztah \ref{eq:Angle_between_vectors_space}) víme, že pro úhel
+$\alpha$ mezi dvěma nenulovými vektory platí
+\[
+    \cos\alpha
+    =
+    \frac{\vec{u}\cdot\vec{v}}
+         {|\vec{u}|\cdot|\vec{v}|}.
+\]
+
+Úhel dvou vektorů však může nabývat hodnot od $0^\circ$ do
+$180^\circ$, zatímco odchylka přímek je vždy nejvýše $90^\circ$.
+
+Důvodem je skutečnost, že přímka nemá žádnou pevně určenou orientaci.
+Je-li $\vec{u}$ směrovým vektorem přímky, potom je jejím směrovým
+vektorem také opačný vektor
+\[
+    -\vec{u}.
+\]
+
+Pokud například směrové vektory svírají úhel
+\[
+    \alpha=120^\circ,
+\]
+pak po obrácení jednoho z nich získáme úhel
+\[
+    180^\circ-120^\circ=60^\circ.
+\]
+Právě menší z těchto dvou úhlů představuje odchylku přímek.
+
+Platí tedy
+\[
+    \varphi
+    =
+    \min\{\alpha;180^\circ-\alpha\}.
+\]
+
+Protože
+\[
+    \cos(180^\circ-\alpha)=-\cos\alpha,
+\]
+můžeme oba případy zahrnout do jediného vztahu pomocí absolutní
+hodnoty:
+
+\begin{equation}
+        \cos\varphi
+        =
+        \frac{
+            \left|\vec{u}\cdot\vec{v}\right|
+        }{
+            |\vec{u}|\cdot|\vec{v}|
+        }
+    \label{eq:Angle_between_lines_space}
+\end{equation}
+
+Po rozepsání do souřadnic dostáváme
+
+\begin{equation}
+    \cos\varphi
+    =
+    \frac{
+        \left|
+            u_xv_x+u_yv_y+u_zv_z
+        \right|
+    }{
+        \sqrt{u_x^2+u_y^2+u_z^2}
+        \sqrt{v_x^2+v_y^2+v_z^2}
+    }
+    \label{eq:Angle_between_lines_space_coordinates}
+\end{equation}
+
+a samotnou odchylku vypočítáme jako
+\[
+    \varphi
+    =
+    \arccos
+    \left(
+        \frac{
+            \left|\vec{u}\cdot\vec{v}\right|
+        }{
+            |\vec{u}|\cdot|\vec{v}|
+        }
+    \right).
+\]
+
+\begin{remark}
+    \label{rem:Absolute_value_angle_lines_space}
+    Absolutní hodnota ve vztahu
+    \[
+        \cos\varphi
+        =
+        \frac{|\vec{u}\cdot\vec{v}|}
+             {|\vec{u}|\cdot|\vec{v}|}
+    \]
+    je důležitá.
+
+    Nahradíme-li směrový vektor $\vec{u}$ opačným vektorem
+    $-\vec{u}$, přímka se nijak nezmění, ale skalární součin změní
+    znaménko:
+    \[
+        (-\vec{u})\cdot\vec{v}
+        =
+        -(\vec{u}\cdot\vec{v}).
+    \]
+
+    Odchylka přímek však na volbě orientace jejich směrových vektorů
+    záviset nesmí. Absolutní hodnota tuto závislost odstraní a současně
+    zajistí, že
+    \[
+        \cos\varphi\geq0,
+    \]
+    takže výsledná odchylka leží v intervalu
+    \[
+        \left\langle0^\circ;90^\circ\right\rangle.
+    \]
+\end{remark}
+
+Při výpočtu odchylky tedy není nutné hledat průsečík přímek ani
+předem určovat jejich vzájemnou polohu. Z parametrických vyjádření
+stačí určit jejich směrové vektory.
+
+\begin{example}
+    \label{exa:Angle_between_intersecting_lines_space}
+
+    Určete odchylku přímek
+    \[
+        \begin{aligned}
+            p: x&=1+t,\\
+            y&=-1+t,\\
+            z&=2; t\in\mathbb{R}
+        \end{aligned}
+    \]
+    a
+    \[
+        \begin{aligned}
+            q: x&=3-s,\\
+            y&=2,\\
+            z&=1-s; s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Směrové vektory přímek jsou
+    \[
+        \vec{u}=(1;1;0),
+        \qquad
+        \vec{v}=(-1;0;-1).
+    \]
+
+    Nejprve vypočítáme jejich skalární součin:
+    \[
+        \vec{u}\cdot\vec{v}
+        =
+        1\cdot(-1)+1\cdot0+0\cdot(-1)
+        =
+        -1.
+    \]
+
+    Velikosti směrových vektorů jsou
+    \[
+        |\vec{u}|
+        =
+        \sqrt{1^2+1^2+0^2}
+        =
+        \sqrt{2}
+    \]
+    a
+    \[
+        |\vec{v}|
+        =
+        \sqrt{(-1)^2+0^2+(-1)^2}
+        =
+        \sqrt{2}.
+    \]
+
+    Dosadíme do vztahu pro odchylku přímek:
+    \begin{align*}
+        \cos\varphi
+        &=
+        \frac{|\vec{u}\cdot\vec{v}|}
+             {|\vec{u}|\cdot|\vec{v}|}\\
+        &=
+        \frac{|-1|}
+             {\sqrt{2}\cdot\sqrt{2}}\\
+        &=
+        \frac12.
+    \end{align*}
+
+    Odtud
+    \[
+        \varphi=60^\circ.
+    \]
+
+    Kdybychom absolutní hodnotu nepoužili, získali bychom
+    \[
+        \cos\alpha=-\frac12
+    \]
+    a tedy úhel směrových vektorů
+    \[
+        \alpha=120^\circ.
+    \]
+
+    Odchylkou přímek je však menší z obou úhlů:
+    \[
+        180^\circ-120^\circ=60^\circ.
+    \]
+\end{example}
+
+\begin{remark}
+    \label{rem:Special_angles_lines_space}
+    Ze vztahu pro odchylku můžeme okamžitě určit dva důležité
+    speciální případy.
+
+    Jsou-li směrové vektory rovnoběžné, tedy
+    \[
+        \vec{v}=k\vec{u},
+        \qquad k\neq0,
+    \]
+    potom
+    \[
+        \varphi=0^\circ.
+    \]
+
+    To nastává jak u rovnoběžných, tak u totožných přímek.
+
+    Je-li naopak
+    \[
+        \vec{u}\cdot\vec{v}=0,
+    \]
+    potom
+    \[
+        \cos\varphi=0
+    \]
+    a tedy
+    \[
+        \varphi=90^\circ.
+    \]
+
+    Směry přímek jsou v tomto případě navzájem kolmé.
+
+    Samotná hodnota odchylky však neurčuje vzájemnou polohu přímek.
+    Dvě přímky se stejnou nenulovou odchylkou mohou být různoběžné,
+    nebo mimoběžné.
+\end{remark}
+
+Právě poslední skutečnost je jedním z důležitých rozdílů oproti
+geometrii v rovině. V rovině se dvě přímky s různými směry vždy
+protínají. V prostoru tomu tak být nemusí.
+
+\begin{example}
+    \label{exa:Angle_skew_lines_ninety_degrees}
+
+    Uvažujme přímky
+    \[
+        \begin{aligned}
+            p: x&=2+t,\\
+            y&=3-2t,\\
+            z&=-1+t; t\in\mathbb{R}
+        \end{aligned}
+    \]
+    a
+    \[
+        \begin{aligned}
+            q: x&=-2+3s,\\
+            y&=3+2s,\\
+            z&=3+s; s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    V příkladu \ref{exa:Skew_parametric_lines_space} jsme zjistili,
+    že tyto přímky jsou mimoběžné.
+
+    Jejich směrové vektory jsou
+    \[
+        \vec{u}=(1;-2;1),
+        \qquad
+        \vec{v}=(3;2;1).
+    \]
+
+    Vypočítáme jejich skalární součin:
+    \begin{align*}
+        \vec{u}\cdot\vec{v}
+        &=
+        1\cdot3+(-2)\cdot2+1\cdot1\\
+        &=
+        3-4+1\\
+        &=
+        0.
+    \end{align*}
+
+    Proto
+    \[
+        \cos\varphi=0
+    \]
+    a tedy
+    \[
+        \varphi=90^\circ.
+    \]
+
+    Přímky jsou mimoběžné a přesto mají navzájem kolmé směry.
+    To znamená, že odchylka dvou mimoběžných přímek může být také
+    pravý úhel.
+\end{example}
+
+\begin{remark}
+    \label{rem:Perpendicular_directions_skew_lines}
+    Je třeba rozlišovat kolmost směrů a existenci průsečíku.
+
+    Podmínka
+    \[
+        \vec{u}\cdot\vec{v}=0
+    \]
+    říká pouze to, že odchylka přímek je $90^\circ$. Neříká nic o tom,
+    zda se přímky skutečně protínají.
+
+    Pokud se přímky navíc protínají, můžeme je chápat jako dvě
+    klasické kolmé různoběžky. Pokud společný bod nemají, mohou být
+    mimoběžné s odchylkou $90^\circ$.
+\end{remark}
+
+Směrové vektory nemusíme vždy získávat přímo z parametrického
+vyjádření. Je-li přímka určena dvěma body, použijeme jako její směrový
+vektor rozdíl jejich souřadnic.
+
+\begin{example}
+    \label{exa:Angle_lines_defined_by_points_space}
+
+    Jsou dány body $A[1;0;2], B[2;1;2],C[-1;2;0],D[0;2;1]$.
+    Určete odchylku přímek $AB$ a $CD$.
+
+    Směrový vektor přímky $AB$ je
+    \[
+        \overrightarrow{AB}
+        =
+        B-A
+        =
+        (1;1;0).
+    \]
+
+    Směrový vektor přímky $CD$ je
+    \[
+        \overrightarrow{CD}
+        =
+        D-C
+        =
+        (1;0;1).
+    \]
+
+    Jejich skalární součin je
+    \[
+        \overrightarrow{AB}\cdot\overrightarrow{CD}
+        =
+        1\cdot1+1\cdot0+0\cdot1
+        =
+        1.
+    \]
+
+    Dále
+    \[
+        |\overrightarrow{AB}|=\sqrt2,
+        \qquad
+        |\overrightarrow{CD}|=\sqrt2.
+    \]
+
+    Proto
+    \[
+        \cos\varphi
+        =
+        \frac{1}{\sqrt2\cdot\sqrt2}
+        =
+        \frac12.
+    \]
+
+    Odchylka přímek je
+    \[
+        \varphi=60^\circ.
+    \]
+\end{example}
+
+V některých úlohách nemusí být odchylka neznámou veličinou. Naopak
+může být zadána a naším úkolem je určit neznámý parametr tak, aby
+směrové vektory danou odchylku skutečně svíraly.
+
+\begin{example}
+    \label{exa:Angle_lines_parameter_space}
+
+    Je dána přímka
+    \[
+        \begin{aligned}
+            p: x&=1+t,\\
+            y&=2+t,\\
+            z&=3; t\in\mathbb{R}
+        \end{aligned}
+    \]
+    a soustava přímek
+    \[
+        \begin{aligned}
+            q_m: x&=-1+s,\\
+            y&=4+ms,\\
+            z&=2+s; s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Určete hodnotu parametru $m\in\mathbb{R}$ tak, aby odchylka
+    přímek $p$ a $q_m$ byla $45^\circ$.
+
+    Směrový vektor přímky $p$ je
+    \[
+        \vec{u}=(1;1;0),
+    \]
+    zatímco směrový vektor přímky $q_m$ je
+    \[
+        \vec{v}=(1;m;1).
+    \]
+
+    Vypočítáme potřebné hodnoty:
+    \[
+        \vec{u}\cdot\vec{v}
+        =
+        1+m,
+    \]
+    \[
+        |\vec{u}|=\sqrt2
+    \]
+    a
+    \[
+        |\vec{v}|
+        =
+        \sqrt{1+m^2+1}
+        =
+        \sqrt{m^2+2}.
+    \]
+
+    Protože požadujeme odchylku $45^\circ$, musí platit
+    \[
+        \frac{|1+m|}
+             {\sqrt2\sqrt{m^2+2}}
+        =
+        \cos45^\circ
+        =
+        \frac{\sqrt2}{2}.
+    \]
+
+    Po vynásobení obou stran dostáváme
+    \[
+        |1+m|
+        =
+        \sqrt{m^2+2}.
+    \]
+
+    Obě strany jsou nezáporné, můžeme proto rovnici umocnit:
+    \begin{align*}
+        (1+m)^2&=m^2+2,\\
+        1+2m+m^2&=m^2+2,\\
+        2m&=1,\\
+        m&=\frac12.
+    \end{align*}
+
+    Ověříme získanou hodnotu:
+    \[
+        \vec{v}
+        =
+        \left(1;\frac12;1\right).
+    \]
+
+    Potom
+    \[
+        \vec{u}\cdot\vec{v}
+        =
+        1+\frac12
+        =
+        \frac32
+    \]
+    a
+    \[
+        |\vec{v}|
+        =
+        \sqrt{1+\frac14+1}
+        =
+        \frac32.
+    \]
+
+    Proto
+    \[
+        \cos\varphi
+        =
+        \frac{\frac32}
+             {\sqrt2\cdot\frac32}
+        =
+        \frac{1}{\sqrt2}
+        =
+        \frac{\sqrt2}{2}.
+    \]
+
+    Hledaná hodnota parametru je tedy $m=\frac{1}{2}$.
+    Přímka $q$ má poté parametrické vyjádření:
+    \begin{align*}
+        q:  x&=-1+s,\\
+            y&=4+\frac12s,\\
+            z&=2+s; s\in\mathbb{R}.
+    \end{align*}
+
+\end{example}
+
+\begin{remark}
+    \label{rem:Angle_line_coordinate_axes_space}
+    Za přímky můžeme považovat také jednotlivé souřadnicové osy.
+    Jejich směrové vektory můžeme zvolit
+    \[
+        \vec{e}_x=(1;0;0),
+        \qquad
+        \vec{e}_y=(0;1;0),
+        \qquad
+        \vec{e}_z=(0;0;1).
+    \]
+
+    Je-li
+    \[
+        \vec{u}=(u_x;u_y;u_z)
+    \]
+    směrový vektor přímky $p$, potom pro její odchylky
+    $\alpha$, $\beta$ a $\gamma$ od os $x$, $y$ a $z$ platí
+    \[
+        \cos\alpha
+        =
+        \frac{|u_x|}{|\vec{u}|},
+    \]
+    \[
+        \cos\beta
+        =
+        \frac{|u_y|}{|\vec{u}|},
+    \]
+    \[
+        \cos\gamma
+        =
+        \frac{|u_z|}{|\vec{u}|}.
+    \]
+
+    Z toho zároveň vyplývá
+    \[
+        \cos^2\alpha
+        +
+        \cos^2\beta
+        +
+        \cos^2\gamma
+        =
+        1.
+    \]
+\end{remark}
+
+\begin{remark}
+    \label{rem:Infinitely_many_lines_given_angle_space}
+    V prostoru se oproti rovině objevuje ještě jeden důležitý rozdíl.
+
+    V rovině můžeme daným bodem vést zpravidla pouze dvě přímky,
+    které svírají s danou přímkou zadanou nenulovou odchylku
+    $\varphi$.
+
+    V prostoru však existuje takových přímek nekonečně mnoho.
+    Jejich směrové vektory mohou kolem směru původní přímky měnit
+    svou polohu, přičemž stále zachovávají stejnou odchylku.
+
+    Pro
+    \[
+        0^\circ<\varphi<90^\circ
+    \]
+    vytvářejí všechny tyto směry povrch kužele, jehož osou je směr
+    dané přímky.
+
+    Pro
+    \[
+        \varphi=90^\circ
+    \]
+    získáme nekonečně mnoho kolmých směrů. Přímky vedené jedním bodem
+    v těchto směrech společně vyplňují rovinu kolmou k původní přímce.
+    S rovinami a jejich analytickým popisem se budeme zabývat později.
+\end{remark}
+
+Celý postup při určování odchylky dvou přímek v prostoru můžeme
+shrnout následovně. Z parametrických vyjádření nebo ze zadaných bodů
+nejprve určíme nenulové směrové vektory
+\[
+    \vec{u}
+    \qquad\text{a}\qquad
+    \vec{v}.
+\]
+Poté vypočítáme jejich skalární součin a velikosti a použijeme vztah
+\[
+    \cos\varphi
+    =
+    \frac{
+        |\vec{u}\cdot\vec{v}|
+    }{
+        |\vec{u}|\cdot|\vec{v}|
+    }.
+\]
+
+Odchylka přímek závisí pouze na jejich směrech. Proto není při jejím
+výpočtu nutné znát jejich průsečík ani rozhodovat, zda jsou přímky
+různoběžné, rovnoběžné, totožné nebo mimoběžné.

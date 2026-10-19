@@ -1,0 +1,1990 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+\usetikzlibrary{fit,shapes}
+
+\title{Funkce}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+
+\section{Funkce}
+
+
+\begin{quotebox}
+{„Funkce popisují svět. Všechno kolem nás lze vyjádřit pomocí funkcí – zvuk, který slyšíme, světlo, které dopadá na naše oči, i vzorce, které tvoří naše data.  
+Každá oblast matematiky se zabývá jinými druhy funkcí: středoškolská matematika zkoumá polynomy jedné proměnné, analýza se věnuje spojitým funkcím… a tak to pokračuje dál.  
+
+FUNKCE POPISUJÍ SVĚT!“}
+{Thomas A. Garrity, \textit{\href{https://www.youtube.com/watch?v=BWZTlfrneD8}{Functions describe the world}}}
+\end{quotebox}
+
+\begin{historicalbox}
+Pojem \textbf{funkce}, který dnes používáme s naprostou samozřejmostí, má překvapivě dlouhou a spletitou historii.  
+Lidé už od starověku pozorovali, že určité veličiny se mění v závislosti na jiných – například že délka stínu souvisí s výškou Slunce, že rychlost pohybu ovlivňuje dráhu, nebo že tlak závisí na objemu.  
+Matematika těchto vztahů se však tehdy nevyjadřovala symbolicky, ale \emph{geometricky}: pomocí křivek, úhlů a podobností.  
+
+\medskip
+\textbf{Antika a středověk: geometrie jako jazyk závislostí}
+
+Už \textbf{Eukleidés} (3. století př. n. l.) a jeho následovníci vyjadřovali vztahy mezi veličinami geometricky.  
+Křivka byla obrazem závislosti – její tvar prozrazoval, jak se jedna veličina mění vůči druhé.  
+Později \textbf{Apollónios z Pergy} popsal kuželosečky (elipsu, parabolu a hyperbolu), které se staly prvním „modelem funkcí“:  
+popisovaly fyzikální i astronomické zákonitosti, aniž by někdo použil algebraický zápis.  
+
+Ve středověku se s těmito geometrickými představami dále pracovalo, ale až s nástupem \textbf{analytické geometrie} v 17. století došlo k zásadnímu zlomu – matematika dostala možnost převést geometrické vztahy do číselné a symbolické podoby.
+
+\medskip
+\textbf{Galileo, Torricelli a vznik funkčního myšlení}
+
+Další vývoj funkčního myšlení je spojen s pracemi \textbf{Galilea Galileiho} (1564–1642) a \textbf{Evangelisty Torricelliho} (1608–1647).  
+Ve svých výzkumech pohybu a fyzikálních jevů sledovali vztahy mezi veličinami pomocí křivek – například dráhu tělesa při volném pádu nebo tvar proudící kapaliny.  
+Jejich přístup byl stále geometrický, ale už v sobě nesl myšlenku závislosti jedné veličiny na druhé – tedy to, co dnes označujeme jako funkční vztah.
+
+\medskip
+\textbf{René Descartes a zrod analytické geometrie}
+
+Francouzský filozof a matematik \textbf{René Descartes} (1596–1650) poprvé systematicky zavedl souřadnicový systém, v němž každému bodu v rovině odpovídá číselná dvojice \((x, y)\).  
+Tím umožnil popisovat křivky pomocí rovnic a otevřel cestu k symbolickému vyjádření závislostí – tedy k pojmu, který dnes nazýváme funkcí.  
+Křivka tak přestala být pouze geometrickým objektem a stala se obrazem číselné závislosti mezi veličinami.  
+Descartes tím doslova sjednotil aritmetiku s geometrií.
+
+\newpage
+\textbf{Leibniz, Bernoulli a první definice funkce}
+
+Samotné slovo \emph{funkce} (\textit{functio}) se poprvé objevilo roku 1673 v dílech \textbf{Gottfrieda Wilhelma Leibnize} (1646–1716).  
+Původně jím označoval geometrické vlastnosti křivek, například tečny či body zakřivení.  
+V roce 1679 dal první definici pojmu funkce \textbf{Johann Bernoulli} (1667–1748), který pojem dále rozvíjel spolu s Leibnizem a \textbf{Isaacem Newtonem} (1643–1727) – zakladateli diferenciálního a integrálního počtu.  
+Funkce se tehdy chápala jako veličina, která „vykonává činnost“ – tedy vyjadřuje vztah mezi proměnnými.
+
+\medskip
+\textbf{Euler, Fourier a Dirichlet – zrod moderního pojetí}
+
+Zásadní krok k dnešnímu chápání udělal švýcarský matematik \textbf{Leonhard Euler} (1707–1783).  
+Ve svém díle \textit{Introductio in analysin infinitorum} (1748) definoval funkci jako:
+\begin{quote}
+„Funkcí proměnné veličiny rozumíme jakýkoli analytický výraz složený libovolným způsobem z této veličiny a z konstant.“
+\end{quote}
+V Eulerově době se tedy za funkci považoval každý \emph{vzorec}, který dává smysl – například polynom, zlomek či odmocnina.  
+Euler také jako první běžně používal zápis \(f(x)\) a systematicky rozlišoval \textit{nezávislou proměnnou} a \textit{závislou veličinu}.  
+
+Na přelomu 18. a 19. století pak \textbf{Joseph Fourier} (1768–1830) a \textbf{Peter Gustav Lejeune Dirichlet} (1805–1859) rozšířili pojem funkce i na případy, kdy ji nelze vyjádřit jednoduchým vzorcem.  
+Dirichlet formuloval novou definici:
+\begin{quote}
+„Funkce \(y\) proměnné \(x\) je zákon, podle něhož každé hodnotě \(x\) z určitého oboru přísluší právě jedna hodnota \(y\).“
+\end{quote}
+Tím byla funkce osvobozena od nutnosti být vyjádřena analyticky – stačilo, že mezi hodnotami existuje jednoznačné přiřazení.  
+
+\medskip
+\textbf{Cauchy, Weierstrass a formální analýza}
+
+Na Dirichletovy myšlenky navázali \textbf{Cauchy}, \textbf{Weierstrass} a další, kteří zavedli pojem \emph{limity}, \emph{spojitosti} a \emph{derivace} ve formální podobě.  
+Matematika se tím stala přísnější a pojem funkce dostal pevný logický základ.
+
+\medskip
+\textbf{20. století – funkce jako zobrazení mezi množinami}
+
+Ve 20. století se pojem funkce dále zobecnil.  
+Díky rozvoji \textbf{teorie množin} (Cantor, Bolzano) a \textbf{matematické logiky} se funkce začala chápat jako \emph{zobrazení} mezi množinami, tedy jako soubor uspořádaných dvojic \((x, y)\) s vlastností jednoznačnosti.  
+Tento přístup sjednotil funkce reálné, komplexní, vektorové i abstraktní.  
+Funkce se staly základním pojmem nejen v analýze, ale i v \textbf{algebře}, \textbf{geometrii}, \textbf{pravděpodobnosti} a \textbf{informatice}.  
+
+\medskip
+\textbf{Současnost – funkce jako univerzální princip}
+
+V moderním pojetí lze funkci chápat nejen jako matematický objekt, ale jako \emph{obecný princip popisu závislostí}.  
+Funkce jsou základem programování (každá funkce v kódu představuje přiřazení vstup–výstup), modelování dat, fyzikálních simulací i neuronových sítí.  
+Myšlenka, že „každý vstup má svůj výstup“, je natolik univerzální, že prostupuje celou vědou, technikou i logikou.
+\end{historicalbox}
+
+
+
+\begin{notebox}
+\textbf{Zajímavost:}  
+Zatímco dnes zapisujeme funkce jako \(y = f(x)\), Euler často používal označení \(\varphi(x)\) nebo jednoduše „funkce \(x\)“.  
+Teprve postupem času se zápis \(f(x)\) stal standardem, který přetrval dodnes.
+\end{notebox}
+
+
+Jak je z citátu pana \textbf{Thomase A. Garrityho} zřejmé, pojem \important{funkce} představuje nesmírně široké téma, se kterým se nyní podrobněji seznámíme.  
+Funkce tvoří jádro celé matematiky – nejsou jen jednou z kapitol, ale základním jazykem, pomocí něhož dokážeme popisovat děje, závislosti i změny.  
+
+S pojmem funkce se nesetkáme pouze nyní, ale bude nás provázet po zbytek studia:  
+v dalších ročnících při práci s \textbf{lineárními, kvadratickými, exponenciálními a logaritmickými funkcemi},  
+později také u \textbf{posloupností, limit, derivací} a mnoha dalších matematických oblastí.  
+Proto je pojem \important{funkce} naprosto \textbf{klíčový} a jeho pochopení představuje důležitý krok k hlubšímu porozumění matematice jako celku.
+
+Funkci si můžeme představit jako \textbf{pravidlo}, které převádí jeden typ vstupu na odpovídající výstup.  
+Toto pravidlo může být vyjádřeno matematickým vzorcem, logickou podmínkou, algoritmem nebo dokonce fyzikálním či biologickým procesem.
+
+\begin{examplebox}
+\textbf{Příklady různých typů funkcí:}
+\begin{itemize}
+  \item \textbf{Matematická funkce:}  
+  Například \(f(x) = 2x + 3\) přiřadí každému číslu \(x\) právě jedno číslo \(y\).  
+  Je to klasický příklad lineární závislosti.
+
+  \item \textbf{Speciální funkce: Dirichletova funkce}  
+  \[
+  f(x) = 
+  \begin{cases}
+  1, & \text{je-li } x \in \mathbb{Q},\\
+  0, & \text{je-li } x \notin \mathbb{Q}.
+  \end{cases}
+  \]
+  Tato funkce rozlišuje, zda je číslo racionální nebo iracionální – i to je platná funkce, přestože její graf je „roztříštěný“ po celé číselné ose.
+
+  \item \textbf{Informatická funkce:}  
+  V programování má podobný princip například příkaz:
+  \[
+  \texttt{if (x > 0) return 1; else return 0;}
+  \]
+  který každému vstupu \(x\) přiřadí 1 nebo 0 – opět jednoznačně.
+
+  \item \textbf{Fyzikální funkce:}  
+  Tlak vzduchu \(p(h)\) závisí na nadmořské výšce \(h\); se stoupající výškou tlak klesá.  
+  I to je funkční závislost mezi dvěma veličinami.
+
+  \item \textbf{Biologická funkce:}  
+  Plíce lze chápat jako „funkci“, která každé neokysličené krvi přiřadí krev okysličenou.  
+  I v biologii tedy najdeme procesy, které přesně odpovídají pojmu funkce – mají vstup, mechanismus a jednoznačný výstup.
+
+  \item \textbf{Ekonomická funkce:}  
+  Například funkce úroku v bance:
+  \[
+  f(p) = p \cdot (1 + r)^t,
+  \]
+  kde \(p\) je počáteční vklad, \(r\) úroková míra a \(t\) počet let.  
+  Každému vkladu jednoznačně přiřadí jeho budoucí hodnotu.  
+  (Zde se poprvé setkáváme s exponenciálním růstem.)
+
+  \item \textbf{Sociologická funkce:}  
+  Počet obyvatel města \(P(t)\) jako funkce času \(t\) – může růst, klesat, nebo se stabilizovat.  
+  Takový model umožňuje sledovat demografický vývoj či plánovat kapacitu infrastruktury.
+
+  \item \textbf{Psychologická funkce:}  
+  Reakční čas člověka \(R(s)\) může být funkcí síly podnětu \(s\):  
+  při malém podnětu reagujeme pomalu, při silném rychleji – až do určitého limitu.  
+  I zde vidíme funkční závislost, byť biologicky a experimentálně měřenou.
+\end{itemize}
+\end{examplebox}
+
+\begin{notebox}
+Pojem funkce přesahuje hranice matematiky – vyskytuje se všude tam, kde \textbf{jedné veličině odpovídá přesně jedna jiná}.  
+Ať už jde o úrok v bance, tlak vzduchu nebo reakci organismu, princip je vždy stejný:  
+\textit{vstup → pravidlo → výstup.}
+\end{notebox}
+
+
+
+\section{Co je funkce}
+
+\important{Funkce} patří k \textbf{nejzákladnějším pojmům} celé matematiky.  
+Umožňují popsat závislost jedné veličiny na druhé – například jak se mění teplota v průběhu dne, jak roste cena zboží při různé hmotnosti, nebo jak se mění výška tělesa při volném pádu v čase.  
+Matematicky lze tuto závislost popsat několika různými, ale vzájemně ekvivalentními způsoby.  
+Níže jsou uvedeny tři nejčastější formy, s nimiž se setkáváme.
+
+\begin{definitionbox}
+    \textbf{1. Funkce jako zobrazení mezi množinami}
+
+    Funkce \( f \) je \emph{zobrazení} z množiny \( X \) do množiny \( Y \), 
+    při němž každému prvku \( x \in X \) je přiřazen právě jeden prvek \( y \in Y \).  
+    Zapisujeme:
+    \[
+    f: X \rightarrow Y, \quad x \mapsto f(x).
+    \]
+    Množina \( X \) se nazývá \textbf{definiční obor} (domain), množina \( Y \) \textbf{obor hodnot} (codomain).
+\end{definitionbox}
+
+Tento pohled na funkci bývá nejpoužívanější ve školní matematice, 
+protože je přirozený a snadno se znázorňuje.  
+Můžeme si ho představit jako „přiřazovací stroj“ – do množiny \( X \) 
+vkládáme vstupy a funkce nám pro každý z nich vrátí výstup v množině \( Y \).  
+Příklad: pokud \( X \) představuje množinu lidí a \( Y \) množinu jejich dat narození, 
+pak funkce „datum narození“ každému člověku přiřadí právě jedno datum.
+
+\smallskip
+
+\begin{definitionbox}
+    \textbf{2. Funkce jako množina uspořádaných dvojic}
+
+    Funkce může být chápána také jako množina všech dvojic \((x, y)\), kde \(x \in X\) a \(y \in Y\), tedy jako podmnožina kartézského součinu:
+    \[
+    f \subseteq X \times Y.
+    \]
+    Musí přitom platit, že pro každé \(x \in X\) existuje právě jedno \(y \in Y\), pro které \((x,y) \in f.\)
+\end{definitionbox}
+
+Tento přístup už zdůrazňuje množinový základ celé matematiky.  
+Místo toho, abychom si funkci představovali jako proces, 
+vnímáme ji spíš jako \textit{sadu konkrétních přiřazení}.  
+Každá dvojice \((x, y)\) vyjadřuje, že hodnota \(y\) „patří“ k argumentu \(x\).  
+Například pro funkci \(f(x) = 2x + 1\) je tato množina všech dvojic rovna \(\{(x, 2x+1) \mid x \in \mathbb{R}\}\).  
+Takové pojetí je základem pro další práci s funkcemi jako s množinovými objekty (sjednocování, průniky, skládání atd.).
+
+\smallskip
+
+\begin{definitionbox}
+    \textbf{3. Funkce jako speciální binární relace}
+
+    Funkci lze chápat i jako \emph{binární relaci} mezi množinami \(X\) a \(Y\), která splňuje podmínku jednoznačnosti:
+    \[
+    \forall x \in X, \; \exists! \, y \in Y : (x, y) \in f.
+    \]
+    Zapisujeme-li funkci tímto způsobem, zdůrazňujeme její logický charakter – jako vztah mezi prvky dvou množin.
+\end{definitionbox}
+
+Tento způsob zápisu bývá nejužitečnější, pokud se na funkce díváme z logického 
+nebo teoretického hlediska.  
+Funkce se zde chápe jako „zvláštní případ relace“, 
+která má jednu specifickou vlastnost – ke každému prvku \(x\) 
+existuje právě jeden prvek \(y\).  
+Tento přístup používají pokročilejší oblasti matematiky, 
+jako je teorie množin, logika nebo informatika, 
+kde je potřeba mít přesně definováno, jak se prvky různých množin propojují.
+
+\medskip
+Každý z uvedených přístupů tedy vychází ze stejné myšlenky – že funkce \emph{jednoznačně přiřazuje výstup každému vstupu} – jen ji popisuje jiným jazykem.  
+První pohled je názorný, druhý množinový a třetí logicko-formální.  
+Všechny tři však vyjadřují tentýž pojem, který se stává základem celé matematiky.
+
+\begin{notebox}
+    \textbf{Představa funkce jako „black-boxu“}
+
+    Nejjednoší způsob jak si představit funkci je si ji představit jako černou skříňku, do které vhodíme číslo \(x\).  
+    Uvnitř sedí pomyslný skřítek, který podle určitého pravidla něco provede
+     – možná sečte, možná umocní nebo odečte – 
+     a nakonec nám ze skříňky vyhodí číslo \(y\).  
+    Není důležité vědět, co přesně skřítek dělá, ale platí, 
+    že na tentýž vstup vždy dostaneme tentýž výstup.  
+
+    \medskip
+    Takto si můžeme snadno představit zápis \( f(x) = 2x + 1 \):  
+    do skříňky vhodíme číslo \(x\), skřítek ho zdvojnásobí, přičte jedničku – a ven pošle výsledek \(y\).
+\end{notebox}
+
+
+\section{Definiční obor a obor hodnot}
+
+Abychom mohli přesně určit, kdy má funkce smysl a jakých hodnot může nabývat, 
+zavádíme dva důležité pojmy – \important{definiční obor} a \important{obor hodnot}.  
+Definiční obor říká, \emph{které vstupy} jsou pro funkci přípustné, 
+zatímco obor hodnot určuje, \emph{jaké výstupy} může funkce přijímat.  
+Ne vždy totiž platí, že funkce využívá všechny prvky množiny \(Y\), 
+do které zobrazuje – někdy určité hodnoty vůbec nenastanou.
+
+\subsubsection*{Definiční obor}
+
+Definiční obor funkce je množina všech hodnot proměnné \(x\), pro které má zápis \(f(x)\) smysl.  
+Jinými slovy, jsou to všechna čísla, která \emph{můžeme dosadit za \(x\)}, aniž by došlo k nesmyslné situaci – například dělení nulou, odmocnění záporného čísla (v reálných číslech), logaritmus záporného čísla apod.  
+
+Z hlediska grafu představuje definiční obor všechny \textbf{projekce bodů grafu funkce na osu \(x\)} – tedy všechny hodnoty \(x\), pro které na grafu existuje odpovídající bod.
+
+S pojmem definiční obor jsme se už setkali při \important{algebraických výrazech}, kde jsme například u \emph{lomených výrazů} určovali, pro která čísla má daný výraz smysl.  
+Funkce tyto myšlenky pouze zobecňuje:  
+zjišťujeme, pro která \(x\) má výraz \(f(x)\) význam a pro která nikoli.  
+
+\begin{examplebox}
+    Pokud má například funkce tvar
+    \[
+    f(x) = \frac{2x + 1}{x - 3},
+    \]
+    pak musíme vyloučit hodnotu \(x = 3\), protože jmenovatel by se rovnal nule.  
+    Definiční obor je tedy \(D(f) = \mathbb{R} \setminus \{3\}\).
+\end{examplebox}
+
+
+
+\subsubsection*{Obor hodnot}
+
+Obor hodnot je množina všech výstupních hodnot \(y\), kterých funkce může skutečně nabýt při všech přípustných \(x\).  
+Jinými slovy, obor hodnot odpovídá tomu, \emph{kam až funkce „dosáhne“} – které \(y\) se na grafu skutečně vyskytují.  
+Na grafu tvoří obor hodnot všechny \textbf{projekce bodů grafu na osu \(y\)}.
+
+Obor hodnot tedy neříká, \emph{co by funkce mohla mít}, ale \emph{co skutečně má}.  
+Zatímco definiční obor určuje, co smíme dosadit za \(x\), obor hodnot určuje, které výsledky z takového dosazování mohou vzniknout.  
+Při práci s funkcemi je obor hodnot často možné zjistit ze samotného předpisu, z jeho tvaru nebo z vlastností známých funkcí (např. že druhá mocnina je vždy nezáporná).
+
+\begin{examplebox}
+Uvažujme funkci
+\[
+f(x) = \frac{2x + 1}{x - 3}.
+\]
+Z předchozího víme, že její definiční obor je \(D(f) = \mathbb{R} \setminus \{3\}\).
+
+Abychom určili obor hodnot, ptáme se: jakých všech hodnot může výraz \(\frac{2x + 1}{x - 3}\) nabývat?  
+Zjistíme, že žádné dosazení nedá výsledek \(y = 2\).  
+To lze ověřit algebraicky:
+\begin{center}
+    \[
+    \begin{array}{rl}
+        y &= \dfrac{2x + 1}{x - 3} \\[6pt]
+        yx - 3y &= 2x + 1 \\[6pt]
+        yx - 2x &= 3y + 1 \\[6pt]
+        x(y - 2) &= 3y + 1 \\[6pt]
+        x &= \dfrac{3y + 1}{y - 2}
+    \end{array}
+    \]
+\end{center}
+
+
+
+Rovnice má řešení pro všechna \(y\) kromě \(y = 2\), protože při \(y=2\) by se vyskytlo dělení nulou.  
+Tedy obor hodnot je 
+\[
+H(f) = \mathbb{R} \setminus \{2\}.
+\]
+\end{examplebox}
+
+Z grafického hlediska má tato funkce tzv. \emph{asymptoty} – přímky, ke kterým se graf blíží, ale nikdy jich nedosáhne.  
+Svislá asymptota \(x=3\) odpovídá vyloučené hodnotě z definičního oboru,  
+vodorovná asymptota \(y=2\) pak vyloučené hodnotě z oboru hodnot.
+
+\begin{notebox}
+\textbf{Shrnutí:}  
+    \begin{itemize}
+      \item \textbf{Definiční obor} – co můžeme do funkce „vložit“ (vstupy).  
+      \item \textbf{Obor hodnot} – co z funkce může „vypadnout“ (výstupy).  
+      \item Na grafu: definiční obor odpovídá projekci bodů na osu \(x\),  
+            obor hodnot projekci bodů na osu \(y\).
+    \end{itemize}
+\end{notebox}
+
+
+\subsection{Způsoby zadání funkce}
+
+Funkci můžeme popsat různými způsoby – podle toho, co chceme zdůraznit.  
+Někdy nám stačí slovní vyjádření, jindy konkrétní tabulka nebo přesný vzorec.  
+Všechny tyto způsoby jsou rovnocenné, pouze ukazují tentýž vztah mezi proměnnými z různých pohledů.
+
+\medskip
+\textbf{1. Slovní popis funkce}
+
+Nejjednodušší a nejpřirozenější způsob, jak funkci popsat, je pomocí slov.  
+Funkce je v takovém případě vyjádřena jako vztah mezi veličinami, který známe z praxe:
+\begin{quote}
+    \emph{
+        „Každému dni přiřadíme průměrnou denní teplotu.“  \\
+        „Každému člověku přiřadíme jeho datum narození.“  \\
+        „Každé délce strany přiřadíme obsah čtverce se stejnou stranou.“ \\
+        } 
+\end{quote}
+
+Takový zápis bývá vhodný tam, kde jde spíše o smysl závislosti než o její přesný výpočet.
+
+\medskip
+\textbf{2. Tabulkový zápis}
+
+Funkci lze vyjádřit také \emph{tabulkou hodnot}, kde v jednom sloupci (nebo řádku) uvádíme vstupy – hodnoty \(x\), a ve druhém odpovídající výstupy \(f(x)\).  
+Tabulka názorně ukazuje, jak se výstup mění podle vstupu.  
+Z takové tabulky můžeme snadno přejít ke grafickému znázornění.
+
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \arrayrulecolor{tableborder}
+        \begin{tabular}{|c|c|}
+            \hline
+            \rowcolor{tableheaderdark} \(x\) & \(f(x) = 2x + 1\) \\
+            \hline
+            $-2$ & $-3$ \\
+            \hline
+            $-1$ & $-1$ \\
+            \hline
+            $0$ & $1$ \\
+            \hline
+            $1$ & $3$ \\
+            \hline
+            $2$ & $5$ \\
+            \hline
+        \end{tabular}
+        \arrayrulecolor{black}
+        \captionof*{table}{\small Vertikální tabulka hodnot}
+    \end{minipage}
+            \hspace{1cm}
+    \begin{minipage}{0.45\textwidth}
+        \centering
+        \arrayrulecolor{tableborder}
+        \begin{tabular}{|c|c|c|c|c|c|}
+            \hline
+            \rowcolor{tableheaderdark} \(x\) & $-2$ & $-1$ & $0$ & $1$ & $2$ \\
+            \hline
+            \(f(x)=2x+1\) & $-3$ & $-1$ & $1$ & $3$ & $5$ \\
+            \hline
+        \end{tabular}
+    \arrayrulecolor{black}
+    \captionof*{table}{\small Horizontální tabulka hodnot}
+    \end{minipage}
+\end{center}
+
+
+Obě tabulky vyjadřují stejný vztah mezi vstupy a výstupy – liší se pouze orientací.  
+V některých případech je vertikální zápis přehlednější (např. pro větší množství hodnot), jindy naopak horizontální (např. pro snadné porovnání trendu).
+
+
+\medskip
+\textbf{3. Předpis (analytické vyjádření)}
+
+Nejběžnější a nejpřesnější způsob zápisu funkce je \emph{předpisem} neboli vzorcem.  
+Ten udává pravidlo, podle něhož se každému \(x\) přiřadí hodnota \(f(x)\). 
+S takovým vzorcem jsme se již setkali, když jsme určovali definiční obor a obor hodnot $y=\frac{2x+1}{x-3}$
+Dalšími takovými předpisy jsou apříklad:
+
+\[
+f(x) = 2x + 1, \quad g(x) = x^2 - 4x + 3, \quad h(x) = \frac{1}{x - 2}.
+\]
+
+Takový zápis umožňuje provádět výpočty, určovat vlastnosti funkce, její graf i právě již zmíněný definiční obor a obor hodnot.
+
+\medskip
+\textbf{4. Grafické znázornění}
+
+Graf funkce je množina všech bodů \((x, y)\), pro které platí \(y = f(x)\).  
+Každému bodu na grafu odpovídá dvojice hodnot – vstupní a výstupní.  
+Grafické zobrazení umožňuje rychle odhadnout chování funkce: kde roste, kde klesá, zda je kladná nebo záporná, a kde má průsečíky s osami.
+
+\begin{center}
+  \begin{axisgraph}[
+      grid=none,
+      xmin=-2, xmax=3,
+      ymin=-3, ymax=3,
+      title={Graf přímky $y = 2x - 1$}
+  ]
+      \addplot[domain=-4:4, thick, blue]{2*x - 1};
+  \end{axisgraph}
+\end{center}
+
+
+
+Graf je tedy vizuálním doplněním předpisu – ukazuje tutéž informaci, ale názorněji.  
+V praxi se všechny tyto způsoby často kombinují: slovní popis doplníme vzorcem, k němu vytvoříme tabulku a z ní pak graf.
+
+
+
+%Na obrázku níže je znázorněno zobrazení mezi množinami \(X\) a \(Y\).  
+%Každému prvku z množiny \(X\) odpovídá právě jeden prvek v množině \(Y\).
+%
+%\begin{center}
+%    \begin{tikzpicture} 
+%        [
+%            >=stealth, bullet/.style={fill=black, circle,minimum width=1pt,inner sep=1pt}, 
+%            projection/.style={->,thick,shorten <=2pt,shorten >=2pt}, 
+%            every fit/.style={ellipse,draw,inner sep=0pt} 
+%        ] 
+%
+%        \foreach \y/\l in {1/d,2/c/,3/b,4/a} 
+%        \node[bullet,label=left:$\l$] (a\y) at (0,\y) {}; 
+%        
+%        \foreach \y/\l in {1/4,2/3,3/2,4/1} 
+%        \node[bullet,label=right:$\l$] (b\y) at (4,\y) {}; 
+%        
+%        \node[draw,fit=(a1) (a2) (a3) (a4),minimum width=2cm] {} ; 
+%        \node[draw,fit=(b1) (b2) (b3) (b4),minimum width=2cm] {} ; 
+%        
+%        \draw[projection] (a1) -- (b4); \draw[projection] (a2) -- (b2); 
+%        \draw[projection] (a3) -- (b1); \draw[projection] (a4) -- (b3); 
+%    
+%    \end{tikzpicture} 
+%\end{center}
+
+
+\newpage
+\section{Vlastnosti funkcí}
+
+Kromě samotného předpisu a grafu nás u funkcí zajímá i to, \textbf{jak se chovají}.  
+Zda rostou nebo klesají, jestli mají největší nebo nejmenší hodnotu, zda jsou „symetrické“, nebo zda se jejich chování opakuje v určitých intervalech.  
+Tyto charakteristiky označujeme jako \important{vlastnosti funkcí}.  
+
+Níže jsou uvedeny nejdůležitější z nich, se kterými se v průběhu studia matematiky budeme často setkávat.
+
+
+
+% --- D E F I N I Č N Í   O B O R   A   O B O R   H O D N O T ---
+\subsection*{Definiční obor a obor hodnot}
+
+Než přejdeme k dalším vlastnostem funkcí, připomeňme si dvě základní pojmy,
+které jsme již probrali výš, avšak se bez nich neobejdeme.
+
+\begin{definitionbox}
+\textbf{Definiční obor funkce} (označujeme \(D(f)\)) je množina všech čísel \(x\), pro která má zápis \(f(x)\) smysl.  
+Zjednodušeně řečeno: \textit{všechna čísla, která můžeme do funkce „vložit“ jako vstup.}
+\end{definitionbox}
+
+\begin{definitionbox}
+\textbf{Obor hodnot funkce} (označujeme \(H(f)\)) je množina všech čísel \(y\), kterých funkce může nabývat.  
+Jinými slovy: \textit{všechna čísla, která funkce může „vyhodit“ jako výsledek.}
+\end{definitionbox}
+
+\begin{examplebox}
+Například pro funkci:
+\[
+f(x) = \frac{1}{x - 2}
+\]
+
+nesmí být jmenovatel nulový, takže \(x \neq 2\).  
+Definiční obor je \(D(f) = \mathbb{R} \setminus \{2\}\).
+A zároveň nikdy nedostaneme \(y = 0\) (protože tento zlomek nemůže být roven nule).  
+Tedy \(H(f) = \mathbb{R} \setminus \{0\}\). A tyto osy nazýváme \important{asymptoty}.
+\end{examplebox}
+
+\begin{center}
+  \begin{axisgraph}[grid=none, xmin=-4, xmax=6, ymin=-4, ymax=4, title={Graf funkce: \(f(x) = \dfrac{1}{x-2}\)}]
+      \addplot[domain=-4:1.8, thick, blue, samples=100]{1/(x-2)};
+      \addplot[domain=2.2:6, thick, blue, samples=100]{1/(x-2)};
+      \addplot[dashed, gray] coordinates {(2,-4) (2,4)};
+      \addplot[dashed, gray] coordinates {(-4,0) (6,0)};
+  \end{axisgraph}
+\end{center}
+
+
+% --- S U D Á   A   L I C H Á   F U N K C E ---
+\subsection*{Sudá a lichá funkce}
+
+Některé funkce mají zajímavou \textbf{symetrii} – jejich grafy se „opakují“ určitým způsobem kolem osy nebo středu soustavy souřadnic.  
+Tuto vlastnost nazýváme \important{sudost} nebo \important{lichost} funkce.  
+Určit, zda je funkce sudá či lichá, nám pomáhá lépe pochopit její tvar i chování bez nutnosti vykreslovat celý graf.
+
+\begin{definitionbox}
+
+Funkce \(f\) se nazývá \textbf{sudá}, pokud pro všechna \(x\) z jejího definičního oboru platí:
+\[
+f(-x) = f(x).
+\]
+Graf sudé funkce je \textbf{osově souměrný podle osy \(y\)}.
+\end{definitionbox}
+
+\begin{examplebox}
+\textbf{Příklady sudých funkcí:}
+\[
+f(x) = x^2, \quad f(x) = \cos x, \quad f(x) = |x|.
+\]
+Každá z nich má graf, který je při překlápění podle osy \(y\) nezměněný.
+\begin{minipage}{0.45\textwidth}
+    \begin{center}
+        \begin{axisgraph}[grid=none, xmin=-3, xmax=3, ymin=-1, ymax=5, title={Sudá funkce: \(f(x)=x^2\)}]
+            \addplot[domain=-3:3, thick, red]{x^2};
+        \end{axisgraph}
+    \end{center}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+    \begin{center}
+        \begin{axisgraph}[grid=none, xmin=-3, xmax=3, ymin=-3, ymax=3, title={Sudá funkce: \(f(x)=cos(x)\)}]
+            \addplot[domain=-3:3, thick, blue]{cos(deg(x))};
+        \end{axisgraph}
+    \end{center}
+    \end{minipage}
+\end{examplebox}
+
+\bigskip
+\begin{definitionbox}
+
+Funkce \(f\) se nazývá \textbf{lichá}, pokud pro všechna \(x\) z jejího definičního oboru platí:
+\[
+f(-x) = -f(x).
+\]
+Graf liché funkce je \textbf{středově souměrný podle počátku soustavy souřadnic}. 
+Neboli je středově souměrný podle bodu $[0;0]$
+\end{definitionbox}
+
+\begin{examplebox}
+\textbf{Příklady lichých funkcí:}
+\[
+f(x) = x^3, \quad f(x) = \sin x, \quad f(x) = \tan x.
+\]
+Každý z těchto grafů lze pootočit o \(180^\circ\) kolem počátku a získáme tentýž obraz.
+\begin{minipage}{0.45\textwidth}
+    \begin{center}
+        \begin{axisgraph}[grid=none, xmin=-3, xmax=3, ymin=-3, ymax=3, title={Lichá funkce: \(f(x)=x^3\)}]
+            \addplot[domain=-3:3, thick, orange]{x^3};
+        \end{axisgraph}
+    \end{center}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+    \begin{center}
+        \begin{axisgraph}[grid=none, xmin=-3, xmax=3, ymin=-3, ymax=3, title={Lichá funkce: \(f(x)=sin(x)\)}]
+            \addplot[domain=-3:3, thick, purple]{sin(deg(x))};
+        \end{axisgraph}
+    \end{center}
+    \end{minipage}
+\end{examplebox}
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+  \item Sudá funkce – „zrcadlí se“ podle osy \(y\), tedy \(f(-x) = f(x)\).
+  \item Lichá funkce – „otáčí se“ kolem počátku, tedy \(f(-x) = -f(x)\).
+  \item Některé funkce nejsou ani sudé, ani liché (např. \(f(x) = x^2 + x\)).
+\end{itemize}
+\end{notebox}
+
+
+% --- P R O S T Á   F U N K C E ---
+\subsection*{Prostá funkce}
+
+Každá funkce přiřazuje ke každému vstupu právě jeden výstup,  
+ale ne každá to dělá \emph{jedinečně}.  
+Může se stát, že dvě různá čísla \(x_1\) a \(x_2\) mají po dosazení stejný výsledek \(f(x_1) = f(x_2)\).  
+V takovém případě říkáme o funkci, že \textbf{není prostá}.
+
+Naopak, pokud \textbf{každá výstupní hodnota odpovídá právě jednomé vstupí hodnotě} —  
+pak říkáme, že taková funkce je \important{prostá} (neboli \textit{injektivní}).  
+
+Jinými slovy: \textit{prostá funkce se nikdy „nevrací zpět“ a žádná její hodnota se neopakuje.}
+
+\begin{definitionbox}
+
+Funkce \(f\) se nazývá \textbf{prostá}, jestliže pro všechna \(x_1, x_2\) z jejího definičního oboru platí:
+\[
+f(x_1) \neq f(x_2) \Rightarrow x_1 \neq x_2.
+\]
+To znamená, že dvě různé vstupní hodnoty nikdy nemohou mít stejný výstup.
+\end{definitionbox}
+\newpage
+Jiným způsobem lze říct, že funkce je prostá právě tehdy, když \textbf{žádná vodorovná přímka neprotne její graf více než v jednom bodě}.  
+Tento jednoduchý „vodorovný test“ (angl. \textit{horizontal line test}) je velmi užitečný při určování prostosti z grafu.
+
+\begin{examplebox}
+\begin{itemize}
+    \item Funkce \(f(x) = x^3\) je prostá, protože pro žádná dvě různá čísla
+     \(x_1 \neq x_2\) najdeme vždy dvě různé hodnoty.
+    \item Funkce \(f(x) = x^2\) prostá není, protože např. \(f(-2) = f(2) = 4\).  
+    Graf má stejnou hodnotu výstupu pro dvě různé vstupní hodnoty.
+\end{itemize}
+
+\begin{center}
+    \begin{minipage}{0.45\textwidth}
+    \centering
+        \begin{axisgraph}[
+            grid=none,
+            xmin=-3, xmax=3,
+            ymin=-5, ymax=5,
+            title={Prostá funkce $f(x)=x^3$}
+        ]
+            \addplot[domain=-3:3, thick, blue]{x^3};
+            \addplot[dashed, red] coordinates {(-3,4) (3,4)};
+        \end{axisgraph}
+    \end{minipage}
+    \hfill
+    \begin{minipage}{0.45\textwidth}
+    \centering
+        \begin{axisgraph}[
+            grid=none,
+            xmin=-3, xmax=3,
+            ymin=-1, ymax=9,
+            title={Neprostá funkce $f(x)=x^2$}
+        ]
+            \addplot[domain=-3:3, thick, blue]{x^2};
+            % vodorovná přímka y=4
+            \addplot[dashed, red] coordinates {(-3,4) (3,4)};
+        \end{axisgraph}
+    \end{minipage}
+\end{center}
+
+\end{examplebox}
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+    \item Prostá funkce (\textit{injektivní}) má pro každý výstup právě jeden odpovídající vstup.  
+          Žádná hodnota \(y\) se neopakuje.
+    \item Neprostá funkce má alespoň dvě různé vstupní hodnoty, které dávají stejný výstup.
+    \item Prakticky lze prostost poznat z grafu – \textbf{vodorovná přímka} smí protnout graf \textbf{nejvýše jednou}.
+\end{itemize}
+\end{notebox}
+
+
+% --- P E R I O D I C K Á   F U N K C E ---
+\subsection*{Periodická funkce}
+
+Zatímco \textbf{prosté funkce} nikdy neopakují stejnou hodnotu dvakrát, tak 
+\important{periodické funkce} dělají pravý opak — jejich průběh se po určitém intervalu pravidelně opakuje.  
+
+Takové funkce se chovají „rytmicky“ – jejich graf má tvar, který se po čase znovu vrací.  
+Setkáme se s nimi všude tam, kde se děje opakují: u kmitání, vlnění, rotace nebo například u střídání dne a noci.  
+
+
+
+\begin{definitionbox}
+
+Funkce \(f\) je \textbf{periodická}, jestliže existuje kladné číslo \(T > 0\), pro které platí:
+\[
+f(x + T) = f(x) \quad \text{pro všechna } x \text{ z definičního oboru.}
+\]
+Číslo \(T\) zde nazýváme \textbf{perioda funkce}.
+\end{definitionbox}
+
+To znamená, že posuneme-li graf funkce o délku \(T\) ve směru osy \(x\), dostaneme \emph{tentýž} graf.  
+Každý bod se tedy po určité „vzdálenosti“ znovu zopakuje.  
+Periodické funkce se v matematice i v přírodě vyskytují velmi často — popisují pohyby, kmitání, oscilace, střídání veličin či signálů.
+
+\begin{examplebox}
+\textbf{Příklady periodických funkcí:}
+\begin{itemize}
+    \item Funkce \(f(x) = \sin x\) má periodu \(T = 2\pi\).
+    \item Funkce \(f(x) = \cos x\) má periodu \(T = 2\pi\).
+    \item Funkce \(f(x) = \tan x\) má periodu \(T = \pi\).
+    \item Funkce \(f(x) = | \sin x |\) má periodu \(T = \pi\).
+\end{itemize}
+\begin{center}
+\begin{axisgraph}[
+    width=12cm,     % šířka grafu
+    height=6cm,
+    grid=minor,
+    xmin=-3.5, xmax=13,
+    ymin=-1.5, ymax=1.5,
+    title={Periodická funkce $f(x) = \cos x$}
+]
+    \addplot[domain=-3.5:13, thick, blue, samples=200]{cos(deg(x))};
+    \addplot[domain=0:2*pi, thick, red, samples=200]{cos(deg(x))};
+    
+    % pomocné značky pro periodu
+    \draw[dashed, red] (2*pi,-1.5) -- (2*pi,1.5);
+    \node[red, below] at (2*pi, -1.5) {$T = 2\pi$};
+\end{axisgraph}
+\end{center}
+Jak můžeme vidět na grafu $f(x)=cos(x)$, tak červená část grafu se nám poté stále opakuje.
+\end{examplebox}
+
+
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+    \item Periodická funkce se po určité délce \(T\) opakuje: \(f(x+T) = f(x)\).
+    \item Nejmenší takové kladné \(T\) se nazývá \textbf{základní perioda}.
+    \item Typickými příklady jsou goniometrické funkce (sinus, kosinus, tangens).
+    \item V praxi se periodické funkce používají při popisu dějů, které se pravidelně opakují —  
+          například střídavé napětí, pohyb kyvadla nebo zvukové vlny.
+\end{itemize}
+\end{notebox}
+
+
+% --- O M E Z E N O S T   F U N K C E ---
+\subsection*{Omezenost funkce}
+
+V matematice často zkoumáme, \textbf{jak vysoko nebo nízko může graf funkce „dosáhnout“}.  
+Některé funkce se rozbíhají do nekonečna (např. \(f(x) = x^2\) stále roste, když zvětšujeme \(x\)),  
+jiné naopak zůstávají „v nějakém pásmu“ a nikdy nepřekročí určitou hodnotu.  
+Takové funkce nazýváme \important{omezené}. A máme funkce buď \important{shora omezené}, nebo \important{zdola omezené}.
+
+\begin{definitionbox}
+
+Funkce je \textbf{omezená shora}, jestliže existuje číslo \(A\), pro které platí:
+    \[
+    f(x) \leq A \quad \text{pro všechna } x \text{ z definičního oboru.}
+    \]
+\emph{Říkáme, že \(A\) je \textbf{horní závora} funkce.}
+
+\smallskip
+Funkce je \textbf{omezená zdola}, jestliže existuje číslo \(a\), pro které platí:
+    \[
+    f(x) \geq a \quad \text{pro všechna } x \text{ z definičního oboru.}
+    \]
+\emph{Číslo \(a\) pak nazýváme \textbf{dolní závora} funkce.}
+    
+Jestliže existují obě závory \(a\) i \(A\), pak říkáme, že funkce je \textbf{omezená}.
+
+\end{definitionbox}
+
+Intuitivně bychom mohli říct, že graf funkce tzv. \emph{„zůstává mezi dvěma vodorovnými přímkami“} –  
+nikdy nepřekročí horní hranici a nikdy neklesne pod dolní hranici.  
+Omezenost je tedy vlastnost, která říká, zda funkce „utíká“ do nekonečna, nebo se drží v určité oblasti.
+
+
+\begin{examplebox}
+Funkce \(f(x) = \sin x\) je omezená shora i zdola, protože platí \(-1 \leq \sin x \leq 1\) pro všechna \(x \in \mathbb{R}\).
+\begin{center}
+    \begin{axisgraph}[grid=minor, xmin=-6.5, xmax=6.5, ymin=-2, ymax=2, title={Graf funkce: \(f(x)=\sin x\)}]
+        \addplot[domain=-6.5:6.5, thick, magenta]{sin(deg(x))};
+        % vodorovná přímka y=4
+            \addplot[dashed, red] coordinates {(-6.5,-1.5) (6.5,-1.5)};
+            \addplot[dashed, red] coordinates {(-6.5,1.5) (6.5,1.5)};
+    \end{axisgraph}
+\end{center}
+Naopak graf funkce $f(x) = x^3$ omezený není, protože můžeme najít pro všechna $x$ z této funkce, vždy vyšší hodnotu.
+\begin{center}
+    \begin{axisgraph}[grid=minor, xmin=-3, xmax=3, ymin=-4, ymax=4, title={Graf funkce: \(f(x)=x^3\)}]
+        \addplot[domain=-5:5, thick, cyan]{x^3};
+    \end{axisgraph}
+\end{center}
+\end{examplebox}
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+    \item Funkce omezená shora: má „strop“ – existuje maximální dosažitelná hodnota.
+    \item Funkce omezená zdola: má „podlahu“ – existuje minimální dosažitelná hodnota.
+    \item Funkce omezená: zůstává mezi dvěma hodnotami, tj. \(m \leq f(x) \leq M\).
+\end{itemize}
+Všimněte si, že vůbec nemusíme najít taková $A$, $a$, které jsou „nejbližší“ grafu, 
+stačí přímku umístit libovolně pod/nad graf.
+\end{notebox}
+
+
+% --- M A X I M U M   A   M I N I M U M ---
+\subsection*{Maximum a minimum}
+
+V průběhu funkce často hledáme body, které dosahují \textbf{nejvyšší} nebo \textbf{nejnižší} hodnoty.  
+Tyto body nazýváme \important{extrémy funkce}.  
+Extrémy jsou velmi důležité, protože ukazují, kde se funkce „otáčí“ – přestává růst a začíná klesat, nebo naopak.  
+V praxi mohou představovat například největší zisk, nejmenší náklady, nejvyšší rychlost či nejnižší teplotu.
+
+\begin{definitionbox}
+
+    Funkce má v bodě \(x_0\) \textbf{lokální maximum}, jestliže platí
+    \[
+    f(x_0) \geq f(x)
+    \quad \text{pro všechna } x \text{ z okolí bodu } x_0.
+    \]
+    V takovém bodě má funkce „vrchol“ ve svém okolí.
+
+    \medskip
+    Funkce má v bodě \(x_0\) \textbf{lokální minimum}, jestliže platí
+    \[
+    f(x_0) \leq f(x)
+    \quad \text{pro všechna } x \text{ z okolí bodu } x_0.
+    \]
+    Takový bod představuje „údolí“ funkce v jejím okolí.
+
+    Jestliže funkce dosáhne největší nebo nejmenší hodnoty na \emph{celém definičním oboru},  
+    nazýváme tyto body \textbf{globální maximum} a \textbf{globální minimum}.
+\end{definitionbox}
+
+\begin{center}
+\begin{minipage}{0.49\textwidth}
+    \small
+    Graf vpravo zobrazuje funkci \(f(x) = x^2 - 1\),  
+    která má tvar \textbf{otevřené paraboly směrem vzhůru}.  
+    V bodě \(x = 0\) dosahuje \textbf{své nejnižší hodnoty} –  
+    to je \important{globální minimum} \(f(0) = -1\).  
+
+    Funkce nemá žádné maximum,  
+    protože s rostoucím \(|x|\) její hodnota neomezeně roste.  
+    Tento tvar je typický pro kvadratické funkce s kladným koeficientem u \(x^2\).
+\end{minipage}
+\hfill
+\begin{minipage}{0.5\textwidth}
+    \begin{axisgraph}[
+        grid=none,
+        xmin=-3, xmax=3,
+        ymin=-2, ymax=4,
+        width=\textwidth,
+        title={Parabola \(f(x) = x^2 - 1\)}
+    ]
+        \addplot[domain=-3:3, thick, blue]{x^2 - 1};
+        % zvýraznění minima
+        \addplot[mark=*] coordinates {(0,-1)};
+        \node[below right] at (axis cs:0,-1) {\small $[0, -1]$};
+    \end{axisgraph}
+\end{minipage}%
+\end{center}
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+    \item \textbf{Lokální extrémy} se týkají chování funkce v blízkosti určitého bodu.
+    \item \textbf{Globální extrémy} se týkají celé funkce – určují její absolutně nejvyšší a nejnižší hodnotu.
+    \item Parabola \(f(x) = x^2 - 1\) má jedno \textbf{globální minimum} v bodě \([0, -1]\)  
+          a žádné maximum, protože roste do nekonečna.
+\end{itemize}
+\end{notebox}
+
+
+% --- K O N V E X N O S T   A   K O N K Á V N O S T ---
+\subsection*{Konvexnost a konkávnost}
+
+Kromě toho, zda funkce \textbf{roste} nebo \textbf{klesá}, nás často zajímá také to, \emph{jakým způsobem} se její graf ohýbá.  
+Jinými slovy – zda se křivka „usmívá“ nebo „mračí“.  
+Tento tvar grafu popisujeme pojmy \important{konvexnost} a \important{konkávnost}.
+
+\begin{definitionbox}
+
+    Funkce \(f(x)\) je \textbf{konvexní}, pokud leží celý její graf \textbf{pod všemi přímkami}, které spojují libovolné dva body grafu.
+
+    Funkce \(f(x)\) je \textbf{konkávní}, pokud leží celý její graf \textbf{nad těmito přímkami}.
+\end{definitionbox}
+
+\textbf{Intuitivně:}
+
+\begin{itemize}
+  \item \textbf{Konvexní funkce} má tvar \emph{misky} – otevírá se vzhůru, „usmívá se“.  
+  Každá tečna (nebo spojovací přímka) leží nad grafem.  
+  Typický příklad: \(f(x) = x^2\).
+
+  \item \textbf{Konkávní funkce} má tvar \emph{kopce} – otevírá se dolů, „mračí se“.  
+  Každá tečna leží pod grafem.  
+  Typický příklad: \(f(x) = -x^2\).
+\end{itemize}
+
+\begin{center}
+\begin{axisgraph}[
+    width=8cm,     % šířka grafu
+    height=8cm,
+    grid=none,
+    xmin=-2, xmax=3,
+    ymin=-1.5, ymax=3,
+    title={Konvexní a konkávní část grafu: $f(x)=x^3 - 2\cdot x^2 - x + 2$}
+]
+    % konkávní část (vlevo)
+    \addplot[domain=-3:0.6, thick, orange]{x^3 - 2*x^2 - x + 2};
+    % konvexní část (vpravo)
+    \addplot[domain=0.6:3, thick, blue]{x^3 - 2*x^2 - x + 2};
+    % úsečky k bodu
+    \addplot[dashed, black] coordinates {(0.6,0) (0.6,0.94)};
+    \addplot[dashed, black] coordinates {(0,0.9) (0.6,0.9)};
+    % vyznačení inflexního bodu
+    \addplot[mark=*, mark size=2.5pt, color=red] coordinates {(0.6,0.9)};
+    \node[red, above right] at (axis cs:0.6,1) {\small inflexní bod};
+    \node[black, above right] at (axis cs:0.6,0.7) {\scriptsize $[0,6;0,9]$};
+    % popisky
+    \node[orange!90!black] at (axis cs:-1.5,1.2) {\small konkávní};
+    \node[blue!80!black] at (axis cs:1.5,0.5) {\small konvexní};
+    \node[black] at (axis cs:0.6,-0.15) {\small 0,6};
+    \node[black] at (axis cs:-0.3,0.8) {\small 0,9};
+\end{axisgraph}
+\end{center}
+
+Funkce $f(x)=x^3 - 2\cdot x^2 - x + 2$ je v levé části konkávní, v pravé konvexní.  
+V bodě \([0,6;0,9]\) se křivka „láme“ – tam má \textbf{inflexní bod}.
+
+\begin{notebox}
+\textbf{Shrnutí:}
+\begin{itemize}
+  \item Konvexní funkce má tvar „misky“ – \textit{směrem nahoru}, tečny leží nad ní.  
+  \item Konkávní funkce má tvar „kopce“ – \textit{směrem dolů}, tečny leží pod ní.  
+  \item V bodě, kde se mění konvexnost na konkávnost (nebo naopak), má funkce \textbf{bod inflexe} – tam se křivka „přelamuje“.
+\end{itemize}
+\end{notebox}
+
+
+
+
+
+% --- M O N O T Ó N N O S T   F U N K C E ---
+\subsection*{Monotónnost}
+
+\important{Monotónnost} popisuje, \textbf{jak se mění hodnota funkce, když se zvětšuje argument \(x\)}.  
+Jinými slovy — zkoumáme, zda funkce roste, klesá, nebo zůstává stále stejná.  
+Podle toho rozlišujeme tři základní typy monotónnosti:
+
+\begin{definitionbox}
+Funkce \(f\) je:
+\begin{itemize}
+    \item \textbf{rostoucí}, jestliže pro všechna \(x_1 < x_2\) platí \(f(x_1) < f(x_2)\);  
+          s rostoucím \(x\) se tedy zvyšuje i hodnota funkce \(f(x)\);
+    \item \textbf{klesající}, jestliže pro všechna \(x_1 < x_2\) platí \(f(x_1) > f(x_2)\);  
+          čím větší je \(x\), tím menší je \(f(x)\);
+    \item \textbf{konstantní}, jestliže \(f(x_1) = f(x_2)\) pro všechna \(x_1, x_2\) z definičního oboru;  
+          hodnota funkce se nemění.
+\end{itemize}
+\end{definitionbox}
+
+Monotónnost je velmi důležitá vlastnost — pomáhá nám poznat chování funkce, určovat její extrémy, a lépe chápat tvar grafu.  
+Na rostoucím intervalu se graf „zvedá“, na klesajícím se „svažuje“ a u konstantní funkce tvoří vodorovnou přímku.
+
+\begin{center}
+\begin{axisgraph}[
+    grid=none,
+    xmin=-3, xmax=5,
+    ymin=-2, ymax=3,
+    width=12cm,
+    height=7cm,
+    title={Různé úseky monotónnosti funkce}
+]
+    % Klesající část
+    \addplot[domain=-2:-1, very thick, red]{-2*x - 3};      % klesání z (−2,3) do (−1,−1)
+    % Konstantní část
+    \addplot[domain=-1:2, thick, gray]{-1};             % konstantní úsek
+    % Rostoucí část
+    \addplot[domain=2:4, thick, blue]{1.5*x - 4};       % rostoucí úsek z (2,−1) do (4,2)
+
+    % body přechodu
+    \addplot[mark=*] coordinates {(-2,1) (-1,-1) (2,-1) (4,2)};
+    
+    % popisky oblastí
+    \node[red!90!black] at (axis cs:-1.5,1.5) {\small klesající};
+    \node[gray!70!black]   at (axis cs:0.5,-0.7) {\small konstantní};
+    \node[blue!80!black]   at (axis cs:3,0.2) {\small rostoucí};
+
+\end{axisgraph}
+\end{center}
+
+O grafu výše můžeme říct, že na intervalu $(-2;-1)$ \textbf{klesá}, $(-1;2)$ je \textbf{konstantní} a $(2;4)$ \textbf{roste}.
+
+
+% ===========================================
+% Z Á K L A D N Í   E L E M E N T Á R N Í   F U N K C E
+% ===========================================
+
+\section{Základní elementární funkce}
+
+V této části se seznámíme s nejběžnějšími typy funkcí, se kterými se budeme v dalších kapitolách opakovaně setkávat.  
+U každé z nich si uvedeme základní tvar předpisu, vzhled grafu a stručnou charakteristiku jejích vlastností.
+
+% --- L I N E Á R N Í   F U N K C E ---
+\subsection*{Lineární funkce}
+
+\begin{definitionbox}
+\textbf{Lineární funkce} má předpis
+\[
+f(x) = a x + b,
+\]
+kde \(a\) je \textbf{směrnice přímky} a \(b\) je \textbf{posunutí} (průsečík s osou \(y\)).
+\end{definitionbox}
+
+Lineární funkce představuje přímku v souřadnicové rovině.  
+Její tvar závisí na hodnotě směrnice \(a\):  
+pokud \(a > 0\), funkce roste; pokud \(a < 0\), funkce klesá; a pro \(a = 0\) je konstantní.  
+Hodnota \(b\) posouvá přímku nahoru nebo dolů.
+
+\begin{center}
+\begin{axisgraph}[grid=none, xmin=-3, xmax=3, ymin=-3, ymax=3, title={Příklady lineárních funkcí}]
+    \addplot[domain=-3:3, thick, blue]{x};           % rostoucí
+    \addplot[domain=-3:3, thick, orange]{-0.5*x+1};  % klesající
+    \addplot[domain=-3:3, thick, gray]{1};           % konstantní
+
+    \node[blue] at (axis cs:2.3,1.5) {\small rostoucí};
+    \node[orange] at (axis cs:-1.5,2.3) {\small klesající};
+    \node[gray] at (axis cs:-2,0.7) {\small konstantní};
+\end{axisgraph}
+\end{center}
+
+\begin{notebox}
+\textbf{Shrnutí:}  
+Lineární funkce je nejjednodušším typem funkce – vyjadřuje přímou úměrnost nebo její posunutou variantu.  
+Grafem je přímka a její chování zcela určuje směrnice \(a\).
+\end{notebox}
+
+
+% --- K V A D R A T I C K Á   F U N K C E ---
+\subsection*{Kvadratická funkce}
+
+\begin{definitionbox}
+\textbf{Kvadratická funkce} má tvar
+\[
+f(x) = a x^2 + b x + c, \quad a \neq 0.
+\]
+\end{definitionbox}
+
+Grafem kvadratické funkce je \textbf{parabola}.  
+Její osa symetrie má směr rovnoběžný s osou \(y\).  
+Pokud \(a > 0\), parabola je otevřená nahoru, pokud \(a < 0\), je otevřená dolů.  
+Vrchol paraboly se nachází v bodě
+\[
+[x_v, y_v] = \left[-\frac{b}{2a}, f\!\left(-\frac{b}{2a}\right)\right].
+\]
+
+\begin{center}
+\begin{axisgraph}[grid=none, xmin=-4, xmax=4, ymin=-2, ymax=6, title={Příklady kvadratických funkcí}]
+    \addplot[domain=-3:3, thick, blue]{x^2};
+    \addplot[domain=-5:5, thick, orange]{-0.5*x^2+4};
+\end{axisgraph}
+\end{center}
+
+
+% --- M O C N I N N Á   F U N K C E ---
+\subsection*{Mocninná funkce}
+
+\begin{definitionbox}
+\textbf{Mocninná funkce} má tvar
+\[
+f(x) = x^n,
+\]
+kde \(n\) je reálné číslo.
+\end{definitionbox}
+
+Vlastnosti závisí na hodnotě exponentu \(n\):
+\begin{itemize}
+  \item pro \(n\) sudé je funkce \textbf{sudá} a má tvar „misky“ (např. \(x^2, x^4\)),
+  \item pro \(n\) liché je funkce \textbf{lichá} a má tvar „eska“ (např. \(x^3, x^5\)).
+\end{itemize}
+
+\begin{center}
+\begin{axisgraph}[grid=none, xmin=-3, xmax=3, ymin=-3, ymax=3, title={Příklady mocninných funkcí}]
+    \addplot[domain=-3:3, thick, blue]{x^2};
+    \addplot[domain=-3:3, thick, orange]{x^3};
+\end{axisgraph}
+\end{center}
+
+
+% --- L O M E N Á   F U N K C E ---
+\subsection*{Lomená funkce}
+
+\begin{definitionbox}
+\textbf{Lomená funkce} má tvar
+\[
+f(x) = \frac{a}{x} \quad \text{nebo obecně} \quad f(x) = \frac{a x + b}{c x + d}.
+\]
+\end{definitionbox}
+
+Její graf se nazývá \textbf{hyperbola}.  
+Funkce není definována pro hodnoty, které nulují jmenovatel.  
+Hyperbola má dvě \textbf{asymptoty} – přímky, ke kterým se přibližuje, ale nikdy je neprotne.
+
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{axisgraph}[
+    grid=none,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    title={Základní tvar $f(x)=\frac{1}{x}$}
+]
+    % Funkce 1/x
+    \addplot[domain=-5:-0.2, thick, blue]{1/x};
+    \addplot[domain=0.2:5, thick, blue]{1/x};
+    % Asymptoty
+    \addplot[dashed, gray]{0}; % y=0
+    \addplot[dashed, gray] coordinates {(0,-5) (0,5)}; % x=0
+\end{axisgraph}
+\end{minipage}
+\hspace{1cm}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{axisgraph}[
+    grid=none,
+    xmin=-5, xmax=5,
+    ymin=-5, ymax=5,
+    title={Posunutý tvar $f(x)=\frac{x+3}{x-2}$}
+]
+    % Funkce (x+3)/(x-2)
+    \addplot[domain=-5:1.8, thick, orange]{(x+3)/(x-2)};
+    \addplot[domain=2.2:5, thick, orange]{(x+3)/(x-2)};
+    % Asymptoty
+    \addplot[dashed, gray]{1}; % vodorovná asymptota y=1
+    \addplot[dashed, gray] coordinates {(2,-5) (2,5)}; % svislá asymptota x=2
+    % Popisky asymptot
+    \node[gray] at (axis cs:2.3,4.2) {\small $x=2$};
+    \node[gray] at (axis cs:-4.2,1.2) {\small $y=1$};
+\end{axisgraph}
+\end{minipage}
+\end{center}
+
+
+
+% --- A B S O L U T N Í   H O D N O T A ---
+\subsection*{Funkce s absolutní hodnotou}
+
+\begin{definitionbox}
+\textbf{Funkce s absolutní hodnotou} má tvar
+\[
+f(x) = |x|.
+\]
+\end{definitionbox}
+
+Grafem je „zlomená přímka“ ve tvaru písmene \(V\).  
+Funkce je vždy nezáporná, roste pro \(x>0\) a klesá pro \(x<0\).  
+Je \textbf{sudá} a má minimum v bodě \((0,0)\).
+
+\begin{center}
+\begin{axisgraph}[grid=none, xmin=-3, xmax=3, ymin=-1, ymax=3, title={Funkce s absolutní hodnotou $f(x)=|x|$}]
+    \addplot[domain=-3:3, thick, blue]{abs(x)};
+\end{axisgraph}
+\end{center}
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1}
+
+
+% =========================
+% ÚLOHA 1
+% =========================
+\begin{exercise}[Zapiš funkční závislosti I]
+    Zapište jako funkce (s vhodně zvolenou proměnnou) následující závislosti; dbejte na to, aby byl zápis jasný, jednoznačný a aby byla proměnná výslovně popsána:
+    \begin{tasks}(2)
+        \task obsah čtverce na délce jeho strany,
+        \task obvod kruhu na jeho poloměru,
+        \task obsah kruhu na jeho průměru,
+        \task objem krychle na délce její strany,
+        \task obsah obdélníku v závislosti na délce kratší strany, přičemž delší strana je \(2{,}5\!\times\) delší než strana kratší,
+        \task velikost tělesové úhlopříčky krychle na délce její strany.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 2
+% =========================
+\begin{exercise}[Zapiš funkční závislosti II]
+    Zapište jako funkce (s vhodně zvolenou proměnnou) následující závislosti; dbejte na to, aby byl zápis jasný, jednoznačný a aby byla proměnná výslovně popsána:
+    \begin{tasks}(1)
+        \task obvodu rovnoramenného pravoúhlého trojúhelníku na délce $a$ jeho odvěsny, 
+        \task obvodu rovnoramenného pravoúhlého trojúhelníku na délce $c$ jeho přepony.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 3
+% =========================
+\begin{exercise}[Kvádr se čtvercovou podstavou]
+    Uvažujte kvádr se čtvercovou podstavou; délka podstavné hrany je \(b\) a délka boční (svislé) hrany je rovna polovině podstavné hrany. Zapište funkce udávající závislost následujících veličin na \(b\) a u každé stručně vysvětlete postup:
+    \begin{tasks}(2)
+        \task součet délek hran kvádru na \(b\),
+        \task délku tělesové úhlopříčky na \(b\),
+        \task povrch kvádru na \(b\),
+        \task objem kvádru na \(b\).
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 4
+% =========================
+\begin{exercise}[Rozpoznání, zda je daný předpis funkcí]
+    Rozhodněte, zda následující předpisy určují funkci na uvedené množině nezávisle proměnné \(x\).  
+
+    \begin{tasks}(2)
+        \task \(f_{1}:~ y = 2x - 1,\quad x \in \mathbb{R}\)
+        \task \(f_{2}:~ y = \sqrt{x + 4},\quad x \in \langle -4; \infty )\)
+        \task \(f_{3}:~ y^{2} = x,\quad \quad \quad x \in \mathbb{R}\)
+        \task \(f_{4}:~ y = x^{2},\quad \quad \quad x \in \mathbb{R}\)
+    \end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 5
+% =========================
+\begin{exercise}[Definiční obory elementárních funkcí]
+    Určete definiční obor každé z následujících funkcí:
+    \begin{tasks}(2)
+        \task \(f_{1}(x)=x^{2}+3x-1\)
+        \task \(f_{2}(x)=\dfrac{x+1}{x-3}\)
+        \task \(f_{3}(x)=\dfrac{x}{13x^{2}+10x-3}\)
+        \task \(f_{4}(x)=\dfrac{x^{2}+1}{x^{2}+x+1}\)
+        \task \(f_{5}(x)=\dfrac{1}{\,|x+3|-4\,}\)
+        \task \(f_{6}(x)=\sqrt{x+2}\)
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 6
+% =========================
+\begin{exercise}[Výpočet funkčních hodnot I]
+    Pro funkci \(y=2x^{2}-3x\), kde \(x\in\mathbb{R}\), vypočtěte přesné (nebo vhodně zjednodušené) hodnoty v bodech
+    \(-4\), \(0{,}3\), \(\sqrt{7}\) a \(12\).
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 7
+% =========================
+\begin{exercise}[Výpočet funkčních hodnot II]
+    Je dána funkce \(f\colon y=\dfrac{5-x}{x+2}\) s omezením \(x\in\langle -1;5\rangle\). Vypočtěte hodnoty
+    \(f(-1)\), \(f(0{,}6)\), \(f(2)\) a \(f(4{,}2)\). Pokud výraz není pro zadaný bod definován, uveďte důvod.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 8
+% =========================
+\begin{exercise}[Výpočet funkčních hodnot]
+    Je dána funkce $g:y=\frac{2}{x^2 - 1}$.
+    \begin{tasks}
+        \task Určete definiční obor funkce $g$ pomocí sjednocení intervalů.
+        \task Určete u(0); u(3); u(-7) u(1,5).
+        \task Která z čísel $-4;0;1,8$ patří do oboru hodnot funkce g.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9
+% =========================
+\begin{exercise}[Hodnota funkce]
+    Vypočítejte hodntotu funkce $f:y=\frac{x+4}{x-1}$ v bodech $-1;3;\sqrt{2}$.
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 10
+% =========================
+\begin{exercise}[Určení hodnot funkce z grafu]
+    Mějme graf funkce \(t\), jejíž definiční obor je interval \(\langle -4;4\rangle\).
+    \begin{tasks}(1)
+        \task Určete hodnoty funkce \(t\) alespoň v osmi různých bodech.
+        \task Zapište obor hodnot funkce \(t\) pomocí intervalu.
+        \task Zapište všechna \(x \in D(t)\), pro která je $ t(x)=-2,\; t(x)=0,\; t(x)=1,\; t(x)=2,\; t(x)\geq 0.$
+    \end{tasks}
+    \begin{center}
+        \begin{axisgraph}[
+            xmin=-4, xmax=4,
+            ymin=-2, ymax=2,
+            width=12cm,
+            height=6cm,
+            axis lines=middle,
+            grid=none,
+            xtick={-4,-3,-2,-1,0,1,2,3,4},
+            ytick={-2,-1,0,1,2},
+            minor tick num=1
+        ]
+        % --- místo pro graf funkce t(x) ---
+        % \addplot[thick, smooth, domain=-4:4, samples=100] { ... };
+        \node at (rel axis cs:0.92,0.9) {$t$};
+        % body přechodu
+        \addplot[very thick,mark=*] coordinates {(-4,1) (-3,1) (-2,2) (0,-2) (2,2) (3,1) (4,1)};
+        \end{axisgraph}
+    \end{center}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 11
+% =========================
+\begin{exercise}[Základní práce s definičním oborem a oborem hodnot]
+    Mějme funkci \(h:\ y=\dfrac{2}{x^{2}+1}\).
+    \begin{tasks}(1)
+        \task Určete její definiční obor.
+        \task Vypočtěte hodnotu funkce \(h\) v bodě \(x=3\).
+        \task Rozhodněte, zda \(4 \in H(h)\), tedy zda číslo \(4\) náleží do oboru hodnot této funkce; své rozhodnutí krátce zdůvodněte.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 12
+% =========================
+\begin{exercise}[Definiční obor složené odmocninové funkce s omezením]
+    Je dána funkce \(f:\ y=\sqrt{x-3}+\sqrt{\,5-x\,}\) s doplňkovým omezením nezávisle proměnné \(x\in\langle -6;9\rangle\).
+    Určete její definiční obor tak, že zkombinujete podmínky plynoucí z pododmocninových výrazů s uvedeným intervalovým omezením.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 13
+% =========================
+\begin{exercise}[Výpočet funkčních hodnot I]
+    Je dána funkce \(f:\ y = x^{3} - x,\quad x \in \mathbb{R}\).  
+    Vypočítejte hodnoty funkce pro zadané argumenty:
+ $f(-2), f\!\left(\tfrac{1}{3}\right), f(2\sqrt{3}).$
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 14
+% =========================
+\begin{exercise}[Výpočet funkčních hodnot II]
+    Je dána funkce \(g(x)=3x^{2}+1\).  
+    Určete funkční hodnoty pro zadané argumenty: $g(1), g(a)+g(2), g(a+2), g(b^{2}), [\,g(b)\,]^{2}$.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 15
+% =========================
+\begin{exercise}[Existence řešení pro dané hodnoty funkce]
+    Je dána funkce \(f(x)=2x-9\).  
+    Rozhodněte, zda existuje takové \(x\in\mathbb{R}\), aby platilo:
+    \begin{tasks}(3)
+        \task \(f(x)=5\)
+        \task \(f(x)=-100\)
+        \task \(f(x)=-\dfrac{2}{3}\)
+    \end{tasks}
+\end{exercise}
+
+
+
+% =========================
+% ÚLOHA 16
+% =========================
+\begin{exercise}[Rovnost funkcí a role definičního oboru]
+    Rozhodněte, zda jsou si rovny funkce \(f:\ y=1\) a \(g:\ y=\dfrac{x}{x}\).
+    Uveďte jak porovnání hodnot, tak i diskusi o jejich definičních oborech, protože rovnost funkcí vyžaduje shodu nejen obrazů, ale také shodu předpisu na totožném definičním oboru.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 17
+% =========================
+\begin{exercise}[Práce s grafy tří funkcí]
+    Na obrázku jsou grafy funkcí \(g_{1}\), \(g_{2}\) a \(g_{3}\).
+        \begin{center}
+    % --- tři samostatné grafy vedle sebe ---
+    \begin{minipage}[t]{0.32\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-2.5, xmax=3.5,
+            ymin=-2, ymax=3,
+            width=\linewidth,
+            height=6cm,
+            axis lines=middle,
+            grid=none,
+            xtick={-4,-2,0,3},
+            ytick={1,2},
+            minor tick num=1
+        ]
+        % --- sem vlož křivku g1, např.: \addplot[thick] { ... }; ---
+        \node at (rel axis cs:0.92,0.9) {$g_{1}$};
+        % --- úsečka: [-2,2] až (0,2) s otevřeným koncem v (0,2) ---
+        \addplot[thick] coordinates {(-2,2) (-0.18,2)};
+        \addplot[only marks, mark=*, mark size=2pt] coordinates {(-2,2)}; % uzavřený bod
+        \addplot[only marks, mark=o, mark size=2pt] coordinates {(0,2)};  % otevřený bod
+        % --- úsečka: [0,0] až [3,1] (oba konce zahrnuté) ---
+        \addplot[thick] coordinates {(0,0) (3,1)};
+        \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,0) (3,1)};
+        \end{axisgraph}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-3, xmax=3,
+            ymin=-2.1, ymax=3,
+            width=\linewidth,
+            height=6cm,
+            axis lines=middle,
+            grid=none,
+            xtick={-1},
+            ytick={2},
+            minor tick num=1
+        ]
+        % --- sem vlož křivku g2 ---
+        \node at (rel axis cs:0.92,0.9) {$g_{2}$};
+        % --- část kružnice se středem (-2,0) ---
+        \addplot[domain=-2:0, samples=100, thick] ({x},{-sqrt(4-(x+2)^2)});
+                
+        % --- část kružnice se středem (2,0) ---
+        \addplot[domain=0:2, samples=100, thick] ({x},{-sqrt(4-(x-2)^2)+2});
+                
+        % --- body ---
+        \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,2)}; % uzavřený bod nahoře
+        \addplot[only marks, mark=o, mark size=2pt] coordinates {(0,0)}; % otevřený bod dole
+        \end{axisgraph}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-3, xmax=3,
+            ymin=-2, ymax=3,
+            width=\linewidth,
+            height=6cm,
+            axis lines=middle,
+            grid=none,
+            xtick={2,4},
+            ytick={1/2},
+            minor tick num=1
+        ]
+        % --- sem vlož křivku g3 ---
+        \node at (rel axis cs:0.92,0.9) {$g_{3}$};
+        \addplot[dashed, gray] coordinates {(-1,-5) (-1,5)};
+        % --- část kružnice se středem (2,0) ---
+        \addplot[domain=-3:0, samples=100, thick] ({x},{sqrt(4-(x+3.2)^2)-2.1});
+
+        \addplot[thick] coordinates {(0,1/2) (2,1/2)};
+        \addplot[only marks, mark=*, mark size=2pt] coordinates {(0,1/2) (2,1/2)};
+        \end{axisgraph}
+    \end{minipage}
+    % --- konec trojice grafů ---
+    \end{center}
+    \begin{tasks}(1)
+        \task Určete definiční obor a obor hodnot pro funkce \(g_{1}\), \(g_{2}\) a \(g_{3}\).
+        \task Určete čísla \(x_{1}, x_{2}, x_{3}\) z definičního oboru funkce \(g_{1}\) tak, aby platilo: \\
+            $g_{1}(x_{1})=0{,}5,\qquad g_{1}(x_{2})=2,\qquad g_{1}(x_{3})=-3.$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 18
+% =========================
+\begin{exercise}[Graf závislosti rychlosti na vzdálenosti od Země]
+    Má-li umělá družice kroužit kolem Země a neklesat, musí dosáhnout jisté minimální rychlosti, tzv.\ první kosmické rychlosti. V následující tabulce jsou uvedeny dvojice zachycující závislost číselné hodnoty rychlosti \(v\) na číselné hodnotě vzdálenosti \(h\) družice od Země (vzdálenost je vyjádřena v kilometrech a rychlost v~\(\mathrm{km\,s^{-1}}\)):
+
+    \medskip
+    \centering
+    \begin{tabular}{c|cccccccc}
+        \(h\) [km]       & 50 & 100 & 200 & 300 & 400 & 500 & 600 & 700 \\
+        \hline
+        \(v\) [km\,s\(^{-1}\)] & 7{,}6 & 7{,}4 & 6{,}9 & 6{,}5 & 5{,}2 & 5{,}9 & 5{,}7 & 5{,}4
+    \end{tabular}
+    \medskip
+
+    V pravoúhlé soustavě souřadnic pečlivě znázorněte všechny uspořádané dvojice čísel uvedené v tabulce tak, že na vodorovnou osu nanesete hodnoty \(h\) a na svislou osu hodnoty \(v\), přičemž zvolíte rozumné měřítko, označíte obě osy s jednotkami a body vyznačíte jednoznačně tak, aby bylo zřejmé, jak se rychlost mění se vzrůstající vzdáleností.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 19
+% =========================
+\begin{exercise}[Modelová data: přírůstky objemu vody při povodni a kumulace v čase]
+    Uvažujme zjednodušený model průběhu povodně, v němž sledujeme \emph{přírůstek objemu} vody v přehradní nádrži v jednotlivých hodinách; v tabulce jsou uvedeny modelové (didakticky zjednodušené) hodnoty přírůstku \(\Delta V\) v~milionech metrů krychlových \([\mathrm{mil.\ m^3}]\) během postupných hodin \([h]\) od začátku srážkové epizody:
+
+    \medskip
+    \centering
+    \begin{tabular}{c|ccccccccccc}
+        \(t\) [h]          & 0 & 1 & 2 & 3 & 4 & 5 & 6 & 7 & 8 & 9 & 10\\
+        \hline
+        \(\Delta V\) [mil.\,m\(^3\)] & 0{,}10 & 0{,}15 & 0{,}22 & 0{,}26 & 0{,}31 & 0{,}28 & 0{,}24 & 0{,}20 & 0{,}17 & 0{,}14 & 0{,}11
+    \end{tabular}
+    \medskip
+
+    \begin{tasks}
+        \task Sestavte funkci \(S\), která každé celé hodině \(t=0,1,2,\dots,12\) přiřadí \emph{celkový} (kumulativní) přírůstek objemu od začátku epizody.
+        \task V pravoúhlé soustavě souřadnic znázorněte uspořádané dvojice \((t, V)\) a graf popište (osy, jednotky, rozumné měřítko).
+        \task Diskutujte, zda je \(S\) na dané nosné množině rostoucí funkce a vysvětlete, jak tuto skutečnost souvisí s tím, že jednotlivé hodinové přírůstky \(\Delta V\) jsou nezáporné.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 20
+% =========================
+\begin{exercise}[Určení bodů patřících do grafu funkce]
+    Mějme graf funkce znázorněný v pravoúhlé soustavě souřadnic.  
+    Pomocí něj rozhodněte:
+
+    \begin{center}
+    \begin{minipage}[t]{0.45\textwidth}
+        \vspace{0pt} % zarovná horní okraje
+        \begin{tasks}(1)
+            \task Které z~bodů 
+            \(A_{1}[1;0]\), \(A_{2}[0;1]\) a \(A_{3}[2;3]\)
+            patří do grafu dané funkce?
+            \task Vypište všechny body, které patří do grafu této funkce.
+        \end{tasks}
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.48\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-3, xmax=4,
+            ymin=-2, ymax=3,
+            grid=none,
+            width=\linewidth,
+            height=6cm,
+            xlabel={$x$},
+            ylabel={$y$},
+            minor tick num=1,
+            axis lines=middle,
+            enlargelimits
+        ]
+        % --- body grafu ---
+        \addplot[
+            only marks,
+            mark=*,
+            mark size=2pt,
+            color=black
+        ]
+        coordinates {
+            (-2,1)
+            (-1,-1)
+            (0,2)
+            (1,1)
+            (2,0)
+            (3,2)
+        };
+        \end{axisgraph}
+    \end{minipage}
+    \end{center}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 21
+% =========================
+\begin{exercise}[Porovnání grafů a předpisů funkcí]
+    Přiřaďte ke každé z následujících funkcí odpovídající graf.  
+    Všechny grafy jsou zakresleny v pravoúhlé soustavě souřadnic s osami
+    \(x\in\langle -1;4\rangle\) a \(y\in\langle -1;6\rangle\).
+
+    \begin{tasks}(2)
+        \task \(y = 4x,\quad x \in (0;\infty)\)
+        \task \(y = 6x^{2},\quad x \in (0;\infty)\)
+        \task \(y = \sqrt{3}\,x,\quad x \in (0;\infty)\)
+        \task \(y = x^{3},\quad x \in (0;\infty)\)
+    \end{tasks}
+
+    \medskip
+    \begin{center}
+    % --- čtyři samostatné grafy vedle sebe ---
+    \begin{minipage}[t]{0.24\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-1, xmax=3,
+            ymin=-1, ymax=5,
+            width=\linewidth,
+            height=5cm,
+            axis lines=middle,
+            grid=none,
+            domain=0:3.5,
+            samples=100,
+        ]
+        \addplot[thick, black] {4*x};
+        \node at (axis cs:2.5,3) {(1)};
+        \end{axisgraph}
+    \end{minipage}\hfill
+    %
+    \begin{minipage}[t]{0.24\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-1, xmax=3,
+            ymin=-1, ymax=5,
+            width=\linewidth,
+            height=5cm,
+            axis lines=middle,
+            grid=none,
+            domain=0:3.5,
+            samples=100,
+        ]
+        \addplot[thick, black] {6*x^2};
+        \node at (axis cs:2.5,3) {(2)};
+        \end{axisgraph}
+    \end{minipage}\hfill
+    %
+    \begin{minipage}[t]{0.24\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-1, xmax=3,
+            ymin=-1, ymax=5,
+            width=\linewidth,
+            height=5cm,
+            axis lines=middle,
+            grid=none,
+            domain=0:3.5,
+            samples=100,
+        ]
+        \addplot[thick, black] {sqrt(3)*x};
+        \node at (axis cs:2.5,3) {(3)};
+        \end{axisgraph}
+    \end{minipage}\hfill
+    %
+    \begin{minipage}[t]{0.24\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-1, xmax=3,
+            ymin=-1, ymax=5,
+            width=\linewidth,
+            height=5cm,
+            axis lines=middle,
+            grid=none,
+            domain=0:3.5,
+            samples=100,
+        ]
+        \addplot[thick, black] {x^3};
+        \node at (axis cs:2.5,3) {(4)};
+        \end{axisgraph}
+    \end{minipage}
+    % --- konec grafů ---
+    \end{center}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 22
+% =========================
+\begin{exercise}[Tvoření funkce]
+    O funkci jsou známy tyto údaje: její definiční obor je interval $\langle-1;4\rangle$,
+    obor hodnot je $\langle-2;1\rangle$, funkční hodnoty v bodech $-1;0;4;$ jsou po třadě $0;1;-1;$.
+    \begin{tasks}
+        \task Kolik existuje funkcí, které splňují všechny tyto podmínky?
+        \task Načrtněte graf některé z nich.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 23
+% =========================
+\begin{exercise}[Tvoření funkce]
+    Zkuste nakreslit graf nějaké funkce, pro kterou platí:
+    \begin{tasks}
+        \task její definiční obor je pětiprvková množina a obor hodnot je množina čtyřprvková;
+        \task definiční obor je čtyřprvková množina a obor hodnot je množina pětiprvková. 
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{2}
+% =========================
+% ÚLOHA 24
+% =========================
+\begin{exercise}[Tvoření funkce]
+    Zkuste nakreslit graf nějaké funkce, pro kterou platí:
+    \begin{tasks}
+        \task její definiční obor je pětiprvková množina a obor hodnot je množina čtyřprvková;
+        \task definiční obor je čtyřprvková množina a obor hodnot je množina pětiprvková. 
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 25
+% =========================
+\begin{exercise}[Vyhodnocování složených funkcí I]
+    Jsou dány dvě funkce \(f(x)=3x+1\) a \(g(x)=x^{2}+3x+2\). Vypočítejte:
+    \begin{tasks}(3)
+        \task \(f(g(1))\)
+        \task \(g(f(1))\)
+        \task \(f(f(2))\)
+        \task \(g(g(-3))\)
+        \task \(f(g(a))\)
+        \task \(g(f(b))\)
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 26
+% =========================
+\begin{exercise}[Vyhodnocování složených funkcí II]
+    Jsou dány dvě funkce \(f(x)=x^{2}+1\) a \(g(x)=(x+1)^{2}\).
+    \begin{tasks}(1)
+        \task Vypočítejte \(f(g(-2))\).
+        \task Vyjádřete předpis funkce \(h(x)=f(g(x))\) a vypočítejte \(h(-2)\).
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 27
+% =========================
+\begin{exercise}[Složené funkce a definiční obory]
+    Jsou dány funkce \(f(x)=x-1\), \(g(x)=\sqrt{x}\) a \(h(x)=x+3\). Vypočítejte složené funkce a určete jejich definiční obor:
+    \begin{tasks}(2)
+        \task \(u_{1}(x)=g(h(f(x)))\)
+        \task \(u_{2}(x)=f(h(g(x)))\)
+        \task \(u_{3}(x)=f(g(h(x)))\)
+        \task \(u_{4}(x)=h(g(f(x)))\)
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 28
+% =========================
+\begin{exercise}[Parametr ve složené funkci]
+    Určete hodnotu parametru \(a\in\mathbb{R}\) tak, aby pro funkci \(h(x)=ax+3\) platilo \(h(h(2))=17.\)
+\end{exercise}
+
+
+\setcounter{section}{2}
+% =========================
+% ÚLOHA 29
+% =========================
+\begin{exercise}[Rostoucí a klesající části z grafu]
+    Jsou dány grafy funkcí \(f\), \(g\), \(h\). Rozhodněte, na kterých intervalech jsou rostoucí a na kterých klesající.
+    \begin{center}
+    \begin{minipage}[t]{0.32\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-3, xmax=3,
+            ymin=-2, ymax=5,
+            width=\linewidth,
+            height=5cm,
+            axis lines=middle,
+            grid=none,
+            domain=-3:3,
+            samples=200
+        ]
+        \addplot[thick] {x^2 - 1};
+        \node at (rel axis cs:0.8,0.9) {$f$};
+        \end{axisgraph}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-3, xmax=3,
+            ymin=-2, ymax=5,
+            width=\linewidth,
+            height=5cm,
+            axis lines=middle,
+            grid=none,
+            domain=-3:3,
+            samples=200
+        ]
+        \addplot[thick] {x^5-2*x^3-1/2*x^2+1};
+        \node at (rel axis cs:0.9,0.9) {$g$};
+        \end{axisgraph}
+    \end{minipage}\hfill
+    \begin{minipage}[t]{0.32\textwidth}
+        \vspace{0pt}
+        \begin{axisgraph}[
+            xmin=-3, xmax=3,
+            ymin=-2, ymax=5,
+            width=\linewidth,
+            height=5cm,
+            axis lines=middle,
+            grid=none
+        ]
+        % lomená čára: rostoucí na (-3,0), klesající na (0,3)
+        \addplot[thick] coordinates {(-3,-1) (0,2) (1,1) (3,5)};
+        \node at (rel axis cs:0.8,0.9) {$h$};
+        \end{axisgraph}
+    \end{minipage}
+    \end{center}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 30
+% =========================
+\begin{exercise}[Důkaz rostoucnosti]
+    Dokažte, že funkce \(u:\ y=2x-1\) je rostoucí na \(\mathbb{R}\).
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 31
+% =========================
+\begin{exercise}[Důkaz klesající funkce]
+    Dokažte, že funkce \(v:\ y=-3x+6\) je klesající na \(\mathbb{R}\).
+\end{exercise}
+
+
+\setcounter{section}{3}
+% =========================
+% ÚLOHA 32
+% =========================
+\begin{exercise}[Prosté funkce]
+    Rozhodněte, které z následujících funkcí jsou prosté ve svém definičním oboru:
+    \begin{tasks}(2)
+        \task \(f_{1}:~y=2x+5\)
+        \task \(f_{2}:~y=x^{2}-4\)
+        \task \(f_{3}:~y=2^{x}\)
+        \task \(f_{4}:~y=|x+1|\)
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{4}
+% =========================
+% ÚLOHA 33
+% =========================
+\begin{exercise}[Sudé a liché funkce]
+    Rozhodněte, které z následujících funkcí \(f_{1}\) až \(f_{12}\) jsou sudé, které liché (v jejich definičním oboru):
+    \begin{tasks}(3)
+        \task \(f_{1}(x)=x\)
+        \task \(f_{2}(x)=\cos x\)
+        \task \(f_{3}(x)=\dfrac{1}{x}\)
+        \task \(f_{4}(x)=4x\)
+        \task \(f_{5}(x)=x^{2}\)
+        \task \(f_{6}(x)=\dfrac{4x}{x^{2}-4}\)
+        \task \(f_{7}(x)=|x|\)
+        \task \(f_{8}(x)=\dfrac{4x}{x^{2}+4}\)
+        \task \(f_{9}(x)=x^{3}\)
+        \task \(f_{10}(x)=2^{x}\)
+        \task \(f_{11}(x)=\dfrac{x^{2}}{|x|+3}\)
+        \task \(f_{12}(x)=\log x\)
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{5}
+% =========================
+% ÚLOHA 34
+% =========================
+\begin{exercise}[Omezenost funkcí I]
+    Rozhodněte, které z následujících funkcí \(g_{1}\) až \(g_{16}\) jsou omezené shora, omezené zdola, resp.\ omezené v definičním oboru:
+    \begin{tasks}(4)
+        \task \(g_{1}(x)=\cos x\)
+        \task \(g_{2}(x)=\sin^{2}x\)
+        \task \mbox{$g_{3}(x)=\cos x-1$}
+        \task \(g_{4}(x)=2\sin x\)
+        \task \(g_{5}(x)=x\)
+        \task \(g_{6}(x)=|x|\)
+        \task \(g_{7}(x)=-4x\)
+        \task \mbox{$g_{8}(x)=-4|x|+3$}
+        \task \(g_{9}(x)=x^{2}\)
+        \task \(g_{10}(x)=x^{3}\)
+        \task \(g_{11}(x)=x^{-1}\)
+        \task \(g_{12}(x)=x^{-2}\)
+        \task \(g_{13}(x)=2^{x}\)
+        \task \(g_{14}(x)=2^{|x|}\)
+        \task \(g_{15}(x)=\log x\)
+        \task \(g_{16}(x)=-|\log x|\)
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 35
+% =========================
+\begin{exercise}[Omezenost funkcí II – důkazy]
+    Dokažte, že následující funkce jsou omezené v jejich definičním oboru:
+    \begin{tasks}(1)
+        \task \(f_{1}(x)=\dfrac{10}{x^{2}+2}\)
+        \task \(f_{2}(x)=x^{2}\), \; pro \(x\in\langle-5;3\rangle\)
+        \task \(f_{3}(x)=\dfrac{x}{x+4}\), \; pro \(x\in\mathbb{R}^{+}_{0}\)
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{6}
+% =========================
+% ÚLOHA 36
+% =========================
+\begin{exercise}[Extrémy v definičním oboru]
+    Rozhodněte, zda funkce \(f_{1}\) až \(f_{9}\) mají v definičním oboru maximum nebo minimum. Pokud ano, určete bod, ve kterém extrém nastává, a jeho hodnotu.
+    \begin{tasks}(3)
+        \task \(f_{1}(x)=2x\)
+        \task \(f_{2}(x)=2x^{2}-1\)
+        \task \(f_{3}(x)=\dfrac{x+3}{x}\)
+        \task \(f_{4}(x)=|x|+1\)
+        \task \(f_{5}(x)=-x^{2}+4\)
+        \task \(f_{6}(x)=\dfrac{4x}{x^{2}+4}\)
+        \task \(f_{7}(x)=2^{x}+1\)
+        \task \(f_{8}(x)=-|\log x|\)
+        \task \(f_{9}(x)=\dfrac{1}{x^{2}+2x+1}\)
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{7}
+% =========================
+% ÚLOHA 37
+% =========================
+\begin{exercise}[BONUS: Skica grafu podle vlastností]
+    Načrtněte graf funkce \(f\), víte-li, že \(D(f)=\langle -3;\infty)-\{0\}\), \(f(-3)=2\); průsečíky s osou \(x\) jsou \(P_{1}[-1;0]\), \(P_{2}[5;0]\); na \(\langle-3;0)\) je \(f\) rostoucí a není omezená shora; na \(\langle-3;3\rangle-\{0\}\) je \(f\) sudá; na \(\langle3;\infty)\) je \(f\) rostoucí a je omezená shora číslem \(h=4\).
+    \begin{center}
+        \begin{axisgraph}[
+            xmin=-6, xmax=8,
+            ymin=-4, ymax=6,
+            width=12cm,
+            height=6.5cm,
+            axis lines=middle,
+            grid=none,
+            xtick={-6,-4,-2,0,2,4,6,8},
+            ytick={-4,-2,0,2,4,6},
+            minor tick num=1
+        ]
+        % --- zde načrtněte graf dle vlastností ---
+        % \addplot[thick, domain=..., samples=200] { ... };
+        \end{axisgraph}
+    \end{center}
+    \begin{tasks}(1)
+        \task Z grafu určete obor hodnot \(H(f)\).
+        \task Určete průsečík grafu s osou \(y\) (souřadnice bodu).
+        \task Je funkce \(f\) omezená zdola na \(D(f)\)?
+        \task Určete maximum funkce \(f\) na \(D(f)\).
+        \task Určete minimum funkce \(f\) na \(D(f)\).
+        \task Je funkce \(f\) prostá na \(D(f)\)?
+        \task Určete alespoň jeden interval, na kterém je \(f\) prostá.
+    \end{tasks}
+
+        \medskip
+    \textit{Nápověda:}
+    \begin{itemize}
+        \item Začněte zakreslením bodů \(P_{1}\), \(P_{2}\) a bodu \((-3;2)\).
+        \item Využijte, že sudost znamená zrcadlení podle osy \(y\); část grafu vlevo od osy \(y\) tedy určuje i část vpravo.
+        \item V bodě \(x=0\) funkce není definována – naznačte přerušení (svislá asymptota).
+        \item V intervalu \(\langle3;\infty)\) zakreslete rostoucí křivku, která se shora blíží hodnotě \(y=4\).
+    \end{itemize}
+
+\end{exercise}
+
+
+\end{document}

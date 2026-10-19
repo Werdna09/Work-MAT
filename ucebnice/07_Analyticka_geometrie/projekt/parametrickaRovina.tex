@@ -1,0 +1,890 @@
+\subsection{Parametrické vyjádření roviny}
+\label{subsec:Parametric_plane}
+
+Rovina je určena jedním bodem a dvěma navzájem nezávislými směry.
+Z výchozího bodu se tedy můžeme pohybovat současně ve směru dvou
+nenulových, navzájem nerovnoběžných vektorů.
+
+Uvažujme bod
+\[
+    A[x_A;y_A;z_A]
+\]
+a dva nenulové, navzájem nerovnoběžné vektory
+\[
+    \vec{u}=(u_x;u_y;u_z),
+    \qquad
+    \vec{v}=(v_x;v_y;v_z).
+\]
+
+Libovolný bod $X[x;y;z]$ roviny získáme z bodu $A$ posunutím o vhodný
+násobek vektoru $\vec{u}$ a vhodný násobek vektoru $\vec{v}$:
+\[
+    X=A+s\vec{u}+t\vec{v},
+\]
+kde $s,t\in\mathbb{R}$.
+
+
+\subsubsection{Rovina určená bodem a dvěma směrovými vektory}
+\label{subsubsec:Plane_point_two_direction_vectors}
+
+\begin{definition}
+    \label{def:Parametric_plane}
+
+    Nechť $A[x_A;y_A;z_A]$ je bod v prostoru a nechť
+    \[
+        \vec{u}=(u_x;u_y;u_z),
+        \qquad
+        \vec{v}=(v_x;v_y;v_z)
+    \]
+    jsou dva nenulové, navzájem nerovnoběžné vektory.
+
+    Rovina $\alpha$ procházející bodem $A$ a mající směrové vektory
+    $\vec{u}$ a $\vec{v}$ je množina všech bodů $X$, které lze vyjádřit
+    ve tvaru
+    \begin{equation}
+        X=A+s\vec{u}+t\vec{v},
+        \qquad
+        s,t\in\mathbb{R}.
+        \label{eq:Parametric_plane_vector}
+    \end{equation}
+
+    Po rozepsání do souřadnic získáme parametrické rovnice roviny
+    \begin{equation}
+        \begin{aligned}
+            \alpha: x&=x_A+s u_x+t v_x,\\
+            y&=y_A+s u_y+t v_y,\\
+            z&=z_A+s u_z+t v_z; \quad s,t\in\mathbb{R}.
+        \end{aligned}
+        \label{eq:Parametric_plane_coordinates}
+    \end{equation}
+
+    Parametry $s$ a $t$ jsou opět známými \textbf{parametry roviny} a vektory
+    $\vec{u}$ a $\vec{v}$ jejími \textbf{směrovými vektory}.
+\end{definition}
+
+Vektor směřující z bodu $A$ do libovolného bodu $X$ roviny má tvar
+\begin{equation}
+    \overrightarrow{AX}=s\vec{u}+t\vec{v}.
+    \label{eq:Plane_displacement_vector}
+\end{equation}
+
+Každý vektor spojující bod $A$ s bodem roviny je tedy lineární kombinací
+jejích směrových vektorů.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+
+        % Rovina
+        \coordinate (P1) at (-1.2,0.1,0.3);
+        \coordinate (P2) at (4.4,1.2,0.9);
+        \coordinate (P3) at (5.0,3.8,2.9);
+        \coordinate (P4) at (-0.6,2.7,2.3);
+
+        \fill[gray!18] (P1) -- (P2) -- (P3) -- (P4) -- cycle;
+        \draw[thin] (P1) -- (P2) -- (P3) -- (P4) -- cycle;
+
+        % Osy - kladná část
+        \draw[->] (0,0,0) -- (5.2,0,0) node[right] {$x$};
+        \draw[->] (0,0,0) -- (0,4.7,0) node[above] {$y$};
+        \draw[->] (0,0,0) -- (0,0,4.1) node[below left] {$z$};
+
+        % Osy - záporná část
+        \draw[->, dashed] (0,0,0) -- (-2.2,0,0);
+        \draw[->, dashed] (0,0,0) -- (0,-2.2,0);
+        \draw[->, dashed] (0,0,0) -- (0,0,-2.7);
+
+        \node[above left] at (0,0,0) {$O$};
+
+        % Body
+        \coordinate (A) at (1,1,1);
+        \coordinate (U) at (3,1.4,1.2);
+        \coordinate (V) at (1.6,2.4,2);
+        \coordinate (X) at (3.6,2.8,2.2);
+
+        % Směrové vektory
+        \draw[vector] (A) -- (U)
+            node[midway, sloped, above] {$\vec{u}$};
+
+        \draw[vector] (A) -- (V)
+            node[midway, sloped, above] {$\vec{v}$};
+
+        % Pomocný rovnoběžník
+        \draw[dashed] (U) -- (X);
+        \draw[dashed] (V) -- (X);
+
+        % Body
+        \fill (A) circle (2pt) node[below left] {$A$};
+        \fill (X) circle (2pt) node[above right] {$X$};
+
+        \node at (4.35,3,2.65) {$\alpha$};
+
+    \end{tikzpicture}
+
+    \caption{Bod $X$ roviny $\alpha$ získáme z bodu $A$ posunutím
+    ve směrech vektorů $\vec{u}$ a $\vec{v}$.}
+    \label{fig:Parametric_plane_geometric_meaning}
+\end{figure}
+
+Na obrázku~\ref{fig:Parametric_plane_geometric_meaning} je znázorněn
+geometrický význam vztahu~\eqref{eq:Parametric_plane_vector}.
+Posunutí
+\[
+    s\vec{u}+t\vec{v}
+\]
+může mít libovolnou velikost i orientaci v rámci roviny určené směry
+$\vec{u}$ a $\vec{v}$.
+
+
+\subsubsection{Význam parametrů}
+\label{subsubsec:Meaning_of_plane_parameters}
+
+Parametry $s$ a $t$ se mohou měnit nezávisle na sobě. Každá uspořádaná
+dvojice
+\[
+    (s;t)\in\mathbb{R}^2
+\]
+určuje právě jeden bod roviny.
+
+Pro některé zvláštní hodnoty parametrů dostáváme:
+
+\begin{itemize}
+    \item pro $s=0$ a $t=0$ získáme výchozí bod
+    \[
+        X=A;
+    \]
+
+    \item pro $t=0$ se pohybujeme pouze ve směru vektoru $\vec{u}$:
+    \[
+        X=A+s\vec{u},
+    \]
+    dostáváme tím tedy přímku procházející bodem $A$ a rovnoběžnou s vektorem $\vec{u}$;
+
+    \item pro $s=0$ se pohybujeme pouze ve směru vektoru $\vec{v}$:
+    \[
+        X=A+t\vec{v},
+    \]
+    dostáváme tím tedy přímku procházející bodem $A$ a rovnoběžnou s vektorem $\vec{v}$;
+
+    \item pro pevně zvolené $t$ a proměnné $s$ získáváme přímku
+    rovnoběžnou s vektorem $\vec{u}$;
+
+    \item pro pevně zvolené $s$ a proměnné $t$ získáváme přímku
+    rovnoběžnou s vektorem $\vec{v}$.
+\end{itemize}
+
+Rovinu si tak můžeme představit jako nekonečnou soustavu navzájem
+rovnoběžných přímek. Například při pevně zvoleném parametru $t$
+a proměnném parametru $s$ získáváme přímky rovnoběžné se směrovým
+vektorem $\vec{u}$, jejichž sjednocením je celá rovina.
+
+\begin{remark}
+    Pro parametrické vyjádření přímky stačil jeden parametr, protože
+    přímka má pouze jeden nezávislý směr. Rovina má dva nezávislé
+    směry, a proto potřebujeme dva parametry.
+\end{remark}
+
+
+\subsubsection{Proč musí být směrové vektory nerovnoběžné}
+\label{subsubsec:Why_plane_vectors_nonparallel}
+
+Podmínka, že vektory $\vec{u}$ a $\vec{v}$ nejsou rovnoběžné, je
+nezbytná.
+
+Kdyby například existovalo číslo $k\in\mathbb{R}$ takové, že
+\[
+    \vec{v}=k\vec{u},
+\]
+potom by platilo
+\begin{align*}
+    X
+    &=A+s\vec{u}+t\vec{v}\\
+    &=A+s\vec{u}+tk\vec{u}\\
+    &=A+(s+kt)\vec{u}.
+\end{align*}
+
+Místo dvou nezávislých směrů bychom tedy získali pouze násobky jediného
+vektoru $\vec{u}$. Výslednou množinou bodů by nebyla rovina, ale přímka.
+
+Podobný problém nastane, pokud je některý ze směrových vektorů nulový.
+Nulový vektor neurčuje žádný směr a jeho násobky nemění polohu bodu.
+
+\begin{remark}
+    Dva vektory mohou tvořit dvojici směrových vektorů roviny právě
+    tehdy, jsou-li lineárně nezávislé. Pro dvojici vektorů to znamená,
+    že ani jeden z nich není reálným násobkem druhého.
+\end{remark}
+
+
+\subsubsection{Sestavení parametrického vyjádření roviny}
+\label{subsubsec:Constructing_parametric_plane}
+
+Při sestavování parametrického vyjádření roviny potřebujeme:
+
+\begin{enumerate}
+    \item jeden bod $A$, který v rovině leží;
+    \item dva nenulové, navzájem nerovnoběžné směrové vektory
+    $\vec{u}$ a $\vec{v}$ ležící v rovině;
+    \item dosadit tyto údaje do vztahu
+    \[
+        X=A+s\vec{u}+t\vec{v}.
+    \]
+\end{enumerate}
+
+\begin{example}
+    \label{exa:Parametric_plane_point_vectors}
+
+    Určete parametrické vyjádření roviny $\alpha$, která prochází bodem
+    $A[1;-2;3]$ a má směrové vektory $\vec{u}=(2;1;-1)\text{, } \vec{v}=(1;-1;2)$.
+
+    Vektory $\vec{u}$ a $\vec{v}$ nejsou rovnoběžné, a proto určují
+    dva nezávislé směry roviny.
+
+    Použijeme vztah~\eqref{eq:Parametric_plane_vector}:
+    \begin{align*}
+        X
+        &=A+s\vec{u}+t\vec{v}\\
+        &=[1;-2;3]+s(2;1;-1)+t(1;-1;2)\\
+        &=[1+2s+t;-2+s-t;3-s+2t].
+    \end{align*}
+
+    Parametrické vyjádření roviny je
+    \[
+        \begin{aligned}
+            \alpha: x&=1+2s+t,\\
+            y&=-2+s-t,\\
+            z&=3-s+2t; \quad s,t\in\mathbb{R}.
+        \end{aligned}
+    \]
+\end{example}
+
+Z parametrického vyjádření můžeme vytvářet jednotlivé body roviny
+volbou konkrétních hodnot parametrů. Pro rovinu z předchozího příkladu
+například dostáváme
+
+\[
+    \begin{array}{c|c|c}
+        s & t & X[x;y;z]\\
+        \hline
+        0 & 0 & A[1;-2;3]\\
+        1 & 0 & B[3;-1;2]\\
+        0 & 1 & C[2;-3;5]\\
+        1 & 1 & D[4;-2;4]
+    \end{array}
+\]
+
+Body $A$, $B$, $C$ a $D$ tvoří rovnoběžník. Platí totiž
+\[
+    \overrightarrow{AB}=\vec{u},
+    \qquad
+    \overrightarrow{AC}=\vec{v},
+\]
+a bod $D$ získáme současným posunutím o oba směrové vektory:
+\[
+    D=A+\vec{u}+\vec{v}.
+\]
+
+
+\subsubsection{Čtení parametrického vyjádření roviny}
+\label{subsubsec:Reading_parametric_plane}
+
+Z parametrických rovnic můžeme přímo vyčíst jeden bod roviny a dva
+její směrové vektory. Konstantní členy určují bod odpovídající hodnotám
+$s=0$, $t=0$. Koeficienty u parametru $s$ tvoří souřadnice prvního
+směrového vektoru a koeficienty u parametru $t$ souřadnice druhého.
+
+\begin{example}
+    \label{exa:Reading_parametric_plane}
+
+    Je dána rovina
+    \[
+        \begin{aligned}
+            \beta: x&=-1+3s-t,\\
+            y&=2-s+2t,\\
+            z&=4+2s+t; \quad s,t\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Určete jeden bod roviny a dva její směrové vektory.
+
+    Pro $s=0$ a $t=0$ dostáváme bod
+    \[
+        K[-1;2;4].
+    \]
+
+    Koeficienty u parametru $s$ tvoří směrový vektor
+    \[
+        \vec{u}=(3;-1;2),
+    \]
+    zatímco koeficienty u parametru $t$ tvoří druhý směrový vektor
+    \[
+        \vec{v}=(-1;2;1).
+    \]
+
+    Rovina $\beta$ tedy prochází bodem $K[-1;2;4]$ a má směrové vektory
+    \[
+        \vec{u}=(3;-1;2),
+        \qquad
+        \vec{v}=(-1;2;1).
+    \]
+\end{example}
+
+Při čtení směrových vektorů je třeba dávat pozor zejména na znaménka.
+Například z rovnice
+\[
+    y=2-s+2t
+\]
+čteme jako druhou souřadnici prvního směrového vektoru číslo $-1$
+a jako druhou souřadnici druhého směrového vektoru číslo $2$.
+
+
+\subsubsection{Příslušnost bodu k rovině}
+\label{subsubsec:Point_membership_parametric_plane}
+
+Aby bod $P[x_P;y_P;z_P]$ ležel v parametricky vyjádřené rovině,
+musí existovat jedna dvojice reálných parametrů $(s;t)$, která
+současně vytvoří všechny tři souřadnice bodu $P$.
+
+Pro rovinu
+\[
+    \begin{aligned}
+        \alpha: x&=x_A+s u_x+t v_x,\\
+        y&=y_A+s u_y+t v_y,\\
+        z&=z_A+s u_z+t v_z; \quad s,t\in\mathbb{R}
+    \end{aligned}
+\]
+tedy platí
+\[
+    P\in\alpha
+    \quad\Longleftrightarrow\quad
+    \text{existují }s,t\in\mathbb{R}\text{ takové, že}
+    \begin{cases}
+        x_P=x_A+s u_x+t v_x,\\
+        y_P=y_A+s u_y+t v_y,\\
+        z_P=z_A+s u_z+t v_z.
+    \end{cases}
+\]
+
+Nestačí, aby některé dvě rovnice určily dvojici parametrů. Stejná
+dvojice hodnot $s$ a $t$ musí splňovat všechny tři rovnice.
+
+\begin{example}
+    \label{exa:Point_membership_parametric_plane}
+
+    Rozhodněte, zda body
+    \[
+        P[4;-2;4],
+        \qquad
+        Q[3;-1;3]
+    \]
+    leží v rovině
+    \[
+        \begin{aligned}
+            \alpha: x&=1+2s+t,\\
+            y&=-2+s-t,\\
+            z&=3-s+2t; \quad s,t\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Nejprve dosadíme souřadnice bodu $P[4;-2;4]$:
+    \[
+        \begin{cases}
+            4=1+2s+t,\\
+            -2=-2+s-t,\\
+            4=3-s+2t.
+        \end{cases}
+    \]
+
+    Po úpravě
+    \[
+        \begin{cases}
+            2s+t=3,\\
+            s-t=0,\\
+            -s+2t=1.
+        \end{cases}
+    \]
+
+    Z druhé rovnice plyne
+    \[
+        s=t.
+    \]
+
+    Po dosazení do první rovnice získáme
+    \[
+        3s=3,
+    \]
+    tedy
+    \[
+        s=1,
+        \qquad
+        t=1.
+    \]
+
+    Ověříme třetí rovnici:
+    \[
+        -1+2\cdot1=1.
+    \]
+
+    Stejná dvojice parametrů $(s;t)=(1;1)$ splňuje všechny tři
+    rovnice, a proto
+    \[
+        P\in\alpha.
+    \]
+
+    Nyní dosadíme souřadnice bodu $Q[3;-1;3]$:
+    \[
+        \begin{cases}
+            3=1+2s+t,\\
+            -1=-2+s-t,\\
+            3=3-s+2t.
+        \end{cases}
+    \]
+
+    Po úpravě
+    \[
+        \begin{cases}
+            2s+t=2,\\
+            s-t=1,\\
+            -s+2t=0.
+        \end{cases}
+    \]
+
+    Z prvních dvou rovnic dostáváme
+    \[
+        s=1,
+        \qquad
+        t=0.
+    \]
+
+    Tato dvojice však nesplňuje třetí rovnici, protože
+    \[
+        -1+2\cdot0=-1\neq0.
+    \]
+
+    Proto
+    \[
+        Q\notin\alpha.
+    \]
+\end{example}
+
+Příslušnost bodu můžeme vyjádřit také vektorově. Bod $P$ leží
+v rovině procházející bodem $A$ se směrovými vektory $\vec{u}$
+a $\vec{v}$ právě tehdy, když lze vektor
+\[
+    \overrightarrow{AP}=P-A
+\]
+vyjádřit jako lineární kombinaci
+\[
+    \overrightarrow{AP}=s\vec{u}+t\vec{v}
+\]
+pro nějaká $s,t\in\mathbb{R}$.
+
+
+\subsubsection{Rovina určená třemi body}
+\label{subsubsec:Plane_through_three_points}
+
+Rovina bývá často zadána třemi body
+\[
+    A[x_A;y_A;z_A],
+    \qquad
+    B[x_B;y_B;z_B],
+    \qquad
+    C[x_C;y_C;z_C].
+\]
+
+Aby tyto body určovaly právě jednu rovinu, nesmějí ležet na jedné
+přímce.
+
+Jako výchozí bod můžeme zvolit například bod $A$. Dva směrové vektory
+roviny získáme jako
+\[
+    \overrightarrow{AB}
+    =
+    (x_B-x_A;y_B-y_A;z_B-z_A)
+\]
+a
+\[
+    \overrightarrow{AC}
+    =
+    (x_C-x_A;y_C-y_A;z_C-z_A).
+\]
+
+Pokud body $A$, $B$ a $C$ neleží na jedné přímce, nejsou vektory
+$\overrightarrow{AB}$ a $\overrightarrow{AC}$ rovnoběžné a mohou
+sloužit jako směrové vektory roviny.
+
+Parametrické vyjádření potom má tvar
+\begin{equation}
+    X=A+s\overrightarrow{AB}+t\overrightarrow{AC},
+    \qquad
+    s,t\in\mathbb{R}.
+    \label{eq:Plane_through_three_points}
+\end{equation}
+
+Po rozepsání do souřadnic:
+\begin{equation}
+    \begin{aligned}
+        \alpha: x&=x_A+s(x_B-x_A)+t(x_C-x_A),\\
+        y&=y_A+s(y_B-y_A)+t(y_C-y_A),\\
+        z&=z_A+s(z_B-z_A)+t(z_C-z_A);
+        \quad s,t\in\mathbb{R}.
+    \end{aligned}
+    \label{eq:Plane_through_three_points_coordinates}
+\end{equation}
+
+\begin{example}
+    \label{exa:Plane_through_three_points}
+
+    Určete parametrické vyjádření roviny $\alpha$, která prochází body
+    \[
+        A[1;-2;3],
+        \qquad
+        B[3;-1;2],
+        \qquad
+        C[2;-3;5].
+    \]
+
+    Jako výchozí bod zvolíme bod $A$. Určíme vektory
+    \[
+        \overrightarrow{AB}
+        =
+        (3-1;-1-(-2);2-3)
+        =
+        (2;1;-1)
+    \]
+    a
+    \[
+        \overrightarrow{AC}
+        =
+        (2-1;-3-(-2);5-3)
+        =
+        (1;-1;2).
+    \]
+
+    Vektory $\overrightarrow{AB}$ a $\overrightarrow{AC}$ nejsou
+    rovnoběžné, takže zadané body neleží na jedné přímce a určují
+    právě jednu rovinu.
+
+    Parametrické vyjádření roviny je
+    \[
+        \begin{aligned}
+            \alpha: x&=1+2s+t,\\
+            y&=-2+s-t,\\
+            z&=3-s+2t; \quad s,t\in\mathbb{R}.
+        \end{aligned}
+    \]
+\end{example}
+
+\begin{remark}
+    Jako výchozí bod nemusíme zvolit právě bod $A$. Můžeme použít
+    také bod $B$ nebo $C$ a vytvořit dva vhodné vektory vycházející
+    z tohoto bodu. Výsledné parametrické vyjádření bude vypadat jinak,
+    ale bude popisovat tutéž rovinu.
+\end{remark}
+
+Pokud by byly vektory $\overrightarrow{AB}$ a $\overrightarrow{AC}$
+rovnoběžné, ležely by body $A$, $B$ a $C$ na jedné přímce. Takovými
+třemi body prochází nekonečně mnoho rovin, a proto by rovina nebyla
+určena jednoznačně.
+
+
+\subsubsection{Rovina určená přímkou a bodem}
+\label{subsubsec:Plane_line_and_point}
+
+Rovinu lze jednoznačně určit také přímkou $p$ a bodem $C$, který
+na této přímce neleží.
+
+Nechť je přímka zadána parametricky ve tvaru
+\[
+    X=A+r\vec{u},
+    \qquad
+    r\in\mathbb{R}.
+\]
+
+Jeden směrový vektor roviny získáme přímo z přímky:
+\[
+    \vec{u}.
+\]
+
+Druhý směrový vektor vytvoříme spojením bodu $A$ přímky s bodem $C$:
+\[
+    \overrightarrow{AC}=C-A.
+\]
+
+Protože bod $C$ na přímce neleží, nejsou vektory $\vec{u}$ a
+$\overrightarrow{AC}$ rovnoběžné.
+
+Parametrické vyjádření roviny má tedy tvar
+\begin{equation}
+    X=A+s\vec{u}+t\overrightarrow{AC},
+    \qquad
+    s,t\in\mathbb{R}.
+    \label{eq:Plane_line_and_point}
+\end{equation}
+
+\begin{example}
+    \label{exa:Plane_line_and_point}
+
+    Určete parametrické vyjádření roviny $\alpha$, která obsahuje přímku
+    \[
+        \begin{aligned}
+            p: x&=1+2r,\\
+            y&=-2+r,\\
+            z&=3-r; \quad r\in\mathbb{R}
+        \end{aligned}
+    \]
+    a bod
+    \[
+        C[2;-3;5].
+    \]
+
+    Z parametrického vyjádření přímky vyčteme bod
+    \[
+        A[1;-2;3]
+    \]
+    a její směrový vektor
+    \[
+        \vec{u}=(2;1;-1).
+    \]
+
+    Druhý směrový vektor roviny získáme jako
+    \[
+        \overrightarrow{AC}
+        =
+        (2-1;-3-(-2);5-3)
+        =
+        (1;-1;2).
+    \]
+
+    Parametrické vyjádření roviny je
+    \[
+        \begin{aligned}
+            \alpha: x&=1+2s+t,\\
+            y&=-2+s-t,\\
+            z&=3-s+2t; \quad s,t\in\mathbb{R}.
+        \end{aligned}
+    \]
+\end{example}
+
+\begin{remark}
+    Kdyby bod $C$ ležel na přímce $p$, byl by vektor
+    $\overrightarrow{AC}$ rovnoběžný se směrovým vektorem přímky.
+    Získali bychom pouze jeden nezávislý směr a rovina by nebyla
+    určena jednoznačně. Danou přímkou totiž prochází nekonečně mnoho
+    rovin.
+\end{remark}
+
+
+\subsubsection{Rovina určená dvěma přímkami}
+\label{subsubsec:Plane_determined_by_two_lines}
+
+Dvě přímky určují rovinu pouze v některých případech.
+
+\paragraph{Dvě různoběžné přímky.}
+
+Jestliže se přímky $p$ a $q$ protínají v bodě $A$ a mají navzájem
+nerovnoběžné směrové vektory $\vec{u}$ a $\vec{v}$, určují právě
+jednu rovinu:
+\[
+    X=A+s\vec{u}+t\vec{v},
+    \qquad
+    s,t\in\mathbb{R}.
+\]
+
+\begin{example}
+    \label{exa:Plane_two_intersecting_lines}
+
+    Určete parametrické vyjádření roviny $\alpha$, která obsahuje
+    přímky
+    \[
+        \begin{aligned}
+            p: x&=1+r,\\
+            y&=2-r,\\
+            z&=3+2r; \quad r\in\mathbb{R}
+        \end{aligned}
+    \]
+    a
+    \[
+        \begin{aligned}
+            q: x&=1+2s,\\
+            y&=2+s,\\
+            z&=3-s; \quad s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Pro $r=0$ a $s=0$ získáváme u obou přímek bod
+    \[
+        A[1;2;3].
+    \]
+
+    Přímky se tedy protínají v bodě $A$.
+
+    Jejich směrové vektory jsou
+    \[
+        \vec{u}=(1;-1;2),
+        \qquad
+        \vec{v}=(2;1;-1).
+    \]
+
+    Vektory nejsou rovnoběžné, proto přímky určují právě jednu rovinu.
+
+    Její parametrické vyjádření je
+    \[
+        X=A+k\vec{u}+l\vec{v},
+    \]
+    tedy
+    \[
+        \begin{aligned}
+            \alpha: x&=1+k+2l,\\
+            y&=2-k+l,\\
+            z&=3+2k-l; \quad k,l\in\mathbb{R}.
+        \end{aligned}
+    \]
+\end{example}
+
+\paragraph{Dvě různé rovnoběžné přímky.}
+
+Nechť přímky mají společný směrový vektor $\vec{u}$. Zvolíme bod $A$
+na první přímce a bod $B$ na druhé přímce. Druhý směr roviny určí
+vektor
+\[
+    \overrightarrow{AB}.
+\]
+
+Protože jsou přímky různé, není vektor $\overrightarrow{AB}$
+rovnoběžný s vektorem $\vec{u}$. Rovina má parametrické vyjádření
+\[
+    X=A+s\vec{u}+t\overrightarrow{AB},
+    \qquad
+    s,t\in\mathbb{R}.
+\]
+
+\paragraph{Dvě mimoběžné přímky.}
+
+Mimoběžné přímky neleží v jedné rovině. Žádná rovina je proto nemůže
+současně obsahovat.
+
+\begin{remark}
+    Dvě přímky určují právě jednu rovinu tehdy, jsou-li různoběžné
+    nebo jsou-li různé a rovnoběžné. Mimoběžné přímky společnou
+    rovinu nemají a dvě totožné přímky leží v nekonečně mnoha rovinách.
+\end{remark}
+
+
+\subsubsection{Nejednoznačnost parametrického vyjádření roviny}
+\label{subsubsec:Nonuniqueness_parametric_plane}
+
+Stejně jako parametrické vyjádření přímky není ani parametrické
+vyjádření roviny jednoznačné.
+
+Pro tutéž rovinu můžeme zvolit:
+
+\begin{itemize}
+    \item libovolný její bod jako výchozí bod;
+    \item libovolné dva lineárně nezávislé vektory ležící v této
+    rovině jako směrové vektory;
+    \item jiná označení parametrů.
+\end{itemize}
+
+Uvažujme rovinu
+\[
+    X=A+s\vec{u}+t\vec{v},
+\]
+kde
+\[
+    A[1;-2;3],
+    \qquad
+    \vec{u}=(2;1;-1),
+    \qquad
+    \vec{v}=(1;-1;2).
+\]
+
+Bod
+\[
+    B=A+\vec{u}=[3;-1;2]
+\]
+v této rovině leží.
+
+Také vektor
+\[
+    \vec{w}
+    =
+    \vec{u}+\vec{v}
+    =
+    (3;0;1)
+\]
+je směrovým vektorem této roviny. Vektory $\vec{u}$ a $\vec{w}$
+nejsou rovnoběžné, takže tutéž rovinu můžeme zapsat například jako
+\[
+    X=B+r\vec{u}+q\vec{w},
+    \qquad
+    r,q\in\mathbb{R}.
+\]
+
+Po rozepsání:
+\[
+    \begin{aligned}
+        \alpha: x&=3+2r+3q,\\
+        y&=-1+r,\\
+        z&=2-r+q; \quad r,q\in\mathbb{R}.
+    \end{aligned}
+\]
+
+Oba zápisy popisují tutéž rovinu, přestože používají jiný výchozí bod,
+jinou dvojici směrových vektorů i jiná označení parametrů.
+
+Skutečně platí
+\begin{align*}
+    B+r\vec{u}+q\vec{w}
+    &=
+    A+\vec{u}+r\vec{u}+q(\vec{u}+\vec{v})\\
+    &=
+    A+(1+r+q)\vec{u}+q\vec{v}.
+\end{align*}
+
+Každý bod druhého vyjádření je tedy bodem prvního vyjádření. Protože
+hodnoty $1+r+q$ a $q$ mohou nabývat libovolných reálných hodnot, platí
+také opačné tvrzení.
+
+\begin{remark}
+    Dva různé parametrické zápisy mohou popisovat tutéž rovinu.
+    Nestačí proto porovnávat pouze výchozí body nebo jednotlivé
+    směrové vektory. Rozhodující je, zda oba zápisy popisují stejnou
+    množinu bodů a stejné dva nezávislé směry v prostoru.
+\end{remark}
+
+
+% ============================================================
+%             P Ř E C H O D   K   O B E C N É   R O V N I C I
+% ============================================================
+
+Parametrické vyjádření roviny využívá dva navzájem nezávislé směry,
+které v rovině leží. Rovinu však můžeme popsat také opačným způsobem:
+pomocí směru, který je k celé rovině kolmý.
+
+Má-li rovina směrové vektory
+\[
+    \vec{u}
+    \qquad\text{a}\qquad
+    \vec{v},
+\]
+potom jejich vektorový součin
+\[
+    \vec{n}
+    =
+    \vec{u}\times\vec{v}
+\]
+je kolmý současně k oběma směrovým vektorům, a tedy k celé rovině.
+
+\begin{definition}
+    Nenulový vektor $\vec{n}$ kolmý k rovině nazýváme
+    \textbf{normálovým vektorem roviny}.
+\end{definition}
+
+Je-li
+\[
+    \vec{n}=(a;b;c),
+\]
+potom právě jeho souřadnice budou hrát zásadní roli při zápisu roviny
+pomocí její \textbf{obecné rovnice}, kterou se budeme zabývat
+v následující podkapitole.

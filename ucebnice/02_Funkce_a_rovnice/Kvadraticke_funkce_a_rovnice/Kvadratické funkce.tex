@@ -1,0 +1,1272 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+\usepackage{polynom}
+
+\title{Kvadratické funkce}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Kvadratická funkce}
+
+\begin{quotebox}
+{„Parabola je zrcadlem, ve kterém se matematika dívá sama na sebe.“}
+{René Descartes, \textit{La Géométrie (1637)}}
+\end{quotebox}
+
+\begin{historicalbox}
+\textbf{Parabola a její příběh napříč staletími}
+
+Historie paraboly je takřka stejně fascinující jako samotný tvar, který opisuje.  
+Už ve 4.~století př.~n.~l. se řečtí matematici zabývali otázkou, jaké křivky vznikají při průniku kužele s rovinou.  
+Byl to žák Platóna, \textbf{Menaichmos}, kdo poprvé rozpoznal zvláštní vlastnosti této křivky a zavedl její popis pomocí geometrických vztahů.  
+Zajímalo ho, zda lze s její pomocí vyřešit slavný problém \textbf{zdvojení krychle} — tedy sestrojit hranu nové krychle, jejíž objem by byl přesně dvojnásobkem té původní.  
+Ačkoliv se to nakonec ukázalo být nemožné pouze s kružítkem a pravítkem, právě tato snaha vedla ke zrodu nového druhu křivek – kuželoseček.
+
+O několik století později se problematikou zabýval \textbf{Apollónios z Pergy}, často označovaný jako „Velký geometer“.  
+Ve svém díle \textit{Kuželosečky} popsal detailně nejen parabolu, ale i elipsu a hyperbolu.  
+Jeho texty jsou pro dnešního čtenáře překvapivě moderní: systematicky rozlišuje jednotlivé případy podle polohy roviny a kužele, zavádí terminologii, kterou používáme dodnes, a naznačuje i určitou symetrii mezi těmito třemi typy křivek.  
+Jeho pojetí paraboly se však stále opíralo čistě o geometrické vlastnosti, nikoliv o algebraické vztahy.
+
+\smallskip
+Teprve o mnoho staletí později, v období renesance, se parabola objevuje znovu — tentokrát už jako \textbf{fyzikální realita}.  
+Italský učenec \textbf{Galileo Galilei} zjistil, že dráha tělesa, které se pohybuje ve vakuu pouze vlivem gravitace, je právě parabolická.  
+Tím poprvé spojil \textbf{geometrii s přírodními zákony}, čímž se parabola stala nejen matematickým objektem, ale i nástrojem k pochopení světa kolem nás.  
+Od té doby ji nacházíme všude: v pohybu projektilů, světelných paprsků i proudění tekutin.
+
+\smallskip
+Zásadní obrat nastal s příchodem \textbf{Reného Descarta} a jeho knihy \textit{La Géométrie} (1637), která položila základy \textbf{analytické geometrie}.  
+Descartes ukázal, že každou parabolu lze popsat pomocí \textbf{kvadratické rovnice}, a tím spojil dávnou řeckou intuici s novou algebraickou metodou.  
+Křivka, kterou Apollónios kreslil kružítkem, se tak stala obrazem rovnice \(y = ax^2 + bx + c\).  
+Tím se zrodilo něco mimořádného: jazyk, v němž geometrie a algebra začaly vzájemně hovořit.
+
+\smallskip
+V následujících stoletích se parabola stala nejen matematickým symbolem, ale i \textbf{architektonickým a technickým prvkem}.  
+Její vlastnost soustředit všechny paprsky přicházející rovnoběžně s osou do jednoho ohniska využívají reflektory, satelitní antény i parabolické mikrofony.  
+V moderní době se navíc objevuje ve zcela novém kontextu: paraboly popisují zisky firem, trajektorie planet, a v informatice se dokonce používají v algoritmech pro optimalizaci a strojové učení.
+
+\smallskip
+Z malého geometrického experimentu starých Řeků se tak stala jedna z nejuniverzálnějších křivek v dějinách lidstva.  
+Parabola spojuje dávné ideály krásy s moderní přesností vědy — a připomíná nám, že matematika není jen nástroj k počítání, ale i způsob, jak se dívat na svět s porozuměním a úžasem.
+\end{historicalbox}
+
+\section{Kvadratické funkce}
+Zatímco \textbf{lineární funkce} vyjadřuje závislost, při níž se hodnota funkce mění stále stejným způsobem 
+(rovnoměrně), \important{kvadratická funkce} nám umožňuje popsat situace, kdy se tato změna zrychluje nebo zpomaluje.  
+V praxi se s takovými vztahy setkáváme velmi často — ať už jde o dráhu tělesa při volném pádu, 
+tvar paraboly reflektoru nebo zisk firmy, který po určitém bodě začne klesat.
+
+\begin{definitionbox}
+\textbf{Kvadratická funkce} je každá funkce, kterou lze vyjádřit předpisem
+\[
+f(x) = ax^2 + bx + c,
+\]
+kde \(a, b, c \in \mathbb{R}\) a \(a \neq 0\).
+
+\medskip
+Grafem kvadratické funkce je \textbf{plynulá nepřerušovaná křivka}, která se nazývá\textbf{parabola}, 
+která je souměrná podle své \textbf{osy souměrnosti} — tedy osa rovnoběžná s osou $y$.  
+Definiční obor kvadratické funkce je \(D(f) = \mathbb{R}\), tedy všechny reálné hodnoty proměnné \(x\).
+\end{definitionbox}
+
+
+\begin{notebox}
+Kvadratické funkce často používáme i tam, kde nejde o čistě matematický popis: například k 
+modelování závislosti ceny na poptávce, množství světla na vzdálenosti od zdroje nebo trajektorie míče při hodu.  
+Jejich význam tedy sahá daleko za hranice školních lavic.
+\end{notebox}
+
+\newpage
+\section{Graf kvadratické funkce}
+
+\begin{definitionbox}
+\textbf{Základní kvadratická funkce} má předpis
+\[
+f(x) = x^2.
+\]
+
+Její grafem je křivka zvaná \textbf{parabola}.  
+Tento nejjednodušší tvar je výchozím bodem pro všechny ostatní kvadratické funkce, které vznikají posunutím, protažením nebo převrácením této základní paraboly.
+
+\medskip
+Parabola je \textbf{sudá} funkce, protože platí \(f(-x) = f(x)\).  
+Její graf je tedy souměrný podle osy $y$.  
+Zároveň se skládá ze dvou nekonečných \textbf{ramen}, která se symetricky rozbíhají od jednoho zvláštního bodu – \textbf{vrcholu paraboly}.
+\end{definitionbox}
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-4, xmax=4,
+  ymin=-1, ymax=5,
+  samples=200,
+  width=10cm,
+  height=7cm,
+  domain=-2.2:2.2,
+  title={Graf funkce $y = x^2$}
+]
+  \addplot[thick, pastelblue!80!black, smooth] {x^2};
+  \draw[dashed, pastelorange] (axis cs:0,-1) -- (axis cs:0,5);
+  \filldraw[pastelblue!80!black] (axis cs:0,0) circle (2pt) node[above right] {$V[0;0]$};
+\end{axisgraph}
+\end{center}
+
+\begin{notebox}
+Graf kvadratické funkce \(f(x)=x^2\) má několik základních vlastností:
+\begin{itemize}
+  \item Je \textbf{sudý}, tedy souměrný podle osy $y$.
+  \item Je \textbf{klesající} na intervalu \((-\infty, 0)\) a \textbf{rostoucí} na intervalu \((0, +\infty)\).
+  \item Není \textbf{prostý} – například \(f(-1) = f(1) = 1\).
+  \item Není \textbf{lichý}, protože neplatí \(f(-x) = -f(x)\).
+  \item Má \textbf{minimum} ve vrcholu paraboly \(V[0;0]\), kde nabývá nejmenší možné hodnoty \(f(x) = 0\).
+  \item \textbf{Nemá maximum}, protože její ramena rostou do nekonečna.
+  \item Její \textbf{obor hodnot} je \(H(f) = \langle 0; +\infty)\).
+\end{itemize}
+\end{notebox}
+
+
+Každou kvadratickou funkci si můžeme představit jako „přetvořenou“ podobu základní paraboly \(y=x^2\).  
+Změníme-li její koeficienty, můžeme ji posunout, zúžit, převrátit nebo přenést jinam do souřadnicové roviny.  
+Všechny tyto změny si v následující části ukážeme na obecném tvaru \(f(x) = ax^2 + bx + c\).
+
+\subsection{Různé podoby kvadratických funkcí}
+
+\begin{examplebox}
+Podívejme se nyní na několik různých kvadratických funkcí a všimněme si, jak se jejich grafy liší:
+
+\[
+\begin{aligned}
+a)\quad & y = -x^2\\[4pt]
+b)\quad & y = 3x^2\\[4pt]
+c)\quad & y = x^2 + 2\\[4pt]
+d)\quad & y = x^2 - 4x + 8
+\end{aligned}
+\]
+
+Každá z těchto funkcí je kvadratická, a tedy její grafem je vždy \textbf{parabola}.  
+Na první pohled je ale patrné, že se tyto paraboly chovají různě:
+\begin{itemize}
+  \item U funkce \(y = -x^2\) je parabola převrácená směrem dolů — hodnota \(a = -1\) tedy způsobila \important{otočení}.
+  \item U funkce \(y = 3x^2\) se parabola „zúžila“ — větší koeficient \(a\) znamená prudší \important{růst i pokles}
+  \item U funkce \(y = x^2 + 2\) se celý graf posunul \important{směrem nahoru}, ale tvar zůstal stejný.
+  \item U funkce \(y = x^2 - 4x + 8\) se parabola posunula nejen vzhůru, ale i směrem doprava – a její vrchol už neleží v počátku.
+\end{itemize}
+\end{examplebox}
+
+\begin{center}
+\begin{multicols}{2}
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-5, ymax=2,
+  samples=200,
+  width=9cm, height=7cm,
+  title={a) $y = -x^2$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-2:2] {-x^2};
+\end{axisgraph}
+
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-2, ymax=5,
+  samples=200,
+  width=9cm, height=7cm,
+  title={b) $y = 5x^2$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-1.5:1.5] {5*x^2};
+\end{axisgraph}
+
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-1, ymax=6,
+  samples=200,
+  width=9cm, height=7cm,
+  title={c) $y = x^2 + 2$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-2:2] {x^2 + 2};
+\end{axisgraph}
+
+\begin{axisgraph}[
+  xmin=-1, xmax=5,
+  ymin=-1, ymax=9,
+  samples=200,
+  width=9cm, height=7cm,
+  title={d) $y = x^2 - 4x + 8$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-1:6] {x^2 - 4*x + 8};
+\end{axisgraph}
+\end{multicols}
+\end{center}
+
+Na těchto čtyřech grafech je dobře vidět, jak se mění poloha a tvar paraboly podle hodnot koeficientů \(a\), \(b\) a \(c\).  
+Zatímco parametr \(a\) určuje, zda je parabola otevřená nahoru či dolů a jak je „široká“, koeficient \(c\) ji posouvá svisle a \(b\) má vliv na její vodorovné posunutí.  
+Změnou těchto tří čísel tedy dokážeme parabolu v rovině zrcadlit, rozšířit, posunout nebo převrátit, aniž bychom změnili její skutečný tvar.
+
+\medskip
+Na rozdíl od lineární funkce, jejíž grafem je přímka, má kvadratická funkce tvar \textbf{křivky} s charakteristickým bodem, který nazýváme \textbf{vrchol paraboly}.  
+Právě tento bod představuje jakýsi pomyslný „střed“ křivky — místo, kde se mění směr růstu na klesání nebo naopak.
+
+\begin{notebox}
+Z hlediska geometrie jsou však \textbf{všechny paraboly shodné}.  
+Každou parabolu lze z té základní, $y=x^2$ získat pouhým posunutím, zrcadlením nebo roztažením v rovině, aniž by se změnil její tvar.  
+Neexistují tedy „různé druhy“ parabol – liší se pouze polohou, směrem otevření a měřítkem, nikoliv samotným tvarem.
+\end{notebox}
+
+\subsection{Vrchol kvadratické funkce a osa souměrnosti}
+
+Už víme, že graf kvadratické funkce má vždy tvar paraboly a že právě její vrchol určuje, kde se křivka „láme“.  
+Nyní si ukážeme, jak lze souřadnice tohoto vrcholu \([p; q]\) vypočítat přímo z obecného tvaru funkce.
+
+\medskip
+Začněme funkcí:
+\[
+f(x) = ax^2 + bx + c.
+\]
+Chceme najít takovou hodnotu \(x_v\), pro kterou má funkce nejmenší (nebo největší) hodnotu.  
+Všimněme si, že člen \(ax^2\) vždy roste (nebo klesá) symetricky, zatímco výraz \(bx\) parabolu „naklání“ na jednu stranu.  
+Abychom zjistili, kde se parabola obrací, potřebujeme tedy nalézt bod, ve kterém se její růst a pokles vyrovnají.
+
+\medskip
+Z geometrického pohledu je to \textbf{osa souměrnosti paraboly} — přímka, která prochází jejím vrcholem.  
+Pro libovolnou kvadratickou funkci má rovnici:
+\[
+x = -\frac{b}{2a}.
+\]
+Tento vztah nám dává právě souřadnici \(x_v\) vrcholu.
+
+\medskip
+Jakmile známe \(x_v\), můžeme snadno spočítat i odpovídající hodnotu \(y_v\) dosazením do původního předpisu:
+\[
+y= ax^2 + bx +c,
+\]
+kde za $x$ dosadíme $-\dfrac{b}{2a}$ z čehož nám poté vznikne:
+\[
+y_v = f(x_v) = a\left(-\frac{b}{2a}\right)^2 + b\left(-\frac{b}{2a}\right) + c.
+\]
+Po úpravě dostáváme:
+\[
+y_v = \frac{4ac - b^2}{4a} = \frac{4ac}{4a} - \frac{b^2}{4a} = c - \frac{b^2}{4a}.
+\]
+
+\medskip
+Tedy vrchol paraboly \(V[x_v; y_v]\) má obecně souřadnice:
+\[
+x_v = -\frac{b}{2a}, \qquad y_v = c - \frac{b^2}{4a}.
+\]
+
+\begin{definitionbox}
+\textbf{Vrchol paraboly a osa souměrnosti}
+
+Pro kvadratickou funkci
+\[
+f(x) = ax^2 + bx + c, \quad a \neq 0,
+\]
+platí:
+\[
+x_v = -\frac{b}{2a}, \qquad y_v = c - \frac{b^2}{4a}.
+\]
+
+\begin{itemize}
+  \item Vrchol paraboly má souřadnice \(V[x_v; y_v]\).
+  \item Osa souměrnosti má rovnici \(x = x_v\).
+  \item Pokud \(a > 0\), parabola má v bodě \(V\) \textbf{minimum},  
+        pokud \(a < 0\), má v bodě \(V\) \textbf{maximum}.
+\end{itemize}
+\end{definitionbox}
+
+\medskip
+Na konkrétních příkladech si nyní ukážeme, jak tyto hodnoty určit v praxi — a poté si vysvětlíme jiný, elegantní způsob, jak k nim dojít, tzv. \textbf{doplněním na čtverec}.  
+Tento způsob navíc vede k přehlednému tvaru
+\[
+f(x) = a(x - p)^2 + q,
+\]
+ze kterého lze souřadnice vrcholu \([p; q]\) ihned vyčíst, aniž bychom museli počítat pomocí vzorců.
+\begin{examplebox}
+Určete souřadnice vrcholu paraboly kvadratické funkce
+\[
+f(x) = x^2 - 4x + 8.
+\]
+
+Z obecného tvaru \(f(x) = ax^2 + bx + c\) vyplývá, že:
+\[
+a = 1, \quad b = -4, \quad c = 8.
+\]
+
+Dosadíme do vzorců pro vrchol:
+\[
+x_v = -\frac{b}{2a} = -\frac{-4}{2 \cdot 1} = 2,
+\]
+\[
+y_v = c - \frac{b^2}{4a} = 8 - \frac{(-4)^2}{4 \cdot 1} = 8 - 4 = 4.
+\]
+
+Vrchol paraboly tedy má souřadnice:
+\[
+V[2; 4],
+\]
+a osa souměrnosti má rovnici \(x = 2\).
+\end{examplebox}
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-1, xmax=6,
+  ymin=-1, ymax=10,
+  samples=200,
+  width=9cm,
+  height=6cm,
+  title={Graf funkce $y = x^2 - 4x + 8$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-1:6] {x^2 - 4*x + 8};
+  \draw[dashed, gray] (axis cs:2,-1) -- (axis cs:2,10);
+  \filldraw[pastelblue!80!black] (axis cs:2,4) circle (2pt) node[below right] {$V[2;4]$};
+\end{axisgraph}
+\end{center}
+
+Jak vidíme na grafu, parabola se skutečně otevírá směrem nahoru (\(a>0\))  
+a její vrchol se nachází v bodě \(V[2;4]\), tedy dvě jednotky vpravo a čtyři jednotky nahoru od počátku.
+
+\medskip
+Pomocí vzorců jsme tedy dokázali přesně určit, kde se parabola „láme“.  
+V praxi však můžeme těchto hodnot dosáhnout i bez zapamatování vzorců — stačí vhodně upravit samotný předpis funkce.  
+Této úpravě se říká \important{doplnění na čtverec}.
+
+\subsection{Vrcholový tvar kvadratické funkce – doplnění na čtverec}
+
+Doplnění na čtverec nám umožní přepsat kvadratickou funkci do přehlednějšího tvaru:
+\[
+f(x) = a(x - p)^2 + q,
+\]
+kde \([p; q]\) jsou souřadnice vrcholu paraboly.  
+Postup si ukážeme na našem příkladu \(f(x) = x^2 - 4x + 8\).
+
+\medskip
+Nejprve se zaměříme na část s proměnnou \(x\):
+\[
+x^2 - 4x.
+\]
+Abychom z ní vytvořili dokonalý čtverec, připomeneme si vztah:
+\[
+(a + b)^2 = a^2 + 2ab + b^2, \quad (a - b)^2 = a^2 - 2ab + b^2,
+\]
+kterého využijeme zde. 
+\[
+x^2 - 4x + 4 = (x - 2)^2 
+\]
+Vidíme, že náš výraz však neodpovídá původnímu zadání:
+\[
+x^2 - 4x + 4 \neq x^2 - 4x + 8
+\]
+Oproti původnímu zadání tam máme člen $c$ o $4$ větší. Takže ho taky musíme přičíst:
+
+\[
+(x^2 - 4x + 4) + 4 = x^2 - 4x + 8
+\]
+A protože nyní již známe hodnotu prvního členu v závorce $x^2 - 4x + 4 = (x - 2)^2 $, můžeme jej tedy nahradit a dostaneme:
+\[
+(x - 2)^2 + 4 = x^2 - 4x + 8
+\]
+Čehož jsme chtěli dosáhnou a z tohoto tvaru, jež se nazývá \important{Vrcholový tvar} můžeme tedy vyčíst hodnoty vrcholu:
+\[
+V=[2;4]
+\]
+
+\medskip
+Tento způsob je nejen elegantní, ale také názorný — studenti často ihned pochopí, co znamená posun \(p\) a \(q\) v předpisu, a mohou graf snadno odhadnout bez počítání.
+
+\begin{examplebox}
+\textbf{Příklad 1:}  
+Určete vrcholový tvar funkce \(f(x) = 2x^2 - 8x + 5.\)
+
+\medskip
+Nejprve si z prvních dvou členů vytkneme číslo \(2\), aby zbyl výraz se součinitelem u \(x^2\) roven jedné:
+\[
+f(x) = 2(x^2 - 4x) + 5.
+\]
+Nyní doplníme na čtverec:
+\[
+x^2 - 4x + 4 = (x - 2)^2.
+\]
+Protože však my nahrazujeme $x^2 - 4$ a opět tam máme navíc parametr $c$ navíc, tak ho taky musíme odečíst:
+\[
+(x^2 - 4x + 4) - 4 = (x - 2)^2 - 4.
+\]
+\[
+x^2 - 4x = (x - 2)^2 - 4.
+\]
+A nyní můžeme dosadit z původní upravené funkce $f(x) = 2(x^2 - 4x) + 5$ za výraz $(x^2 - 4x)$ náš čtverec $(x - 2)^2 - 4$.
+Tudíž poté máme funkci:
+\[
+f(x) = 2\big[(x - 2)^2 - 4\big] + 5.
+\]
+Roznásobíme hranatou závorku a upravíme:
+\[
+f(x) = 2(x - 2)^2 - 8 + 5 = 2(x - 2)^2 - 3.
+\]
+Vrcholový tvar funkce tedy je:
+\[
+f(x) = 2(x - 2)^2 - 3,
+\]
+a vrchol má souřadnice \(V[2; -3].\)
+
+\medskip
+Vidíme, že větší hodnota \(a = 2\) parabolu „zúžila“, ale tvar zůstal stejný.  
+Parabola je otevřená směrem nahoru a má minimum v bodě \(V[2; -3].\)
+\end{examplebox}
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-1, xmax=5,
+  ymin=-4, ymax=5,
+  samples=200,
+  width=9cm,
+  height=7cm,
+  title={$y = 2x^2 - 8x + 5 = 2(x - 2)^2 - 3$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-1:5] {2*(x - 2)^2 - 3};
+  \draw[dashed, gray] (axis cs:2,-6) -- (axis cs:2,5);
+  \filldraw[pastelblue!80!black] (axis cs:2,-3) circle (2pt) node[below] {$V[2;-3]$};
+\end{axisgraph}
+\end{center}
+
+\begin{examplebox}
+\textbf{Příklad 2:}  
+Určete vrcholový tvar funkce \(f(x) = -x^2 + 6x - 5.\)
+
+\medskip
+Nejprve vytkneme záporné znaménko, aby před \(x^2\) stála jednička:
+\[
+f(x) = -\big(x^2 - 6x + 5\big).
+\]
+Nyní se zaměříme na část v závorce:
+\[
+x^2 - 6x = (x - 3)^2 - 9.
+\]
+Dosadíme zpět:
+\[
+f(x) = -\big[(x - 3)^2 - 9 + 5\big] = -\big[(x - 3)^2 - 4\big].
+\]
+Roznásobíme mínus:
+\[
+f(x) = -(x - 3)^2 + 4.
+\]
+Vrcholový tvar tedy je:
+\[
+f(x) = -(x - 3)^2 + 4,
+\]
+a vrchol má souřadnice \(V[3; 4].\)
+
+\medskip
+Protože \(a = -1\), parabola je otevřená směrem dolů a v bodě \(V[3; 4]\) má \textbf{maximum.}
+\end{examplebox}
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-1, xmax=6,
+  ymin=-2, ymax=6,
+  samples=200,
+  width=9cm,
+  height=6cm,
+  title={$y = -x^2 + 6x - 5 = -(x - 3)^2 + 4$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-1:7] {-(x - 3)^2 + 4};
+  \draw[dashed, gray] (axis cs:3,-3) -- (axis cs:3,6);
+  \filldraw[pastelblue!80!black] (axis cs:3,4) circle (2pt) node[below right] {$V[3;4]$};
+\end{axisgraph}
+\end{center}
+
+\medskip
+Z obou příkladů je patrné, že doplnění na čtverec je univerzální metoda – funguje bez ohledu na znaménko i velikost \(a\).  
+Získaný vrcholový tvar \(f(x) = a(x - p)^2 + q\) má nejen jasný geometrický význam, ale zároveň umožňuje snadno číst polohu a vlastnosti paraboly přímo z rovnice.
+
+
+\subsection{Průsečíky paraboly s osami}
+
+Kromě vrcholu nás u grafu kvadratické funkce často zajímají také její \textbf{průsečíky s osami}.  
+Pomáhají nám při náčrtu paraboly, protože určují, kde graf protíná osy souřadnicové soustavy.
+
+\subsubsection*{Průsečík s osou \(y\)}
+
+Průsečík s osou \(y\) je bod, kde má parabola souřadnici \(x = 0\).  
+Stačí tedy do předpisu funkce dosadit \(x = 0\) a vypočítat odpovídající hodnotu \(y\):
+\[
+y = a \cdot 0^2 + b \cdot 0 + c = c.
+\]
+Z toho plyne, že parabola \textbf{vždy protíná osu \(y\) v bodě \([0; c]\)}.  
+Tento průsečík existuje pro každou kvadratickou funkci, protože osa \(y\) leží v jejím definičním oboru.
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Určete průsečík paraboly \(f(x) = 2x^2 - 4x + 3\) s osou \(y\).
+
+Dosadíme \(x = 0\):
+\[
+f(0) = 2 \cdot 0^2 - 4 \cdot 0 + 3 = 3.
+\]
+Průsečík je tedy bod \([0; 3]\).
+\end{examplebox}
+
+\subsubsection*{Průsečíky s osou \(x\)}
+
+Průsečíky s osou \(x\) odpovídají místům, kde má funkce hodnotu \(y = 0\).  
+To znamená, že hledáme řešení rovnice
+\[
+ax^2 + bx + c = 0.
+\]
+Tato rovnice se nazývá \textbf{kvadratická rovnice} a budeme se jí věnovat v samostatné kapitole.  
+Zatím si jen uvedeme, že její řešení (pokud existují) lze vyjádřit pomocí vzorce:
+\[
+x_{1,2} = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+\]
+Hodnoty \(x_1\) a \(x_2\) představují souřadnice průsečíků paraboly s osou \(x\).
+
+\medskip
+Podle hodnoty výrazu pod odmocninou — tzv. \textbf{diskriminantu}
+\[
+D = b^2 - 4ac,
+\]
+může mít parabola:
+\begin{itemize}
+  \item dva průsečíky s osou \(x\) (\(D > 0\)),
+  \item jeden průsečík — dotýká se osy \(x\) (\(D = 0\)),
+  \item nebo žádný průsečík (\(D < 0\)).
+\end{itemize}
+
+\begin{definitionbox}
+\textbf{Shrnutí: průsečíky paraboly s osami}
+\begin{itemize}
+  \item \textbf{Průsečík s osou \(y\)}: \([0; c]\).
+  \item \textbf{Průsečíky s osou \(x\)}: \([x_1; 0]\), \([x_2; 0]\),  
+  kde \(x_{1,2} = \dfrac{-b \pm \sqrt{b^2 - 4ac}}{2a}\).
+  \item Počet průsečíků s osou \(x\) závisí na hodnotě diskriminantu \(D = b^2 - 4ac\).
+\end{itemize}
+\end{definitionbox}
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-3, xmax=5,
+  ymin=-5, ymax=5,
+  samples=200,
+  width=10cm,
+  height=10cm,
+  title={Graf funkce $y = x^2 - 2x - 3$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-4:5] {x^2 - 2*x - 3};
+  \filldraw[pastelblue!80!black] (axis cs:-1,0) circle (2pt) node[above] {$A[-1;0]$};
+  \filldraw[pastelblue!80!black] (axis cs:3,0) circle (2pt) node[above] {$B[3;0]$};
+  \filldraw[pastelblue!80!black] (axis cs:0,-3) circle (2pt) node[below left] {$C[0;-3]$};
+
+\end{axisgraph}
+\end{center}
+
+Z grafu vidíme, že parabola protíná osu \(y\) v bodě \(C[0; -3]\)  
+a osu \(x\) ve dvou bodech \(A[-1; 0]\) a \(B[3; 0]\).  
+Tento příklad odpovídá situaci, kdy má diskriminant \(D > 0\) — tedy dvě různá reálná řešení.
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Podívejme se, jak se mění tvar a poloha paraboly podle hodnoty diskriminantu \(D = b^2 - 4ac\).
+
+\begin{multicols}{3}
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-2, ymax=5,
+  samples=200,
+  width=7cm, height=6cm,
+  title={$D > 0$ – dva průsečíky}
+]
+  % y = x^2 - 1 → D = 4
+  \addplot[thick, pastelblue!80!black, smooth, domain=-3:3] {x^2 - 1};
+  \filldraw[pastelblue!80!black] (axis cs:-1,0) circle (1.5pt);
+  \filldraw[pastelblue!80!black] (axis cs:1,0) circle (1.5pt);
+  \node[below] at (axis cs:-1,0) {\small $x_1$};
+  \node[below] at (axis cs:1,0) {\small $x_2$};
+\end{axisgraph}
+
+\begin{axisgraph}[
+  xmin=-2, xmax=4,
+  ymin=-2, ymax=5,
+  samples=200,
+  width=7cm, height=6cm,
+  title={$D = 0$ – jeden průsečík}
+]
+  % y = (x-1)^2 → D = 0
+  \addplot[thick, pastelblue!80!black, smooth, domain=-2:4] {(x-1)^2};
+  \filldraw[pastelblue!80!black] (axis cs:1,0) circle (1.5pt);
+  \node[above] at (axis cs:1,0) {\small $x_1=x_2$};
+\end{axisgraph}
+
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-2, ymax=5,
+  samples=200,
+  width=7cm, height=6cm,
+  title={$D < 0$ – žádný průsečík}
+]
+  % y = x^2 + 3 → D < 0
+  \addplot[thick, pastelblue!80!black, smooth, domain=-3:3] {x^2 + 3};
+\end{axisgraph}
+\end{multicols}
+
+\medskip
+Z těchto tří grafů vidíme, že:
+\begin{itemize}
+  \item Pokud \(D > 0\), parabola protíná osu \(x\) ve dvou bodech – má dva reálné kořeny.
+  \item Pokud \(D = 0\), parabola se osy \(x\) dotýká – má právě jeden kořen (dvojnásobný).
+  \item Pokud \(D < 0\), parabola osu \(x\) neprotíná – nemá žádný reálný kořen.
+\end{itemize}
+\end{examplebox}
+
+
+\subsection{Souvislost s analytickou geometrií}
+
+Kvadratické funkce tvoří přirozený most mezi algebrou a geometrií.  
+V této kapitole jsme se zabývali pouze funkcí jedné proměnné, jejíž grafem je parabola otevřená buď nahoru, nebo dolů.  
+V pozdější části nazvané \textbf{Analytická geometrie} se k parabole znovu vrátíme – tentokrát už jako k jedné z tzv. \textbf{kuželoseček}.
+
+\medskip
+Kuželosečky představují skupinu křivek, které vznikají průnikem roviny s kuželem.  
+Patří mezi ně:
+\[
+\text{elipsa, parabola a hyperbola.}
+\]
+Zjistíme, že parabola je pouze jeden speciální případ těchto křivek a že její rovnice
+\[
+y = ax^2 + bx + c
+\]
+je jen jednodušším zápisem obecnějšího kvadratického vztahu mezi proměnnými \(x\) a \(y\).  
+Z pohledu geometrie se tedy kvadratická funkce stane prvním krokem k pochopení celé rodiny kuželoseček.
+
+\begin{notebox}
+V analytické geometrii se naučíme nejen parabolu popsat pomocí rovnic, ale také určit její ohnisko, přímku řídicí a odvodit z nich všechny její základní vlastnosti.  
+To, co jsme si zde ukázali pro kvadratickou funkci, tak tvoří základ, na který budeme později navazovat.
+\end{notebox}
+
+\subsection{Parabola v praxi a kolem nás}
+
+Paraboly nejsou jen součástí učebnic, ale i našeho každodenního života.  
+Jejich charakteristická vlastnost – soustředit paprsky nebo zvuk do jednoho bodu – se využívá v celé řadě technických i architektonických aplikací.
+
+\begin{historicalbox}
+\textbf{Příklady praktického využití paraboly:}
+
+\begin{itemize}
+  \item \textbf{Reflektory a světlomety} – parabola odráží světelné paprsky do rovnoběžného svazku, což umožňuje rovnoměrné osvětlení vozovek.
+  \item \textbf{Satelitní antény a teleskopy} – parabolické zrcadlo soustřeďuje signály do ohniska, kde je zachytí přijímač.
+  \item \textbf{Akustické paraboly} – směrují a zesilují zvuk z jednoho směru (např. na sportovních stadionech nebo u mikrofonů).
+  \item \textbf{Architektura a stavitelství} – oblouky, mosty či střešní konstrukce využívají parabolický tvar pro rozložení sil a estetický efekt.
+  \item \textbf{Fyzika a mechanika} – dráha tělesa vrženého do vzduchu je parabolická, stejně jako proud vody z fontány.
+\end{itemize}
+
+\medskip
+Parabola tak propojuje svět matematiky, fyziky i techniky.  
+Z jednoduché rovnice \(y = ax^2 + bx + c\) se stává univerzální model přírodních i člověkem vytvořených jevů.
+\end{historicalbox}
+
+
+
+\subsection{Určení předpisu kvadratické funkce ze tří bodů}
+
+Kvadratická funkce má obecný tvar
+\[
+f(x) = ax^2 + bx + c.
+\]
+Z jejích tří koeficientů \(a\), \(b\), \(c\) lze jednoznačně určit graf – a opačně:  
+známe-li tři body, kterými parabola prochází, můžeme z nich určit právě tyto tři neznámé.
+
+
+\subsubsection*{Postup}
+
+Máme-li zadány tři body:
+\[
+A[x_1; y_1], \quad B[x_2; y_2], \quad C[x_3; y_3],
+\]
+dosadíme jejich souřadnice do obecného tvaru \(f(x) = ax^2 + bx + c\).  
+Získáme tak soustavu tří lineárních rovnic o třech neznámých:
+\[
+\begin{cases}
+a x_1^2 + b x_1 + c = y_1,\\
+a x_2^2 + b x_2 + c = y_2,\\
+a x_3^2 + b x_3 + c = y_3.
+\end{cases}
+\]
+Tuto soustavu následně vyřešíme (např. dosazením, sčítací metodou nebo maticově) a nalezené hodnoty \(a\), \(b\), \(c\) dosadíme zpět do předpisu funkce.
+
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Najděte předpis kvadratické funkce, která prochází body
+\[
+A[0; 2], \quad B[1; 1], \quad C[2; 6].
+\]
+
+\textbf{Řešení:}
+
+Dosadíme do obecného tvaru \(y = ax^2 + bx + c\):
+\[
+\begin{cases}
+a \cdot 0^2 + b \cdot 0 + c = 2 \\[2pt]
+a \cdot 1^2 + b \cdot 1 + c = 1 \\[2pt]
+a \cdot 2^2 + b \cdot 2 + c = 6
+\end{cases}
+\quad \Rightarrow \quad
+\begin{cases}
+c = 2 \\[2pt]
+a + b + 2 = 1 \\[2pt]
+4a + 2b + 2 = 6
+\end{cases}
+\]
+
+Z druhé rovnice: \(a + b = -1\).  
+Z třetí: \(4a + 2b = 4 \Rightarrow 2a + b = 2.\)
+
+Odečteme obě rovnice:
+\[
+(2a + b) - (a + b) = 2 - (-1) \quad \Rightarrow \quad a = 3.
+\]
+Dosadíme zpět: \(3 + b = -1 \Rightarrow b = -4.\)
+
+Z první rovnice víme \(c = 2.\)
+
+\[
+\boxed{f(x) = 3x^2 - 4x + 2.}
+\]
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-1, xmax=3,
+  ymin=-1, ymax=7,
+  samples=200,
+  width=9cm,
+  height=6cm,
+  title={Parabola procházející body $A[0;2], B[1;1], C[2;6]$}
+]
+  \addplot[thick, pastelblue!80!black, smooth, domain=-1:3] {3*x^2 - 4*x + 2};
+  \addplot[only marks, mark=*] coordinates {(0,2) (1,1) (2,6)};
+  \node[below right] at (axis cs:0,2) {$A$};
+  \node[below] at (axis cs:1,1) {$B$};
+  \node[above left] at (axis cs:2,6) {$C$};
+\end{axisgraph}
+\end{center}
+\end{examplebox}
+
+
+\begin{notebox}
+Tento postup se používá nejen v matematice, ale i v praxi — např. při určování trajektorie pohybu, modelování oblouků, interpolaci dat nebo při grafickém návrhu objektů, které mají parabolický tvar (např. mostní oblouky, reflektory, satelitní antény).
+\end{notebox}
+
+\begin{notebox}
+Pokud je zadáno více než tři body, nelze obecně najít jedinou přesnou kvadratickou funkci, která by procházela všemi — používá se tzv. \textbf{aproximace} nebo \textbf{regresní parabola}, což je téma, ke kterému se vrátíme později v části o zpracování dat.
+\end{notebox}
+
+
+
+
+
+
+\section{Kavdratické funkce v nerovnosti}
+
+Každou kvadratickou funkci jsme dosud znázorňovali jako křivku — tedy množinu bodů, které splňují rovnici
+\[
+y = f(x) = ax^2 + bx + c.
+\]
+Pokud však místo rovnosti použijeme nerovnost, například
+\[
+y > x^2 \quad \text{nebo} \quad y \le x^2 + 3x - 2,
+\]
+už nepopisujeme jen křivku, ale \textbf{celou oblast} v rovině.
+
+\medskip
+Vztah \(y > f(x)\) znamená, že hledáme všechny body, jejichž souřadnice \(y\) je \textbf{větší} než hodnota funkce v daném bodě \(x\).  
+Jinými slovy, jde o všechny body \textbf{nad grafem paraboly}.  
+Naopak, pro \(y < f(x)\) leží body \textbf{pod grafem}.  
+Pokud použijeme znaménka \(\ge\) nebo \(\le\), k oblasti zároveň patří i body samotné na parabole.
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Rozhodněte, jakou oblast v rovině popisuje nerovnost
+\[
+y \le x^2.
+\]
+
+Tato nerovnost zahrnuje všechny body, jejichž souřadnice \(y\) je menší nebo rovna hodnotě \(x^2\).  
+Protože graf funkce \(y = x^2\) je parabola otevřená nahoru, bude hledaná oblast \textbf{uvnitř paraboly}, tedy „pod jejím obloukem“.  
+Bod \((0,0)\) na parabole sem patří (protože \(\le\) znamená i rovnost).
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-1, ymax=5,
+  samples=200,
+  width=9cm,
+  height=6cm,
+  title={Oblast $y \le x^2$}
+]
+  \addplot[domain=-3:3, thick, pastelblue!80!black, smooth] {x^2};
+  \addplot[domain=-3:3, draw=none, fill=pastelblue!50, opacity=0.75] {x^2} \closedcycle;
+\end{axisgraph}
+\end{center}
+\end{examplebox}
+
+
+\medskip
+\noindent
+Obecně tedy platí:
+
+\begin{itemize}
+  \item \(y > f(x)\): oblast \textbf{nad grafem} (včetně „vnitřku“ pro parabolu otevřenou dolů),
+  \item \(y < f(x)\): oblast \textbf{pod grafem} (včetně „vnitřku“ pro parabolu otevřenou nahoru),
+  \item \(y \ge f(x)\) nebo \(\le f(x)\): oblast včetně hranice – paraboly samotné.
+\end{itemize}
+
+\begin{notebox}
+Tyto nerovnosti mezi \(y\) a \(f(x)\) se často používají při popisu geometrických tvarů — například při určování stínů, trajektorií, polí nebo oblastí v analytické geometrii.  
+Ukazují, že kvadratická funkce neurčuje jen křivku, ale může vymezovat i prostor kolem ní.
+\end{notebox}
+
+
+\subsection{Kvadratické funkce s absolutní hodnotou}
+
+Absolutní hodnota v předpisu kvadratické funkce může výrazně změnit její tvar.  
+Pojďme si ukázat tři základní případy, se kterými se budeme setkávat.
+
+
+\subsubsection*{1. Typ \(\displaystyle y = \lvert ax^2 + bx + c\rvert\)}
+
+V tomto případě je absolutní hodnota aplikována až na výsledek celé funkce, tedy na hodnotu \(y\).  
+Platí, že:
+\[
+|y| =
+\begin{cases}
+y, & \text{pro } y \ge 0,\\
+-y, & \text{pro } y < 0.
+\end{cases}
+\]
+
+Proto postupujeme takto:
+1. Nejprve sestrojíme graf funkce bez absolutní hodnoty – \(y = ax^2 + bx + c\).
+2. Poté všechny části, které leží pod osou \(x\), „překlopíme“ osově souměrně podle osy \(x\).
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Sestrojte graf funkce \(y = |x^2 - 4|\).
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-1, ymax=5,
+  samples=200,
+  width=9cm,
+  height=6cm,
+  title={$y = |x^2 - 4|$}
+]
+  % původní parabola
+  \addplot[dashed, gray!60, domain=-3:3, smooth] {x^2 - 4};
+  % překlopená část pod osou x
+  \addplot[thick, pastelblue!80!black, domain=-3:3, smooth]
+    {abs(x^2 - 4)};
+  % pomocná osa
+  \draw[gray, thin] (axis cs:-3,0)--(axis cs:3,0);
+\end{axisgraph}
+\end{center}
+
+Části původní paraboly pod osou \(x\) se „odrazí“ nahoru – vznikne tvar připomínající dvě spojené paraboly.
+\end{examplebox}
+
+
+\subsubsection*{2. Typ \(\displaystyle y = ax^2 + b|x| + c\)}
+
+Absolutní hodnota se zde nachází pouze u proměnné \(x\).  
+Tím se celý graf stává \textbf{sudou funkcí}, a tedy \textbf{souměrným podle osy \(y\)}.
+
+Postup:
+1. Nejprve sestrojíme graf funkce bez absolutní hodnoty (např. jen pro \(x \ge 0\)).
+2. Poté tuto část osově zobrazíme podle osy \(y\).
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Sestrojte graf funkce \(y = x^2 + 2|x| - 3.\)
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-4, xmax=4,
+  ymin=-4, ymax=5,
+  samples=200,
+  width=9cm,
+  height=6cm,
+  title={$y = x^2 - 2|x| - 3$}
+]
+  \addplot[thick, pastelblue!80!black, domain=-4:4, smooth]
+    {x^2 - 2*abs(x) - 3};
+  \draw[dashed, gray!60, thin] (axis cs:0,-4)--(axis cs:0,5);
+\end{axisgraph}
+\end{center}
+
+Graf je zřetelně souměrný podle osy \(y\) a má tvar „rozšířené“ paraboly s dolíkem uprostřed.
+\end{examplebox}
+
+
+\subsubsection*{3. Typ \(\displaystyle y = \lvert ax^2 + b|x| + c\rvert\)}
+
+Tento typ kombinuje oba předchozí případy.  
+Nejdříve se absolutní hodnota promítne do proměnné \(x\) (vzniká sudá funkce), a poté se absolutní hodnota uplatní i na výsledek.  
+Tedy nejprve se parabola stane souměrnou podle osy \(y\), a pak se všechny části pod osou \(x\) zrcadlí nahoru.
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Sestrojte graf funkce \(y = \lvert -2x^2 + 4|x| + 1\rvert.\)
+
+\begin{center}
+\begin{axisgraph}[
+  xmin=-3, xmax=3,
+  ymin=-1, ymax=7,
+  samples=200,
+  width=9cm,
+  height=6cm,
+  title={$y = |-2x^2 + 4|x| + 1|$}
+]
+  \addplot[thick, pastelblue!80!black, domain=-3:3, smooth]
+    {abs(-2*x^2 + 4*abs(x) + 1)};
+  \draw[dashed, gray!60, thin] (axis cs:0,-1)--(axis cs:0,7);
+  \draw[gray!60, thin] (axis cs:-3,0)--(axis cs:3,0);
+\end{axisgraph}
+\end{center}
+
+Tento typ má často tvar připomínající „dvě spojené kopule“ — funkce je zároveň sudá a nezáporná.
+\end{examplebox}
+
+
+
+\begin{notebox}
+Kvadratické funkce s absolutní hodnotou jsou krásným příkladem kombinace symetrie a nelinearity.  
+V analytické geometrii se s nimi znovu setkáme při popisu částí kuželoseček a při konstrukci obalových křivek.
+\end{notebox}
+
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1}
+
+% =========================
+% ÚLOHA 1
+% =========================
+\begin{exercise}[Tabulka hodnot základní paraboly]
+Uvažujme kvadratickou funkci \(f: y=x^2\).  
+Zapište do tabulky funkční hodnoty v bodech \(-3;\,-2;\,-1;\,-0{,}5;\,0;\,0{,}5;\,1;\,2;\,3\).
+
+\medskip
+\begin{center}
+\renewcommand{\arraystretch}{1,25}
+\begin{tabular}{|c|*{9}{c|}}
+\hline
+$x$ & $-3$ & $-2$ & $-1$ & $-0{,}5$ & $0$ & $0{,}5$ & $1$ & $2$ & $3$ \\
+\hline
+$f(x)=x^2$ &  &  &  &  &  &  &  &  &  \\
+\hline
+\end{tabular}
+\end{center}
+\end{exercise}
+
+% =========================
+% ÚLOHA 2
+% =========================
+\begin{exercise}[Srovnání šířky paraboly v jedné soustavě]
+Načrtněte graf funkce \(f: y=x^2\) a v téže soustavě souřadnic zakreslete graf funkce
+\(f_1: y=\tfrac{1}{3}x^2\). Krátce okomentujte rozdíl.
+\end{exercise}
+
+% =========================
+% ÚLOHA 3
+% =========================
+\begin{exercise}[Vrcholový tvar – přímé rýsování]
+Sestrojte graf funkce \(g: y=\tfrac{3}{4}(x+1)^2-3\).  
+Uveďte vrchol a rovnici osy souměrnosti.
+\end{exercise}
+
+% =========================
+% ÚLOHA 4
+% =========================
+\begin{exercise}[Obecný tvar – převod / náčrt]
+Sestrojte graf funkce \(h: y=\tfrac{3}{4}x^2+\tfrac{3}{2}x-\tfrac{9}{4}\).  
+Doporučení: převeďte do vrcholového tvaru a poté rýsujte.
+\end{exercise}
+
+% =========================
+% ÚLOHA 5
+% =========================
+\begin{exercise}[Rodiny posunů v jedné soustavě]
+Načrtněte v téže soustavě souřadnic následující grafy:
+
+\begin{tasks}(1)
+  \task \(y=x^2+c,\quad c\in\{0;\,3;\,2;\,-0{,}5\}\)
+  \task \(y=(x-k)^2,\quad k\in\{0;\,1;\,2{,}5;\,-2;\,-1{,}5\}\)
+  \task \(y=(x-k)^2+m,\) pro dvojice \((k,m)\in\{(1,2),\,(1,-2),\,(1,1{,}5)\}\)
+  \task \(y=(x-k)^2+m,\) pro dvojice \((k,m)\in\{(-2,2),\,(1,2),\,(0{,}5,2)\}\)
+\end{tasks}
+\end{exercise}
+
+% =========================
+% ÚLOHA 6
+% =========================
+\begin{exercise}[Graf kvadratické funkce]
+Načrtněte grafy funkcí (určete souřadnice vrcholu, souřadnice průsečíků grafu s osou $x$ a s osou $y$; následně z grafu určete obor funkčních hodnot):
+
+\begin{tasks}(3)
+  \task $f_1:\; y = x^2 + 4x + 3$
+  \task $f_2:\; y = x^2 - 2x + 3$
+  \task $f_3:\; y = x^2 + 1$
+  \task $f_4:\; y = -x^2 + 2x + 3$
+  \task $f_5:\; y = -x^2 + 6x + 9$
+  \task $f_6:\; y = 2x^2 - 3x + 6$
+  \task $f_7:\; y = 3x^2 + 6x + 3$
+  \task $f_8:\; y = 2x^2 + 4x + 1$
+  \task $f_9:\; y = \tfrac{3}{4}x^2 - 3x - \tfrac{7}{2}$
+\end{tasks}
+\end{exercise}
+
+\newpage
+% =========================
+% ÚLOHA 7
+% =========================
+\begin{exercise}[Graf kvadratické funkce s absolutními hodnotami]
+Načrtněte grafy funkcí (u každé určete vrchol/vrcholy po intervalech, průsečíky s osou $y$ a případně s osou $x$).
+
+\begin{multicols}{3}
+
+\begin{tasks}
+  \task $g_1:\; y = x^2 + 2x - 3$
+  \task $g_2:\; y = \lvert x^2 + 2x - 3\rvert$
+  \task $g_3:\; y = x^2 + 2\lvert x\rvert - 3$
+  \task $g_4:\; y = \big\lvert x^2 + 2\lvert x\rvert - 3\big\rvert$
+\end{tasks}
+
+\columnbreak
+
+\begin{tasks}
+  \task $h_1:\; y = x^2 - 3x$
+  \task $h_2:\; y = x^2 - 3\lvert x\rvert$
+  \task $h_3:\; y = x\lvert x - 3\rvert$
+  \task $h_4:\; y = \lvert x\rvert (x - 3)$
+\end{tasks}
+
+\columnbreak
+
+\begin{tasks}
+  \task \mbox{$k_1:\; y = \lvert 2x + 1\rvert - x\lvert x - 4\rvert$}
+  \task \mbox{$k_2:\; y = x\lvert x - 2\rvert + \lvert x^2 - 2x\rvert$}
+  \task \mbox{$k_3:\; y = \lvert x^2 - x\rvert + \lvert x\rvert - 2$}
+  \task \mbox{$k_4:\; y = \lvert 9 - x^2\rvert + \lvert 4 - x^2\rvert - 5$}
+\end{tasks}
+
+\end{multicols}
+\end{exercise}
+
+% =========================
+% ÚLOHA 8
+% =========================
+\begin{exercise}[Kvadratické funkce s absolutní hodnotou]
+Načrtněte grafy těchto funkcí:
+\begin{tasks}(2)
+  \task $y = x|x|$
+  \task $y = 2x + |1 - x^2|$
+  \task $y = -2x|x - 3|$
+  \task $y = x|5 - x| + 2|x| - |2 - x^2|$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9
+% =========================
+\begin{exercise}[Náčrt z obecného tvaru]
+Načrtněte grafy těchto funkcí (vrchol, osa, průsečíky s osami):
+\begin{tasks}(2)
+  \task \(y=x^2-2x+3\)
+  \task \(y=-x^2-6x-8\)
+  \task \(y=2x^2+5x-1\)
+  \task \(y=-0{,}5x^2+x+2\)
+\end{tasks}
+\end{exercise}
+
+% =========================
+% ÚLOHA 10 (BONUS)
+% =========================
+\begin{exercise}[BONUS: Pozitivita pomocí doplnění na čtverec]
+Dokažte, že hodnota funkce \(y=x^2-4x+5\) je v každém bodě kladná.
+\end{exercise}
+
+% =========================
+% ÚLOHA 11
+% =========================
+\begin{exercise}[Sestavení předpisu z vlastností I]
+Funkční předpis kvadratické funkce \(f\) zapište rovnicí, víte-li, že platí:  
+\(f\) je sudá na \(\mathbb{R}\), hodnota minima je \(-8\) a jeden z průsečíků grafu s osou \(x\) má souřadnice \([2;0]\).
+\end{exercise}
+
+% =========================
+% ÚLOHA 12
+% =========================
+\begin{exercise}[Sestavení předpisu z vlastností II]
+Funkční předpis kvadratické funkce \(g\) zapište rovnicí, víte-li, že platí:  
+funkce \(g\) pro \(x=2\) nabývá \textbf{maxima}, přičemž hodnota maxima je \(4\), a osu \(y\) protíná graf funkce v bodě \([0;1]\).
+\end{exercise}
+
+% =========================
+% ÚLOHA 13
+% =========================
+\begin{exercise}[Sestavení předpisu z vlastností III]
+Funkční předpis kvadratické funkce \(h\) zapište rovnicí, víte-li, že platí:  
+funkce \(h\) je v intervalu \((-\infty;3)\) \textbf{rostoucí}, v intervalu \(\langle 3;\infty)\) \textbf{klesající}, graf prochází počátkem soustavy souřadnic a hodnota maxima je \(18\).
+\end{exercise}
+
+% =========================
+% ÚLOHA 14
+% =========================
+\begin{exercise}[Určení koeficientů z funkční rovnice]
+Určete reálná čísla \(a,b\) tak, aby pro funkci \(f(x)=ax^2+bx+5\) platilo:
+\[
+\forall x\in\mathbb{R}:\quad f(x+1)-f(x)=8x+3.
+\]
+\end{exercise}
+
+% =========================
+% ÚLOHA 13
+% =========================
+\begin{exercise}[Grafy složených racionálních funkcí]
+Načrtněte grafy daných funkcí (nezapomeňte určit definiční obor a asymptoty, jsou-li zřejmé):
+
+\begin{tasks}(2)
+  \task $y = \dfrac{\frac{x - 5}{x + 1} + 1}{1 - \frac{2x - 1}{x + 1}}$
+  
+  \task $y = \dfrac{\dfrac{x^3 - 8}{\frac{x^2 + 4}{x + 2} + \frac{2x}{x + 2}}}{\frac{x^3 + 8}{(x - 2)^2 + 2x}}$
+  
+  \task $y = \left(x + 2 + \dfrac{2}{x - 1}\right) \left(x - 2 + \dfrac{2}{x + 1}\right)$
+  
+  \task $y = \dfrac{x^3 - 4x + x^2 - 4}{x^2 - x - 2} \cdot x$
+  
+  \task $y = \dfrac{12x^3 - 5x^2 - 6x - 1}{4x + 1}$
+  
+  \task $y = 2x^2 - \dfrac{1}{1 - \frac{x}{1 + x}}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 14
+% =========================
+\begin{exercise}[Určení kvadratické funkce ze tří bodů]
+Najděte předpis kvadratické funkce, která prochází třemi zadanými body.
+
+\begin{tasks}(2)
+  \task $A[0;1],\; B[-2;5],\; C[2;5]$
+  \task $D[4;9],\; E[1;0],\; F[-3;16]$
+  \task $G[0;2],\; H[-1;0],\; I[0{,}5;4{,}5]$
+  \task $J[-1;5],\; K[0;7],\; L[2;17]$
+  \task $M[2;25],\; N[-3;25],\; O[0;1]$
+  \task $P[-2;18{,}4],\; Q[2;54{,}4],\; R[0;-3{,}6]$
+  \task $S[0;0],\; T[3;45],\; U[-1;-7]$
+  \task $V[2;-48],\; W[4;0],\; X[6;80]$
+  \task $A[8;51],\; B[9;0],\; C[10;-57]$
+  \task $X[-1;0],\; Y[-2;3],\; Z[-3;8]$
+  \task $A[0;-63],\; B[9;36],\; C[6;-15]$
+  \task $D[1;7],\; E[3{,}5;35{,}75],\; F[-1;-7]$
+  \task $G[3;-32],\; H[2;-9],\; I[1;4]$
+  \task $J[-2;13],\; K[3;8],\; L[0;5]$
+  \task $M[-1;-9],\; N[1;11],\; O[2;27]$
+  \task $P[1;3],\; Q[5;15],\; R[-2;15]$
+  \task $S[2;7],\; T[-1;4],\; U[0;-1]$
+  \task $V[0;-10],\; W[-2;-26],\; X[2;14]$
+  \task $K[0;1],\; L[-1;11],\; M[1;11]$
+  \task $P\!\left[\frac{5}{2};\frac{229}{4}\right],\; R[3;75],\; S[1;7]$
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 15
+% =========================
+\begin{exercise}[Určení kvadratické funkce z podmínek]
+Najděte předpis kvadratické funkce \(f\), která splňuje zadané podmínky:
+
+\begin{tasks}
+
+\task $ f(-1) = 0,\quad f(4) = 0,\quad f(0) = 2.$
+
+\task $ f(2) = -3,\quad f(5) = 12,\quad f(-1) = 0.$
+
+\task $ f(1) = 5,\quad f(-2) = 0,\quad f(3) = 14.$
+
+\task $ f(-3)=4,\quad f(0)=1,\quad f(4)=25.$
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% BONUSOVÁ ÚLOHA
+% =========================
+
+% BONUS 1
+\begin{exercise}[Bonus: určení funkce z hodnot a obecného tvaru]
+Najděte předpis kvadratické funkce \(f\), která splňuje:
+
+\begin{tasks}
+\task $f(1) = 7,\quad f(-2) = -5,\quad f(a) = a(x+1)(x-4)$
+\end{tasks}
+
+(Ve třetí podmínce využijte, že po dosazení $x=a$ se obě strany musí rovnat.)
+\end{exercise}
+
+% BONUS 2
+\begin{exercise}[Bonus: vrchol, hodnota a vztah mezi koeficienty]
+Najděte předpis kvadratické funkce \(f\), která splňuje:
+
+\begin{tasks}
+\task $V[-1;4],\quad f(2)=3,\quad b = 2a$
+\task $V[3;-2],\quad f(0)=10,\quad c = -a$
+\end{tasks}
+\end{exercise}
+
+% BONUS 3
+\begin{exercise}[Bonus: kořen, bod a vrchol]
+Určete předpis kvadratické funkce, která splňuje:
+
+\begin{tasks}
+\task $f(1)=0,\quad f(5)=7,\quad V[-2;9]$
+\task $f(-3)=0,\quad f(2)=13,\quad V[1;-4]$
+\end{tasks}
+\end{exercise}
+
+% BONUS 4
+\begin{exercise}[Bonus: dva body a tvar paraboly]
+Najděte kvadratickou funkci, která splňuje:
+
+\begin{tasks}
+\task $f(0)=5,\quad f(3)=-4,\quad$ parabola je otevřená dolů
+\task $f(-1)=6,\quad f(4)=1,\quad$ osa souměrnosti má rovnici $x=2$
+\end{tasks}
+\end{exercise}
+
+% BONUS 5
+\begin{exercise}[Bonus: různé kombinace podmínek]
+Určete funkci \(f\), která splňuje:
+
+\begin{tasks}(2)
+\task $f(2)=-3,\quad f(-1)=0,\quad c = 4$
+\task $f(4)=20,\quad f(0)=4,\quad$ parabola má maximum
+\task $f(-2)=1,\quad f(1)=10,\quad$ vrchol leží na ose $y$
+\task $f(3)=7,\quad f(-3)=7,\quad$ graf je sudá funkce
+\end{tasks}
+\end{exercise}
+
+
+
+\end{document}

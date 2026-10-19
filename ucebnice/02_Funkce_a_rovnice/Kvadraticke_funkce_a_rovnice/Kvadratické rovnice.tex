@@ -1,0 +1,1509 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+\usepackage{polynom}
+
+\title{Kvadratické rovnice a nerovnice}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Úvod}
+
+\begin{quotebox}
+{„Žádná rovnice není nemožná, dokud neztrácíme trpělivost hledat její řešení.“}
+{al-Chvárizmí (9. století)}
+\end{quotebox}
+
+\begin{historicalbox}
+\textbf{Od geometrie k algebře}
+
+Počátky kvadratických rovnic sahají více než tři tisíce let do minulosti. 
+V době, kdy ještě neexistoval symbolický jazyk matematiky, 
+zapisovali staří Babyloňané své úvahy na hliněné tabulky klínovým písmem a 
+řešili úlohy, které bychom dnes popsali rovnicemi typu 
+\(x^2 + bx = c\) či \(x^2 = bx + c\). V jedné z dochovaných tabulek, označované 
+jako \textit{YBC 6967}, je popsán postup, jak najít délku strany čtverce, 
+pokud známe jeho plochu a přebytek určité části – řešení vychází z doplnění čtverce, 
+tedy stejné myšlenky, na které je založen i dnešní vzorec pro kvadratickou rovnici.  
+Babyloňané ovšem neznali symboly ani záporná čísla, 
+a tak vše popisovali slovně a geometricky: 
+\textit{„vezmi polovinu počtu, násob sama sebou, přidej a odečti, dokud nedostaneš čtverec“.} 
+Přesto byl výsledek překvapivě přesný a správný.
+
+\medskip
+Ve starověkém Egyptě se podobné úlohy objevují v tzv. 
+Rhindově papyru (asi 1650 př. n. l.), kde jsou rovnice vyjádřeny prostřednictvím 
+„falešného předpokladu“ – Egypťané zvolili odhad hodnoty, spočítali výsledek a 
+poté upravili chybu poměrem. I když nešlo o algebraické myšlení v dnešním smyslu, 
+jednalo se o první systematické metody řešení rovnic.
+
+\medskip
+\textbf{Řecko – geometrické období}
+
+Antičtí Řekové přenesli problém kvadratických vztahů do oblasti geometrie. 
+Eukleidés ve svých \textit{Základech} dokázal řadu vět o rovnosti ploch, 
+které dnes překládáme jako algebraické identity, například \((a+b)^2 = a^2 + 2ab + b^2\). 
+Herón Alexandrijský i Diofantos z Alexandrie se již přiblížili k řešení rovnic 
+se symbolickými náznaky, přestože symbol „x“ ještě neexistoval. 
+Každé řešení bylo v jejich pojetí konstrukcí s pravítkem a kružítkem – 
+nalezení délky úsečky, která vyhovuje danému vztahu.
+
+\medskip
+\textbf{Arabská matematika – zrod algebry}
+
+K zásadnímu posunu došlo v 9. století v Bagdádu, 
+který se tehdy stal centrem vzdělanosti islámského světa. 
+Právě zde působil učenec \textbf{Muhammad ibn Músá al-Chvárizmí}, 
+autor knihy \textit{Al-jabr wal-muqabala}. 
+Slovo \textit{al-jabr} znamená „doplnění“ (např. chybějící části čtverce) 
+a \textit{al-muqabala} „vyrovnání“. V této práci popsal systematický postup, 
+jak řešit šest základních typů kvadratických rovnic, které tehdejší svět znal.  
+Jeho přístup byl čistě slovní, avšak zcela obecný – al-Chvárizmí dokázal, 
+že každou kvadratickou rovnici lze převést na standardní tvar a 
+řešit doplněním na čtverec. 
+A právě z názvu \emph{al-jabr} se později vyvinulo naše slovo \textbf{algebra}.
+
+\textbf{Al-Chvárizmí: slovní řešení kvadratické úlohy (9. století)}
+
+„\textit{První z úloh. Řeknou-li ti: Rozdělil jsi deset na dvě části, vynásobil jsi jednu z částí druhou a dále jsi vynásobil jednu z nich samu sebou, potom tento součin sama se sebou se stal rovným čtyřnásobku součinu obou částí.}
+
+\textit{Pravidlo je následující: Vezmi jednu z částí jako věc, potom druhá je deset bez věci. Vynásob věc krát deset bez věci, obdržíš deset věcí bez kvadrátu. Dále to násob čtyřmi, jak ti bylo řečeno: čtyřikrát. Obdržíš čtyřicet věcí bez čtyř kvadrátů.}
+
+\textit{Potom násob jednu část druhou, to jest čtyřnásobek součinu obou částí. Potom násob věc krát věc, to jest věc samu sebou. Obdržíš kvadrát. Doplň k tomu čtyřikrát věcí obdržíš: čtyřicet věcí bez čtyř kvadrátů a přičti ke kvadrátu. Obdržíš: čtyřicet věcí bez tří kvadrátů.}
+
+\textit{Proto je jeden kvadrát roven čtyřiceti věcem bez čtyř kvadrátů odtěžených. Čtyřikrát věcí rovno pěti kvadrátům.}“
+
+\smallskip
+\textit{Zdroj:}  
+Al-Chvárizmí: \textit{Algebraický a aritmetický traktát}.  
+Český překlad, Praha 2023.  
+ISBN: 978-980-87269-01-5, str. 134.
+
+
+\textbf{Stejná úloha řešená „al-Chvárizmího metodou“}
+
+Uvažujeme stejnou situaci jako předtím: číslo \(10\) dělíme na dvě části \(x\) a \(10-x\) tak,  
+že součin jedné části se sebou samou je roven čtyřnásobku součinu obou částí:
+\[
+x^2 = 4x(10-x).
+\]
+
+Nejprve upravíme rovnici tak, aby měla tvar „kvadrát rovný věcem“, jak to dělá al-Chvárizmí.  
+Roznásobíme pravou stranu:
+\[
+x^2 = 40x - 4x^2.
+\]
+
+Převedeme všechny členy na jednu stranu:
+\[
+5x^2 - 40x = 0.
+\]
+
+Vydělíme pěti:
+\[
+x^2 - 8x = 0.
+\]
+
+Al-Chvárizmí by tuto rovnici popsal slovy jako „kvadrát rovný osmi věcem“ –  
+kvadrát \((x^2)\) a osm násobků věci \((8x)\).
+
+Dále použije pravidlo doplnění na čtverec:
+
+„Vezmi polovinu počtu věcí, vynásob ji sebou samou a přičti tuto hodnotu na obě strany.“
+
+Polovina z \(8\) je \(4\), její čtverec je
+\[
+4^2 = 16.
+\]
+
+Přičteme \(16\) na obě strany:
+\[
+x^2 - 8x + 16 = 16.
+\]
+
+Levá strana je nyní dokonalý čtverec:
+\[
+(x - 4)^2 = 16.
+\]
+
+Odmocníme obě strany:
+\[
+\sqrt{(x - 4)^2} = \sqrt{16},
+\]
+\[
+|x - 4| = 4.
+\]
+
+V klasickém al-Chvárizmího pojetí se bere kladná varianta, takže
+\[
+x - 4 = 4,
+\]
+\[
+x = 8.
+\]
+
+Druhá část je pak
+\[
+10 - x = 2.
+\]
+
+Tím jsme stejnou úlohu vyřešili metodou, kterou al-Chvárizmí popisuje slovně:  
+převedením rovnice na tvar „kvadrát rovný věcem“, doplněním na čtverec a odmocněním.
+
+
+
+\medskip
+Arabská matematika navíc položila základy symboliky a 
+přenesla do Evropy nejen řecké spisy, ale i vlastní poznatky o číslech, úhlech a rovnicích. 
+Přes Španělsko a severní Afriku se tyto ideje dostaly do Itálie, 
+kde ve 13.–15. století vznikají první učebnice obchodní matematiky. 
+Mezi nimi vynikl \textbf{Leonardo z Pisy}, známý jako Fibonacci, 
+který do Evropy přinesl indicko-arabské číslice i základní principy řešení rovnic.
+
+\medskip
+\textbf{Renesance a novověk – přechod k symbolické algebře}
+
+V 16. století se v Itálii objevují první pokusy o řešení rovnic třetího a 
+čtvrtého stupně (Cardano, Tartaglia, Ferrari - ne ten Ferrari s traktory), 
+avšak kvadratická rovnice již byla plně zvládnutá disciplína. 
+K zásadní proměně dochází s dílem \textbf{Françoise Vièta} a 
+později \textbf{Reného Descarta}, kteří zavedli symbolický jazyk, 
+jak jej používáme dodnes: písmena \(a, b, c\) označují koeficienty, 
+\(x\) neznámou a rovnice se stává čistě algebraickým objektem, 
+nezávislým na geometrické představě.
+
+\medskip
+V 17. století se díky rozvoji analytické geometrie a diferenciálního počtu
+ začala kvadratická rovnice chápat i jako nástroj k popisu fyzikálních jevů. 
+ Parabola, jejíž rovnice má tvar \(y = ax^2 + bx + c\), 
+ se objevuje ve studiích \textbf{Galilea Galileiho} o pohybu těles, 
+ v optice i balistice. Od té doby se kvadratické vztahy staly neoddělitelnou součástí přírodních věd.
+
+
+\textbf{Zajímavosti a souvislosti}
+
+Paraboly nalezneme nejen v matematice, ale i v architektuře a umění. Klenby mostů, tvary reflektorů, dráhy planet či dokonce křivky při hodu míčem – to vše lze popsat právě kvadratickými rovnicemi. Moderní architekt Antonio Gaudí využíval parabolické tvary při návrhu svých staveb v Barceloně, protože rozkládají síly přirozeným způsobem. V hudbě se kvadratické vztahy objevují ve formě změn amplitudy a frekvence, ve fyzice pak popisují potenciální energii pružiny \(E = \tfrac{1}{2}kx^2\).
+
+
+Kvadratická rovnice se tak stala nejen matematickým objektem, ale i symbolem obecného principu harmonie mezi částmi a celkem – mezi přímkou a křivkou, rovnováhou a extrémem, mezi jednoduchostí zápisu a hloubkou významu, který dokáže vyjádřit.
+
+\end{historicalbox}
+
+
+
+\section{Kvadratická rovnice}
+Navazujíc na historické kořeny a význam kvadratických vztahů se nyní zaměříme na 
+samotnou podstatu \textit{kvadratických rovnic} a \textit{nerovnic}.  
+Zatímco v předchozích kapitolách jsme zkoumali kvadratickou funkci především 
+z grafického hlediska a sledovali, jak se mění její tvar v závislosti na parametrech, 
+nyní se zaměříme na algebraickou stránku věci — na hledání takových hodnot proměnné, 
+které dané rovnici vyhovují.
+
+Kvadratické rovnice představují základní typ nelineárních rovnic a 
+objevují se ve všech oblastech matematiky i fyziky, 
+od výpočtu dráhy tělesa (pokud jste hráli Kerbal Space Program, tak tušítes) po optimalizační úlohy v ekonomii. 
+Jejich řešení vede přirozeně k myšlence doplnění na čtverec a k zavedení tzv. 
+\textbf{diskriminantu}, který umožňuje rozhodnout, kolik \textbf{reálných řešení} rovnice má.  
+Tato kapitola tak tvoří přirozený most mezi světem funkcí a světem rovnic — 
+mezi geometrickým a algebraickým pohledem na tentýž problém.
+
+\begin{definitionbox}
+\textbf{Kvadratická rovnice} je každá rovnice, kterou lze po úpravách zapsat ve tvaru
+\[
+ax^2 + bx + c = 0,
+\]
+kde \(a, b, c \in \mathbb{R}\) a zároveň \(a \neq 0\).
+
+Čísla \(a, b, c\) nazýváme \textbf{koeficienty kvadratické rovnice}, přičemž:
+\begin{itemize}
+  \item \(a\) je \textbf{kvadratický koeficient},
+  \item \(b\) je \textbf{lineární koeficient},
+  \item \(c\) je \textbf{absolutní člen}.
+\end{itemize}
+
+Hledáme všechna reálná čísla \(x\), pro která je daná rovnice splněna.  
+Tato čísla nazýváme \textbf{kořeny rovnice} a jejich množinu značíme \(K\).
+\end{definitionbox}
+
+
+Po zavedení obecného tvaru kvadratické rovnice si nyní všimněme, 
+že podle přítomnosti či nepřítomnosti jednotlivých členů 
+rozlišujeme tři základní typy kvadratických rovnic:
+
+\begin{itemize}
+  \item \textbf{ryze kvadratické rovnice} – tvaru \(ax^2 + c = 0\),
+  \item \textbf{neúplné kvadratické rovnice} – tvaru \(ax^2 + bx = 0\),
+  \item \textbf{úplné kvadratické rovnice} – tvaru \(ax^2 + bx + c = 0\).
+\end{itemize}
+
+
+\subsubsection*{Ryze kvadratická rovnice}
+Každý z těchto typů má svůj specifický postup řešení. 
+Začněme nejjednodušším případem – \textbf{ryze kvadratickou rovnicí}.
+
+
+
+Rovnici
+\[
+ax^2 + c = 0
+\]
+můžeme upravit následovně:
+\[
+ax^2 = -c \quad \Rightarrow \quad x^2 = -\frac{c}{a}.
+\]
+Označme výraz \(-\tfrac{c}{a}\) jako \(k\). Potom dostáváme jednodušší tvar
+\[
+x^2 = k,
+\]
+který lze přepsat i ve tvaru
+\[
+x^2 - k = 0.
+\]
+
+Z algebry víme, že pro každý výraz tvaru \(a^2 - b^2\) platí vzorec
+\[
+a^2 - b^2 = (a - b)(a + b),
+\]
+a tudíž můžeme rozepsat náš výraz jako:
+\[
+x^2 - k = 0.
+\]
+\[
+(x - \sqrt{k})(x + \sqrt{k}) = 0.
+\]
+Aby byl součin dvou činitelů nulový, musí být alespoň jeden z nich roven nule, 
+proto tedy platí:
+\[
+x_1 = \sqrt{k}, \qquad x_2 = -\sqrt{k}.
+\]
+
+
+
+Tentýž výsledek lze zapsat i stručnějším způsobem.  
+Protože u kvadratické funkce platí, že pro opačné hodnoty proměnné \(x\) 
+získáváme stejné hodnoty výrazu \(x^2\), 
+můžeme psát:
+\[
+x^2 = k \quad \Rightarrow \quad |x| = \sqrt{k}.
+\]
+A tedy:
+\[
+x_1 = \sqrt{k}, \qquad x_2 = -\sqrt{k}.
+\]
+Což po zpětném dosazením z $k=-\frac{c}{a}$ vypadá:
+
+\[
+x_1 = \sqrt{-\frac{c}{a}}, \qquad x_2 = -\sqrt{-\frac{c}{a}}.
+\]
+
+
+
+Pokud by však hodnota \(k\) byla záporná (tj. \(-\tfrac{c}{a} < 0\)), 
+rovnice by neměla žádné reálné řešení, 
+neboť druhá mocnina reálného čísla nemůže být záporná. 
+V takovém případě bychom řešení hledali v oboru komplexních čísel (s čímž se ještě setkáme v dalším ročníku).
+
+\begin{examplebox}
+\textbf{Ryze kvadratická rovnice}
+
+Vyřešte rovnic:
+\[
+25x^2 + 1 = 0
+\]
+\[
+x^2 = -\frac{1}{25}.
+\]
+\[
+x = \sqrt{-\frac{1}{25}}.
+\]
+Protože druhá mocnina reálného čísla nemůže být záporná, rovnice nemá reálné řešení.
+\[
+K = \emptyset.
+\]
+\end{examplebox}
+
+Když nyní tuto rovnici pozměníme a to tak, že tentokrát kvadratický a absolutní člen budeme od sebe odečíta. A ukážeme si, jak se tato změna projeví na výsledku kořenu rovnice.
+
+\begin{examplebox}
+Vyřešte rovnici:
+\[
+25x^2 - 1 = 0
+\] 
+\[
+x^2 = \frac{1}{25}.
+\]
+Odmocníme obě strany:
+\[
+\sqrt{x^2} = \sqrt{\frac{1}{25}}.
+\]
+\[
+|x| = \frac{1}{5}.
+\]
+\textbf{Množina řešení:}
+\[
+K = \left\{ -\tfrac{1}{5}, \tfrac{1}{5} \right\}.
+\]
+\end{examplebox}
+
+
+
+
+\subsubsection*{Neúplná kvadratická rovnice}
+Nyní se podívejme na druhý typ, tzv. \textbf{neúplnou kvadratickou rovnici}, 
+která má tvar
+\[
+ax^2 + bx = 0.
+\]
+
+Všimněme si, že obě části rovnice obsahují proměnnou \(x\).  
+Proto můžeme společného činitele \(x\) vytknout:
+\[
+x(ax + b) = 0.
+\]
+
+Tím jsme rovnici rozložili na součin dvou výrazů.  
+Aby byl tento součin nulový, musí být alespoň jeden z činitelů roven nule, 
+tedy platí:
+\[
+x = 0 \quad \text{nebo} \quad ax + b = 0.
+\]
+
+Z druhé rovnice \(ax + b = 0\) pak snadno dostáváme
+\[
+x = -\frac{b}{a}.
+\]
+
+
+
+Tím jsme získali dva kořeny:
+\[
+x_1 = 0, \quad x_2 = -\frac{b}{a}.
+\]
+
+
+
+Pokud by však platilo \(b = 0\), potom by se rovnice zjednodušila na \(ax^2 = 0\), 
+z čehož plyne \(x = 0\).  
+V tomto případě má rovnice jediný kořen, který je však tzv. 
+\textbf{dvojnásobným kořenem}, 
+protože odpovídá situaci, kdy se parabola dotýká osy \(x\) právě v jednom bodě.
+
+
+
+Shrneme-li, neúplné kvadratické rovnice se řeší snadno rozkladem na součin, 
+přičemž vždy jeden z kořenů bývá roven nule. 
+Tento tvar se velmi často objevuje i v praxi, například při výpočtech dráhy nebo síly, 
+kde je jeden z faktorů společný pro více členů rovnice.
+
+\begin{examplebox}
+\textbf{Neúplná kvadratická rovnice}
+
+Vyřešte rovnici:
+\[
+2x^2 + \tfrac{3}{2}x = 0.
+\]
+
+Oba členy obsahují proměnnou \(x\), proto ji vytkneme:
+\[
+x\left(2x + \tfrac{3}{2}\right) = 0.
+\]
+
+Aby byl součin nulový, musí být alespoň jeden z činitelů nulový:
+\[
+x = 0 \quad \text{nebo} \quad 2x + \tfrac{3}{2} = 0.
+\]
+
+Z druhé rovnice získáme:
+\[
+2x = -\tfrac{3}{2}.
+\]
+\[
+x = -\tfrac{3}{4}.
+\]
+
+\textbf{Množina řešení:}
+\[
+K = \left\{ 0,\; -\tfrac{3}{4} \right\}.
+\]
+\end{examplebox}
+
+
+
+
+
+\subsubsection*{Úplná kvadratická rovnice}
+
+Třetím a nejdůležitějším typem je tzv. \textbf{úplná kvadratická rovnice}, 
+která obsahuje všechny tři členy:
+\[
+ax^2 + bx + c = 0,
+\]
+kde \(a, b, c \in \mathbb{R}\) a \(a \neq 0\).
+
+Tento typ rovnice nelze jednoduše rozložit na součin, 
+protože se zde současně objevují členy \(x^2\), \(x\) i konstantní člen.  
+Abychom ji dokázali vyřešit, použijeme metodu, kterou už ve svém díle 
+\textit{Al-jabr wal-muqabala} popisoval al-Chvárizmí — tzv. \textbf{doplnění na čtverec}.
+
+
+\textit{Hic sunt leones et dracones:}
+
+Začněme s obecnou rovnicí
+\[
+ax^2 + bx + c = 0.
+\]
+Nejprve ji vydělíme koeficientem \(a\), aby byl člen u \(x^2\) rovný jedné:
+\[
+x^2 + \frac{b}{a}x + \frac{c}{a} = 0.
+\]
+Nyní si z prvních dvou členů všimněme, že by mohly tvořit druhou mocninu nějakého výrazu.
+Připomeňme si vzorec:
+\[
+(x + p)^2 = x^2 + 2px + p^2.
+\]
+Abychom mohli použít tento tvar, potřebujeme, aby platilo \(2p = \tfrac{b}{a}\).  
+Odtud vyplývá \(p = \tfrac{b}{2a}\).
+
+
+
+K oběma stranám rovnice tedy přičteme výraz 
+\(\left(\tfrac{b}{2a}\right)^2\), abychom mohli zleva vytvořit dokonalý čtverec:
+\[
+x^2 + \frac{b}{a}x + \frac{c}{a} + \left(\frac{b}{2a}\right)^2 = \left(\frac{b}{2a}\right)^2.
+\]
+\[
+x^2 + \frac{b}{a}x + \left(\frac{b}{2a}\right)^2 = \left(\frac{b}{2a}\right)^2 - \frac{c}{a}.
+\]
+Levá strana je nyní dokonalý čtverec:
+\[
+\left(x + \frac{b}{2a}\right)^2 = \left(\frac{b}{2a}\right)^2 - \frac{c}{a}.
+\]
+A ještě upravíme pravou stranu rovnice:
+\[
+\left(x + \frac{b}{2a}\right)^2 = \frac{b^2 - 4ac}{4a^2}.
+\]
+
+Odmocníme obě strany:
+\[
+\sqrt{\left(x + \frac{b}{2a}\right)^2} = \sqrt{\frac{b^2 - 4ac}{4a^2}}.
+\]
+\[
+\bigg|x + \frac{b}{2a}\bigg| = \frac{\sqrt{b^2 - 4ac}}{2a}.
+\]
+\[
+x + \frac{b}{2a} = \pm \frac{\sqrt{b^2 - 4ac}}{2a}.
+\]
+A po odečtení \(\tfrac{b}{2a}\) dostáváme:
+\[
+x  = - \frac{b}{2a} \pm \frac{\sqrt{b^2 - 4ac}}{2a},
+\]
+což lze upravit na tvar:
+\[
+x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}.
+\]
+
+
+
+Tento výsledek se nazývá \textbf{vzorcem pro kořeny kvadratické rovnice}.  
+Výraz pod odmocninou
+\[
+D = b^2 - 4ac
+\]
+nazýváme \textbf{diskriminant} a jeho hodnota rozhoduje o počtu reálných řešení:
+\[
+\begin{array}{rcl}
+D > 0 & \Rightarrow & \text{dva různé reálné kořeny},\\[4pt]
+D = 0 & \Rightarrow & \text{jeden dvojnásobný kořen},\\[4pt]
+D < 0 & \Rightarrow & \text{žádné reálné řešení (komplexní)}.
+\end{array}
+\]
+
+
+\begin{definitionbox}
+\textbf{Vzor pro kořeny kvadratické rovnice:}
+
+\medskip
+\[
+x_{1,2} = \frac{-b \pm \sqrt{D}}{2a},  \text{ kde } D = b^2 - 4ac
+\]
+
+\bigskip
+Výraz pod odmocninou
+\[
+D = b^2 - 4ac
+\]
+nazýváme \textbf{diskriminant} a jeho hodnota rozhoduje o počtu reálných řešení:
+\[
+\begin{array}{rcl}
+D > 0 & \Rightarrow & \text{dva různé reálné kořeny},\\[4pt]
+D = 0 & \Rightarrow & \text{jeden dvojnásobný kořen},\\[4pt]
+D < 0 & \Rightarrow & \text{žádné reálné řešení (pouze komplexní)}.
+\end{array}
+\]
+\end{definitionbox}
+
+
+Odvozením tohoto vzorce jsme završili řešení všech typů kvadratických rovnic. 
+
+
+\begin{examplebox}
+\textbf{Úplná kvadratická rovnice}
+
+Vyřešte rovnici:
+\[
+x^2 + 2x - 8 = 0.
+\]
+
+Určíme koeficienty: \(a = 1,\; b = 2,\; c = -8.\)
+
+
+Spočítáme diskriminant:
+\[
+D = b^2 - 4ac = 2^2 - 4 \cdot 1 \cdot (-8) = 4 + 32 = 36.
+\]
+
+\[
+x_{1,2} = \frac{-b \pm \sqrt{D}}{2a} = \frac{-2 \pm 6}{2}.
+\]
+
+\[
+x_1 = 2, \quad x_2 = -4.
+\]
+
+\textbf{Množina řešení:}
+\[
+K = \{-4,\; 2\}.
+\]
+\end{examplebox}
+
+
+
+\begin{examplebox}
+\textbf{Úplná kvadratická rovnice bez reálného řešení}
+
+Vyřešte rovnici:
+\[
+2x^2 - 4x + 3 = 0.
+\]
+
+Určíme koeficienty: \(a = 2,\; b = -4,\; c = 3.\)
+
+
+Spočítáme diskriminant:
+\[
+D = b^2 - 4ac = (-4)^2 - 4 \cdot 2 \cdot 3 = 16 - 24 = -8.
+\]
+
+Protože \(D < 0\), rovnice nemá žádné reálné řešení.
+
+\textbf{Množina řešení:}
+\[
+K = \emptyset.
+\]
+\end{examplebox}
+
+
+\newpage
+\subsection{Vztahy mezi kořeny a koeficienty kvadratické rovnice}
+
+Uvažujme kvadratickou rovnici
+\[
+ax^2 + bx + c = 0,
+\]
+kde \(a, b, c \in \mathbb{R}\), \(a \neq 0\) a předpokládejme, že má dva reálné kořeny \(x_1, x_2\).  
+Z obecného vzorce pro kořeny víme, že:
+\[
+x_1 = \frac{-b + \sqrt{b^2 - 4ac}}{2a}, \qquad x_2 = \frac{-b - \sqrt{b^2 - 4ac}}{2a}.
+\]
+
+
+\textbf{Součet kořenů:}
+
+\[
+x_1 + x_2 = \frac{-b + \sqrt{b^2 - 4ac}}{2a} + \frac{-b - \sqrt{b^2 - 4ac}}{2a}.
+\]
+Sečtením čitatelů dostaneme:
+\[
+x_1 + x_2 = \frac{-b + \sqrt{b^2 - 4ac} - b - \sqrt{b^2 - 4ac}}{2a}.
+\]
+Odmocniny se odečtou:
+\[
+x_1 + x_2 = \frac{-2b}{2a}.
+\]
+Zjednodušením obdržíme:
+\[
+x_1 + x_2 = -\frac{b}{a}.
+\]
+
+
+\textbf{Součin kořenů:}
+
+\[
+x_1 \cdot x_2 = \frac{\left(-b + \sqrt{b^2 - 4ac}\right)\left(-b - \sqrt{b^2 - 4ac}\right)}{4a^2}.
+\]
+Využijeme vzorec pro součin dvojčlenů \( (u+v)(u-v) = u^2 - v^2 \):
+\[
+x_1 \cdot x_2 = \frac{(-b)^2 - (\sqrt{b^2 - 4ac})^2}{4a^2}.
+\]
+Po úpravě:
+\[
+x_1 \cdot x_2 = \frac{b^2 - (b^2 - 4ac)}{4a^2} = \frac{4ac}{4a^2} = \frac{c}{a}.
+\]
+
+Tyto vztahy tedy platí pro každou kvadratickou rovnici s reálnými kořeny:
+\[
+\begin{aligned}
+x_1 + x_2 &= -\frac{b}{a}, \\[6pt]
+x_1 \cdot x_2 &= \frac{c}{a}.
+\end{aligned}
+\]
+
+
+\subsubsection*{Viètovy vzroce}
+Tyto elegantní vztahy mezi kořeny a koeficienty kvadratické rovnice poprvé formuloval na konci 16. století 
+\textbf{François Viète} (1540 - 1603), významný francouzský matematik, 
+který zavedl systematické používání písmen pro neznámé i známé veličiny.  
+Díky němu se algebra stala obecnou symbolickou řečí matematiky a právě tyto vztahy —
+ známé jako \textbf{Viètovy vztahy} — umožňují nejen ověřit správnost výpočtu, 
+ ale i sestavit kvadratickou rovnici, známe-li její kořeny.
+
+\begin{definitionbox}
+\textbf{Viètovy vztahy:}
+\[
+x_1 + x_2 = -\frac{b}{a}, \qquad x_1 \cdot x_2 = \frac{c}{a}.
+\]
+\end{definitionbox}
+
+\medskip
+Tyto vztahy lze využít i opačně:  
+Pokud známe kořeny \(x_1, x_2\), můžeme rovnici zpětně sestavit ve tvaru
+\[
+a(x - x_1)(x - x_2) = 0,
+\]
+který po roznásobení dává
+\[
+ax^2 - a(x_1 + x_2)x + a x_1 x_2 = 0.
+\]
+Porovnáním s obecným tvarem \(ax^2 + bx + c = 0\) znovu vidíme, že
+\[
+-b = a(x_1 + x_2) \quad \text{a} \quad c = a x_1 x_2.
+\]
+
+\begin{examplebox}
+\textbf{Ukázkový příklad: Sestavení kvadratické rovnice z daných kořenů}
+
+Najděme všechny kvadratické rovnice, jejichž kořeny jsou 
+\[
+x_1 = -1, \qquad x_2 = \tfrac{3}{4}.
+\]
+
+Každá kvadratická rovnice s kořeny \(x_1\) a \(x_2\) musí mít tvar
+\[
+a(x - x_1)(x - x_2) = 0,
+\]
+kde \(a \in \mathbb{R}\) a \(a \neq 0\).  
+Tento zápis zachycuje celou rodinu rovnic, které mají stejné kořeny, protože volba koeficientu \(a\) odpovídá jen násobení rovnice nenulovou konstantou.
+
+Po dosazení známých kořenů získáme
+\[
+a(x + 1)\left(x - \tfrac{3}{4}\right) = 0.
+\]
+
+Roznásobením dostáváme
+\[
+a\left(x^2 + x - \tfrac{3}{4}x - \tfrac{3}{4}\right)
+=
+a\left(x^2 + \tfrac{1}{4}x - \tfrac{3}{4}\right)
+= 0.
+\]
+
+Všechny kvadratické rovnice s těmito kořeny tedy mají tvar
+\[
+ax^2 + \tfrac{a}{4}x - \tfrac{3a}{4} = 0,
+\]
+kde \(a\neq 0\).
+
+Pro pohodlnější zápis můžeme rovnici vynásobit čtyřmi a dostaneme ekvivalentní rodinu rovnic
+\[
+4ax^2 + ax - 3a = 0.
+\]
+
+Zvolíme-li například \(a = 4\), dostáváme rovnici bez zlomků
+\[
+4x^2 + x - 3 = 0,
+\]
+která má kořeny přesně \(-1\) a \(\tfrac{3}{4}\), stejně jako všechny ostatní rovnice této rodiny.
+
+\end{examplebox}
+
+
+
+
+\section{Kvadratická rovnice s parametrem}
+
+V dosud řešených úlohách byly koeficienty kvadratické rovnice pevně danými reálnými čísly, 
+zatímco v této části budeme uvažovat obecnější situaci, kdy se některý z koeficientů 
+stává proměnným \textit{parametrem}.  
+Taková rovnice nemá jedno konkrétní řešení, ale celou rodinu řešení, 
+protože její tvar i počet kořenů závisí na hodnotě parametru.  
+Cílem nebude vždy nalézt konkrétní kořeny, nýbrž určit, 
+\textit{pro které hodnoty parametru má rovnice řešení, kolik jich je, případně jaké vlastnosti mají}.  
+
+Kvadratické rovnice s parametrem tak představují přirozený most mezi obyčejným počítáním a 
+obecnějším algebraickým myšlením, v němž nepracujeme s jedním konkrétním případem, 
+ale s celou množinou případů současně.
+
+\begin{definitionbox}
+\textbf{Kvadratická rovnice s parametrem} je rovnice tvaru
+\[
+a(p)x^2 + b(p)x + c(p) = 0,
+\]
+kde alespoň jeden z koeficientů závisí na parametru \(p \in \mathbb{R}\), 
+přičemž stále platí podmínka \(a(p) \neq 0\).
+\end{definitionbox}
+
+Výhodou parametrického zápisu je možnost zkoumat, 
+jak se mění počet řešení rovnice při různých hodnotách parametru.  
+Nápovědí je opět diskriminant:
+\[
+D(p) = b(p)^2 - 4a(p)c(p),
+\]
+který sám o sobě bývá funkcí parametru.  
+Počet kořenů pak určujeme stejně jako u běžné kvadratické rovnice:
+
+\[
+\begin{array}{lll}
+D(p) > 0 & \Rightarrow & \text{rovnice má dva různé reálné kořeny},\\[4pt]
+D(p) = 0 & \Rightarrow & \text{rovnice má jeden (dvojnásobný) kořen},\\[4pt]
+D(p) < 0 & \Rightarrow & \text{rovnice nemá reálné kořeny}.\\
+\end{array}
+\]
+
+To však nebývá vše — často jsme po studentovi požádáni, 
+aby našel takové hodnoty parametru, 
+pro něž má rovnice např. \textit{kladné řešení}, \textit{záporné řešení}, 
+\textit{kořen v určitém intervalu}, 
+či aby měla \textit{právě jeden kořen}, popřípadě aby byla \textit{řešitelná}.
+
+\subsubsection*{Obvyklý postup řešení}
+Typické úlohy lze řešit podle následujícího schématu:
+
+\begin{enumerate}[label=\arabic*.]
+  \item Vyjádříme rovnici v obecnějším tvaru a najdeme kořen (nebo kořeny) v závislosti na parametru.
+  \item Ošetříme \textbf{podmínky smysluplnosti} – například nesmí nastat dělení nulou, tedy určité hodnoty parametru je nutno vyloučit.
+  \item Získáme kořen (nebo kořeny) jako funkci parametru.
+  \item Na závěr uplatníme dodatečnou podmínku:  
+    – kořen má být kladný,  
+    – kořen má být $\ge$ určitá hodnota,  
+    – kořen má ležet v daném intervalu,  
+    – rovnice má mít právě jeden kořen (tedy \(D(p)=0\)).
+\end{enumerate}
+
+\subsubsection*{Ukázkový příklad}
+
+\begin{examplebox}
+\textbf{Najděte všechny hodnoty parametru \(a\), pro které má rovnice}
+\[
+4 - a = \frac{2}{x - 1}
+\]
+\textbf{kladný kořen.}
+
+Nejprve upravíme rovnici na tvar bez zlomku:
+\[
+(4 - a)(x - 1) = 2.
+\]
+
+Za předpokladu, že \(4 - a \neq 0\), vydělíme:
+\[
+x - 1 = \frac{2}{4 - a},
+\qquad
+x = 1 + \frac{2}{4 - a}.
+\]
+
+Toto je kořen rovnice vyjádřený pomocí parametru.  
+Aby byl kladný, musí platit
+\[
+1 + \frac{2}{4 - a} > 0.
+\]
+
+Řešením této nerovnice získáme přípustné intervaly hodnot parametru \(a\).  
+Navíc musíme vyloučit hodnotu \(a = 4\), protože by došlo k dělení nulou.
+
+\textbf{Výsledkem je množina všech hodnot parametru, pro které vyjde kladný kořen.}
+\end{examplebox}
+
+\begin{examplebox}
+\textbf{Najděte všechna reálná čísla \(m\), pro která má rovnice}
+\[
+\frac{3x - 1}{m} - 5 = 2x
+\]
+\textbf{kořen splňující \(x \ge 4\).}
+
+Rovnice je ekvivalentní tvaru
+\[
+3x - 1 = m(2x + 5).
+\]
+
+Za předpokladu \(m \neq 0\) vyjádříme kořen:
+\[
+3x - 1 = 2mx + 5m,
+\]
+\[
+x(3 - 2m) = 5m + 1,
+\]
+\[
+x = \frac{5m + 1}{3 - 2m},
+\qquad
+3 - 2m \neq 0.
+\]
+
+A protože má platit \(x \ge 4\), získáváme nerovnici
+\[
+\frac{5m + 1}{3 - 2m} \ge 4,
+\]
+kterou vyřešíme standardní metodou racionálních nerovnic.  
+Součástí řešení je opět kontrola bodů, v nichž by docházelo k dělení nulou.
+\end{examplebox}
+
+
+
+
+
+\section{Kvadratické nerovnice}
+
+Zatímco u kvadratických rovnic hledáme hodnoty, pro které se výraz rovná nule,  
+u kvadratických nerovnic nás zajímá, kdy je kvadratický výraz \textit{větší} nebo \textit{menší} než nula.  
+Jinými slovy, zkoumáme, v jakých intervalech je parabola nad osou \(x\) (kladné hodnoty) nebo pod osou \(x\) (záporné hodnoty).
+
+Řešení kvadratické nerovnice spočívá v určení \textbf{nulových bodů} odpovídající rovnice \(ax^2 + bx + c = 0\)  
+a následném zjištění, jaké znaménko má výraz \(ax^2 + bx + c\) v intervalech vymezených těmito body.  
+Výsledkem je množina všech hodnot \(x\), pro které je nerovnost splněna.
+
+\begin{definitionbox}
+\textbf{Obecný tvar kvadratické nerovnice:}
+\[
+ax^2 + bx + c > 0, \quad ax^2 + bx + c \ge 0, \quad ax^2 + bx + c < 0, \quad ax^2 + bx + c \le 0,
+\]
+kde \(a, b, c \in \mathbb{R}\) a \(a \neq 0\).
+
+Řešením je množina všech reálných čísel \(x\), pro která je výraz \(ax^2 + bx + c\) kladný, záporný nebo nulový,  
+nejčastěji vyjádřená jako interval nebo sjednocení intervalů na číselné ose.
+\end{definitionbox}
+
+\begin{examplebox}
+\textbf{Příklad:}  
+Vyřešte kvadratickou nerovnici
+\[
+x^2 - 3x - 10 \le 0.
+\]
+
+Nejprve najdeme nulové body odpovídající rovnice
+\[
+x^2 - 3x - 10 = 0.
+\]
+
+Tento výraz lze rozložit na součin:
+\[
+(x - 5)(x + 2) = 0.
+\]
+
+Z toho vyplývá, že nulové body jsou
+\[
+x_1 = -2, \quad x_2 = 5.
+\]
+
+Nerovnici tedy můžeme přepsat jako
+\[
+(x - 5)(x + 2) \le 0.
+\]
+
+Součin dvou výrazů je záporný tehdy, když mají různé znaménko.  
+Znamení jednotlivých faktorů určíme podle nulových bodů:
+
+\[
+\begin{array}{c|ccc}
+x & (-\infty,-2) & (-2,5) & (5,\infty) \\ \hline
+x+2 & - & + & + \\
+x-5 & - & - & + \\ \hline
+(x+2)(x-5) & + & - & +
+\end{array}
+\]
+
+Protože hledáme, kdy je výraz \(\le 0\), tedy záporný nebo nulový,  
+řešení tvoří interval mezi nulovými body včetně jejich konců.
+
+\[
+\textbf{Řešení:} \quad K = \langle -2;\,5 \rangle.
+\]
+\end{examplebox}
+
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1}
+
+% =========================
+% ÚLOHA 1 – Kvadratické rovnice k procvičení
+% =========================
+\begin{exercise}[Kvadratické rovnice – procvičování]
+
+Vyřešte následující kvadratické rovnice v oboru reálných čísel \(x \in \mathbb{R}\).
+
+\begin{tasks}(1)
+    \task \(4x^2 + x = 0\)
+    \task \(2x^2 - 5 = 0\)
+    \task \(3x^2 + x - 2 = 0\)
+    \task \(x^2 - 2x - 1 = 0\)
+    \task \(4x^2 - x + 1 = 0\)
+    \task \(3x^2 + x + 2 = 0\)
+    \task \(x^2 + (2\sqrt{3} + 1)x + (3 + \sqrt{3}) = 0\)
+    \task \(x^2 + x(2\sqrt{3} + 1) + 2\sqrt{3} = 0\)
+    \task \(x^2 - \sqrt{2}\,x + x - \sqrt{2} = 0\)
+    \task 
+    $
+    \frac12(2x - 1)^2 - \left[\frac12(x+1)\right]^2
+    =
+    3\left[\left(\frac12 x\right)^2 - \left(\frac12\right)^2\right]
+    $
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Ověření kořenů
+% =========================
+\begin{exercise}[Ověření, že zadané číslo je kořenem rovnice]
+Ověřte, že zadané číslo je kořenem dané kvadratické rovnice.
+
+\begin{tasks}(1)
+
+  \task Ověřte, že číslo \(x = 2 + 3\sqrt{2}\) je kořenem rovnice  
+  \[
+  x^2 - 6x - 10 + 6\sqrt{2} = 0.
+  \]
+
+  \task Ověřte, že číslo \(x = 1 + 2\sqrt{3}\) je kořenem rovnice  
+  \[
+  x^2 - 2x - 11 - 4\sqrt{3} = 0.
+  \]
+
+  \task Ověřte, že číslo \(x = 4 - \sqrt{5}\) je kořenem rovnice  
+  \[
+  x^2 - 8x + 11 - 4\sqrt{5} = 0.
+  \]
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Sestavení kvadratické rovnice z kořenů
+% =========================
+\begin{exercise}[Sestavení kvadratické rovnice z kořenů]
+Sestavte všechny kvadratické rovnice, jejichž kořeny jsou daná čísla.  
+(Využijte vztah \(a(x - x_1)(x - x_2) = 0\), kde \(a \in \mathbb{R}, a \neq 0\).)
+
+\begin{tasks}(2)
+  \task \(x_1 = 2;\; x_2 = -3\)
+  \task \(x_1 = -1;\; x_2 = -1\)
+  \task \(x_1 = 1+\sqrt{3};\; x_2 = 1-\sqrt{3}\)
+  \task \(x_1 = 0;\; x_2 = 5\)
+  \task \(x_1 = \dfrac{1}{10-\sqrt{50}};\; x_2 = \dfrac{1}{10+5\sqrt{2}}\)
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Určení koeficientů z daného kořene
+% =========================
+\begin{exercise}[Určení chybějícího koeficientu a druhého kořene]
+V následujících rovnicích je jeden z kořenů známý. Určete druhý kořen a dopočítejte chybějící koeficient.
+
+\begin{tasks}(2)
+
+  \task Rovnice \(x^2 + px + 6 = 0\) má jeden kořen \(-2\).  
+        Vypočítejte druhý kořen a koeficient \(p\).
+
+  \task Rovnice \(x^2 - 3x + q = 0\) má jeden kořen \(-1\).  
+        Vypočítejte druhý kořen a absolutní člen \(q\).
+
+  \task Rovnice \(x^2 + rx - 12 = 0\) má jeden kořen \(4\).  
+        Vypočítejte druhý kořen a koeficient \(r\).
+
+  \task Rovnice \(x^2 + kx + 2 = 0\) má jeden kořen \(\tfrac{1}{2}\).  
+        Vypočítejte druhý kořen a koeficient \(k\).
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Parametrické kvadratické rovnice
+% =========================
+\begin{exercise}[Parametrické kvadratické rovnice]
+Určete parametry tak, aby kořeny daných kvadratických rovnic splňovaly uvedené podmínky.
+
+\begin{tasks}(1)
+
+  \task Určete všechny hodnoty parametru \(b \in \mathbb{R}\) tak, aby jeden kořen kvadratické rovnice
+  \[
+  2x^2 + bx + 9 = 0
+  \]
+  byl dvakrát větší než druhý kořen.
+
+  \task Určete koeficient lineárního členu \(m \in \mathbb{R}\) tak, aby jeden kořen kvadratické rovnice
+  \[
+  x^2 + mx + 5 = 0
+  \]
+  byl o \(4\) větší než druhý kořen.
+
+  \task Určete všechny hodnoty absolutního členu \(q \in \mathbb{R}\) tak, aby jeden kořen kvadratické rovnice
+  \[
+  4x^2 - 15x + q = 0
+  \]
+  byl druhou mocninou druhého kořene.
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Bonusová úloha se substitucí
+% =========================
+\begin{exercise}[Bonus: Řešení pomocí substituce]
+Řešte v oboru reálných čísel rovnici
+\[
+3x^2 + 15x + 2\sqrt{x^2 + 5x + 1} = 2.
+\]
+
+Naznačte postup řešení pomocí vhodné substituce.
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Rozklad kvadratického trojčlenu
+% =========================
+\begin{exercise}[Rozklad kvadratického trojčlenu na dvojčleny]
+Rozložte následující kvadratické trojčleny na součin dvou lineárních výrazů (pokud je to možné).
+
+\begin{tasks}(2)
+
+  \task \(x^2 - 5x + 6\)
+  \task \(x^2 - 7x + 10\)
+  \task \(x^2 + x - 2\)
+  \task \(x^2 - 11x + 30\)
+  \task \(x^2 + 10x + 25\)
+  \task \(4x^2 + 4x + 1\)
+  \task \(16x^2 - 25\)
+  \task \(15x^2 - 30x\)
+  \task \(2x^2 + x - 1\)
+  \task \(-x^2 + 7x + 8\)
+  \task \(-2x^2 + 11x - 15\)
+  \task \(x^2 + 4x + 5\)
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Racionální rovnice
+% =========================
+\begin{exercise}[Racionální rovnice]
+Řešte následující rovnice s neznámou \(x \in \mathbb{R}\).
+
+\begin{tasks}(1)
+
+  \task 
+  \[
+  \frac{3}{x+2} + \frac{5x}{4 - x^2} = \frac{3}{x-2} + \frac{x}{x^2 - 4}
+  \]
+
+  \task
+  \[
+  1 + 3\left( \frac12 \cdot \frac{x-3}{x-2} - \frac{2}{x-2} \right) = \frac{15}{2x - x^2}
+  \]
+
+  \task
+  \[
+  \left( \frac{x}{x-1} - \frac{x+1}{x} \right) : \left( \frac{x}{x+1} - \frac{x-1}{x} \right) = \frac{x+1}{x-1}
+  \]
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Rovnice s odmocninami
+% =========================
+\begin{exercise}[Rovnice s odmocninami]
+Řešte následující rovnice v oboru reálných čísel \(x \in \mathbb{R}\).
+
+\begin{tasks}(2)
+
+  \task \(\sqrt{x} + x = 2\)
+
+  \task \(3\sqrt{x+5} - 5 = x\)
+
+  \task \(\sqrt{x-1} + \sqrt{x+4} = 5\)
+
+  \task \(\sqrt{x+2} - 2\sqrt{x+7} = -4\)
+
+  \task \(\sqrt{-x} = 2 - \sqrt{2 - x}\)
+
+  \task \(\sqrt{10 - x} + \sqrt{x - 10} = 0\)
+
+  \task \(\sqrt{2x + 7} + \sqrt{x - 5} = \sqrt{3x + 2}\)
+
+  \task \(\sqrt{-x - \sqrt{1 - x}} = 1\)
+
+  \task $
+  \frac{2x}{2\sqrt{3} + \sqrt{x}} = 
+  \frac{2\sqrt{3} - \sqrt{x}}{4 \frac{1}{2}}
+  $
+
+  \task 
+  $
+  \frac{4}{x + \sqrt{x^2 + x}} 
+  - 
+  \frac{1}{x - \sqrt{x^2 + x}} 
+  = 
+  \frac{3}{x}
+  $
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Rovnice řešené metodou substituce
+% =========================
+\begin{exercise}[Rovnice řešené metodou substituce]
+Řešte následující rovnice v oboru reálných čísel \(x \in \mathbb{R}\) pomocí metody substituce.
+
+\begin{tasks}(2)
+
+  \task \(x^4 - 5x^2 + 4 = 0\)
+
+  \task \(x^6 - 7x^3 - 8 = 0\)
+
+  \task \(20x^{-4} + 3x^{-2} - 2 = 0\)
+
+  \task \(5\sqrt[4]{x} - \sqrt{x} - 6 = 0\)
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Rovnice vhodné pro substituci
+% =========================
+\begin{exercise}[Rovnice vhodné pro substituci]
+Řešte následující rovnice v oboru reálných čísel \(x \in \mathbb{R}\).
+
+\begin{tasks}(2)
+  \task $ (1 - x^2)^2 - 2(x^2 - 1) + 1 = 0$
+  \task $(x^2 + 2x - 3)(x^2 + 2x + 1) - 5 = 0$
+  \task $(x^2 - x + 2)^2 - 6\bigl((x^2 - x) - 4\bigr) = 0$
+  \task $(x^2 - 2x + 8)^2 : (x^2 - 2x)^2 - 5 = 0$
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% BONUS 1
+% =========================
+\begin{exercise}[BONUS: Optimalizace s nerovnostmi]
+Kladná reálná čísla \(x, y, z\) splňují nerovnosti
+\[
+xy \ge 2,\qquad xz \ge 3,\qquad yz \ge 6.
+\]
+Jaké nejmenší hodnoty může nabývat výraz
+\[
+13x^2 + 10y^2 + 5z^2 \; ?
+\]
+\end{exercise}
+
+% =========================
+% BONUS 2
+% =========================
+\begin{exercise}[BONUS: Rovnost dvou kvadratických výrazů]
+Předpokládejme, že pro reálná čísla \(a, b\) mají výrazy
+\[
+a^2 + b \qquad \text{a} \qquad a + b^2
+\]
+stejnou hodnotu.
+Jaká nejmenší může být tato společná hodnota?
+\end{exercise}
+
+% =========================
+% BONUS 3
+% =========================
+\begin{exercise}[BONUS: Soustava kvadratických rovnic]
+V oboru reálných čísel řešte soustavu
+\[
+\begin{cases}
+xy + 1 = z^2,\\
+yz + 2 = x^2,\\
+zx + 3 = y^2.
+\end{cases}
+\]
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Pohyb pístu (poloha)
+% =========================
+\begin{exercise}[Pohyb pístu – poloha jako kvadratická funkce]
+V ideálním modelu se poloha pístu ve válci (v metrech) popisuje v závislosti na čase \(t\) (v sekundách) funkcí
+\[
+s(t) = -0{,}5t^2 + 0{,}6t,
+\]
+kde \(t \in \langle 0; 1{,}2 \rangle\). Hodnota \(s(t)\) udává vzdálenost pístu od výchozí polohy.
+
+\begin{enumerate}[label=\alph*)]
+  \item Určete souřadnice vrcholu této paraboly a vysvětlete, co fyzikálně znamenají.
+  \item V jakém čase je píst nejdále od výchozí polohy a jaká je tato maximální vzdálenost?
+  \item Pro jaké hodnoty času je píst dále než \(0{,}25\) m od výchozí polohy?
+  \item V jakých okamžicích se píst nachází ve výchozí poloze? Co to znamená z hlediska jednoho pracovního zdvihu?
+\end{enumerate}
+
+\end{exercise}
+
+% =========================
+% ÚLOHA – Pohyb pístu (rychlost)
+% =========================
+\begin{exercise}[Pohyb pístu – rychlost jako kvadratická funkce]
+Rychlost pístu ve válci (v metrech za sekundu) popisujeme v čase \(t\) (v sekundách) funkcí
+\[
+v(t) = -80t^2 + 64t,
+\]
+kde \(t \in \langle 0; 0{,}8 \rangle\).
+
+\begin{enumerate}[label=\alph*)]
+  \item Určete souřadnice vrcholu grafu funkce \(v(t)\) a vysvětlete, co fyzikálně znamenají.
+  \item V jakých okamžicích je rychlost pístu nulová a jaký význam mají tyto body pro pohyb pístu?
+  \item V jakém intervalu časů je rychlost pístu kladná a v jakém záporná? Co to znamená pro směr pohybu?
+  \item Určete maximální rychlost pístu během sledovaného intervalu.
+\end{enumerate}
+
+\end{exercise}
+
+\setcounter{section}{2}
+% =========================
+% ÚLOHA – Rozměry garáže
+% =========================
+\begin{exercise}[Rozměry obdélníkové garáže]
+Obdélníková garáž má plochu \(24\,\text{m}^2\).  
+Jedna její strana je o \(2\ \text{m}\) delší než druhá.  
+Určete rozměry garáže.
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Rozměry obdélníkového pozemku
+% =========================
+\begin{exercise}[Rozměry obdélníkového pozemku]
+Obdélníkový pozemek má jednu stranu o polovinu delší než druhou.  
+Určete jeho rozměry, jestliže má plochu \(96\,\text{a}\).
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Rozměry lichoběžníku
+% =========================
+\begin{exercise}[Rozměry lichoběžníku]
+Jedna ze základen lichoběžníku je o pětinu větší než jeho výška,  
+druhá základna je o \(1\ \text{cm}\) větší než jeho výška.  
+Určete rozměry tohoto lichoběžníku, jestliže jeho obsah je
+$2115\ \text{cm}^2.$
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Poloměr kruhu před zvětšením
+% =========================
+\begin{exercise}[Poloměr kruhu před zvětšením]
+Když jsme poloměr kruhu zvětšili o \(2\ \text{cm}\), zvětšil se jeho obsah o
+$
+240\pi\ \text{cm}^2.
+$
+Určete poloměr kruhu před zvětšením.
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Plnění vodní nádrže
+% =========================
+\begin{exercise}[Plnění vodní nádrže třemi přívody]
+Vodní nádrž je možno plnit třemi přívody. Druhým přívodem by se nádrž naplnila
+o polovinu delší dobu než prvním, třetím přívodem pak o \(8\) hodin déle než prvním.
+Všemi třemi přívody současně se nádrž naplní za \(4{,}5\) hodiny.
+
+Za jakou dobu by se nádrž naplnila jednotlivými přívody?
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Rychlost vlaku
+% =========================
+\begin{exercise}[Rychlost vlaku a doba jízdy]
+Pokud se rychlost vlaku zvýší o \(9\ \text{km·h}^{-1}\), urazí dráhu \(180\ \text{km}\)
+o \(40\) minut dříve než při původní rychlosti.
+
+Vypočítejte čas, za který by vlak ujel tuto dráhu při původní rychlosti.
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Dvojciferné číslo
+% =========================
+\begin{exercise}[Dvojciferné číslo se zadanými vlastnostmi]
+Najděte dvojciferné číslo, pro které platí:
+
+\begin{itemize}
+  \item ciferný součet je \(9\),
+  \item po prohození číslic vznikne nové číslo, které po vynásobení původním číslem
+        dává součin \(2430\).
+\end{itemize}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Dva rezistory v obvodu
+% =========================
+\begin{exercise}[Určení odporů dvou rezistorů]
+V obvodu, v němž jsou zapojeny paralelně dva rezistory, prochází při napětí 
+\(24\ \text{V}\) proud \(4\ \text{A}\).  
+Pokud tyto rezistory zapojíme sériově, klesne proud na \(0{,}75\ \text{A}\).
+
+Určete odpory obou rezistorů.
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Kvadratické nerovnice
+% =========================
+\begin{exercise}[Řešte kvadratické nerovnice]
+Řešte následující kvadratické nerovnice v oboru reálných čísel.
+
+\begin{tasks}(2)
+
+  \task \(x^2 - 1 \ge 0\)
+  \task \(x^2 - 16 \le 0\)
+  \task \(-x^2 - 4x - 3 \ge 0\)
+  \task \(x^2 - 1 < 0\)
+
+  \task \(x^2 - 9x + 14 \ge 0\)
+  \task \(x^2 + 4x + 9 \le 0\)
+  \task \(-x^2 - 2x + 8 > 0\)
+  \task \(x^2 - 6x + 7 < 0\)
+
+  \task \(x^2 - x - 12 < 0\)
+  \task \(2x^2 - 3x + 1 > 0\)
+  \task \(2x^2 + 3x + 4 > 0\)
+  \task \(x^2 - 8x + 12 \ge 0\)
+
+  \task \(4x^2 > 12x\)
+  \task \(4x - x^2 > 12\)
+  \task \(x(x - 2) \le 2x - 4\)
+  \task \(x^2 + 2x - 3 \ge 0\)
+
+  \task \(x^2 + 6 > -2x\)
+  \task \((x - 1)(x - 2) > 0\)
+  \task \((x + 3)(x - 5) \le 0\)
+  \task \(2x^2 - 5x - 7 > 0\)
+
+  \task \(2x^2 - x - 6 < 0\)
+  \task \(x^2 - x - 1 \ge 0\)
+  \task \(x^2 + 2x + 1 \le 0\)
+  \task \(x^2 + 8x + 16 \ge 0\)
+
+  \task \(x^2 - 4x - 12 \ge 0\)
+  \task \(-2(x^2 - 1) + 2(1 - x) - 5 \le 0\)
+
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Racionální nerovnice
+% =========================
+\begin{exercise}[Řešte racionální nerovnice]
+Řešte následující nerovnice v oboru reálných čísel.
+
+\begin{tasks}(2)
+
+\task \(\displaystyle \frac{x^4 + x^2 + 1}{x^2 - 4x - 5} < 0\)
+
+\task \(\displaystyle \frac{x^2 + 4x + 4}{2x^2 - x - 1} > 0\)
+
+\task \(\displaystyle \frac{x^2 - 5x + 6}{x^2 + x + 1} < 0\)
+
+\task \(\displaystyle \frac{1 - 2x - 3x^2}{3x - x^2 - 5} > 0\)
+
+\task \(\displaystyle \frac{x^2 - 5x + 12}{x^2 - 4x + 5} > 3\)
+
+\task \(\displaystyle \frac{x^2 - 3x + 24}{x^2 - 3x + 3} < 4\)
+
+\task \(\displaystyle \frac{4}{1 + x} + \frac{2}{1 - x} < 1\)
+
+\task \(\displaystyle \frac{x^4 - 3x^3 + 2x^2}{x^2 - x - 30} > 0\)
+
+\task \(\displaystyle \frac{2(x - 3)}{(x - 1)(x - 10)} \ge \frac{1}{x - 2}\)
+
+\task \(\displaystyle \frac{7}{(x - 2)(x - 3)} + \frac{9}{x - 3} < -1\)
+
+\task \(\displaystyle \frac{(x - 1)(x + 2)(2 - x)}{(3 - x)(x - 4)} \le 0\)
+
+\task \(\displaystyle \frac{(x - 1)^2 \cdot 5x (x + 2)}{(x - 4)(x - 5)^2} \ge 0\)
+
+\end{tasks}
+
+\end{exercise}
+
+
+
+% =========================
+% ÚLOHA 4
+% =========================
+\begin{exercise}[Parametrická rovnice – kladný kořen]
+Najděte všechna reálná čísla \(a\) tak, aby daná rovnice měla kladné řešení:
+\begin{tasks}
+  \task $ 4 - a = \dfrac{2}{x - 1}$
+  \task $ x \geq 4:\dfrac{3x - 1}{m} - 5 = 2x$
+  \task $ \dfrac{5x - 3}{p} + 2 = x$
+  \task $ 4x - k = \dfrac{8}{x - 1}$
+\end{tasks}
+\end{exercise}
+
+
+
+\end{document}

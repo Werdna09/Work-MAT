@@ -1,0 +1,1118 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+\usepackage{polynom}
+
+\title{Exponenciální rovnice a jejich soustavy}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Exponenciální rovnice}
+
+\subsection{Exponenciální rovnice}
+
+Exponenciální rovnice jsou takové rovnice, v níž se neznámá nevyskytuje
+v základní části výrazu, ale v jeho \important{exponentu}. Tato skutečnost výrazně
+ovlivňuje nejen způsob, jakým rovnici upravujeme, ale i metody, které při jejím řešení používáme.
+
+\medskip
+
+Obecně můžeme exponenciální rovnici zapsat ve tvaru
+\[
+    a^{f(x)} = b^{g(x)},
+\]
+kde $a>0$, $a\neq1$ a také $b>0$. Výrazy $f(x)$ a $g(x)$ bývají nejčastěji lineární
+nebo kvadratické funkce.
+
+\begin{examplebox}
+Uvažujme výraz
+\[
+    2^x = 8.
+\]
+Protože $8 = 2^3$, je zřejmé, že řešením je právě $x=3$.  
+Tedy kořenem této rovnice je množina $K=\{3\}$.
+\end{examplebox}
+
+Tento jednoduchý příklad jasně ukazuje hlavní princip exponenciálních rovnic:
+
+\begin{notebox}
+Hledáme takovou hodnotu exponentu, která při umocnění daného základu 
+vede k požadovanému výsledku.
+\end{notebox}
+
+Tuto situaci si lze velmi dobře představit i graficky. Jak již víme, tak $y = 2^x$ je exponenciální
+křivka a rovnice $2^x = 8$ tedy znamená hledat \textbf{průsečík} grafu exponenciální funkce
+s lineární přímkou $y = 8$.
+
+\begin{notebox}
+Řešení exponenciální rovnice lze chápat jako hledání bodu, 
+ve kterém exponenciální křivka protne danou vodorovnou přímku.
+\end{notebox}
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-2, xmax=5,
+    ymin=0, ymax=10,
+    width=10cm,
+    height=6cm,
+    samples=200,
+    domain=-2:5,
+    title={Grafické znázornění rovnice $2^x = 8$}
+]
+    % exponenciála
+    \addplot[blue, thick] {2^x};
+
+    % přímka y=8
+    \addplot[red, dashed, thick] {8};
+
+    % průsečík (3,8)
+    \addplot[
+        mark=*,
+        mark options={scale=1.2, fill=black},
+    ] coordinates {(3,8)};
+
+\end{axisgraph}
+\end{center}
+
+\subsubsection*{Klíčová vlastnost exponenciální funkce}
+
+Při řešení exponenciálních rovnic využíváme toho, že funkce $y=a^x$ je pro každý
+kladný základ odlišný od jedné \textbf{prostá}. Znamená to, že různým hodnotám $x$
+nemůže přiřadit stejnou funkční hodnotu.
+
+Nejdůležitější vlastnost lze vyjádřit následovně:
+
+\begin{definitionbox}
+\[
+    a^x = a^y \quad \Longleftrightarrow \quad x = y.
+\]
+\end{definitionbox}
+
+Což lze říct jednoduše takto:  
+\emph{Pokud se podaří exponenciální rovnici upravit do tvaru $a^{\text{výraz}_1} = a^{\text{výraz}_2}$, můžeme přejít 
+k rovnici $\text{výraz}_1 = \text{výraz}_2$.}
+
+\begin{examplebox}
+\textbf{Příklad 1.}  
+Upravme obě strany rovnice na stejný základ:
+\[
+    4^x = 16.
+\]
+
+Protože $4 = 2^2$ a $16 = 2^4$, přepíšeme rovnici ve tvaru
+\[
+    (2^2)^x = 2^4.
+\]
+
+Použitím pravidla pro mocninu mocniny získáme
+\[
+    2^{2x} = 2^4.
+\]
+
+Nyní mají oba výrazy stejný základ, a proto stačí porovnat exponenty:
+\[
+    2x = 4 \quad \Longleftrightarrow \quad x = 2.
+\]
+\end{examplebox}
+
+\begin{notebox}
+Tento postup ukazuje, že většina exponenciálních rovnic se snažíme upravit do tvaru
+\[
+    a^x = a^y,
+\]
+protože právě tehdy můžeme využít základní vlastnost exponenciální funkce:
+\[
+    a^x = a^y \;\Longleftrightarrow\; x = y.
+\]
+\end{notebox}
+
+\begin{examplebox}
+\textbf{Příklad 2.}  
+Upravme rovnici tak, aby na obou stranách vystupoval stejný základ:
+\[
+    2 \cdot 2^x \cdot 8 = \frac{2^x \cdot 2^{x+1}}{8}.
+\]
+
+Nejprve vyjádříme všechny konstanty pomocí základu $2$.
+
+Levá strana se tedy změní na
+\[
+    2^1 \cdot 2^x \cdot 2^3 = 2^{1 + x + 3} = 2^{x+4}.
+\]
+
+Pravou stranu rovnice upravíme obdobně:
+\[
+    \frac{2^x \cdot 2^{x+1}}{2^3}
+    = \frac{2^{x + x + 1}}{2^3}
+    = 2^{2x + 1 - 3}
+    = 2^{2x - 2}.
+\]
+
+Tím dostáváme rovnici se stejným základem:
+\[
+    2^{x+4} = 2^{2x-2}.
+\]
+
+Protože se na obou stranách objevuje stejný základ, můžeme porovnat exponenty:
+\[
+    x + 4 = 2x - 2.
+\]
+
+Z čehož plyne:
+\[
+    x = 6.
+\]
+
+Tím jsme našli kořen (tedy $x$-ovou souřadnici průsečíku původních dvou výrazů):  
+\[
+K = \{6\}.
+\]
+\end{examplebox}
+
+Důvod této ekvivalence je jednoduchý:
+
+\begin{itemize}
+    \item pro $a>1$ je funkce $a^x$ přísně \important{rostoucí},  
+    \item pro $0<a<1$ je funkce $a^x$ přísně \important{klesající},
+\end{itemize}
+
+\noindent
+a v obou případech tedy přiřazuje každé hodnotě $x$ právě jednu funkční hodnotu.
+
+\subsubsection*{Důležitý fakt o oboru hodnot}
+
+Exponenciální funkce má obor hodnot:
+\[
+H(f) = (0;\infty),
+\]
+což znamená, že $a^x$ je vždy kladné číslo.
+
+Z toho plynou dvě zásadní skutečnosti:
+
+\begin{itemize}
+    \item výraz $a^x$ \textbf{nikdy} nemůže být roven nule ani zápornému číslu,
+    \item rovnice $a^x = b$ má řešení \textbf{pouze tehdy, když $b>0$}.
+\end{itemize}
+
+Proto pokud $b \le 0$, rovnice $a^x = b$ \textbf{nemá řešení} a pokud $b > 0$, má rovnice \textbf{právě jedno řešení}.
+
+Tento fakt tvoří základní východisko pro řešení rovnic s jedním exponenciálním výrazem.
+
+
+\newpage
+% ============================
+%   M E T O D Y   Ř E Š E N Í
+% ============================
+\subsection{Metody řešení exponenciálních rovnic}
+
+V některých exponenciálních rovnicích se vícekrát objevuje tentýž výraz,
+například $2^x$. V takovém případě lze rovnici často řešit dvěma způsoby.
+
+Je však důležité si uvědomit, že struktura rovnice zásadně ovlivňuje,
+jaké úpravy jsou v dané situaci možné. Pokud se daný výraz objevuje
+\textbf{pouze v násobení či dělení}, můžeme pomocí známých pravidel pro
+mocniny jednoduše převádět výrazy na tvar
+\[
+    a^{f(x)} = a^{g(x)},
+\]
+protože součin $a^m \cdot a^n = a^{m+n}$ i podíl
+$\dfrac{a^m}{a^n} = a^{m-n}$ nám dovolují přímo pracovat s exponenty.
+
+Jakmile však v rovnici vystupuje \textbf{sčítání nebo odčítání exponenciálních výrazů},
+situace se zásadně mění. Sčítání výrazů jako $2^x + 2^{x+1}$ nelze převést
+na jedinou mocninu stejným způsobem, protože exponenty nelze jednoduše sečíst.
+V takových rovnicích proto přímý přepis na tvar
+$a^{f(x)} = a^{g(x)}$ není triviální ani možný.
+
+Právě proto v těchto případech používáme dvě základní metody řešení:
+
+\begin{itemize}
+    \item \textbf{vytýkání společného exponenciálního výrazu},  
+    \item \textbf{substituci}, která nahradí výraz typu $2^x$ novou proměnnou.
+\end{itemize}
+
+Obě metody mají stejný cíl — převést původní exponenciální rovnici
+na jednodušší rovnici v jediné proměnné, kterou pak lze vyřešit
+běžnými algebraickými postupy.
+
+
+Obě metody vedou ke stejnému výsledku, ale každá je výhodná v jiné situaci.
+Následující příklad ukazuje oba přístupy.
+
+
+\begin{examplebox}
+\textbf{Příklad 3.}  
+Řešte rovnici:
+\[
+    3\cdot 2^x + 2^x = 32.
+\]
+\end{examplebox}
+
+\noindent
+Tato rovnice je ideální ukázkou, protože obsahuje dvakrát stejný výraz $2^x$.
+Nejprve si ukážeme řešení pomocí vytýkání.
+
+% ======================
+% METODA 1: VYTÝKÁNÍ
+% ======================
+
+\begin{examplebox}
+\textbf{Metoda 1: Řešení pomocí vytýkání}
+ 
+Máme řešte rovnici:
+\[
+    3\cdot 2^x + 2^x = 32.
+\]
+
+Na levé straně se v obou sčítancích objevuje $2^x$, můžeme jej tedy vytknout:
+\[
+    3\cdot 2^x + 2^x = (3+1)\cdot 2^x = 4\cdot 2^x.
+\]
+
+Tím dostáváme jednodušší rovnici:
+\[
+    4\cdot 2^x = 32.
+\]
+
+Číslo $32$ vyjádříme jako mocninu základu $2$:
+\[
+    32 = 2^5.
+\]
+
+Také $4$ můžeme přepsat jako $2^2$:
+\[
+    2^2 \cdot 2^x = 2^{x+2} = 2^5.
+\]
+
+Nyní již mají obě strany stejný základ, můžeme proto porovnat exponenty:
+\[
+    x + 2 = 5 \quad \Longleftrightarrow \quad x = 3.
+\]
+
+Kořen rovnice je tedy $K=\{3\}$.
+\end{examplebox}
+
+\noindent
+Metoda vytýkání je vhodná tehdy, když lze rychle rozpoznat společný exponenciální
+činitel. V tomto případě vedla k velmi krátkému a přehlednému postupu.
+
+\medskip
+
+Nyní si ukážeme druhý způsob řešení – substituci.
+
+% ======================
+% METODA 2: SUBSTITUCE
+% ======================
+
+\begin{examplebox}
+\textbf{Metoda 2: Řešení pomocí substituce}
+
+Máme řešte rovnici:
+\[
+    3\cdot 2^x + 2^x = 32.
+\]
+
+Nejvhodnější substituce bude:
+\[
+    2^x = t, \qquad t>0.
+\]
+
+Tím převedeme původní rovnici na výrazně jednodušší lineární rovnici:
+\[
+    3t + t = 32 \quad \Longleftrightarrow \quad 4t = 32.
+\]
+
+Vyřešíme ji:
+\[
+    t = 8.
+\]
+
+Vrátíme substituci zpět:
+\[
+    2^x = 8
+\]
+\[
+    2^x = 2^3
+\]
+
+Porovnáme exponenty:
+\[
+    x = 3.
+\]
+
+\medskip
+\textbf{Výsledek:}  
+Kořen rovnice je $K = \{3\}$.
+\end{examplebox}
+
+\noindent
+Substituce je velmi univerzální metoda, která se hodí zejména v případech,
+kdy se v rovnici vyskytuje více různých mocnin téhož základu (např. $2^x$, $2^{x+1}$, $4^x$ apod.).
+V takových úlohách je substituce často přehlednější než vypisování všech mocnin
+pomocí základního výrazu.
+
+
+
+
+\begin{notebox}
+\textbf{Kdy použít vytýkání?}  
+Pokud se výraz $a^x$ vyskytuje ve více sčítancích a všechny je možné snadno upravit
+na tvar $k \cdot a^x$, je vytýkání rychlejší a přehlednější metoda.
+
+\medskip
+
+\textbf{Kdy použít substituci?}  
+Substituce je vhodná tehdy, když rovnice obsahuje více různých mocnin téhož výrazu,
+například $2^x$, $2^{x+1}$, $4^x$, $8^{x-3}$ apod., a je obtížnější rychle odhadnout,
+jak výraz vytknout. Substituce vše zjednoduší na rovnici v nové proměnné $t$.
+\end{notebox}
+
+
+
+\begin{examplebox}
+\textbf{Příklad 4.}  
+Řešte rovnici:
+\[
+    2^{x-1} \cdot \left(\frac{1}{3}\right)^{x-1}
+    \;-\;
+    2^x \cdot \left(\frac{1}{3}\right)^x
+    \;=\;
+    \frac{2}{9}.
+\]
+
+Na první pohled se zdá, že máme v rovnici hned dva exponenciální výrazy:
+\[
+a = 2^x 
+\qquad\text{a}\qquad 
+b = \left(\frac{1}{3}\right)^x.
+\]
+
+Taková substituce však \textbf{nedává smysl}.  
+Pokud bychom zavedli dvě neznámé, objevily by se v rovnici dva parametry a dostali bychom
+nekonečně mnoho dvojic $(a,b)$, které splňují původní vztah.  
+Potřebujeme z obou výrazů vytvořit \textbf{jeden společný základ}.
+
+\medskip
+\textbf{1) Sjednotíme základy}
+
+Využijeme toho, že
+\[
+    \left(\frac{1}{3}\right)^x = \frac{1^x}{3^x}
+\]
+A nyní využijeme poznatku z mocnin a sice, že $1^n = 1 $ a tedy můžeme ještě výraz upravit na:
+\[
+    \frac{1^x}{3^x} = \frac{1}{3^x}
+\]
+Obdobně pak urpavíme i
+\[
+    \left(\frac{1}{3}\right)^{x-1} = \frac{1^{x-1}}{3^{x-1}} = \frac{1}{3^{x-1}}
+\]
+To nyní dosadíme do rovnice:
+\[
+    2^{x-1} \cdot \frac{1}{3^{x-1}}
+    \;-\;
+    2^x \cdot \frac{1}{3^x}
+    \;=\;
+    \frac{2}{9}.
+\]
+
+To lze lépe přepsat jako:
+\[
+    \frac{2^{x-1}}{3^{x-1}}
+    \;-\;
+    \frac{2^x}{3^x}
+    \;=\;
+    \frac{2}{9}.
+\]
+Což ještě můžeme upravit na: 
+\[
+    \frac{2^{x}}{3^{x}} \cdot \frac{2^{-1}}{3^{-1}}
+    \;-\;
+    \frac{2^x}{3^x}
+    \;=\;
+    \frac{2}{9}.
+\]
+
+\[
+    \frac{2^{x}}{3^{x}} \cdot \frac{3}{2}
+    \;-\;
+    \frac{2^x}{3^x}
+    \;=\;
+    \frac{2}{9}.
+\]
+\medskip
+\textbf{2) Zavedeme substituci}
+
+Nyní již můžeme bezpečně zavést substituci jediným výrazem:
+\[
+    t = \left(\frac{2}{3}\right)^x, \qquad t>0.
+\]
+
+Rovnice se změní na:
+\[
+    \frac{3}{2} t - t = \frac{2}{9}.
+\]
+
+Sečteme členy na levé straně:
+\[
+    \left(\frac{3}{2} - 1\right)t = \frac{2}{9}.
+\]
+
+Tedy:
+\[
+    \frac{1}{2}t = \frac{2}{9}
+    \quad\Longrightarrow\quad
+    t = \frac{4}{9}.
+\]
+
+\medskip
+\textbf{3) Vrátíme substituci}
+
+Máme:
+\[
+    \left(\frac{2}{3}\right)^x = \frac{4}{9}
+    = \left(\frac{2}{3}\right)^2.
+\]
+
+Porovnáme exponenty:
+\[
+    x = 2.
+\]
+
+\medskip
+\textbf{Výsledek:}  
+Kořen rovnice je množina
+\[
+K = \{2\}.
+\]
+\end{examplebox}
+
+
+
+\section{Soustavy exponenciálních rovnic}
+
+Obdobně jako jsme v algebře pracovali se soustavami lineárních rovnic, kde jsme hledali takovou
+hodnotu proměnné, která vyhovuje několika rovnicím současně, můžeme podobným způsobem postupovat
+i u soustav rovnic exponenciálních. Zatímco v lineárních úlohách vystupovaly proměnné přímo
+v základních tvarech výrazů, zde se objevují v exponentu, což s sebou přináší několik nových
+postupů a technik. Základní idea však zůstává stejná: hledáme takovou hodnotu (nebo hodnoty)
+proměnných, která splňuje všechny rovnice v soustavě zároveň.
+
+\medskip
+
+V exponenciálních soustavách se často setkáváme s výrazy jako $2^x$, $3^x$ nebo $4^y$, které
+se v obou rovnicích vyskytují opakovaně. Abychom mohli soustavu účinně řešit, snažíme se buď
+využít vlastností exponentů, případně sjednotit základy mocnin, nebo celou úlohu převést
+substitucí na soustavu lineárních rovnic, kterou lze vyřešit známými metodami.
+
+\medskip
+
+Na rozdíl od soustav lineárních rovnic ovšem nemůžeme jednoduše sčítat nebo odčítat celé
+rovnice, protože exponenciální výrazy se nedají spojovat přímo. Namísto toho využíváme
+následující postupy:
+
+\begin{itemize}
+    \item vlastnost exponentů $a^x = a^y \Longleftrightarrow x = y$,  
+    \item \textbf{vhodnou substituci}, která převede exponenciální výrazy na nové proměnné,
+    \item úpravy rovnic pomocí sjednocení základů (např. přepis $4^y = 2^{2y}$),
+    \item v některých úlohách i \textbf{dělení dvou rovnic}, pokud mají společný exponenciální výraz.
+\end{itemize}
+
+Nejčastěji se v soustavách exponenciálních rovnic objevují dvě situace:
+
+\begin{enumerate}[label=\arabic*.]
+    \item Obě rovnice obsahují stejný výraz (například $3^x$ nebo $4^y$), což umožní přímou substituci.
+    \item Rovnice obsahují různé základy, které lze převést na společný základ a následně dosadit 
+          jedinou substituci (například $8^x$ a $2^{3x}$).
+\end{enumerate}
+
+Následující příklad ukazuje typický postup, kdy správná volba substituce výrazně zjednoduší celou soustavu.
+
+\begin{examplebox}
+\textbf{Příklad 1.}  
+Vyřešte soustavu rovnic:
+\[
+\begin{cases}
+2 \cdot 3^x + 3 \cdot 4^y = 24, \\
+3 \cdot 3^x - 10 \cdot 4^y = 7.
+\end{cases}
+\]
+
+V obou rovnicích se objevují výrazy $3^x$ a $4^y$. Zavedením vhodné substituce tak 
+můžeme převést soustavu na tvar velmi podobný běžné lineární soustavě.
+
+\medskip
+\textbf{Substituce:}  
+\[
+a = 3^x, \qquad b = 4^y.
+\]
+
+Po dosazení dostáváme soustavu lineárních rovnic, které již umíme řešit:
+\[
+\begin{cases}
+2a + 3b = 24, \\
+3a - 10b = 7.
+\end{cases}
+\]
+
+\textbf{Úprava soustavy:}
+
+Vynásobíme první rovnici číslem $3$:
+\[
+6a + 9b = 72.
+\]
+
+Druhou rovnici vynásobíme číslem $2$:
+\[
+6a - 20b = 14.
+\]
+
+Rovnice odečteme:
+\[
+(6a + 9b) - (6a - 20b) = 72 - 14,
+\]
+\[
+29b = 58 \quad \Longrightarrow \quad b = 2.
+\]
+
+Dopočteme $a$:
+\[
+2a + 3b = 24,
+\]
+\[
+2a + 6 = 24,
+\]
+\[
+2a = 18 \quad \Longrightarrow \quad a = 9.
+\]
+
+\medskip
+\textbf{Návrat k původní proměnné}
+
+Máme
+\[
+a = 9 = 3^x.
+\]
+Protože $9 = 3^2$, dostáváme:
+\[
+3^2 = 3^x \quad\Longrightarrow\quad x = 2.
+\]
+
+Dále platí
+\[
+b = 2 = 4^y.
+\]
+
+Zapíšeme $4$ jako $2^2$:
+\[
+4^y = (2^2)^y = 2^{2y}.
+\]
+
+Z rovnice
+\[
+2^{2y} = 2
+\]
+plyne
+\[
+2y = 1 \quad\Longrightarrow\quad y = \frac{1}{2}.
+\]
+
+\medskip
+Výsledek je tedy uspořádaná dvojice, která reperezentuje bod v kartézské soustavě prvků:
+\[
+K = \left\{\, \left[2;\ \frac{1}{2}\right] \right\}.
+\]
+
+\end{examplebox}
+
+
+
+\newpage
+\section{Exponenciální nerovnice}
+
+Po vyřešení exponenciálních rovnic se přirozeně dostáváme k exponenciálním nerovnicím,
+které řešíme velmi podobným způsobem. Základní rozdíl spočívá v tom, že zde nehledáme jedinou
+hodnotu proměnné, ale takové hodnoty, pro něž je daný exponenciální výraz větší či menší než
+zadané číslo nebo jiný exponenciální výraz. Přestože pracujeme s podobnými výrazy jako v rovnicích,
+ujíždí se řešení nerovnic o jednu důležitou vlastnost exponenciální funkce – její monotónnost.
+
+\medskip
+
+Exponenciální funkce $y = a^x$ je pro každý základ $a>0$, $a\neq1$, prostá, a kromě toho je také
+buď ryze rostoucí (pokud $a>1$), nebo ryze klesající (pokud $0<a<1$). Tato vlastnost přímo určuje,
+jak se bude měnit směr nerovnosti při přechodu od tvaru
+\[
+a^{f(x)} \quad \text{vs.} \quad a^{g(x)}
+\]
+k porovnání samotných exponentů.
+
+\begin{notebox}
+\textbf{Monotónnost exponenciální funkce:}
+
+\begin{itemize}
+    \item Pokud $a > 1$, pak platí:  
+    \[
+        a^{f(x)} > a^{g(x)} \quad\Longleftrightarrow\quad f(x) > g(x).
+    \]
+
+    \item Pokud $0 < a < 1$, pak platí:  
+    \[
+        a^{f(x)} > a^{g(x)} \quad\Longleftrightarrow\quad f(x) < g(x),
+    \]
+    tedy se \textbf{směr nerovnosti obrací}.
+\end{itemize}
+
+\end{notebox}
+
+Tato skutečnost je klíčová a tvoří základ veškerého řešení exponenciálních nerovnic.
+Jakmile se podaří vyjádřit obě strany nerovnice stejným základem, můžeme místo exponenciální
+nerovnice řešit obyčejnou nerovnici exponentů, a to se správným směrem podle uvedených pravidel.
+
+\medskip
+
+V praxi se nejčastěji setkáváme se třemi typy:
+
+\begin{enumerate}[label=\arabic*.]
+    \item Nerovnice se stejným základem:  
+          \[
+              a^{f(x)} > a^{g(x)}.
+          \]
+
+    \item Nerovnice s různými základy, které lze převést na jeden (např. $4 = 2^2$, $8 = 2^3$).
+
+    \item Nerovnice tvaru $a^x > b$, kde $b>0$, které lze řešit přepisem $b$ na mocninu základu $a$.
+\end{enumerate}
+
+\begin{examplebox}
+\textbf{Příklad 1.}  
+Vyřešte nerovnici:
+\[
+    2^{3x-1} \; < \; 16.
+\]
+
+Nejprve převedeme pravou stranu na mocninu se stejným základem:
+\[
+16 = 2^4.
+\]
+
+Tím získáváme nerovnici
+\[
+    2^{3x-1} < 2^4.
+\]
+
+Protože základ $2>1$, exponenciální funkce je rostoucí, a proto můžeme porovnat
+pouze exponenty \textit{bez změny směru nerovnosti} tedy:
+\[
+    3x - 1 < 4.
+\]
+
+Vyřešíme nerovnici:
+\[
+3x < 5 \quad\Longrightarrow\quad x < \frac{5}{3}.
+\]
+
+\medskip
+\textbf{Řešení:}  
+\[
+K = \left(-\infty,\; \frac{5}{3}\right).
+\]
+\end{examplebox}
+
+Nerovnici lze velmi dobře chápat i graficky: hledáme, pro které hodnoty proměnné leží graf exponenciální
+funkce pod (nebo nad) hodnotou daného čísla, tedy kdy je křivka umístěna na jedné straně vodorovné přímky
+$y = 16$.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-2, xmax=4,
+    ymin=0, ymax=20,
+    width=15.5cm,
+    height=12cm,
+    samples=300,
+    domain=-2:4,
+    restrict y to domain=0:20,
+    unbounded coords=discard,
+    title={Grafické znázornění nerovnice $2^{3x-1} < 16$},
+]
+    % Exponenciála
+    \addplot[blue, thick] {2^(3*x - 1)};
+
+    % Vodorovná přímka
+    \addplot[red, dashed, very thick] {16};
+
+    % Průsečík
+    \addplot[
+        mark=*,
+        mark options={scale=1.4, fill=black},
+    ] coordinates {(5/3,16)};
+
+    % Svislá čára
+    \addplot[dashed, gray] coordinates {(5/3,0) (5/3,16)};
+\end{axisgraph}
+\end{center}
+
+
+
+\begin{notebox}
+Výsledek nerovnice odpovídá těm hodnotám $x$, pro které leží graf exponenciály
+$\;y = 2^{3x-1}\;$ pod vodorovnou přímkou $y=16$.  
+Přesně v bodě $x = \frac{5}{3}$ se grafy dotýkají.
+\end{notebox}
+
+
+
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1}
+
+% =========================
+% ÚLOHA 1 – Základní exponenciální rovnice
+% =========================
+\begin{exercise}[Základní exponenciální výrazy]
+Vyřešte následující exponenciální výrazy
+\begin{tasks}(3)
+    \task $2^x = 4$
+    \task $2^x = 8$
+    \task $3^x = 9$
+    \task $4^x = 16$
+    \task $2^{2x} = 64$
+    \task $3^x = \dfrac{1}{3}$
+    \task $3^x = \frac{1}{81}$
+    \task $5^x = 125$
+    \task $5^x = 625$
+    \task $3^x = \sqrt{3}$
+    \task $7^{2x} = 49$
+    \task $9^x = 3$
+    \task $2^{x+1} = 16$
+    \task $4^{x-2} = 1$
+    \task $8^{x} = 2$
+    \task $5^{x+1} = 25$
+    \task $\left(\dfrac12\right)^{x} = 4$
+    \task $2^{3x} = 32$
+    \task $81^{-x} = 27$
+    \task $4^{(x+3)(2-5x)} = 1$
+    \task $3^{5-x} = 3^{4+x}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 2 – Exponenciální rovnice s úpravami mocnin
+% =========================
+\begin{exercise}[Exponenciální rovnice s úpravami mocnin]
+Vyřešte následující exponenciální rovnice.
+
+\begin{tasks}(3)
+    \task $\dfrac{1}{5^{2x-4}}=125$
+    \task $9^{x+1} \;=\; 3 \cdot 27^{x}$
+    \task $\sqrt[x]{2\sqrt{8}} \;=\; \sqrt[x]{16}\cdot 2$
+    \task $25^x = \left(\dfrac{1}{5}\right)^{x^2}$
+    \task $\sqrt[3]{3^{2x}} \;=\; \dfrac{1}{3}$
+    \task $\left(\dfrac{3}{4}\right)^{\frac{x}{3}} = \sqrt[3]{\left(\dfrac{4}{4}\right)^{x}}$
+    \task $\dfrac{27}{8}\left(\dfrac{2}{3}\right)^{x} \;=\; \dfrac{4}{9}\left(\dfrac{9}{4}\right)^{x+2}$
+    \task $\sqrt[\frac{1}{x}]{\dfrac{4^{4}}{16^{x}}} \;=\; 4\left(\dfrac{1}{2}\right)^{x}$
+    \task $\left(\dfrac{1}{2}\right)^{x-1} \;=\; 8 \cdot \left(\dfrac{1}{2}\right)^{3x}$
+    \task $4^{x-1} \cdot 8 \;=\; 2^{3x}$
+    \task $5^{x+2} \;=\; 125 \cdot 25^{x}$
+    \task $\sqrt{2^{x+1}} \;=\; 8$
+    \task $7 \cdot 7^{x} \;=\; 343$
+    \task $2 \cdot 2^x \cdot 4^{2-x} \;=\; \dfrac{8}{2^{3x+1}}$
+    \task $\dfrac{9 \cdot 3^x}{\sqrt{3}\cdot \sqrt[3]{9^x}} \;=\; \dfrac{\sqrt[4]{3^x}}{27}$
+    \task $2 \cdot 2^x \cdot 8 \;=\; \dfrac{2^x \cdot 2^{x+1}}{8}$
+    \task $\dfrac{3^x}{9^{x-2}} \;=\; \dfrac{27^{x}}{9 \cdot 3^{4-x}}$
+    \task $2^x \cdot 5^x = 0,1 \cdot \left(10^{x-1}\right)^5$
+    \task $\star \; \dfrac{6^{x^2}}{2^{-15}} = \dfrac{3^{-15}}{6^{12-12x}}$
+    \task \text{$\star \; 0,25^{2-\sqrt{5x+1}} = 4 \cdot 2^{\sqrt{5x+1}}$}
+    \task $\star \; 9^{x(x-1) - 0,5} = \sqrt{3}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 3 – Exponenciální rovnice (pokročilejší úpravy)
+% =========================
+\begin{exercise}[Pokročilé exponenciální rovnice]
+Vyřešte následující rovnice.
+
+\begin{tasks}(2)
+\task $2^{3x-1} \cdot 4 = 8^{x+1} \cdot \left(\dfrac{1}{2}\right)^{x}$
+\task $\sqrt[4]{4^{x}} \cdot \sqrt[3]{2^{x-3}} = \sqrt[6]{16}$
+\task $\dfrac{1}{3^{x}}
+      = \dfrac{1}{\sqrt{3}} \cdot \sqrt[6]{27^{3 - 3x}} \cdot \left(\dfrac{1}{9}\right)^{x+3}$
+\task $0.25 \cdot \left(\dfrac{1}{4}\right)^{2x} = 1$
+\task $2 \cdot 0.5^{\,x + \tfrac{8}{3}x} = \dfrac{8}{\sqrt[3]{4}}$
+\task $5^{x} \cdot 2^{x} = 100^{x-1}$
+\task $\dfrac{81}{16}
+      = \left(\dfrac{2}{3}\right)^{x} \cdot \left(\dfrac{9}{4}\right)^{x+1}$
+\task $\dfrac{3^{x}}{2 \cdot 3^{\sqrt{3}}} = 4.5$
+
+\end{tasks}
+
+\end{exercise}
+
+
+
+% =========================
+% ÚLOHA 4 – Exponenciální rovnice s kombinovanými výrazy
+% =========================
+\begin{exercise}[Kombinované exponenciální rovnice]
+Vyřešte následující rovnice pomocí vytýkání.
+
+\begin{tasks}(2)
+    \task $3 \cdot 2^{x} + 2^{x} = 32$                    %  x = 3
+    \task $2 \cdot 3^{x} + 3^{x+1} = 5$                   %  x = 0
+    \task $\dfrac{3^{x+4}}{9} + 9 \cdot 3^{x} = \dfrac{2}{3}$   %  x = -3
+    \task $3^{x} - 2 \cdot 3^{x-1} + 3^{x-2} - 2 \cdot 3^{x-3} = 30$  % x = 4
+    \task $2^{2-x} = 2^{4-x} - 3\sqrt[3]{2}$              %  x = \tfrac{5}{3}
+    \task $2 \cdot 4^{-x} - 9 \cdot 2^{x} + 4 = 0$        %  (tu klidně můžeš nechat jako těžší/na diskusi, ale řešení je reálné)
+    \task $4^{x} + 4^{\frac{3}{2}-x} = 9$                %  x = 0 nebo x = \tfrac{3}{2}
+    \task $5 \cdot 2^{x+1} - 3 \cdot 2^{x} = 56$          %  x = 3
+    \task $3^{2x} - 3^{x+1} = 54$                         %  x = 2
+    \task $7^{x} + 7^{x-1} = 56$                          %  x = 2
+    \task $9^{x} - 3^{x+1} = 54$                          %  x = 2
+    \task $2^{x} + 4^{x} = 20$                            %  x = 2
+    \task $3^{x} + 3^{-x} = \dfrac{10}{3}$                %  x = 1 nebo x = -1
+    \task $5^{x} - 5^{2-x} = 0$                           %  x = 1
+    \task $2^{x+2} + 2^{1-x} = 6$                         %  x = 0 nebo x = -1
+    \task $2^{v} + 2^{v+1} = 24$
+    \task $9^{v+2} + 5\cdot9^{v+1} = 14$
+    \task $3^{x} + 3^{x+1} = 108$
+    \task $3^{x+2} + 9^{x+1} = 810$
+    \task $2^{x+1} + 2^{x-1} + 2^{x+3} = \dfrac{21}{8}$
+    \task $7 \cdot 4^{-x+2} = 3 \cdot 4^{-x+3} - 5$
+    \task $\dfrac{4}{5} \cdot 5^{0} + 5^{-1} - 25^{x} + 20 \cdot 25^{x-1} = 0$
+    \task $3^{x} \cdot \left(\dfrac{1}{2}\right)^{x} + 3^{x+1} \cdot \left(\dfrac{1}{2}\right)^{x+1} = \dfrac{5}{3}$
+    \task $2^{2x} \cdot 5^{x} - 2^{2x-1} \cdot 5^{x+1} = -600$
+\end{tasks}
+
+\end{exercise}
+
+
+
+% =========================
+% ÚLOHA 6 – Exponenciální rovnice řešené substitucí
+% =========================
+\begin{exercise}[Kombinované exponenciální rovnice]
+Vyřešte následující exponenciální rovnice pomocí substituce.
+
+\begin{tasks}(2)
+    \task $2^{x-1}\left(\dfrac{1}{3}\right)^{x-1} - 2^{x}\left(\dfrac{1}{3}\right)^{x} = \dfrac{2}{9}$
+    \task $20 \cdot 2^{x} - 2^{x+1} = 3^{x+2} - 3^{x}$
+    \task $3 \cdot 5^{x-2} + 7 \cdot 5^{x-3} = 5 \cdot 5^{x-3} + 5^{x-1}$
+    \task $3 \cdot 2^{2-x} + 2 \cdot 2^{1-x} = 8 \cdot 3^{2-x} + 3 \cdot 3^{1-x}$
+    \task $2 \cdot 4^{x} - 3^{x-\tfrac12} = 3^{x+\tfrac12} + 2 \cdot 2^{2x-1}$
+    \task $9^{x+1} + 5 \cdot 6^{x} = 4^{x+1}$
+    \task $4 \cdot 16^{x} + 4^{x+1} = 2 \cdot 8^{x+1} + 2^{3x}$
+    \task $2^{4x} - 50 \cdot 2^{2x} = 896$
+    \task $4^x + 2^x - 6 = 0$
+    \task $3^{x+2} + 9^{x+1} = 810$
+    \task $3^x + 3^{x+1} - 5^{x+1} = 5^x - 3^{x+3} + 5^{x+2}$
+    \task $\dfrac{2^{x+3} \cdot 3^{x+2}}{6^{7-x} \cdot 8^{x-1}} = \dfrac{9^{x-2}}{3}$
+\end{tasks}
+
+\end{exercise}
+
+
+\begin{exercise}[Exponenciální rovnice]
+Vyřešte následující rovnice pomocí substituce.
+\begin{tasks}(2)
+
+    \task $4^{2x} - 6 \cdot 4^{x} + 8 = 0$
+    \task \(\dfrac{1}{4} \cdot 2^{x} + \dfrac{1}{2} \cdot 4^{x} = 9\)
+    \task $9 \cdot 3^{x} + 3^{-x} = 10$
+    \task $3^{2x} - 4 \cdot 3^{x} = -3$
+    \task $2^{x+3} + 2^{3-x} = 20$
+    \task $4^{x} + 2^{x+1} = 24$
+    \task $5^{x-1} + 5^{1-x} = 2$
+    \task $7^{2x} - 14 \cdot 7^{x} + 49 = 0$
+    \task $9^{x+1} - 27 \cdot 3^{x} = 0$    
+    \task $9^{x-0{,}5} + 9^{0{,}5-x} = \dfrac{10}{3}$
+    \task $2\left(\dfrac{1}{4}\right)^{x}
+           - 3\left(\dfrac{1}{2}\right)^{x}
+           = \bigl[\,1 + \left(\dfrac{1}{2}\right)^{x}\bigr]
+             \left(\dfrac{1}{4}\right)^{-1}$
+    \task $5^{2x}\bigl(5^{2x} - 5\bigr)
+           = 3\bigl(5^{2x+1} + 5^{2x}\bigr) + 50$
+\end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{2}
+% =========================
+% ÚLOHA 8 – Základní exponenciální nerovnice
+% =========================
+\begin{exercise}[Základní exponenciální nerovnice]
+Řešte následující nerovnice s neznámou $x \in \mathbb{R}$.
+
+\begin{tasks}(3)
+    \task $3^{x+5} < 1$
+    \task $2^{3x-4} \ge 1$
+    \task  $0{,}1^{\,2x} \le 1$
+    \task $\left(\dfrac{1}{2}\right)^{x+3} > 1$
+    \task $3^{x-5} < 0$
+    \task $\left(\dfrac{1}{5}\right)^{3x+2} \ge 0$
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9 – Exponenciální nerovnice s různými základy
+% =========================
+\begin{exercise}[Exponenciální nerovnice s různými základy]
+Řešte následující nerovnice s neznámou $x \in \mathbb{R}$.
+
+\begin{tasks}(3)
+    \task $3^{x-1} > 9$
+    \task $0{,}125^{\,2x+3} \le 16$
+    \task $3^{2x} \le 7$
+    \task $0{,}2^{\,x} > 3$
+    \task $4^{x} \cdot 2^{x} \le 100$
+    \task $\left(\dfrac{2}{7}\right)^{x} \cdot 3^{x+4} > -1$
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 10 – Porovnání exponentů v nerovnicích
+% =========================
+\begin{exercise}[Exponenciální nerovnice – porovnání exponentů]
+Řešte následující nerovnice s neznámou $x \in \mathbb{R}$.
+
+\begin{tasks}(3)
+    \task $3^{x+4} \ge 3^{2x-1}$
+    \task $4^{x+5} < 16^{x+1}$
+    \task $0{,}2^{\,3x-2} \ge 0{,}2^{\,x+5}$
+    \task $\left(\dfrac{1}{6}\right)^{x^{2}} < \left(\dfrac{1}{6}\right)^{2x+8}$
+    \task $2^{x} \cdot 2^{x+1} < 2^{x+3}$
+    \task $\left(\dfrac{1}{2}\right)^{x} \cdot \dfrac{1}{2} < \dfrac{1}{8}$
+\end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{3}
+% =========================
+% ÚLOHA 11 – Soustavy exponenciálních rovnic
+% =========================
+\begin{exercise}[Soustavy exponenciálních rovnic]
+Vyřešte následující soustavy rovnic. Vhodně použijte substituci.
+
+\begin{tasks}(2)
+    \task 
+    $\begin{cases}
+        2^{x} + 5 \cdot 3^{y} = 53,\\[2mm]
+        7 \cdot 2^{x} - 3^{y} = 47
+    \end{cases}$
+    \task
+    $\begin{cases}
+        2^{x+1} + 3^{y} = 31,\\[2mm]
+        2^{x} - 3^{y-2} = -1
+    \end{cases}$
+    \task
+    $\begin{cases}
+        2 \cdot 2^{x-y} + 2^{x+y-1} = 20,\\[2mm]
+        10 \cdot 2^{x-y-1} - 2^{x+y} = -22
+    \end{cases}$
+    \task
+    $\begin{cases}
+        16^{x+y} = 8,\\[2mm]
+        16^{x} + 16^{y} = 6
+    \end{cases}$
+    \task
+    $\begin{cases}
+        5^{\frac{x+y}{2}} : 5^{\frac{y}{4}} = 625,\\[2mm]
+        6^{\frac{x-y}{2}} : 6^{\frac{x}{4}} = 216
+    \end{cases}$
+    \task
+    $\begin{cases}
+        x^{y+1} = 27,\\[2mm]
+        x^{-y+1} = 3^{-1}
+    \end{cases}$
+    \task
+    $\begin{cases}
+        2 \cdot 3^{x} + 3 \cdot 4^{y} = 24,\\[2mm]
+        3 \cdot 3^{x} - 10 \cdot 4^{y} = 7
+    \end{cases}$
+    \task
+    $\begin{cases}
+        0{,}5^{\,x} + 3^{y-1} = 25,\\[2mm]
+        2 \cdot 0{,}5^{x+3} - 3^{y-2} = 1
+    \end{cases}$
+    \task
+    $\begin{cases}
+        81^{x+y} = 27,\\[2mm]
+        81^{x} + 81^{y} = 12
+    \end{cases}$
+    \task
+    $\begin{cases}
+        2^{x+y} + 2^{x-y-1} = 3^{2},\\[2mm]
+        2^{x+y+1} - 3 \cdot 2^{x-y+1} = 2^{2}
+    \end{cases}$
+\end{tasks}
+
+\end{exercise}
+
+
+\setcounter{section}{4}
+% =========================
+% ÚLOHA 12 – Parametry exponenciální funkce
+% =========================
+\begin{exercise}[Určení parametrů z daných bodů]
+Určete reálná čísla $a,b$ tak, aby graf dané exponenciální funkce procházel
+zadanými body v rovině.
+
+\begin{tasks}(2)
+    \task Určete reálná čísla $a,b$ tak, aby graf funkce
+    \[
+        y = 2^{x+a} + b
+    \]
+    procházel body $[-1;-2]$ a $[2;12]$.
+    \task Určete reálná čísla $a,b$ tak, aby graf funkce
+    \[
+        y = 3^{x+a} + b
+    \]
+    procházel body $[0;5]$ a $[2;13]$.
+\end{tasks}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 13 – Shrnutí: mix exponenciálních rovnic
+% =========================
+\begin{exercise}[Shrnující exponenciální rovnice]
+Vyřešte následující rovnice pomocí vhodných postupů.
+
+\begin{tasks}(2)
+    \task $\left(\dfrac{8}{27}\right)^{x} = \dfrac{9}{4}$
+    \task $4 \cdot 2^{x} \cdot \sqrt{2} = 4^{x} \cdot 2$
+    \task $3^{x+1} + 2 \cdot 3^{x} = 5^{x+1} - 2 \cdot 5^{x}$
+    \task $3^{x} - 3^{x-1} - 2 \cdot 3^{x-2} - 3 \cdot 3^{x-3} = 9$
+    \task $\dfrac{5^{x^{2}} \cdot 2^{x^{2}}}{10^{x}} = 1$
+    \task $2 \cdot 4^{x} + 3 \cdot 9^{x} = 5 \cdot 6^{x}$
+    \task $\sqrt[x]{2^{3}} \cdot 8 = \sqrt[x]{2} \cdot 4$
+    \task $2^{2x} \cdot 5^{x+1} = 4^{x+1} + 4^{x}$
+    \task $3^{x} + 2 \cdot 3^{1-x} = 5$
+    \task
+        $\begin{cases}
+            2^{x+1} + 3 \cdot 3^{y} = 42,\\[2mm] 
+            4 \cdot 2^{x} - 9^{\,y-1} = 4.
+        \end{cases}$
+\end{tasks}
+
+\end{exercise}
+
+
+
+\end{document}

@@ -1,0 +1,668 @@
+\subsection{Směrnicový tvar rovnice přímky}
+\label{subsec:Slope_intercept_line_equation}
+
+V předchozích částech jsme přímku popisovali pomocí parametrického
+vyjádření a obecné rovnice. Přímka však může být zároveň grafem funkce.
+Z předchozího studia funkcí víme, že grafem lineární funkce
+\[
+    f(x)=ax+b
+\]
+je přímka.
+
+Zapíšeme-li funkční předpis ve tvaru
+\[
+    y=kx+q,
+\]
+můžeme jej chápat nejen jako předpis funkce, ale také jako rovnici
+přímky. Proměnná $x$ představuje první souřadnici bodu přímky
+a hodnota $y$ jeho druhou souřadnici.
+
+Tento způsob zápisu má jednu důležitou vlastnost. Každé hodnotě
+$x\in\mathbb{R}$ je přiřazena právě jedna hodnota $y$. Přímka zapsaná
+tímto způsobem proto nesmí být rovnoběžná s osou $y$, protože na svislé
+přímce se může pro jednu hodnotu $x$ nacházet nekonečně mnoho bodů
+s různými souřadnicemi $y$.
+
+\begin{definition}\label{def:Slope_intercept_line_equation}
+    Nechť $k,q\in\mathbb{R}$. Rovnici
+    \begin{equation}\label{eq:Slope_intercept_line_equation}
+        y=kx+q
+    \end{equation}
+    nazýváme \textbf{směrnicovým tvarem rovnice přímky}.
+
+    Číslo $k$ nazýváme \textbf{směrnicí přímky} a číslo $q$
+    \textbf{úsekem přímky na ose $y$}.
+\end{definition}
+
+Směrnicovým tvarem lze popsat každou přímku, která není rovnoběžná
+s osou $y$. Pro takovou přímku jsou čísla $k$ a $q$ určena jednoznačně.
+To znamená, že dva různé směrnicové tvary nemohou popisovat tutéž
+přímku.
+
+Svislé přímky mají rovnice tvaru
+\[
+    x=d,
+    \qquad d\in\mathbb{R},
+\]
+a ve směrnicovém tvaru je zapsat nelze.
+
+\subsubsection{Význam koeficientů $k$ a $q$}
+\label{subsubsec:Meaning_slope_intercept_coefficients}
+
+V rovnici
+\[
+    y=kx+q
+\]
+mají oba koeficienty přímý geometrický význam.
+
+Dosadíme-li $x=0$, získáme
+\[
+    y=k\cdot0+q=q.
+\]
+Přímka proto vždy prochází bodem
+\begin{equation}\label{eq:Y_intercept_point}
+    Q[0;q].
+\end{equation}
+
+Číslo $q$ tedy určuje průsečík přímky s osou $y$. Změníme-li pouze
+hodnotu $q$ a směrnici $k$ ponecháme stejnou, posuneme přímku ve
+svislém směru, ale její směr se nezmění. Všechny přímky se stejnou
+směrnicí jsou proto navzájem rovnoběžné nebo totožné.
+
+Směrnice $k$ určuje, jak se změní souřadnice $y$, zvětšíme-li
+souřadnici $x$ o jednu jednotku. Jestliže bod
+\[
+    A[x_A;y_A]
+\]
+leží na přímce, potom bod s první souřadnicí $x_A+1$ má druhou
+souřadnici
+\[
+    y_A+k.
+\]
+
+Směrnice tedy vyjadřuje změnu druhé souřadnice připadající na jednotkovou
+změnu první souřadnice.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1]
+
+        % Osy
+        \draw[<->] (-2,0) -- (5.5,0)
+            node[right] {$x$};
+
+        \draw[<->] (0,-0.8) -- (0,4.7)
+            node[above] {$y$};
+
+        \node[below left] at (0,0) {$O$};
+
+        % Přímka y = kx + q
+        \draw[thick, <->]
+            (-1.5,0.1) -- (5,4)
+            node[above right] {$p:y=kx+q$};
+
+        % Body
+        \coordinate (Q) at (0,1);
+        \coordinate (R) at (2,1);
+        \coordinate (A) at (2,2.2);
+
+        \fill (Q) circle (2pt)
+            node[left] {$Q[0;q]$};
+
+        \fill (A) circle (2pt);
+
+        % Pomocný pravoúhlý trojúhelník
+        \draw[dashed] (Q) -- (R)
+            node[midway, below] {$1$};
+
+        \draw[dashed] (R) -- (A)
+            node[midway, right] {$k$};
+
+        % Úhel phi
+        \draw (0.65,1)
+            arc[start angle=0,end angle=31,radius=0.65];
+
+        \node at (0.82,1.23) {$\varphi$};
+
+        % Hodnota q na ose y
+        \draw (-0.08,1) -- (0.08,1);
+        \node[right] at (0,0.72) {$q$};
+
+    \end{tikzpicture}
+
+    \caption{Geometrický význam koeficientů $k$ a $q$
+    ve směrnicovém tvaru přímky.}
+    \label{fig:Slope_intercept_coefficients}
+\end{figure}
+
+Podle hodnoty směrnice mohou nastat následující případy:
+\begin{itemize}
+    \item je-li $k>0$, přímka je rostoucí;
+    \item je-li $k<0$, přímka je klesající;
+    \item je-li $k=0$, přímka je rovnoběžná s osou $x$.
+\end{itemize}
+
+\begin{remark}\label{rem:Special_slope_intercept_coefficients}
+    Jestliže $q=0$, má přímka rovnici $y=kx$ a prochází počátkem soustavy souřadnic $O[0;0]$.
+
+    Jestliže současně $k=0$, dostáváme rovnici
+    \[
+        y=0,
+    \]
+    která popisuje osu $x$.
+\end{remark}
+
+\subsubsection{Směrnice určená dvěma body}
+\label{subsubsec:Slope_from_two_points}
+
+Uvažujme dva různé body
+\[
+    A[x_A;y_A],
+    \qquad
+    B[x_B;y_B],
+\]
+které leží na přímce
+\[
+    y=kx+q.
+\]
+
+Pro jejich souřadnice platí
+\[
+    y_A=kx_A+q
+\]
+a
+\[
+    y_B=kx_B+q.
+\]
+
+Odečtením první rovnice od druhé získáme
+\begin{align*}
+    y_B-y_A &= kx_B+q-(kx_A+q),\\
+    y_B-y_A &= kx_B-kx_A+q-q, \\
+    y_B-y_A &= k(x_B-x_A).
+\end{align*}
+
+Jestliže $x_A\neq x_B$, můžeme rovnici vydělit rozdílem
+$x_B-x_A$ a dostáváme
+\begin{equation}\label{eq:Slope_from_two_points}
+    k=
+    \frac{y_B-y_A}{x_B-x_A}.
+\end{equation}
+
+Směrnici tedy můžeme chápat jako poměr změny souřadnice $y$ ke změně
+souřadnice $x$:
+\[
+    k=\frac{\Delta y}{\Delta x}.
+\]
+
+Rozdíl
+\[
+    \Delta x=x_B-x_A
+\]
+představuje vodorovnou změnu mezi body, zatímco
+\[
+    \Delta y=y_B-y_A
+\]
+představuje změnu svislou.
+
+Pokud platí $x_A=x_B$, je jmenovatel ve vztahu
+\eqref{eq:Slope_from_two_points} nulový. Body $A$ a $B$ potom leží na
+svislé přímce, jejíž směrnice není definována.
+
+\begin{example}\label{exa:Slope_from_two_points}
+    Určete směrnici přímky procházející body
+    \[
+        A[-2;1],
+        \qquad
+        B[4;4].
+    \]
+
+    Použijeme vztah \eqref{eq:Slope_from_two_points}:
+    \[
+        k
+        =
+        \frac{4-1}{4-(-2)}
+        =
+        \frac{3}{6}
+        =
+        \frac{1}{2}.
+    \]
+
+    Směrnice přímky je tedy
+    \[
+        k=\frac{1}{2}.
+    \]
+
+    To znamená, že při zvětšení souřadnice $x$ o dvě jednotky se
+    souřadnice $y$ zvětší o jednu jednotku.
+\end{example}
+
+\subsubsection{Směrový úhel přímky a funkce tangens}
+\label{subsubsec:Slope_angle_tangent}
+
+Směrnici přímky můžeme vyjádřit také pomocí goniometrických funkcí.
+Uvažujme přímku, která není rovnoběžná s osou $y$, a označme
+$\varphi$ její \textbf{směrový úhel}, tedy úhel, který přímka svírá
+s kladnou poloosou $x$.
+
+Směrový úhel volíme z intervalu
+\[
+    \varphi\in\langle 0^\circ;180^\circ),
+\]
+přičemž pro nesvislou přímku platí
+\[
+    \varphi\neq90^\circ.
+\]
+
+Z pravoúhlého trojúhelníku na obrázku
+\ref{fig:Slope_intercept_coefficients} získáme
+\[
+    \tan\varphi
+    =
+    \frac{\text{změna souřadnice }y}
+         {\text{změna souřadnice }x}.
+\]
+
+Protože směrnice přímky je právě poměrem těchto změn, platí
+\begin{equation}\label{eq:Slope_tangent_relation}
+    k=\tan\varphi.
+\end{equation}
+
+Tento vztah propojuje analytickou geometrii s goniometrickými funkcemi.
+Směrnici můžeme určit ze směrového úhlu a naopak směrový úhel můžeme
+určit ze směrnice.
+
+Je-li známá směrnice $k$, hledáme úhel splňující
+\[
+    \tan\varphi=k.
+\]
+
+Pro kladnou směrnici dostáváme ostrý úhel
+\[
+    0^\circ<\varphi<90^\circ.
+\]
+
+Pro zápornou směrnici musí být směrový úhel tupý:
+\[
+    90^\circ<\varphi<180^\circ.
+\]
+
+\begin{remark}\label{rem:Arctangent_negative_slope}
+    Kalkulačka vrací při výpočtu $\arctan k$ obvykle hodnotu
+    z intervalu
+    \[
+        (-90^\circ;90^\circ).
+    \]
+    Pro zápornou směrnici proto dostaneme záporný úhel. Chceme-li
+    určit směrový úhel přímky z intervalu
+    $\langle0^\circ;180^\circ)$, musíme k této hodnotě přičíst
+    $180^\circ$.
+\end{remark}
+
+\begin{example}\label{exa:Direction_angle_from_slope}
+    Určete směrový úhel přímky se směrnicí $k=-2$.
+
+    Hledáme úhel $\varphi$, pro který platí
+    \[
+        \tan\varphi=-2.
+    \]
+
+    Kalkulačka dává
+    \[
+        \arctan(-2)\doteq-63^\circ26'.
+    \]
+
+    Protože je směrnice záporná, musí být směrový úhel přímky tupý.
+    Přičteme tedy $180^\circ$:
+    \[
+        \varphi
+        \doteq
+        180^\circ-63^\circ26'
+        =
+        116^\circ34'.
+    \]
+
+    Směrový úhel přímky je přibližně
+    \[
+        \varphi\doteq116^\circ34'.
+    \]
+\end{example}
+
+Pro vodorovnou přímku platí
+\[
+    k=0,
+    \qquad
+    \varphi=0^\circ.
+\]
+
+Svislá přímka má směrový úhel
+\[
+    \varphi=90^\circ,
+\]
+ale její směrnice není definována, protože funkce tangens není pro
+úhel $90^\circ$ definována.
+
+\subsubsection{Vztah směrnice a směrového vektoru}
+\label{subsubsec:Slope_direction_vector}
+
+Směrnice i směrový vektor určují směr přímky, a proto spolu musí
+souviset.
+
+Uvažujme přímku
+\[
+    y=kx+q.
+\]
+Zvětšíme-li souřadnici $x$ o jednu jednotku, změní se souřadnice $y$
+o hodnotu $k$. Po přímce se tedy můžeme posunout o vektor
+\begin{equation}\label{eq:Direction_vector_from_slope}
+    \vec{u}=(1;k).
+\end{equation}
+
+Tento vektor je směrovým vektorem přímky. Stejně jako dříve jej můžeme
+nahradit libovolným nenulovým násobkem:
+\[
+    \vec{u}=t(1;k),
+    \qquad
+    t\in\mathbb{R}\setminus\{0\}.
+\]
+
+Naopak má-li přímka směrový vektor
+\[
+    \vec{u}=(u_x;u_y),
+\]
+kde $u_x\neq0$, je její směrnice
+\begin{equation}\label{eq:Slope_from_direction_vector}
+    k=\frac{u_y}{u_x}.
+\end{equation}
+
+Tento vztah opět odpovídá poměru svislé a vodorovné změny.
+
+\begin{example}\label{exa:Slope_from_direction_vector}
+    Určete směrnici přímky, jejímž směrovým vektorem je
+    \[
+        \vec{u}=(-4;6).
+    \]
+
+    Podle vztahu \eqref{eq:Slope_from_direction_vector} platí
+    \[
+        k
+        =
+        \frac{6}{-4}
+        =
+        -\frac{3}{2}.
+    \]
+
+    Přímka má tedy směrnici
+    \[
+        k=-\frac{3}{2}.
+    \]
+
+    Stejnou směrnici bychom získali také z jednoduššího směrového
+    vektoru
+    \[
+        \vec{v}=(2;-3),
+    \]
+    který je nenulovým násobkem původního vektoru.
+\end{example}
+
+Jestliže $u_x=0$, má směrový vektor tvar
+\[
+    \vec{u}=(0;u_y).
+\]
+Takový vektor určuje svislý směr. Přímka je tedy rovnoběžná s osou
+$y$ a její směrnice není definována.
+
+\subsubsection{Přímka určená bodem a směrnicí}
+\label{subsubsec:Line_from_point_and_slope}
+
+Známe-li směrnici přímky a jeden její bod, můžeme její rovnici snadno
+určit.
+
+Uvažujme přímku se směrnicí $k$, která prochází bodem
+\[
+    A[x_A;y_A].
+\]
+
+Směrnicový tvar má podobu
+\[
+    y=kx+q.
+\]
+Protože bod $A$ na přímce leží, musí jeho souřadnice rovnici splňovat:
+\[
+    y_A=kx_A+q.
+\]
+
+Odtud vyjádříme
+\[
+    q=y_A-kx_A.
+\]
+
+Dosazením do směrnicového tvaru dostáváme
+\begin{align*}
+    y
+    &=
+    kx+y_A-kx_A,\\
+    y-y_A
+    &=
+    kx-kx_A.
+\end{align*}
+
+Po vytknutí směrnice $k$ získáme
+\begin{equation}\label{eq:Point_slope_line_equation}
+    y-y_A=k(x-x_A).
+\end{equation}
+
+\begin{definition}\label{def:Point_slope_line_equation}
+    Rovnici
+    \[
+        y-y_A=k(x-x_A)
+    \]
+    nazýváme \textbf{bodově-směrnicovým tvarem rovnice přímky}.
+    Popisuje přímku se směrnicí $k$, která prochází bodem
+    $A[x_A;y_A]$.
+\end{definition}
+
+Výhodou tohoto zápisu je, že nemusíme nejprve určovat koeficient $q$.
+Známý bod a směrnici dosadíme přímo do rovnice.
+
+\begin{example}\label{exa:Line_from_point_and_slope}
+    Určete směrnicový tvar přímky, která prochází bodem
+    \[
+        A[2;-1]
+    \]
+    a má směrnici
+    \[
+        k=\frac{3}{2}.
+    \]
+
+    Použijeme bodově-směrnicový tvar
+    \[
+        y-y_A=k(x-x_A).
+    \]
+
+    Po dosazení dostáváme
+    \begin{align*}
+        y-(-1)
+        &=
+        \frac{3}{2}(x-2),\\
+        y+1
+        &=
+        \frac{3}{2}x-3,\\
+        y
+        &=
+        \frac{3}{2}x-4.
+    \end{align*}
+
+    Hledaná přímka má směrnicový tvar
+    \[
+        p:y=\frac{3}{2}x-4.
+    \]
+
+    Správnost ověříme dosazením bodu $A[2;-1]$:
+    \begin{align*}
+        -1 &= \frac{3}{2} \cdot 2 - 4, \\
+        -1 &= 3 - 4, \\
+        -1 &= -1.  
+    \end{align*}
+\end{example}
+
+\begin{remark}\label{rem:All_lines_through_point_slope}
+    Všechny nesvislé přímky procházející bodem $A[x_A;y_A]$
+    můžeme zapsat jako $y-y_A=k(x-x_A)$, $k\in\mathbb{R}$.
+    Tato soustava však neobsahuje svislou přímku procházející bodem
+    $A$. Tu musíme přidat samostatně: $x=x_A$.
+\end{remark}
+
+\subsubsection{Přímka určená dvěma body}
+\label{subsubsec:Slope_intercept_line_from_two_points}
+
+Jsou-li dány dva různé body
+\[
+    A[x_A;y_A],
+    \qquad
+    B[x_B;y_B],
+\]
+nejprve pomocí vztahu \eqref{eq:Slope_from_two_points} určíme směrnici
+přímky. Poté použijeme jeden ze zadaných bodů v bodově-směrnicovém
+tvaru.
+
+Tento postup lze použít pouze tehdy, když
+\[
+    x_A\neq x_B.
+\]
+
+\begin{example}\label{exa:Slope_intercept_line_from_two_points}
+    Určete směrnicový tvar přímky, která prochází body $A[-2;1], B[4;4]$.
+
+    Směrnici jsme již určili v příkladu
+    \ref{exa:Slope_from_two_points}:
+    \[
+        k=\frac{1}{2}.
+    \]
+
+    Použijeme bod $A[-2;1]$:
+    \begin{align*}
+        y-1
+        &=
+        \frac{1}{2}(x-(-2)),\\
+        y-1
+        &=
+        \frac{1}{2}(x+2),\\
+        y-1
+        &=
+        \frac{1}{2}x+1,\\
+        y
+        &=
+        \frac{1}{2}x+2.
+    \end{align*}
+
+    Hledaná přímka má rovnici
+    \[
+        p:y=\frac{1}{2}x+2.
+    \]
+
+    Dosazením bodu $B[4;4]$ ověříme
+    \[
+        4
+        =
+        \frac{1}{2}\cdot4+2
+        =
+        2+2
+        =
+        4.
+    \]
+\end{example}
+
+\subsubsection{Příslušnost bodu k přímce}
+\label{subsubsec:Point_on_slope_intercept_line}
+
+Bod
+\[
+    P[x_P;y_P]
+\]
+leží na přímce
+\[
+    p:y=kx+q
+\]
+právě tehdy, když jeho souřadnice splňují rovnici
+\begin{equation}\label{eq:Point_on_slope_intercept_line}
+    y_P=kx_P+q.
+\end{equation}
+
+\begin{example}\label{exa:Points_on_slope_intercept_line}
+    Rozhodněte, zda body $C[2;3]$ a $D[-2;0]$ leží na přímce $p:y=\frac{1}{2}x+2$.
+
+    Pro bod $C[2;3]$ po dosazení $x$-ové souřadnice dostáváme
+    \[
+        \frac{1}{2}\cdot2+2
+        =
+        1+2
+        =
+        3.
+    \]
+    Vypočtená hodnota odpovídá $y$-nové souřadnici bodu $C$, a proto
+    \[
+        C\in p.
+    \]
+
+    A pro bod $D[-2;0]$ dostáváme
+    \[
+        \frac{1}{2}\cdot(-2)+2
+        =
+        -1+2
+        =
+        1.
+    \]
+    Druhá souřadnice bodu $D$ je však rovna $0$, a proto
+    \[
+        D\notin p.
+    \]
+\end{example}
+
+\subsubsection{Průsečíky se souřadnicovými osami}
+\label{subsubsec:Slope_intercept_axis_intersections}
+
+Průsečík přímky
+\[
+    y=kx+q
+\]
+s osou $y$ můžeme určit přímo z její rovnice. Protože na ose $y$ platí
+$x=0$, dostáváme bod
+\begin{equation}\label{eq:Slope_intercept_y_axis_intersection}
+    P_y[0;q].
+\end{equation}
+
+Chceme-li určit průsečík s osou $x$, dosadíme $y=0$:
+\[
+    0=kx+q.
+\]
+
+Je-li $k\neq0$, získáme
+\[
+    x=-\frac{q}{k}.
+\]
+Průsečík s osou $x$ má tedy souřadnice
+\begin{equation}\label{eq:Slope_intercept_x_axis_intersection}
+    P_x\left[-\frac{q}{k};0\right].
+\end{equation}
+
+\begin{example}\label{exa:Slope_intercept_axis_intersections}
+    Určete průsečíky přímky $p:y=-2x+4$ se souřadnicovými osami.
+
+    Průsečík s osou $y$ získáme přímo z hodnoty $q=4$:
+    \[
+        P_y[0;4].
+    \]
+
+    Pro průsečík s osou $x$ položíme $y=0$:
+    \begin{align*}
+        0&=-2x+4,\\
+        2x&=4,\\
+        x&=2.
+    \end{align*}
+
+    Průsečík s osou $x$ je
+    \[
+        P_x[2;0].
+    \]
+\end{example}

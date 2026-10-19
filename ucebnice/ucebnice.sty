@@ -1,0 +1,274 @@
+\ProvidesPackage{ucebnice}
+
+% --- Čeština a fonty ---
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[ russian, english, arabic, czech]{babel}
+\usepackage{lmodern}
+
+% --- Typografie ---
+\usepackage[protrusion=true,expansion=true]{microtype}
+\microtypecontext{protrusion=basictext} % ztiší známé varování "item"
+
+% --- Rozvržení stránky ---
+\usepackage[a4paper, top=2.5cm, bottom=2.5cm, left=3cm, right=2.5cm]{geometry}
+
+% --- Barvy, boxy, tabulky ---
+\usepackage{xcolor}
+\usepackage{array, colortbl}
+\usepackage[most]{tcolorbox}
+\usepackage{makecell}
+\tcbuselibrary{listings, skins, breakable}
+
+% --- Barvy (pastely) ---
+\definecolor{pastelblue}{RGB}{173,216,230}
+\definecolor{pastelgreen}{RGB}{193,225,193}
+\definecolor{pastelorange}{RGB}{255,183,120}
+\definecolor{pastelviolet}{RGB}{221,160,221}
+
+% Tabulky – konzistentní tmavší linky/hlavička
+\colorlet{tableborder}{pastelblue!80!black}
+\colorlet{tableheaderdark}{pastelblue!80!black}
+
+% --- Obrázky a popisky ---
+\usepackage{graphicx}
+\graphicspath{{figures/}}
+\usepackage[font=small,labelfont=bf]{caption}
+\usepackage{tikz}
+\usepackage{tikz-3dplot}
+\usetikzlibrary{positioning,calc}
+\usetikzlibrary{angles,quotes}
+
+
+
+% --- Matematika ---
+\usepackage{amsmath, amssymb, mathtools}
+
+
+% --- Pomocné balíčky pro strukturu a seznamy ---
+\usepackage{titlesec}
+\usepackage{enumitem}
+\usepackage{multicol}
+\usepackage{tasks}
+
+% --- Odkazy ---
+\usepackage[colorlinks=true, linkcolor=tableborder, urlcolor=tableborder, citecolor=tableborder]{hyperref}
+\usepackage[nameinlink,noabbrev]{cleveref} % MUSÍ být po hyperref
+\crefname{figure}{obrázek}{obrázky}
+\crefname{table}{tabulka}{tabulky}
+\crefname{equation}{rovnice}{rovnice}
+\crefname{section}{kapitola}{kapitoly}
+\crefname{subsection}{podkapitola}{podkapitoly}
+
+
+% --- Hloubka číslování/obsahu ---
+\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{2}
+
+% --- Záhlaví a zápatí ---
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\setlength{\headheight}{14pt}
+
+\fancyhf{}
+\fancyhead[L]{\textcolor{gray}{Učebnice a pracovní list}}
+\fancyhead[R]{\makebox[\textwidth][r]{\textcolor{gray}{\leftmark}}}
+\fancyfoot[L]{\textcolor{gray}{Ondřej Škubala}}
+\fancyfoot[C]{\makebox[\textwidth][c]{\textcolor{black}{\thepage}}}
+\fancyfoot[R]{\makebox[\textwidth][r]{\textcolor{gray}{2025}}}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% --- Bannery nadpisů (zarovnané vlevo s paddingem) ---
+\setlength{\fboxsep}{6pt}         % vnitřní odsazení v \colorbox
+\newcommand{\bannerpad}{0.5em}    % levý padding textu
+
+\newcommand{\SectionBanner}[1]{%
+  \vspace{1.5ex}%
+  \colorbox{pastelblue!80!black}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep}{%
+      \raggedright \hspace*{\bannerpad}\Large\bfseries #1%
+    }%
+  }%
+  \vspace{1.5ex}%
+}
+
+\newcommand{\SubsectionBanner}[1]{%
+  \vspace{0.6ex}%
+  \colorbox{pastelblue!90!black}{%
+    \parbox{\dimexpr\textwidth-2\fboxsep}{%
+      \raggedright \hspace*{\bannerpad}\bfseries #1%
+    }%
+  }%
+  \vspace{0.6ex}%
+}
+
+\titleformat{\section}{\normalfont\color{black}}{}{0pt}{\SectionBanner}
+\titlespacing*{\section}{0pt}{3ex plus 1ex minus .2ex}{2ex plus .2ex}
+
+\titleformat{\subsection}{\normalfont\color{black}}{}{0pt}{\SubsectionBanner}
+\titlespacing*{\subsection}{0pt}{2ex plus 0.5ex minus .2ex}{1.2ex plus .2ex}
+
+% (Pokud chceš čísla kapitol v banneru: \thesection\quad #1; u podkapitol \thesubsection.)
+
+% --- TikZ (pro quotebox linky apod.) ---
+\usepackage{tikz}
+
+% --- QUOTEBOX: 2 argumenty {citát}{autor} ---
+\newenvironment{quotebox}[2]{%
+  \begin{center}
+  \vspace{1ex}
+  \begin{tikzpicture}
+    \draw[tableborder,thick] (0,0) -- (\textwidth,0);
+  \end{tikzpicture}
+  \par\vspace{1ex}
+  {\itshape #1}%
+  \par\vspace{1ex}
+  \hfill --- {\normalfont #2}%
+  \par\vspace{1ex}
+  \begin{tikzpicture}
+    \draw[tableborder,thick] (0,0) -- (\textwidth,0);
+  \end{tikzpicture}
+  \vspace{1ex}
+  \end{center}
+}{}
+
+% --- Boxy ---
+\newtcolorbox{definitionbox}{
+  colback=pastelblue!30,
+  colframe=pastelblue!80!black,
+  coltitle=black,
+  fonttitle=\bfseries,
+  title=Definice,
+  boxrule=0.8pt,
+  arc=2pt, outer arc=2pt,
+  enhanced, breakable
+}
+
+\newtcolorbox{examplebox}{
+  colback=pastelgreen!30,
+  colframe=pastelgreen!80!black,
+  coltitle=black,
+  fonttitle=\bfseries,
+  title=Příklad,
+  boxrule=0.8pt,
+  arc=2pt, outer arc=2pt,
+  enhanced, breakable
+}
+
+\newtcolorbox{notebox}{
+  colback=pastelorange!30,
+  colframe=pastelorange!80!black,
+  coltitle=black,
+  fonttitle=\bfseries,
+  title=Poznámka,
+  boxrule=0.8pt,
+  arc=2pt, outer arc=2pt,
+  enhanced, breakable
+}
+
+% ----- HISTORICAL BOX -----
+\newtcolorbox{historicalbox}{
+  colback=pastelgreen!10,  % světle zelené pozadí
+  colframe=pastelgreen!70!black, % tmavší rámeček
+  coltitle=black,
+  sharp corners,
+  boxrule=1pt,
+  left=6pt,
+  right=6pt,
+  top=6pt,
+  bottom=6pt,
+  fonttitle=\bfseries,
+  title=Historie,
+  enhanced,
+  breakable
+}
+
+
+% ===========================================
+% KARTÉZSKÁ SOUSTAVA – UČEBNICOVÉ PROSTŘEDÍ
+% ===========================================
+\RequirePackage{pgfplots}
+\pgfplotsset{compat=1.18}
+
+\newenvironment{axisgraph}[1][]{
+  \begin{tikzpicture}
+    \begin{axis}[
+      xlabel={$x$}, ylabel={$y$},
+      axis lines=center,
+      tick align=inside,
+      xmin=-5, xmax=5,
+      ymin=-5, ymax=5,
+      xtick distance=1,
+      ytick distance=1,
+      axis equal image,
+      grid=none,
+      major grid style={gray!40},
+      minor grid style={gray!20},
+      % --- Titulek pod grafem ---
+      title style={
+        font=\bfseries,
+        yshift=-2.5ex,
+        at={(0.5,0)},
+        anchor=north
+      },
+      #1
+    ]
+}{
+    \end{axis}
+  \end{tikzpicture}
+}
+
+
+
+
+% --- Tabulky: centrované sloupcové typy ---
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+
+% --- Číslování úloh podle sekcí ---
+\newcounter{exercise}[section]  % resetuje se po každé sekci
+\renewcommand{\theexercise}{\thesection.\arabic{exercise}} % formát 1.1, 1.2,...
+
+% --- Část "Příklady k procvičení" ---
+\newcommand{\exercisepart}{%
+  \newpage
+  \setcounter{exercise}{0} % <<< resetuje číslování úloh
+  \begin{center}
+    \Huge \bfseries Příklady k procvičení
+  \end{center}
+  \vspace{2em}
+}
+
+
+% --- Úlohy (dlouhé) ---
+\newenvironment{exercise}[1][]{%
+  \refstepcounter{exercise}%
+  \par\noindent\textbf{Úloha \theexercise. #1}\par
+}{\vspace{1em}}
+
+% --- Krátké příklady v mřížce (balíček tasks) ---
+\settasks{label=\alph*), label-format={\normalfont}, column-sep=1.5em}
+
+\newenvironment{exerciseblock}[2][2]{% #1 = počet sloupců, #2 = název
+  \refstepcounter{exercise}%
+  \par\noindent\textbf{Úloha \theexercise. #2}\par
+  \begin{tasks}(#1)
+}{%
+  \end{tasks}\vspace{1em}
+}
+
+
+% --- Box pro řešení ---
+\newtcolorbox{solutionbox}{
+  colback=gray!10, colframe=gray!50,
+  coltitle=black, fonttitle=\bfseries,
+  title=Řešení,
+  boxrule=0.5pt,
+  arc=2pt, outer arc=2pt,
+  enhanced, breakable
+}
+
+% --- Zvýraznění slov (bez tučných small caps kvůli lmodern) ---
+\newcommand{\important}[1]{%
+  \textcolor{pastelblue!60!black}{\textsc{\large\textls[10]{#1}}}%
+}

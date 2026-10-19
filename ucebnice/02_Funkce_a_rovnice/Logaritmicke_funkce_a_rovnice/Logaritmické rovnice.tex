@@ -1,0 +1,1494 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+\usepackage{qrcode}
+
+
+\title{Logaritmické rovnice, nerovnice}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Úvod}
+
+\subsection*{Součin uvnitř logaritmu}
+
+Než začneme zapisovat a dokazovat obecné vzorce pro počítání s logaritmy, je vhodné
+si připomenout, jak fungují mocniny se stejným základem. Vezmeme jednoduchý základ
+$a=2$ a sestavíme tabulku hodnot pro několik vybraných exponentů:
+
+\[
+y = 2^x
+\]
+
+\begin{center}
+\begin{tabular}{c|ccccccccc}
+$x$     & 0 & 1 & 2 & 3 & 4  & 5  & 6  & 8   & 10   \\
+\hline
+$2^x$   & 1 & 2 & 4 & 8 & 16 & 32 & 64 & 256 & 1024 \\
+\end{tabular}
+\end{center}
+
+Z tabulky snadno vyčteme, že
+\[
+16 = 2^4,\qquad 64 = 2^6,\qquad 1024 = 2^{10}.
+\]
+
+Zapisujeme tedy logaritmy:
+\[
+\log_2 16 = 4,\qquad \log_2 64 = 6,\qquad \log_2 1024 = 10.
+\]
+
+Protože však současně platí $16 \cdot 64 = 1024$, můžeme spojit všechny tři zápisy do jediné
+rovnosti:
+\[
+\log_2 16 + \log_2 64 = 4 + 6 = 10 = \log_2 1024.
+\]
+
+Tato jednoduchá úvaha ukazuje, že logaritmus součinu lze přepsat jako součet logaritmů.
+
+\begin{examplebox}
+Z tabulky mocnin dvojky vyčteme
+\[
+16 = 2^4,\qquad 64 = 2^6,\qquad 1024 = 2^{10}.
+\]
+Proto platí
+\[
+\log_2 16 = 4,\qquad
+\log_2 64 = 6,\qquad
+\log_2 1024 = 10.
+\]
+A protože $16 \cdot 64 = 1024$, dostáváme
+\[
+\log_2 16 + \log_2 64 = 4 + 6 = 10 = \log_2 1024.
+\]
+Tedy konkrétní ukázku vzorce
+\[
+\log_2(16 \cdot 64) = \log_2 16 + \log_2 64.
+\]
+\end{examplebox}
+
+
+Nyní si stejnou myšlenku ukážeme obecněji, bez konkrétních čísel. Představme si,
+že máme dvě kladná čísla $r$ a $s$ a jejich logaritmy o základu $a$ (kde $a>0$, $a \neq 1$)
+jsou $\log_a r$ a $\log_a s$. Podle definice logaritmu platí
+
+\[
+a^{\log_a r} = r
+\quad\text{a}\quad
+a^{\log_a s} = s.
+\]
+
+Pokud nyní obě rovnosti vynásobíme, dostaneme
+
+\[
+r \cdot s = a^{\log_a r} \cdot a^{\log_a s}.
+\]
+
+Součin dvou mocnin se stejným základem můžeme přepsat jako jednu mocninu, ve
+které se exponenty sečtou:
+
+\[
+a^{\log_a r} \cdot a^{\log_a s} = a^{\log_a r + \log_a s}.
+\]
+
+Máme tedy
+\[
+r \cdot s = a^{\log_a r + \log_a s}.
+\]
+
+Na druhou stranu ale víme, že $r \cdot s$ je číslo, jehož logaritmus o základu $a$
+je $\log_a (r \cdot s)$, tedy platí
+
+\[
+r \cdot s = a^{\log_a (r \cdot s)}.
+\]
+
+Tento zápis ukazuje, že číslo $r \cdot s$ lze vyjádřit jako mocninu se základem $a$
+dvěma různými způsoby:
+
+\[
+a^{\log_a (r \cdot s)} = a^{\log_a r + \log_a s}.
+\]
+
+Protože je funkce $a^x$ prostá (každé hodnotě $x$ odpovídá právě jedna hodnota
+$a^x$), musí být stejné také exponenty:
+
+\[
+\log_a (r \cdot s) = \log_a r + \log_a s.
+\]
+
+Tím jsme získali první základní vzorec pro práci s logaritmy.
+
+\begin{definitionbox}
+\textbf{Vzorec pro součin uvnitř logaritmu.}
+
+Nechť $a>0$, $a\neq 1$ a nechť $r_1, r_2, \dots, r_n$ jsou kladná reálná čísla. Potom platí
+\[
+\log_a(r_1 r_2 r_3 \cdots r_n)
+=
+\log_a r_1 + \log_a r_2 + \log_a r_3 + \dots + \log_a r_n.
+\]
+
+Zvláštním případem je
+\[
+\log_a(r \cdot s) = \log_a r + \log_a s.
+\]
+\end{definitionbox}
+
+
+
+\subsection*{Podíl uvnitř logaritmu}
+
+Stejným způsobem, jakým jsme v předchozí části získali vztah pro logaritmus součinu,
+můžeme odvodit i vzorec pro logaritmus podílu. Opět využijeme jednoduchý příklad
+z tabulky mocnin dvojky.
+
+Více již víme, že
+\[
+1024 = 2^{10}, \qquad 64 = 2^{6}, \qquad 16 = 2^{4}.
+\]
+
+Zároveň platí
+\[
+\frac{1024}{64} = 16.
+\]
+
+Zapisemeli logaritmy, dostáváme
+\[
+\log_2 1024 = 10,\qquad \log_2 64 = 6,\qquad \log_2 16 = 4,
+\]
+a okamžitě vidíme, že
+\[
+10 - 6 = 4.
+\]
+
+Tedy
+\[
+\log_2 1024 - \log_2 64 = \log_2 16.
+\]
+
+Protože $16 = \frac{1024}{64}$, můžeme výsledek zapsat i kompaktněji:
+\[
+\log_2 1024 - \log_2 64 = \log_2 \left( \frac{1024}{64} \right).
+\]
+
+Tato ukázka nám napovídá analogický vzorec ke vzorci pro součin: logaritmus podílu
+je rozdílem logaritmů.
+
+
+\begin{definitionbox}
+\textbf{Vzorec pro podíl uvnitř logaritmu.}
+
+Pro všechna $a>0$, $a\neq 1$ a pro každá dvě kladná reálná čísla $r, s$ platí
+\[
+\log_a\left(\frac{r}{s}\right)
+=
+\log_a r - \log_a s.
+\]
+
+Obecněji pro podíl více členů píšeme
+\[
+\log_a\!\left(\frac{r_1}{r_2 r_3 \cdots r_n}\right)
+=
+\log_a r_1 - \log_a r_2 - \log_a r_3 - \dots - \log_a r_n.
+\]
+\end{definitionbox}
+
+
+\begin{notebox}
+Existuje i podílový vzorec pro více než dva členy současně, ale jeho zápis je
+nepraktický a v praxi zbytečný. Vystačíme si s opakovanou aplikací základního vztahu
+\[
+\log_a\left(\frac{r}{s}\right) = \log_a r - \log_a s.
+\]
+\end{notebox}
+
+
+
+\subsection*{Logaritmus mocniny}
+
+Po součinu a podílu přichází třetí základní úprava, která se týká výrazů, jež mají
+v argumentu logaritmu mocninu. Je přirozené se ptát, zda lze logaritmus mocniny
+převést na vhodný součet — a ukáže se, že ano, a to velmi elegantně.
+
+Začněme jednoduchým příkladem.
+
+\begin{examplebox}
+Uvažujme výraz
+\[
+\log_2(2^3).
+\]
+
+Protože $2^3 = 2 \cdot 2 \cdot 2$, můžeme psát
+\[
+\log_2(2^3)
+=
+\log_2(2\cdot 2 \cdot 2).
+\]
+
+Použitím vzorce pro logaritmus součinu dostaneme
+\[
+\log_2(2\cdot 2 \cdot 2)
+=
+\log_2 2 + \log_2 2 + \log_2 2.
+\]
+
+Každý z těchto logaritmů má hodnotu $1$, takže
+\[
+\log_2(2^3) = 1 + 1 + 1 = 3 \cdot \log_2 2.
+\]
+
+Exponent $3$ se tedy přenesl před logaritmus jako násobek.
+\end{examplebox}
+
+Tento postup nestojí na žádné zvláštnosti konkrétního čísla $2$ ani exponentu $3$,
+ale funguje obecně. Pokud číslo $r$ umocníme na $s$-tou, znamená to, že jej
+vynásobíme samo sebou $s$-krát:
+\[
+r^s = \underbrace{r \cdot r \cdot \dots \cdot r}_{s\ \text{členů}}.
+\]
+
+A protože logaritmus převádí součin na součet, dostáváme opakovaným použitím
+součinového pravidla
+\[
+\log_a(r^s)
+=
+\log_a r + \log_a r + \dots + \log_a r
+=
+s \cdot \log_a r.
+\]
+
+Tím získáváme třetí základní logaritmický vzorec.
+
+
+\begin{definitionbox}
+\textbf{Vzorec pro logaritmus mocniny.}
+
+Pro všechna $a>0$, $a\neq 1$, libovolné kladné číslo $r$
+a libovolné reálné $s$ platí:
+\[
+\log_a(r^s) = s \cdot \log_a(r).
+\]
+
+Tento vzorec říká, že exponent v argumentu logaritmu lze převést jako
+násobek před logaritmus.
+\end{definitionbox}
+
+
+
+\subsection*{K čemu jsou logaritmické vzorce dobré?}
+
+Dosud jsme se u exponenciálních rovnic setkávali převážně s „hezky vyrobenými“
+příklady, kde šlo obě strany rovnice upravit na stejný základ a následně jen porovnat
+exponenty, což vedlo k rychlému a čistému řešení. V praxi však často narazíme na
+situace, kdy se základy na obou stranách rovnice nechtějí „sjednotit“ žádným rozumným
+způsobem, a právě tam přichází ke slovu logaritmus a naše tři vzorce pro součin, podíl
+a mocninu uvnitř logaritmu.
+
+Podívejme se na rovnici
+\[
+3^{x+1} = 2^{3-2x},
+\]
+která na první pohled nevypadá nijak hrozivě, ale při pokusu o klasickou úpravu velmi
+rychle narazíme na limity čistě mocninných postupů.
+
+\begin{examplebox}
+\textbf{Pokus o řešení bez logaritmu}
+
+Začneme tím, že se pokusíme rovnici $3^{x+1} = 2^{3-2x}$ upravit pouze pomocí
+mocninových pravidel. Přepíšeme obě strany tak, aby se exponenty lépe oddělily:
+
+\[
+3^{x+1} = 3^x \cdot 3,\qquad
+2^{3-2x} = 2^3 \cdot 2^{-2x} = 8 \cdot 2^{-2x}.
+\]
+
+Rovnice tedy přejde na tvar
+\[
+3^x \cdot 3 = 8 \cdot 2^{-2x}.
+\]
+
+Obě strany vydělíme osmi a zároveň vynásobíme $2^{2x}$, abychom dostali všechny
+proměnné do exponentu na jedné straně:
+\[
+\frac{3^x \cdot 3}{8} \cdot 2^{2x} = 1.
+\]
+
+Výrazy s $x$ můžeme spojit dohromady:
+\[
+\frac{3}{8} \cdot 3^x \cdot 2^{2x}
+=
+\frac{3}{8} \cdot (3 \cdot 4)^x
+=
+\frac{3}{8} \cdot 12^x.
+\]
+
+Rovnice se tedy zjednoduší na
+\[
+\frac{3}{8} \cdot 12^x = 1,
+\]
+odkud po vynásobení osmi třetinami dostaneme
+\[
+12^x = \frac{8}{3}.
+\]
+
+Tento tvar je sice přehledný a čistý, ale už nevede k jednoduchému „uhodnutí“ řešení:
+neexistuje žádné pěkné přirozené číslo $x$, pro které by $12^x = \dfrac{8}{3}$ platilo.
+V tuto chvíli nám samotná mocninová pravidla nestačí a potřebujeme silnější nástroj.
+\end{examplebox}
+
+Tímto silnějším nástrojem je právě logaritmus, který dokáže „stáhnout“ exponent dolů
+a převést exponenciální rovnici na obyčejnou lineární rovnici, kterou již umíme snadno
+vyřešit.
+
+\begin{examplebox}
+\textbf{Řešení rovnice pomocí logaritmu}
+
+Vycházíme z upraveného tvaru
+\[
+12^x = \frac{8}{3},
+\]
+který jsme získali v předchozím příkladu. Na obě strany rovnice nyní vezmeme
+logaritmus se stejným základem (na volbě základu nezáleží, může to být například
+desítkový logaritmus, přirozený logaritmus nebo logaritmus o základu $2$):
+
+\[
+\log\left(12^x\right) = \log\left(\frac{8}{3}\right).
+\]
+
+Pomocí vzorce pro logaritmus mocniny vytáhneme exponent $x$ před logaritmus,
+na pravé straně využijeme vzorec pro logaritmus podílu:
+\[
+x \cdot \log 12
+=
+\log 8 - \log 3.
+\]
+
+Nyní už jde jen o obyčejnou lineární rovnici v neznámé $x$, takže stačí vydělit
+koeficientem u $x$:
+\[
+x = \frac{\log 8 - \log 3}{\log 12}.
+\]
+
+
+Vidíme tedy, že kombinací tří základních vzorců
+\[
+\log_a(rs) = \log_a r + \log_a s,\quad
+\log_a\left(\frac{r}{s}\right) = \log_a r - \log_a s,\quad
+\log_a(r^s) = s \log_a r
+\]
+umíme řešit i takové rovnice, kde čistě mocninné úpravy selhávají.
+\end{examplebox}
+
+
+
+\section{Rovnice s logaritmy}
+
+Dosud jsme pracovali především s exponenciálními rovnicemi, v nichž byla neznámá
+vystupující v exponentu, zatímco samotná rovnice byla zapsána pomocí mocnin. Nyní
+se setkáme s rovnicemi, ve kterých se neznámá objevuje přímo uvnitř logaritmu, případně
+dokonce v jeho základu, tedy s rovnicemi typu
+\[
+\log_2 x = 3,\qquad \log_x 8 = 3,
+\]
+a mnoha podobnými.
+
+V rovnici $\log_2 x = 3$ hledáme takové $x>0$, pro které platí, že logaritmus o základu
+$2$ má hodnotu $3$. Zapsáno pomocí exponenciálního tvaru to znamená, že hledáme
+číslo $x$, pro které platí
+\[
+2^3 = x,
+\]
+tedy řešením je $x = 8$. Podobně u rovnice $\log_x 8 = 3$ hledáme takový základ $x>0$,
+$x \neq 1$, aby logaritmus čísla $8$ o tomto základu byl roven $3$, což je ekvivalentní
+zadání
+\[
+x^3 = 8,
+\]
+odkud vyplývá $x = 2$ (při splnění podmínek pro základ logaritmu).
+
+\subsection*{Grafická představa řešení rovnice s logaritmem}
+
+Rovnice $\log_2 x = 3$ má velmi názornou grafickou interpretaci. Uvažujme graf
+funkce
+\[
+y = \log_2 x,
+\]
+tedy logaritmické funkce o základu $2$. Řešením rovnice $\log_2 x = 3$ jsou takové body
+na grafu, které mají souřadnici $y = 3$. Geometricky tedy hledáme průsečík grafu
+funkce $y = \log_2 x$ s vodorovnou přímkou $y = 3$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-1, xmax=10,
+    ymin=-2, ymax=4.5,
+    xlabel={$x$}, ylabel={$y$},
+    samples=200,
+    domain=0.1:10,
+    smooth,
+    ticks=none,
+    width=11cm, height=7cm,
+    title={\small Graf funkce $y = \log_2 x$}
+]
+% log_2 x = ln(x)/ln(2)
+\addplot[thick] {ln(x)/ln(2)};
+
+% vodorovná přímka y=3
+\addplot[dashed] coordinates {(0.1,3) (10,3)};
+
+% vertikální přímka x=8
+\addplot[dashed] coordinates {(8,-2) (8,4.5)};
+
+% Bod (8,0)
+\addplot[only marks, mark=|] coordinates {(8,0)};
+\node[below right] at (axis cs:8,0) {\footnotesize $8$};
+% Bod (0,3)
+\addplot[only marks, mark=|] coordinates {(0,3)};
+\node[left] at (axis cs:0,3) {\footnotesize $3$};
+
+% průsečík (8,3)
+\addplot[only marks, mark=*] coordinates {(8,3)};
+\node[above right] at (axis cs:8,3) {$[8;3]$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Na obrázku je dobře vidět, že graf funkce $y = \log_2 x$ protíná přímku $y = 3$ v bodě
+$[8;3]$, což odpovídá řešení rovnice $\log_2 x = 3$, tedy kořeni $x = 8$. Souřadnice
+x tohoto průsečíku nám udává řešení rovnice, zatímco souřadnice y představuje hodnotu
+logaritmu, kterou rovnice předepisuje.
+
+\subsection*{Zlogaritmování a odlogaritmování rovnice}
+
+Obdobně jako u exponenciálních rovnic jsme se snažili dostat obě strany do tvaru
+\[
+a^{\text{výraz}_1} = a^{\text{výraz}_2}
+\quad\Longleftrightarrow\quad
+\text{výraz}_1 = \text{výraz}_2,
+\]
+budeme nyní u rovnic s logaritmy usilovat o úpravu do tvaru
+\[
+\log_a(\text{výraz}_1) = \log_a(\text{výraz}_2)
+\quad\Longleftrightarrow\quad
+\text{výraz}_1 = \text{výraz}_2,
+\]
+kde $a>0$, $a\neq 1$ a oba výrazy musí mít kladné hodnoty, aby byl logaritmus definován.
+
+Tato úprava funguje proto, že logaritmická funkce o pevném základu $a$ je prostá,
+tedy každé hodnotě argumentu odpovídá právě jedna hodnota logaritmu a naopak.
+Pokud jsou tedy logaritmy dvou kladných čísel stejné, musí být stejná i tato čísla.
+
+V praxi budeme často postupovat dvěma opačnými směry:
+
+buď rovnost vhodně \textbf{zlogaritmujeme}, tedy z rovnice typu
+  \[
+  a^{\text{výraz}} = \text{číslo}
+  \]
+  přejdeme na rovnost logaritmů, kterou pak upravíme pomocí logaritmických vzorců;
+
+nebo naopak \textbf{odlogaritmujeme}, tedy z rovnice ve tvaru
+  \[
+  \log_a(\text{výraz}) = \text{číslo}
+  \]
+  přejdeme na ekvivalentní exponenciální rovnici, kterou vyřešíme pomocí mocnin.
+
+\begin{notebox}
+V této kapitole budeme používat neformální pojmy \textbf{zlogaritmování}
+(„vezmeme logaritmus z obou stran rovnice“) a \textbf{odlogaritmování} („převedeme
+rovnici s logaritmem zpět na exponenciální tvar“). V obou případech jde o využití
+základní ekvivalence
+\[
+\log_a b = c \quad\Longleftrightarrow\quad a^c = b.
+\]
+\end{notebox}
+
+\begin{examplebox}
+\textbf{Řešte rovnici:}
+\[
+\log_2(x-2) = 4.
+\]
+Nejprve určíme podmínky pro výraz uvnitř logaritmu. Zápis $\log_2(x-2)$ je definován
+právě tehdy, když argument logaritmu je kladný:
+\[
+x - 2 > 0 \quad\Longrightarrow\quad x > 2.
+\]
+
+Nyní rovnici odlogaritmujeme, tedy převedeme ji do exponenciálního tvaru pomocí
+ekvivalence $\log_2 y = 4 \Longleftrightarrow y = 2^4$:
+\begin{align*}
+\log_2(x-2) &= 4 \\
+x - 2 &= 2^4 \\
+x - 2 &= 16 \\
+x &= 18.
+\end{align*}
+
+Zkontrolujeme, zda nalezené řešení splňuje podmínku $x>2$, což je zřejmé. Proto je
+\[
+\text{Řešení: } K= \{18\}.
+\]
+\end{examplebox}
+
+\begin{examplebox}
+\textbf{Řešte rovnici:}
+\[
+3 \cdot \log(3x+1) = 6.
+\]
+
+
+Nejprve určujeme podmínky. Výraz $\log(3x+1)$ je definován tehdy, když argument
+logaritmu je kladný:
+\[
+3x + 1 > 0 \quad\Longrightarrow\quad x > -\frac{1}{3}.
+\]
+
+Nyní rovnici upravíme. Nejprve obě strany vydělíme třemi:
+\[
+3 \cdot \log(3x+1) = 6
+\quad\Longrightarrow\quad
+\log(3x+1) = 2.
+\]
+
+Aplikujeme odlogaritmování (tj. ekvivalenci $\log y = 2 \Longleftrightarrow y = 10^2$,
+protože zde používáme dekadický logaritmus):
+\[
+\log(3x+1) = 2
+\quad\Longleftrightarrow\quad
+3x + 1 = 10^{2}.
+\]
+
+Pokračujeme jako u lineární rovnice:
+\begin{align*}
+3x + 1 &= 100 \\
+3x &= 99 \\
+x &= 33.
+\end{align*}
+
+Zkontrolujeme splnění podmínky $x > -\tfrac{1}{3}$, která je zjevně splněna.
+
+\[
+\text{Řešení: } K = \{33\}.
+\]
+\end{examplebox}
+
+To, co jsme doposud dělali, je velmi užitečné — umíme řešit rovnice, v nichž se
+logaritmus vyskytuje samostatně, případně je jen vynásobený či upravený. Může však
+nastat situace, kdy se v jediné rovnici objeví rovnou \emph{dva různé logaritmy},
+navíc každý o jiném základu. V takových úlohách bývá neznámá ukryta hluboko
+uvnitř vnořených logaritmů, takže je třeba postupovat pečlivě a krok za krokem.
+
+
+Podívejme se na konkrétní příklad:
+
+\[
+\log_{0{,}5}\left(\log_4(x)\right) = -4.
+\]
+
+Na první pohled vypadá rovnici komplikovaně, ale ukáže se, že stačí správně rozbalit
+logaritmy a použít odlogaritmování ve správném pořadí.
+
+\begin{examplebox}
+\textbf{Řešte rovnici:}
+\[
+\log_{0{,}5}(\log_4 x) = -4.
+\]
+
+
+\textbf{1. Určíme podmínky.}
+
+Rovnice obsahuje vnořený logaritmus, proto musíme splnit:
+
+1. vnitřní logaritmus $\log_4 x$ má smysl:
+\[
+x > 0,
+\]
+
+2. argument vnějšího logaritmu musí být kladný:
+\[
+\log_4 x > 0
+\quad\Longleftrightarrow\quad
+x > 1.
+\]
+
+Celková podmínka je tedy:
+\[
+x > 1.
+\]
+
+\textbf{2. Odlogaritmujeme vnější logaritmus.}
+
+Použijeme ekvivalenci
+\[
+\log_{0{,}5}(A) = -4 \quad\Longleftrightarrow\quad A = (0{,}5)^{-4}.
+\]
+
+Proto:
+\[
+\log_4 x = (0{,}5)^{-4}.
+\]
+
+Vypočteme pravou stranu:
+\[
+(0{,}5)^{-4} = \left(\frac{1}{2}\right)^{-4} = 2^{4} = 16.
+\]
+
+Máme tedy:
+\[
+\log_4 x = 16.
+\]
+
+\textbf{3. Odlogaritmujeme i vnitřní logaritmus.}
+
+Použijeme ekvivalenci $\log_4 x = 16 \Longleftrightarrow x = 4^{16}$:
+
+\[
+x = 4^{16}.
+\]
+
+\textbf{4. Ověříme podmínky.}
+
+\[
+4^{16} > 1 \quad\text{(platí)}.
+\]
+
+\[
+\text{Řešení: } \{x\} = \{4^{16}\}.
+\]
+
+Poznámka: Zápis $4^{16}$ je naprosto validní a vhodný, neboť číselná hodnota je
+extrémně velká ($4^{16} = 4\,294\,967\,296$).
+\end{examplebox}
+
+
+
+\subsection{Logaritmické nerovnice}
+
+U logaritmických rovnic jsme převáděli logaritmy na exponenty a využívali tří
+základních vzorců pro součin, podíl a mocninu uvnitř logaritmu. U logaritmických
+\emph{nerovnic} je postup velmi podobný, ale přibývá jedna zásadní komplikace:
+logaritmus může být \emph{rostoucí} nebo \emph{klesající} funkce podle svého
+základu. A právě tato vlastnost rozhoduje o tom, zda se znaménko nerovnosti
+při úpravách zachová, nebo obrátí.
+
+\begin{definitionbox}
+\textbf{Monotónnost logaritmické funkce.}
+
+Nechť $a>0$, $a\neq 1$. Pak funkce $y = \log_a x$ má tyto vlastnosti:
+
+\begin{enumerate}[label=\arabic*.]
+  \item je \textbf{rostoucí}, pokud $a>1$,
+  \item je \textbf{klesající}, pokud $0 < a < 1$.
+\end{enumerate}
+Z toho plyne, že:
+
+\[
+\log_a u < \log_a v \quad\Longleftrightarrow\quad
+\begin{cases}
+u < v, & a>1, \\
+u > v, & 0<a<1.
+\end{cases}
+\]
+
+\end{definitionbox}
+
+\begin{notebox}
+Připomínáme, že logaritmus je definován jen tehdy, když jeho argument je
+kladný. U nerovnic proto bude prvním krokem vždy stanovení \textbf{podmínek
+definice}.
+\end{notebox}
+
+\subsubsection*{Jednoduché nerovnice $\log_a(x) > c$}
+
+Základní typ nerovnice řešíme úplným odlogaritmováním.
+
+\begin{examplebox}
+\textbf{Řešte nerovnici:}
+\[
+\log_2(x) > 3.
+\]
+
+\textbf{1. Podmínka:} musí platit $x>0$.
+
+\textbf{2. Odlogaritmování:}
+\[
+\log_2(x) > 3 \quad\Longleftrightarrow\quad x > 2^3,
+\]
+protože $2>1$ je rostoucí logaritmus.
+
+\[
+x > 8.
+\]
+
+\textbf{Řešení: } $(8, +\infty)$.
+\end{examplebox}
+
+\begin{examplebox}
+\textbf{Řešte nerovnici:}
+\[
+\log_{0{,}5}(x) > 3.
+\]
+
+\textbf{1. Podmínka:} $x > 0$.
+
+\textbf{2. Odlogaritmování:} Základ je $0{,}5 < 1$, tedy logaritmus je
+\emph{klesající} a znaménko se otočí:
+\[
+\log_{0{,}5}(x) > 3
+\quad\Longleftrightarrow\quad
+x < (0{,}5)^3.
+\]
+
+\[
+x < \frac{1}{8}.
+\]
+
+\textbf{Řešení: } $(0,\, \tfrac18)$.
+\end{examplebox}
+
+
+\subsubsection*{Nerovnice ve tvaru $\log_a(\text{výraz}) > \log_a(\text{výraz})$}
+
+Pokud mají oba logaritmy stejný základ, můžeme je „odstranit“ podle monotónnosti.
+
+\begin{examplebox}
+\textbf{Řešte nerovnici:}
+\[
+\log_3(2x+1) < \log_3(7-x).
+\]
+
+\textbf{1. Podmínky:} oba argumenty musí být kladné.
+\[
+2x+1 > 0 \quad\Longrightarrow\quad x > -\tfrac12,
+\]
+\[
+7-x > 0 \quad\Longrightarrow\quad x < 7.
+\]
+
+\textbf{2. Protože $3>1$, logaritmus je rostoucí → znaménko se \textbf{nemění}:}
+\[
+2x+1 < 7 - x.
+\]
+
+\textbf{3. Vyřešíme lineární nerovnici:}
+\[
+3x < 6 \quad\Longrightarrow\quad x < 2.
+\]
+
+\textbf{4. Průnik s podmínkami:}
+\[
+x \in\left(-\tfrac12,\, 2\right).
+\]
+
+\textbf{Řešení: } $(-\tfrac12,\, 2)$.
+\end{examplebox}
+
+
+\subsubsection*{Nerovnice s více úpravami uvnitř logaritmu}
+
+\begin{examplebox}
+\textbf{Řešte nerovnici:}
+\[
+2\log_5(x-1) - \log_5(x+4) \ge 1.
+\]
+
+\textbf{1. Podmínky:}
+\[
+x-1 > 0 \Rightarrow x>1,\qquad
+x+4>0 \Rightarrow x>-4.
+\]
+Celkově: $x>1$.
+
+\textbf{2. Úpravy pomocí vzorců:}
+\[
+2\log_5(x-1) = \log_5((x-1)^2),
+\]
+\[
+\log_5((x-1)^2) - \log_5(x+4)
+= \log_5\!\left(\frac{(x-1)^2}{x+4}\right).
+\]
+
+Nerovnice přejde na:
+\[
+\log_5\!\left( \frac{(x-1)^2}{x+4} \right) \ge 1.
+\]
+
+\textbf{3. Odlogaritmování (logaritmus je rostoucí):}
+\[
+\frac{(x-1)^2}{x+4} \ge 5^1 = 5.
+\]
+
+\[
+(x-1)^2 \ge 5(x+4).
+\]
+
+\textbf{4. Kvadratická nerovnice:}
+\[
+x^2 - 2x + 1 \ge 5x + 20,
+\]
+\[
+x^2 - 7x -19 \ge 0.
+\]
+
+\[
+\Delta = 49 + 76 = 125,
+\quad
+x = \frac{7 \pm \sqrt{125}}{2}.
+\]
+
+Znamení paraboly: otevřená nahoru → řešení je:
+\[
+x \le \frac{7 - \sqrt{125}}{2}
+\quad\text{nebo}\quad
+x \ge \frac{7 + \sqrt{125}}{2}.
+\]
+
+\textbf{5. Průnik s podmínkou $x>1$:}
+Dolní interval odpadá, protože $\frac{7 - \sqrt{125}}{2} < 1$.
+
+\[
+\text{Řešení: } x \ge \frac{7 + \sqrt{125}}{2}.
+\]
+\end{examplebox}
+
+\begin{notebox}
+Nejčastější chyba: studenti zapomínají stanovit podmínky a zapíší mezi řešení i
+hodnoty, pro které argument logaritmu není kladný. Logaritmické nerovnice se
+proto vždy řeší ve dvou fázích:
+
+\begin{enumerate}[label=\arabic*.]
+\item Stanovení podmínek existence logaritmů.
+\item Teprve poté řešení nerovnice.
+\end{enumerate}
+
+\end{notebox}
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1}
+
+% =========================
+% ÚLOHA 1 – Ověřte správnost tvrzení o logaritmech
+% =========================
+\begin{exercise}[Ověřte správnost následujících tvrzení]
+    Pomocí definice logaritmu ověřte, zda jsou následující tvrzení pravdivá:
+    \begin{tasks}(2)
+        \task $\log_6 6 = 1$
+        \task $\log_7 49 = 2$
+        \task $\log 100 = 2$
+        \task $\log_2 4 = 16$
+        \task $\log_2 0{,}5 = -1$
+        \task $\log_9 \sqrt{3} = 0{,}25$
+        \task $\log_{27} \sqrt{27} = 0{,}125$
+        \task $\log_5 25 = 3$
+        \task $\log 0{,}01 = -2$
+        \task $\log_3 81 = 4$
+        \task $\log_4 16 = 3$
+        \task $\log_{0{,}1} \frac{1}{10} = -1$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 2 – Vypočítejte hodnoty logaritmů
+% =========================
+\begin{exercise}[Vypočítejte hodnoty následujících logaritmů]
+    Určete hodnotu každého z následujících logaritmů. Použijte definici dekadického logaritmu
+    a základní vzorce pro práci s logaritmy.
+    \begin{tasks}(2)
+        \task $\log 10$
+        \task $\log 100$
+        \task $\log 10^{5}$
+        \task $\log \sqrt{10}$
+        \task $\log 10^{-3}$
+        \task $\log 1$
+        \task $\log 0{,}1$
+        \task $\log 0{,}01$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 3 – Vypočítejte hodnoty logaritmických výrazů
+% =========================
+\begin{exercise}[Vypočítejte hodnoty následujících výrazů]
+    Určete hodnotu výrazů využívajících základní ekvivalenci.
+    \begin{tasks}(2)
+        \task $5^{\log_5 2}$
+        \task $10^{\log_{10} 1}$
+        \task $8^{\,1+\log_{8} 5}$
+        \task $3^{2\log_{3} 4}$
+        \task $2^{\log_{2} 0{,}25}$
+        \task $7^{\log_{7} 14 - \log_{7} 2}$
+        \task $5^{\log_{5} 20 - \log_{5} 4}$
+        \task $4^{\log_{4} 50 + \log_{4} 2}$
+        \task $9^{\log_{9} 3^{3}}$
+        \task $6^{\log_{6} 0{,}1}$
+        \task $10^{\log 5 + \log 2}$
+        \task $2^{\log_2 32 - \log_2 4}$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 4 – Jednoduché rovnice s logaritmem
+% =========================
+\begin{exercise}[Najděte všechny hodnoty proměnné]
+    Najděte všechny hodnoty $x \in (0; +\infty)$, pro něž platí:
+    \begin{tasks}(2)
+        \task $\log_2 x = 0$
+        \task $\log_2 x = 1$
+        \task $\log_2 x = -3$
+        \task $\log_2 x = -\frac{1}{5}$
+        \task $\log_5 x = -3$
+        \task $\log_5 x = 1$
+        \task $\log_5 x = 0$
+        \task $\log_5 x = -\frac{1}{3}$
+        \task $\log_{10} x = 4$
+        \task $\log_{10} x = -2$
+        \task $\log_{10} x = 0$
+        \task $\log_{10} x = 1$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 5 – Hledání vhodného základu logaritmu
+% =========================
+\begin{exercise}[Určete všechny hodnoty parametru $a$]
+    Určete všechna reálná čísla $a$, pro něž platí:
+    \begin{tasks}(2)
+        \task $\log_a 4 = 2$
+        \task $\log_a 0{,}0001 = -2$
+        \task $\log_a 25 = 2$
+        \task $\log_a 0{,}01 = -2$
+        \task $\log_a 16 = 4$
+        \task $\log_a 0{,}0001 = -4$
+        \task $\log_a 9 = 2$
+        \task $\log_a 0{,}09 = -2$
+        \task $\log_a 81 = 4$
+        \task $\log_a 0{,}0001 = -4$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 6 – Bonus: Náčrtky grafů netradičních funkcí
+% =========================
+\begin{exercise}[BONUS: Načrtněte grafy následujících funkcí]
+    Načrtněte grafy těchto funkcí (uveďte také jejich definiční obory):
+    \begin{tasks}(2)
+        \task $y = \log_x 2$
+        \task $y = 2^{\log_2 x}$
+        \task $y = \log_x x$
+        \task $y = x^{\log_x x}$
+        \task $y = \log_x \left(\dfrac{1}{x}\right)$
+        \task $y = \log_x \left(x^{\sqrt{x}}\right)$
+        \task $y = \log_x \left(\log_x x\right)$
+        \task $\star \; y = \log_x x \cdot \bigl(\log_x x^{\log_x (x^{\sqrt{x}})}\bigr)$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 7 – Upravte logaritmické výrazy
+% =========================
+\begin{exercise}[Upravte a vypočítejte hodnotu výrazů]
+    Využijte vzorce pro součin, podíl a mocninu uvnitř logaritmu.
+    \begin{tasks}(2)
+        \task $4\log_6 3 \;+\; 5\log_6 2 \;-\; \log_6 12$
+        \task $\log 1500 \;-\; \log 15$
+        \task $\log_5 10 \;+\; \log_5 12{,}5$
+        \task $-\log_3 4 \;+\; \log_3 6 \;-\; \dfrac{1}{4} \log_3 0{,}5$
+        \task $\dfrac{2}{5} \left( 4\log_6 11 \;-\; \dfrac{1}{6} \log_6 4 \;+\; \log_6 5 \right)$
+        \task $3\log_2 5 \;+\; 2\log_2 3 \;-\; \log_2 60$
+        \task $\log_4 32 \;-\; 2\log_4 3 \;+\; \dfrac{1}{2} \log_4 9$
+        \task $5\log_7 2 \;-\; 3\log_7 4 \;+\; \log_7 14$
+        \task $2\log_3 5 \;+\; \log_3 9 \;-\; \log_3 20$
+        \task $\log_2 40 \;-\; \log_2 5 \;+\; \dfrac{1}{2} \log_2 16$
+        \task $-\log_8 27 \;+\; \log_8 9 \;+\; 2\log_8 6$
+        \task $\dfrac{3}{2} \log_4 8 \;-\; \log_4 2 \;+\; \log_4 32$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 8 – Exponenciální pokles koncentrace DDT
+% =========================
+\begin{exercise}[Rozklad škodlivé látky DDT v potravním řetězci]
+
+    \begin{minipage}[t]{0.68\textwidth}
+        Látka DDT (dichlordifenyltrichlorethan), pro člověka velmi škodlivá, se hromadí 
+        v potravním řetězci a dostává se tak do mléka a dalších potravin.
+        Její koncentrace ve výši $5 \cdot 10^{-6}\,\%$ je v současné době ještě tolerovaná,
+        do budoucna je však požadováno snížit ji na $2 \cdot 10^{-6}\,\%$.
+        Používání DDT je dnes téměř ve všech státech zakázáno, ale chemický rozklad probíhá
+        jen velmi pozvolna — poločas rozkladu je přibližně $30$ let.
+    \end{minipage}
+    \hfill
+    \begin{minipage}[t]{0.28\textwidth}
+        \begin{center}
+          \smallskip
+            \qrcode[height=2cm]{https://www.instagram.com/postrehy_z_wikipedie/p/C-aZd6siaIe/}\\[4pt]
+            {\small Příspěvek k tématu na Instagramu, proč se zakázalo používat DDT.}
+        \end{center}
+    \end{minipage}
+
+    \medskip
+
+    \begin{tasks}(1)
+        \task Předpokládejme, že pokles koncentrace lze popsat vztahem
+        \[
+            C(t) = C_0 \left(\frac{1}{2}\right)^{\frac{t}{30}},
+        \]
+        kde $C_0$ je počáteční koncentrace a $t$ čas v letech.  
+        Zapište rovnici, kterou musí splňovat čas $t$, kdy koncentrace klesne z 
+        $5 \cdot 10^{-6}\,\%$ na $2 \cdot 10^{-6}\,\%$.
+
+        \task Vyřešte tuto rovnici a určete, za jak dlouho (na celé roky) 
+        bude dosaženo požadované nižší koncentrace.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9 – Složitější logaritmické rovnice
+% =========================
+\begin{exercise}[Řešte složitější logaritmické rovnice]
+    Řešte následující rovnice, určete všechny reálné kořeny.
+    \begin{tasks}(1)
+        \task $\log_{2}(x+1) = 3$
+        \task $4\log_{3}(2x-1) = 12$
+        \task $\log_{5}(x-2) + \log_{5}(x+3) = 2$
+        \task $2\log_{4}(x+1) - \log_{4}(x-3) = 2$
+        \task $\log_{\frac12}(2-x) = -2$
+        \task $\log_{4}(5x-4) = 2$
+        \task $\log_{2}\log_{3}\log_{\frac12} x = 0$
+        \task $\log_{\frac12}\log_{3}\bigl(1 + 20\log_{2} x\bigr) = -2$
+        \task $\log_{2}\bigl[14 + 2\log_{7}\bigl(1 + 2\log_{\frac12} x\bigr)\bigr] = 4$
+        \task $\log_{9}\Bigl\{3\log_{2}\bigl[1 + \log_{3}\bigl(1 - 2\log_{3} x\bigr)\bigr]\Bigr\} = 0{,}5$
+        \task $\log_{3}\bigl[5 + \log_{2}(8 - x)\bigr] = 2$
+        \task $\log_{\frac12}\Bigl\{4 + \log_{5}\bigl[10 + \log_{2}(x - 3)\bigr]\Bigr\} = -3$
+        \task $\log_{5}\Bigl\{6 + \log_{2}\bigl[8 + \log_{3}(x - 1)\bigr]\Bigr\} = 2$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 10 – Řešte logaritmické rovnice
+% =========================
+\begin{exercise}[Řešte následující logaritmické rovnice]
+    Určete všechna reálná čísla $x$, pro která mají rovnice smysl a která dané rovnice splňují.
+    \begin{tasks}(2)
+        \task $\log_3(x+5) = \log_3(2x-1)$
+        \task $\log_5(x^2 - 17) = \log_5(x+3)$
+        \task $\log_2(3x - 4) + \log_2(x + 1) = 3$
+        \task $2\log_4(x - 2) - \log_4(x + 6) = 1$
+        \task $\log_{0{,}5}(x + 1) + \log_{0{,}5}(x - 3) = 2$
+        \task $3\log_2(x - 1) + \log_2(x + 3) = 5$
+        \task $\log_7(x^2 - 4) - \log_7(x - 2) = 1$
+        \task $2\log_3(x + 4) - \log_3(x - 1) = 2$
+        \task $\log_{2}(x - 3) + \log_{2}(x + 5) = 4$
+        \task $ \log_{5}(2x + 1) - \log_{5}(x - 1) = 1$
+        \task $\log_{0{,}2}(x + 2) + \log_{0{,}2}(x - 4) = -3$
+        \task $ \log_{4}(x^2 - 9) - \log_{4}(x + 3) = 1$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 11 – Další logaritmické rovnice
+% =========================
+\begin{exercise}[Řešte logaritmické rovnice s neznámou $x \in \mathbb{R}$]
+    Najděte všechna reálná čísla $x$, pro která mají rovnice smysl a která je splňují.
+    \begin{tasks}(2)
+        \task $\log x = 2 - \log 5$
+        \task $\log_{2}(x+14) + \log_{2}(x+2) = 6$
+        \task $\log x = 2\log 5 + \log 4$
+        \task $\log_{5}(x-1) + \log_{5}(x+3) = 2$
+        \task $3\log_{2}(x+1) - \log_{2}(x-3) = 2$
+        \task $\log_{3}(x+4) + \log_{9}(x-2) = 3$  
+        \task $\log_{10}(x+3) - \log_{10} 2 = 1 - \log_{10}(x+2)$
+        \task $\log_{4}(2x+5) - \log_{4}(x+1) = 1$
+        \task $\log_{6}(x+1) + \log_{3} x = 1$
+        \task $\log_{8}\sqrt{x+30} + \log_{8}\sqrt{x} = 1$
+        \task \text{$\log_{10}\sqrt{x-4} + \log_{10}\sqrt{3x+1} = \log_{10} 40 - 1$}
+        \task $\dfrac{2\log_{10}(x+2)}{\log_{10}(3x+10)} = 1$
+        \task \text{$\log\sqrt{x} + \log\!\left(\dfrac{1}{x^{2}}\right) - \log x^{3} + \dfrac{11}{2}
+               = \dfrac{\log x^{2}}{1 + \log 10}$}
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 12 – Logaritmické rovnice s racionálními výrazy
+% =========================
+\begin{exercise}[Řešte logaritmické rovnice]
+    Určete všechna reálná čísla $x$, pro která mají rovnice smysl a která dané rovnice splňují.
+
+    \begin{tasks}(2)
+        \task $\log_{2}\!\left(\frac{3 - x}{x + 3}\right) = -2$
+        \task $\log_{5}\!\left(\frac{2x + 1}{x - 4}\right) = 1$
+        \task $\log_{10}\!\left(\frac{x - 2}{x + 8}\right) = -1$
+        \task $\log_{3}\!\left(\frac{6x - 2}{x - 3}\right) = 2$
+        \task $\log_{\frac12}\!\left(\frac{x}{x + 14}\right) = \dfrac{\log 125}{\log 5}$
+        \task $\log_{7}\!\left(\frac{x^{2} + 1}{x^{2} - 1}\right) = 1$
+        \task $\log_{4}\!\left(\frac{x-2}{x+6}\right) + \log_{4}(x-1) = 1$
+        \task $2\log_{3}(x+4) - \log_{3}(x^{2}-1) = \log_{3} 3$
+        \task $\log_{0{,}5}\!\left(\frac{x+5}{2x-1}\right) - \log_{0{,}5}(x-3) = -2$
+        \task $\log_{2}\!\left(\log_{3}(x+1)\right) = \log_{2}\!\left(\dfrac{1}{\,\log_{3}(x-2)}\right)$
+        \task $\log_{5}\!\left(\frac{x^{2} - 4x + 4}{x^{2} - 9}\right) = 0$
+        \task $ \log_{10}\!\left(\frac{2x + 6}{x - 3}\right) + \log_{10}(x - 5) = 1$
+        \task $\log_{3}\!\left(\frac{x + 1}{x - 2}\right) + \log_{3}(x - 1) = 2$
+        \task $\log_{2}\!\left(\frac{x^{2} - 5x + 6}{x^{2} - 4}\right) = 3$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 13 – Rovnice s logaritmy v zlomku
+% =========================
+\begin{exercise}[Řešte rovnice s neznámou]
+    Řešte v množině reálných čísel $x$:
+    \begin{tasks}(2)
+        \task $\displaystyle \frac{\log_3(6x-2)}{\log_3(x-3)} = 2$
+        \task $\displaystyle \frac{\log_5\left(x - \frac{1}{4}\right)}{\log_5\left(x + \frac{7}{2}\right)} = -1$
+        \task $\displaystyle \frac{2\log(3x)}{\log(2-7x)} = 1$
+        \task $\displaystyle \frac{\log x}{\log(x-2)} = \frac{\log 9}{\log 3}$
+        \task $\displaystyle \frac{\log_2(x-1)}{\log_2(x-3)} = -1$
+        \task $\displaystyle \frac{\log_3(2x+1)}{\log_3(x-2)} = 2$
+        \task $\displaystyle \frac{2\log(3x-1)}{\log(x+4)} = 1$
+        \task $\displaystyle \frac{\log(x^2-5x+6)}{\log(x-1)} = 2$
+        \task $\displaystyle \frac{\log_2(x^2-1)}{\log_2(x-1)} = 3$
+        \task $\displaystyle \frac{\log(x+1)}{\log(x-2)} = 2$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 14 – Řešte složitější logaritmické rovnice
+% =========================
+\begin{exercise}[Řešte složitější logaritmické rovnice]
+    Řešte v množině reálných čísel $x$:
+    \begin{tasks}(2)
+        \task $\left(\log_{2} x\right)^{2} + 2\log_{2} x - 3 = 0$
+        \task $4\log_{9} x \,(\log_{9} x - 1) = 2 + 3\log_{9} x$
+        \task $\left(\log_{\frac12}(x+1)\right)^{2} + 5\log_{\frac12}(x+1) = 6$
+        \task $\left(\log_{2}(x-1)\right)^{2} - 3\log_{2}(x-1) + 2 = 0$
+        \task $2\left(\log_{3}(x+2)\right)^{2} - \log_{3}(x+2) - 1 = 0$
+        \task $2\left(\log_{4}(x-3)\right)^{2} + 3\log_{4}(x-3) - 2 = 0$
+        \task $\left(\log_{2}(x+5)\right)^{2} - 4\log_{2}(x+5) + 3 = 0$
+        \task $3\left(\log_{7}(x-1)\right)^{2} - 2\log_{7}(x-1) - 1 = 0$
+        \task $\left(\log_{10}(x+4)\right)^{2} + \log_{10}(x+4) - 6 = 0$        
+        \task \text{$\left(\log_{5}(x^{2}-4)\right)^{2} - 3\log_{5}(x^{2}-4) + 2 = 0$}
+        \task $\left(\log_{\frac13}(x-2)\right)^{2} + \log_{\frac13}(x-2) = \log_{\frac13} 9$
+        \task $4\log_{3}(2x+1) + \log_{3}\sqrt{2x+1} = \frac{3}{2}\left(\log_{3}(2x+1)\right)^{2}$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 15 – Rovnice s logaritmem v exponentu
+% =========================
+\begin{exercise}[Řešte rovnice s logaritmem v exponentu]
+    Řešte v množině reálných čísel $x$:
+    \begin{tasks}(2)
+        \task $x^{1+\log x} = 100$
+        \task $\sqrt[5]{x^{\log_3 x}} = 243$
+        \task $x^{\sqrt{x}} = (\sqrt{x})^{x}$
+        \task $(\sqrt{x})^{\log_x (x-2)} = x$
+        \task $x^{\log_2 x} = 16$
+        \task $x^{\log_5 (x+4)} = 125$
+        \task $(x-1)^{\log_x 9} = 27$
+        \task $x^{\log_4 (x-3)} = 64$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 16 – Exponenciálně-logaritmické rovnice
+% =========================
+\begin{exercise}[Řešte exponenciálně-logaritmické rovnice]
+    Řešte v množině reálných čísel $x$:
+    \begin{tasks}(2)
+        \task $x + \log_{2}\!\left(8 + 2^{x}\right) = 7$
+        \task $x + \log_{2}\!\left(1 - 3\cdot 2^{x}\right) = x \log_{2} 4$
+        \task $\log_{3}\!\left(4\cdot 2^{x}\right) + \log_{3} 3^{x+2} = \log_{3} 36^{x}$
+        \task $\log_{5}\!\left(10\cdot 25^{x}\right) - \log_{5}\!\left(5^{x} + 25\right) = x + 1$
+        \task $\log_{2}\!\left(5\cdot 2^{x} - 8\right) = x + 2$
+        \task $\log_{3}\!\left(2\cdot 3^{x} - 3\right) = x$
+        \task $\log_{4}\!\left(2^{x+1} + 8\right) = x$
+        \task \text{$\log_{2} 3 + \log_{2} 4^{\,x+\sqrt{x}} = \log_{2}\!\left(2^{x+\sqrt{x}+1} + 4\right) + 2$}
+        \task $\log_{5}\!\left(3\cdot 5^{x} - 10\right) + 1 = x$
+        \task $\log_{2}\!\left(4 + 2^{x+1}\right) - x = 3$
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{2}
+% =========================
+% ÚLOHA 17 – Řešte logaritmické nerovnice
+% =========================
+\begin{exercise}[Řešte následující logaritmické nerovnice]
+    Řešte v množině reálných čísel $x$:
+    \begin{tasks}(2)
+        \task $\log_{3}(x-1) > \log_{3} 3$
+        \task $\log_{5}(2x+3) \leq 1$
+        \task $\log_{10}(x-3) + \log_{10}(2x-1) < 0$
+        \task $\log_{2}(x+1) \geq \log_{2}(5 - x)$
+        \task $2\log_{4}(x-1) - \log_{4}(x+3) > 1$
+        \task $\log_{0{,}5}(x-2) + \log_{0{,}5}(x-4) \leq -2$
+        \task $\log_{3}(x+2) < \log_{3}(7 - x)$
+        \task $3\log_{2}(x-1) + \log_{2}(x+3) \geq 5$
+        \task $\log_{7}(x^{2} - 4) - \log_{7}(x - 2) < 1$
+        \task $2\log_{3}(x + 4) - \log_{3}(x - 1) \leq 2$
+        \task $\log_{2}(x - 3) + \log_{2}(x + 5) > 4$
+        \task $\log_{5}(2x + 1) - \log_{5}(x - 1) \geq 1$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 18 – Logaritmické nerovnice
+% =========================
+\begin{exercise}[Řešte logaritmické nerovnice]
+    Řešte v množině reálných čísel $x$:
+    \begin{tasks}(2)
+        \task $\log_{3}(2x - 1) \ge \log_{3}(4x + 3)$
+        \task $\log_{\frac{1}{3}}(x + 4) \le \log_{\frac{1}{3}}(5x - 4)$
+        \task $\log_{20}(x^{2} - 3x) \le \log_{20} x + \log_{20} 5$
+        \task $\log_{0{,}2}(x - 3) > \log_{0{,}2} x - \log_{0{,}2} 2$
+        \task $\log_{4}(x - 1) + \log_{4}(x + 3) > 2$
+        \task $\log_{5}(x + 2) - \log_{5}(x - 3) < 1$
+        \task $\log_{\frac{1}{2}}(x + 1) \ge \log_{\frac{1}{2}}(6 - x)$
+        \task $\log_{7}(x - 4) + \log_{7}(x + 2) \le 2$
+        \task $\log (2x - 5) - \log (x + 5) > -1$
+        \task $2\log_{5}(x - 2) - \log_{5}(x + 1) \le 1$
+        \task $\log_{\frac{1}{2}}(x - 1) + \log_{\frac{1}{2}}(x - 5) > -3$
+        \task $\log_{3}(2x - 1) - \log_{3}(x + 2) \ge \log_{3} 3$
+    \end{tasks}
+\end{exercise}
+
+
+\setcounter{section}{3}
+% =========================
+% ÚLOHA 19 – BONUS
+% =========================
+\begin{exercise}[BONUS: Dokažte vztah mezi logaritmy a exponenty]
+    Je dáno, že $x = 2^{p}$ a $y = 4^{q}$, kde $p, q \in \mathbb{R}$.
+    Dokažte, že platí
+    \[
+        \log_{2}\left(x^{3} \cdot y\right) = 3p + 2q.
+    \]
+    Svůj postup přehledně zdůvodněte pomocí vzorců pro logaritmus mocniny
+    a vhodného zápisu čísla $4$ jako mocniny čísla $2$.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 20 – BONUS
+% =========================
+\begin{exercise}[BONUS: Upravte rovnici exponenciální funkce]
+    Exponenciální křivka má rovnici
+    \[
+        y = a b^{x}, \qquad x \in \mathbb{R},
+    \]
+    kde $a$ a $b$ jsou nenulové konstanty.
+
+    Upravte tuto rovnici tak, aby neznámá $x$ byla vyjádřena jako subjekt
+    (tj. vyjádřete ji explicitně v závislosti na ostatních veličinách).
+    Konečný tvar výsledku napište pomocí logaritmů o základu $10$.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 22 – BONUS
+% =========================
+\begin{exercise}[BONUS: Vyjádření neznámé bez logaritmů]
+Je dáno, že reálné číslo $x$ splňuje logaritmickou rovnici
+\[
+    \log_{a} x = 2\bigl(\log_{a} k - \log_{a} 2\bigr),
+\]
+kde $k>0$, $a>0$ a $a \neq 1$.
+
+\begin{enumerate}[label=\alph*)]
+    \item Vyjádřete $x$ pomocí $k$ tak, aby výsledný tvar \emph{neobsahoval logaritmy}.
+\end{enumerate}
+
+Nyní předpokládejme, že číslo $x$ splňuje rovnici
+\[
+    \log_{x} (5y + 1) = 4 + \log_{x} 3,
+\]
+kde $x>0$, $x \neq 1$ a $y>0$, $y \neq 1$.
+
+\begin{enumerate}[label=\alph*),start=2]
+    \item Řešte tuto rovnici pro $y$ a vyjádřete $y$ pomocí $x$ tak, aby výsledný tvar \emph{neobsahoval logaritmy}.
+\end{enumerate}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 23 – Exponenciální rovnice (zaokrouhlení na 3 platné číslice)
+% =========================
+\begin{exercise}[BONUS: Řešte exponenciální rovnice]
+    Řešte následující exponenciální rovnice. Výsledky zaokrouhlete na tři platné číslice.
+    \begin{tasks}(2)
+        \task $5^{2x - 1} = 4^{300}$
+        \task $2^{y+1} = \dfrac{10}{2^{y}}$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 24 – BONUS: Úprava složitého logaritmického výrazu
+% =========================
+\begin{exercise}[BONUS: Zjednodušte logaritmický výraz]
+    Zjednodušte co nejvíce následující logaritmický výraz a přitom přehledně ukažte všechny kroky úprav:
+    \[
+        \log\bigl(10 + 3\sqrt{10}\bigr)
+        \;+\;
+        \log\bigl(10 + \sqrt{90 + \sqrt{90}}\bigr)
+        \;+\;
+        \log\bigl(10 - \sqrt{90 + \sqrt{90}}\bigr).
+    \]
+    Ve svém postupu využijte vzorce pro logaritmus součinu a vhodné úpravy odmocnin.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 25 – BONUS
+% =========================
+\begin{exercise}[BONUS: Najděte přesnou hodnotu $y$]
+    Najděte přesnou hodnotu $y$, která splňuje rovnici
+    \[
+        2\log\!\left(\frac{x}{y}\right) - 1
+        \;=\;
+        \log\!\left(10x^{2} \cdot y\right),
+        \qquad x \ne 0,\; y \ne 0.
+    \]
+    Výsledek vyjádřete přesně, bez použití desetinného zápisu.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 26 – BONUS
+% =========================
+\begin{exercise}[BONUS: Určete parametry mocninné funkce]
+    Body $(2,\,10)$ a $(6,\,100)$ leží na křivce dané rovnicí
+    \[
+        y = a x^{n},
+        \qquad a \ne 0,\; n \ne 0.
+    \]
+    Určete hodnotu $a$ a hodnotu $n$ (zaokrouhlené na tři desetinná místa),
+    které tuto křivku určují.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 27 – BONUS
+% =========================
+\begin{exercise}[BONUS: Rovnice bez reálného řešení]
+    Ukažte, že logaritmická rovnice
+    \[
+        \log_{x^{2} + 2}\!\bigl(2x^{4} - 2x^{3} + 7x^{2} - 2x + 5\bigr) = 2,
+        \qquad x \in \mathbb{R},
+    \]
+    nemá žádné reálné řešení.
+
+    Ve svém postupu nezapomeňte využít podmínky pro základ a argument
+    logaritmu a vhodně upravit rovnici do tvaru mocninné rovnice.
+\end{exercise}
+
+
+\setcounter{section}{4}
+% =========================
+% ÚLOHA 28 – BONUS (\star)
+% =========================
+\begin{exercise}[$\star$ BONUS: Určete hodnotu logaritmu]
+    Jsou dány rovnice
+    \[
+        \log(xy^{3}) = 1,
+        \qquad
+        \log(x^{2}y) = 1,
+    \]
+    kde předpokládáme $x>0$, $y>0$.
+    
+    Určete hodnotu výrazu
+    \[
+        \log(xy).
+    \]
+
+    Svůj postup přehledně zdůvodněte pomocí vzorců pro součin a mocninu uvnitř logaritmu.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 29 – BONUS (\star)
+% =========================
+\begin{exercise}[$\star$ BONUS: Určete hodnotu součinu $abcd$]
+    Nechť reálná čísla $a, b, c, d$ splňují následující vztahy:
+    \[
+        4^{a} = 5, \qquad
+        5^{b} = 6, \qquad
+        6^{c} = 7, \qquad
+        7^{d} = 8.
+    \]
+    Určete hodnotu součinu
+    \[
+        a \cdot b \cdot c \cdot d.
+    \]
+    Svůj postup pečlivě zdůvodněte pomocí logaritmů a vlastností exponenciálních funkcí.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 30 – BONUS
+% =========================
+\begin{exercise}[BONUS: Určete základ logaritmu]
+    Řešení rovnice
+    \[
+        7^{\,x+7} = 8^{\,x}
+    \]
+    lze zapsat ve tvaru
+    \[
+        x = \log_{b}\!\left(7^{7}\right),
+    \]
+    kde $b$ je vhodně zvolený kladný základ logaritmu, $b \neq 1$.
+
+    Určete hodnotu $b$.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 31 – BONUS
+% =========================
+\begin{exercise}[BONUS: Vyjádření $x^{3}+y^{3}$ pomocí $10^{z}$]
+    Nechť $S$ je množina všech uspořádaných trojic $(x,y,z)$ reálných čísel, pro které platí
+    \[
+        \log_{10}(x + y) = z
+        \qquad\text{a}\qquad
+        \log_{10}(x^{2} + y^{2}) = z + 1.
+    \]
+
+    Existují reálná čísla $a$ a $b$ taková, že pro všechny trojice $(x,y,z) \in S$ platí
+    \[
+        x^{3} + y^{3} = a \cdot 10^{3z} + b \cdot 10^{2z}.
+    \]
+
+    Určete hodnotu součtu
+    \[
+        a + b.
+    \]
+\end{exercise}
+
+
+\end{document}

@@ -1,0 +1,183 @@
+\subsubsection{Vzájemná poloha přímek ve směrnicovém tvaru}
+\label{subsubsec:Relative_position_slope_intercept_lines}
+
+Ve směrnicovém tvaru je směr přímky určen přímo její směrnicí.
+Vzájemnou polohu dvou nesvislých přímek proto můžeme určit porovnáním
+jejich směrnic a úseků na ose $y$.
+
+Uvažujme dvě přímky
+\begin{align*}
+    p &: y=k_1x+q_1,\\
+    q &: y=k_2x+q_2.
+\end{align*}
+
+Jejich směr určují směrnice $k_1$ a $k_2$.
+
+Jestliže
+\[
+    k_1\neq k_2,
+\]
+mají přímky různé směry, a proto jsou různoběžné. Jejich průsečík
+získáme řešením rovnice
+\[
+    k_1x+q_1=k_2x+q_2.
+\]
+
+Odtud
+\begin{equation}\label{eq:Slope_intercept_intersection_x}
+    x_P=\frac{q_2-q_1}{k_1-k_2}.
+\end{equation}
+
+Druhou souřadnici průsečíku získáme dosazením hodnoty $x_P$ do rovnice
+jedné z přímek.
+
+Jestliže
+\[
+    k_1=k_2,
+\]
+mají přímky stejný směr. Potom rozlišujeme dva případy:
+\begin{itemize}
+    \item je-li $q_1\neq q_2$, jsou přímky rovnoběžné;
+    \item je-li $q_1=q_2$, jsou přímky totožné.
+\end{itemize}
+
+Celý postup můžeme shrnout následovně:
+\[
+\begin{array}{c|c}
+    \text{Podmínka}
+    &
+    \text{Vzájemná poloha přímek}
+    \\
+    \hline
+    k_1\neq k_2
+    &
+    \text{přímky jsou různoběžné}
+    \\[1mm]
+    k_1=k_2,\ q_1\neq q_2
+    &
+    \text{přímky jsou rovnoběžné}
+    \\[1mm]
+    k_1=k_2,\ q_1=q_2
+    &
+    \text{přímky jsou totožné}
+\end{array}
+\]
+
+\begin{example}\label{exa:Relative_position_slope_intercept_lines}
+    Určete vzájemnou polohu přímek $p:y=2x-3$ a $q:y=-x+3$.
+
+    Jejich směrnice jsou
+    \[
+        k_p=2,
+        \qquad
+        k_q=-1.
+    \]
+    Protože
+    \[
+        k_p\neq k_q,
+    \]
+    jsou přímky různoběžné.
+
+    Souřadnici $x$ průsečíku získáme z rovnosti
+    \begin{align*}
+        2x-3&=-x+3,\\
+        3x&=6,\\
+        x&=2.
+    \end{align*}
+
+    Dosadíme do první rovnice:
+    \[
+        y=2\cdot2-3=1.
+    \]
+
+    Přímky se protínají v bodě
+    \[
+        P[2;1],
+    \]
+    a proto
+    \[
+        p\cap q=\{P[2;1]\}.
+    \]
+\end{example}
+
+\paragraph{Kolmé přímky ve směrnicovém tvaru}
+\label{subsubsec:Perpendicular_slope_intercept_lines}
+
+Uvažujme dvě nesvislé přímky se směrnicemi $k_1$ a $k_2$. Jako jejich
+směrové vektory můžeme podle vztahu
+\eqref{eq:Direction_vector_from_slope} zvolit
+\[
+    \vec{u}_1=(1;k_1),
+    \qquad
+    \vec{u}_2=(1;k_2).
+\]
+
+Přímky jsou kolmé právě tehdy, když jsou kolmé jejich směrové vektory.
+Jejich skalární součin proto musí být roven nule:
+\begin{align*}
+    \vec{u}_1\cdot\vec{u}_2
+    &=
+    (1;k_1)\cdot(1;k_2),\\
+    0
+    &=
+    1+k_1k_2.
+\end{align*}
+
+Odtud dostáváme podmínku
+\begin{equation}\label{eq:Perpendicular_slopes}
+    k_1k_2=-1.
+\end{equation}
+
+Je-li $k_1\neq0$, můžeme směrnici kolmé přímky vyjádřit jako
+\begin{equation}\label{eq:Perpendicular_slope}
+    k_2=-\frac{1}{k_1}.
+\end{equation}
+
+Směrnice navzájem kolmých nesvislých přímek jsou tedy čísla
+s opačnými znaménky a převrácenými absolutními hodnotami.
+
+\begin{remark}\label{rem:Vertical_horizontal_perpendicular_lines}
+    Vztah \eqref{eq:Perpendicular_slopes} lze použít pouze tehdy,
+    když mají obě přímky definovanou směrnici. Svislá přímka nemá
+    směrnici a je kolmá ke každé vodorovné přímce tvaru
+    \[
+        y=q.
+    \]
+\end{remark}
+
+\begin{example}\label{exa:Perpendicular_line_slope_intercept}
+    Určete směrnicový tvar přímky $q$, která prochází bodem $A[2;1]$ a je kolmá k přímce $p:y=2x+1$.
+
+    Směrnice přímky $p$ je
+    \[
+        k_p=2.
+    \]
+
+    Směrnice kolmé přímky je
+    \[
+        k_q=-\frac{1}{2}.
+    \]
+
+    Použijeme bodově-směrnicový tvar:
+    \begin{align*}
+        y-1
+        &=
+        -\frac{1}{2}(x-2),\\
+        y-1
+        &=
+        -\frac{1}{2}x+1,\\
+        y
+        &=
+        -\frac{1}{2}x+2.
+    \end{align*}
+
+    Hledaná přímka má rovnici
+    \[
+        q:y=-\frac{1}{2}x+2.
+    \]
+
+    Kolmost můžeme ověřit součinem směrnic:
+    \[
+        2\cdot\left(-\frac{1}{2}\right)=-1.
+    \]
+\end{example}

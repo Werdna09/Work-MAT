@@ -1,0 +1,1000 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+\usepackage{polynom}
+
+\title{Exponenciální funkce}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+\section{Exponenciální funkce}
+
+
+\begin{historicalbox}
+Myšlenka exponenciálního růstu se objevovala v lidských dějinách mnohem dříve,
+než vznikl samotný pojem exponenciální funkce.
+Již starověcí Egypťané a Babyloňané pracovali s úrokováním majetku
+a s postupným násobením čísel,
+aniž by tyto jevy popisovali pomocí moderní symboliky;
+uvědomovali si však, že opakované násobení téhož činitele vede k růstu,
+který je mnohem rychlejší než prosté sčítání.
+K výraznějšímu matematickému uchopení exponenciálního chování však dochází až ve středověké Evropě,
+kdy obchod, finance a účtování začínají vyžadovat přesnější modely.
+
+Zásadní krok učinil John Napier na počátku 17. století,
+když představil logaritmy a ukázal, že mnohonásobné násobení lze převést na pouhé sčítání,
+což umožnilo astronomům a navigátorům zpracovávat výpočty, které by byly jinak zcela nepřístupné.
+Logaritmické tabulky, které tehdy vznikaly, se staly v podstatě prvním „softwarem“ v dějinách matematiky
+a zároveň historicky prvním systematickým setkáním lidstva s exponenciální funkcí jakožto hladkou
+a dobře popsanou křivkou.
+
+K samotné moderní definici exponenciální funkce vedla práce mnoha matematiků 17. a 18. století,
+zejména Leonharda Eulera, jenž ukázal, že funkci $e^{x}$ lze chápat jako limitu rostoucí posloupnosti
+a zároveň že tato funkce vystupuje jako řešení celé řady diferenciálních rovnic,
+které popisují růst, pohyb či šíření. Eulerovo číslo $e$ se díky tomu stalo jednou
+z nejdůležitějších konstant v matematice, neboť představuje přirozenou míru exponenciálního růstu i rozpadu.
+
+Teprve v devatenáctém století se exponenciální funkce usazuje ve školské matematice podobně,
+jak ji známe dnes, a stává se základem pro popis finančního úročení, růstu populací,
+radioaktivního rozpadu a dalších procesů, v nichž se přírůstky neustále násobí.
+Od starověkých úrokových tabulek až po moderní matematické modely tak exponenciální
+funkce provází lidstvo více než tři tisíce let,
+a přesto její jednoduchá rovnice stále skrývá překvapivé a hluboké vlastnosti.
+\end{historicalbox}
+
+
+V tradiční středoškolské matematice sloužily exponenciální a logaritmické funkce,
+stejně jako logaritmy samotné,
+především k numerickému výpočtu složitějších příkladů prostřednictvím logaritmických tabulek
+nebo logaritmických pravítek, která dokázala převádět násobení a dělení na pouhé sčítání
+a tím umožňovala provádět výpočty velmi rychle a s překvapivou přesností.
+S nástupem moderních kalkulátorů a počítačů však tato původní praktická funkce logaritmů
+ustoupila do pozadí a jejich někdejší role „výpočetního nástroje“ se dnes jeví spíše jako historická zajímavost.
+
+To však v žádném případě neznamená, že by exponenciální a logaritmické funkce ztratily význam ve středoškolské výuce;
+naopak, v současném vzdělávání nabývají ještě větší důležitosti než dříve,
+a to zejména díky svému přirozenému výskytu v přírodních a technických vědách.
+V chemii popisují rychlost radioaktivního rozpadu, reakční kinetiku či poločas přeměny látek,
+ve fyzice se objevují při modelování tlumeného kmitání, nabíjení a vybíjení kondenzátorů,
+v zeslabení světla nebo v logaritmických akustických stupnicích,
+a v biologii vystupují v růstu populací, šíření virů, množení buněk či při popisu metabolismu.
+Díky tomu se exponenciální funkce stávají mimořádně mnohostranným tématem,
+které propojuje matematiku s reálnými procesy a zároveň ukazuje studentům,
+že i zdánlivě jednoduché rovnice mohou popsat překvapivě složité a dynamické děje.
+
+
+
+\begin{definitionbox}
+Exponenciální funkcí o základu $a$ nazýváme každou funkci $f(x)$,
+u níž se proměnná $x$ objevuje v exponentu pevného kladného čísla $a$, takže má obecný tvar
+\[
+    f(x) = m \cdot a^{x},
+\]
+\end{definitionbox}
+
+\begin{center}
+\begin{minipage}{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-4, xmax=4,
+        ymin=0, ymax=8,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$},
+        domain=-4:4,
+        samples=200,
+        smooth,
+        title={\small $a>1$ : \quad rostoucí}
+    ]
+    \addplot[blue, thick] {2^x};
+    \addplot[only marks, mark=*] coordinates {(0,1)};
+    \node[above left] at (axis cs:0,1) {$[0;1]$};
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+\hfill
+\begin{minipage}{0.48\textwidth}
+\centering
+\begin{tikzpicture}[scale=0.85]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-4, xmax=4,
+        ymin=0, ymax=8,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$},
+        domain=-4:4,
+        samples=200,
+        smooth,
+        title={\small $0<a<1$ : \quad klesající}
+    ]
+    \addplot[red, thick] {(1/2)^x};
+    \addplot[only marks, mark=*] coordinates {(0,1)};
+    \node[above right] at (axis cs:0,1) {$[0;1]$};
+    \end{axis}
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+Z uvedených grafů je patrné, že charakter exponenciální funkce je plně určen hodnotou jejího
+základu:
+
+\smallskip
+Pokud je \textbf{$a>1$}, funkce \important{roste}, neboť každé zvětšení exponentu vede k násobnému
+zvětšení její hodnoty a graf se proto prudce zvedá směrem vzhůru.
+
+\smallskip
+Naopak při \textbf{$0<a<1$} odpovídá
+každý další exponent dalšímu dělení, takže funkce \important{klesá} a její hodnoty se postupně přibližují
+k nule, aniž by jí kdy skutečně dosáhly. V obou případech však platí, že exponenciální funkce je vždy
+\important{kladná} a nikdy neprotíná osu $x$, která zde vystupuje jako její \textbf{vodorovná asymptota}.
+
+Všechny exponenciální funkce navíc procházejí bodem \textbf{$[0;1]$}, protože libovolné kladné číslo
+umocněné na nultou má hodnotu $1$; tento bod tak tvoří společný průsečík všech grafů a představuje
+důležitý orientační prvek při jejich srovnávání.
+
+
+
+\subsection*{Grafy exponenciálních funkcí}
+Exponenciální funkce patří mezi nejdůležitější matematické modely, protože
+dokonale popisují růst a zánik jevů, jejichž změna probíhá násobením
+— nikoli přičítáním. Jejich chování zásadně určuje \textbf{základ exponenciály}:
+hodnoty větší než $1$ způsobují rychlý růst, zatímco hodnoty mezi $0$ a $1$
+vedou ke stejnoměrně prudkému poklesu. Jemná změna základu často vede k dramaticky
+odlišnému průběhu celé funkce, což dobře ilustruje následující společný graf,
+kde jsou zobrazeny exponenciální funkce se základy $2$, $5$, $10$ a jejich
+„obrácené“ varianty $\left(\frac12\right)^x$, $\left(\frac15\right)^x$ a
+$\left(\frac{1}{10}\right)^x$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-4, xmax=4,
+    ymin=0, ymax=10,
+    xlabel={$x$}, ylabel={$y$},
+    samples=200,
+    legend style={at={(0.99,0.99)}, anchor=north east, font=\small},
+    domain=-4:4,
+    smooth,
+    ticks=none,
+    width=13cm, height=7.5cm,
+    title={\small Porovnání exponenciálních funkcí pro různé základy},
+    restrict y to domain=0:10  % omezí y, aby graf neutekl
+]
+
+% ROSTOUCÍ FUNKCE
+\addplot[blue, thick] {2^x};
+\addlegendentry{$2^x$}
+
+\addplot[green!60!black, thick] {5^x};
+\addlegendentry{$5^x$}
+
+\addplot[orange!80!black, thick] {10^x};
+\addlegendentry{$10^x$}
+
+% KLESAJÍCÍ FUNKCE
+\addplot[blue, thick, dashed] {(1/2)^x};
+\addlegendentry{$\left(\frac12\right)^{x}$}
+
+\addplot[green!60!black, thick, dashed] {(1/5)^x};
+\addlegendentry{$\left(\frac15\right)^{x}$}
+
+\addplot[orange!80!black, thick, dashed] {(1/10)^x};
+\addlegendentry{$\left(\frac{1}{10}\right)^{x}$}
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+\begin{notebox}
+Z grafu je patrné, že čím větší je základ $a>1$, tím rychleji funkce roste.
+Naopak základy $0<a<1$ vedou ke klesajícím funkcím, které se pro záporná $x$
+prudce zvyšují. Všechny křivky navíc procházejí bodem $[0;1]$.    
+\end{notebox}
+
+
+
+
+
+\section*{Sestavování grafu exponenciální funkce}
+
+Při sestavování exponenciální funkce je užitečné vycházet ze základního grafu $y=a^{x}$ jako výchozí tvar,
+který následně posouváme, protahujeme nebo jinak modifikujeme pomocí jednoduchých úprav
+v exponentu či mimo něj.
+
+Důležitým bodem exponenciální funkce je bod \textbf{$[0;1]$}, který slouží jako hlavní orientační prvek.
+Pokud se výraz v exponentu mění, tento bod se posouvá po ose $x$,
+zatímco úpravy mimo exponent posouvají celý graf svisle po ose $y$.
+Stejným způsobem se posouvá i vodorovná asymptota, která u funkce $a^{x}$ leží na ose $x$
+a u funkcí typu $a^{x}+c$ nebo $a^{x+b}+c$ se posouvá na výšku $y=c$.
+
+Při sestavování grafů tedy postupujeme ve dvou jednoduchých krocích: nejprve sledujeme, jak se mění exponent $x$ (tedy posuny doleva a doprava),
+a následně, jak se mění výraz mimo exponent (tedy posuny nahoru a dolů).
+Touto metodou lze sestavit libovolnou exponenciální funkci, aniž bychom potřebovali tabulku hodnot.
+
+
+
+\begin{examplebox}{Sestavení grafu funkce $f(x)=2^{x+3}-4$}
+
+\textbf{1. Výchozí funkce: $y=2^{x}$}
+
+Tato funkce prochází bodem $[0;1]$ a má vodorovnou asymptotu $y=0$.
+Je rostoucí, protože základ $2$ je větší než jedna.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-5, xmax=3,
+        ymin=-1, ymax=8,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$},
+        domain=-5:3,
+        samples=200,
+        smooth,
+        title={\small Výchozí funkce $2^{x}$}
+    ]
+    \addplot[blue, thick] {2^x};
+    \addplot[only marks, mark=*] coordinates {(0,1)};
+    \node[above left] at (axis cs:0,1) {$[0;1]$};
+    \draw[dashed] (axis cs:-5,0) -- (axis cs:3,0);
+    \node[below] at (axis cs:-4,0) {$y=0$};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+
+\textbf{2. Posun po ose $x$: $y=2^{x+3}$}
+
+Výraz \,$x+3$ znamená posun \textbf{o tři jednotky doleva},
+protože funkční argument se zvětšuje rychleji, než původně.
+Bod $[0;1]$ se tedy posune na souřadnice $[-3;1]$.
+Asymptota zůstává stále na $y=0$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-8, xmax=0,
+        ymin=-1, ymax=8,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$},
+        domain=-8:0,
+        samples=200,
+        smooth,
+        title={\small Posun vlevo: $2^{x+3}$}
+    ]
+    % Funkce
+    \addplot[blue, thick] {2^(x+3)};
+
+    % Bod
+    \addplot[only marks, mark=*] coordinates {(-3,1)};
+    \node[above left] at (axis cs:-3,1) {$[-3;1]$};
+
+    % Pomocné čáry k osám
+    \draw[dashed] (axis cs:-3,1) -- (axis cs:-3,0);   % k ose x
+    \draw[dashed] (axis cs:-3,1) -- (axis cs:0,1);    % k ose y
+
+    % Asymptota
+    \draw[dashed] (axis cs:-8,0) -- (axis cs:0,0);
+    \node[below] at (axis cs:-7,0) {$y=0$};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+
+
+\textbf{3. Posun po ose $y$: $y=2^{x+3}-4$}
+
+Hodnota $-4$ posouvá celou křivku o čtyři jednotky dolů.
+Bod $[-3;1]$ se posune na $[-3;-3]$.
+Vodorovná asymptota se posouvá z $y=0$ na \textbf{$y=-4$}.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-8, xmax=0,
+        ymin=-8, ymax=4,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$},
+        domain=-8:0,
+        samples=200,
+        smooth,
+        title={\small Posun dolů: $2^{x+3}-4$}
+    ]
+    % Funkce
+    \addplot[blue, thick] {2^(x+3)-4};
+
+    % Bod
+    \addplot[only marks, mark=*] coordinates {(-3,-3)};
+    \node[above left] at (axis cs:-3,-3) {$[-3;-3]$};
+
+    % Pomocné čáry
+    \draw[dashed] (axis cs:-3,-3) -- (axis cs:-3,0);   % svislá k ose x
+    \draw[dashed] (axis cs:-3,-3) -- (axis cs:0,-3);   % vodorovná k ose y
+
+    % Asymptota
+    \draw[dashed] (axis cs:-8,-4) -- (axis cs:0,-4);
+    \node[below] at (axis cs:-7,-4) {$y=-4$};
+
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+Tímto postupem snadno sestavíme celý graf, aniž bychom potřebovali vypisovat tabulku hodnot.
+Stačí sledovat, jak jednotlivé úpravy posouvají výchozí exponenciální křivku.
+\end{examplebox}
+
+
+\begin{notebox}
+\textbf{Asymptota} je přímka, ke které se graf funkce stále přibližuje, 
+ale nikdy ji nepřekročí nebo se jí nedotkne. 
+Funkce se k ní může blížit při růstu do nekonečna, při poklesu, 
+nebo při přibližování k určité hodnotě proměnné.
+
+\begin{itemize}
+    \item \textbf{Svislá asymptota} vzniká tehdy, když se funkce blíží k $\pm\infty$ 
+    při přibližování k určité hodnotě $x$.  
+    Například u logaritmu $y = \log_2 x$ je svislou asymptotou přímka \important{$x = 0$}.
+
+    \item \textbf{Vodorovná asymptota} vzniká tehdy, když se funkce blíží určité hodnotě $y$ 
+    při růstu nebo poklesu proměnné do nekonečna.  
+    Například exponenciála $y = 2^{-x}$ má vodorovnou asymptotu \important{$y = 0$}.
+\end{itemize}
+
+Asymptoty pomáhají pochopit, jak se funkce chová „daleko od středu grafu“ 
+a kde jsou její přirozené hranice nebo nepřekročitelné hodnoty.
+\end{notebox}
+
+
+\subsection*{Exponenciální růst vs.\ mocninný růst}
+
+Přestože se může zdát, že funkce $x^{n}$ roste velmi rychle, zejména pro vysoké hodnoty exponentu $n$,
+její tempo růstu je i tak nesrovnatelně pomalejší než u exponenciálních funkcí $a^{x}$.
+Mocninný růst znamená, že při každém zvětšení $x$ se hodnota násobí určitou
+silou proměnné, zatímco exponenciální růst znamená, že se násobí \emph{stále stejným číslem}
+v každém kroku. Z toho vyplývá zásadní rozdíl: zatímco $x^{n}$ se stává velkým až pro opravdu
+vysoké hodnoty $x$, funkce $a^{x}$ se po překročení určité hranice začne „utrhávat“
+a roste tak rychle, že libovolnou mocninu nejen dožene, ale ve velmi krátkém čase i dramaticky předhoní.
+
+Tento fakt je natolik obecný, že v matematice platí důležité tvrzení:
+\emph{každá exponenciální funkce $a^{x}$ s $a>1$ nakonec převýší libovolnou mocninnou funkci $x^{n}$}.
+
+\bigskip
+\begin{center}
+    \begin{tabular}{c|c|c|c|c}
+    $x$ & $x^{3}$ & $2^{x}$ & $x^{10}$ & $10^{x}$ \\
+    \hline
+    2           & 8                     & 4                         & 1024                      & 100 \\
+    5           & 125                   & 32                        & 9\,765\,625               & 100\,000 \\
+    10          & 1000                  & 1024                      & 10\,000\,000\,000         & 10\,000\,000\,000 \\
+    20          & 8000                  & 1\,048\,576               & $10^{13}$                 & $10^{20}$ \\
+    50          & 125\,000              & 1.13 $\cdot 10^{15}$      & $10^{17}$                 & $10^{50}$ \\
+    100         & 1\,000\,000           & 1.27 $\cdot 10^{30}$      & $10^{20}$                 & $10^{100}$ \\
+    500         & 125\,000\,000         & 3.27 $\cdot 10^{150}$     & 9.77 $\cdot 10^{26}$      & $10^{500}$ \\
+    1000        & 1 $\cdot 10^{9}$      & 1.07 $\cdot 10^{301}$     & 1 $\cdot 10^{30}$         & $10^{1000}$ \\
+    2000        & 8 $\cdot 10^{9}$      & 1.15 $\cdot 10^{602}$     & 1.02 $\cdot 10^{33} $     & $10^{2000}$ \\
+    \end{tabular}
+\end{center}
+
+\bigskip
+\begin{notebox}{Srovnání růstu: $x^{10}$ vs.\ $2^{x}$}
+Při malých hodnotách proměnné $x$ se může zdát, že funkce $x^{10}$ roste rychleji než $2^{x}$,
+protože již pro $x=5$ má hodnotu téměř deseti milionů, zatímco $2^{5}=32$.
+Jakmile však $x$ začne narůstat, exponenciála začíná dominovat: již kolem $x=50$
+platí, že $2^{50}$ je přibližně $10^{15}$, zatímco $50^{10}$ je přibližně $10^{17}$,
+a krátce poté funkce $2^{x}$ nejen dožene, ale i dramaticky předstihne každou mocninu $x^{n}$.
+To ukazuje, že exponenciální růst je kvalitativně odlišný od mocninného a vede k hodnotám,
+jež rychle přesahují běžnou představivost.
+\end{notebox}
+
+\bigskip
+\begin{examplebox}{Sestavení grafu funkce $y = \big|\,2^{x-2} - 4\,\big|$}
+
+Budeme postupovat ve čtyřech krocích, přičemž pokaždé sledujeme,
+jak se mění výchozí exponenciální křivka, její charakteristický bod
+a vodorovná asymptota. Teprve poté aplikujeme absolutní hodnotu,
+která část grafu překlopí nad osu $x$.
+% ============================================================
+% 1. KROK – y = 2^x
+% ============================================================
+
+\textbf{1. Výchozí funkce: $y=2^{x}$}
+
+Funkce je rostoucí, prochází bodem $[0;1]$ a její asymptota je $y=0$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-10, xmax=10,
+    ymin=-10, ymax=10,
+    ticks=none,
+    xlabel={$x$}, ylabel={$y$},
+    domain=-10:10,
+    samples=200,
+    smooth,
+    title={\small Výchozí funkce $2^{x}$}
+]
+\addplot[blue, thick] {2^x};
+
+\addplot[only marks, mark=*] coordinates {(0,1)};
+\node[above left] at (axis cs:0,1) {$[0;1]$};
+
+\draw[dashed] (axis cs:0,1) -- (axis cs:0,0);
+\draw[dashed] (axis cs:0,1) -- (axis cs:0,1);
+
+\draw[dashed] (axis cs:-10,0) -- (axis cs:10,0);
+\node[below] at (axis cs:-8,0) {$y=0$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+% ============================================================
+% 2. KROK – y = 2^(x-2)
+% ============================================================
+
+\textbf{2. Posun doprava o 2: $y=2^{x-2}$}
+
+Bod $[0;1]$ se posune na $[2;1]$, asymptota zůstává na $y=0$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-10, xmax=10,
+    ymin=-10, ymax=10,
+    ticks=none,
+    xlabel={$x$}, ylabel={$y$},
+    domain=-10:10,
+    samples=200,
+    smooth,
+    title={\small Posun doprava: $2^{x-2}$}
+]
+\addplot[blue, thick] {2^(x-2)};
+
+\addplot[only marks, mark=*] coordinates {(2,1)};
+\node[above left] at (axis cs:2,1) {$[2;1]$};
+
+\draw[dashed] (axis cs:2,1) -- (axis cs:2,0);
+\draw[dashed] (axis cs:2,1) -- (axis cs:0,1);
+
+\draw[dashed] (axis cs:-10,0) -- (axis cs:10,0);
+\node[below] at (axis cs:-8,0) {$y=0$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+% ============================================================
+% 3. KROK – y = 2^(x-2) - 4
+% ============================================================
+
+\textbf{3. Posun dolů o 4: $y=2^{x-2} - 4$}
+
+Bod $[2;1]$ se posune na $[2;-3]$.
+Asymptota klesne na $y=-4$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-10, xmax=10,
+    ymin=-10, ymax=10,
+    ticks=none,
+    xlabel={$x$}, ylabel={$y$},
+    domain=-10:10,
+    samples=200,
+    smooth,
+    title={\small Posun dolů: $2^{x-2}-4$}
+]
+\addplot[blue, thick] {2^(x-2)-4};
+
+\addplot[only marks, mark=*] coordinates {(2,-3)};
+\node[above left] at (axis cs:2,-3) {$[2;-3]$};
+
+\draw[dashed] (axis cs:2,-3) -- (axis cs:2,0);
+\draw[dashed] (axis cs:2,-3) -- (axis cs:0,-3);
+
+\draw[dashed] (axis cs:-10,-4) -- (axis cs:10,-4);
+\node[below] at (axis cs:-8,-4) {$y=-4$};
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+% ============================================================
+% 4. KROK – y = |2^(x-2) - 4|
+% ============================================================
+
+\textbf{4. Absolutní hodnota: $y=\big|\,2^{x-2}-4\,\big|$}
+
+Část pod osou $x$ se odrazí nahoru. Minimum na $y=-4$
+se změní v vrchol na výšce $4$.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.95]
+\begin{axis}[
+    axis lines=middle,
+    xmin=-10, xmax=10,
+    ymin=-10, ymax=10,
+    ticks=none,
+    xlabel={$x$}, ylabel={$y$},
+    domain=-10:10,
+    samples=400,
+    smooth,
+    title={\small Absolutní hodnota: $|2^{x-2}-4|$}
+]
+\addplot[blue, thick] {abs(2^(x-2)-4)};
+
+% nový bod (odraz)
+\addplot[only marks, mark=*] coordinates {(2,3)};
+\node[above left] at (axis cs:2,3) {$[2;3]$};
+
+\draw[dashed] (axis cs:2,3) -- (axis cs:2,0);
+\draw[dashed] (axis cs:2,3) -- (axis cs:0,3);
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+Tímto postupem lze sestrojit graf i složitě vypadajících funkcí,
+pokud úpravy provádíme postupně a sledujeme posuny v exponentu
+a mimo exponent samostatně.
+\end{examplebox}
+
+
+\subsection*{Využití grafu exponenciální funkce k určování hodnot}
+Exponenciální funkce je velmi rychle rostoucí nebo klesající křivka, jejíž tvar je natolik
+pravidelný, že nám v mnoha případech umožňuje odhadnout či porovnat hodnoty výrazů,
+aniž bychom museli provádět přesné numerické výpočty. Zvláště v situacích,
+kdy se hodnoty exponentů liší jen nepatrně, může být numerické srovnání obtížné
+a někdy i nepraktické, zatímco pohled na graf funkce $a^{x}$ poskytne okamžitou
+odpověď. Pokud víme, zda je exponenciální funkce \important{rostoucí} nebo \important{klesající},
+stačí určit, ve kterém z těchto případů se nacházíme, a podle toho vyvodit,
+který z porovnávaných výrazů je větší. Graf tak přestává být pouze ilustrací,
+ale stává se účinným nástrojem pro rozhodování o velikosti hodnot,
+jež by se jinak obtížně porovnávaly.
+
+\begin{examplebox}{Porovnání výrazů $\,(0{,}4)^{1{,}6}$ a $\,(0{,}4)^{1{,}8}$}
+
+Nejprve si všimneme, že základ $0{,}4$ splňuje $0 < 0{,}4 < 1$.
+Exponenciální funkce s takovým základem je \important{klesající},
+což znamená, že větší hodnota exponentu vede k menší hodnotě celého výrazu.
+
+\medskip
+\textbf{1. Porovnání početním způsobem}
+
+Základ je stejný, exponenty se liší jen nepatrně:
+
+\[
+1{,}6 < 1{,}8.
+\]
+
+Protože je funkce $f(x)=0{,}4^{x}$ klesající, platí:
+
+\[
+(0{,}4)^{1{,}6} > (0{,}4)^{1{,}8}.
+\]
+
+Výsledek dostaneme okamžitě, bez počítání hodnot.
+
+\medskip
+\textbf{2. Porovnání pomocí grafu}
+
+Nyní se podíváme na graf funkce $y = 0{,}4^{x}$:
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\begin{axis}[
+    axis lines=middle,
+    xmin=0, xmax=3,
+    ymin=0, ymax=1.2,
+    xlabel={$x$}, ylabel={$y$},
+    samples=300,
+    smooth,
+    ticks=none,
+    title={\small Graf funkce $0{,}4^{x}$}
+]
+
+% hlavní křivka
+\addplot[blue, thick] {(0.4)^x};
+
+% numerické hodnoty bodů
+\addplot[only marks, mark=*] coordinates {(1.6, 0.23)};
+\addplot[only marks, mark=*] coordinates {(1.8, 0.192)};
+
+% popisky bodů
+\node[right] at (axis cs:1.6, 0.263) {$x=1{,}6$};
+\node[right] at (axis cs:1.8, 0.192) {$x=1{,}8$};
+
+% pomocné čáry
+\draw[dashed] (axis cs:1.6,0) -- (axis cs:1.6,0.263);
+\draw[dashed] (axis cs:1.8,0) -- (axis cs:1.8,0.192);
+
+\end{axis}
+\end{tikzpicture}
+\end{center}
+
+
+Z grafu ihned vidíme, že $0{,}4^{x}$ je klesající křivka:
+bod odpovídající $x=1{,}6$ leží \textbf{výše} než bod pro $x=1{,}8$,
+což potvrzuje předchozí závěr.
+
+\medskip
+
+\textbf{Závěr:}
+
+\[
+\boxed{(0{,}4)^{1{,}6} > (0{,}4)^{1{,}8}}
+\]
+
+Grafické porovnání je velmi přehledné a zejména u klesajících exponenciál rychle ukáže,
+který exponent vede k větší hodnotě.
+\end{examplebox}
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1}
+
+% =========================
+% ÚLOHA 1 – Kvadratické rovnice k procvičení
+% =========================
+\begin{exercise}[Určení základního tvaru]
+U každé z následujících funkcí určete, zda je rostoucí či klesající,
+zapište její základní tvar $m\cdot a^{x+k}+c$ (pokud je vhodné)
+a načrtněte její graf.
+
+\begin{tasks}(2)
+    \task $y = 2^{x}$
+    \task $y = 2^{3x}$
+    \task $y = 3^{-x} - 1$
+    \task $y = \left(\dfrac12\right)^{2x}$
+    \task $y = 2^{x+1} - 4$
+    \task $y = \left(\dfrac13\right)^{-2x}$
+    \task $y = 2^{x}\cdot 3^{-x}$
+    \task $y = 5 \cdot 4^{x-1}$
+    \task $y = 7^{\,2-x}$
+    \task $y = \left(\dfrac{1}{6}\right)^{-x+1} - 1$
+    \task $y = 5^{-x} + 2$
+    \task $y = 10^{\,2x + 5} + 8$
+    \task $y = 9^{0{,}5x}\cdot 3 + 2$
+    \task $y = 16^{-0{,}25x}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 2 – Porovnání s číslem 1
+% =========================
+\begin{exercise}[Porovnání hodnot exponenciálních výrazů s číslem 1]
+Na základě vlastností exponenciální funkce rozhodněte,
+zda je uvedená hodnota \textbf{větší než 1}, \textbf{menší než 1},
+nebo se jí \textbf{rovná}.
+Nepočívejte přesnou hodnotu, rozhodněte pouze podle základu a exponentu.
+
+\begin{tasks}(4)
+    \task $\left(\dfrac{2}{5}\right)^{\frac34}$
+    \task $\left(\dfrac{5}{4}\right)^{\frac37}$
+    \task $2{,}18^{\,0{,}1}$
+    \task $0{,}45^{\,0{,}4}$
+    \task $\left(\dfrac{41}{40}\right)^{0{,}2}$
+    \task $\left(\dfrac{\pi}{4}\right)^{\sqrt{1{,}001}}$
+    \task $\left(\dfrac{\pi + 1}{4}\right)^{-2}$
+    \task $\left(\dfrac{3}{8}\right)^{\sqrt{2}}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 3 – Pravdivost výroků o mocninách
+% =========================
+\begin{exercise}[Pravdivost výroků – vlastnosti exponenciálních funkcí]
+Rozhodněte, zda jsou následující tvrzení \textbf{pravdivá}, nebo \textbf{nepravdivá}.
+
+\begin{tasks}(2)
+    \task $\left(\frac{6}{7}\right)^{2{,}5} < \left(\frac{6}{7}\right)^{2{,}4}$
+    \task $\left(\frac{4}{3}\right)^{1{,}4} < \left(\frac{4}{3}\right)^{1{,}3}$
+    \task $\left(\frac{1}{5}\right)^{-3} > \left(\frac{1}{5}\right)^{-2}$
+    \task $3^{-0{,}8} > 3^{-1{,}1}$
+    \task $\left(\frac{9}{10}\right)^{\sqrt{2}} > \left(\frac{9}{10}\right)^{1{,}3}$
+    \task $2^{\pi} > 2^{3}$
+    \task $\left(\frac{5}{2}\right)^{-0{,}5} < \left(\frac{5}{2}\right)^{-1}$
+    \task $\left(\frac{3}{4}\right)^{0{,}01} = \left(\frac{16}{9}\right)^{-\frac{1}{50}}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 4 – Vztah mezi exponenty p a r
+% =========================
+\begin{exercise}[Vztah mezi exponenty $p$ a $r$]
+Rozhodněte, jaký vztah ($p<r$, $p>r$, $p=r$) platí mezi čísly $p$ a $r$,
+jestliže platí daná nerovnost. Nepočítejte konkrétní hodnoty, využijte pouze
+monotónnost exponenciálních funkcí.
+
+\begin{tasks}(2)
+    \task $\left(\dfrac{3}{7}\right)^{p} < \left(\dfrac{3}{7}\right)^{r}$
+    \task $\left(\dfrac{8}{5}\right)^{p} < \left(\dfrac{8}{5}\right)^{r}$
+    \task $\left(\dfrac{3}{5}\right)^{p} > \left(\dfrac{3}{5}\right)^{r}$
+    \task $2^{p-1} < 2^{r-1}$
+    \task $\left(\dfrac{4}{5}\right)^{2p} < \left(\dfrac{4}{5}\right)^{2r}$
+    \task $10^{1-3p} > 10^{1-3r}$
+    \task $\left(\dfrac{1}{2}\right)^{p+2} = \left(\dfrac{1}{2}\right)^{r+2}$
+    \task $7^{2-p} < 7^{2-r}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 5 – Součin hodnot exponenciální funkce
+% =========================
+\begin{exercise}[Součin hodnot exponenciální funkce]
+
+Uvažujeme funkci $f(x)=2^{x}$.
+
+\begin{enumerate}[label=\arabic*.]
+    \item Vypočítejte hodnotu $f(3)\cdot f(2)$.
+    \item Najděte takové $s\in\mathbb{R}$, aby platilo $f(3)\cdot f(2)=f(s)$.
+    \item Určete, jaký vztah platí mezi čísly $2$, $3$ a $s$.
+\end{enumerate}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 6 – Důkaz obecné vlastnosti
+% =========================
+\begin{exercise}[Důkaz vlastnosti exponenciální funkce]
+
+Dokažte, že platí následující tvrzení:
+
+\medskip
+
+\emph{Je-li $f$ exponenciální funkce o základu $a>0$, $a\neq1$, pak pro všechna
+$u,v\in\mathbb{R}$ platí}
+\[
+    f(u)\cdot f(v)=f(u+v).
+\]
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 7 – Radioaktivní přeměna a poločas
+% =========================
+\begin{exercise}[Radioaktivní přeměna – výpočet hmotnosti]
+
+Závislost hmotnosti $m$ radioaktivní látky na čase $t$ při její radioaktivní
+přeměně je popsána vzorcem
+\[
+    m = m_0 \cdot \left(0{,}5\right)^{\frac{t}{T}},
+\]
+kde $m_0$ značí počáteční hmotnost látky v čase $t=0$ sekund a $T$ je tzv.
+\textit{poločas přeměny}, tedy doba, za kterou se počáteční množství $m_0$
+zmenší na jednu polovinu.
+
+Poločas přeměny rádia je přibližně $T = 183\;\text{s}$.
+Vypočítejte s využitím kalkulačky hmotnost látky (na setinu gramu)
+v jednotlivých časech
+\[
+t = \{10,\; 50,\; 100,\; 150,\; 183,\; 200,\; 250,\; 300,\; 350,\; 400,\; 500\}
+\]
+pro počáteční hmotnost $m_0 = 1\;\text{g}$.
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 8 – Tlak vzduchu a nadmořská výška
+% =========================
+\begin{exercise}[Tlak vzduchu v závislosti na nadmořské výšce]
+
+Závislost tlaku $p$ vzduchu na nadmořské výšce $h$ (v kilometrech) lze
+přibližně vyjádřit vztahem
+\[
+    p = p_0 \cdot 0{,}88^{h},
+\]
+kde $p_0$ je tlak vzduchu v nadmořské výšce $h = 0\,\text{km}$ (tj. u hladiny moře)
+a pro zjednodušení uvažujeme
+\[
+    p_0 = 1{,}013 \cdot 10^{5}\,\text{Pa}.
+\]
+
+\begin{enumerate}[label=\arabic*.]
+    \item Vypočítejte tlak vzduchu v nadmořské výšce $800\,\text{m}$ a $3000\,\text{m}$
+    (tj. pro $h = 0{,}8\,\text{km}$ a $h = 3\,\text{km}$).
+
+    \item Vypočítejte přibližný tlak vzduchu na vrcholcích těchto hor:
+    \begin{itemize}
+        \item Sněžka – předpokládejte nadmořskou výšku $1603\,\text{m}$,
+        \item Mont Blanc – předpokládejte nadmořskou výšku $4808\,\text{m}$,
+        \item Mount Everest – předpokládejte nadmořskou výšku $8848\,\text{m}$.
+    \end{itemize}
+
+    \item Zamyslete se nad tím, zda a jak může mít nižší tlak vzduchu
+    ve vysokých nadmořských výškách vliv na vaření vajec „natvrdo“
+    (například délku vaření či teplotu varu vody) a svůj názor stručně vysvětlete.
+\end{enumerate}
+
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9 – Zakreslení grafů exponenciálních funkcí
+% =========================
+\begin{exercise}[Zakreslení grafů exponenciálních funkcí]
+
+Zakreslete graf následujících funkcí, u každé z nich určete průsečík s osou $x$
+(označte jej $P_{x}$), průsečík s osou $y$ (označte jej $P_{y}$)
+a obor hodnot dané funkce.
+
+\begin{tasks}(2)
+    \task $f:\; y = 2^{x}$
+    \task $f:\; y = 6^{x+2}$
+    \task $f:\; y = \left(\dfrac{1}{3}\right)^{x}$
+    \task $f:\; y = 2^{x} - 3$
+    \task $f:\; y = 5 \cdot 2^{x-1}$
+    \task $f:\; y = 3^{-(x+1)}$
+    \task $f:\; y = \left(\dfrac{1}{2}\right)^{x+2} + 1$
+    \task $f:\; y = -2^{x} + 4$
+    \task $f:\; y = 4 \cdot 5^{x-2} - 1$
+    \task $f:\; y = 7^{2-x} - 5$
+    \task $f:\; y = 10^{-(x-3)} + 2$
+    \task $f:\; y = 3 \cdot \left(\dfrac{2}{5}\right)^{x+1} + 1$
+    \task $f:\; y = e^{\frac{x}{2}} - 2$
+    \task $f:\; y = 4 \cdot 2^{x+\pi} - \dfrac{e}{2}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 10 – Exponenciální funkce s absolutní hodnotou
+% =========================
+\begin{exercise}[Zakreslení grafů exponenciálních funkcí s absolutní hodnotou]
+
+Zakreslete graf následujících funkcí. 
+U každé z nich určete průsečík s osou $x$ (označte jej $P_{x}$),
+průsečík s osou $y$ (označte jej $P_{y}$) a obor hodnot dané funkce.
+
+\begin{tasks}(2)
+    \task $g:\; y = \bigl|2^{x}\bigr|$
+    \task $g:\; y = \bigl|3^{x}\bigr|$
+    \task $g:\; y = \bigl|1{,}5^{\,x-1}\bigr|$
+    \task $g:\; y = \bigl|2^{x} - 3\bigr|$
+    \task $g:\; y = \bigl|2^{x+1} - 4\bigr|$
+    \task $g:\; y = \biggl|\left(\dfrac{1}{3}\right)^{x}\biggr|$
+    \task $g:\; y = \biggl|\left(\dfrac{1}{2}\right)^{x+2} - 1\biggr|$
+    \task $g:\; y = \bigl|-2^{x}\bigr|$
+    \task $g:\; y = \bigl|-2^{x} + 3\bigr|$
+    \task $g:\; y = \bigl|3^{x-2}\bigr| + 1$
+    \task $g:\; y = 2\cdot\bigl|3^{x} - 1\bigr|$
+    \task $g:\; y = \bigl|4\cdot 2^{x-1} - 5\bigr|$
+    \task $g:\; y = \biggl|10^{-(x-2)} - 3\biggr|$
+    \task $g:\; y = \biggl|\left(\dfrac{2}{5}\right)^{x+1} + 1\biggr|$
+    \task $g:\; y = \bigl|e^{x} - 2\bigr|$
+    \task $g:\; y = \bigl|e^{x-1} + 1\bigr|$
+    \task $g:\; y = \bigl|\,-\bigl|3^{x-1} - e\bigr| + 2\bigr|$
+    \task $g:\; y = \bigl|\,-\bigl|5^{x+\pi} - 5e\bigr|\bigr|$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 11 – Určení parametrů exponenciální funkce z bodů
+% =========================
+\begin{exercise}[Určení parametrů exponenciální funkce z bodů]
+
+Určete reálná čísla $a$, $b$ tak, aby graf dané funkce procházel zadanými body.
+
+\begin{tasks}(2)
+    \task $y = a \cdot 2^{x} + b$, body $A[0;\tfrac{7}{2}],\ B[-1;2]$.
+    \task $y = 2^{x+a} + b$, body $A[1;15],\ B[-2;1]$.
+    \task $y = a \cdot 2^{x} + b$, body $A[0;3],\ B[1;7]$.
+    \task $y = 2^{x+a} + b$, body $A[0;7],\ B[2;19]$.
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 12 – Monotónnost exponenciálních funkcí s parametrem
+% =========================
+\begin{exercise}[Monotónnost exponenciálních funkcí s parametrem]
+Určete všechny hodnoty reálného parametru $q$ tak, aby daná funkce byla \textbf{rostoucí}.
+
+\begin{tasks}(3)
+    \task $y = \left(\dfrac{2q^{2}}{q^{2}+1}\right)^{x}$
+    \task $y = \left(\dfrac{1}{q}\right)^{x}$
+    \task $y = \left(\dfrac{q+3}{q-1}\right)^{x}$
+    \task $y = \left(\dfrac{q-2}{q-5}\right)^{x}$
+    \task $y = \bigl(q^{2}-2q+2\bigr)^{x}$
+    \task $y = \left(\dfrac{2q-1}{3}\right)^{x}$
+\end{tasks}
+\end{exercise}
+
+% =========================
+% ÚLOHA 12 – Monotónnost exponenciálních funkcí s parametrem
+% =========================
+\begin{exercise}[Monotónnost exponenciálních funkcí s parametrem]
+Určete všechny hodnoty reálného parametru $p$ tak, aby daná funkce byla \textbf{klesající}.
+
+\begin{tasks}(3)
+    \task $y = \left(\dfrac{p-1}{3p}\right)^{x}$
+    \task $y = (p^{2}-4)^{x}$
+    \task $y = \left(\dfrac{p+1}{p^{2}-1}\right)^{x}$
+    \task $y = \left(\dfrac{p+2}{p+4}\right)^{x}$
+    \task $y = \left(\dfrac{1}{p^{2}+1}\right)^{x}$
+    \task $y = \left(\dfrac{3-p}{2}\right)^{x}$
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Exponenciální růst: šíření viru
+% =========================
+\begin{exercise}[Exponenciální růst – šíření viru]
+
+V době pandemie COVID-19 se často mluvilo o tom, že počet nakažených
+„roste exponenciálně“. To znamená, že každý den přibude přibližně
+stejné \emph{procento} nových případů, nikoli stejný \emph{počet}.
+
+V jednom městě bylo zaznamenáno první den 120 nakažených.
+Počet nakažených roste v průměru o 18\,\% denně.
+
+\begin{enumerate}[label=\arabic*.]
+    \item Sestavte předpis funkce $N(t)$ udávající počet nakažených za $t$ dní.
+    \item Určete počet nakažených za $5$, $10$ a $14$ dní.
+    \item Za kolik dní se počet nakažených \textbf{zdvojnásobí}?
+    \item Epidemiologové chtějí vědět, kdy počet nakažených překročí
+          hranici 10 000 osob.
+\end{enumerate}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA – Decibely a exponenciální růst intenzity zvuku
+% =========================
+\begin{exercise}[Decibely a exponenciální růst intenzity zvuku]
+
+Hlučnost zvuku se často udává v \textbf{decibelech (dB)}.
+Stupnice decibelů není lineární — je \textbf{logaritmická}, což znamená,
+že vyšší hodnota v decibelech neodpovídá „o něco hlasitějšímu“ zvuku,
+ale násobně silnější \textbf{intenzitě}.
+
+Intenzita zvuku $I$ souvisí s hladinou hluku $L$ (v decibelech) vztahem
+\[
+L = 10 \log_{10}\!\left(\frac{I}{I_0}\right),
+\]
+kde $I_0$ je prahová intenzita slyšení.
+
+Z toho plyne, že pokud se hladina zvýší o $\Delta L$ decibelů,
+pak se intenzita změní podle vztahu
+\[
+\frac{I_2}{I_1} = 10^{\frac{\Delta L}{10}}.
+\]
+
+\begin{enumerate}[label=\arabic*.]
+    \item Kolikrát je zvuk o hlasitosti $60\,\text{dB}$ intenzivnější než zvuk o hlasitosti $40\,\text{dB}$?
+    \item Kolikrát je hlasitější běžná řeč (60 dB) oproti šepotu (30 dB)?
+    \item Vypište, kolikrát intenzivnější je zvuk:
+    \begin{itemize}
+        \item zvuk motorové pily (100 dB) oproti běžné mluvě (60 dB),
+        \item startujícího tryskáče (140 dB) oproti běžné mluvě (60 dB),
+        \item výstřelu z pistole (150 dB) oproti motorové pile (100 dB).
+    \end{itemize}
+    \item Sestavte obecný předpis funkce $I(L)$, která při známé hladině $L$ (v dB) vypočítá intenzitu zvuku $I$ vzhledem k prahu slyšení $I_0$.
+\end{enumerate}
+\end{exercise}
+
+
+\end{document}
