@@ -1,0 +1,64 @@
+% Zdroj: import_hodiny/40_Podklad_prubezny_test.tex a jeho PDF, obě strany.
+% Použity části Teorie a vysvětlení a Metodické poznámky.
+% Diagnostické P1–P5 ani opravné C1–C5 nejsou převzaty jako zadání testu.
+% Metodický záměr těchto úloh je zachován v přehledu dovedností a následné nápravě.
+% Konkrétní numerická zadání jsou záměrně vynechána podle výslovného zadání učitele.
+% Nepřebíráno bodování z importu: pro tuto přípravu nebylo požadováno.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, řádek 40 (T3).
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, 2.1–2.2.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{40}{Průběžný test z kombinatoriky}
+\begin{document}
+
+Hodina je určena průběžnému testu 3 v rozsahu \textbf{variace, permutace a kombinace}. Závazný rozpis vymezuje na písemnou část \textbf{15–20 minut}; zbytek hodiny slouží krátkému rozboru a navazujícímu procvičování. Tato příprava poskytuje učiteli obsahové a metodické vedení. Konkrétní zadání ani varianty písemné práce neobsahuje.
+
+\poznamka{Předpoklady: výuka hodin 29–39; pro písemnou část především dovednosti hodin 29–36. Cíl: zjistit, zda žák podle slovního zadání rozpozná pořadí, opakování a omezení, sestaví odpovídající početní model a vysvětlí ho. Samotná znalost názvu vzorce není dostatečným dokladem porozumění.}
+
+\blok{Vymezení ověřovaného učiva}
+Do obsahového rámce patří pravidla součtu a součinu, faktoriál jako nástroj počítání, variace bez opakování i s opakováním, permutace bez opakování i s opakováním a kombinace bez opakování. Ověřuj také rozdíl mezi číslem a kódem, nerozlišitelnost stejných kopií a jednoznačnost započtení výsledků.
+
+Pascalův trojúhelník, samostatné důkazy identit a binomická věta nejsou podle názvu testu v rozpisu povinným zaměřením této písemné práce. Není vhodné test rozšířit na celou kombinatoriku jen proto, že se tyto části již vyučovaly. Náročné vícefázové úlohy patří především do hodiny 41.
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{43mm}X@{}}
+\toprule
+\textbf{Ověřovaná dovednost} & \textbf{Co sledovat v žákově postupu}\\\midrule
+Postupné volby a omezení & Správně přiřazené počty možností jednotlivým pozicím; respektování zákazu nuly na začátku čísla.\\
+Variace bez opakování & Rozlišené role či místa; ubývající počet možností; počet vybraných osob menší nebo roven počtu dostupných.\\
+Variace s opakováním & Pevná délka kódu a stálá nabídka na každém místě; uvědomění, že PIN smí začít nulou.\\
+Permutace různých prvků & Použití všech prvků právě jednou; počet míst souhlasí s počtem objektů.\\
+Permutace stejných kopií & Správné četnosti, jejich součet a dělení faktoriály četností.\\
+Kombinace bez opakování & Výběr skupiny bez rozlišených rolí; oprava vícenásobného započtení dělením počtem pořadí.\\
+\bottomrule
+\end{tabularx}
+
+\poznamka{Při samostatné přípravě budoucího testu vyber malé množství krátkých položek s různými diagnostickými cíli. Není reálné za 15–20 minut požadovat důkladnou slovní úlohu na každý uvedený typ. Konkrétní skladbu, přiřazení k variantám a čas ověř až nad vybranými úlohami; postupuje se podle skillu \texttt{vytvor-test} a výběr schvaluje učitel. Dosavadní podklad v importu není hotový schválený test.}
+
+\newpage
+\blok{Organizace 45 minut}
+\poznamka{0–3 min: vysvětli organizaci a požadavek stručně zdůvodňovat postup. 3–21 min: písemná práce, tedy doporučených 18 minut v rámci rozpisu. 21–28 min: po odevzdání krátce porovnej rozhodovací strategie. 28–40 min: cílená náprava podle pozorovaných obtíží. 40–45 min: samostatná slovní rekapitulace a příprava na hodinu 41. Při jiné délce testu v rozmezí 15–20 minut uprav délku navazujícího procvičení.}
+
+Předem připrav až následně schválené zadání a organizaci práce. Použití kalkulačky, tabulek ani dalších pomůcek tato příprava nepovoluje; podmínky stanoví učitel při zadávání konkrétního testu. Během práce upřesňuj pouze organizační pokyny, neposkytuj nápovědu k volbě vzorce jednotlivým žákům.
+
+Po odevzdání nehodnoť před třídou individuální výkony. Krátký společný rozbor může vycházet z žákovských zdůvodnění a z pozorování učitele, ale úplné vyhodnocení proběhne až po opravě prací. Nenahrazuj ho odhadem úspěšnosti podle několika veřejných odpovědí.
+
+\blok{Vyhodnocení a následná náprava}
+Při opravování odlišuj chybný model, chybný počet možností v jednom kroku, početní chybu a nedostatečně doložený postup. Sleduj, zda žák rozumí svému správnému výsledku, i zda je schopen opravit lokální chybu při jinak správné úvaze. Tato příprava nezavádí bodovací schéma ani klasifikační hranice.
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{44mm}X@{}}
+\toprule
+\textbf{Zjištěný problém} & \textbf{Doporučená bezprostřední náprava}\\\midrule
+Komise zaměněná s funkcemi & Porovnej skupinu a obsazení rolí; nech vysvětlit, zda prohození dvou osob mění výsledek. Vrať se k hodině 35, P1.\\
+Povolené opakování přehlédnuto & Porovnej stálou a ubývající nabídku znaků. Použij hodinu 34, P3, a nech popsat obě situace.\\
+Počáteční nula u čísla & Nech oddělit první pozici a vyjmenovat její dovolené cifry. Navazuje hodina 30, P3.\\
+Stejné kopie považovány za různé & Dočasně označ kopie a pak označení smaž; vysvětli počet shodných podob. Využij hodinu 33, P1–P2.\\
+Ztráta vnitřního pořadí bloku & Ukaž obě orientace dvojice a odliš je od bloku stejných písmen. Porovnej hodinu 32, P2, a hodinu 33, P4.\\
+Správný model, chyba ve výpočtu & Krátit faktoriály před vyčíslením; nechat přepočítat pouze chybný krok. Využij hodinu 31, C2 a C4.\\
+\bottomrule
+\end{tabularx}
+
+Následné procvičení vybírej z již vytvořených příprav podle skutečných chyb; není nutné projít všechny řádky tabulky. Žák nejprve označí místo, kde jeho původní rozhodnutí selhalo, potom vysvětlí správný model a teprve nakonec přepočítá výsledek. Po dokončení oprav učitel sdělí jednotlivcům jejich výsledky a třídě shrne nejčastější společné problémy.
+
+\poznamka{Závěrečné ověření může být ústní nebo krátkým zápisem: žák vyjmenuje rozhodující otázky a uvede příklad situace, v níž pořadí rozhoduje. Příští hodina 41 využije zjištění z testu při smíšených úlohách s doplňkem, blokem a rozdělením na případy. Nezačínej zde novou látku pravděpodobnosti.}
+\end{document}

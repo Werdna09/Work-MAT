@@ -1,0 +1,128 @@
+% Obsahový zdroj: import_hodiny/33_Permutace_s_opakovanim.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 33.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{33}{Permutace s opakováním}
+\begin{document}
+
+
+Napiš písmena slova ANANAS. Kdybychom tři kartičky s A tajně očíslovali, dostali bychom více pořadí než při čtení samotných písmen. Ptej se, kolikrát se jedno viditelné slovo objeví v seznamu pořadí očíslovaných kartiček.
+\poznamka{Předpoklady: permutace různých prvků, faktoriál a bloková metoda. Cíl: žák spočítá četnosti, odvodí dělitele a vysvětlí, proč záměna stejných kopií netvoří nové pořadí. Nejprve použij P1, pak kontrastní P3 a blokový P4.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Permutace s opakováním} je uspořádání všech $n$ prvků, z nichž jsou kopie téhož typu nerozlišitelné. Typ $i$ má předem určenou četnost $n_i\in\mathbb N_0$, kde $n_1+\cdots+n_r=n$. Počet různých pořadí značíme $P(n;n_1,\ldots,n_r)$.
+\end{definiceBox}
+
+Dočasně všechny kopie očíslujme. Takto rozlišené objekty mají $n!$ pořadí. Po smazání čísel se $n_1!$ výměn kopií prvního typu projeví stejně. Současně lze nezávisle vyměnit kopie druhého typu $n_2!$ způsoby atd. Každé viditelné pořadí má přesně $n_1!\cdots n_r!$ očíslovaných podob. Proto
+\[
+ P(n;n_1,\ldots,n_r)=\frac{n!}{n_1!\,n_2!\cdots n_r!}.
+\]
+Dělení je oprávněné právě proto, že počet očíslovaných podob je pro \emph{každé} viditelné pořadí stejný. Typ s četností nula přispívá faktorem $0!=1$. Jsou-li všechny četnosti jedna, vrací se $n!$; je-li jen jeden typ, vychází $n!/n!=1$.
+
+Například u dvou stejných A a jednoho B jsou pouze $AAB,ABA,BAA$. Každé z těchto pořadí se při rozlišení $A_1,A_2$ objeví dvakrát. Toto je malé názorné zdůvodnění dělení faktoriálem četnosti.
+
+U blokových úloh nejprve přepočítáme počet nových objektů a jejich nerozlišitelnost. Blok $AAA$ uvnitř nemá šest různých pořadí: všechna přeuspořádání jsou stejná. Četnosti jsou předem pevné; nepovolujeme volné přidávání dalších kopií znaků.
+
+
+\poznamka{Průběh: 0–9 min motivace a malý výpis; 9–20 min odvození a P1; 20–31 min P3–P4, P2 a P5 krátce pro srovnání; 31–42 min C1–C3, případně C4; 42–45 min kontrola. C5 je rezerva či domácí práce. Tříbarevné žetony v C4 nepočítej dlouhým vyčíslováním čitatele, nejprve krať.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/33_Permutace_s_opakovanim.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Kolik různých slov (nemusejí dávat smysl) vznikne přeskupením písmen \textsc{ANANAS}?
+\tcblower
+Je \(6\) písmen: \(A\) třikrát, \(N\) dvakrát, \(S\) jednou. Počet \(\frac{6!}{3!\,2!}=\frac{720}{12}=60\).
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/33_Permutace_s_opakovanim.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Kolik pořadí vznikne z písmen \textsc{KOKOS}?
+\tcblower
+Pět písmen; \(K\) dvakrát, \(O\) dvakrát, \(S\) jednou. \(\frac{5!}{2!\,2!}=30\).
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/33_Permutace_s_opakovanim.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Kolik sedmimístných řetězců obsahuje právě čtyři nuly a tři jedničky?
+\tcblower
+Použijeme všech sedm znaků s pevnými četnostmi: čtyři nuly, tři jedničky. Počet je
+\[
+ \frac{7!}{4!\,3!}=\frac{7\cdot6\cdot5}{3\cdot2\cdot1}=35.
+\]
+První znak smí být nula, jde o řetězec. Každé rozložení tří jedniček jednoznačně určuje i všechny čtyři nuly; další volby nezbývají.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/33_Permutace_s_opakovanim.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+U slova \textsc{ANANAS} požadujeme, aby všechna tři \(A\) stála vedle sebe.
+\tcblower
+Spojíme tři A do jediného objektu $AAA$. Řadíme čtyři objekty $AAA,N,N,S$, přičemž dvě N jsou nerozlišitelná. Proto je pořadí $4!/2!=12$. Rozpojením bloku dostaneme právě všechna povolená slova. Uvnitř $AAA$ je pouze jedna viditelná možnost, žádným dalším $3!$ nenásobíme.
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/33_Permutace_s_opakovanim.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Kolik různých rozložení pěti shodných červených a dvou shodných modrých žetonů do sedmi míst v řadě?
+\tcblower
+Použijeme sedm žetonů, přičemž pět červených je navzájem shodných a dva modré také. Dostáváme $7!/(5!\,2!)=7\cdot6/2=21$. Dvě místa obsazená modrými jednoznačně určují celé rozložení.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+Před vzorcem zapiš seznam typů a jejich četností a zkontroluj jejich součet. U blokové úlohy sestav nový seznam po spojení bloku. C1–C3 jsou základ, C4–C5 zásoba.
+
+% Zdroj C1: import_hodiny/33_Permutace_s_opakovanim.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Kolik různých řetězců vznikne přeskupením všech písmen \textsc{TATRA}?
+\tcblower
+Je pět písmen, T dvakrát, A dvakrát a R jednou. Počet je $5!/(2!\,2!\,1!)=30$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/33_Permutace_s_opakovanim.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Kolik různých řad tvoří tři nuly a dvě jedničky?
+\tcblower
+Pevné četnosti jsou tři nuly a dvě jedničky, celkem pět míst. Proto $5!/(3!\,2!)=10$ řad.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/33_Permutace_s_opakovanim.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Kolik různých řetězců vznikne přeskupením \textsc{MAMA}, mají-li obě M stát vedle sebe?
+\tcblower
+Nové objekty jsou $MM,A,A$: tři objekty se dvěma stejnými A. Počet je $3!/2!=3$. Přímo: $MMAA,AMMA,AAMM$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/33_Permutace_s_opakovanim.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Kolik různých pořadí má osm žetonů: tři červené, tři modré a dva zelené, jsou-li žetony téže barvy nerozlišitelné?
+\tcblower
+Kontrola četností: $3+3+2=8$. Dělíme výměnami žetonů všech tří barev:
+\[
+\frac{8!}{3!\,3!\,2!}=\frac{40320}{6\cdot6\cdot2}=560.
+\]
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/33_Permutace_s_opakovanim.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Kolik různých řetězců vznikne ze slova \textsc{ANANAS}, mají-li obě N stát vedle sebe?
+\tcblower
+Spojíme N do bloku $NN$. Řadíme pět objektů $NN,A,A,A,S$, z nichž tři A jsou shodná. Dostáváme $5!/3!=20$. Blok $NN$ nemá dvě různá vnitřní pořadí.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: dělení četností místo jejich faktoriálů; násobení pořadím uvnitř nerozlišitelného bloku; záměna délky slova a počtu různých písmen. U ANANAS je $n=6$, počet typů je tři. Příště připustíme libovolnou volbu znaku na každé pozici a porovnáme ji s dnešními pevnými četnostmi.}
+\end{document}

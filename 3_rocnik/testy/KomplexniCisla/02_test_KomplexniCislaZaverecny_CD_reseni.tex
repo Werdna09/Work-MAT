@@ -1,0 +1,186 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\section*{Komplexní čísla C/D -- řešení}
+Podklad pro učitele k testu \texttt{02\_test\_KomplexniCislaZaverecny\_CD.tex}, 3.~ročník SPŠ.
+
+Všechny matematické údaje pocházejí ze schválených úloh učebnice:\\
+\texttt{ucebnice/06\_Komplexni\_cisla/Komplexní čísla.tex}.
+Výběr a přiřazení k variantám schválil učitel v této konverzaci.
+Ve čtvrté úloze obou variant bylo na jeho pokyn číslo $z_1$ převedeno
+do algebraického tvaru; hodnoty čísel i požadované výpočty zůstaly zachovány.
+
+\begin{center}
+\begin{tabular}{c|ll}
+Úloha testu & Varianta C: zdroj & Varianta D: zdroj\\ \hline
+1 & Úloha 1.1 c), řádek 4525 & Úloha 1.1 i), řádek 4531\\
+2 & Úloha 2.22 h), řádek 4927 & Úloha 2.22 i), řádek 4928\\
+3 & Úloha 4.49 b), řádek 5451 & Úloha 4.49 c), řádek 5452\\
+4 & Úloha 3.35 b), řádek 5162 & Úloha 3.35 d), řádek 5166\\
+5 & Úloha 3.44 a), řádek 5325 & Úloha 3.44 d), řádek 5346
+\end{tabular}
+\end{center}
+Řádky odpovídají zdroji při sestavení; rozhodující je číslo úlohy a písmeno.
+Zařazení odpovídá tematickému plánu
+\texttt{3\_rocnik/tematicke\_plany/SPS.pdf}, s.~1, body 1.1--1.5.
+
+\subsection*{Varianta C}
+\begin{enumerate}
+\item Vypočítáme součin postupným násobením:
+\[
+(2+i)(3+i)(1+2i)=(5+5i)(1+2i)=5+15i-10=-5+15i.
+\]
+Kontrola jiným seskupením:
+$(3+i)(1+2i)=1+7i$, tedy $(2+i)(1+7i)=-5+15i$.
+
+\item Protože $1-2i\neq0$ a $|(2+i)^2|=|2+i|^2$, dostáváme
+\[
+\frac{|(2+i)^2|}{|1-2i|}
+=\frac{(\sqrt5)^2}{\sqrt5}=\sqrt5.
+\]
+Kontrola přes algebraický tvar podílu:
+\[
+\frac{(2+i)^2}{1-2i}=\frac{(3+4i)(1+2i)}5=-1+2i,
+\qquad |-1+2i|=\sqrt5.
+\]
+
+\item Pro rovnici $5x^2-2x+1=0$ je diskriminant $D=4-20=-16$.
+\[
+x_{1,2}=\frac{2\pm4i}{10}=\frac{1\pm2i}{5},
+\qquad K=\left\{\frac{1-2i}{5};\frac{1+2i}{5}\right\}.
+\]
+Zkouška pro oba kořeny:
+\[
+5\left(\frac{1\pm2i}{5}\right)^2
+-2\frac{1\pm2i}{5}+1
+=\frac{-3\pm4i-2\mp4i+5}{5}=0.
+\]
+Jsou to dva různé kořeny kvadratické rovnice, tedy všechny její kořeny v $\mathbb C$.
+
+\item Je dáno $z_1=1-\sqrt3i$ a
+$z_2=4(\cos\frac{\pi}{6}+i\sin\frac{\pi}{6})$.
+Číslo $z_1$ má modul $\sqrt{1+3}=2$ a leží ve IV.~kvadrantu,
+tedy $z_1=2(\cos\frac{5\pi}{3}+i\sin\frac{5\pi}{3})$. Počítáme:
+\begin{align*}
+z_1z_2
+&=8\left(\cos\frac{11\pi}{6}+i\sin\frac{11\pi}{6}\right)
+=4\sqrt3-4i,\\
+\frac{z_1}{z_2}
+&=\frac12\left(\cos\frac{3\pi}{2}+i\sin\frac{3\pi}{2}\right)
+=-\frac12i.
+\end{align*}
+U součinu argumenty sčítáme, u podílu je odečítáme;
+$\frac{5\pi}{3}+\frac\pi6=\frac{11\pi}{6}$,
+$\frac{5\pi}{3}-\frac\pi6=\frac{3\pi}{2}$.
+Kontrola v algebraickém tvaru: $z_1=1-\sqrt3i$, $z_2=2\sqrt3+2i$.
+Platí $(1-\sqrt3i)(2\sqrt3+2i)=4\sqrt3-4i$
+a $(-\frac12i)(2\sqrt3+2i)=1-\sqrt3i=z_1$.
+
+\item Pro $z=\frac12(\cos\frac{4\pi}{9}+i\sin\frac{4\pi}{9})\neq0$
+nejprve použijeme Moivreovu větu a poté převrátíme výsledek:
+\[
+z^3=\frac18\left(\cos\frac{4\pi}{3}+i\sin\frac{4\pi}{3}\right),
+\qquad
+\frac1{z^3}=8\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right)
+=-4+4\sqrt3i.
+\]
+Při převrácení se modul převrátí a argument změní znaménko;
+$-\frac{4\pi}{3}+2\pi=\frac{2\pi}{3}$.
+Kontrola: $z^3=\frac{-1-\sqrt3i}{16}$ a
+$\frac{-1-\sqrt3i}{16}(-4+4\sqrt3i)=1$.
+\end{enumerate}
+
+\newpage
+\section*{Komplexní čísla -- varianta D}
+Řešení k testu \texttt{02\_test\_KomplexniCislaZaverecny\_CD.tex}.
+\begin{enumerate}
+\item Nejprve vypočítáme druhou mocninu a poté násobíme:
+\[
+(1-2i)^3=(-3-4i)(1-2i)=-11+2i.
+\]
+Kontrola vzorcem pro třetí mocninu:
+$1-6i+12i^2-8i^3=1-6i-12+8i=-11+2i$.
+
+\item Protože $2+i\neq0$, použijeme vlastnosti absolutní hodnoty:
+\[
+\left|\frac{(1-i)^3}{2+i}\right|
+=\frac{|1-i|^3}{|2+i|}
+=\frac{(\sqrt2)^3}{\sqrt5}=\frac{2\sqrt{10}}5.
+\]
+Kontrola přes algebraický tvar podílu:
+\[
+\frac{(1-i)^3}{2+i}=\frac{(-2-2i)(2-i)}5=-\frac65-\frac25i,
+\qquad
+\sqrt{\frac{36}{25}+\frac4{25}}=\frac{2\sqrt{10}}5.
+\]
+
+\item Pro rovnici $3x^2-2x+1=0$ je diskriminant $D=4-12=-8$.
+\[
+x_{1,2}=\frac{2\pm2\sqrt2i}{6}=\frac{1\pm\sqrt2i}{3},
+\qquad K=\left\{\frac{1-\sqrt2i}{3};\frac{1+\sqrt2i}{3}\right\}.
+\]
+Zkouška pro oba kořeny:
+\[
+3\left(\frac{1\pm\sqrt2i}{3}\right)^2
+-2\frac{1\pm\sqrt2i}{3}+1
+=\frac{-1\pm2\sqrt2i-2\mp2\sqrt2i+3}{3}=0.
+\]
+Jsou to dva různé kořeny kvadratické rovnice, tedy všechny její kořeny v $\mathbb C$.
+
+\item Je dáno $z_1=-\frac{5\sqrt3}{2}-\frac52i$ a
+$z_2=\cos\frac\pi3+i\sin\frac\pi3$.
+Číslo $z_1$ má modul $\sqrt{\frac{75}{4}+\frac{25}{4}}=5$ a leží ve III.~kvadrantu,
+tedy $z_1=5(\cos\frac{7\pi}{6}+i\sin\frac{7\pi}{6})$. Počítáme:
+\begin{align*}
+z_1z_2
+&=5\left(\cos\frac{3\pi}{2}+i\sin\frac{3\pi}{2}\right)=-5i,\\
+\frac{z_1}{z_2}
+&=5\left(\cos\frac{5\pi}{6}+i\sin\frac{5\pi}{6}\right)
+=-\frac{5\sqrt3}{2}+\frac52i.
+\end{align*}
+U součinu používáme součet $\frac{7\pi}{6}+\frac\pi3=\frac{3\pi}{2}$,
+u podílu rozdíl $\frac{7\pi}{6}-\frac\pi3=\frac{5\pi}{6}$.
+Kontrola v algebraickém tvaru:
+$z_1=-\frac{5\sqrt3}{2}-\frac52i$, $z_2=\frac12+\frac{\sqrt3}{2}i$.
+Přímé násobení dává $z_1z_2=-5i$ a
+\[
+\left(-\frac{5\sqrt3}{2}+\frac52i\right)
+\left(\frac12+\frac{\sqrt3}{2}i\right)
+=-\frac{5\sqrt3}{2}-\frac52i=z_1.
+\]
+
+\item Pro $z=\frac13(\cos\frac{5\pi}{6}+i\sin\frac{5\pi}{6})\neq0$
+nejprve použijeme Moivreovu větu a poté převrátíme výsledek:
+\[
+z^2=\frac19\left(\cos\frac{5\pi}{3}+i\sin\frac{5\pi}{3}\right),
+\qquad
+\frac1{z^2}=9\left(\cos\frac\pi3+i\sin\frac\pi3\right)
+=\frac92+\frac{9\sqrt3}{2}i.
+\]
+Argument převrácené hodnoty je
+$-\frac{5\pi}{3}+2\pi=\frac\pi3$.
+Kontrola: $z^2=\frac{1-\sqrt3i}{18}$ a
+$\frac{1-\sqrt3i}{18}(\frac92+\frac{9\sqrt3}{2}i)=1$.
+\end{enumerate}
+
+\subsection*{Kontrola a srovnatelnost variant}
+Všechny jmenovatele jsou nenulové, moduly kladné a oba kvadratické kořeny
+v každé variantě byly zkontrolovány dosazením.
+Součiny, podíly a převrácené mocniny byly ověřeny také přesnou aritmetikou;
+goniometrická zadání nezávisle numericky z původních úhlů.
+Všechny převzaté matematické výrazy odpovídají schválenému výběru.
+
+Varianty mají shodné okruhy, počet úloh a přibližně srovnatelnou náročnost.
+V D3 je navíc odmocnina v imaginární části kořenů, zatímco C1 obsahuje
+součin tří různých dvojčlenů. Náročnost proti A/B zvyšují vícefázové
+operace, mocniny uvnitř absolutní hodnoty, nenormované kvadratické rovnice,
+součin i podíl ve čtvrté úloze a převrácené mocniny v páté úloze.
+Orientační časy jsou 3--4, 3--5, 4--6, 6--8 a 4--6 minut;
+celkem přibližně 25--35 minut včetně kontroly. Odhad nebyl ověřen ve třídě.
+\end{document}

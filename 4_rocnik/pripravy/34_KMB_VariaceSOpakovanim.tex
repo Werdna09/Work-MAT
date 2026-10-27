@@ -1,0 +1,123 @@
+% Obsahový zdroj: import_hodiny/34_Variace_s_opakovanim.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 34.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{34}{Variace s opakováním}
+\begin{document}
+
+
+Připomeň rozdíl mezi řetězcem se stanoveným počtem nul a jedniček a kódem, v němž můžeme na každém místě znovu volit libovolnou číslici. Nyní četnosti předem zadány nejsou.
+\poznamka{Předpoklady: pravidlo součinu, variace bez opakování a rozdíl mezi kódem a číslem. Cíl: žák odvodí $n^k$ a u omezených kódů zvolí součin, rozdělení podle pozice nebo doplněk. P1–P3 tvoří krátký kontrast; více času věnuj P4–P5.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Variace s opakováním} délky $k$ z $n$ různých symbolů je uspořádaná $k$-tice, na jejímž každém místě může být kterýkoli z těchto symbolů. Pro celá $n\geq1$ a $k\geq0$ je jejich počet $\overline V(n,k)$.
+\end{definiceBox}
+
+Pro $k\geq1$ má každá z $k$ pozic stále $n$ možností. Pravidlo součinu dává
+\[
+ \overline V(n,k)=\underbrace{n\cdot n\cdots n}_{k\text{ činitelů}}=n^k.
+\]
+Pro $k=0$ existuje jedna prázdná posloupnost a $n^0=1$. Není nutné $k\leq n$, protože symboly se smějí opakovat. Bez opakování by po každé volbě jedna možnost ubyla a pro $k\leq n$ bychom dostali $V(n,k)=n!/(n-k)!$.
+
+U čísla je první cifra nenulová. U PINu či jiného kódu zde počáteční nulu dovolujeme, pokud zadání nestanoví jinak. Další podmínky mohou zrušit možnost použít prosté $n^k$ pro celý výsledek.\begin{definiceBox}
+\textbf{Doplňková metoda} určuje počet vyhovujících výsledků jako počet všech výsledků minus počet nevyhovujících výsledků ve stejné základní množině. Obě části se musí vzájemně vylučovat a společně vyčerpat všechny výsledky.
+\end{definiceBox}
+
+K podmínce „alespoň jeden daný znak“ je doplňkem „žádný takový znak“. Přímý součet počtů „znak je na prvním místě“, „na druhém místě“ atd. se překrývá, pokud je povoleno více výskytů. Naproti tomu při podmínce „právě jedno A“ se případy podle jediné pozice A nepřekrývají; na ostatních místech A vyloučíme.
+
+
+\poznamka{Průběh: 0–8 min motivace a P1–P2; 8–18 min odvození a P3; 18–31 min P4–P5; 31–42 min C1–C5; 42–45 min kontrola. C2 jen stručce opakuje hodinu 32. Když žáci potřebují více času na doplněk, přesuň C5 k domácímu dokončení.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/34_Variace_s_opakovanim.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Kolik čtyřmístných PINů používá číslice \(0\) až \(9\)?
+\tcblower
+Kód může začít nulou a číslice se mohou opakovat. \(10^4=10\,000\).
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/34_Variace_s_opakovanim.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Kolik je čtyřciferných přirozených čísel při dovoleném opakování?
+\tcblower
+První pozice \(9\) možností (\(1\)--\(9\)), zbývající tři \(10\). \(9\cdot10^3=9000\), nikoli \(10^4\).
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/34_Variace_s_opakovanim.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Kolik trojznakových kódů sestavíme z šesti písmen, bez opakování?
+\tcblower
+Máme \(6\) možností na první pozici, \(5\) na druhou a \(4\) na třetí. \(6\cdot5\cdot4=120\). Pro porovnání s opakováním by to bylo \(6^3=216\).
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/34_Variace_s_opakovanim.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Kolik trojznakových hesel z $A,B,C,D$ obsahuje právě jedno A? Na ostatních místech je opakování dovoleno.
+\tcblower
+Rozdělíme případy podle jediné pozice A: první, druhá, nebo třetí. V každém z těchto tří disjunktních případů zbývají dvě místa, na nichž jsou dovolena pouze B, C a D; mají $3\cdot3=9$ možností. Celkem $9+9+9=3\cdot3^2=27$. Každé heslo obsahuje právě jedno A, takže patří právě do jednoho případu.
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/34_Variace_s_opakovanim.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Kolik tříznakových kódů z číslic $0$ až $9$ obsahuje alespoň jednu sedmičku? Číslice se mohou opakovat a první znak smí být nula.
+\tcblower
+Všech tříznakových kódů je $10^3=1000$. Kód bez sedmičky používá na každé pozici jen devět ostatních číslic, proto je takových kódů $9^3=729$. Každý kód buď sedmičku obsahuje, nebo neobsahuje. Vyhovujících je $1000-729=271$. Tím se vyhneme dvojímu započtení kódů s více sedmičkami.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+Nejdříve uveď povolenou abecedu, délku a informaci o opakování. U všech kódů v C3–C4 je opakování dovoleno; cílem je procvičit omezení počtu symbolů a doplněk.
+
+% Zdroj C1: import_hodiny/34_Variace_s_opakovanim.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Kolik pětic symbolů vznikne ze tří znaků, s opakováním?
+\tcblower
+Pět rozlišených pozic má po třech možnostech, tedy $\overline V(3,5)=3^5=243$. Délka je větší než počet typů, což opakování umožňuje.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/34_Variace_s_opakovanim.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Kolik dvoupísmenných hesel vznikne z pěti různých písmen bez opakování?
+\tcblower
+První písmeno má pět možností, druhé čtyři jiné. Proto $V(5,2)=5\cdot4=20$.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/34_Variace_s_opakovanim.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Kolik čtyřznakových kódů z pěti různých symbolů, mezi nimiž je X, neobsahuje X? Opakování je dovoleno.
+\tcblower
+Vyloučíme X z nabídky. Zůstanou čtyři symboly na každé ze čtyř pozic; počet je $4^4=256$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/34_Variace_s_opakovanim.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Kolik čtyřznakových kódů ze tří různých znaků, mezi nimiž je A, obsahuje alespoň jedno A? Opakování je dovoleno.
+\tcblower
+Celkem je $3^4=81$ kódů. Bez A zbývají dva symboly na každém místě, tedy $2^4=16$. Doplňkem dostáváme $81-16=65$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/34_Variace_s_opakovanim.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Kolik čtyřmístných čísel lze vytvořit z cifer \(0\) až \(5\), s opakováním?
+\tcblower
+Nenulová první cifra je jedna z $1,\ldots,5$: pět možností. Každé další místo má šest možností včetně nuly. Proto $5\cdot6^3=1080$ čísel.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: $n^k$ i bez opakování; zákaz nuly v PINu; počítání „alespoň jedno“ jako „právě jedno“; A zůstane dovoleno na dalších pozicích v P4. Požaduj vysvětlení, proč je v P4 faktor $3^2$, a ne $4^2$. Následující hodina zruší rozlišení pořadí při výběru skupiny.}
+\end{document}

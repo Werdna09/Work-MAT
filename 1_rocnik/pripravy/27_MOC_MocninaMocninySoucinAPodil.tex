@@ -1,0 +1,85 @@
+% Hodina 27, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 27.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mocniny/03_Vzorce_pro_mocniny_II.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/03%20Vzorce%20pro%20mocniny%20II.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Mocniny/04_KISS.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/04%20KISS.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Mocniny}{27}{Mocnina mocniny a součinu}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Zápis $(a^3)^2$ obsahuje dva činitele $a^3$, tedy šest činitelů $a$. Proti tomu součin $a^3a^2$ obsahuje pět činitelů $a$. Rozlišuj vnější operaci dříve, než začneš upravovat exponenty.
+
+\begin{definiceBox}[title={Připomenutí definice},breakable=false]
+\textbf{Mocnina součinu} $(ab)^n$ je pro $n\in\mathbb N$ součin $n$ stejných činitelů $ab$.
+\end{definiceBox}
+
+
+Z opakovaného násobení a přeskupení činitelů dostáváme
+\[
+(a^m)^n=a^{mn},\qquad (ab)^n=a^nb^n,\qquad
+\left(\frac ab\right)^n=\frac{a^n}{b^n}\quad(b\ne0).
+\]
+Zde jsou $m,n\in\mathbb N$. Na součet se poslední dvě pravidla nevztahují: například $(2+3)^2=25$, ale $2^2+3^2=13$.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Uprav $(x^3)^4$ a $(2a^2b)^3$.
+\tcblower
+$(x^3)^4=x^{12}$; $(2a^2b)^3=2^3a^6b^3=8a^6b^3$. Umocňujeme i číselný koeficient.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\left(\frac{-3x^2}{2y}\right)^2$.
+\tcblower
+Pro $y\ne0$ je výsledek $\frac{9x^4}{4y^2}$. Záporné znaménko je součástí základu a při sudé mocnině zmizí.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $(b^2)^5$.
+\item Uprav $(-2xy^3)^3$.
+\item Uprav $\left(\frac{2a^3}{b^2}\right)^2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $b^{10}$, protože exponenty násobíme.
+\item $-8x^3y^9$; lichý exponent zachovává záporné znaménko.
+\item $\frac{4a^6}{b^4}$ při $b\ne0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Po každém vzorci nech žáky vyřešit krátký samostatný příklad. Chybný vzorec pro mocninu součtu nyní jen vyvrať číselným příkladem; správné dvojčlenné vzorce patří až do 49. hodiny.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Uprav $\frac{(2^3\cdot3^2)^3}{(2\cdot3)^5}$.
+\tcblower
+$\frac{2^9 3^6}{2^5 3^5}=2^4\cdot3=48$. Krátit před vyčíslováním je úspornější.
+\end{prikladReseniBox}
+
+
+\end{document}

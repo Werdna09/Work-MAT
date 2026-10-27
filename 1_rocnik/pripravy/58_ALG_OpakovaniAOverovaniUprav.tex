@@ -1,0 +1,75 @@
+% Hodina 58, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 58.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mocniny/04_KISS.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/04%20KISS.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/02_Nasobeni_mnohoclenu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/02%20N%C3%A1soben%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/05_Deleni_mnohoclenu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/05%20D%C4%9Blen%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{58}{Opakování a ověřování úprav}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Dosazení je účinná kontrola: jediná neshoda vyvrátí tvrzenou obecnou rovnost. Souhlas pro jednu nebo několik hodnot však sám o sobě nezaručuje, že úprava platí všude. Obecnou správnost doložíme pravidly úprav nebo roznásobením.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Mnohočlenná identita} je rovnost mnohočlenů platná pro každé dosazení jejich proměnných. U lomených výrazů rovnost vždy vztahujeme k uvedenému definičnímu oboru.
+\end{definiceBox}
+
+
+Nejprve napiš původní podmínky. Pro kontrolu zvol několik přípustných hodnot, mezi nimi nulu a záporné číslo, pokud jsou dovoleny. Nakonec ověř jednotlivé úpravy obecně. U dělení mnohočlenů kontroluj $A=BQ+R$, u rozkladu součin zpětně roznásob.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Je dosazení $x=0$ důkazem rovnosti $(x+1)^2=x^2+1$?
+\tcblower
+Pro $x=0$ obě strany dávají $1$, ale například pro $x=1$ dává levá strana $4$ a pravá $2$. Obecná rovnost neplatí; chybí smíšený člen $2x$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Ověř $\frac{x^2-1}{x-1}=x+1$ v přípustných bodech a potom obecně.
+\tcblower
+Původní obor je $x\ne1$. Pro $x=2$ obě strany dávají $3$, pro $x=-1$ dávají $0$. Obecný důvod: $x^2-1=(x-1)(x+1)$ a na původním oboru smíme krátit nenulové $x-1$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Obecně ověř $(x-2)(x^2+2x+4)=x^3-8$.
+\item Zkontroluj $\frac{x^2-4}{x-2}=x+2$ a jeho obor; použij i $x=0$.
+\item Ověř výsledek dělení z hodiny 47: $p^3+2p^2-2p-1=(p+1)(p^2+p-3)+2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Roznásobením vznikne $x^3+2x^2+4x-2x^2-4x-8=x^3-8$. Platí pro všechna reálná $x$.
+\item Původní výraz vyžaduje $x\ne2$. Pro $x=0$ dává $2$ na obou stranách. Obecně krátíme $x-2$ v rozkladu $(x-2)(x+2)$.
+\item Pravá strana po roznásobení je $p^3+2p^2-2p-3+2$, tedy levá strana. Identita platí pro všechna reálná $p$, i pro $p=-1$; tehdy obě strany dávají $2$. Původní podíl hodnot však pro $p=-1$ definován není.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Formulace rozpisu „důkaz správnosti dosazením“ zde znamená kontrolní dosazení doplněné obecným zdůvodněním. Neuč, že konečný počet souhlasných pokusů automaticky dokazuje rovnost výrazů. Při pomalejším tempu zvol jedno rozložení a jednu lomenou úpravu a nech zdůvodnit každý krok.}
+
+\end{document}

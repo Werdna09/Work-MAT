@@ -1,0 +1,155 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\section*{Exponenciální rovnice A/B -- řešení}
+Podklad pro učitele k testu
+\texttt{02\_test\_ExponencialniRovnice\_AB.tex}, 2.~ročník SPŠ.
+
+Všechna zadání byla převzata beze změny z učebnice:\\
+\texttt{ucebnice/02\_Funkce\_a\_rovnice/}\\
+\texttt{Exponencialni\_funkce\_a\_rovnice/}\\
+\texttt{Exponenciální rovnice.tex}.
+
+Konkrétní výběr a přiřazení k variantám schválil učitel.
+
+\begin{center}
+\begin{tabular}{c|ll}
+Úloha testu & Varianta A: zdroj & Varianta B: zdroj\\ \hline
+1 & Úloha 1.1 l), řádek 992 & Úloha 1.1 o), řádek 995\\
+2 & Úloha 1.3 a), řádek 1048 & Úloha 1.3 f), řádek 1054\\
+3 & Úloha 1.4 w), řádek 1096 & Úloha 1.4 x), řádek 1097\\
+4 & Úloha 1.6 a), řádek 1133 & Úloha 1.6 d), řádek 1136
+\end{tabular}
+\end{center}
+Čísla řádků odpovídají zdroji při sestavení testu; rozhodující je číslo úlohy a písmeno.
+
+Tematický plán: \texttt{2\_rocnik/tematicke\_plany/SPS.pdf}, s.~1.
+Exponenciální rovnice jsou zařazeny do listopadu jako bod 1.7;
+společná dotace pro exponenciální rovnice a nerovnice je 12 hodin.
+
+\subsection*{Varianta A}
+Všechny čtyři rovnice mají definiční obor $D=\mathbb{R}$.
+\begin{enumerate}
+\item $9^x = 3$.
+Převedeme obě strany na základ $3$:
+\[
+9^x=3 \iff 3^{2x}=3^1 \iff 2x=1 \iff x=\frac12.
+\]
+Množina kořenů je $K=\{\frac12\}$.
+Zkouška: $9^{1/2}=\sqrt{9}=3$.
+
+\item $2^{3x-1} \cdot 4 = 8^{x+1} \cdot \left(\dfrac{1}{2}\right)^{x}$.
+Použijeme $4=2^2$, $8=2^3$ a $(\frac12)^x=2^{-x}$:
+\[
+2^{3x-1}\cdot2^2=2^{3x+3}\cdot2^{-x}
+\iff 2^{3x+1}=2^{2x+3}
+\iff 3x+1=2x+3 \iff x=2.
+\]
+Proto $K=\{2\}$.
+Zkouška v původní rovnici: $L(2)=2^5\cdot4=128$,
+$P(2)=8^3\cdot(\frac12)^2=512\cdot\frac14=128$.
+
+\item $3^{x} \cdot \left(\dfrac{1}{2}\right)^{x} + 3^{x+1} \cdot \left(\dfrac{1}{2}\right)^{x+1} = \dfrac{5}{3}$.
+Spojíme mocniny se stejným exponentem a vytkneme společný výraz:
+\[
+\left(\frac32\right)^x+\left(\frac32\right)^{x+1}
+=\left(\frac32\right)^x\left(1+\frac32\right)=\frac53.
+\]
+Tedy
+\[
+\frac52\left(\frac32\right)^x=\frac53
+\iff \left(\frac32\right)^x=\frac23
+=\left(\frac32\right)^{-1} \iff x=-1.
+\]
+Proto $K=\{-1\}$.
+Zkouška: $L(-1)=3^{-1}\cdot(\frac12)^{-1}+3^0\cdot(\frac12)^0
+=\frac23+1=\frac53=P(-1)$.
+
+\item $4^{2x} - 6 \cdot 4^{x} + 8 = 0$.
+Zavedeme $t=4^x>0$ a řešíme kvadratickou rovnici:
+\[
+t^2-6t+8=0 \iff (t-2)(t-4)=0 \iff t=2\ \text{nebo}\ t=4.
+\]
+Oba pomocné kořeny jsou kladné. Zpětná substituce dává
+\[
+4^x=2=4^{1/2} \iff x=\frac12,
+\qquad 4^x=4 \iff x=1.
+\]
+Proto $K=\{\frac12;1\}$.
+Zkoušky: $L(\frac12)=4-12+8=0$, $L(1)=16-24+8=0$.
+\end{enumerate}
+
+\newpage
+\section*{Exponenciální rovnice -- varianta B}
+Řešení k testu \texttt{02\_test\_ExponencialniRovnice\_AB.tex}.
+Zdroje jednotlivých zadání jsou uvedeny v přehledu na první straně.
+
+Všechny čtyři rovnice mají definiční obor $D=\mathbb{R}$.
+\begin{enumerate}
+\item $8^{x} = 2$.
+Převedeme obě strany na základ $2$:
+\[
+8^x=2 \iff 2^{3x}=2^1 \iff 3x=1 \iff x=\frac13.
+\]
+Množina kořenů je $K=\{\frac13\}$.
+Zkouška: $8^{1/3}=\sqrt[3]{8}=2$.
+
+\item $5^{x} \cdot 2^{x} = 100^{x-1}$.
+Spojíme mocniny na levé straně a využijeme $100=10^2$:
+\[
+10^x=10^{2x-2} \iff x=2x-2 \iff x=2.
+\]
+Proto $K=\{2\}$.
+Zkouška v původní rovnici: $L(2)=5^2\cdot2^2=25\cdot4=100$,
+$P(2)=100^1=100$.
+
+\item $2^{2x} \cdot 5^{x} - 2^{2x-1} \cdot 5^{x+1} = -600$.
+První součin je $4^x\cdot5^x=20^x$; ve druhém součinu
+vytkneme stejný výraz:
+\[
+20^x-\frac52\cdot20^x=-600
+\iff -\frac32\cdot20^x=-600
+\iff 20^x=400=20^2 \iff x=2.
+\]
+Proto $K=\{2\}$.
+Zkouška v původní rovnici:
+$L(2)=2^4\cdot5^2-2^3\cdot5^3=400-1000=-600=P(2)$.
+
+\item $3^{2x} - 4 \cdot 3^{x} = -3$.
+Zavedeme $t=3^x>0$ a řešíme kvadratickou rovnici:
+\[
+t^2-4t+3=0 \iff (t-1)(t-3)=0 \iff t=1\ \text{nebo}\ t=3.
+\]
+Oba pomocné kořeny jsou kladné. Zpětná substituce dává
+\[
+3^x=1=3^0 \iff x=0,
+\qquad 3^x=3 \iff x=1.
+\]
+Proto $K=\{0;1\}$.
+Zkoušky: $L(0)=1-4=-3$, $L(1)=9-12=-3$.
+\end{enumerate}
+
+\subsection*{Úplnost řešení a srovnatelnost variant}
+Všechny použité základy jsou kladné a různé od jedné.
+Úpravy mocnin i dělení nenulovými konstantami jsou na $\mathbb{R}$ ekvivalentní.
+Prostota exponenciálních funkcí proto zajišťuje úplnost řešení prvních tří úloh.
+Ve čtvrtých úlohách nabývá substituovaný výraz právě všech kladných hodnot;
+rozklad kvadratického polynomu poskytuje všechny pomocné kořeny
+a u každého byl proveden návrat k původní neznámé.
+Všech deset nalezených kořenů bylo navíc nezávisle ověřeno přesným
+výpočtem po dosazení do původních osmi rovnic.
+
+Obě varianty postupují od převodu na společný základ přes úpravy mocnin
+a vytýkání ke kvadratické substituci se dvěma kladnými pomocnými kořeny.
+Obtížnost a rozsah jsou přibližně srovnatelné; druhá úloha A má o jednu
+úpravu mocnin více, třetí úloha B pracuje s méně obvyklým základem $20$.
+Orientační časy odpovídajících úloh jsou v obou variantách
+1--2, 2--3, 3--5 a 4--5 minut, celkem přibližně 15--20 minut včetně kontroly.
+Odhad nebyl ověřen ve třídě.
+\end{document}

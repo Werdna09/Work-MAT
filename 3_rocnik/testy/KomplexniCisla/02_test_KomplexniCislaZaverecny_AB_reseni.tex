@@ -1,0 +1,175 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\section*{Komplexní čísla A/B -- řešení}
+Podklad pro učitele k testu \texttt{02\_test\_KomplexniCislaZaverecny\_AB.tex}.
+
+Zdroj všech deseti zadání: přímé zadání učitele v této konverzaci,
+ve zprávě začínající „Vytvoř test A/B na komplexní čísla podle následujících příkladů.“
+Úloha A1 až A5 odpovídá položce 1 až 5 pod nadpisem „Varianta A“;
+obdobně B1 až B5 položkám pod nadpisem „Varianta B“.
+Zadání ani přiřazení k variantám nebyla změněna.
+
+Zařazení: 3.~ročník. Tematické plány:\\
+\texttt{3\_rocnik/tematicke\_plany/SPS.pdf} a
+\texttt{3\_rocnik/tematicke\_plany/GYM.pdf}, s.~1.
+Oba plány řadí komplexní čísla na začátek třetího ročníku;
+početní operace a Moivreovu větu do září, kvadratické rovnice do října.
+Zářijová dotace činí 9 hodin pro SPŠ a 12 hodin pro gymnázium.
+
+\subsection*{Varianta A}
+\begin{enumerate}
+\item \((2+3i)^2\).
+Použijeme vzorec pro druhou mocninu dvojčlenu a vztah $i^2=-1$:
+\[
+(2+3i)^2=4+12i+9i^2=4+12i-9=-5+12i.
+\]
+Nezávislá kontrola přímým násobením:
+$(2+3i)(2+3i)=4+6i+6i-9=-5+12i$.
+
+\item \(\left|\frac{2+3i}{1-i}\right|\).
+Protože $1-i\neq0$, platí
+\[
+\left|\frac{2+3i}{1-i}\right|
+=\frac{|2+3i|}{|1-i|}
+=\frac{\sqrt{2^2+3^2}}{\sqrt{1^2+(-1)^2}}
+=\frac{\sqrt{13}}{\sqrt2}=\frac{\sqrt{26}}2.
+\]
+Kontrola jiným postupem:
+\[
+\frac{2+3i}{1-i}=\frac{(2+3i)(1+i)}2=-\frac12+\frac52i,
+\qquad
+\sqrt{\left(-\frac12\right)^2+\left(\frac52\right)^2}=\frac{\sqrt{26}}2.
+\]
+
+\item \(x^2-5x+5=0\), řešte v \(\mathbb C\).
+Diskriminant je $D=(-5)^2-4\cdot1\cdot5=5>0$, tedy
+\[
+x_{1,2}=\frac{5\pm\sqrt5}{2},
+\qquad
+K=\left\{\frac{5-\sqrt5}{2};\frac{5+\sqrt5}{2}\right\}.
+\]
+Oba kořeny jsou reálné, a tedy patří i do $\mathbb C$.
+Zkouška pro obě znaménka:
+\[
+\left(\frac{5\pm\sqrt5}{2}\right)^2
+-5\frac{5\pm\sqrt5}{2}+5
+=\frac{30\pm10\sqrt5-50\mp10\sqrt5+20}{4}=0.
+\]
+Jde o dva různé kořeny kvadratické rovnice; jiné kořeny neexistují.
+
+\item \(z_1=1+i\),
+\(z_2=4\left(\cos\frac{5\pi}{6}+i\sin\frac{5\pi}{6}\right)\).
+Určete \(\frac{z_2}{z_1}\) v algebraickém tvaru.
+
+Nejprve $z_2=4(-\frac{\sqrt3}{2}+\frac12i)=-2\sqrt3+2i$.
+Protože $z_1\neq0$, můžeme dělit:
+\[
+\frac{z_2}{z_1}
+=\frac{(-2\sqrt3+2i)(1-i)}{(1+i)(1-i)}
+=\frac{2-2\sqrt3+(2+2\sqrt3)i}{2}
+=(1-\sqrt3)+(1+\sqrt3)i.
+\]
+Kontrola zpětným násobením:
+$[(1-\sqrt3)+(1+\sqrt3)i](1+i)=-2\sqrt3+2i=z_2$.
+
+\item \(z=\sqrt2\left(\cos\frac{3\pi}{4}+i\sin\frac{3\pi}{4}\right)\).
+Pomocí Moivreovy věty vypočtěte \(z^4\) a výsledek zapište v algebraickém tvaru.
+\[
+z^4=(\sqrt2)^4\left(\cos\left(4\cdot\frac{3\pi}{4}\right)
++i\sin\left(4\cdot\frac{3\pi}{4}\right)\right)
+=4(\cos3\pi+i\sin3\pi)=-4.
+\]
+Kontrola v algebraickém tvaru: $z=-1+i$, $z^2=-2i$, tedy $z^4=(-2i)^2=-4$.
+\end{enumerate}
+
+\newpage
+\section*{Komplexní čísla -- varianta B}
+Řešení k testu \texttt{02\_test\_KomplexniCislaZaverecny\_AB.tex}.
+\begin{enumerate}
+\item \((4-i)(2+5i)\).
+\[
+(4-i)(2+5i)=8+20i-2i-5i^2=13+18i.
+\]
+Kontrola odděleným výpočtem složek součinu:
+$\operatorname{Re}=4\cdot2-(-1)\cdot5=13$,
+$\operatorname{Im}=4\cdot5+(-1)\cdot2=18$.
+
+\item \(\left|\frac{4-i}{2+2i}\right|\).
+Protože $2+2i\neq0$, platí
+\[
+\left|\frac{4-i}{2+2i}\right|
+=\frac{|4-i|}{|2+2i|}
+=\frac{\sqrt{4^2+(-1)^2}}{\sqrt{2^2+2^2}}
+=\frac{\sqrt{17}}{\sqrt8}=\frac{\sqrt{34}}4.
+\]
+Kontrola jiným postupem:
+\[
+\frac{4-i}{2+2i}=\frac{(4-i)(2-2i)}8=\frac34-\frac54i,
+\qquad
+\sqrt{\left(\frac34\right)^2+\left(-\frac54\right)^2}=\frac{\sqrt{34}}4.
+\]
+
+\item \(x^2+4x+5=0\), řešte v \(\mathbb C\).
+Doplníme na druhou mocninu:
+\[
+x^2+4x+5=0 \iff (x+2)^2=-1 \iff x+2=\pm i.
+\]
+Proto $K=\{-2-i;-2+i\}$.
+Zkouška pro obě znaménka:
+\[
+(-2\pm i)^2+4(-2\pm i)+5
+=3\mp4i-8\pm4i+5=0.
+\]
+Jde o dva různé kořeny kvadratické rovnice; jiné kořeny neexistují.
+
+\item \(z_1=1-i\),
+\(z_2=6\left(\cos\frac{2\pi}{3}+i\sin\frac{2\pi}{3}\right)\).
+Určete \(\frac{z_2}{z_1}\) v algebraickém tvaru.
+
+Nejprve $z_2=6(-\frac12+\frac{\sqrt3}{2}i)=-3+3\sqrt3i$.
+Protože $z_1\neq0$, můžeme dělit:
+\[
+\frac{z_2}{z_1}
+=\frac{(-3+3\sqrt3i)(1+i)}{(1-i)(1+i)}
+=-\frac{3(1+\sqrt3)}2+\frac{3(\sqrt3-1)}2i.
+\]
+Kontrola zpětným násobením:
+\[
+\left[-\frac{3(1+\sqrt3)}2+\frac{3(\sqrt3-1)}2i\right](1-i)
+=-3+3\sqrt3i=z_2.
+\]
+
+\item \(z=2\left(\cos\frac{\pi}{6}+i\sin\frac{\pi}{6}\right)\).
+Pomocí Moivreovy věty vypočtěte \(z^3\) a výsledek zapište v algebraickém tvaru.
+\[
+z^3=2^3\left(\cos\left(3\cdot\frac{\pi}{6}\right)
++i\sin\left(3\cdot\frac{\pi}{6}\right)\right)
+=8\left(\cos\frac\pi2+i\sin\frac\pi2\right)=8i.
+\]
+Kontrola v algebraickém tvaru: $z=\sqrt3+i$, $z^2=2+2\sqrt3i$, tedy
+\[
+z^3=(2+2\sqrt3i)(\sqrt3+i)
+=2\sqrt3+2i+6i-2\sqrt3=8i.
+\]
+\end{enumerate}
+
+\subsection*{Kontrola a srovnatelnost variant}
+Všechny podíly mají nenulové jmenovatele. U absolutních hodnot je výsledek
+nezáporný. Obě kvadratické rovnice mají právě dva uvedené kořeny v $\mathbb C$.
+Početní výsledky byly navíc nezávisle ověřeny přesnou aritmetikou;
+goniometrická zadání také numerickým výpočtem z původních úhlů.
+
+Varianty ověřují stejné okruhy a mají přibližně srovnatelný rozsah.
+V A1 je druhá mocnina, v B1 součin; v A3 jsou dva reálné iracionální kořeny,
+v B3 dva nereálné kořeny. Tyto rozdíly vycházejí přímo ze zadání učitele.
+Orientační časy úloh jsou 2--3, 3--4, 3--5, 5--7 a 3--5 minut;
+celkem přibližně 20--30 minut včetně kontroly. Jde o odhad, nikoliv pevně
+stanovenou délku testu nebo údaj ověřený ve třídě.
+\end{document}

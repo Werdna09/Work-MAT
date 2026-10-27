@@ -16,3 +16,6 @@
 *.tmp
 *.bak
 *~
+
+# Neovereny archiv puvodnich testu
+/import_testu/

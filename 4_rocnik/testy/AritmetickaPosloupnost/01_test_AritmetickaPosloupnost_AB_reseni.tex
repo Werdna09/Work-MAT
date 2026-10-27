@@ -1,0 +1,176 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,margin=17mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=4pt,topsep=4pt}
+
+% Ke studentskému souboru 01_test_AritmetickaPosloupnost_AB.tex.
+% Zdroj přesných zadání i kontrolních výsledků: přímá zpráva učitele
+% „Vytvoř písemný test z matematiky na téma aritmetická posloupnost“,
+% konverzace 27. 10. 2026, Varianta A/B, úlohy 1–5 a Kontrolní výsledky.
+% Banka „Aritmetická posloupnost – 100 úloh“ nebyla v projektu nalezena.
+% Úlohy banky podle učitele: A = 22,27,31,54,64; B = 23,28,32,55,65.
+% Tyto identifikace nebyly ověřeny proti původnímu souboru banky.
+% Starší verze stejného testu ani bodování nebyly nalezeny. Nové bodování
+% nebylo navrženo; u každé očíslované úlohy je komentář pro pozdější doplnění.
+% Zařazení: 4_rocnik/tematicke_plany/SPS.pdf, s. 1, body 1.1–1.2.
+% Nezávisle ověřeno v Pythonu přesnou racionální aritmetikou:
+% postupné generování členů a přímé součty; dosazení do vzorců;
+% počty vložených čísel a obě krajní hodnoty. Všech 10 úloh souhlasí
+% s kontrolními výsledky učitele. Úloha 3 používá obvyklé pokračování
+% aritmetického vzoru; samotný konečný úsek neurčuje obecnou posloupnost.
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries Aritmetická posloupnost -- řešení}\\[2mm]
+    {\bfseries Varianta A}
+\end{center}
+
+Pro aritmetickou posloupnost používáme vztahy
+\[
+    a_n=a_1+(n-1)d,\qquad a_j-a_i=(j-i)d,\qquad
+    S_n=\frac{n(a_1+a_n)}2,\quad n\ge1.
+\]
+
+\begin{enumerate}
+    \item \textbf{Určení diference a členů.}
+    % Bodování A1: k případnému doplnění učitelem.
+    Ze vztahu $a_{11}-a_4=(11-4)d$ dostáváme
+    \begin{align*}
+        d&=\frac{34-6}{11-4}=4,\\
+        a_1&=a_4-3d=6-12=-6,\\
+        a_8&=a_1+7d=-6+28=22.
+    \end{align*}
+    Výsledek: $d=4$, $a_1=-6$, $a_8=22$.
+    Zkouška: $-6+3\cdot4=6$ a $-6+10\cdot4=34$.
+
+    \item \textbf{Určení indexu.}
+    % Bodování A2: k případnému doplnění učitelem.
+    Dosadíme do $a_n=a_1+(n-1)d$:
+    \[
+        77=2+5(n-1) \iff 75=5(n-1) \iff n=16.
+    \]
+    Výsledek: $n=16\in\mathbb N$.
+    Zkouška: $a_{16}=2+15\cdot5=77$.
+
+    \item \textbf{Vzorec pro $n$-tý člen.}
+    % Bodování A3: k případnému doplnění učitelem.
+    V aritmetickém pokračování uvedeného vzoru je $a_1=7$, $d=4$, tedy
+    \[
+        a_n=7+(n-1)\cdot4=4n+3,\qquad n\in\mathbb N,\ n\ge1.
+    \]
+    Výsledek: $a_n=4n+3$.
+    Pro $n=1,2,3,4$ dostáváme $7,11,15,19$ a rozdíl
+    $a_{n+1}-a_n=4$ pro každé $n\ge1$.
+
+    \item \textbf{Počet členů a součet.}
+    % Bodování A4: k případnému doplnění učitelem.
+    Je $a_1=4$, $d=5$, $a_n=149$. Ze vztahu pro $n$-tý člen plyne
+    \[
+        149=4+5(n-1) \iff 145=5(n-1) \iff n=30.
+    \]
+    Součet je
+    \[
+        S_{30}=\frac{30(4+149)}2=15\cdot153=2295.
+    \]
+    Výsledek: posloupnost má $30$ členů a jejich součet je $2295$.
+    Kontrola: $a_{30}=4+29\cdot5=149$; při párování krajních členů
+    vznikne $15$ dvojic, každá se součtem $153$.
+
+    \item \textbf{Vkládání členů.}
+    % Bodování A5: k případnému doplnění učitelem.
+    Pět vložených čísel spolu se dvěma krajními tvoří $7$ členů.
+    Mezi nimi je $6$ stejných rozdílů. Ze vztahu $a_7=a_1+6d$ plyne
+    \[
+        26=2+6d \iff d=4.
+    \]
+    Vložíme čísla $6,10,14,18,22$. Celá posloupnost je
+    \[
+        2,\ 6,\ 10,\ 14,\ 18,\ 22,\ 26.
+    \]
+    Kontrola: všech šest rozdílů je $4$ a vloženo bylo právě pět čísel.
+\end{enumerate}
+
+\newpage
+\begin{center}
+    {\Large\bfseries Aritmetická posloupnost -- řešení}\\[2mm]
+    {\bfseries Varianta B}
+\end{center}
+
+Používáme stejné vztahy pro aritmetickou posloupnost jako ve variantě A.
+
+\begin{enumerate}
+    \item \textbf{Určení diference a členů.}
+    % Bodování B1: k případnému doplnění učitelem.
+    Ze vztahu $a_{10}-a_7=(10-7)d$ dostáváme
+    \begin{align*}
+        d&=\frac{-2-2}{10-7}=-\frac43,\\
+        a_1&=a_7-6d=2-6\left(-\frac43\right)=10,\\
+        a_{20}&=a_1+19d=10-\frac{76}{3}=-\frac{46}{3}.
+    \end{align*}
+    Výsledek: $d=-\frac43$, $a_1=10$, $a_{20}=-\frac{46}{3}$.
+    Zkouška: $10+6\left(-\frac43\right)=2$ a
+    $10+9\left(-\frac43\right)=-2$.
+
+    \item \textbf{Určení indexu.}
+    % Bodování B2: k případnému doplnění učitelem.
+    Dosadíme do $a_n=a_1+(n-1)d$:
+    \[
+        -53=11-4(n-1) \iff -64=-4(n-1) \iff n=17.
+    \]
+    Výsledek: $n=17\in\mathbb N$.
+    Zkouška: $a_{17}=11+16\cdot(-4)=-53$.
+
+    \item \textbf{Vzorec pro $n$-tý člen.}
+    % Bodování B3: k případnému doplnění učitelem.
+    V aritmetickém pokračování uvedeného vzoru je $a_1=12$, $d=-5$, tedy
+    \[
+        a_n=12+(n-1)\cdot(-5)=17-5n,\qquad n\in\mathbb N,\ n\ge1.
+    \]
+    Výsledek: $a_n=17-5n$.
+    Pro $n=1,2,3,4$ dostáváme $12,7,2,-3$ a rozdíl
+    $a_{n+1}-a_n=-5$ pro každé $n\ge1$.
+
+    \item \textbf{Počet členů a součet.}
+    % Bodování B4: k případnému doplnění učitelem.
+    Je $a_1=120$, $d=-7$, $a_n=-41$. Ze vztahu pro $n$-tý člen plyne
+    \[
+        -41=120-7(n-1) \iff -161=-7(n-1) \iff n=24.
+    \]
+    Součet je
+    \[
+        S_{24}=\frac{24\bigl(120+(-41)\bigr)}2=12\cdot79=948.
+    \]
+    Výsledek: posloupnost má $24$ členů a jejich součet je $948$.
+    Kontrola: $a_{24}=120+23\cdot(-7)=-41$; při párování krajních členů
+    vznikne $12$ dvojic, každá se součtem $79$.
+
+    \item \textbf{Vkládání členů.}
+    % Bodování B5: k případnému doplnění učitelem.
+    Šest vložených čísel spolu se dvěma krajními tvoří $8$ členů.
+    Mezi nimi je $7$ stejných rozdílů. Ze vztahu $a_8=a_1+7d$ plyne
+    \[
+        34=-8+7d \iff 42=7d \iff d=6.
+    \]
+    Vložíme čísla $-2,4,10,16,22,28$. Celá posloupnost je
+    \[
+        -8,\ {-2},\ 4,\ 10,\ 16,\ 22,\ 28,\ 34.
+    \]
+    Kontrola: všech sedm rozdílů je $6$ a vloženo bylo právě šest čísel.
+\end{enumerate}
+
+% Srovnatelnost: obě varianty mají stejných pět dovedností ve stejném pořadí.
+% B1 je početně o něco náročnější kvůli zlomkové diferenci, další úlohy
+% vyžadují shodné postupy a srovnatelný počet kroků. Zadání dle pokynu
+% neměněna. Orientační časy A: 4,3,2,5,4 minut; B: 5,3,2,5,4 minut.
+% Přibližně 20–25 minut včetně kontroly; jde o odhad, nikoli čas ověřený
+% ve třídě. Délka ani pomůcky se ve studentské verzi nepředepisují.
+\end{document}

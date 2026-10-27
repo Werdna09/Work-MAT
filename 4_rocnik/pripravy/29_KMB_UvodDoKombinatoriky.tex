@@ -1,0 +1,123 @@
+% Obsahový zdroj: import_hodiny/29_Uvod_do_kombinatoriky.tex a odpovídající PDF (obě strany).
+% P1–P4: zdrojové Příklady 1–4; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 29.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{29}{Úvod do kombinatoriky}
+\begin{document}
+
+
+Začni dvěma situacemi se stejnými kartičkami: seřadit je do řady a vybrat z nich dvojici. Nech žáky nejprve vyslovit odhad a potom vypsat možnosti. Rozdíl mezi výsledky musí vysvětlit významem pořadí.
+\poznamka{Předpoklady: konečná množina, dvojice, jednoduché násobení. Cíl: žák přesně popíše jeden výsledek, rozliší pořadí a opakování a provede úplný výpis bez duplicit. Pojmy permutace, variace a kombinace zatím nevyžaduj jako názvy vzorců.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Kombinatorika} zkoumá mimo jiné počty výběrů a uspořádání prvků podle daných podmínek. Před počítáním musí být určeno, kdy dva výsledky považujeme za stejné.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Uspořádaný výběr} rozlišuje pozice prvků: dvojice $(A,B)$ a $(B,A)$ jsou pro různé prvky $A,B$ různé výsledky.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Neuspořádaný výběr} rozlišuje pouze vybrané prvky, nikoli jejich pořadí: $\{A,B\}=\{B,A\}$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Výběr s opakováním} dovoluje použít tentýž prvek vícekrát.
+\end{definiceBox}
+\begin{definiceBox}
+Při \textbf{výběru bez opakování} se každý prvek vyskytne nejvýše jednou.
+\end{definiceBox}
+
+Výpis organizuj podle prvního prvku, potom podle druhého. Každá možnost musí mít právě jedno místo v seznamu. Úplnost prokážeme tím, že jsme u každého začátku prošli všechna dovolená pokračování; odlišnost tím, že dvě větve dávají různé výsledky.
+
+Ptej se postupně: Co tvoří jeden výsledek? Změní záměna pořadí výsledek? Lze tentýž prvek použít znovu? Použijeme všechny prvky, nebo jen část? Například komise je skupina osob, zatímco první a druhé místo jsou dvě odlišné role.
+
+
+\poznamka{Průběh: 0–8 min kartičky a P1; 8–20 min P2–P3 a rozdíl výběr/uspořádání; 20–30 min P4 a význam opakování; 30–41 min C1–C5; 41–45 min kontrola a slovní shrnutí. U P4 je násobení zatím zkrácený zápis větvení; obecné pravidlo přijde v hodině 30.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/29_Uvod_do_kombinatoriky.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Tři označené kartičky \(A,B,C\) postavíme do řady. Kolik vznikne pořadí?
+\tcblower
+Rozlišíme první, druhé a třetí místo. Pro každý první znak vypíšeme obě pořadí zbylých kartiček:
+\[
+ ABC,\ ACB;\qquad BAC,\ BCA;\qquad CAB,\ CBA.
+\]
+Začátek je vždy $A$, $B$ nebo $C$, a proto žádná možnost nechybí. V seznamu není žádné pořadí dvakrát. Celkem je $6$ pořadí.
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/29_Uvod_do_kombinatoriky.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Ze stejných tří kartiček vybereme dvě bez rozlišení pořadí.
+\tcblower
+Přípustné dvojice jsou \(\{A,B\},\{A,C\},\{B,C\}\). Nejsou to šestice: \(AB\) a \(BA\) označují stejný výběr. Výsledek: \(3\).
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/29_Uvod_do_kombinatoriky.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Čtyři různí žáci: vyber dva členy komise a zvlášť přiděl první a druhé místo.
+\tcblower
+Komise: \(\{A,B\},\{A,C\},\{A,D\},\{B,C\},\{B,D\},\{C,D\}\), tedy \(6\) možností. Při přidělení prvního a druhého místa má každá dvojice dvě pořadí, tedy \(12\) možností.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/29_Uvod_do_kombinatoriky.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Tříznakový kód ze symbolů \(0,1,2\), s opakováním. Jaký počet očekáváš?
+\tcblower
+Pro začátek $0$ vypíšeme všechny dvojice dalších znaků: $00,01,02,10,11,12,20,21,22$. Je jich devět. Stejných devět pokračování má začátek $1$ i $2$, tedy $9+9+9=3\cdot3\cdot3=27$ kódů. Opakování je dovoleno; $000$ i $012$ jsou platné kódy. Každý kód jsme započítali právě v jedné skupině podle jeho začátku.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+Nech nejprve samostatně zapsat vlastní odpověď a její zdůvodnění. U C4–C5 se ptáme pouze na vlastnosti výběru, nikoli na jeho počet. Řešení ve spodních částech slouží učiteli.
+
+% Zdroj C1: import_hodiny/29_Uvod_do_kombinatoriky.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Kolik různých dvojic vznikne výběrem ze čtyř lidí?
+\tcblower
+Každou neuspořádanou dvojici vypíšu jednou: \(AB,AC,AD,BC,BD,CD\). Celkem \(6\).
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/29_Uvod_do_kombinatoriky.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Kolika způsoby obsadí tři lidé tři židle v řadě?
+\tcblower
+První židle: \(3\) osoby, druhá \(2\), poslední \(1\), tedy \(3\cdot2\cdot1=6\).
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/29_Uvod_do_kombinatoriky.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Kolik výsledků mají dva po sobě jdoucí hody mincí?
+\tcblower
+Označme strany mince $L$ (líc) a $R$ (rub). Jeden výsledek je uspořádaná dvojice hodů: $LL,LR,RL,RR$; jsou čtyři.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/29_Uvod_do_kombinatoriky.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+U výběru tříčlenné komise ze sedmi žáků rozhodni: záleží na pořadí, lze opakovat žáka?
+\tcblower
+Nezáleží na pořadí; každý žák může v komisi figurovat nejvýše jednou. Jde o neuspořádaný výběr bez opakování.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/29_Uvod_do_kombinatoriky.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+U čtyřmístného PINu rozhodni: pořadí? opakování? počáteční nula?
+\tcblower
+Na pořadí záleží, opakování je dovoleno a počáteční nula ano: \(0123\) je platný PIN.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: dvojice $AB$ a $BA$ započtené dvakrát; opomenuté větve; záměna PINu a čísla. Zeptej se, proč kód $000$ není v P4 zakázán. Na závěr vyžaduj vlastními slovy rozdíl mezi komisí a pořadím na stupních vítězů. Hodina 30 zobecní výpis pravidlem součtu a součinu.}
+\end{document}

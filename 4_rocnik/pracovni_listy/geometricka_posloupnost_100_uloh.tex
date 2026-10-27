@@ -1,0 +1,154 @@
+\documentclass[12pt,a4paper]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{fancyhdr}
+
+\geometry{left=18mm,right=18mm,top=18mm,bottom=20mm}
+\setlength{\parindent}{0pt}
+\setlength{\headheight}{15pt}
+\setlength{\parskip}{0.35em}
+\setlist[enumerate]{leftmargin=*,itemsep=0.65em,topsep=0.3em}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{Geometrická posloupnost}
+\fancyhead[R]{100 úloh}
+\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.4pt}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries GEOMETRICKÁ POSLOUPNOST -- 100 ÚLOH}
+\end{center}
+
+\section*{Základní vlastnosti a rozpoznání}
+\begin{enumerate}[label=\arabic*.,start=1]
+    \item Rozhodněte, zda čísla $3,12,48$ tvoří tři po sobě jdoucí členy geometrické posloupnosti. Pokud ano, určete kvocient.
+    \item Rozhodněte, zda čísla $81,-27,9$ tvoří tři po sobě jdoucí členy geometrické posloupnosti. Pokud ano, určete kvocient.
+    \item Rozhodněte, zda čísla $\frac58,\frac54,\frac52$ tvoří tři po sobě jdoucí členy geometrické posloupnosti. Pokud ano, určete kvocient.
+    \item Rozhodněte, zda čísla $2,6,20$ tvoří tři po sobě jdoucí členy geometrické posloupnosti.
+    \item Dokažte, že posloupnost $a_n=7\cdot3^{n-1}$ je geometrická, a určete její první člen a kvocient.
+    \item Rozhodněte, zda posloupnost $a_n=(-2)^{n+1}$ je geometrická. Pokud ano, určete $a_1$ a $q$.
+    \item Rozhodněte, zda posloupnost $a_n=\frac{5}{2^n}$ je geometrická. Pokud ano, určete $a_1$ a $q$.
+    \item Rozhodněte, zda posloupnost $a_n=n^2+1$ je geometrická.
+    \item Posloupnost je dána rekurentně $a_1=4$, $a_{n+1}=-3a_n$. Vypište prvních šest členů a určete kvocient.
+    \item Posloupnost je dána rekurentně $a_1=2$, $a_{n+1}=a_n+2^n$. Vypište několik členů, rozhodněte, zda je geometrická, a své tvrzení zdůvodněte.
+    \item Dokažte, že čísla $2,2\sqrt3,6$ tvoří tři po sobě jdoucí členy geometrické posloupnosti, a určete kvocient.
+    \item Rozhodněte, zda čísla $4,-6,9$ tvoří tři po sobě jdoucí členy geometrické posloupnosti. Pokud ano, určete kvocient.
+    \item Dokažte, že čísla $\sin 2x$, $\cos x$, $\frac12\cot x$ tvoří tři po sobě jdoucí členy geometrické posloupnosti pro taková $x$, pro která mají všechny výrazy smysl a jsou nenulové. Určete kvocient.
+    \item Dokažte, že pro $b\neq-1$ tvoří čísla $b+1$, $b^2+2b+1$, $b^3+3b^2+3b+1$ tři po sobě jdoucí členy geometrické posloupnosti. Určete kvocient.
+    \item V geometrické posloupnosti je $a_1=-2$ a $q=-3$. Vypište prvních šest členů.
+\end{enumerate}
+
+\section*{Výpočet členů, kvocientu a vzorce pro $n$-tý člen}
+\begin{enumerate}[label=\arabic*.,start=16]
+    \item Pro geometrickou posloupnost platí $a_1=3$, $q=2$. Určete $a_8$.
+    \item Pro geometrickou posloupnost platí $a_1=81$, $q=\frac13$. Určete $a_7$.
+    \item Pro geometrickou posloupnost platí $a_1=-2$, $q=-2$. Určete $a_9$.
+    \item V geometrické posloupnosti platí $a_4=54$, $q=3$. Určete $a_1$ a $a_7$.
+    \item V geometrické posloupnosti platí $a_5=\frac1{16}$, $q=\frac12$. Určete $a_1$ a $a_{10}$.
+    \item Jsou dány členy $a_3=12$, $a_6=96$. Určete $q$, $a_1$ a $a_9$.
+    \item Jsou dány členy $a_2=-6$, $a_5=48$. Určete $q$, $a_1$ a $a_8$.
+    \item Platí $a_4=5$, $a_7=135$. Určete $q$ a $a_1$.
+    \item Platí $a_2=16$, $a_4=4$. Určete všechny reálné možnosti pro $q$ a $a_1$.
+    \item V geometrické posloupnosti je $a_1=64$, $q=\frac12$. Kolikátý člen je roven $\frac1{32}$?
+    \item V geometrické posloupnosti je $a_1=2$, $q=3$. Určete $n\in\mathbb N$, pro které platí $a_n=486$.
+    \item Zjistěte, zda je číslo $5$ členem posloupnosti s $a_1=320$, $q=\frac12$. Pokud ano, určete jeho index.
+    \item Zjistěte, zda je číslo $-243$ členem posloupnosti s $a_1=1$, $q=-3$. Pokud ano, určete jeho index.
+    \item Najděte explicitní vzorec pro $n$-tý člen posloupnosti $5,15,45,135,\ldots$.
+    \item Najděte rekurentní i explicitní vyjádření posloupnosti $-2,6,-18,54,\ldots$.
+    \item Posloupnost je dána $a_n=7\cdot2^{n-1}$. Určete $a_1$, $q$, $a_{10}$ a rekurentní vyjádření.
+    \item Posloupnost je dána $a_n=3\left(-\frac12\right)^{n-1}$. Vypište prvních pět členů a určete kvocient.
+    \item V geometrické posloupnosti je $a_1=\frac1{64}$ a $q=2$. Určete $n\in\mathbb N$ tak, aby platilo $a_n+a_{2n}=129$.
+    \item Určete všechny geometrické posloupnosti, pro které platí $a_2+a_3=18$ a $a_1+a_4=27$.
+    \item Určete první člen a kvocient všech geometrických posloupností, pro které platí $a_2a_3=9$ a $a_2+a_3=10$.
+\end{enumerate}
+
+\section*{Součet členů a nekonečná geometrická řada}
+\begin{enumerate}[label=\arabic*.,start=36]
+    \item Určete součet prvních osmi členů posloupnosti $2,6,18,54,\ldots$.
+    \item Určete $S_{10}$ pro geometrickou posloupnost s $a_1=5$, $q=2$.
+    \item Určete $S_7$ pro geometrickou posloupnost s $a_1=64$, $q=\frac12$.
+    \item Určete $S_9$ pro geometrickou posloupnost s $a_1=3$, $q=-2$.
+    \item Určete $S_{10}$ pro geometrickou posloupnost s $a_1=6$, $q=-\frac12$.
+    \item Platí $a_4=54$ a $q=3$. Určete $S_7$.
+    \item Platí $a_3=20$ a $q=2$. Určete $S_8$.
+    \item V geometrické posloupnosti je $a_1=3$, $a_5=243$ a $q>0$. Určete $q$ a $S_5$.
+    \item Platí $S_5=93$, $a_1=3$ a $q>0$. Určete kvocient.
+    \item Platí $S_4=30$ a $q=2$. Určete první člen.
+    \item V geometrické posloupnosti s kvocientem $q=2$ je součet prvních $n$ členů roven $189$ a poslední z nich je $a_n=96$. Určete $n$ a $a_1$.
+    \item Je $a_1=1$, $q=3$ a $S_n=364$. Určete $n$.
+    \item Je $a_1=128$, $q=\frac12$ a $S_n=252$. Určete $n$.
+    \item V geometrické posloupnosti je $a_1=36$ a $S_3=252$. Určete všechny reálné hodnoty kvocientu.
+    \item Určete součet všech členů nekonečné geometrické řady s $a_1=12$, $q=\frac13$.
+    \item Určete součet všech členů nekonečné geometrické řady s $a_1=8$, $q=-\frac12$.
+    \item Součet nekonečné geometrické řady je $20$ a její první člen je $5$. Určete kvocient.
+    \item Součet nekonečné geometrické řady je $15$ a kvocient je $q=\frac23$. Určete první člen.
+    \item Vypočítejte nekonečný součin $5\cdot\sqrt5\cdot\sqrt[4]{5}\cdot\sqrt[8]{5}\cdot\ldots$.
+    \item Pro $|q|<1$ platí $a+aq+aq^2+\cdots=20$ a $a^2+a^2q^2+a^2q^4+\cdots=80$. Určete $a$ a $q$.
+\end{enumerate}
+
+\section*{Rovnice, vkládání členů a náročnější úlohy}
+\begin{enumerate}[label=\arabic*.,start=56]
+    \item Určete $x\in\mathbb R$ tak, aby čísla $x-1$, $x+1$, $x+7$ tvořila tři po sobě jdoucí členy geometrické posloupnosti.
+    \item Určete všechna $x\in\mathbb R$ tak, aby čísla $x-2$, $x+1$, $4x-2$ tvořila tři po sobě jdoucí členy geometrické posloupnosti.
+    \item Určete $x\in(0,\pi)$ tak, aby čísla $\frac{1}{2\cot x}$, $1$, $\frac{3}{\sin2x}$ tvořila tři po sobě jdoucí členy geometrické posloupnosti.
+    \item Určete reálné číslo $x$ tak, aby čísla $1$, $2^x$, $2^{x+2}+12$ tvořila tři po sobě jdoucí členy geometrické posloupnosti.
+    \item Určete $x>0$ tak, aby čísla $1+2\log x$, $3-4\log x$, $3+\log x$ tvořila tři po sobě jdoucí členy geometrické posloupnosti.
+    \item Mezi čísla $2$ a $162$ vložte tři kladná čísla tak, aby všech pět čísel tvořilo geometrickou posloupnost.
+    \item Mezi čísla $3$ a $96$ vložte čtyři kladná čísla tak, aby všech šest čísel tvořilo geometrickou posloupnost.
+    \item Mezi kořeny rovnice $x^2-65x+64=0$ vložte dvě kladná čísla tak, aby všechna čtyři čísla tvořila geometrickou posloupnost.
+    \item Tři po sobě jdoucí členy geometrické posloupnosti mají součet $21$ a součin $216$. Určete je.
+    \item Tři po sobě jdoucí členy geometrické posloupnosti mají součet $14$ a součin $64$. Určete je.
+    \item Součet tří po sobě jdoucích členů geometrické posloupnosti je $9$. První číslo ponecháme, druhé zvětšíme o $12$ a třetí zmenšíme o $3$. Takto vzniknou tři po sobě jdoucí členy aritmetické posloupnosti. Určete původní trojici.
+    \item Deset čísel tvoří aritmetickou posloupnost s diferencí $d=3$. První, třetí a sedmé číslo tvoří tři po sobě jdoucí členy geometrické posloupnosti. Určete všech deset čísel.
+    \item Určete čtyři čísla tak, aby první tři tvořila tři po sobě jdoucí členy aritmetické posloupnosti s diferencí $d=-3$ a poslední tři tvořila tři po sobě jdoucí členy geometrické posloupnosti s kvocientem $q=\frac12$.
+    \item Délky hran kvádru tvoří tři po sobě jdoucí členy geometrické posloupnosti. Součet délek hran je $21\,\mathrm{cm}$ a objem kvádru je $216\,\mathrm{cm}^3$. Určete délky hran a povrch kvádru.
+    \item V geometrické posloupnosti je $a_1=\frac1{64}$ a $q=2$. Určete $n\in\mathbb N$ tak, aby platilo $a_n+a_{2n}=8200$.
+\end{enumerate}
+
+\section*{Slovní úlohy a užití geometrické posloupnosti}
+\begin{enumerate}[label=\arabic*.,start=71]
+    \item Na začátku roku uložíme do banky $50\,000$ Kč. Vklad je úročen $8\,\%$ ročně. Kolik peněz bude na účtu po jednom roce a po čtyřech letech, pokud daň z úroků neuvažujeme?
+    \item Na začátku roku uložíme do banky $50\,000$ Kč s roční úrokovou sazbou $8\,\%$. Z každého připsaného úroku je odečtena daň $15\,\%$. Kolik peněz bude na účtu po čtyřech letech?
+    \item Za pět let se počet obyvatel města zvýšil o $12\,\%$. Předpokládejte každoročně stejný procentní přírůstek. Určete roční procentní přírůstek s přesností na desetiny procenta.
+    \item Cena zařízení se každý rok sníží na $82\,\%$ ceny z předchozího roku. Po kolika celých letech bude jeho cena poprvé menší než desetina původní ceny?
+    \item Při průchodu jednou skleněnou deskou projde $95\,\%$ dopadajícího světla. Kolik nejméně stejných desek je potřeba, aby intenzita prošlého světla klesla nejvýše na polovinu původní hodnoty?
+    \item Bakteriální kultura obsahuje na začátku $200$ bakterií a každé čtyři hodiny se jejich počet ztrojnásobí. Kolik bakterií bude v kultuře po $24$ hodinách?
+    \item V těle je bezprostředně po podání $500\,\mathrm{mg}$ léčivé látky. Každou hodinu zůstane v těle $80\,\%$ předchozího množství. Kolik látky zůstane po šesti hodinách a po kolika celých hodinách klesne množství poprvé pod $100\,\mathrm{mg}$?
+    \item Míč pustíme z výšky $10\,\mathrm{m}$. Po každém dopadu vyskočí do výšky rovné $70\,\%$ předchozí výšky. Do jaké výšky vyskočí po pátém dopadu a jakou celkovou dráhu urazí do okamžiku, kdy po pátém odrazu znovu dopadne na zem?
+    \item Nový stroj má cenu $480\,000$ Kč a každý rok jeho hodnota klesne o $15\,\%$. Určete jeho hodnotu po pěti letech.
+    \item Roční mzda zaměstnance je v prvním roce $420\,000$ Kč a každý další rok se zvýší o $5\,\%$. Určete mzdu v desátém roce a celkovou částku vyplacenou za prvních deset let.
+    \item Firma vyrobí v prvním měsíci $1200$ kusů výrobku a každý další měsíc zvýší výrobu o $10\,\%$ proti předchozímu měsíci. Kolik kusů vyrobí ve dvanáctém měsíci a kolik za celý rok?
+    \item Student odloží první měsíc $1000$ Kč a každý další měsíc odloží o $5\,\%$ více než v předchozím měsíci. Kolik odloží ve dvanáctém měsíci a kolik celkem za rok?
+    \item Na konci každého roku vložíme na účet $10\,000$ Kč. Účet je úročen $9\,\%$ ročně a úroky se připisují na konci roku těsně před novým vkladem. Kolik peněz bude na účtu bezprostředně po pátém vkladu? Daň neuvažujte.
+    \item Půjčka $300\,000$ Kč je úročena $14\,\%$ ročně. Dlužník ji chce splatit pěti stejnými splátkami placenými vždy na konci roku. Určete výši jedné splátky. Výpočet sestavte pomocí součtu geometrické posloupnosti.
+    \item Do banky uložíme $10\,000$ Kč na roční úrok $9\,\%$, který se připisuje měsíčně. Předpokládejte, že měsíční úroková sazba je $\frac{9\,\%}{12}$. Kolik peněz bude na účtu po jednom roce? Výsledek porovnejte s jednorázovým ročním úročením $9\,\%$.
+\end{enumerate}
+
+\section*{Obtížnější a důkazové úlohy}
+\begin{enumerate}[label=\arabic*.,start=86]
+    \item Dokažte, že pro tři po sobě jdoucí členy geometrické posloupnosti $a,b,c$ platí $b^2=ac$. Dokažte také obrácené tvrzení za předpokladu $a\neq0$.
+    \item Dokažte, že v geometrické posloupnosti platí $a_{n-k}a_{n+k}=a_n^2$, pokud mají všechny členy smysl.
+    \item Dokažte, že pokud $r+s=u+v$, pak pro geometrickou posloupnost platí $a_ra_s=a_ua_v$.
+    \item Dokažte vztah $a_{m+n}=a_mq^n$ pro všechna $m,n\in\mathbb N$.
+    \item Odvoďte vzorec pro součet prvních $n$ členů geometrické posloupnosti s $q\neq1$.
+    \item Dokažte, že pro $q\neq1$ platí $S_{2n}=S_n(1+q^n)$.
+    \item Je dáno $S_n=3(2^n-1)$. Určete vzorec pro $a_n$, první člen a kvocient.
+    \item Je dáno $S_n=10\left(1-\left(\frac12\right)^n\right)$. Určete $a_n$, $a_1$, $q$ a součet nekonečné geometrické řady.
+    \item V geometrické posloupnosti platí $S_3=7$ a $S_6=63$, přičemž $q>0$. Určete $a_1$ a $q$.
+    \item Součet nekonečné geometrické řady je $12$ a součet jejích prvních tří členů je $10{,}5$. Určete první člen a kvocient.
+    \item Vypočítejte nekonečný součin $5\cdot\sqrt5\cdot\sqrt[4]{5}\cdot\sqrt[8]{5}\cdot\ldots$ pomocí součtu nekonečné geometrické řady exponentů.
+    \item Určete všechny geometrické posloupnosti, pro které platí $a_2+a_5=18$ a $a_3+a_4=12$.
+    \item V geometrické posloupnosti s kladným kvocientem platí $a_2+a_4=30$ a $a_3=12$. Určete všechny takové posloupnosti.
+    \item Dokažte vzorec $S_n=a_1\frac{q^n-1}{q-1}$ tak, že rovnici pro $S_n$ vynásobíte kvocientem $q$ a vhodně odečtete.
+    \item Pro $|q|<1$ je součet všech členů geometrické řady roven $18$ a součet druhých mocnin všech jejích členů je $108$. Určete $a_1$, $q$ a součet třetích mocnin všech členů.
+\end{enumerate}
+
+\end{document}

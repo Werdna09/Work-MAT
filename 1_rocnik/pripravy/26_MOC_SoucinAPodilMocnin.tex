@@ -1,0 +1,76 @@
+% Hodina 26, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 26.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mocniny/02_Vzorce_pro_mocniny_I.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/02%20Vzorce%20pro%20mocniny%20I.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Mocniny}{26}{Součin a podíl mocnin}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Při násobení stejných základů počítáme celkový počet činitelů. Při dělení společné nenulové činitele krátíme. Nejdříve vždy ověř, že jsou základy opravdu stejné.
+
+\begin{definiceBox}[title={Připomenutí definice},breakable=false]
+\textbf{Mocnina} $a^n$ pro $n\in\mathbb N$ je součin $n$ stejných činitelů $a$.
+\end{definiceBox}
+
+
+Pro $m,n\in\mathbb N$ platí $a^m a^n=a^{m+n}$. Pro $a\ne0$ a $m>n$ platí $\frac{a^m}{a^n}=a^{m-n}$, protože zkrátíme $n$ činitelů. Pro $m=n$ je podíl roven $1$. Případ $m<n$ zatím zapíšeme jako převrácenou hodnotu kladné mocniny, nikoli záporným exponentem.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Uprav $2^5\cdot2^3$ a $\frac{3^7}{3^4}$.
+\tcblower
+$2^5\cdot2^3=2^{5+3}=2^8=256$; $\frac{3^7}{3^4}=3^{7-4}=3^3=27$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\frac{x^7x^2}{x^4}$ a uveď podmínku.
+\tcblower
+Původní jmenovatel vyžaduje $x\ne0$. Potom $\frac{x^7x^2}{x^4}=x^{7+2-4}=x^5$. I když je výsledek zapsán bez zlomku, podmínka zůstává.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $a^3a^5$.
+\item Uprav $\frac{5^6}{5^2}$ a $\frac{2^3}{2^5}$.
+\item Uprav $\frac{b^4b^3}{b^5}$ a $\frac{b^2}{b^2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a^8$ pro všechna reálná $a$; jde o součin osmi činitelů.
+\item $5^4=625$ a $\frac1{2^2}=\frac14$ po vykrácení společných činitelů.
+\item Pro $b\ne0$ dostaneme $b^2$ a $1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Zatím nezaváděj mocninu mocniny ani exponent nula. U podílu se stejnými exponenty stačí přímé krácení. Častá chyba $a^m+a^n=a^{m+n}$ není pravidlem pro součet; vyvrať ji například čísly $2^2+2^3=12\ne32$.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Uprav $\frac{2^5\cdot2^7}{2^{10}}$.
+\tcblower
+Po sloučení činitelů a krácení je výsledek $2^{5+7-10}=2^2=4$.
+\end{prikladReseniBox}
+
+
+\end{document}

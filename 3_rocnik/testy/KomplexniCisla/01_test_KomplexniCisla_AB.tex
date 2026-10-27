@@ -1,0 +1,65 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,landscape,left=8mm,right=8mm,top=8mm,bottom=8mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=2pt}
+
+% Uprav název testu; jednotlivé varianty jsou vždy A/B, C/D atd.
+\newcommand{\TestTitle}{Komplexní čísla}
+\newcommand{\TestHeader}[1]{%
+    {\bfseries TEST -- \TestTitle}\hfill{\bfseries Varianta #1}\\[2mm]
+    Jméno a příjmení: \rule{4.5cm}{0.4pt}\hfill Třída: \rule{1.5cm}{0.4pt}\\[2mm]
+    Datum: \rule{2.4cm}{0.4pt}\hfill Počet bodů: \rule{1.4cm}{0.4pt}\hfill Známka: \rule{1.4cm}{0.4pt}\\[1mm]
+    \hrule\vspace{3mm}
+}
+\newcommand{\AnswerSpace}[1]{\vspace{#1}}
+
+\begin{document}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{A}
+
+    % ZADÁNÍ VARIANTY A
+    \begin{enumerate}
+        \item Upravte do algebraického tvaru: \[3i^{14}-2i^{19}+i^{24}-4i^7\]
+        \AnswerSpace{10mm}
+        \item Převeďte do goniometrického tvaru: \[z=-\sqrt3+i\]
+        \AnswerSpace{12mm}
+        \item Převeďte do algebraického tvaru: \[z=6(\cos150^\circ+i\sin150^\circ)\]
+        \AnswerSpace{10mm}
+        \item Jsou dána komplexní čísla \(z_1=3+2i\) a \(z_2=1-i\). Vypočítejte: \[z_1+z_2,\quad z_1-z_2,\quad z_1z_2,\quad \frac{z_1}{z_2}\]
+        \AnswerSpace{25mm}
+        \item Jsou dána komplexní čísla: \[\begin{aligned}z_1&=4(\cos120^\circ+i\sin120^\circ)\\z_2&=2(\cos30^\circ+i\sin30^\circ)\end{aligned}\] Určete v goniometrickém tvaru součin \(z_1z_2\) a podíl \(\frac{z_1}{z_2}\).
+        \AnswerSpace{20mm}
+    \end{enumerate}
+\end{minipage}%
+\hfill\vrule width 0.4pt\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{B}
+
+    % ZADÁNÍ VARIANTY B
+    \begin{enumerate}
+        \item Upravte do algebraického tvaru: \[2i^{15}+3i^{18}-i^{21}+5i^{28}\]
+        \AnswerSpace{10mm}
+        \item Převeďte do goniometrického tvaru: \[z=-1+\sqrt3i\]
+        \AnswerSpace{12mm}
+        \item Převeďte do algebraického tvaru: \[z=8(\cos210^\circ+i\sin210^\circ)\]
+        \AnswerSpace{10mm}
+        \item Jsou dána komplexní čísla \(z_1=2+3i\) a \(z_2=1+i\). Vypočítejte: \[z_1+z_2,\quad z_1-z_2,\quad z_1z_2,\quad \frac{z_1}{z_2}\]
+        \AnswerSpace{25mm}
+        \item Jsou dána komplexní čísla: \[\begin{aligned}z_1&=6(\cos150^\circ+i\sin150^\circ)\\z_2&=3(\cos60^\circ+i\sin60^\circ)\end{aligned}\] Určete v goniometrickém tvaru součin \(z_1z_2\) a podíl \(\frac{z_1}{z_2}\).
+        \AnswerSpace{20mm}
+    \end{enumerate}
+\end{minipage}
+\end{document}

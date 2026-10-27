@@ -68,11 +68,29 @@ které propojuje matematiku s reálnými procesy a zároveň ukazuje studentům,
 
 
 
-\begin{definitionbox}
-Exponenciální funkcí o základu $a$ nazýváme každou funkci $f(x)$,
-u níž se proměnná $x$ objevuje v exponentu pevného kladného čísla $a$, takže má obecný tvar
+U mocninné funkce, například $y=x^2$, se mění základ mocniny, zatímco exponent zůstává stejný.
+Nyní si jejich úlohy vyměníme: základ ponecháme pevný a budeme měnit exponent.
+Pro funkci $f(x)=9^x$ tak podle známých pravidel pro mocniny dostáváme
 \[
-    f(x) = m \cdot a^{x},
+    f(-1)=9^{-1}=\frac19,\qquad
+    f(0)=9^0=1,\qquad
+    f\left(\frac12\right)=\sqrt9=3,\qquad
+    f(1)=9.
+\]
+Záporný argument tedy neznamená zápornou funkční hodnotu a zlomkový argument nás přirozeně vrací k odmocninám.
+Jak jsme již uvedli při rozšiřování mocnin na reálné exponenty, pro kladný základ mají smysl také hodnoty jako $9^{\sqrt2}$;
+jejich přibližné hodnoty můžeme určit kalkulačkou.
+
+Chceme-li připustit všechny reálné argumenty, musí být základ kladný.
+Nulový základ například neumožňuje dosadit $x=-1$, záporný základ zase $x=\frac12$.
+Číslo $1$ sice můžeme umocnit na libovolný reálný exponent, ale vždy dostaneme $1$,
+tedy konstantní funkci. Tento případ proto z následující definice vynecháváme.
+
+\begin{definitionbox}
+Exponenciální funkcí o základu $a$ nazýváme funkci $f(x)$,
+u níž se proměnná $x$ objevuje v exponentu pevného kladného čísla $a\neq1$ a která má tvar
+\[
+    f(x) = a^{x},\qquad a>0,\quad a\neq1,\quad x\in\mathbb{R}.
 \]
 \end{definitionbox}
 
@@ -139,6 +157,28 @@ důležitý orientační prvek při jejich srovnávání.
 
 
 
+Z definice máme $D(f)=\mathbb{R}$. U kladného základu jsou všechny hodnoty $a^x$ kladné,
+ale pro určení oboru hodnot potřebujeme vědět také to, kterých kladných hodnot funkce nabývá.
+Pro $a>1$ se při $x\to-\infty$ hodnoty blíží k nule a při $x\to+\infty$ rostou bez omezení;
+pro $0<a<1$ jsou oba směry obrácené.
+Graf reálné exponenciální funkce je přitom souvislá křivka, mezi jejími hodnotami nevznikají mezery.
+Proto nabývá všech kladných hodnot a platí
+\[
+    H(f)=(0;\infty).
+\]
+
+Funkce je tedy omezená zdola, například číslem $0$, ale toto číslo není jejím minimem:
+žádný argument nedává hodnotu $a^x=0$.
+Ke každé kladné funkční hodnotě navíc existuje jiná, ještě menší kladná hodnota.
+Základní exponenciální funkce proto minimum nemá. Není omezená shora, a nemá tedy ani maximum.
+Rozdíl mezi dolní závorou a minimem spočívá právě v tom, že minimum musí být skutečně dosaženou funkční hodnotou.
+
+Monotónnost zároveň vysvětluje, proč je exponenciální funkce prostá.
+Pro $a>1$ z $x_1<x_2$ plyne $a^{x_1}<a^{x_2}$, zatímco pro $0<a<1$ platí $a^{x_1}>a^{x_2}$.
+V obou případech tedy různé argumenty vedou k různým funkčním hodnotám.
+Tyto závěry se vztahují k základní funkci $a^x$ na celé $\mathbb{R}$;
+u posunutých funkcí nebo při omezení definičního oboru posuzujeme vlastnosti znovu.
+
 \subsection*{Grafy exponenciálních funkcí}
 Exponenciální funkce patří mezi nejdůležitější matematické modely, protože
 dokonale popisují růst a zánik jevů, jejichž změna probíhá násobením
@@ -202,21 +242,57 @@ prudce zvyšují. Všechny křivky navíc procházejí bodem $[0;1]$.
 
 
 
+\begin{samepage}
+Význam základu můžeme vystihnout také bez porovnávání strmosti grafů.
+Pro základní exponenciální funkci $f(x)=a^x$ využijeme pravidlo pro součin mocnin stejného základu:
+\[
+    f(x+1)=a^{x+1}=a\cdot a^x=af(x).
+\]
+\end{samepage}
+Zvětšení argumentu o jednu tedy násobí funkční hodnotu stále stejným číslem $a$.
+Protože $f(x)>0$, můžeme tento vztah zapsat i jako $\frac{f(x+1)}{f(x)}=a$.
+Základ tak udává \textbf{násobný koeficient změny při jednotkovém přírůstku argumentu}.
+Jednotkou může být například den nebo kilometr; význam základu proto souvisí i s tím, v jakých jednotkách argument měříme.
+
+Zcela stejně pro libovolná reálná $x$ a $h$ dostaneme
+\[
+    f(x+h)=a^{x+h}=a^h\cdot a^x=a^h f(x).
+\]
+Při stejně dlouhých krocích $h$ násobíme hodnoty stejným koeficientem $a^h$.
+Neznamená to, že přičítáme stále stejné číslo: absolutní přírůstek závisí na dosavadní hodnotě.
+Například základ $1{,}08$ znamená růst o $8\,\%$ za jednotku argumentu,
+protože nová hodnota činí $108\,\%$ hodnoty předchozí.
+Základ $0{,}92$ naproti tomu znamená pokles o $8\,\%$, neboť zůstává $92\,\%$ předchozí hodnoty.
+Při změně o $p\,\%$ používáme pro růst koeficient $1+\frac{p}{100}$
+a pro pokles koeficient $1-\frac{p}{100}$, přičemž u poklesu uvažujeme $0<p<100$.
+
+Stejné pravidlo pro mocniny propojuje vodorovný posun grafu s násobením jeho hodnot:
+\[
+    a^{x+b}=a^b a^x.
+\]
+Například $5^{x+2}=25\cdot5^x$.
+Graf funkce $5^{x+2}$ tedy můžeme získat z grafu $5^x$ buď posunutím o dvě jednotky doleva,
+nebo vynásobením všech jeho svislých souřadnic číslem $25$.
+Bod $[-2;1]$ prvního popisu leží také na grafu $25\cdot5^x$, neboť $25\cdot5^{-2}=1$.
+Jde o různé geometrické úpravy, které zde díky vlastnostem mocnin vedou ke stejné výsledné funkci.
+
 \section*{Sestavování grafu exponenciální funkce}
 
-Při sestavování exponenciální funkce je užitečné vycházet ze základního grafu $y=a^{x}$ jako výchozí tvar,
-který následně posouváme, protahujeme nebo jinak modifikujeme pomocí jednoduchých úprav
+Při sestavování grafů je užitečné vycházet ze základní exponenciální funkce $y=a^{x}$,
+jejíž graf následně posouváme, protahujeme nebo jinak modifikujeme pomocí jednoduchých úprav
 v exponentu či mimo něj.
 
-Důležitým bodem exponenciální funkce je bod \textbf{$[0;1]$}, který slouží jako hlavní orientační prvek.
-Pokud se výraz v exponentu mění, tento bod se posouvá po ose $x$,
-zatímco úpravy mimo exponent posouvají celý graf svisle po ose $y$.
+Důležitým bodem základní exponenciální funkce $y=a^x$ je bod \textbf{$[0;1]$}, který slouží jako hlavní orientační prvek.
+Nahrazení $x$ výrazem $x+b$ posouvá tento bod po ose $x$,
+zatímco přičtení konstanty $c$ mimo exponenciálu posouvá celý graf svisle po ose $y$.
 Stejným způsobem se posouvá i vodorovná asymptota, která u funkce $a^{x}$ leží na ose $x$
 a u funkcí typu $a^{x}+c$ nebo $a^{x+b}+c$ se posouvá na výšku $y=c$.
 
-Při sestavování grafů tedy postupujeme ve dvou jednoduchých krocích: nejprve sledujeme, jak se mění exponent $x$ (tedy posuny doleva a doprava),
-a následně, jak se mění výraz mimo exponent (tedy posuny nahoru a dolů).
-Touto metodou lze sestavit libovolnou exponenciální funkci, aniž bychom potřebovali tabulku hodnot.
+Při sestavování grafů funkcí tvaru $f(x)=a^{x+b}+c$ tedy postupujeme ve dvou jednoduchých krocích:
+nejprve provedeme vodorovný posun o $-b$ a následně svislý posun o $c$.
+Touto metodou lze sestavit grafy těchto funkcí, aniž bychom potřebovali tabulku hodnot.
+Násobení funkčních hodnot koeficientem $m$ ve funkci $m\cdot a^x$ mění svislé měřítko grafu a pro $m<0$ jej navíc převrací podle osy $x$.
+Nahrazení $x$ výrazem $kx$ pro $k\neq0$ mění vodorovné měřítko a pro $k<0$ přidává souměrnost podle osy $y$.
 
 
 
@@ -333,29 +409,102 @@ Vodorovná asymptota se posouvá z $y=0$ na \textbf{$y=-4$}.
 
 Tímto postupem snadno sestavíme celý graf, aniž bychom potřebovali vypisovat tabulku hodnot.
 Stačí sledovat, jak jednotlivé úpravy posouvají výchozí exponenciální křivku.
+Z výsledného předpisu můžeme určit i další vlastnosti funkce.
+Exponent $x+3$ má smysl pro každé reálné $x$, proto $D(f)=\mathbb{R}$.
+Výraz $2^{x+3}$ nabývá všech kladných hodnot a odečtením čtyř dostaneme $H(f)=(-4;\infty)$.
+Funkce zůstává rostoucí; posuny tuto vlastnost nemění.
+Hodnota $-4$ je dolní závorou, ale není dosažena, takže funkce minimum nemá.
+
+Průsečík s osou $y$ získáme dosazením $x=0$: $f(0)=2^3-4=4$, tedy $P_y=[0;4]$.
+Pro průsečík s osou $x$ potřebujeme nulovou funkční hodnotu.
+Protože $2^2=4$, vyhovuje $x+3=2$, tedy $x=-1$.
+Dosazení $f(-1)=2^2-4=0$ potvrzuje bod $P_x=[-1;0]$;
+jiný průsečík s osou $x$ neexistuje, protože funkce je rostoucí.
+
 \end{examplebox}
 
 
 \begin{notebox}
-\textbf{Asymptota} je přímka, ke které se graf funkce stále přibližuje, 
-ale nikdy ji nepřekročí nebo se jí nedotkne. 
-Funkce se k ní může blížit při růstu do nekonečna, při poklesu, 
-nebo při přibližování k určité hodnotě proměnné.
+\textbf{Asymptota} je přímka, od níž se vzdálenost bodů na neomezené větvi grafu blíží k nule.
+Graf se může asymptoty dotknout nebo ji protnout.
+U základní exponenciální funkce však graf osu $x$ neprotíná,
+protože všechny její funkční hodnoty jsou kladné.
 
 \begin{itemize}
     \item \textbf{Svislá asymptota} vzniká tehdy, když se funkce blíží k $\pm\infty$ 
-    při přibližování k určité hodnotě $x$.  
+    při přibližování k určité hodnotě $x$ alespoň z jedné strany.  
     Například u logaritmu $y = \log_2 x$ je svislou asymptotou přímka \important{$x = 0$}.
 
-    \item \textbf{Vodorovná asymptota} vzniká tehdy, když se funkce blíží určité hodnotě $y$ 
-    při růstu nebo poklesu proměnné do nekonečna.  
+    \item \textbf{Vodorovná asymptota} $y=c$ vzniká tehdy, když se rozdíl $f(x)-c$
+    blíží k nule při $x\to+\infty$ nebo $x\to-\infty$.  
     Například exponenciála $y = 2^{-x}$ má vodorovnou asymptotu \important{$y = 0$}.
 \end{itemize}
 
 Asymptoty pomáhají pochopit, jak se funkce chová „daleko od středu grafu“ 
-a kde jsou její přirozené hranice nebo nepřekročitelné hodnoty.
+a ke kterým přímkám se jeho neomezené větve přibližují.
 \end{notebox}
 
+
+\begin{examplebox}{Sestavení grafu funkce $g(x)=-2\cdot2^x+3$}
+
+Sestrojíme graf a určíme jeho základní vlastnosti.
+Vycházíme opět z funkce $y=2^x$, ale tentokrát kromě posunu použijeme také násobení funkčních hodnot.
+
+Nejprve přejdeme k funkci $y=2\cdot2^x$.
+Každá svislá souřadnice se zdvojnásobí, zatímco vodorovná souřadnice zůstane stejná.
+Například bod $[0;1]$ přejde na $[0;2]$.
+Znaménko minus pak graf převrátí podle osy $x$:
+u funkce $y=-2\cdot2^x$ získáme bod $[0;-2]$.
+Nakonec přičteme $3$, tedy celý graf posuneme o tři jednotky nahoru.
+Výsledný charakteristický bod je $[0;1]$ a vodorovná asymptota se posune z $y=0$ na $y=3$.
+
+Stejným způsobem se každý bod $[u;2^u]$ základního grafu změní na $[u;-2\cdot2^u+3]$.
+Několik bodů ověříme přímo dosazením do výsledného předpisu:
+\[
+\begin{aligned}
+g(-1)&=-2\cdot\frac12+3=2, & g(0)&=-2\cdot1+3=1,\\
+g(1)&=-2\cdot2+3=-1, & g(2)&=-2\cdot4+3=-5.
+\end{aligned}
+\]
+Tyto body umožňují zkontrolovat, zda jsme správně provedli násobení, převrácení i posun.
+
+\begin{center}
+\begin{tikzpicture}[scale=0.85]
+    \begin{axis}[
+        axis lines=middle,
+        xmin=-4, xmax=3,
+        ymin=-6, ymax=4,
+        ticks=none,
+        xlabel={$x$}, ylabel={$y$},
+        domain=-4:3,
+        samples=200,
+        smooth,
+        title={\small Výsledný graf $-2\cdot2^x+3$}
+    ]
+    \addplot[blue, thick] {-2*2^x+3};
+    \addplot[only marks, mark=*] coordinates {(-1,2) (0,1) (1,-1) (2,-5)};
+    \node[below left] at (axis cs:-1,2) {$[-1;2]$};
+    \node[below left] at (axis cs:0,1) {$[0;1]$};
+    \node[above right] at (axis cs:1,-1) {$[1;-1]$};
+    \node[above left] at (axis cs:2,-5) {$[2;-5]$};
+    \draw[dashed] (axis cs:-4,3) -- (axis cs:3,3);
+    \node[above] at (axis cs:-3,3) {$y=3$};
+    \end{axis}
+\end{tikzpicture}
+\end{center}
+
+Funkce $2^x$ je rostoucí, ale násobení záporným číslem $-2$ obrátí pořadí jejích hodnot.
+Přičtení trojky už pořadí nezmění, takže $g$ je na celé $\mathbb{R}$ \textbf{klesající}.
+Definiční obor zůstává $D(g)=\mathbb{R}$.
+Z kladnosti $2^x$ plyne $-2\cdot2^x+3<3$ a všechny hodnoty menší než $3$ jsou dosaženy.
+Proto
+\[
+    H(g)=(-\infty;3).
+\]
+Při $x\to-\infty$ se $2^x$ blíží k nule, a rozdíl $g(x)-3=-2\cdot2^x$ se tedy blíží k nule také.
+Vodorovnou asymptotou je $y=3$; graf k ní přichází zdola a nedosáhne jí.
+Při $x\to+\infty$ funkční hodnoty klesají bez omezení.
+\end{examplebox}
 
 \subsection*{Exponenciální růst vs.\ mocninný růst}
 
@@ -517,8 +666,10 @@ Asymptota klesne na $y=-4$.
 
 \textbf{4. Absolutní hodnota: $y=\big|\,2^{x-2}-4\,\big|$}
 
-Část pod osou $x$ se odrazí nahoru. Minimum na $y=-4$
-se změní v vrchol na výšce $4$.
+Část pod osou $x$ se odrazí nahoru. Původní funkce nemá minimum;
+hodnota $-4$ určuje pouze její vodorovnou asymptotu při $x\to-\infty$.
+Výsledná funkce má minimum $0$ v bodě $[4;0]$, obor hodnot $[0;\infty)$
+a vodorovnou asymptotu $y=4$ při $x\to-\infty$.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.95]
@@ -547,7 +698,7 @@ se změní v vrchol na výšce $4$.
 \end{center}
 
 Tímto postupem lze sestrojit graf i složitě vypadajících funkcí,
-pokud úpravy provádíme postupně a sledujeme posuny v exponentu
+pokud úpravy provádíme postupně a sledujeme změny v exponentu
 a mimo exponent samostatně.
 \end{examplebox}
 
@@ -617,7 +768,7 @@ Nyní se podíváme na graf funkce $y = 0{,}4^{x}$:
 \node[right] at (axis cs:1.8, 0.192) {$x=1{,}8$};
 
 % pomocné čáry
-\draw[dashed] (axis cs:1.6,0) -- (axis cs:1.6,0.263);
+\draw[dashed] (axis cs:1.6,0) -- (axis cs:1.6,0.230832);
 \draw[dashed] (axis cs:1.8,0) -- (axis cs:1.8,0.192);
 
 \end{axis}
@@ -634,7 +785,7 @@ což potvrzuje předchozí závěr.
 \textbf{Závěr:}
 
 \[
-\boxed{(0{,}4)^{1{,}6} > (0{,}4)^{1{,}8}}
+(0{,}4)^{1{,}6} > (0{,}4)^{1{,}8}
 \]
 
 Grafické porovnání je velmi přehledné a zejména u klesajících exponenciál rychle ukáže,
@@ -642,6 +793,154 @@ který exponent vede k větší hodnotě.
 \end{examplebox}
 
 
+
+\begin{examplebox}{Určení parametrů funkce ze dvou bodů}
+
+Určete parametry $m,c$ tak, aby graf funkce $y=m\cdot2^x+c$
+procházel body $A[0;5]$ a $B[2;17]$.
+
+Souřadnice každého bodu na grafu musí splňovat předpis funkce.
+Z bodu $A$ tedy dosadíme současně $x=0$ a $y=5$;
+z bodu $B$ dosadíme $x=2$ a $y=17$.
+Základ exponenciály je zadaný, neznáme pouze její násobný koeficient a svislý posun.
+Dostáváme dvě podmínky
+\[
+    5=m\cdot2^0+c=m+c,\qquad
+    17=m\cdot2^2+c=4m+c,
+\]
+tedy soustavu
+\[
+\begin{aligned}
+    m+c&=5,\\
+    4m+c&=17.
+\end{aligned}
+\]
+Odečtením první rovnice od druhé se zbavíme $c$:
+$3m=12$, a proto $m=4$.
+Dosazením do první rovnice získáme $4+c=5$, tedy $c=1$.
+Oba parametry jsou určeny jednoznačně a výsledná funkce má předpis
+\[
+    y=4\cdot2^x+1.
+\]
+
+Výsledek zkontrolujeme v původních bodech:
+pro $x=0$ dostaneme $4\cdot1+1=5$, pro $x=2$ vyjde $4\cdot4+1=17$.
+Graf tedy skutečně prochází oběma zadanými body.
+
+Protože $4=2^2$, můžeme výsledek zapsat také jako
+\[
+    4\cdot2^x+1=2^2\cdot2^x+1=2^{x+2}+1.
+\]
+Tentýž graf tak získáme i posunutím základního grafu $2^x$ o dvě jednotky doleva a o jednu nahoru.
+\end{examplebox}
+
+\begin{examplebox}{Monotónnost exponenciální funkce s parametrem}
+
+Určete, pro které hodnoty reálného parametru $q$ je předpis
+\[
+    f_q(x)=\left(\frac{q^2-9}{q-3}\right)^x
+\]
+exponenciální funkcí na celé $\mathbb{R}$, a rozhodněte, kdy je tato funkce rostoucí a kdy klesající.
+
+Nejprve potřebujeme, aby byl základ vůbec definovaný.
+Ze jmenovatele dostáváme podmínku $q\neq3$.
+Teprve s touto podmínkou rozložíme čitatel a zkrátíme:
+\[
+    \frac{q^2-9}{q-3}
+    =\frac{(q-3)(q+3)}{q-3}
+    =q+3,\qquad q\neq3.
+\]
+Krácení znamená dělení nenulovým výrazem, proto původní podmínka nezmizí.
+Při $q=3$ bychom do původního základu dosadili zlomek $\frac00$, který nemá smysl;
+samotný výraz $q+3$ tuto informaci již neobsahuje.
+
+Základ exponenciální funkce musí být kladný a různý od jedné.
+Proto dále požadujeme
+\[
+    q+3>0,\qquad q+3\neq1,
+\]
+tedy $q>-3$ a $q\neq-2$.
+Spolu s původní podmínkou $q\neq3$ tak získáme všechny přípustné hodnoty
+\[
+    q\in(-3;-2)\cup(-2;3)\cup(3;\infty).
+\]
+Pro $q=-3$ je základ nulový a předpis nelze vyhodnotit pro všechna reálná $x$.
+Při $q<-3$ je základ záporný, takže například mocnina s exponentem $\frac12$ nemá reálnou hodnotu.
+Při $q=-2$ sice vznikne funkce $1^x=1$, ale ta je konstantní a podle naší definice není exponenciální.
+
+Nyní stačí porovnat přípustný základ s jedničkou.
+Rostoucí funkci dostaneme právě tehdy, když $q+3>1$, tedy $q>-2$.
+Stále ovšem musíme vyloučit $q=3$, takže
+\[
+    \text{rostoucí pro }q\in(-2;3)\cup(3;\infty).
+\]
+Klesající funkce vyžaduje $0<q+3<1$, což je ekvivalentní podmínce $-3<q<-2$:
+\[
+    \text{klesající pro }q\in(-3;-2).
+\]
+Například pro $q=0$ dostaneme rostoucí funkci $3^x$,
+zatímco pro $q=-\frac52$ dostaneme klesající funkci $\left(\frac12\right)^x$.
+Podmínky řešíme pro parametr $q$; argument $x$ přitom může nabývat všech reálných hodnot.
+\end{examplebox}
+
+\begin{examplebox}{Sestavení exponenciálního modelu}
+
+Na začátku pokusu má porost plochu $80\,\mathrm{cm}^2$.
+Podle zvoleného modelu se jeho plocha každé dvě hodiny zvětší o $25\,\%$.
+Sestavte předpis funkce $A(t)$, která udává plochu porostu po $t$ hodinách,
+a ověřte jej pro několik hodnot času.
+Než budete pokračovat ve čtení, zkuste si zapsat plochu na začátku pokusu a po prvních dvou časových intervalech.
+
+Čas začínáme měřit při zahájení pokusu, proto $t=0$ a $A(0)=80$.
+Zvětšení o $25\,\%$ znamená, že po každých dvou hodinách zůstává původní plocha
+a přibude ještě její čtvrtina:
+\[
+    A(2)=80+\frac{25}{100}\cdot80
+        =80\cdot1{,}25=100.
+\]
+V dalším dvouhodinovém intervalu počítáme čtvrtinu z aktuálních $100\,\mathrm{cm}^2$,
+nikoli z počátečních osmdesáti.
+Proto
+\[
+    A(4)=100\cdot1{,}25
+        =80\cdot1{,}25^2=125.
+\]
+Násobný koeficient zůstává stejný, ale absolutní přírůstky stejné nejsou:
+v prvním intervalu přibylo $20\,\mathrm{cm}^2$, ve druhém $25\,\mathrm{cm}^2$.
+
+Po $n$ celých dvouhodinových intervalech tedy dostaneme plochu $80\cdot1{,}25^n$.
+Pokud čas vyjadřujeme v hodinách, počet těchto intervalů je $\frac{t}{2}$.
+Přijmeme-li exponenciální průběh také mezi jejich konci, získáme předpis
+\[
+    A(t)=80\cdot1{,}25^{t/2},\qquad t\geq0.
+\]
+Hodnotu $A(t)$ v tomto zápisu vyjadřujeme v $\mathrm{cm}^2$ a $t$ je číselná hodnota času v hodinách.
+Koeficient $1{,}25$ patří ke dvěma hodinám, proto nesmíme při tomto významu $t$ použít exponent $t$.
+Poměr $\frac{t}{2}$ vyjadřuje podíl času a délky intervalu měřených ve stejné jednotce.
+Kdybychom místo toho použili číselnou hodnotu času $s$ v minutách, zapsali bychom stejný model jako $80\cdot1{,}25^{s/120}$.
+
+Předpis ověříme dosazením:
+\[
+\begin{aligned}
+    A(0)&=80\cdot1{,}25^0=80, &
+    A(2)&=80\cdot1{,}25^1=100,\\
+    A(4)&=80\cdot1{,}25^2=125, &
+    A(6)&=80\cdot1{,}25^3=156{,}25.
+\end{aligned}
+\]
+Po jedné hodině model předpovídá
+$A(1)=80\sqrt{1{,}25}\approx89{,}44\,\mathrm{cm}^2$.
+Odmocnina odpovídá polovině dvouhodinového intervalu.
+
+Předpokládáme, že při stejných podmínkách zůstává násobný koeficient růstu stejný.
+Údaje na koncích dvouhodinových intervalů samy o sobě neurčují průběh mezi nimi;
+právě exponenciální průběh jsme zde zvolili jako součást modelu.
+V reálném porostu může růst později omezit prostor, dostupnost živin nebo změna prostředí.
+Předpis proto používáme jen po dobu, kdy je předpoklad stejného koeficientu přiměřený;
+není tvrzením o neomezeném skutečném růstu.
+Stejnou úvahu o počtu intervalů využijeme i při exponenciálním poklesu,
+kde je násobný koeficient mezi nulou a jedničkou.
+\end{examplebox}
 
 % -----------------------------------------------------------------
 % ---------------------- P Ř Í K L A D Y --------------------------
@@ -763,7 +1062,7 @@ Dokažte, že platí následující tvrzení:
 
 \medskip
 
-\emph{Je-li $f$ exponenciální funkce o základu $a>0$, $a\neq1$, pak pro všechna
+\emph{Je-li $f(x)=a^x$ exponenciální funkce o základu $a>0$, $a\neq1$, pak pro všechna
 $u,v\in\mathbb{R}$ platí}
 \[
     f(u)\cdot f(v)=f(u+v).

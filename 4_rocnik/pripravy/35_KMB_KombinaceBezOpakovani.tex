@@ -1,0 +1,128 @@
+% Obsahový zdroj: import_hodiny/35_Kombinace_bez_opakovani.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 35.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{35}{Kombinace bez opakování}
+\begin{document}
+
+
+Připomeň obsazení tří různých funkcí. Nyní místo funkcí vybíráme pouze členy komise: stejní lidé mají tvořit jediný výsledek bez ohledu na pořadí, v němž byli vybráni.
+\poznamka{Předpoklady: variace bez opakování, faktoriál, součin voleb. Cíl: žák vysvětlí dělení $k!$ a použije kombinace ve slovních a geometrických úlohách. Začni P1, pak P2 a P3. P4–P5 jsou rozšíření aplikační části; při pomalejším tempu společně zvol jen jeden z nich, druhý zůstává rezervou.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Kombinace bez opakování} je neuspořádaný výběr $k$ různých prvků z $n$ navzájem různých prvků. Pro celá $n\geq0$, $0\leq k\leq n$ je jejich počet $C(n,k)$; zapisujeme jej také $\binom nk$ a čteme „$n$ nad $k$“.
+\end{definiceBox}
+
+U každé konkrétní skupiny $k$ lidí lze pořadí jejich výběru zapsat $k!$ způsoby. Variace $V(n,k)$ tedy každou skupinu počítají právě $k!$-krát. Například jedna trojice A, B, C dává pořadí
+\[
+ ABC,\ ACB,\ BAC,\ BCA,\ CAB,\ CBA.
+\]
+Aby se trojice započetla jednou, dělíme šesti, nikoli třemi. Obecně
+\[
+ C(n,k)=\frac{V(n,k)}{k!}=\frac{n!}{k!(n-k)!}=\binom nk.
+\]
+Odvození je platné, protože \emph{každá} skupina má tentýž počet uspořádání. Pro $k=0$ i $k=n$ je jeden výběr: prázdná množina, resp. celá množina. Při výběru s opakováním se tento vzorec nepoužije; takové výběry dnes neřešíme.
+
+Rozhodovací otázka zní: „Změní záměna dvou vybraných lidí výsledek?“ V komisi bez funkcí nezmění; při obsazení předsedy a místopředsedy změní. U geometrických úloh navíc prověřujeme, zda každá vybraná skupina bodů skutečně určí požadovaný objekt. Dva různé body určují úsečku, tři kolineární body však neurčují trojúhelník.
+
+Má-li skupina obsahovat předepsané počty členů z několika disjunktních kategorií, provedeme jednotlivé výběry a jejich počty násobíme. Celá skupina je jednoznačně určena těmito dílčími výběry.
+
+
+\poznamka{Průběh: 0–9 min výběr proti funkcím; 9–19 min odvození a P1; 19–32 min P2–P3 a jeden z P4–P5; 32–42 min C1–C3; 42–45 min kontrola a shrnutí. C4–C5 a neprobraný vzorový příklad slouží k domácímu dokončení nebo jako zásoba. Smysl dělitele má přednost před počtem vypočtených úloh.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/35_Kombinace_bez_opakovani.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Kolika způsoby vybereme ze skupiny devíti různých osob tři členy komise bez rozlišených funkcí?
+\tcblower
+Pořadí tří vybraných osob nerozlišujeme. Uspořádaných výběrů by bylo $9\cdot8\cdot7$, ale každou komisi bychom tak započetli $3!=6$-krát. Proto
+\[
+\binom93=\frac{9\cdot8\cdot7}{3\cdot2\cdot1}=84.
+\]
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/35_Kombinace_bez_opakovani.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Kolik úseček určuje šest bodů, nejsou-li žádné dva totožné?
+\tcblower
+Každé dva různé body jsou krajními body právě jedné úsečky; prohození konců ji nemění. Proto $\binom62=6\cdot5/2=15$. Různé dvojice mají různé krajní body, tedy různé úsečky. Není nutné předpokládat, že žádné tři body neleží na přímce: úsečky se mohou překrývat a stále být různé.
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/35_Kombinace_bez_opakovani.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Kolik čtyřčlenných skupin s přesně dvěma dívkami a dvěma chlapci lze vybrat ze šesti dívek a pěti chlapců?
+\tcblower
+Nejprve vybereme dvě dívky: $\binom62=15$ možností. Pro každou takovou dvojici můžeme vybrat dva chlapce $\binom52=10$ způsoby. Každá komise má právě jednu dívčí a jednu chlapeckou část, proto součinem dostáváme $15\cdot10=150$. Pořadí osob ani pořadí kategorií nevytváří další skupiny.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/35_Kombinace_bez_opakovani.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Kolik úhlopříček má konvexní desetiúhelník?
+\tcblower
+Dvojice vrcholů určují $\binom{10}{2}=45$ úseček. Každá je buď stranou, nebo úhlopříčkou. Stran je deset, takže úhlopříček je $45-10=35$. Kontrola: z každého vrcholu vedou úhlopříčky do sedmi vrcholů; součet $10\cdot7$ počítá každou dvakrát, tedy opět $35$.
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/35_Kombinace_bez_opakovani.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Ze skupiny osmi lidí vybereme tři, přičemž právě jeden ze dvou konkrétních lidí A a B musí být vybrán.
+\tcblower
+Rozdělíme výběry na komise s A bez B a s B bez A. V každém případě doplníme dvě osoby z ostatních šesti: $\binom62=15$. Případy jsou disjunktní a jiné nejsou dovoleny, proto $15+15=2\binom62=30$.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+U každé úlohy napiš, co tvoří jednu skupinu a proč nezáleží na pořadí. U C2 výslovně využij geometrickou podmínku, u C3 nejprve rozděl výběr podle kategorií.
+
+% Zdroj C1: import_hodiny/35_Kombinace_bez_opakovani.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Kolika způsoby vybereme dva z osmi různých žáků do dvojice bez rozlišených rolí?
+\tcblower
+Pořadí žáků nemění dvojici. $\binom82=8\cdot7/2=28$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/35_Kombinace_bez_opakovani.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Kolik trojúhelníků určuje sedm bodů, žádné tři neleží na přímce?
+\tcblower
+Každá trojice různých bodů určuje právě jeden trojúhelník, protože žádné tři neleží na přímce. Proto $\binom73=7\cdot6\cdot5/6=35$.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/35_Kombinace_bez_opakovani.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Kolika způsoby ze šesti žen a čtyř mužů vybereme tříčlennou skupinu s přesně jedním mužem?
+\tcblower
+Vybereme jednoho muže čtyřmi způsoby a dvě ženy $\binom62=15$ způsoby. Výběry spojíme, tedy $\binom41\binom62=4\cdot15=60$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/35_Kombinace_bez_opakovani.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Kolik možností má výběr dvou karet z pěti různých karet, pokud pořadí nehraje roli?
+\tcblower
+Každá dvojice karet se započítá jednou, nikoli v obou pořadích: $\binom52=5\cdot4/2=10$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/35_Kombinace_bez_opakovani.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Kolika způsoby z devíti různých hráčů vybereme čtyři, musí-li být předem určený hráč P mezi vybranými?
+\tcblower
+Hráč P je pevně vybrán. Doplníme ještě tři z ostatních osmi hráčů: $\binom83=8\cdot7\cdot6/6=56$. Dalším faktorem za P nenásobíme.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: ponechání počtu variací bez dělení $k!$; přidání faktoru $2!$ za dívčí a chlapeckou část skupiny; započítání stran mezi úhlopříčky. U P5 „právě jeden“ vylučuje současný výběr A a B. V hodině 36 procvičíme samotná kombinační čísla a jednoduché rovnice s nimi.}
+\end{document}

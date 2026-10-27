@@ -1,0 +1,288 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,margin=17mm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=2pt}
+
+% Zdroj zadání a bodování: přímý pokyn učitele v konverzaci 27. 10. 2026,
+% zpráva „Vytvoř čtvrtletní písemný test z matematiky na téma posloupnosti“,
+% Varianta A a Varianta B, úlohy 1–6 a oddíl Bodové hodnocení.
+% Zdrojový studentský soubor: 01_test_PosloupnostiCtvrtletni_AB.tex.
+% Zařazení: 4_rocnik/tematicke_plany/SPS.pdf, s. 1, body 1.1–1.5.
+% Nezávislá kontrola v Pythonu: postupné generování a sčítání členů,
+% přesné racionální podíly, dosazení a kontrola lineárního rezidua úlohy 5,
+% racionální mocniny a nezávislé každoroční připisování úroku (Decimal).
+
+\begin{document}
+\begin{center}
+    {\Large\bfseries Posloupnosti -- řešení a bodování}\\[2mm]
+    {\bfseries Čtvrtletní písemná práce, varianta A}
+\end{center}
+
+Každá varianta má nejvýše \textbf{30 bodů}. Níže je orientační rozpis
+podle pokynu učitele. Uznávejte i jiné správné postupy; jednu početní chybu
+netrestejte opakovaně, pokud další postup odpovídá získané hodnotě.
+Kritéria může učitel při opravování upravit podle svého odborného posouzení.
+
+\subsection*{Úloha 1 \hfill 4 body}
+Při obvyklém pokračování naznačeného vzoru:
+\begin{enumerate}[label=\alph*)]
+    \item Aritmetická, $d=5$: rozdíly jsou $5,5,5$.
+    \item Geometrická, $q=3$: podíly jsou $3,3,3$.
+    \item Ani jedno: rozdíly jsou $3,5,7$ a podíly
+    $\frac52,2,\frac{17}{10}$, tedy nejsou konstantní.
+    \item Geometrická, $q=-\frac12$: všechny tři podíly jsou $-\frac12$.
+\end{enumerate}
+\textit{Bodování:} za každou správnou položku včetně $d$ nebo $q$, pokud
+existuje, 1 bod. Samostatný rozpis rozdílů či podílů zadání nevyžaduje.
+
+\subsection*{Úloha 2 \hfill 5 bodů}
+Pro aritmetickou posloupnost platí $a_n=a_1+(n-1)d$. Proto
+\begin{align*}
+    a_{13}-a_4&=9d=47-11=36, & d&=4,\\
+    a_1&=a_4-3d=11-12=-1,\\
+    a_{20}&=a_1+19d=-1+76=75,\\
+    S_{20}&=\frac{20(a_1+a_{20})}{2}
+    =\frac{20(-1+75)}2=740.
+\end{align*}
+\textit{Bodování:} $d$ 1 bod; $a_1$ 1 bod; $a_{20}$ 1 bod;
+správný vzorec a dosazení pro $S_{20}$ 1 bod; výsledek $S_{20}$ 1 bod.
+
+\subsection*{Úloha 3 \hfill 5 bodů}
+Platí $a_n=a_1q^{n-1}$. Protože $a_2=6\ne0$, lze dělit:
+\begin{align*}
+    q^3&=\frac{a_5}{a_2}=\frac{162}{6}=27, & q&=3>0,\\
+    a_1&=\frac{a_2}{q}=2, & a_7&=a_1q^6=2\cdot729=1458,\\
+    S_6&=a_1\frac{q^6-1}{q-1}
+    =2\cdot\frac{729-1}{3-1}=728.
+\end{align*}
+Vzorec pro součet lze použít, neboť $q=3\ne1$.
+
+\textit{Bodování:} $q$ 1 bod; $a_1$ 1 bod; $a_7$ 1 bod;
+správný vzorec a dosazení pro $S_6$ 1 bod; výsledek $S_6$ 1 bod.
+
+\subsection*{Úloha 4 \hfill 4 body}
+Zde $a_1=4$, $d=5$ a hledáme $n\in\mathbb N$, $n\ge1$.
+\[
+    4+5(n-1)=149 \iff 5(n-1)=145 \iff n=30,
+    \qquad S_{30}=\frac{30(4+149)}2=2295.
+\]
+\textit{Bodování:} sestavení rovnice pro $n$ 1 bod; $n=30$ 1 bod;
+správný vzorec a dosazení pro $S_{30}$ 1 bod; výsledek 1 bod.
+
+\newpage
+\begin{center}
+    {\large\bfseries Varianta A -- pokračování řešení}
+\end{center}
+
+\subsection*{Úloha 5 \hfill 6 bodů}
+Označme první člen $x$. Potom $a_1=x$, $a_3=x+4$, $a_7=x+12$.
+Pro tři po sobě jdoucí členy geometrické posloupnosti je nutné
+$a_3^2=a_1a_7$. Dostáváme
+\begin{align*}
+    (x+4)^2&=x(x+12),\\
+    x^2+8x+16&=x^2+12x,\\
+    16&=4x,\qquad x=4.
+\end{align*}
+Všech deset čísel je tedy
+\[
+    4,\ 6,\ 8,\ 10,\ 12,\ 14,\ 16,\ 18,\ 20,\ 22.
+\]
+Zkouška: rozdíly jsou rovny $2$. První, třetí a sedmé číslo jsou $4,8,16$
+a platí $8/4=16/8=2$, takže podmínka je také postačující.
+Úpravy rovnice byly ekvivalentní, jiné řešení neexistuje.
+
+\textit{Bodování:} vyjádření $a_3=x+4$ 1 bod a $a_7=x+12$ 1 bod
+(spolu s označením $a_1=x$); sestavení $(x+4)^2=x(x+12)$ 1 bod;
+správné roznásobení obou stran 1 bod; vyřešení rovnice $x=4$ 1 bod;
+výpis všech deseti členů 1 bod.
+
+\subsection*{Úloha 6 \hfill 6 bodů}
+Označme $K_n$ stav účtu po $n$ celých letech; počáteční vklad má index $0$.
+Model se složeným úročením je
+\[
+    K_0=40\,000,\qquad K_{n+1}=1{,}06K_n,\qquad
+    K_n=40\,000\cdot1{,}06^n,\quad n=0,1,2,\ldots
+\]
+\begin{enumerate}[label=\alph*)]
+    \item Po pěti letech bude na účtu
+    \[
+        K_5=40\,000\cdot1{,}06^5
+        =53\,529{,}023104\ \text{Kč}
+        \doteq53\,529{,}02\ \text{Kč}.
+    \]
+    \item Hledáme nejmenší celé $n\ge0$, pro které $K_n>60\,000$.
+    \begin{align*}
+        40\,000\cdot1{,}06^n&>60\,000
+        \iff 1{,}06^n>1{,}5,\\
+        n&>\frac{\log1{,}5}{\log1{,}06}\doteq6{,}9585.
+    \end{align*}
+    Dělíme kladným číslem $\log1{,}06$, znaménko nerovnosti se nemění.
+    Kontrola sousedních celých let:
+    \[
+        K_6\doteq56\,740{,}76<60\,000,
+        \qquad K_7\doteq60\,145{,}21>60\,000.
+    \]
+    Posloupnost $(K_n)$ je přísně rostoucí, proto bude hranice poprvé
+    překročena \textbf{po 7 letech}. Lze použít i postupné násobení
+    číslem $1{,}06$ bez logaritmování.
+\end{enumerate}
+Peníze v části a) jsou zaokrouhleny na haléře až v konečném výsledku;
+model neobsahuje průběžné zaokrouhlování ani daň.
+
+\textit{Bodování:} počáteční stav a roční násobení číslem $1{,}06$
+1 bod; explicitní model $K_n=40\,000\cdot1{,}06^n$ se správným významem
+indexu 1 bod; v části a) dosazení $n=5$ 1 bod a správná částka 1 bod;
+v části b) správná nerovnost s určením mezního exponentu nebo výpočet
+$K_6,K_7$ 1 bod a závěr o nejmenším celém počtu let 1 bod.
+Postupné roční úročení je rovnocenný způsob sestavení modelu.
+
+\medskip
+\textbf{Součet varianty A:} $4+5+5+4+6+6=30$ bodů.
+
+\newpage
+\begin{center}
+    {\Large\bfseries Posloupnosti -- řešení a bodování}\\[2mm]
+    {\bfseries Čtvrtletní písemná práce, varianta B}
+\end{center}
+
+\subsection*{Úloha 1 \hfill 4 body}
+Při obvyklém pokračování naznačeného vzoru:
+\begin{enumerate}[label=\alph*)]
+    \item Aritmetická, $d=-5$: rozdíly jsou $-5,-5,-5$.
+    \item Geometrická, $q=-3$: podíly jsou $-3,-3,-3$.
+    \item Ani jedno: rozdíly jsou $3,5,7$ a podíly
+    $4,\frac94,\frac{16}{9}$, tedy nejsou konstantní.
+    \item Geometrická, $q=\frac13$: všechny tři podíly jsou $\frac13$.
+\end{enumerate}
+\textit{Bodování:} za každou správnou položku včetně $d$ nebo $q$, pokud
+existuje, 1 bod. Samostatný rozpis rozdílů či podílů zadání nevyžaduje.
+
+\subsection*{Úloha 2 \hfill 5 bodů}
+Použijeme vztah $a_n=a_1+(n-1)d$:
+\begin{align*}
+    a_{14}-a_5&=9d=42-(-3)=45, & d&=5,\\
+    a_1&=a_5-4d=-3-20=-23,\\
+    a_{20}&=a_1+19d=-23+95=72,\\
+    S_{20}&=\frac{20(a_1+a_{20})}{2}
+    =\frac{20(-23+72)}2=490.
+\end{align*}
+\textit{Bodování:} $d$ 1 bod; $a_1$ 1 bod; $a_{20}$ 1 bod;
+správný vzorec a dosazení pro $S_{20}$ 1 bod; výsledek $S_{20}$ 1 bod.
+
+\subsection*{Úloha 3 \hfill 5 bodů}
+Platí $a_n=a_1q^{n-1}$. Protože $a_2=12\ne0$, lze dělit:
+\begin{align*}
+    q^3&=\frac{a_5}{a_2}=\frac{324}{12}=27, & q&=3>0,\\
+    a_1&=\frac{a_2}{q}=4, & a_7&=a_1q^6=4\cdot729=2916,\\
+    S_6&=a_1\frac{q^6-1}{q-1}
+    =4\cdot\frac{729-1}{3-1}=1456.
+\end{align*}
+Vzorec pro součet lze použít, neboť $q=3\ne1$.
+
+\textit{Bodování:} $q$ 1 bod; $a_1$ 1 bod; $a_7$ 1 bod;
+správný vzorec a dosazení pro $S_6$ 1 bod; výsledek $S_6$ 1 bod.
+
+\subsection*{Úloha 4 \hfill 4 body}
+Zde $a_1=91$, $d=-7$ a hledáme $n\in\mathbb N$, $n\ge1$.
+\[
+    91-7(n-1)=-42 \iff -7(n-1)=-133 \iff n=20.
+\]
+\[
+    S_{20}=\frac{20\bigl(91+(-42)\bigr)}2=490.
+\]
+\textit{Bodování:} sestavení rovnice pro $n$ 1 bod; $n=20$ 1 bod;
+správný vzorec a dosazení pro $S_{20}$ 1 bod; výsledek 1 bod.
+
+\newpage
+\begin{center}
+    {\large\bfseries Varianta B -- pokračování řešení}
+\end{center}
+
+\subsection*{Úloha 5 \hfill 6 bodů}
+Označme první člen $x$. Potom $a_1=x$, $a_3=x+8$, $a_7=x+24$.
+Nutná podmínka $a_3^2=a_1a_7$ dává
+\begin{align*}
+    (x+8)^2&=x(x+24),\\
+    x^2+16x+64&=x^2+24x,\\
+    64&=8x,\qquad x=8.
+\end{align*}
+Všech deset čísel je tedy
+\[
+    8,\ 12,\ 16,\ 20,\ 24,\ 28,\ 32,\ 36,\ 40,\ 44.
+\]
+Zkouška: rozdíly jsou rovny $4$. První, třetí a sedmé číslo jsou $8,16,32$
+a platí $16/8=32/16=2$, takže podmínka je také postačující.
+Úpravy rovnice byly ekvivalentní, jiné řešení neexistuje.
+
+\textit{Bodování:} vyjádření $a_3=x+8$ 1 bod a $a_7=x+24$ 1 bod
+(spolu s označením $a_1=x$); sestavení $(x+8)^2=x(x+24)$ 1 bod;
+správné roznásobení obou stran 1 bod; vyřešení rovnice $x=8$ 1 bod;
+výpis všech deseti členů 1 bod.
+
+\subsection*{Úloha 6 \hfill 6 bodů}
+Označme $K_n$ stav účtu po $n$ celých letech; počáteční vklad má index $0$.
+Model se složeným úročením je
+\[
+    K_0=50\,000,\qquad K_{n+1}=1{,}05K_n,\qquad
+    K_n=50\,000\cdot1{,}05^n,\quad n=0,1,2,\ldots
+\]
+\begin{enumerate}[label=\alph*)]
+    \item Po šesti letech bude na účtu
+    \[
+        K_6=50\,000\cdot1{,}05^6
+        =67\,004{,}78203125\ \text{Kč}
+        \doteq67\,004{,}78\ \text{Kč}.
+    \]
+    \item Hledáme nejmenší celé $n\ge0$, pro které $K_n>70\,000$.
+    \begin{align*}
+        50\,000\cdot1{,}05^n&>70\,000
+        \iff 1{,}05^n>1{,}4,\\
+        n&>\frac{\log1{,}4}{\log1{,}05}\doteq6{,}8963.
+    \end{align*}
+    Dělíme kladným číslem $\log1{,}05$, znaménko nerovnosti se nemění.
+    Kontrola sousedních celých let:
+    \[
+        K_6\doteq67\,004{,}78<70\,000,
+        \qquad K_7\doteq70\,355{,}02>70\,000.
+    \]
+    Posloupnost $(K_n)$ je přísně rostoucí, proto bude hranice poprvé
+    překročena \textbf{po 7 letech}. Lze použít i postupné násobení
+    číslem $1{,}05$ bez logaritmování.
+\end{enumerate}
+Peníze v části a) jsou zaokrouhleny na haléře až v konečném výsledku;
+model neobsahuje průběžné zaokrouhlování ani daň.
+
+\textit{Bodování:} počáteční stav a roční násobení číslem $1{,}05$
+1 bod; explicitní model $K_n=50\,000\cdot1{,}05^n$ se správným významem
+indexu 1 bod; v části a) dosazení $n=6$ 1 bod a správná částka 1 bod;
+v části b) správná nerovnost s určením mezního exponentu nebo výpočet
+$K_6,K_7$ 1 bod a závěr o nejmenším celém počtu let 1 bod.
+Postupné roční úročení je rovnocenný způsob sestavení modelu.
+
+\medskip
+\textbf{Součet varianty B:} $4+5+5+4+6+6=30$ bodů.
+
+% Didaktická kontrola: stejné pořadí dovedností i bodování v obou variantách.
+% Úloha 1: jedna AP, dvě GP (jedna se záporným q), jedna „ani jedno“.
+% Úloha 2: stejný rozdíl indexů 9; v obou případech záporné a_1.
+% Úloha 3: stejný kvocient 3, stejné indexy i délka součtu.
+% Úloha 4: jediná lineární rovnice pro n, následně aritmetický součet.
+% Úloha 5: stejná rovnice po přepočtu měřítka, stejné q=2.
+% Úloha 6: stejný model a nerovnost, obě minimální n=7; B využije již
+% spočtené K_6 z části a), drobná početní úspora nemění testované postupy.
+% Orientační časy úloh při dostupné kalkulačce: 4, 6, 6, 4, 8, 7 minut;
+% celkem 35 minut práce a přibližně 10 minut na kontrolu v rámci 45 minut.
+% Jde o odhad, nikoli čas ověřený ve třídě. Délka ani pomůcky se
+% ve studentském dokumentu bez potvrzení učitele neuvádějí.
+% Úloha 1: konečný úsek s výpustkou matematicky neurčuje všechny další
+% členy; řešení používá obvyklou školní interpretaci naznačeného vzoru.
+\end{document}

@@ -1,0 +1,189 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\setlength{\parindent}{0pt}
+\begin{document}
+\section*{Geometrická posloupnost C/D -- řešení a bodování}
+Podklad pro učitele k testu
+\texttt{01\_test\_GeometrickaPosloupnost\_CD.tex}.
+
+Zařazení: 4. ročník SPŠ; tematický plán
+\texttt{4\_rocnik/tematicke\_plany/SPS.pdf}, s.~1, září, bod 1.3;
+celek posloupností má společnou dotaci 12 hodin.
+Vzory z pracovního listu \texttt{pracovniListGeoPosl.tex}:
+úlohy 6--7 (obecný člen), 24 (dvě znaménka kvocientu),
+49 (kvocient ze součtu), 64--65 (součet a součin trojice).
+V úloze 3 je tento vzor rozšířen o výpočet dalšího konečného součtu.
+Nepotřebujeme logaritmy, goniometrii ani nekonečné řady.
+
+Po vzoru A/B předpokládáme práci bez kalkulačky.
+Odhad času je 30--35 minut včetně kontroly, nikoli původních 20 minut;
+není ověřen ve třídě. Obě varianty mají shodný počet rozhodovacích kroků,
+dvě řešení v úlohách 2--4 a stejné bodování.
+
+\subsection*{Varianta C}
+\begin{enumerate}
+\item Pro každé celé $n\geq1$ je $4^n\ne0$ a $a_n\ne0$. Platí
+\[
+\frac{a_{n+1}}{a_n}
+=\frac{3(-2)^{n+2}}{4^{n+1}}\frac{4^n}{3(-2)^{n+1}}
+=-\frac12.
+\]
+Podíl je konstantní pro všechna $n\geq1$, takže posloupnost je geometrická,
+$a_1=3(-2)^2/4=3$, $q=-\frac12$.
+Ověření jen několika počátečních podílů by samo o sobě důkazem nebylo.
+
+\item Z $a_4=a_2q^2$ plyne $3=12q^2$, tedy $q^2=\frac14$.
+Člen $a_2$ je nenulový, proto $q\ne0$ a můžeme použít
+$a_1=a_2/q$, $a_5=a_4q$:
+\[
+\begin{array}{c|c|c}
+q&a_1&a_5\\ \hline
+\frac12&24&\frac32\\
+-\frac12&-24&-\frac32
+\end{array}
+\]
+Rovnice pro $q^2$ má právě tyto dva reálné kořeny.
+Zkouška postupným násobením:
+\[
+24,12,6,3,\tfrac32;\qquad -24,12,-6,3,-\tfrac32.
+\]
+Obě posloupnosti splňují zadání.
+
+\item Součet prvních tří členů zapíšeme přímo, bez dělení výrazem $q-1$:
+\[
+2(1+q+q^2)=14
+\iff q^2+q-6=0
+\iff(q-2)(q+3)=0.
+\]
+Máme právě $q=2$ nebo $q=-3$; oba kvocienty se liší od jedničky.
+Pro každou možnost zvlášť:
+\[
+\begin{aligned}
+q=2:&\quad S_5=2\frac{2^5-1}{2-1}=62,\\
+q=-3:&\quad S_5=2\frac{(-3)^5-1}{-3-1}=122.
+\end{aligned}
+\]
+Zkouška přímým součtem:
+\[
+\begin{aligned}
+2+4+8&=14,&2+4+8+16+32&=62,\\
+2-6+18&=14,&2-6+18-54+162&=122.
+\end{aligned}
+\]
+
+\item Označme trojici $u,v,w$. Součin je nenulový, takže všechny tři
+členy i kvocient jsou nenulové. Z geometrické vlastnosti plyne $uw=v^2$,
+a proto $uvw=v^3=216$. Jediné reálné řešení je $v=6$.
+Zbývá $u+w=15$, $uw=36$. Dosazením $w=15-u$ dostaneme
+\[
+u(15-u)=36\iff u^2-15u+36=0\iff(u-3)(u-12)=0.
+\]
+Všechna řešení jsou $(3,6,12)$ s $q=2$ a $(12,6,3)$ s $q=\frac12$.
+Zkouška: v obou případech je součet $21$, součin $216$ a oba sousední
+podíly jsou stejné ($2$, resp. $\frac12$).
+Jiné řešení není možné: $v$ je určen jednoznačně a rovnice pro $u$ má
+právě dva kořeny. Zkouška prokazuje i postačitelnost získaných podmínek.
+\end{enumerate}
+
+\newpage
+\subsection*{Varianta D}
+\begin{enumerate}
+\item Pro každé celé $n\geq1$ je $9^{n-1}\ne0$ a $a_n\ne0$. Platí
+\[
+\frac{a_{n+1}}{a_n}
+=\frac{5(-3)^n}{9^n}\frac{9^{n-1}}{5(-3)^{n-1}}
+=-\frac13.
+\]
+Podíl je konstantní pro všechna $n\geq1$, takže posloupnost je geometrická,
+$a_1=5(-3)^0/9^0=5$, $q=-\frac13$.
+
+\item Z $a_5=a_3q^2$ plyne $24=6q^2$, tedy $q^2=4$.
+Člen $a_3$ je nenulový, proto $q\ne0$. Použijeme
+$a_1=a_3/q^2$, $a_6=a_5q$:
+\[
+\begin{array}{c|c|c}
+q&a_1&a_6\\ \hline
+2&\frac32&48\\
+-2&\frac32&-48
+\end{array}
+\]
+Rovnice pro $q^2$ má právě tyto dva reálné kořeny.
+Zkouška postupným násobením: $\frac32,3,6,12,24,48$,
+resp. $\frac32,-3,6,-12,24,-48$. Obě posloupnosti splňují zadání.
+Znaménko $q$ zde neovlivňuje $a_1$, ale ovlivňuje $a_6$.
+
+\item Přímým zápisem součtu získáme
+\[
+3(1+q+q^2)=39
+\iff q^2+q-12=0
+\iff(q-3)(q+4)=0.
+\]
+Máme právě $q=3$ nebo $q=-4$; oba kvocienty se liší od jedničky.
+\[
+\begin{aligned}
+q=3:&\quad S_5=3\frac{3^5-1}{3-1}=363,\\
+q=-4:&\quad S_5=3\frac{(-4)^5-1}{-4-1}=615.
+\end{aligned}
+\]
+Zkouška přímým součtem:
+\[
+\begin{aligned}
+3+9+27&=39,&3+9+27+81+243&=363,\\
+3-12+48&=39,&3-12+48-192+768&=615.
+\end{aligned}
+\]
+
+\item Označme trojici $u,v,w$. Nenulový součin vylučuje nulové členy
+i nulový kvocient. Platí $uw=v^2$, tedy $uvw=v^3=216$ a $v=6$.
+Dále $u+w=20$, $uw=36$. Dosazením $w=20-u$ získáme
+\[
+u(20-u)=36\iff u^2-20u+36=0\iff(u-2)(u-18)=0.
+\]
+Všechna řešení jsou $(2,6,18)$ s $q=3$ a $(18,6,2)$ s $q=\frac13$.
+Zkouška: v obou případech je součet $26$, součin $216$ a oba sousední
+podíly jsou stejné ($3$, resp. $\frac13$).
+Jiné řešení není možné: jediný reálný prostřední člen je $6$ a rovnice
+pro krajní člen má právě dva kořeny. Obě trojice splňují původní zadání.
+\end{enumerate}
+
+\subsection*{Orientační bodování pro obě varianty}
+Nezávazný návrh pro učitele; uznávejte i jiné správné postupy.
+Kritéria lze upravit podle odborného posouzení. Stejnou početní chybu
+netrestejte opakovaně, pokud navazující postup odpovídá získané hodnotě.
+\begin{enumerate}
+\item 4 body: obecný podíl a oprávněnost dělení (1), jeho úprava (1),
+závěr pro všechna $n$ s kvocientem (1), první člen (1).
+\item 5 bodů: vztah mezi známými členy (1), obě hodnoty $q$ (2),
+obě hodnoty $a_1$ (1), obě hodnoty požadovaného členu (1).
+\item 6 bodů: rovnice pro $S_3$ (1), její úprava na kvadratickou (1),
+obě hodnoty $q$ (2), správný $S_5$ pro každou možnost (2).
+\item 7 bodů: vztah $uw=v^2$ a odvození $v^3$ (1), prostřední člen (1),
+součet a součin krajních členů (1), rovnice a oba její kořeny (1),
+obě uspořádané trojice (1), oba kvocienty (1), zkouška obou trojic (1).
+\end{enumerate}
+Celkem 22 bodů za každou variantu.
+Orientační časy úloh: 4, 6, 8 a 9 minut, dále 3--8 minut na kontrolu.
+Na dvacetiminutový test je tato skladba pravděpodobně příliš náročná.
+
+\subsection*{Kontrola a rozdíl oproti A/B}
+Výsledky byly nezávisle ověřeny přesnou racionální aritmetikou:
+generováním členů z nalezených $a_1,q$, přímým sčítáním a dosazením
+trojic do původních podmínek. V úloze 1 byla vedle obecného podílu
+ověřena algebraická totožnost se vzorcem $a_1q^{n-1}$.
+Úplnost řešení zajišťuje v úlohách 2 a 3 rozklad kvadratických rovnic,
+v úloze 4 jediný reálný prostřední člen a oba kořeny rovnice pro krajní členy.
+Žádným dělením se nevylučuje přípustné řešení; nenulovost je před dělením
+zdůvodněna. V úloze 3 se podmínka $q\ne1$ používá až po určení kořenů.
+
+Oproti A/B vyžaduje úloha 1 práci s mocninami a důkaz pro celý průběh
+posloupnosti místo porovnání dvou číselných podílů.
+V úloze 2 není kvocient zadán; žák ho odvodí ze dvou členů a musí
+zpracovat obě znaménka. V úloze 3 nejprve řeší kvadratickou rovnici
+pro kvocient a pak dva různé součty. V úloze 4 převádí současně součet,
+součin a geometrickou podmínku na rovnici pro krajní členy;
+na rozdíl od lineární rovnice v A/B musí zachytit obě pořadí trojice.
+\end{document}

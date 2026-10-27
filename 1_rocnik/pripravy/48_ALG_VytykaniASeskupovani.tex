@@ -1,0 +1,72 @@
+% Hodina 48, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 48.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: P2: učebnice, „Rozklad mnohočlenů“, příklad se třemi proměnnými. Ostatní vlastní.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/06_Rozklad_mnohoclenu_na_soucin_I_vytykani_.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/06%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20I%20(vyt%C3%BDk%C3%A1n%C3%AD).pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{48}{Vytýkání společného činitele}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Dosud jsme součin roznásobovali. Nyní budeme hledat společné činitele jednotlivých členů a psát výraz opačným směrem. Správnost každého rozkladu lze ověřit zpětným roznásobením.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Rozklad mnohočlenu na součin} je jeho nahrazení součinem mnohočlenů, který má pro všechna dosazení stejnou hodnotu.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Vytýkání} je použití distributivního zákona v opačném směru: $MA+MB=M(A+B)$. Společný činitel může být jednočlen i celá závorka.
+\end{definiceBox}
+
+
+U číselných koeficientů hledáme společný dělitel, u proměnných nejnižší společný exponent. Po vytknutí vydělíme společným činitelem každý člen. Když společný činitel nemají všechny členy, může pomoci seskupení.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Rozlož $6x^3-9x^2$.
+\tcblower
+Oba členy obsahují $3x^2$. Dostáváme $3x^2(2x-3)$. Roznásobení vrací původní dva členy; jako mnohočlenná identita platí i pro $x=0$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Rozlož $7a^3bc-14a^3b^2c^2-21ab^4$.
+\tcblower
+Vytkneme $7ab$ a zůstane $7ab(a^2c-2a^2bc^2-3b^3)$. Každý člen v závorce musí po násobení $7ab$ dát právě jeden původní člen.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Rozlož $12a^2b-18ab^2$.
+\item Rozlož $-3x^2+6x$.
+\item Rozlož $x^3+2x^2+3x+6$ seskupením.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $6ab(2a-3b)$. Žádné zákazy $a=0$ ani $b=0$ nevznikají, protože výsledkem je identita bez dělení.
+\item $-3x(x-2)$; vytažení záporného koeficientu změní znaménka v závorce.
+\item $x^2(x+2)+3(x+2)=(x+2)(x^2+3)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Nedoplňuj automaticky podmínku nenulovosti vytaženého činitele: na rozdíl od krácení zlomku jde o mnohočlennou identitu. Při pomalejším tempu řeš seskupování společně. Vzorce pro rozdíl čtverců zde zatím nepoužívej.}
+
+\end{document}

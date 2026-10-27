@@ -1,0 +1,71 @@
+% Hodina 34, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 34.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+
+% Původ úloh: P1: učebnice, „Částečné odmocňování“, oba příklady. Ostatní vlastní úlohy.
+
+% Metodický zdroj: externi_zdroje/realisticky/Odmocniny/07_Druha_odmocnina.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/02%20%C4%8C%C3%ADseln%C3%A9%20obory/07%20Druh%C3%A1%20odmocnina.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Odmocniny/08_Treti_odmocnina.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/02%20%C4%8C%C3%ADseln%C3%A9%20obory/08%20T%C5%99et%C3%AD%20odmocnina.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Odmocniny}{34}{Částečné odmocňování}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Odmocnina z čísla, které není úplnou druhou mocninou, může obsahovat zbytečně velký radikand. Vyhledej v něm čtverec a použij pravidlo ze 33. hodiny. Až po této úpravě hledej stejné odmocniny ve více členech.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Částečné odmocnění} je úprava, při níž z radikandu vyjmeme úplnou mocninu odpovídající odmocniteli a její odmocninu zapíšeme před odmocnítko.
+\end{definiceBox}
+
+
+Pro reálné $a$ a $b\ge0$ platí $\sqrt{a^2b}=|a|\sqrt b$. U třetí odmocniny je $\sqrt[3]{a^3b}=a\sqrt[3]b$ pro všechna reálná $a,b$. Členy se stejnou odmocninou slučujeme pomocí vytýkání: $u\sqrt b+v\sqrt b=(u+v)\sqrt b$, což je pouze distributivní zákon.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Částečně odmocni $\sqrt{72}$ a $\sqrt[3]{54}$.
+\tcblower
+$\sqrt{72}=\sqrt{36\cdot2}=6\sqrt2$; $\sqrt[3]{54}=\sqrt[3]{27\cdot2}=3\sqrt[3]2$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\sqrt{48}-2\sqrt{12}+\sqrt{75}$ a $\sqrt{50x^2}$.
+\tcblower
+První výraz je $4\sqrt3-4\sqrt3+5\sqrt3=5\sqrt3$. Druhý je pro všechna reálná $x$ roven $5|x|\sqrt2$, protože $\sqrt{x^2}=|x|$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\sqrt{98}$ a $\sqrt[3]{-128}$.
+\item Uprav $3\sqrt8-\sqrt{18}+2\sqrt2$.
+\item Uprav $\sqrt{18a^2}$ pro reálné $a$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $7\sqrt2$ a $-4\sqrt[3]2$; použijeme $98=49\cdot2$ a $-128=(-4)^3\cdot2$.
+\item $6\sqrt2-3\sqrt2+2\sqrt2=5\sqrt2$.
+\item $3|a|\sqrt2$. Absolutní hodnotu nelze vynechat například pro $a=-1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Nejprve nech žáky hledat největší čtvercový dělitel, potom slučovat členy. Různé odmocniny nesčítej jako radikandy: $\sqrt2+\sqrt3$ není $\sqrt5$. Při pomalejším tempu ponech třetí odmocninu v procvičení jako rezervu.}
+
+\end{document}

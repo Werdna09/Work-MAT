@@ -15,13 +15,13 @@
 
 \subsection{Exponenciální rovnice}
 
-Exponenciální rovnice jsou takové rovnice, v níž se neznámá nevyskytuje
-v základní části výrazu, ale v jeho \important{exponentu}. Tato skutečnost výrazně
+Exponenciální rovnice jsou takové rovnice, v nichž se neznámá vyskytuje
+v \important{exponentu} mocniny; může se přitom objevit i v dalších částech rovnice. Tato skutečnost výrazně
 ovlivňuje nejen způsob, jakým rovnici upravujeme, ale i metody, které při jejím řešení používáme.
 
 \medskip
 
-Obecně můžeme exponenciální rovnici zapsat ve tvaru
+Jeden ze základních typů exponenciálních rovnic má tvar
 \[
     a^{f(x)} = b^{g(x)},
 \]
@@ -29,12 +29,12 @@ kde $a>0$, $a\neq1$ a také $b>0$. Výrazy $f(x)$ a $g(x)$ bývají nejčastěji
 nebo kvadratické funkce.
 
 \begin{examplebox}
-Uvažujme výraz
+Uvažujme rovnici
 \[
     2^x = 8.
 \]
 Protože $8 = 2^3$, je zřejmé, že řešením je právě $x=3$.  
-Tedy kořenem této rovnice je množina $K=\{3\}$.
+Množina všech kořenů této rovnice je $K=\{3\}$.
 \end{examplebox}
 
 Tento jednoduchý příklad jasně ukazuje hlavní princip exponenciálních rovnic:
@@ -46,11 +46,11 @@ vede k požadovanému výsledku.
 
 Tuto situaci si lze velmi dobře představit i graficky. Jak již víme, tak $y = 2^x$ je exponenciální
 křivka a rovnice $2^x = 8$ tedy znamená hledat \textbf{průsečík} grafu exponenciální funkce
-s lineární přímkou $y = 8$.
+s vodorovnou přímkou $y = 8$.
 
 \begin{notebox}
-Řešení exponenciální rovnice lze chápat jako hledání bodu, 
-ve kterém exponenciální křivka protne danou vodorovnou přímku.
+Při grafickém řešení rovnice hledáme souřadnice $x$ průsečíků grafů její levé a pravé strany.
+V rovnici $2^x=8$ tedy hledáme souřadnici $x$ průsečíku exponenciály s vodorovnou přímkou.
 \end{notebox}
 
 \begin{center}
@@ -120,7 +120,7 @@ Nyní mají oba výrazy stejný základ, a proto stačí porovnat exponenty:
 \end{examplebox}
 
 \begin{notebox}
-Tento postup ukazuje, že většina exponenciálních rovnic se snažíme upravit do tvaru
+Tento postup ukazuje, že většinu exponenciálních rovnic se snažíme upravit do tvaru
 \[
     a^x = a^y,
 \]
@@ -167,7 +167,8 @@ Z čehož plyne:
     x = 6.
 \]
 
-Tím jsme našli kořen (tedy $x$-ovou souřadnici průsečíku původních dvou výrazů):  
+Kořenem je $x=6$, tedy souřadnice $x$ průsečíku grafů levé a pravé strany rovnice.
+Množina kořenů je
 \[
 K = \{6\}.
 \]
@@ -181,7 +182,7 @@ Důvod této ekvivalence je jednoduchý:
 \end{itemize}
 
 \noindent
-a v obou případech tedy přiřazuje každé hodnotě $x$ právě jednu funkční hodnotu.
+a v obou případech tedy různým argumentům přiřazuje různé funkční hodnoty.
 
 \subsubsection*{Důležitý fakt o oboru hodnot}
 
@@ -223,10 +224,9 @@ protože součin $a^m \cdot a^n = a^{m+n}$ i podíl
 $\dfrac{a^m}{a^n} = a^{m-n}$ nám dovolují přímo pracovat s exponenty.
 
 Jakmile však v rovnici vystupuje \textbf{sčítání nebo odčítání exponenciálních výrazů},
-situace se zásadně mění. Sčítání výrazů jako $2^x + 2^{x+1}$ nelze převést
-na jedinou mocninu stejným způsobem, protože exponenty nelze jednoduše sečíst.
-V takových rovnicích proto přímý přepis na tvar
-$a^{f(x)} = a^{g(x)}$ není triviální ani možný.
+nemůžeme jejich exponenty přímo sčítat nebo odčítat jako při násobení či dělení mocnin.
+Často však můžeme vytknout společný výraz: například $2^x+2^{x+1}=2^x(1+2)=3\cdot2^x$.
+Po takové úpravě se někdy opět dostaneme na společný základ; jindy využijeme vhodnou substituci.
 
 Právě proto v těchto případech používáme dvě základní metody řešení:
 
@@ -263,7 +263,7 @@ Nejprve si ukážeme řešení pomocí vytýkání.
 \begin{examplebox}
 \textbf{Metoda 1: Řešení pomocí vytýkání}
  
-Máme řešte rovnici:
+Řešme rovnici:
 \[
     3\cdot 2^x + 2^x = 32.
 \]
@@ -293,7 +293,7 @@ Nyní již mají obě strany stejný základ, můžeme proto porovnat exponenty:
     x + 2 = 5 \quad \Longleftrightarrow \quad x = 3.
 \]
 
-Kořen rovnice je tedy $K=\{3\}$.
+Množina kořenů rovnice je tedy $K=\{3\}$.
 \end{examplebox}
 
 \noindent
@@ -311,7 +311,7 @@ Nyní si ukážeme druhý způsob řešení – substituci.
 \begin{examplebox}
 \textbf{Metoda 2: Řešení pomocí substituce}
 
-Máme řešte rovnici:
+Řešme rovnici:
 \[
     3\cdot 2^x + 2^x = 32.
 \]
@@ -346,7 +346,7 @@ Porovnáme exponenty:
 
 \medskip
 \textbf{Výsledek:}  
-Kořen rovnice je $K = \{3\}$.
+Množina kořenů rovnice je $K = \{3\}$.
 \end{examplebox}
 
 \noindent
@@ -374,6 +374,88 @@ jak výraz vytknout. Substituce vše zjednoduší na rovnici v nové proměnné 
 
 
 \begin{examplebox}
+\textbf{Kvadratická substituce.}
+Řešte rovnici
+\[
+    9^x+2\cdot3^x=15.
+\]
+
+Obě mocniny nejprve vyjádříme pomocí $3^x$. Protože $9^x=(3^x)^2$, zavedeme
+\[
+    t=3^x,\qquad t>0.
+\]
+Podmínka vyplývá z kladnosti exponenciální funkce. Naopak každá kladná hodnota $t$
+odpovídá právě jednomu reálnému $x$, protože funkce $3^x$ je prostá a má obor hodnot $(0;\infty)$.
+Původní rovnice se změní na kvadratickou rovnici
+\[
+    t^2+2t-15=0
+    \quad\Longleftrightarrow\quad
+    (t-3)(t+5)=0.
+\]
+Dostáváme $t_1=3$ a $t_2=-5$.
+Záporná hodnota sice řeší pomocnou kvadratickou rovnici, ale nemůže být hodnotou $3^x$,
+a proto ji nepřijmeme.
+
+Zbývá úplná zpětná substituce:
+\[
+    3^x=3=3^1\quad\Longleftrightarrow\quad x=1.
+\]
+Jiný kladný pomocný kořen neexistuje a přechod od $3^x=3$ je ekvivalentní.
+Množina všech kořenů původní rovnice je tedy $K=\{1\}$.
+Zkouška v původním zadání dává
+\[
+    L(1)=9^1+2\cdot3^1=9+6=15=P(1).
+\]
+\end{examplebox}
+
+\begin{examplebox}
+\textbf{Záporný exponent a převrácená hodnota.}
+Řešte rovnici
+\[
+    5^x+5^{3-x}=30.
+\]
+
+Ve druhém členu potřebujeme rozpoznat stejný výraz $5^x$ jako v prvním.
+Pravidlo pro rozdíl exponentů dává
+\[
+    5^{3-x}=\frac{5^3}{5^x}=\frac{125}{5^x}.
+\]
+Jmenovatel je pro všechna reálná $x$ kladný. Zavedeme tedy
+\[
+    t=5^x,\qquad t>0,
+\]
+a získáme rovnici
+\[
+    t+\frac{125}{t}=30.
+\]
+Protože $t>0$, můžeme obě strany násobit $t$ bez ztráty nebo přidání řešení.
+Postupně dostáváme
+\[
+    t^2+125=30t
+    \quad\Longleftrightarrow\quad
+    t^2-30t+125=0
+    \quad\Longleftrightarrow\quad
+    (t-5)(t-25)=0.
+\]
+Oba pomocné kořeny $t_1=5$ a $t_2=25$ jsou kladné, proto provedeme zpětnou substituci v obou případech:
+\[
+\begin{aligned}
+    5^x=5=5^1&\quad\Longleftrightarrow\quad x=1,\\
+    5^x=25=5^2&\quad\Longleftrightarrow\quad x=2.
+\end{aligned}
+\]
+Každá z obou přípustných hodnot $t$ dává právě jeden kořen; další pomocné kořeny nejsou.
+Proto $K=\{1;2\}$.
+Zkouškou ověříme oba výsledky:
+\[
+\begin{aligned}
+    L(1)&=5^1+5^{3-1}=5+25=30=P(1),\\
+    L(2)&=5^2+5^{3-2}=25+5=30=P(2).
+\end{aligned}
+\]
+\end{examplebox}
+
+\begin{examplebox}
 \textbf{Příklad 4.}  
 Řešte rovnici:
 \[
@@ -386,15 +468,15 @@ jak výraz vytknout. Substituce vše zjednoduší na rovnici v nové proměnné 
 
 Na první pohled se zdá, že máme v rovnici hned dva exponenciální výrazy:
 \[
-a = 2^x 
-\qquad\text{a}\qquad 
-b = \left(\frac{1}{3}\right)^x.
+a = 2^x>0
+\qquad\text{a}\qquad
+b = \left(\frac{1}{3}\right)^x>0.
 \]
 
-Taková substituce však \textbf{nedává smysl}.  
-Pokud bychom zavedli dvě neznámé, objevily by se v rovnici dva parametry a dostali bychom
-nekonečně mnoho dvojic $(a,b)$, které splňují původní vztah.  
-Potřebujeme z obou výrazů vytvořit \textbf{jeden společný základ}.
+Zavedení dvou pomocných proměnných je zde \textbf{nevýhodné}.
+Obě závisejí na témže $x$, takže jejich vzájemnou vazbu nesmíme opomenout.
+Samotná rovnice mezi $a$ a $b$ by připouštěla i dvojice, které takto z jediného $x$ získat nelze.
+Výhodnější bude z obou výrazů vytvořit \textbf{jeden společný základ}.
 
 \medskip
 \textbf{1) Sjednotíme základy}
@@ -407,7 +489,7 @@ A nyní využijeme poznatku z mocnin a sice, že $1^n = 1 $ a tedy můžeme ješ
 \[
     \frac{1^x}{3^x} = \frac{1}{3^x}
 \]
-Obdobně pak urpavíme i
+Obdobně pak upravíme i
 \[
     \left(\frac{1}{3}\right)^{x-1} = \frac{1^{x-1}}{3^{x-1}} = \frac{1}{3^{x-1}}
 \]
@@ -485,13 +567,67 @@ Porovnáme exponenty:
 
 \medskip
 \textbf{Výsledek:}  
-Kořen rovnice je množina
+Množina kořenů rovnice je
 \[
 K = \{2\}.
 \]
 \end{examplebox}
 
 
+
+\begin{examplebox}
+\textbf{Substituce po vydělení rovnice.}
+Řešte rovnici
+\[
+    4^x+2\cdot6^x=3\cdot9^x.
+\]
+
+V rovnici vystupují tři základy, ale souvisejí spolu vztahem $6^x=2^x\cdot3^x$.
+Vydělíme-li všechny členy výrazem $9^x$, získáme podíly, které lze vyjádřit pomocí jediného základu.
+Protože $9^x>0$ pro všechna reálná $x$, je toto dělení ekvivalentní úpravou:
+\[
+    \frac{4^x}{9^x}+2\frac{6^x}{9^x}=3.
+\]
+Pomocí pravidla pro podíl mocnin dostáváme
+\[
+    \left(\frac23\right)^{2x}+2\left(\frac23\right)^x=3.
+\]
+Nyní je vhodné zavést
+\[
+    t=\left(\frac23\right)^x,\qquad t>0.
+\]
+Rovnice se změní na
+\[
+    t^2+2t-3=0
+    \quad\Longleftrightarrow\quad
+    (t-1)(t+3)=0.
+\]
+Z kořenů $t_1=1$ a $t_2=-3$ přijmeme pouze první, neboť exponenciální výraz je kladný.
+Zpětná substituce dává
+\[
+    \left(\frac23\right)^x=1=\left(\frac23\right)^0
+    \quad\Longleftrightarrow\quad x=0.
+\]
+Základ je kladný a různý od jedné, takže díky prostotě jiné $x$ nedostaneme.
+Všechny předchozí kroky byly na uvedeném definičním oboru ekvivalentní, a proto $K=\{0\}$.
+Kontrola v původní rovnici:
+\[
+    L(0)=4^0+2\cdot6^0=1+2=3=3\cdot9^0=P(0).
+\]
+\end{examplebox}
+
+Při volbě postupu sledujeme především stavbu rovnice.
+Součiny a podíly se pokusíme převést na společný základ, u součtů hledáme společný činitel
+nebo opakující se výraz vhodný pro substituci.
+Někdy ji připravíme vydělením kladnou mocninou; při návratu vždy dodržíme podmínky pomocné proměnné.
+Exponenciální rovnice může mít žádný, jeden, více i nekonečně mnoho kořenů.
+Například v rovnici
+\[
+    5^{x+1}-5\cdot5^x=0
+\]
+se levá strana rovná $5^x(5-5)=0$ pro každé reálné $x$.
+Jde tedy o identitu a množina kořenů je $K=\mathbb{R}$.
+Zkouškou ověřujeme nalezené kořeny; že jsme žádný další nevynechali, zdůvodňujeme ekvivalentními úpravami a příslušnými podmínkami.
 
 \section{Soustavy exponenciálních rovnic}
 
@@ -511,15 +647,17 @@ substitucí na soustavu lineárních rovnic, kterou lze vyřešit známými meto
 
 \medskip
 
-Na rozdíl od soustav lineárních rovnic ovšem nemůžeme jednoduše sčítat nebo odčítat celé
-rovnice, protože exponenciální výrazy se nedají spojovat přímo. Namísto toho využíváme
-následující postupy:
+Také u exponenciálních soustav můžeme rovnice sčítat nebo odčítat.
+Při sčítací metodě nahrazujeme jednu rovnici jejím součtem s násobkem druhé a druhou rovnici zachováme;
+taková úprava je vratná, a proto je soustava ekvivalentní původní.
+Substituce bývá výhodná zejména tím, že zpřehlední zápis. Využíváme tedy následující postupy:
 
 \begin{itemize}
     \item vlastnost exponentů $a^x = a^y \Longleftrightarrow x = y$,  
     \item \textbf{vhodnou substituci}, která převede exponenciální výrazy na nové proměnné,
     \item úpravy rovnic pomocí sjednocení základů (např. přepis $4^y = 2^{2y}$),
-    \item v některých úlohách i \textbf{dělení dvou rovnic}, pokud mají společný exponenciální výraz.
+    \item v některých úlohách i \textbf{dělení dvou rovnic}, jsou-li příslušné jmenovatele nenulové;
+          podílovou rovnici přitom ponecháme spolu s původní rovnicí, jejíž strany jsme použili jako jmenovatele.
 \end{itemize}
 
 Nejčastěji se v soustavách exponenciálních rovnic objevují dvě situace:
@@ -548,7 +686,7 @@ můžeme převést soustavu na tvar velmi podobný běžné lineární soustavě
 \medskip
 \textbf{Substituce:}  
 \[
-a = 3^x, \qquad b = 4^y.
+a = 3^x, \qquad b = 4^y,\qquad a>0,\quad b>0.
 \]
 
 Po dosazení dostáváme soustavu lineárních rovnic, které již umíme řešit:
@@ -571,7 +709,8 @@ Druhou rovnici vynásobíme číslem $2$:
 6a - 20b = 14.
 \]
 
-Rovnice odečteme:
+Druhou rovnici nahradíme rozdílem první a druhé, přičemž první rovnici zachováme.
+Získaná soustava je ekvivalentní původní a z nové druhé rovnice plyne:
 \[
 (6a + 9b) - (6a - 20b) = 72 - 14,
 \]
@@ -622,7 +761,8 @@ plyne
 \]
 
 \medskip
-Výsledek je tedy uspořádaná dvojice, která reperezentuje bod v kartézské soustavě prvků:
+Jediným řešením je tedy uspořádaná dvojice $[2;\frac12]$, která reprezentuje bod v kartézské soustavě souřadnic.
+Množina všech řešení je
 \[
 K = \left\{\, \left[2;\ \frac{1}{2}\right] \right\}.
 \]
@@ -631,14 +771,65 @@ K = \left\{\, \left[2;\ \frac{1}{2}\right] \right\}.
 
 
 
-\newpage
+\begin{examplebox}
+\textbf{Exponenciální soustava se dvěma řešeními.}
+Vyřešte soustavu pro reálná $x,y$:
+\[
+\begin{cases}
+    2^{x+y}=16,\\
+    2^x+2^y=10.
+\end{cases}
+\]
+
+Tentokrát první rovnice není lineární v jednotlivých mocninách.
+Pravidlo $2^{x+y}=2^x\cdot2^y$ však umožní použít substituci
+\[
+    a=2^x,\qquad b=2^y,\qquad a>0,\quad b>0.
+\]
+Dostáváme soustavu určující součin a součet pomocných proměnných:
+\[
+\begin{cases}
+    ab=16,\\
+    a+b=10.
+\end{cases}
+\]
+Z druhé rovnice vyjádříme $b=10-a$ a dosadíme do první.
+Protože obě pomocné proměnné musí být kladné, hledáme přitom $0<a<10$.
+\[
+    a(10-a)=16
+    \quad\Longleftrightarrow\quad
+    a^2-10a+16=0
+    \quad\Longleftrightarrow\quad
+    (a-2)(a-8)=0.
+\]
+Pokud $a=2$, vyjde $b=8$; pokud $a=8$, vyjde $b=2$.
+Obě dvojice splňují podmínky a provedeme pro ně zpětnou substituci:
+\[
+\begin{aligned}
+    a=2,\ b=8&:\quad 2^x=2^1,\quad 2^y=2^3
+                    \quad\Longrightarrow\quad [x;y]=[1;3],\\
+    a=8,\ b=2&:\quad 2^x=2^3,\quad 2^y=2^1
+                    \quad\Longrightarrow\quad [x;y]=[3;1].
+\end{aligned}
+\]
+Na pořadí záleží: první souřadnice udává $x$, druhá $y$.
+Proto jde o dvě různá uspořádaná řešení, nikoli o jedinou dvojici bez určeného pořadí.
+Jiné kořeny pomocná kvadratická rovnice nemá a každé kladné $a,b$ určuje právě jedno $x,y$.
+Množina všech řešení je tedy
+\[
+    K=\{[1;3];[3;1]\}.
+\]
+Zkoušku provedeme v obou původních rovnicích.
+Pro $[1;3]$ platí $2^{1+3}=16$ a $2^1+2^3=2+8=10$.
+Pro $[3;1]$ obdobně $2^{3+1}=16$ a $2^3+2^1=8+2=10$.
+\end{examplebox}
+
 \section{Exponenciální nerovnice}
 
 Po vyřešení exponenciálních rovnic se přirozeně dostáváme k exponenciálním nerovnicím,
-které řešíme velmi podobným způsobem. Základní rozdíl spočívá v tom, že zde nehledáme jedinou
-hodnotu proměnné, ale takové hodnoty, pro něž je daný exponenciální výraz větší či menší než
+které řešíme velmi podobným způsobem. Základní rozdíl spočívá v tom, že zde nehledáme hodnoty proměnné splňující rovnost, ale takové hodnoty, pro něž je daný exponenciální výraz větší či menší než
 zadané číslo nebo jiný exponenciální výraz. Přestože pracujeme s podobnými výrazy jako v rovnicích,
-ujíždí se řešení nerovnic o jednu důležitou vlastnost exponenciální funkce – její monotónnost.
+opírá se řešení nerovnic o jednu důležitou vlastnost exponenciální funkce – její monotónnost.
 
 \medskip
 
@@ -730,8 +921,13 @@ $y = 16$.
 \begin{axisgraph}[
     xmin=-2, xmax=4,
     ymin=0, ymax=20,
-    width=15.5cm,
-    height=12cm,
+    width=11cm,
+    height=6.5cm,
+    axis equal image=false,
+    xtick={-2,0,1.666666666666667,3,4},
+    xticklabels={$-2$,$0$,$\frac53$,$3$,$4$},
+    ytick distance=4,
+    title style={at={(0.5,-0.08)}},
     samples=300,
     domain=-2:4,
     restrict y to domain=0:20,
@@ -760,7 +956,7 @@ $y = 16$.
 \begin{notebox}
 Výsledek nerovnice odpovídá těm hodnotám $x$, pro které leží graf exponenciály
 $\;y = 2^{3x-1}\;$ pod vodorovnou přímkou $y=16$.  
-Přesně v bodě $x = \frac{5}{3}$ se grafy dotýkají.
+Grafy se protínají v bodě $[\frac53;16]$, jehož souřadnice $x=\frac53$ do řešení ostré nerovnice nepatří.
 \end{notebox}
 
 
@@ -773,13 +969,14 @@ Přesně v bodě $x = \frac{5}{3}$ se grafy dotýkají.
 % -----------------------------------------------------------------
 
 \exercisepart
+\settasks{label-width=1.4em, label-offset=0.5em}
 \setcounter{section}{1}
 
 % =========================
 % ÚLOHA 1 – Základní exponenciální rovnice
 % =========================
-\begin{exercise}[Základní exponenciální výrazy]
-Vyřešte následující exponenciální výrazy
+\begin{exercise}[Základní exponenciální rovnice]
+Vyřešte následující exponenciální rovnice.
 \begin{tasks}(3)
     \task $2^x = 4$
     \task $2^x = 8$
@@ -811,16 +1008,18 @@ Vyřešte následující exponenciální výrazy
 % =========================
 \begin{exercise}[Exponenciální rovnice s úpravami mocnin]
 Vyřešte následující exponenciální rovnice.
+V úlohách c) a h) předpokládejte $x\neq0$.
+Základy mocnin v těchto dvou úlohách jsou kladné pro každé reálné $x$.
 
-\begin{tasks}(3)
+\begin{tasks}(2)
     \task $\dfrac{1}{5^{2x-4}}=125$
     \task $9^{x+1} \;=\; 3 \cdot 27^{x}$
-    \task $\sqrt[x]{2\sqrt{8}} \;=\; \sqrt[x]{16}\cdot 2$
+    \task $\left(2\sqrt{8}\right)^{\frac1x} \;=\; 16^{\frac1x}\cdot 2$
     \task $25^x = \left(\dfrac{1}{5}\right)^{x^2}$
     \task $\sqrt[3]{3^{2x}} \;=\; \dfrac{1}{3}$
     \task $\left(\dfrac{3}{4}\right)^{\frac{x}{3}} = \sqrt[3]{\left(\dfrac{4}{4}\right)^{x}}$
     \task $\dfrac{27}{8}\left(\dfrac{2}{3}\right)^{x} \;=\; \dfrac{4}{9}\left(\dfrac{9}{4}\right)^{x+2}$
-    \task $\sqrt[\frac{1}{x}]{\dfrac{4^{4}}{16^{x}}} \;=\; 4\left(\dfrac{1}{2}\right)^{x}$
+    \task $\left(\dfrac{4^{4}}{16^{x}}\right)^x \;=\; 4\left(\dfrac{1}{2}\right)^{x}$
     \task $\left(\dfrac{1}{2}\right)^{x-1} \;=\; 8 \cdot \left(\dfrac{1}{2}\right)^{3x}$
     \task $4^{x-1} \cdot 8 \;=\; 2^{3x}$
     \task $5^{x+2} \;=\; 125 \cdot 25^{x}$
@@ -832,7 +1031,7 @@ Vyřešte následující exponenciální rovnice.
     \task $\dfrac{3^x}{9^{x-2}} \;=\; \dfrac{27^{x}}{9 \cdot 3^{4-x}}$
     \task $2^x \cdot 5^x = 0,1 \cdot \left(10^{x-1}\right)^5$
     \task $\star \; \dfrac{6^{x^2}}{2^{-15}} = \dfrac{3^{-15}}{6^{12-12x}}$
-    \task \text{$\star \; 0,25^{2-\sqrt{5x+1}} = 4 \cdot 2^{\sqrt{5x+1}}$}
+    \task $\star \; 0,25^{2-\sqrt{5x+1}} = 4 \cdot 2^{\sqrt{5x+1}}$
     \task $\star \; 9^{x(x-1) - 0,5} = \sqrt{3}$
 \end{tasks}
 \end{exercise}
@@ -841,6 +1040,7 @@ Vyřešte následující exponenciální rovnice.
 % =========================
 % ÚLOHA 3 – Exponenciální rovnice (pokročilejší úpravy)
 % =========================
+\newpage
 \begin{exercise}[Pokročilé exponenciální rovnice]
 Vyřešte následující rovnice.
 
@@ -867,6 +1067,8 @@ Vyřešte následující rovnice.
 % =========================
 \begin{exercise}[Kombinované exponenciální rovnice]
 Vyřešte následující rovnice pomocí vytýkání.
+U některých položek po vytknutí navážeme substitucí.
+Úloha f) je rozšiřující: vede ke kubické rovnici a přesahuje zde vyložené postupy.
 
 \begin{tasks}(2)
     \task $3 \cdot 2^{x} + 2^{x} = 32$                    %  x = 3
@@ -904,6 +1106,7 @@ Vyřešte následující rovnice pomocí vytýkání.
 % =========================
 \begin{exercise}[Kombinované exponenciální rovnice]
 Vyřešte následující exponenciální rovnice pomocí substituce.
+Úloha e) je navazující: její přesné dokončení využívá logaritmy, které probereme později.
 
 \begin{tasks}(2)
     \task $2^{x-1}\left(\dfrac{1}{3}\right)^{x-1} - 2^{x}\left(\dfrac{1}{3}\right)^{x} = \dfrac{2}{9}$
@@ -937,7 +1140,7 @@ Vyřešte následující rovnice pomocí substituce.
     \task $7^{2x} - 14 \cdot 7^{x} + 49 = 0$
     \task $9^{x+1} - 27 \cdot 3^{x} = 0$    
     \task $9^{x-0{,}5} + 9^{0{,}5-x} = \dfrac{10}{3}$
-    \task $2\left(\dfrac{1}{4}\right)^{x}
+    \task! $2\left(\dfrac{1}{4}\right)^{x}
            - 3\left(\dfrac{1}{2}\right)^{x}
            = \bigl[\,1 + \left(\dfrac{1}{2}\right)^{x}\bigr]
              \left(\dfrac{1}{4}\right)^{-1}$
@@ -971,6 +1174,7 @@ Vyřešte následující rovnice pomocí substituce.
 % =========================
 \begin{exercise}[Exponenciální nerovnice s různými základy]
 Řešte následující nerovnice s neznámou $x \in \mathbb{R}$.
+Úlohy c), d) a e) jsou navazující; přesný zápis jejich hraničních hodnot využívá logaritmy.
 
 \begin{tasks}(3)
     \task $3^{x-1} > 9$
@@ -1001,12 +1205,14 @@ Vyřešte následující rovnice pomocí substituce.
 \end{exercise}
 
 
+\newpage
 \setcounter{section}{3}
 % =========================
 % ÚLOHA 11 – Soustavy exponenciálních rovnic
 % =========================
 \begin{exercise}[Soustavy exponenciálních rovnic]
 Vyřešte následující soustavy rovnic. Vhodně použijte substituci.
+V úloze f) předpokládejte $x>0$ a $y\in\mathbb{R}$, aby byly mocniny definovány pro libovolný reálný exponent.
 
 \begin{tasks}(2)
     \task 
@@ -1093,6 +1299,9 @@ zadanými body v rovině.
 % =========================
 \begin{exercise}[Shrnující exponenciální rovnice]
 Vyřešte následující rovnice pomocí vhodných postupů.
+V úloze g) požadujeme $x\neq0$; základy mocnin jsou kladné.
+Úlohy i) a j) jsou navazující a při přesném dokončení využívají logaritmy.
+V úloze i) nezapomeňte, že každý přípustný pomocný kořen vyžaduje samostatný návrat k původní neznámé.
 
 \begin{tasks}(2)
     \task $\left(\dfrac{8}{27}\right)^{x} = \dfrac{9}{4}$
@@ -1101,7 +1310,7 @@ Vyřešte následující rovnice pomocí vhodných postupů.
     \task $3^{x} - 3^{x-1} - 2 \cdot 3^{x-2} - 3 \cdot 3^{x-3} = 9$
     \task $\dfrac{5^{x^{2}} \cdot 2^{x^{2}}}{10^{x}} = 1$
     \task $2 \cdot 4^{x} + 3 \cdot 9^{x} = 5 \cdot 6^{x}$
-    \task $\sqrt[x]{2^{3}} \cdot 8 = \sqrt[x]{2} \cdot 4$
+    \task $\left(2^3\right)^{\frac1x} \cdot 8 = 2^{\frac1x} \cdot 4$
     \task $2^{2x} \cdot 5^{x+1} = 4^{x+1} + 4^{x}$
     \task $3^{x} + 2 \cdot 3^{1-x} = 5$
     \task

@@ -1,0 +1,67 @@
+% Hodina 53, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 53.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: P1: učebnice, „Sčítání a odčítání lomených výrazů“, přesný výchozí součet. Ostatní vlastní.
+
+% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/03_Scitani_a_odcitani_lomenych_vyrazu_II.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/03%20S%C4%8D%C3%ADt%C3%A1n%C3%AD%20a%20od%C4%8D%C3%ADt%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF%20II.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{53}{Sčítání a odčítání lomených výrazů}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Lomené výrazy se sčítají stejně jako číselné zlomky: nejprve musí mít společný jmenovatel. Ten volíme podle rozkladu původních jmenovatelů. Při odčítání se minus týká celého druhého čitatele.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Společný jmenovatel} je nenulový výraz, na který lze jednotlivé zlomky rozšířit. Je výhodné zahrnout každý potřebný činitel jen v nejvyšší nutné mocnině.
+\end{definiceBox}
+
+
+Pro $B,D\ne0$ platí $\frac AB\pm\frac CD=\frac{AD\pm CB}{BD}$. Je-li některý jmenovatel násobkem jiného, použij úspornější společný násobek. Podmínky jsou společné podmínky všech původních zlomků, nikoli pouze konečného výsledku.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Sečti $\frac2{x-1}+\frac3{x+1}$.
+\tcblower
+Při $x\ne\pm1$ dostáváme $\frac{2(x+1)+3(x-1)}{(x-1)(x+1)}=\frac{5x-1}{x^2-1}$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\frac1{x-1}-\frac2{x^2-1}$.
+\tcblower
+Pro $x\ne\pm1$ je společný jmenovatel $(x-1)(x+1)$. Čitatel je $(x+1)-2=x-1$, takže výsledek je $1/(x+1)$; zákaz $x=1$ ponecháme.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Sečti $\frac1x+\frac1{x+1}$.
+\item Uprav $\frac2{a-2}-\frac1{2-a}$.
+\item Uprav $\frac{x}{x-1}-\frac{x+1}{x-1}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{2x+1}{x(x+1)}$ při $x\ne0,-1$.
+\item Protože $2-a=-(a-2)$, výsledek je $\frac3{a-2}$ při $a\ne2$.
+\item $\frac{x-(x+1)}{x-1}=-\frac1{x-1}$ při $x\ne1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Před slučováním čitatelů piš závorky; chrání minus před celým druhým součtem. Rozdíl $2-a$ a $a-2$ má opačné znaménko. Po zkrácení společného činitele se vrať k původnímu seznamu zákazů.}
+
+\end{document}

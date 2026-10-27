@@ -1,0 +1,125 @@
+% 02_VRL_CoJeVyrok.tex
+% Rozpracovana priprava: 1. rocnik, hodina 02, Vyrokova logika.
+% Kompilace z Work/MAT: latexmk -cd -pdf 1_rocnik/pripravy/02_VRL_CoJeVyrok.tex
+\documentclass[11pt,a4paper]{article}
+
+% Cesta ke stylu je relativni k souboru (latexmk s prepinacem -cd).
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Výroková logika}{02}{Co je výrok?}
+
+\begin{document}
+
+\blok{1. Motivace}
+Na tabuli napiš následující čtyři věty a nech žáky hlasovat, zda jim lze přiřadit pravdivostní hodnotu.
+\begin{prikladReseniBox}
+\begin{enumerate}[label=\alph*)]
+  \item Sedm je prvočíslo.
+  \item Otevřete si sešity.
+  \item $3+4=9$.
+  \item Matematika je nejzábavnější předmět.
+\end{enumerate}
+\tcblower
+a) pravdivý výrok; b) není výrok (rozkaz); c) nepravdivý výrok; d) bez upřesněného objektivního kritéria nejde o jednoznačně pravdivé či nepravdivé sdělení.
+\end{prikladReseniBox}
+\poznamka{Nezaměňovat \uv{nepravdivý výrok} a \uv{není výrok}. Pro žáky je to zásadní rozdíl.}
+
+\blok{2. Co je výrok}
+\begin{definiceBox}
+\textbf{Výrok} je sdělení, u něhož má smysl rozhodovat, zda je \textbf{pravdivé}, nebo \textbf{nepravdivé}. Jeho pravdivostní hodnotu značíme zpravidla $1$ (pravda) a $0$ (nepravda).
+\end{definiceBox}
+
+Výroky můžeme označovat malými písmeny, například
+\[
+  p:\; 12\text{ je dělitelné }3,\qquad q:\; 5<2.
+\]
+Výrok $p$ má hodnotu $1$, výrok $q$ má hodnotu $0$.
+
+\poznamka{Pojem \uv{výrok} se vztahuje k obsahu sdělení, nikoliv pouze k tomu, zda má věta tečku. Také matematický zápis může být výrokem.}
+
+\blok{3. Rozlišování výroků}
+\begin{zadaniReseniBox}
+Rozhodni, které položky jsou výroky. U výroků urči pravdivostní hodnotu.
+\begin{enumerate}[label=\alph*)]
+  \item $2^4=16$.
+  \item Kolik je odmocnina ze čtyř?
+  \item Každé sudé celé číslo je dělitelné dvěma.
+  \item $x+5=8$, kde $x$ není určeno.
+  \item Existuje prvočíslo větší než 100.
+  \item Ať už je přestávka!
+\end{enumerate}
+\tcblower
+a) výrok, $1$; b) otázka; c) výrok, $1$; d) otevřená formule, bez určení $x$ není výrok; e) výrok, $1$; f) přání.
+\end{zadaniReseniBox}
+
+\blok{4. Atomický, složený výrok a formule}
+\begin{definiceBox}
+\textbf{Atomický výrok} je výrok, který nelze rozložit na jednodušší výroky pomocí výrokových spojek.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Složený výrok} vzniká užitím výrokových spojek na jeden či více výroků (např. \uv{a}, \uv{nebo}, \uv{jestliže -- pak}).
+\end{definiceBox}
+
+\begin{prikladBox}
+$p$: \vyrok{4 je sudé číslo.}\qquad $q$: \vyrok{9 je dělitelné třemi.}
+\begin{itemize}
+  \item $p$ je atomický výrok.
+  \item \vyrok{4 je sudé číslo a 9 je dělitelné třemi} je složený výrok $p\land q$.
+\end{itemize}
+\end{prikladBox}
+
+\begin{zadaniReseniBox}
+U každé položky řekni, zda jde o atomický výrok, složený výrok, nebo o výraz, který zatím není výrokem.
+\begin{enumerate}[label=\alph*)]
+  \item $15$ je liché číslo.
+  \item $15$ je liché číslo a $15$ je dělitelné pěti.
+  \item $a^2+b^2=c^2$ pro neurčená $a,b,c$.
+  \item Jestliže je číslo dělitelné deseti, pak je dělitelné pěti.
+\end{enumerate}
+\tcblower
+a) atomický; b) složený; c) otevřená formule s neurčenými proměnnými; d) složený výrok.
+\end{zadaniReseniBox}
+\poznamka{\uv{Formule} není synonymum pro \uv{složený výrok}: otevřená formule s volnými proměnnými může teprve po dosazení nebo kvantifikaci vyjadřovat výrok. Nezabíhat do formální syntaxe.}
+
+\blok{5. Výrokové spojky -- zápis a čtení}
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{36mm}p{23mm}X@{}}
+\toprule
+Název & Zápis & Jak čteme\\
+\midrule
+Negace & $\neg p$ & není pravda, že $p$\\
+Konjunkce & $p\land q$ & $p$ a zároveň $q$\\
+Disjunkce & $p\lor q$ & $p$ nebo $q$ (případně obojí)\\
+Implikace & $p\Rightarrow q$ & jestliže $p$, pak $q$\\
+Ekvivalence & $p\Leftrightarrow q$ & $p$ právě tehdy, když $q$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{zadaniReseniBox}
+Nechť $p$: \vyrok{Prší.} a $q$: \vyrok{Mám deštník.} Přečti nahlas výroky
+\[
+  p\land q,\qquad p\lor q,\qquad p\Rightarrow q,\qquad p\Leftrightarrow q,\qquad \neg p.
+\]
+\tcblower
+Například $p\Rightarrow q$: \uv{Jestliže prší, pak mám deštník.} Ostatní čteme analogicky podle tabulky.
+\end{zadaniReseniBox}
+\poznamka{Upozorni, že matematické \uv{nebo} je zpravidla nevýlučné. Zatím po žácích nechci všechny pravdivostní hodnoty složených výroků ani jejich tabulky.}
+
+\blok{6. Závěr a rychlé ověření}
+\begin{zadaniReseniBox}
+\begin{enumerate}
+  \item Je \vyrok{$x>0$} bez dalšího určení výrokem? Proč?
+  \item Zapiš symbolem: \uv{Sedm je prvočíslo a osm je sudé číslo.}
+  \item Jak se čte $p\Leftrightarrow q$?
+\end{enumerate}
+\tcblower
+1. Ne, pravdivost závisí na $x$. 2. $p\land q$, kde $p$: 7 je prvočíslo, $q$: 8 je sudé. 3. $p$ právě tehdy, když $q$.
+\end{zadaniReseniBox}
+
+\textbf{Shrnutí na tabuli:} \;Výrok $\to$ pravdivostní hodnota $\to$ atomický/složený výrok $\to$ logické spojky.
+
+\textbf{Domácí procvičení (volitelné):} Napiš tři výroky, dva nevýroky a dva složené výroky. U složených výroků podtrhni spojku.
+
+\end{document}

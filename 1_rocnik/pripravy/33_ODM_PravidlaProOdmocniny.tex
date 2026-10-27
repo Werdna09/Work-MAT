@@ -1,0 +1,73 @@
+% Hodina 33, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 33.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Odmocniny/07_Druha_odmocnina.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/02%20%C4%8C%C3%ADseln%C3%A9%20obory/07%20Druh%C3%A1%20odmocnina.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Odmocniny/08_Treti_odmocnina.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/02%20%C4%8C%C3%ADseln%C3%A9%20obory/08%20T%C5%99et%C3%AD%20odmocnina.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Odmocniny}{33}{Pravidla pro odmocniny}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Odmocninu součinu můžeme zkoumat pomocí definice: součin dvou nezáporných odmocnin je nezáporný a jeho druhá mocnina je původní součin. Podmínky jsou součástí tvrzení, nikoli dodatkem k výsledku.
+
+\begin{definiceBox}[title={Připomenutí definice},breakable=false]
+\textbf{Druhá odmocnina} $\sqrt a$ je pro $a\ge0$ nezáporné číslo, jehož druhá mocnina je $a$.
+\end{definiceBox}
+
+
+Pro $a,b\ge0$ platí $\sqrt{ab}=\sqrt a\sqrt b$ a pro $a\ge0$, $b>0$ platí $\sqrt{a/b}=\sqrt a/\sqrt b$. Rovněž $\sqrt{a^2}=|a|$ pro všechna reálná $a$. Pro třetí odmocniny platí odpovídající pravidla pro všechna reálná $a,b$, u podílu s $b\ne0$.
+
+Odvození součinu: $(\sqrt a\sqrt b)^2=ab$ a $\sqrt a\sqrt b\ge0$, takže definice určuje právě $\sqrt{ab}$. Pro součet takové pravidlo neplatí.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Vypočítej $\sqrt{36\cdot25}$ a $\sqrt[3]{8/27}$.
+\tcblower
+$\sqrt{36}\sqrt{25}=6\cdot5=30$; $\sqrt[3]8/\sqrt[3]{27}=2/3$. Druhou hodnotu ověříme umocněním na třetí.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\sqrt{x^2}$ pro reálné $x$ a rozhodni, zda $\sqrt{9+16}=\sqrt9+\sqrt{16}$.
+\tcblower
+$\sqrt{x^2}=|x|$; například pro $x=-3$ je výsledek $3$. U součtu je levá strana $5$, pravá $7$, rovnost tedy obecně neplatí.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočítej $\sqrt{12}\sqrt3$.
+\item Vypočítej $\sqrt{75/3}$ a $\sqrt[3]{(-16)/2}$.
+\item Pro jaká reálná $x$ lze psát $\frac{\sqrt x}{\sqrt{x+1}}=\sqrt{\frac{x}{x+1}}$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{36}=6$; oba radikandy jsou nezáporné.
+\item $\sqrt{25}=5$ a $\sqrt[3]{-8}=-2$.
+\item Levá strana vyžaduje $x\ge0$ a $x+1>0$, dohromady $x\ge0$. Na tomto oboru platí uvedené pravidlo. Pravá strana sama má i další přípustné hodnoty, které však nepřidáváme k oboru původního výrazu.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Do obecného pravidla druhé odmocniny nedosazuj záporné činitele, i když je jejich součin kladný: $\sqrt{(-2)(-8)}=4$, ale $\sqrt{-2}\sqrt{-8}$ v reálných číslech smysl nemá. Zkouška znaménkem je nezbytná.}
+
+\end{document}

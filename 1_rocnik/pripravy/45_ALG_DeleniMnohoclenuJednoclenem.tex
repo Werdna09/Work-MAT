@@ -1,0 +1,67 @@
+% Hodina 45, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 45.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: P1: učebnice, „Dělení mnohočlenu jednočlenem“, první příklad. Ostatní vlastní.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/05_Deleni_mnohoclenu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/05%20D%C4%9Blen%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{45}{Dělení mnohočlenu jednočlenem}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Dělení součtu nenulovým jednočlenem rozložíme na podíly jednotlivých členů. Na rozdíl od násobení však musíme od začátku vyloučit všechny hodnoty, pro které se dělitel rovná nule.
+
+\begin{definiceBox}[title={Připomenutí definice},breakable=false]
+\textbf{Podíl} $A:M$ je výraz $A/M$ definovaný jen pro $M\ne0$. Přípustnost dělitele posuzujeme před krácením.
+\end{definiceBox}
+
+
+Platí $\frac{A+B-C}{M}=\frac A M+\frac B M-\frac C M$ pro $M\ne0$. V každém podílu vyděl koeficienty a použij pravidlo pro mocniny. Výsledek nemusí být mnohočlenem, jestliže v některém členu zůstane proměnná ve jmenovateli.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Vyděl $(4x^6+8x^3+2x^2):(2x^2)$.
+\tcblower
+Pro $x\ne0$ dostaneme $2x^4+4x+1$. Kontrola násobením: $2x^2(2x^4+4x+1)=4x^6+8x^3+2x^2$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $(x^2+1):x$.
+\tcblower
+Při $x\ne0$ je podíl $x+1/x$. Druhý člen nelze vynechat; podíl tedy není mnohočlen.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $(6a^3-9a^2+3a):(3a)$.
+\item Uprav $(8x^2y-4xy^2):(4xy)$.
+\item Uprav $(2x^2-3):x^2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2a^2-3a+1$ při $a\ne0$.
+\item $2x-y$ při $x,y\ne0$; podmínky pocházejí z celého dělitele.
+\item $2-3/x^2$ při $x\ne0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Nezaměňuj dělení součtu za krácení vybraného sčítance. Každý člen musí být vydělen. Zkoušku násobením prováděj s celým získaným podílem. Dlouhé dělení mnohočlennou závorkou začíná až v další hodině.}
+
+\end{document}

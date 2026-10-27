@@ -1,0 +1,62 @@
+% SABLONA pro novou pripravu - po zkopirovani uprav metadata a obsah.
+% Jmeno kopie: [cislo]_[ZKRATKA]_[PopisnyNazev].tex
+% Varianta v1.1: zadani a reseni tvor i jeden vizualni celek pomoci \tcblower.
+\documentclass[11pt,a4paper]{article}
+
+% Pri kompilaci v sablony/pripravy/ i po presunu do 1_rocnik/pripravy/.
+\IfFileExists{../../sablony/pripravy/priprava.sty}{%
+  \input{../../sablony/pripravy/priprava.sty}%
+}{%
+  \input{priprava.sty}%
+}
+
+% Rocnik | tematicky celek                 Cislo: nazev hodiny
+\nastavPripravu{1. ročník}{Výroková logika}{02}{Co je výrok?}
+
+\begin{document}
+
+\blok{Motivace}
+Krátká otázka, kterou hodinu otevřeme.
+
+% Příklad s připojeným řešením: jeden rám, dvě části.
+\begin{prikladReseniBox}
+Rozhodni, zda je sdělení \uv{$2+3=5$} pravdivé.
+\tcblower
+Ano, jde o pravdivý výrok.
+\end{prikladReseniBox}
+\poznamka{Na tomto místě nech studenty odpovídat bez předchozí definice.}
+
+\blok{Nový pojem}
+\begin{definiceBox}
+\textbf{Výrok} je sdělení, u něhož má smysl určit jeho pravdivostní hodnotu.
+\end{definiceBox}
+
+% Kazdy dalsi pojem dostane svou VLASTNI definiciBox.
+\begin{definiceBox}
+\textbf{Atomický výrok} je výrok, který nelze rozložit pomocí výrokových
+spojek na jednodušší výroky.
+\end{definiceBox}
+
+\blok{Procvičení}
+\begin{zadaniReseniBox}
+Rozhodni, zda je následující sdělení výrokem: \uv{Otevři okno.}
+\tcblower
+Není; jde o rozkaz.
+\end{zadaniReseniBox}
+
+% Ukazka vice radku matematiky uvnitr NAVAZANEHO reseni
+% (tento demonstracni priklad v konkretni hodine samozrejme nahrad).
+\begin{prikladReseniBox}
+Uprav výraz $2(x+3)-x$.
+\tcblower
+\begin{align*}
+2(x+3)-x &= 2x+6-x \\
+         &= x+6.
+\end{align*}
+\end{prikladReseniBox}
+
+% Pro ukazku bez reseni pouzij samostatny prikladBox ci zadaniBox:
+% \begin{zadaniBox} ... \end{zadaniBox}
+% Neslucuj ruzne definice do jednoho boxu.
+% Nepridavej automaticky cile hodiny, minutovy plan ani zapati.
+\end{document}

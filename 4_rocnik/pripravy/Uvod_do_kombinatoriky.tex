@@ -1,0 +1,119 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+\usepackage{array,tabularx,booktabs}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{tikz}
+\usepackage[hidelinks]{hyperref}
+\geometry{left=22mm,right=22mm,top=22mm,bottom=22mm}
+\definecolor{accent}{HTML}{243D65}
+\definecolor{muted}{HTML}{596575}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{3pt}
+\setlist[itemize]{topsep=2pt,itemsep=1pt,leftmargin=6mm}
+\setlist[enumerate]{topsep=2pt,itemsep=2pt,leftmargin=7mm}
+\pagestyle{fancy}\fancyhf{}\fancyhead[L]{\small\color{muted} Příprava na vyučovací hodinu}\fancyhead[R]{\small\color{muted} Kombinatorika}\fancyfoot[C]{\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+\newcommand{\cas}[1]{\textcolor{accent}{\bfseries #1}}
+\newcommand{\otazka}[1]{\emph{#1}}
+\begin{document}
+{\LARGE\bfseries Úvod do kombinatoriky}\par
+{\large První vyučovací hodina -- variace, permutace a kombinace}\par
+\vspace{2mm}
+\textbf{Délka:} 45 minut \quad \textbf{Forma:} řízená diskuse, společné řešení, samostatná práce
+
+\textbf{Cíl hodiny:} Žák systematicky vypisuje možnosti, používá jednoduché pravidlo součinu a u konkrétních situací rozhodne, zda záleží na pořadí a zda jsou dovolena opakování. Intuitivně odliší variaci, permutaci a kombinaci.
+
+\section*{Časový plán}
+\begin{tabularx}{\textwidth}{@{}p{24mm}X@{}}\toprule
+0--7 min & Motivace: uspořádání studentů a výběr dvojice \\
+7--17 min & Systematický výpis, pravidlo součinu a PIN \\
+17--30 min & Rozhodování: záleží na pořadí? Jsou povolena opakování? \\
+30--39 min & Pojmenování základních typů: variace, permutace, kombinace \\
+39--45 min & Samostatné úlohy, společná kontrola a shrnutí \\
+\bottomrule\end{tabularx}
+
+\section*{1. Motivace \texorpdfstring{\cas{(0--7 min)}}{(0--7 min)}}
+Na tabuli napište: \otazka{Máme tři studenty: Adama, Barboru a Cyrila. Kolika různými způsoby se mohou postavit vedle sebe na společnou fotografii?}
+
+Nechte studenty nejprve tipovat a poté vypisovat možnosti. Zapisujte systematicky:
+\[
+ABC,\quad ACB,\quad BAC,\quad BCA,\quad CAB,\quad CBA.
+\]
+Výsledek: \(6\) pořadí.
+
+Navazující otázka: \otazka{Kolika způsoby z těchto tří studentů vybereme dvojici, která půjde pro pomůcky?}
+
+Možnosti: \(AB, AC, BC\), tedy \(3\). Ptejte se: \otazka{Proč je první výsledek šest a druhý jen tři? Je dvojice Adam--Barbora jiná než Barbora--Adam?}
+
+\textbf{Pointa:} Při fotografování záleží na pořadí, při výběru dvojice nezáleží.
+
+\section*{2. Pravidlo součinu \texorpdfstring{\cas{(7--17 min)}}{(7--17 min)}}
+Zadání: \otazka{Ve školní jídelně jsou na výběr tři hlavní jídla a dva nápoje. Kolik různých obědů lze sestavit, vybíráme-li právě jedno jídlo a jeden nápoj?}
+
+Nejprve nechte vypsat kombinace, poté ukažte zkrácený postup:
+\[
+3\cdot 2=6.
+\]
+\textbf{Pravidlo součinu:} Jestliže první volbu můžeme provést \(m\) způsoby a pro každou z těchto voleb druhou volbu \(n\) způsoby, pak obě volby dohromady lze provést \(m\cdot n\) způsoby.
+
+Doplňující otázka: \otazka{Kolik čtyřmístných PINů lze vytvořit z číslic 0--9, jestliže se mohou opakovat?}
+\[
+10\cdot10\cdot10\cdot10=10^4=10\,000.
+\]
+\textbf{Poznámka:} PIN může začínat nulou. Zdůrazněte, že opakování číslic je zde přípustné. Pokud by šlo o čtyřmístné \emph{číslo}, první cifra nulou být nemůže.
+
+\section*{3. Pořadí a opakování \texorpdfstring{\cas{(17--30 min)}}{(17--30 min)}}
+U každé situace mají studenti pouze rozhodnout (bez nutnosti počítat), zda záleží na pořadí a zda se prvky mohou opakovat. Nechte je zdůvodnit odpověď.
+
+\begin{tabularx}{\textwidth}{@{}Xcc@{}}\toprule
+\textbf{Situace} & \textbf{Pořadí?} & \textbf{Opakování?} \\\midrule
+Ze šesti studentů vybíráme tříčlennou komisi. & Ne & Ne \\
+Šesti běžcům udělujeme zlato, stříbro a bronz. & Ano & Ne \\
+Vytváříme třímístný kód z číslic 0--9, opakování povoleno. & Ano & Ano \\
+Ze 5 příchutí zmrzliny vybíráme 3 kopečky; opakování dovoleno, pořadí nerozhoduje. & Ne & Ano \\
+\bottomrule\end{tabularx}
+
+\textbf{Otázky do diskuse:} \otazka{Je výběr Adam--Barbora--Cyril stejná komise jako Cyril--Adam--Barbora? Může běžec dostat dvě medaile? Je kód 123 stejný jako 321?}
+
+\section*{4. Základní typy uspořádání a výběrů \texorpdfstring{\cas{(30--39 min)}}{(30--39 min)}}
+Teprve nyní pojmenujte známé situace. Zatím pracujte především s případy \emph{bez opakování}.
+
+\begin{tabularx}{\textwidth}{@{}p{26mm}X X@{}}\toprule
+\textbf{Typ} & \textbf{Charakteristika} & \textbf{Příklad} \\\midrule
+Variace & Uspořádaný výběr \(k\) z \(n\) prvků & První tři místa v závodě \\
+Permutace & Uspořádání všech \(n\) prvků & Seřazení všech knih na polici \\
+Kombinace & Neuspořádaný výběr \(k\) z \(n\) prvků & Výběr členů komise \\
+\bottomrule\end{tabularx}
+
+Upozorněte, že u výběrů existují také varianty s opakováním. \textbf{V první hodině nezavádějte všechny vzorce:} cílem je situaci správně rozpoznat, nikoli mechanicky dosazovat.
+
+\section*{5. Závěrečné ověření \texorpdfstring{\cas{(39--45 min)}}{(39--45 min)}}
+Studenti řeší samostatně. V závěru krátce proberte postup.
+\begin{enumerate}
+\item Kolika způsoby lze ze čtyř různých knih vybrat dvě, pokud na pořadí nezáleží?
+\item Kolika způsoby lze ze čtyř různých knih obsadit první a druhé místo na polici (bez opakování)?
+\item Kolik čtyřmístných PINů lze vytvořit z číslic 0--9, pokud se žádná číslice nesmí opakovat?
+\end{enumerate}
+\textbf{Řešení pro učitele:} 1. \(\binom42=6\); 2. \(4\cdot3=12\); 3. \(10\cdot9\cdot8\cdot7=5040\).
+
+\section*{Zápis do sešitu}
+\textbf{Kombinatorika} se mimo jiné zabývá určováním počtu možností výběru a uspořádání prvků.
+
+\textbf{Pravidlo součinu:} Pokud první volbu můžeme provést \(m\) způsoby a pro každou z nich druhou volbu \(n\) způsoby, potom dohromady existuje \(m\cdot n\) možností.
+
+Při řešení kombinatorické úlohy se ptáme: \emph{Záleží na pořadí? Mohou se prvky opakovat? Vybíráme všechny prvky, nebo pouze některé?}
+
+\textbf{Variace:} uspořádaný výběr části prvků. \quad
+\textbf{Permutace:} uspořádání všech prvků. \quad
+\textbf{Kombinace:} neuspořádaný výběr části prvků.
+
+\section*{Metodická poznámka a návaznost}
+První hodina má vytvořit představu, \emph{co} vlastně počítáme. V dalších hodinách je vhodné probrat pravidlo součtu, faktoriál a postupně permutace, variace a kombinace (nejdříve bez opakování, potom s opakováním). U slovních úloh vždy vyžadujte krátké zdůvodnění výběru postupu.
+\end{document}

@@ -1,0 +1,73 @@
+% Hodina 49, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 49.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/07_Rozklad_mnohoclenu_na_soucin_II_vzorce_.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/07%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20II%20(vzorce).pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{49}{Druhé mocniny a rozdíl čtverců}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Při roznásobení $(a+b)(a+b)$ vzniknou dva stejné smíšené součiny $ab$. V součinu $(a-b)(a+b)$ se naopak vyruší. Vzorce tak odvodíme z již známého násobení, nemusíme je přijímat bez vysvětlení.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Druhá mocnina dvojčlenu} $(a+b)^2$ znamená součin dvou stejných dvojčlenů $(a+b)(a+b)$. Nejde o součet druhých mocnin členů.
+\end{definiceBox}
+
+
+Pro reálná $a,b$ platí
+\begin{align*}
+(a+b)^2&=a^2+2ab+b^2,\\
+(a-b)^2&=a^2-2ab+b^2,\\
+a^2-b^2&=(a-b)(a+b).
+\end{align*}
+První vzorec odvoď roznásobením; ve druhém nahraď $b$ číslem $-b$. Třetí ověř dvěma prostředními součiny s opačnými znaménky. Všechny tři vztahy používáme oběma směry.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Roznásob $(2x-3)^2$.
+\tcblower
+Zde $a=2x$, $b=3$. Dostaneme $4x^2-12x+9$. Prostřední člen je $-2\cdot2x\cdot3$, nikoli $-6x$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Rozlož $9x^2-25$ a $x^2+6x+9$.
+\tcblower
+$9x^2-25=(3x-5)(3x+5)$. Druhý výraz je $(x+3)^2=(x+3)(x+3)$, protože prostřední člen je $2\cdot x\cdot3$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Roznásob $(a+4)^2$.
+\item Rozlož $4y^2-1$.
+\item Rozlož $x^2-10x+25$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a^2+8a+16$.
+\item $(2y-1)(2y+1)$.
+\item $(x-5)^2$. Znaménko prostředního členu určuje minus v dvojčlenu.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Po každém vzorci nech žáky pracovat samostatně. Zdůrazni, že $a^2+b^2$ se tímto vzorcem nerozkládá. U každého složeného základu vyznač, co zastupuje celé $a$ a celé $b$; jinak se ztrácejí číselné koeficienty.}
+
+\end{document}

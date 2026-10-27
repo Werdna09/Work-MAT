@@ -1,0 +1,67 @@
+% Hodina 35, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 35.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Odmocniny/09_Usmernovani_zlomku.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/02%20%C4%8C%C3%ADseln%C3%A9%20obory/09%20Usm%C4%9Br%C5%88ov%C3%A1n%C3%AD%20zlomk%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Odmocniny}{35}{Usměrňování jednočlenného jmenovatele}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Hodnotu zlomku nezměníme, násobíme-li čitatele i jmenovatele stejným nenulovým číslem. Zvolíme takové číslo, aby ve jmenovateli vznikla úplná mocnina, kterou umíme odmocnit.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Usměrnění jmenovatele} je úprava zlomku, která odstraní odmocninu ze jmenovatele a zachová jeho hodnotu na původním definičním oboru.
+\end{definiceBox}
+
+
+Pro $b>0$ platí $\frac a{\sqrt b}=\frac{a\sqrt b}{b}$, protože rozšiřujeme zlomkem $\sqrt b/\sqrt b=1$. Nejdříve může být výhodné odmocninu částečně odmocnit a zlomek zkrátit. U třetí odmocniny doplňujeme třetí mocninu; například $\sqrt[3]2\,\sqrt[3]4=2$.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Usměrni $\frac3{\sqrt5}$ a $\frac5{\sqrt{20}}$.
+\tcblower
+$\frac3{\sqrt5}=\frac{3\sqrt5}{5}$. Dále $\frac5{\sqrt{20}}=\frac5{2\sqrt5}=\frac{5\sqrt5}{10}=\frac{\sqrt5}{2}$. V obou případech je původní jmenovatel nenulový.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Usměrni $\frac1{\sqrt x}$ a uveď podmínky.
+\tcblower
+Odmocnina i nenulový jmenovatel vyžadují $x>0$. Potom $\frac1{\sqrt x}\cdot\frac{\sqrt x}{\sqrt x}=\frac{\sqrt x}{x}$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Usměrni $\frac2{\sqrt3}$.
+\item Usměrni $\frac6{\sqrt{12}}$.
+\item Usměrni $\frac1{\sqrt[3]4}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{2\sqrt3}{3}$. Rozšiřujeme nenulovým $\sqrt3$.
+\item $\frac6{2\sqrt3}=\frac3{\sqrt3}=\sqrt3$.
+\item $\frac{\sqrt[3]2}{2}$, protože $\sqrt[3]4\,\sqrt[3]2=\sqrt[3]8=2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Požaduj vysvětlení, proč zvolený rozšiřující zlomek představuje jedničku. Nestačí násobit pouze jmenovatel. Dvojčlenné jmenovatele a sdružené výrazy ponech 36. hodině; nepředváděj je zde ani jako rezervu.}
+
+\end{document}

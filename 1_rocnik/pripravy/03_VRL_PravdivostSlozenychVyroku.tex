@@ -1,0 +1,141 @@
+% 03_VRL_PravdivostSlozenychVyroku.tex
+% Priprava: 1. rocnik, hodina 03, Vyrokova logika.
+% Navazuje na 02_VRL_CoJeVyrok.tex; po teto hodine nasleduji kvantifikatory.
+% Metodicka inspirace: https://www.realisticky.cz/dil.php?id=17
+% Relevantni lekce webu: 010403 Konjunkce a disjunkce, 010404 Implikace,
+% 010405 Ekvivalence. Zadani a reseni jsou puvodni.
+% Kompilace z Work/MAT: latexmk -cd -pdf -interaction=nonstopmode -halt-on-error 1_rocnik/pripravy/03_VRL_PravdivostSlozenychVyroku.tex
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Výroková logika}{03}{Pravdivost složených výroků}
+
+\begin{document}
+
+\blok{1. Navázání na minulou hodinu}
+Připomeň zápis $\neg p$, $p\land q$, $p\lor q$, $p\Rightarrow q$ a $p\Leftrightarrow q$.
+Rozliš \emph{výrok} a jeho \emph{pravdivostní hodnotu}.
+
+\begin{prikladReseniBox}
+Nechť $p$: \vyrok{Číslo 8 je sudé.} a $q$: \vyrok{Číslo 8 je prvočíslo.}
+Rozhodni o pravdivosti výroků $p\land q$, $p\lor q$ a $\neg q$.
+\tcblower
+Platí $p=1$, $q=0$. Proto
+\[
+ p\land q=0,\qquad p\lor q=1,\qquad \neg q=1.
+\]
+\end{prikladReseniBox}
+\poznamka{Nejdřív vyžaduj zdůvodnění slovy. Pro disjunkci platí matematické \uv{nebo}: stačí aspoň jedna pravdivá část.}
+
+\blok{2. Co určuje pravdivostní tabulka}
+\begin{definiceBox}
+\textbf{Pravdivostní tabulka} přehledně zachycuje pravdivostní hodnotu složeného výroku pro všechny možné kombinace pravdivostních hodnot jeho jednotlivých částí.
+\end{definiceBox}
+
+Pro dva výroky $p$, $q$ nastávají právě čtyři kombinace jejich pravdivostních hodnot:
+\[
+ (1,1),\qquad(1,0),\qquad(0,1),\qquad(0,0).
+\]
+
+\begin{center}
+\small
+\begin{tabular}{@{}cc@{\hspace{4mm}}ccccc@{}}
+\toprule
+$p$ & $q$ & $\neg p$ & $p\land q$ & $p\lor q$ & $p\Rightarrow q$ & $p\Leftrightarrow q$\\
+\midrule
+1 & 1 & 0 & 1 & 1 & 1 & 1\\
+1 & 0 & 0 & 0 & 1 & 0 & 0\\
+0 & 1 & 1 & 0 & 1 & 1 & 0\\
+0 & 0 & 1 & 0 & 0 & 1 & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\poznamka{Nechej žáky nejprve vyjmenovat všechny dvojice hodnot. Uspořádání řádků je jen systematická pomůcka, nikoli další matematické pravidlo.}
+
+\blok{3. Kdy je složený výrok pravdivý?}
+\begin{definiceBox}
+\textbf{Negace} $\neg p$ má vždy opačnou pravdivostní hodnotu než výrok $p$.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Konjunkce} $p\land q$ je pravdivá právě tehdy, když jsou pravdivé \emph{oba} výroky.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Disjunkce} $p\lor q$ je pravdivá právě tehdy, když je pravdivý \emph{alespoň jeden} z výroků.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Implikace} $p\Rightarrow q$ je nepravdivá pouze tehdy, když $p$ je pravdivý a $q$ nepravdivý.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Ekvivalence} $p\Leftrightarrow q$ je pravdivá právě tehdy, když mají $p$ a $q$ stejnou pravdivostní hodnotu.
+\end{definiceBox}
+
+\poznamka{Největší zádrhel bývá implikace: při $p=0$ je $p\Rightarrow q$ pravdivá bez ohledu na hodnotu $q$. Nepleť logickou implikaci s příčinnou souvislostí.}
+
+\begin{prikladReseniBox}
+Posuď pravdivost věty \uv{Jestliže je 12 liché číslo, pak je 12 dělitelné třemi.}
+\tcblower
+Předpoklad $p$: \uv{12 je liché} má hodnotu $0$; závěr $q$: \uv{12 je dělitelné třemi} má hodnotu $1$. Implikace $p\Rightarrow q$ má tedy hodnotu $1$.
+\end{prikladReseniBox}
+
+\blok{4. Výpočet pravdivostní hodnoty formule}
+\begin{prikladReseniBox}
+Sestav pravdivostní tabulku výroku $A=(p\land\neg q)\lor q$.
+\tcblower
+Nejdříve spočítej $\neg q$, potom $p\land\neg q$ a nakonec disjunkci s $q$.
+\begin{center}
+\begin{tabular}{@{}ccccc@{}}
+\toprule
+$p$ & $q$ & $\neg q$ & $p\land\neg q$ & $A$\\
+\midrule
+1 & 1 & 0 & 0 & 1\\
+1 & 0 & 1 & 1 & 1\\
+0 & 1 & 0 & 0 & 1\\
+0 & 0 & 1 & 0 & 0\\
+\bottomrule
+\end{tabular}
+\end{center}
+\end{prikladReseniBox}
+\poznamka{Nech postupně doplňovat jednotlivé sloupce. Je užitečné zvýraznit poslední sloupec jako výsledek celé formule.}
+
+\begin{zadaniReseniBox}
+Doplň pravdivostní tabulku výroku $B=(p\lor q)\Rightarrow p$. Rozepiš nejprve hodnoty $p\lor q$.
+\tcblower
+\begin{center}
+\begin{tabular}{@{}cccc@{}}
+\toprule
+$p$ & $q$ & $p\lor q$ & $B$\\
+\midrule
+1 & 1 & 1 & 1\\
+1 & 0 & 1 & 1\\
+0 & 1 & 1 & 0\\
+0 & 0 & 0 & 1\\
+\bottomrule
+\end{tabular}
+\end{center}
+Implikace je nepravdivá jen ve třetím řádku ($1\Rightarrow0$).
+\end{zadaniReseniBox}
+
+\blok{5. Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+  \item Je-li $p=0$ a $q=1$, urči hodnoty $\neg p$, $p\Rightarrow q$ a $p\Leftrightarrow q$.
+  \item Jsou-li $p=1$, $q=1$ a $r=0$, urči hodnotu $\neg p\lor(q\Rightarrow r)$.
+  \item Najdi všechny dvojice hodnot $p$, $q$, pro které je $p\Leftrightarrow q$ pravdivé.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+  \item $\neg p=1$, $p\Rightarrow q=1$, $p\Leftrightarrow q=0$.
+  \item $\neg p=0$, $q\Rightarrow r=0$, tedy $0\lor0=0$.
+  \item $(p,q)=(1,1)$ a $(p,q)=(0,0)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\textbf{Shrnutí na tabuli:} Konjunkce: oba. Disjunkce: alespoň jeden. Implikace: nepravdivá jen $1\Rightarrow0$. Ekvivalence: stejné hodnoty.
+
+\poznamka{Pokud zbude čas, nech sestavit tabulku také pro $\neg(p\land q)$. Na další hodině následují kvantifikované výroky.}
+
+\end{document}

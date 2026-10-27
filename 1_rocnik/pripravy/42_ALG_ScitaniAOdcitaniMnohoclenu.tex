@@ -1,0 +1,81 @@
+% Hodina 42, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 42.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: P1 a P2: učebnice, „Sčítání a odčítání mnohočlenů“, příklad A a B. Ostatní vlastní.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/01_Scitani_a_odcitani_mnohoclenu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/01%20S%C4%8D%C3%ADt%C3%A1n%C3%AD%20a%20od%C4%8D%C3%ADt%C3%A1n%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{42}{Sčítání a odčítání mnohočlenů}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Při sčítání členů se nemění jejich proměnná část: tři kusy $x^2$ a dva kusy $x^2$ tvoří pět kusů $x^2$. Výrazy $x^2$ a $x$ však neslučujeme. Odečítání celého mnohočlenu znamená změnu znaménka každého jeho členu.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Stejnorodé členy} mají shodnou proměnnou část se stejnými exponenty; liší se nanejvýš koeficientem.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Opačný mnohočlen} k $P$ je mnohočlen $-P$, který vznikne změnou znaménka všech koeficientů. Platí $P+(-P)=0$.
+\end{definiceBox}
+
+
+Pro stejnou proměnnou část $M$ používáme $uM+vM=(u+v)M$. Závorku po znaménku plus lze vypustit, před závorkou se znaménkem minus se změní všechna znaménka. Zatím nenásobíme dvě mnohočlenné závorky.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Pro $A=3x^3+3$, $B=x^3+2x^2-6x-1$ urči $A+B$.
+\tcblower
+$A+B=3x^3+3+x^3+2x^2-6x-1=4x^3+2x^2-6x+2$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Pro stejné mnohočleny urči $A-B$.
+\tcblower
+$A-B=3x^3+3-x^3-2x^2+6x+1=2x^3-2x^2+6x+4$. Minus změní i znaménko posledního členu $-1$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $(2x^2-3x+1)+(x^2+x-4)$.
+\item Uprav $(4a^2-2a+5)-(a^2+3a-1)$.
+\item Uprav $2xy-3x^2+5xy+x^2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3x^2-2x-3$; slučujeme jen stejné mocniny.
+\item $4a^2-2a+5-a^2-3a+1=3a^2-5a+6$.
+\item $7xy-2x^2$. Členy $xy$ a $x^2$ mají jinou proměnnou část.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Častou chybu v odčítání odhalí dosazení $x=0$: zkontroluje konstantní člen. Potom vysvětli obecný důvod změny všech znamének. Číselná zkouška může chybu vyvrátit, ale rovnost pro všechna $x$ prokazují použité úpravy.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Uprav $2x-[3x-(x-4)]$.
+\tcblower
+Nejprve $3x-(x-4)=2x+4$. Potom $2x-(2x+4)=-4$.
+\end{prikladReseniBox}
+
+
+\end{document}

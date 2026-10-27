@@ -1,0 +1,140 @@
+% Obsahový zdroj: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 37.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{37}{Vlastnosti kombinačních čísel}
+\begin{document}
+
+
+V hodině 36 jsme krátili faktoriály. Dnes budeme rovnosti nejprve vysvětlovat počítáním týchž objektů dvěma způsoby. Výpočet potom poslouží jako druhá kontrola.
+\poznamka{Předpoklady: význam $\binom nk$, disjunktní případy a pravidlo součinu. Cíl: žák zdůvodní symetrii, Pascalův vztah i součet počtů všech podmnožin a pozná, kdy lze tyto vztahy použít. P5 a C5 jsou volitelné rozšíření s úplným řešením, nikoli další povinné vzorce.}
+
+\blok{Výklad a odvození}
+
+\textbf{Symetrie.} Pro celá $n\geq0$ a $0\leq k\leq n$ platí
+\[
+ \binom nk=\binom n{n-k}.
+\]
+Ke každé $k$-prvkové skupině přiřaď její doplněk v pevné $n$-prvkové množině. Doplněk má $n-k$ prvků a zpětným doplněním získáme původní skupinu. Jde o jednoznačné vzájemné přiřazení. Algebraicky se pouze vymění faktoriály ve jmenovateli:
+\[
+ \frac{n!}{k!(n-k)!}=\frac{n!}{(n-k)!k!}.
+\]
+Symetrie platí i pro krajní $k=0,n$; obě strany jsou jedna.
+
+\textbf{Pascalův vztah.} Pro celá $n\geq2$ a $1\leq k\leq n-1$ platí
+\[
+ \binom nk=\binom{n-1}{k-1}+\binom{n-1}k.
+\]
+Zvolme konkrétní osobu P z celkem $n$ osob. V první skupině komisí P je: přidáme k ní $k-1$ z ostatních $n-1$ osob. Ve druhé skupině P není: vybíráme všech $k$ z ostatních. Případy se nepřekrývají a pokrývají všechny komise, takže jejich počty sčítáme. Podmínky zaručují, že obě čísla na pravé straně jsou definována. Krajní hodnoty řešíme samostatně jako $\binom n0=\binom nn=1$.
+
+\textbf{Součet počtů podmnožin.} Pro celé $n\geq0$ platí
+\[
+ \sum_{k=0}^{n}\binom nk=2^n.
+\]
+Značka $\sum$ znamená sečíst členy pro všechna celá $k$ od $0$ do $n$. Na levé straně třídíme podmnožiny podle velikosti. Na pravé straně každému z $n$ prvků přiřazujeme jednu ze dvou odpovědí „vybrat/nevybrat“. Oba postupy počítají všechny podmnožiny včetně prázdné a úplné. Pro $n=0$ je jedinou podmnožinou prázdná množina a rovnost dává $1=2^0$.
+
+
+\poznamka{Průběh: 0–11 min symetrie a P1; 11–25 min Pascalův vztah s P2–P3; 25–33 min součet a P4; 33–42 min C1–C4; 42–45 min vysvětlení jedné identity vlastními slovy. P5 a C5 ponech jako zásobu nebo domácí rozšíření; oba důkazy by plnou hodinu přeplnily.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Vypočti \(\binom{10}{8}\).
+\tcblower
+Symetrií \(\binom{10}{8}=\binom{10}{2}=45\).
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Vypočti \(\binom94+\binom93\) jediným kombinačním číslem.
+\tcblower
+Pascalův vztah s \(n=10,k=4\): \(\binom94+\binom93=\binom{10}4=210\). Přímá kontrola: \(126+84=210\).
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Vysvětli rovnost \(\binom{10}4=\binom94+\binom93\) na výběru čtyřčlenné komise.
+\tcblower
+V desetihlavé skupině pevně určíme osobu P. Komise bez P: čtyři členové z devíti, tedy $\binom94=126$. Komise s P: doplníme jen tři z ostatních devíti, tedy $\binom93=84$. Každá čtyřčlenná komise je právě v jednom z těchto případů. Proto $\binom{10}4=126+84=210$.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Kolik podmnožin má pětiprvková množina?
+\tcblower
+U každého z pěti prvků se nezávisle rozhodneme, zda patří do podmnožiny; \(2^5=32\). Současně je to \(\binom50+\cdots+\binom55\).
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Pro celá $n\geq1$ a $1\leq k\leq n$ vyjádři $\binom nk$ pomocí $\binom{n-1}{k-1}$ a vztah zdůvodni.
+\tcblower
+Rozvineme čitatel i příslušné faktoriály:
+\[
+ \binom nk=\frac{n!}{k!(n-k)!}
+ =\frac nk\frac{(n-1)!}{(k-1)!(n-k)!}
+ =\frac nk\binom{n-1}{k-1}.
+\]
+Dělení $k$ je dovoleno, protože $k\geq1$. Kombinatorická kontrola: komisi s jedním označeným vedoucím lze sestavit buď výběrem komise a poté vedoucího ($k\binom nk$), nebo výběrem vedoucího a pak ostatních členů ($n\binom{n-1}{k-1}$). Rovnost těchto počtů dává stejný vztah.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+Než začneš počítat, pojmenuj použitou vlastnost a ověř její indexy. C5 je nepovinné rozšíření: nestačí uvést polovinu celkového počtu bez vysvětlení, proč jsou oba počty stejné.
+
+% Zdroj C1: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Zjednoduš \(\binom{12}{11}\).
+\tcblower
+Symetrií $\binom{12}{11}=\binom{12}{1}=12$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Dopočti \(\binom73+\binom74\).
+\tcblower
+Horní indexy jsou stejné a spodní sousední. Pascalův vztah dává $\binom73+\binom74=\binom84=70$. Kontrola symetrií: $\binom73=\binom74=35$, tedy $35+35=70$.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Vyjádři \(\binom83+\binom82\) jediným členem.
+\tcblower
+Použijeme Pascalův vztah s $n=9,k=3$:
+\[
+\binom83+\binom82=\binom93=84.
+\]
+Kontrola: $56+28=84$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Urči součet \(\binom60+\binom61+\cdots+\binom66\).
+\tcblower
+Jde o všechny velikosti podmnožin šestiprvkové množiny. Součet je $2^6=64$. Přímá kontrola: $1+6+15+20+15+6+1=64$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/37_Vlastnosti_kombinacnich_cisel.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Kolik podmnožin sedmiprvkové množiny má lichý počet prvků? Každý prvek lze vybrat nejvýše jednou.
+\tcblower
+Pevně zvolme jeden prvek P. Každé podmnožině změníme právě jeho přítomnost: není-li P vybrán, přidáme ho; je-li vybrán, odebereme ho. Změní se parita velikosti a opakování stejného kroku vrátí původní podmnožinu. Tím vytváříme dvojice jedné liché a jedné sudé podmnožiny. Všech podmnožin je $2^7=128$, lichých tedy $128/2=64$. Číselně také $\binom71+\binom73+\binom75+\binom77=7+35+21+1=64$.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: Pascalovo sčítání čísel s různými horními indexy; záměna symetrie za prohození $n$ a $k$; vynechání prázdné množiny v součtu. U C2 lze výsledek nezávisle spočítat symetrií jako $2\binom73$. Příště uspořádáme čísla do trojúhelníku a Pascalův vztah uvidíme i při počítání cest.}
+\end{document}

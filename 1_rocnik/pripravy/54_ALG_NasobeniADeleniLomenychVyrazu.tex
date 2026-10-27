@@ -1,0 +1,67 @@
+% Hodina 54, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 54.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: P1: učebnice, „Násobení a dělení lomených výrazů“, přesný součin. Ostatní vlastní; obecné podmínky jsou doplněny správně.
+
+% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/04_Nasobeni_a_deleni_lomenych_vyrazu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/04%20N%C3%A1soben%C3%AD%20a%20d%C4%9Blen%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{54}{Násobení a dělení lomených výrazů}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Před násobením rozlož čitatele a jmenovatele, aby bylo možné krátit celé činitele. Při dělení nejprve stanov, kdy je dělitel definovaný a kdy je nenulový. Teprve potom převrať druhý zlomek.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Převrácený výraz} k nenulovému $C/D$ je $D/C$. Jeho použití při dělení původním zlomkem vyžaduje $D\ne0$ i $C\ne0$.
+\end{definiceBox}
+
+
+Pro násobení platí $\frac AB\frac CD=\frac{AC}{BD}$ při $B,D\ne0$. Pro dělení je $\frac AB:\frac CD=\frac AB\frac DC=\frac{AD}{BC}$ při $B,C,D\ne0$. Zákaz $D=0$ zůstává i po převrácení, ačkoli $D$ pak stojí v čitateli.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Uprav $\frac{x-1}{2x}\cdot\frac{4x}{x^2-1}$.
+\tcblower
+Původní jmenovatele vyžadují $x\ne0,\pm1$. Po rozkladu $x^2-1=(x-1)(x+1)$ a krácení je výsledek $2/(x+1)$ při všech původních zákazech.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\frac{x^2-4}{x^2-x}:\frac{x+2}{x-1}$.
+\tcblower
+Jmenovatele vyžadují $x\ne0,1$, nenulový dělitel navíc $x\ne-2$. Potom $\frac{(x-2)(x+2)}{x(x-1)}\frac{x-1}{x+2}=\frac{x-2}{x}$. Hodnota $x=2$ je přípustná a dává nulu.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{3a}{a-1}\cdot\frac{(a-1)^2}{6a}$.
+\item Uprav $\frac{x^2-1}{x+2}:\frac{x-1}{x+2}$.
+\item Uprav $\frac{x}{x-3}:\frac{2x}{x+1}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{a-1}{2}$ při $a\ne0,1$.
+\item $x+1$ při $x\ne-2,1$. První zákaz zajišťuje existenci obou zlomků, druhý nenulovost dělitele.
+\item $\frac{x+1}{2(x-3)}$ při $x\ne3,-1,0$. Hodnota $x=0$ je zakázána kvůli nulovému děliteli.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{V učebnici jsou v obecném vzorci pro dělení vypsány jen dvě ze tří podmínek. V této přípravě trváme také na existenci původního dělitele. Učebnici neupravujeme. Chybu žáka odhalí zkouška hodnoty, která po převrácení zmizela z jmenovatele.}
+
+\end{document}

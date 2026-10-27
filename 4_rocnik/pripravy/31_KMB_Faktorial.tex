@@ -1,0 +1,149 @@
+% Obsahový zdroj: import_hodiny/31_Faktorial.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 31.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{31}{Faktoriál}
+\begin{document}
+
+
+Připomeň součin počtů možností při postupném obsazování míst. Součiny po sobě jdoucích přirozených čísel se v kombinatorice opakují; potřebujeme pro ně úsporný zápis a pravidla úprav.
+\poznamka{Předpoklady: pravidlo součinu, krácení součinů, vytýkání a kvadratická rovnice. Cíl: žák rozumí $0!$, rozvine jen potřebnou část faktoriálu, uvede podmínky a ověří kořeny. Novou látkou není obecná teorie faktoriálových rovnic; P4 a C5 používají pouze kvadratickou rovnici.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Faktoriál} nezáporného celého čísla $n$, značený $n!$, definujeme předpisem
+\[
+ n!=1\cdot2\cdots n\quad(n\geq1),\qquad 0!=1.
+\]
+Symbol $\mathbb N_0$ zde označuje množinu $\{0,1,2,\ldots\}$. Faktoriál záporného ani necelého čísla v této látce nedefinujeme.
+\end{definiceBox}
+
+Pro celé $n\geq1$ z definice plyne $n!=n(n-1)!$. Zvláštní hodnota $0!=1$ zajišťuje platnost i pro $n=1$, neboť $1!=1\cdot0!$. Odpovídá také tomu, že prázdný součin má hodnotu jedna; „neudělat žádnou volbu“ je jediná možnost.
+
+\[
+\begin{array}{c|rrrrrrr}
+ n&0&1&2&3&4&5&6\\\hline
+ n!&1&1&2&6&24&120&720
+\end{array}
+\]
+Při krácení rozepiš větší faktoriál až k menšímu. Například $(n+2)!=(n+2)(n+1)n!$ pro $n\in\mathbb N_0$. Faktoriály jsou kladné, a proto je lze v součinu krátit. Obsahuje-li čitatel součet, nejprve vytkneme společný činitel nebo zlomek rozdělíme na součet zlomků.
+
+Faktoriál se \emph{nerozděluje přes součet}: například $(2+3)!=120$, zatímco $2!+3!=8$. Tím vyvracíme obecné pravidlo $(a+b)!=a!+b!$; netvrdíme však, že rovnost nemůže nastat pro některé jednotlivé hodnoty.
+
+U výrazů s proměnnou nejprve stanovíme definiční obor. V této sadě volíme u algebraických úprav $n\in\mathbb N_0$, pokud přítomnost $(n-1)!$ nebo $(n-2)!$ nevynutí užší podmínku. V rovnicích musí splnit podmínky každý argument faktoriálu.
+
+
+\poznamka{Průběh: 0–8 min definice a $0!$; 8–20 min P1–P3, krácení; 20–30 min P4 a kontrola podmínek, P5 krátce jako kontrast k součinu; 30–42 min C1–C5; 42–45 min kontrola a rekapitulace. Při pomalejším tempu nech C5 k domácímu dokončení, ale řešení s podmínkou prober před hodinou 32.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/31_Faktorial.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Vypočti \(6!\) a \(\frac{8!}{6!}\).
+\tcblower
+\(6!=1\cdot2\cdot3\cdot4\cdot5\cdot6=720\). Dále \(8!=8\cdot7\cdot6!\), tedy \(\frac{8!}{6!}=8\cdot7=56\).
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/31_Faktorial.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Zjednoduš \(\frac{(n+2)!}{n!}\) pro \(n\in\mathbb N_0\).
+\tcblower
+Pro $n\in\mathbb N_0$ je $n!>0$. Rozvineme pouze dva nejvyšší činitele:
+\[
+ \frac{(n+2)!}{n!}=\frac{(n+2)(n+1)n!}{n!}=(n+2)(n+1).
+\]
+Pro krajní $n=0$ vychází na obou stranách $2$, takže podmínka zahrnuje i nulu.
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/31_Faktorial.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Vypočti bez kalkulačky \(\frac{9!}{7!\,2!}\).
+\tcblower
+Čitatel \(9!=9\cdot8\cdot7!\); jmenovatel \(7!\cdot2\). Výsledek \(\frac{9\cdot8}{2}=36\).
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/31_Faktorial.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Vyřeš v přirozených číslech \(\frac{(n+1)!}{(n-1)!}=30\).
+\tcblower
+Musí být $n\in\mathbb N$ a $n\geq1$, aby existoval $(n-1)!$. Pak jsou ekvivalentní úpravy
+\begin{align*}
+ \frac{(n+1)!}{(n-1)!}=30
+ &\iff n(n+1)=30\\
+ &\iff n^2+n-30=0\\
+ &\iff (n+6)(n-5)=0.
+\end{align*}
+Kořeny jsou $-6$ a $5$. Záporný kořen je mimo definiční obor. Zkouška pro $n=5$: $6!/4!=6\cdot5=30$. Jediným řešením je $n=5$.
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/31_Faktorial.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Pro $n\in\mathbb N_0$ zjednoduš $\dfrac{n!+(n+1)!}{n!}$.
+\tcblower
+V součtu nejprve vytkneme společný činitel $n!$:
+\[
+\frac{n!+(n+1)!}{n!}=\frac{n!+(n+1)n!}{n!}
+=\frac{n![1+(n+1)]}{n!}=n+2.
+\]
+Krácení je dovoleno pro každé $n\in\mathbb N_0$, neboť $n!$ není nula.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+U číselných zlomků nevyčísluj celý čitatel. U C3 pracuj s $n\in\mathbb N_0$; u C5 nejprve zpřesni obor podle jmenovatele.
+
+% Zdroj C1: import_hodiny/31_Faktorial.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Vypočti \(5!\).
+\tcblower
+Postupným násobením $5!=1\cdot2\cdot3\cdot4\cdot5=120$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/31_Faktorial.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Zjednoduš \(\frac{11!}{9!}\).
+\tcblower
+$11!=11\cdot10\cdot9!$, tedy $\dfrac{11!}{9!}=11\cdot10=110$.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/31_Faktorial.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Zjednoduš $\dfrac{(n+3)!}{(n+1)!}$ pro $n\in\mathbb N_0$.
+\tcblower
+Pro zadané $n$ oba faktoriály existují a jmenovatel je kladný. Rozvineme pouze potřebnou část:
+\[
+\frac{(n+3)!}{(n+1)!}
+=\frac{(n+3)(n+2)(n+1)!}{(n+1)!}=(n+3)(n+2).
+\]
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/31_Faktorial.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Vypočti \(\frac{7!}{5!\,2!}\).
+\tcblower
+$\dfrac{7!}{5!\,2!}=\dfrac{7\cdot6\cdot5!}{5!\cdot2}=21$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/31_Faktorial.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Urči \(n\in\mathbb N\), pro které \(\frac{n!}{(n-2)!}=42\).
+\tcblower
+Podmínka je celé $n\geq2$. Po zkrácení dostaneme $n(n-1)=42$, tedy $(n-7)(n+6)=0$. Kořen $-6$ nevyhovuje podmínce, $n=7$ ano. Zkouška: $7!/5!=7\cdot6=42$. Ekvivalentní kvadratická rovnice zajišťuje, že jiné řešení není.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: $0!=0$; krácení jednotlivých sčítanců místo společného činitele; rozvoj faktoriálu až k jedničce; přijetí záporného kořene. Nech žáka u P4 slovně vysvětlit, proč $n=-6$ nepatří do zadání. Příště součin $n(n-1)\cdots1$ odvodíme jako počet uspořádání všech prvků.}
+\end{document}

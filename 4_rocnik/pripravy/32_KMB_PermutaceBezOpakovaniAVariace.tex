@@ -1,0 +1,131 @@
+% Obsahový zdroj: import_hodiny/32_Permutace_bez_opakovani.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 32.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{32}{Permutace bez opakování}
+\begin{document}
+
+
+Vrať se k řazení kartiček. Tentokrát chceme počet určit i pro větší množinu, aniž bychom vypisovali všechna pořadí. Po uspořádání všech prvků přejdeme k obsazení jen několika rozlišených míst.
+\poznamka{Předpoklady: pravidlo součinu, faktoriál a jeho krácení. Cíl: žák odvodí $n!$ a $n!/(n-k)!$, rozliší všechny prvky od části a zdůvodní blokovou i doplňkovou metodu. Podle importu a zadání patří úvod do variací bez opakování do této hodiny, přestože rozpis výslovně jmenuje pouze permutace.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Permutace bez opakování} je každé uspořádání všech $n$ navzájem různých prvků. Jejich počet značíme $P(n)$, kde $n\in\mathbb N_0$.
+\end{definiceBox}
+
+Pro $n\geq1$ obsazujeme první místo $n$ způsoby, druhé $(n-1)$ způsoby až poslední jedním způsobem. Proto
+\[
+ P(n)=n(n-1)\cdots1=n!.
+\]
+Pro $n=0$ existuje jediné prázdné uspořádání, takže $P(0)=0!=1$. Záleží na pořadí, žádný prvek se neopakuje a použijeme všechny prvky.
+
+Chceme-li, aby dva určité prvky sousedily, spojíme je do bloku. Každé přípustné pořadí odpovídá právě jednomu pořadí bloků a jedné vnitřní orientaci dvojice. U dvou různých osob jsou uvnitř bloku dvě pořadí; tento faktor nesmíme vynechat. Zákaz sousedství lze řešit odečtením všech pořadí se sousedstvím od všech pořadí.\begin{definiceBox}
+\textbf{Variace bez opakování} délky $k$ z $n$ navzájem různých prvků je uspořádaný výběr $k$ různých prvků. Pro celá $n\geq0$, $0\leq k\leq n$ značíme jejich počet $V(n,k)$.
+\end{definiceBox}
+
+Nyní obsadíme jen $k$ rozlišených míst. Pro $k\geq1$ má první místo $n$ možností a poslední $(n-k+1)$, tedy
+\[
+ V(n,k)=n(n-1)\cdots(n-k+1)=\frac{n!}{(n-k)!}.
+\]
+Pro $k=0$ je výběr prázdný a $V(n,0)=1$. Pro $k=n$ dostáváme $V(n,n)=P(n)$. Při $k>n$ nemůžeme bez opakování žádný takový výběr sestavit; faktoriálový vzorec v tomto oboru nepoužíváme. V této sadě dodržujeme zápis $V(n,k)$ se základem $n$ na prvním místě.
+
+
+\poznamka{Průběh: 0–9 min odvození a P1; 9–21 min P2–P3; 21–31 min variace a P4; 31–42 min C1–C4; 42–45 min shrnutí. P5 a C5 tvoří rezervu či domácí procvičení. Hodina je obsahově hutná: blokové úlohy nesmějí vytlačit pochopení variací. Při nedostatku času společně dokonči P2, P3 vysvětli krátce doplňkem.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/32_Permutace_bez_opakovani.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Kolika způsoby se do řady postaví šest různých studentů?
+\tcblower
+Jde o permutaci všech šesti osob: \(P(6)=6!=720\).
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/32_Permutace_bez_opakovani.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+V šestičlenné řadě mají Adam a Bára stát vedle sebe. Kolik je pořadí?
+\tcblower
+Adam a Bára tvoří blok, se čtyřmi dalšími studenty tedy řadíme pět různých objektů. To lze $5!$ způsoby. V bloku jsou pořadí $AB$ a $BA$, proto $5!\cdot2=240$. Spojení i rozpojení bloku je jednoznačné; žádné přípustné pořadí nechybí ani není započítáno dvakrát.
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/32_Permutace_bez_opakovani.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Šest různých studentů včetně Adama a Báry postavíme do řady. Kolik pořadí splňuje, že Adam a Bára nestojí vedle sebe?
+\tcblower
+Všech $6!=720$ pořadí rozdělíme na dvě nepřekrývající se skupiny: Adam a Bára sousedí, nebo nesousedí. První skupina má podle blokové metody $2\cdot5!=240$ pořadí. Ve druhé tedy zbývá $720-240=480$ pořadí. Neodečítáme jen orientaci $AB$, ale i $BA$.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/32_Permutace_bez_opakovani.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Osm různých týmů soutěží o první tři místa. Kolik je výsledků, nejsou-li dělená umístění a každý tým obsadí nejvýše jedno místo?
+\tcblower
+Rozlišujeme vítěze, druhý a třetí tým. Každý tým může být vybrán jen jednou: $8$ možností pro zlato, $7$ pro stříbro a $6$ pro bronz. Tedy
+\[
+ V(8,3)=8\cdot7\cdot6=336=\frac{8!}{5!}.
+\]
+Ostatních pět týmů se do výsledku neřadí. Záměna zlatého a stříbrného týmu mění výsledek.
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/32_Permutace_bez_opakovani.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Kolik sedmiciferných čísel zakončených sudou cifrou vytvoříme z číslic $1,\ldots,7$ bez opakování?
+\tcblower
+Na posledním místě jsou \(3\) možnosti: \(2,4,6\). Zbývajících šest číslic lze uspořádat \(6!\) způsoby. Výsledek \(3\cdot6!=2160\).
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+U každé úlohy urči, zda se použijí všechny prvky a zda jsou místa či funkce rozlišeny. C5 ověřuje samostatné zopakování blokové metody.
+
+% Zdroj C1: import_hodiny/32_Permutace_bez_opakovani.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Kolik pořadí má pět různých knih?
+\tcblower
+Řadíme všech pět různých knih, tedy $P(5)=5!=120$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/32_Permutace_bez_opakovani.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Kolika způsoby získají z deseti závodníků zlato a stříbro dva různí?
+\tcblower
+Zlato má deset možností, stříbro devět dalších. Role jsou rozlišené: $V(10,2)=10\cdot9=90$.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/32_Permutace_bez_opakovani.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Kolik řad lze sestavit z pěti různých osob včetně Petry, je-li Petra vždy první?
+\tcblower
+Petřino místo je pevné, řadíme pouze čtyři ostatní osoby na čtyřech místech: $4!=24$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/32_Permutace_bez_opakovani.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Ze sedmi lidí obsadíme funkce vedoucího, zástupce a pokladníka třemi různými lidmi. Kolika způsoby?
+\tcblower
+Funkce nejsou zaměnitelné. Postupně volíme vedoucího sedmi způsoby, zástupce šesti a pokladníka pěti způsoby: $V(7,3)=7\cdot6\cdot5=210$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/32_Permutace_bez_opakovani.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Šest různých lidí postavíme do řady. Kolik je pořadí, musejí-li dva předem určení lidé stát vedle sebe?
+\tcblower
+Blok dvou lidí a čtyři zbývající osoby tvoří pět různých objektů. Uvnitř bloku jsou dvě pořadí, proto $5!\cdot2!=240$.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: použití $n!$, ačkoli obsazujeme jen dvě místa; zaměnění komise a funkcí; vynechání vnitřního pořadí bloku. U P5 začni omezenou poslední cifrou, teprve potom řaď ostatní. Příště odlišíme skutečně různé objekty od nerozlišitelných kopií a opravíme vícenásobné započtení.}
+\end{document}

@@ -1,0 +1,200 @@
+% 04_VRL_Kvantifikatory.tex
+% Příprava: 1. ročník, hodina 04, Výroková logika; běžná hodina 45 minut.
+% Návaznost: 02_VRL_CoJeVyrok.tex (otevřená formule),
+% 03_VRL_PravdivostSlozenychVyroku.tex (negace, implikace, pravdivost).
+% Plány: 1_rocnik/tematicke_plany/SPS.pdf a GYM.pdf, oddíl 1.1.
+% Obsahový podklad: ucebnice/01_Zakladni_poznatky/Vyrokova_logika/
+% Výroková logika.tex, oddíly „Kvantifikované výroky a jejich negace“
+% a „Logická výstavba matematiky“; vlastní formulace výkladu.
+% Procvičení a): vzor z úlohy „Kvantifikátory ve větách“, druhá položka;
+% b): „Negace výroků – jednoduché“, položka „Každé prvočíslo je liché“;
+% c): „Negace výroků s kvantifikátory“, poslední položka.
+% Ostatní konkrétní zadání a řešení: vlastní tvorba pro tuto přípravu.
+% Relevantní místní podklad Realisticky.cz nebyl nalezen; není použit.
+% Kompilace z Work/MAT: latexmk -cd -pdf -interaction=nonstopmode -halt-on-error 1_rocnik/pripravy/04_VRL_Kvantifikatory.tex
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Výroková logika}{04}{Kvantifikátory}
+
+\begin{document}
+
+\blok{1. Od otevřené formule k výroku}
+Vrať se k otázce z druhé hodiny: je zápis $x^2=1$ s neurčeným $x$
+výrokem? Pro $x=1$ rovnost platí, pro $x=0$ neplatí. Minule jsme
+určovali pravdivost složených výroků; nyní upřesníme, \emph{pro které
+hodnoty proměnné} má tvrzení platit.
+
+\begin{definiceBox}
+\textbf{Výroková forma (otevřená formule)} $P(x)$ je sdělení
+s proměnnou $x$ z určené množiny $M$, které se po dosazení konkrétního
+prvku za $x$ stane výrokem.
+\end{definiceBox}
+
+Výrok získáme také tím, že řekneme, zda vlastnost požadujeme pro všechny
+prvky dané množiny, nebo alespoň pro jeden. K tomu slouží kvantifikátory.
+Zápis $x\in M$ čteme \uv{$x$ je prvkem množiny $M$}.
+
+\blok{2. Pro každé a existuje}
+\begin{definiceBox}
+\textbf{Obecný (univerzální) kvantifikátor} $\forall$ vyjadřuje
+\uv{pro každé}. Výrok $\forall x\in M:\ P(x)$ je pravdivý právě tehdy,
+když $P(x)$ platí pro každý prvek množiny $M$.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Existenční kvantifikátor} $\exists$ vyjadřuje
+\uv{existuje alespoň jeden}. Výrok $\exists x\in M:\ P(x)$ je pravdivý
+právě tehdy, když v množině $M$ existuje alespoň jeden prvek, pro který
+$P(x)$ platí.
+\end{definiceBox}
+
+\begin{prikladReseniBox}
+Nechť $M=\{-2,-1,0,1,2\}$. Přečti a rozhodni o pravdivosti výroků:
+\[
+ A:\ \forall x\in M:\ x^2=1,
+ \qquad
+ B:\ \exists x\in M:\ x^2=1.
+\]
+\tcblower
+$A$: \uv{Pro každé číslo $x$ z $M$ platí $x^2=1$.} Výrok je nepravdivý,
+například pro $x=0$ dostáváme $0^2=0\ne1$.
+
+$B$: \uv{Existuje alespoň jedno číslo $x$ z $M$, pro které platí $x^2=1$.}
+Výrok je pravdivý: vyhovují $x=-1$ i $x=1$.
+\end{prikladReseniBox}
+
+K vyvrácení obecného výroku stačí jediný nevyhovující prvek.
+K potvrzení existenčního výroku stačí jediný vyhovující prvek.
+Několik vyhovujících příkladů však obecný výrok o nekonečné množině
+nedokazuje.
+
+\poznamka{Zdůrazni, že \uv{existuje} neznamená \uv{existuje právě jeden}.
+Množina, z níž vybíráme, patří k zadání: v množině $\{0,2\}$ by výrok
+$\exists x:\ x^2=1$ neplatil. Nezaváděj nyní více kvantifikátorů za sebou.}
+
+\newpage
+\blok{3. Matematické věty}
+\begin{definiceBox}
+\textbf{Matematická věta} je matematické tvrzení, jehož pravdivost
+je dokázána na základě přijatých výchozích tvrzení (axiomů), definic
+a již dokázaných vět.
+\end{definiceBox}
+
+Matematické věty často vyjadřují obecnou platnost. Slovo \uv{každé}
+bývá skryto i ve větách tvaru \uv{Je-li splněn předpoklad, pak platí závěr.}
+Předpoklady i množina, o níž mluvíme, musí být zřejmé.
+
+\begin{prikladReseniBox}
+Zapiš pomocí kvantifikátoru větu \uv{Druhá mocnina každého reálného
+čísla je nezáporná} a zdůvodni ji pro libovolné reálné číslo.
+\tcblower
+Zápis je $\forall x\in\mathbb{R}:\ x^2\geq0$.
+Je-li $x=0$, pak $x^2=0$. Je-li $x\ne0$, jsou oba činitelé
+v součinu $x\cdot x$ stejného znaménka, a součin je proto kladný.
+Pro všechna reálná čísla tedy platí $x^2\geq0$.
+\end{prikladReseniBox}
+
+\poznamka{Značka $\mathbb{R}$ označuje reálná čísla. Porovnej obecné
+zdůvodnění s pouhým dosazením několika čísel. Systematické metody důkazů
+nejsou náplní této hodiny.}
+
+\blok{4. Negace kvantifikovaných výroků}
+Z minulé hodiny víme, že negace má opačnou pravdivostní hodnotu.
+Věta \uv{Všichni žáci dané třídy odevzdali úkol} neplatí, jakmile
+\emph{alespoň jeden} žák úkol neodevzdal. Její negace tedy neříká,
+že úkol neodevzdal nikdo.
+
+Naopak výrok \uv{Alespoň jeden žák dané třídy odevzdal úkol}
+je nepravdivý, právě když úkol neodevzdal \emph{žádný} žák této třídy.
+Při negaci proto zaměníme kvantifikátor a současně negujeme vlastnost:
+\begin{align*}
+ \neg\bigl(\forall x\in M:\ P(x)\bigr)
+   &\Leftrightarrow \exists x\in M:\ \neg P(x),\\
+ \neg\bigl(\exists x\in M:\ P(x)\bigr)
+   &\Leftrightarrow \forall x\in M:\ \neg P(x).
+\end{align*}
+Množina $M$ zůstává stejná. Negaci tvoříme i u nepravdivého výroku.
+
+\begin{prikladReseniBox}
+Utvoř negace následujících výroků, přečti je slovy a urči pravdivost
+původních výroků i jejich negací:
+\begin{enumerate}[label=\alph*)]
+  \item $\forall x\in\mathbb{R}:\ x^2\geq0$.
+  \item $\exists x\in\mathbb{R}:\ x^2=-1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+  \item $\exists x\in\mathbb{R}:\ x^2<0$.
+  \uv{Existuje reálné číslo, jehož druhá mocnina je záporná.}
+  Původní výrok je pravdivý, negace nepravdivá, jak plyne z uvedené věty.
+  \item $\forall x\in\mathbb{R}:\ x^2\ne-1$.
+  \uv{Žádné reálné číslo nemá druhou mocninu rovnou $-1$.}
+  Protože $x^2\geq0$, je původní výrok nepravdivý a negace pravdivá.
+\end{enumerate}
+\end{prikladReseniBox}
+
+\poznamka{Při negování nerovnosti hlídej rovnost na hranici:
+negací $u\geq0$ je $u<0$, negací $u>0$ je $u\leq0$.
+Nestačí jen zaměnit $\forall$ a $\exists$ nebo jen přidat zápor.}
+
+\newpage
+\blok{5. Samostatné procvičení}
+\begin{zadaniReseniBox}
+U každé položky zapiš původní výrok i jeho negaci pomocí kvantifikátoru,
+negaci přečti slovy a urči pravdivost obou výroků. Odpověď zdůvodni.
+\begin{enumerate}[label=\alph*)]
+  \item Doplň kvantifikátor tak, aby vznikl pravdivý výrok o všech
+  reálných číslech: $\ldots\ x\in\mathbb{R}:\ x^2+1>0$.
+  \item Každé prvočíslo je liché.
+  \item Existuje přirozené číslo, které je menší než nula.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+  \item Původní výrok: $\forall x\in\mathbb{R}:\ x^2+1>0$.
+  Je pravdivý, neboť $x^2\geq0$, tedy $x^2+1\geq1>0$.
+  Negace: $\exists x\in\mathbb{R}:\ x^2+1\leq0$.
+  \uv{Existuje reálné číslo, pro které je $x^2+1$ nekladné.}
+  Negace je nepravdivá.
+  \item Označíme-li $M$ množinu všech prvočísel, je původní výrok
+  $\forall p\in M:\ p\text{ je liché}$.
+  Negace: $\exists p\in M:\ p\text{ není liché}$, tedy
+  \uv{Existuje prvočíslo, které je sudé.}
+  Číslo $2$ je prvočíslo a je sudé; původní výrok je nepravdivý,
+  negace pravdivá.
+  \item Původní výrok: $\exists n\in\mathbb{N}:\ n<0$.
+  Negace: $\forall n\in\mathbb{N}:\ n\geq0$.
+  \uv{Každé přirozené číslo je nezáporné.}
+  Původní výrok je nepravdivý, negace pravdivá.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Prvočíslo je přirozené číslo větší než $1$ s právě dvěma
+kladnými děliteli: $1$ a sebou samým. Značka $\mathbb{N}$ označuje
+přirozená čísla; výsledek c) nezávisí na tom, zda mezi ně zahrnujeme nulu.
+Při pomalejším tempu řeš společně a), samostatně b) a c);
+následující rozšíření vynech.}
+
+\blok{Volitelné rozšíření: kvantifikátor a implikace}
+\begin{prikladReseniBox}
+Neguj výrok $\forall n\in\mathbb{Z}:\ (n>0\Rightarrow n>1)$.
+Urči pravdivost původního výroku i negace.
+\tcblower
+Z minulé hodiny: implikace $p\Rightarrow q$ je nepravdivá právě tehdy,
+když $p$ platí a $q$ neplatí. Proto
+\begin{align*}
+ \neg\bigl(\forall n\in\mathbb{Z}:\ (n>0\Rightarrow n>1)\bigr)
+ &\Leftrightarrow \exists n\in\mathbb{Z}:\ (n>0\land n\leq1).
+\end{align*}
+Slovy: \uv{Existuje celé číslo, které je kladné a zároveň není větší
+než jedna.} Vyhovuje $n=1$. Původní výrok je nepravdivý a negace pravdivá.
+\end{prikladReseniBox}
+
+\poznamka{Značka $\mathbb{Z}$ označuje celá čísla. Negací implikace
+není její obrácení. Například $n=0$ původní obecný výrok nevyvrací:
+předpoklad $n>0$ je pro něj nepravdivý.}
+
+\textbf{Shrnutí na tabuli:} $\forall$: pro každé.
+$\exists$: alespoň jeden. Při negaci zaměníme kvantifikátor,
+negujeme vlastnost a zachováme množinu.
+
+\end{document}

@@ -1,0 +1,156 @@
+% Obsahový zdroj: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex a odpovídající PDF (obě strany).
+% P1–P6: zdrojové Příklady 1–6; C1–C6: zdrojové Procvičování 1–6.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 41.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{41}{Smíšené kombinatorické úlohy}
+\begin{document}
+
+
+Po průběžném testu vrať do středu pozornosti volbu modelu. Nech žáky u každé úlohy ještě před výpočtem vysvětlit, co tvoří jeden výsledek a proč nestačí bez rozmyslu dosadit do jednoho vzorce.
+\poznamka{Předpoklady: hodiny 29–39; zejména součet a součin, variace, permutace, kombinace a doplňková metoda. Cíl: žák zdůvodní model slovní úlohy s omezením, rozčlení úplné disjunktní případy a zkontroluje výsledek. Jádro tvoří P1 a P3; ostatní příklady jsou zásoba pro rozbor chyb z testu a diferenciaci. Není účelem vypočítat všechna zadání v jedné hodině.}
+
+\blok{Výklad a odvození}
+
+\textbf{Postup řešení.} Nejdříve popiš jeden výsledek, rozliš pořadí a opakování a urči počet dostupných i vybíraných prvků. Potom přečti všechna omezení. Teprve nyní zvol vzorec nebo sestav součin dílčích voleb. Je-li třeba více případů, musí se vzájemně vylučovat a společně pokrýt všechny přípustné výsledky.
+
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{45mm}X@{}}
+\toprule
+\textbf{Situace} & \textbf{Nástroj a podmínky}\\\midrule
+Řazení všech různých prvků & $P(n)=n!$, celé $n\geq0$.\\
+Obsazení $k$ různých rolí & $V(n,k)=n!/(n-k)!$, celá $0\leq k\leq n$.\\
+Volné opakování v kódu & $\overline V(n,k)=n^k$, celá $n\geq1$, $k\geq0$.\\
+Pevné četnosti stejných kopií & $P(n;n_1,\ldots,n_r)=n!/(n_1!\cdots n_r!)$, nezáporné celé četnosti se součtem $n$.\\
+Skupina bez rozlišených rolí & $C(n,k)=\binom nk$, celá $0\leq k\leq n$, bez opakování.\\
+\bottomrule
+\end{tabularx}
+
+Slova „právě jeden“ a „alespoň jeden“ neznamenají totéž. U „alespoň jednoho“ často pomůže doplněk „žádný“. Požadavek sousedství vede k bloku a ke kontrole jeho vnitřního pořadí. Číselné úlohy s nulou vyžadují odlišit kód od čísla a někdy rozdělit případy podle poslední cifry.
+
+Pravidlo součinu nevyžaduje stejnou nabídku znaků v každé větvi: vyžaduje stejný \emph{počet} pokračování příslušného kroku po každé předchozí přípustné volbě. Například volba poslední nuly a poslední nenulové sudé cifry může měnit počet možností na začátku; pak se součiny těchto disjunktních případů sčítají.
+
+
+\poznamka{Průběh: 0–7 min rozhodovací otázky a návrat k chybám z testu; 7–24 min P1 a P3; 24–36 min samostatně C1–C2 a jedna z C4–C6 podle zjištěných potřeb; 36–43 min porovnání metod, případně krátký návrat B1; 43–45 min návaznost na výsledky náhodných pokusů. P2, P4–P6 a zbývající C úlohy jsou rezerva či domácí práce. Obsah je záměrně širší než 45 minut, aby učitel mohl volit podle testu.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Kolik tříčlenných komisí bez rozlišených funkcí lze vybrat z devíti osob (pěti žen a čtyř mužů), má-li být v komisi alespoň jedna žena?
+\tcblower
+Všech komisí je $\binom93=84$. Nevyhovují právě komise bez ženy, tedy tři muži ze čtyř: $\binom43=4$. Doplňkem dostaneme $84-4=80$. Kontrola disjunktními případy: právě jedna žena $5\binom42=30$, dvě ženy $\binom52\cdot4=40$, tři ženy $\binom53=10$. Součet $30+40+10=80$.
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Kolik pětiznakových kódů ze čtyř různých symbolů, mezi nimiž je A, obsahuje alespoň jedno A? Opakování je dovoleno.
+\tcblower
+Celkem \(4^5\) kódů; bez A je \(3^5\). Počet \(4^5-3^5=1024-243=781\).
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Kolik čtyřciferných sudých čísel bez opakování vytvoříme z číslic $0,1,2,3,4,5,6$?
+\tcblower
+Sudé číslo končí $0,2,4$ nebo $6$. Tyto případy rozdělíme podle vlivu nuly na první pozici.
+\begin{itemize}
+\item Konec $0$: první cifra má šest nenulových možností, prostřední dvě pak pět a čtyři. Dostáváme $6\cdot5\cdot4=120$.
+\item Konec $2,4$ nebo $6$: tři možnosti konce; první cifra má pět zbývajících nenulových možností. Po obsazení obou krajů je pro druhou pozici pět zbývajících cifer včetně nuly a pro třetí čtyři. Dostáváme $3\cdot5\cdot5\cdot4=300$.
+\end{itemize}
+Případy jsou disjunktní a vyčerpávají všechna sudá zakončení. Celkem $120+300=420$ čísel. Jeden stejný součin pro všechny čtyři konce by nezohlednil rozdílnou nabídku první cifry.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Šest různých žáků v řadě, A a B nesmějí stát vedle sebe.
+\tcblower
+Všechna pořadí \(6!=720\). Nepřípustná: blok AB/BA plus čtyři lidé, \(2\cdot5!=240\). Přípustná: \(720-240=480\).
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Kolik osmimístných binárních řetězců obsahuje právě tři jedničky?
+\tcblower
+Vybereme tři pozice pro jedničky, ostatní jsou nuly. \(\binom83=56\). Stejný výsledek dává \(\frac{8!}{3!5!}\).
+\end{prikladReseniBox}
+
+
+% Zdroj P6: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Příklad 6.
+\begin{prikladReseniBox}[title={Příklad P6}]
+Kolik tříčlenných skupin bez rozlišených funkcí lze vybrat ze sedmi lidí, nesmějí-li být předem určení lidé P a Q vybráni současně?
+\tcblower
+Všech trojic je $\binom73=35$. Zakázaná skupina obsahuje P i Q a jednoho z ostatních pěti, tedy $\binom51=5$ možností. Doplňkem $35-5=30$. Kontrola: ani P, ani Q dává $\binom53=10$ skupin; právě jeden z nich dává $2\binom52=20$. Součet je opět $30$.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+U každé úlohy nejprve napiš jednu větu zdůvodňující model. Při kontrole porovnej dvě různé metody, jsou-li dostupné. C3 předpokládá binární abecedu, C6 jednotkové kroky doprava a nahoru.
+
+% Zdroj C1: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Kolik tříčlenných skupin lze vybrat z osmi různých lidí, má-li být vybrán alespoň jeden ze dvou předem určených A, B? Funkce nerozlišujeme.
+\tcblower
+Všech skupin je $\binom83=56$. Bez A i B vybíráme ze šesti ostatních: $\binom63=20$. Vyhovuje $56-20=36$. Kontrola: právě jeden z A, B dává $2\binom62=30$, oba dávají šest voleb třetího člena. Celkem $30+6=36$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Kolik trojznakových kódů z pěti různých symbolů, mezi nimiž je X, obsahuje alespoň jedno X? Opakování je dovoleno.
+\tcblower
+Všech kódů je $5^3=125$, bez X jsou $4^3=64$. Doplňkem dostaneme $125-64=61$. Případy „X na první/druhé/třetí pozici“ nelze bez korekce sčítat, protože se překrývají.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Kolik pětiznakových řetězců z abecedy $\{0,1\}$ obsahuje přesně dvě jedničky?
+\tcblower
+Vybereme dvě pozice z pěti pro jedničky. Zbylá tři místa jsou jednoznačně nuly. Počet $\binom52=10$, shodně $5!/(2!\,3!)=10$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Kolika způsoby lze na polici seřadit pět různých knih, musejí-li dvě předem určené knihy sousedit?
+\tcblower
+Dvě knihy spojíme do bloku. S dalšími třemi knihami řadíme čtyři různé objekty: $4!$ možností. Uvnitř bloku jsou dvě pořadí, proto $4!\cdot2=48$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Kolik čtyřčlenných skupin lze vybrat ze šesti žen a čtyř mužů, mají-li být právě dvě vybrané osoby ženy?
+\tcblower
+Vybereme dvě ženy $\binom62=15$ způsoby a dva muže $\binom42=6$ způsoby. Každá dvojice dílčích výběrů tvoří právě jednu skupinu, tedy $15\cdot6=90$.
+\end{zadaniReseniBox}
+
+% Zdroj C6: import_hodiny/41_Smisene_kombinatoricke_ulohy.tex, Procvičování, položka 6.
+\begin{zadaniReseniBox}[title={Úloha C6}]
+Kolik nejkratších cest po jednotkové mřížce vede z $(0,0)$ do $(3,3)$ pouze kroky doprava a nahoru?
+\tcblower
+Potřebujeme tři kroky doprava a tři nahoru. Vybereme tři ze šesti pozic pro kroky doprava: $\binom63=20$. Stejně jde o permutace kroků s opakováním $6!/(3!\,3!)=20$.
+\end{zadaniReseniBox}
+
+
+\blok{Krátký návrat k binomické větě (volitelně)}
+% Zdroj B1: import_hodiny/39_Binomicka_veta.tex, Procvičování, položka 5.
+% Totožná úloha je v této sadě v hodině 39 jako C5; nejde o nové zadání.
+\begin{zadaniReseniBox}[title={Úloha B1}]
+Najdi koeficient u $x^3$ v $(1-2x)^5$.
+\tcblower
+Obecný člen je $\binom5k1^{5-k}(-2x)^k$. Aby obsahoval $x^3$, musí být $k=3$; koeficient je $\binom53(-2)^3=-80$. Pořadí pěti závorek je pevné, vybíráme tři pozice, v nichž se uplatní $-2x$. Tím se binomická věta vrací k výběru pozic.
+\end{zadaniReseniBox}
+
+\poznamka{Typické chyby: započítání výběrů s A i B do dvou překrývajících se případů; ztráta zákazu počáteční nuly; násobení pořadí osob v nerozlišené komisi; sousedství řešené bez obou orientací. U P3 zkontroluj, že $120+300$ zahrnuje všechna dovolená sudá zakončení právě jednou. U B1 záporné znaménko patří do třetí mocniny.}
+
+\textbf{Návaznost na hodinu 42.} Kombinatorika určila počet všech výsledků a počet výsledků splňujících podmínku. U náhodného pokusu bude navíc třeba přesně určit, co je jeden elementární výsledek a zda jsou všechny tyto výsledky stejně pravděpodobné. Samotné určení počtů ještě rovnoměrnost neprokazuje. V této hodině nezavádíme pravděpodobnostní vzorec; v další začneme výpisem výsledků hodů mincí a kostkou.
+\end{document}

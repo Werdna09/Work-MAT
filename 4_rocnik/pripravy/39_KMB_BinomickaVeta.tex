@@ -1,0 +1,154 @@
+% Obsahový zdroj: import_hodiny/39_Binomicka_veta.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 39.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{39}{Binomická věta}
+\begin{document}
+
+
+Připomeň $(a+b)^2$ a $(a+b)^3$ a porovnej jejich koeficienty s řádky Pascalova trojúhelníku. Cílem je vysvětlit tento jev výběrem členů při násobení závorek.
+\poznamka{Předpoklady: násobení mnohočlenů, mocniny součinu, kombinační čísla a Pascalův trojúhelník. Cíl: žák zdůvodní koeficienty, rozvine malou mocninu a bez celého rozvoje najde zadaný koeficient. Pro společnou práci upřednostni P1–P3; P4 je náročnější pokračování, P5 krátké propojení s hodinou 37.}
+
+\blok{Výklad a odvození}
+
+\textbf{Binomická věta.} Pro reálná čísla $a,b$ a celé $n\geq1$ platí
+\[
+ (a+b)^n=\sum_{k=0}^n\binom nk a^{n-k}b^k.
+\]
+Věta platí i jako rovnost polynomů a pro $n=0$ má význam rovnosti konstantních polynomů $1=1$. V zápisu polynomu nahrazujeme činitel s exponentem nula konstantou $1$; nevzniká tím úloha na číselný výraz $0^0$.
+
+\textbf{Odvození.} Rozepišme mocninu na součin $n$ závorek $(a+b)$. V každé při roznásobení vybereme buď $a$, nebo $b$. Aby vznikl součin $a^{n-k}b^k$, musíme zvolit $b$ právě v $k$ z těchto $n$ závorek. Výběr pozic lze provést $\binom nk$ způsoby. Rozdělení podle počtu vybraných $b$ pokryje všechna roznásobení, proto koeficienty sčítaných členů mají právě uvedený tvar.
+
+Člen odpovídající indexu $k$ je $\binom nk a^{n-k}b^k$ a stojí na pozici $k+1$. Exponent prvního členu klesá od $n$ k nule, exponent druhého roste od nuly k $n$; jejich součet je stále $n$. Koeficienty čteme z řádku s indexem $n$. Symbolický rozvoj v nezávislých proměnných $a,b$ obsahuje $n+1$ takových členů; po konkrétním dosazení se některé mohou sloučit nebo vynulovat.\begin{definiceBox}
+\textbf{Koeficient u mocniny $x^r$} v mnohočlenu je číslo, kterým je tato mocnina násobena po sloučení stejných mocnin.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Konstantní člen} je člen nezávislý na $x$, tedy koeficient u $x^0$.
+\end{definiceBox}
+
+Pro rozvoj rozdílu zapisujeme celý druhý člen se znaménkem: $(a-c)^n=(a+(-c))^n$. V obecném členu se pak umocňuje $(-c)^k$. Obdobně $(2x)^{n-k}$ znamená $2^{n-k}x^{n-k}$; číselný faktor nelze z mocniny vynechat.
+
+Při hledání koeficientu nejprve napiš obecný člen, potom pomocí požadované mocniny najdi $k$, až pak vypočti číselný koeficient. Index $k$ nemusí být roven hledanému exponentu $x$: záleží na tom, v kterém členu dvojčlenu proměnná stojí.
+
+
+\poznamka{Průběh: 0–11 min odvození; 11–24 min P1–P2; 24–34 min P3 a podle tempa P4; 34–42 min C1–C3; 42–45 min kontrola a krátké P5. C4–C5 a neprobraný P4 jsou rezerva či domácí práce. Znaménka a mocniny koeficientů mají přednost před množstvím hotových rozvojů.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/39_Binomicka_veta.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Rozviň \((x+2)^4\).
+\tcblower
+Použijeme $a=x$, $b=2$, $n=4$. Koeficienty jsou $1,4,6,4,1$:
+\begin{align*}
+ (x+2)^4&=x^4+4x^3\cdot2+6x^2\cdot2^2+4x\cdot2^3+2^4\\
+ &=x^4+8x^3+24x^2+32x+16.
+\end{align*}
+Kontrola pro $x=1$: levá strana $3^4=81$, pravá $1+8+24+32+16=81$.
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/39_Binomicka_veta.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Rozviň \((2x-y)^3\).
+\tcblower
+Dosadíme $a=2x$, $b=-y$, $n=3$. Umocňujeme celé oba členy:
+\begin{align*}
+ (2x-y)^3&=(2x)^3+3(2x)^2(-y)+3(2x)(-y)^2+(-y)^3\\
+ &=8x^3-12x^2y+6xy^2-y^3.
+\end{align*}
+Znaménka určuje parita exponentu u $-y$. Pro $x=y=1$ vychází $1=8-12+6-1$.
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/39_Binomicka_veta.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Najdi koeficient u \(x^3\) v \((x+2)^5\).
+\tcblower
+Obecný člen je $\binom5k x^{5-k}2^k$. Požadujeme $5-k=3$, tedy $k=2$. Člen je $\binom52\,2^2x^3=40x^3$, takže hledaný koeficient je $40$. Číslo $10$ z Pascalova trojúhelníku je jen jedna část koeficientu.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/39_Binomicka_veta.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Najdi koeficient u \(x^4\) v \((2x-1)^6\).
+\tcblower
+Obecný člen má tvar
+\[
+ \binom6k(2x)^{6-k}(-1)^k
+ =\binom6k2^{6-k}(-1)^k x^{6-k}.
+\]
+Pro mocninu $x^4$ musí být $6-k=4$, tedy $k=2$. Hledaný koeficient je $\binom62\,2^4(-1)^2=15\cdot16=240$. Znaménko je kladné, protože $k$ je sudé.
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/39_Binomicka_veta.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Použij binomickou větu ke zdůvodnění \(\sum_{k=0}^n\binom nk=2^n\).
+\tcblower
+Dosadíme $a=b=1$. Potom
+\[
+ 2^n=(1+1)^n=\sum_{k=0}^n\binom nk1^{n-k}1^k
+ =\sum_{k=0}^n\binom nk.
+\]
+Pro $n=0$ dostáváme $1=1$. Jde o druhé zdůvodnění identity, kterou jsme v hodině 37 odvodili počítáním všech podmnožin.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+U každé úlohy uveď substituci za $a,b$, řádek koeficientů nebo obecný člen. C4–C5 využij pro rychlejší studenty nebo jako návazné procvičení.
+
+% Zdroj C1: import_hodiny/39_Binomicka_veta.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Rozviň \((a+b)^3\).
+\tcblower
+Pro $n=3$ jsou koeficienty $1,3,3,1$; mocnina $a$ klesá a mocnina $b$ roste:
+\[
+(a+b)^3=a^3+3a^2b+3ab^2+b^3.
+\]
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/39_Binomicka_veta.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Rozviň \((x-1)^4\).
+\tcblower
+Dosadíme $a=x$, $b=-1$, $n=4$. Proto
+\begin{align*}
+(x-1)^4&=x^4+4x^3(-1)+6x^2(-1)^2+4x(-1)^3+(-1)^4\\
+&=x^4-4x^3+6x^2-4x+1.
+\end{align*}
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/39_Binomicka_veta.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Najdi koeficient u \(x^2\) v \((x+3)^4\).
+\tcblower
+Obecný člen je $\binom4k x^{4-k}3^k$. Z $4-k=2$ vychází $k=2$, takže koeficient je $\binom42\,3^2=6\cdot9=54$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/39_Binomicka_veta.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Najdi konstantní člen v \((2x+5)^3\).
+\tcblower
+Konstantní člen vznikne volbou $5$ ve všech třech závorkách, tedy má hodnotu $5^3=125$. Také dosazení $x=0$ do polynomu dává jeho konstantní člen: $(2\cdot0+5)^3=125$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/39_Binomicka_veta.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Najdi koeficient u \(x^3\) v \((1-2x)^5\).
+\tcblower
+Zvolíme $a=1$, $b=-2x$, $n=5$. Obecný člen je $\binom5k1^{5-k}(-2x)^k$. Pro $x^3$ potřebujeme $k=3$, koeficient je $\binom53(-2)^3=10\cdot(-8)=-80$.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: $(a+b)^n=a^n+b^n$; chybějící mocnina dvojky v $(2x)^r$; záměna indexu $k$ a pořadí členu; znaménko $(-2)^3$. Dosazení konkrétního $x$ slouží ke kontrole, ale samo nedokazuje rovnost celých polynomů. Hodina 40 ověří variace, permutace a kombinace; binomická věta není povinnou součástí tohoto testu. V hodině 41 se k ní lze krátce vrátit v úloze B1.}
+\end{document}

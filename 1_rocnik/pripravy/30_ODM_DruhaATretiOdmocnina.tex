@@ -1,0 +1,76 @@
+% Hodina 30, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 30.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+
+% Původ úloh: P1: učebnice, „Odmocniny“. Ostatní vlastní zadání; metodické pořadí a odhad inspirovány Realisticky.cz.
+
+% Metodický zdroj: externi_zdroje/realisticky/Odmocniny/07_Druha_odmocnina.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/02%20%C4%8C%C3%ADseln%C3%A9%20obory/07%20Druh%C3%A1%20odmocnina.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Odmocniny/08_Treti_odmocnina.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/02%20%C4%8C%C3%ADseln%C3%A9%20obory/08%20T%C5%99et%C3%AD%20odmocnina.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Odmocniny}{30}{Druhá a třetí odmocnina}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Ze známého obsahu čtverce hledáme délku jeho strany. Požadavek nezáporné délky vysvětluje, proč zápis $\sqrt9$ označuje pouze $3$. Třetí mocnina naproti tomu rozlišuje kladná a záporná čísla i bez omezení znaménka.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Druhá odmocnina} z $a\ge0$ je jediné nezáporné číslo $b$, pro které platí $b^2=a$. Zapisujeme $b=\sqrt a$. Pro $a<0$ není druhá odmocnina v $\mathbb R$ definována.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Třetí odmocnina} z reálného čísla $a$ je jediné reálné číslo $b$, pro které platí $b^3=a$. Zapisujeme $b=\sqrt[3]a$.
+\end{definiceBox}
+
+
+Každý výsledek ověř příslušným umocněním a u druhé odmocniny také znaménkem. Zatím nepoužíváme pravidla pro odmocninu součinu. Odhad získáme porovnáním se známými druhými nebo třetími mocninami.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Urči $\sqrt{25}$, $\sqrt[3]{27}$, $\sqrt[3]{-8}$ a $\sqrt{-9}$.
+\tcblower
+Postupně $5$, $3$, $-2$; poslední výraz nemá v $\mathbb R$ smysl. Kontroly: $5^2=25$, $3^3=27$, $(-2)^3=-8$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Porovnej $\sqrt{16}$ s čísly, jejichž druhá mocnina je $16$. Odhadni $\sqrt{39}$.
+\tcblower
+$\sqrt{16}=4$. Druhou mocninu $16$ mají $4$ i $-4$, ale odmocnina je nezáporná. Protože $6^2<39<7^2$, platí $6<\sqrt{39}<7$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočítej $\sqrt{0}$, $\sqrt{0{,}09}$ a $\sqrt[3]{0{,}001}$.
+\item Vypočítej $\sqrt[3]{-125}$ a $\sqrt{(-7)^2}$.
+\item Najdi dvě sousední celá čísla, mezi nimiž leží $\sqrt7$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $0$, $0{,}3$ a $0{,}1$; ověříme umocněním.
+\item $-5$ a $7$; druhá odmocnina vrací nezáporné číslo.
+\item $2<\sqrt7<3$, protože $4<7<9$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Nepiš $\sqrt{16}=\pm4$. Nezaměňuj existenci přesné hodnoty odmocniny s možností vyjádřit ji konečným desetinným zápisem. Iracionální číslo má neperiodický desetinný rozvoj. Tuto skutečnost připomeň, ale nevyžaduj nový důkaz.}
+
+\end{document}

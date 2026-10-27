@@ -1,0 +1,76 @@
+% Hodina 55, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 55.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: P1: učebnice, „Umocňování a úpravy složených lomených výrazů“, přesný složený zlomek. Ostatní vlastní.
+
+% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/05_Zjednodusovani_lomenych_vyrazu_I.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/05%20Zjednodu%C5%A1ov%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF%20I.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{55}{Složené lomené výrazy}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Hlavní zlomková čára znamená dělení celého horního výrazu celým dolním. Podmínky proto pocházejí jak z vnitřních jmenovatelů, tak z požadavku, aby celý dolní výraz nebyl nulový.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Složený zlomek} je zlomek, v jehož čitateli nebo jmenovateli vystupují další zlomky. Jeho úprava musí zachovat přípustnost všech vnitřních operací.
+\end{definiceBox}
+
+
+Buď nejprve uprav horní a dolní část a potom děl násobením převrácenou hodnotou, nebo rozšiř celý složený zlomek společným nenulovým násobkem vnitřních jmenovatelů. V obou postupech zachovej původní podmínky.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Uprav $\dfrac{\dfrac{x}{y}}{\dfrac{2x}{3y}}$.
+\tcblower
+Vnitřní zlomky vyžadují $y\ne0$, celý dělitel navíc $x\ne0$. Potom $\frac{x}{y}\cdot\frac{3y}{2x}=\frac32$ při $x,y\ne0$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\dfrac{\dfrac{x+1}{x-1}-1}{\dfrac{x+1}{x-1}+1}$.
+\tcblower
+Nejprve $x\ne1$. Horní část je $2/(x-1)$, dolní $2x/(x-1)$, takže navíc $x\ne0$. Podíl je $1/x$ pro $x\ne0,1$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\dfrac{1/a}{2/a}$.
+\item Uprav $\dfrac{1/x+1/(x+1)}{1/[x(x+1)]}$.
+\item Uprav $\dfrac{(x^2-1)/(x-1)}{(x+1)/(x+2)}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $1/2$ při $a\ne0$; obě vnitřní části existují a dolní není nulová.
+\item Pro $x\ne0,-1$ je dolní část nenulová. Rozšířením celého zlomku výrazem $x(x+1)$ dostaneme $2x+1$.
+\item Původní zápis vyžaduje $x\ne1,-2$ a nenulový dolní zlomek navíc $x\ne-1$. Po krácení je výsledek $x+2$ při všech třech zákazech.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Nech žáka nahlas označit hlavní zlomkovou čáru a celý dělitel. Podmínky dolní části nestačí pouze opsat z jejích jmenovatelů: musí být i nenulová. Rezervu se dvěma proměnnými lze dokončit doma.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Uprav $\dfrac{1/x+1/y}{1/x-1/y}$.
+\tcblower
+Nejprve $x,y\ne0$. Dolní část je $(y-x)/(xy)$, proto navíc $y\ne x$. Rozšířením výrazem $xy$ dostaneme $(x+y)/(y-x)$ na tomto oboru.
+\end{prikladReseniBox}
+
+
+\end{document}

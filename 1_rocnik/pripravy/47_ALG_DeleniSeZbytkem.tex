@@ -1,0 +1,73 @@
+% Hodina 47, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 47.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: P1: přesný výraz z kostry učitele, vlastní řešení. Ostatní vlastní.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/05_Deleni_mnohoclenu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/05%20D%C4%9Blen%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{47}{Dělení mnohočlenů se zbytkem}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Při dělení nemusí mezivýsledek nakonec zmizet. Jestliže má už nižší stupeň než dělitel, další mnohočlenný člen podílu nedoplníme. Zbytek zapíšeme tak, aby šlo výsledek ověřit násobením a přičtením.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Dělení se zbytkem} zapisujeme $A=BQ+R$, kde $B$ není nulový mnohočlen a zbytek $R$ je nulový, nebo má stupeň menší než $B$. Mnohočlen $Q$ je podíl, $R$ zbytek.
+\end{definiceBox}
+
+
+Z identity plyne $A(x)/B(x)=Q(x)+R(x)/B(x)$ pro $B(x)\ne0$. Při lineárním děliteli je nenulový zbytek konstantní. Samotné $Q$ není celou hodnotou původního zlomku, pokud $R\ne0$.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Vyděl $(p^3+2p^2-2p-1):(p+1)$.
+\tcblower
+Postupně získáme členy podílu $p^2$, $p$ a $-3$:
+\begin{align*}
+(p^3+2p^2-2p-1)-p^2(p+1)&=p^2-2p-1,\\
+(p^2-2p-1)-p(p+1)&=-3p-1,\\
+(-3p-1)-(-3)(p+1)&=2.
+\end{align*}
+Tedy $Q=p^2+p-3$, $R=2$ a původní podíl je $p^2+p-3+\frac2{p+1}$ při $p\ne-1$. Kontrola: $(p+1)(p^2+p-3)+2=p^3+2p^2-2p-1$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Vyděl $(x^3+2x+1):(x^2+1)$.
+\tcblower
+První člen podílu je $x$. Po odečtení $x(x^2+1)$ zbude $x+1$, jehož stupeň je $1<2$. Proto $Q=x$, $R=x+1$. Jmenovatel $x^2+1$ je pro všechna reálná $x$ kladný.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vyděl $(x^2+1):(x-1)$.
+\item Vyděl $(2x^2+3x+4):(x+1)$.
+\item Vyděl $(x^3-1):(x^2+1)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $Q=x+1$, $R=2$, protože $(x-1)(x+1)+2=x^2+1$. Pro podíl hodnot je $x\ne1$.
+\item $Q=2x+1$, $R=3$; $(x+1)(2x+1)+3=2x^2+3x+4$. Pro zlomek $x\ne-1$.
+\item $Q=x$, $R=-x-1$. Kontrola: $x(x^2+1)-x-1=x^3-1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Zbytek nemusí být číslo, jak ukazuje kvadratický dělitel. Vždy ověř podmínku stupně i identitu $A=BQ+R$. U P1 lze navíc dosadit $p=-1$ do této identity: dělenec má hodnotu $2$, stejně jako zbytek; do původního zlomku však toto číslo dosadit nelze.}
+
+\end{document}

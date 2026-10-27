@@ -1,0 +1,140 @@
+% Obsahový zdroj: import_hodiny/36_Kombinacni_cislo.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 36.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{36}{Kombinační číslo}
+\begin{document}
+
+
+Z předchozí hodiny již známe význam výběru skupiny. Nyní oddělíme tento význam od samotného početního zápisu: stejná kombinační čísla budeme počítat úpravou faktoriálů a používat v rovnicích.
+\poznamka{Předpoklady: kombinace bez opakování, $0!$, krácení a kvadratické rovnice. Cíl: žák rychle vyčíslí kombinační číslo, vysvětlí krajní hodnoty a řeší rovnice pouze v přípustném celočíselném oboru. P5 je návrat ke slovní interpretaci výsledku.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Kombinační číslo} $\binom nk$, čtené „$n$ nad $k$“, pro celá $n\geq0$ a $0\leq k\leq n$ definujeme jako
+\[
+ \binom nk=\frac{n!}{k!(n-k)!}.
+\]
+Udává počet $k$-prvkových podmnožin $n$-prvkové množiny. Spodní index $k$ je rovněž celé číslo.
+\end{definiceBox}
+
+Z výběrového významu i dosazením $0!=1$ plyne
+\[
+ \binom n0=\binom nn=1\quad(n\geq0),\qquad
+ \binom n1=n\quad(n\geq1).
+\]
+Pro celé $n\geq2$ navíc
+\[
+ \binom n2=\frac{n(n-1)(n-2)!}{2!(n-2)!}=\frac{n(n-1)}2.
+\]
+Prázdný výběr je jedna možnost, ne nula možností. Výsledek je nezáporné celé číslo, protože počítá skupiny.
+
+Než budeš násobit, vyhledej společný faktoriál. V $\binom{12}{10}$ lze krátit $10!$, takže zůstanou jen dva činitelé v čitateli a $2!$ ve jmenovateli. Obecný důkaz symetrie ponecháme do hodiny 37.
+
+U rovnic nejprve určujeme obor: z $\binom n2$ vyplývá celé $n\geq2$. Teprve potom nahradíme kombinační číslo výrazem $n(n-1)/2$. Algebraická rovnice může mít i záporný kořen; takový kořen není řešením původní úlohy.
+
+
+\poznamka{Průběh: 0–8 min význam a krajní hodnoty; 8–19 min P1–P2; 19–31 min P3–P4; 31–41 min C1–C5; 41–45 min kontrola a krátké slovní P5. Při pomalejším tempu ponech P5 jako domácí opakování hodiny 35.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/36_Kombinacni_cislo.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Vypočti \(\binom{10}{3}\).
+\tcblower
+\(\frac{10!}{3!7!}=\frac{10\cdot9\cdot8}{3\cdot2\cdot1}=120\).
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/36_Kombinacni_cislo.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Vypočti \(\binom{12}{10}\) bez velkých faktoriálů.
+\tcblower
+\(\binom{12}{10}=\frac{12!}{10!2!}=\frac{12\cdot11}{2}=66\).
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/36_Kombinacni_cislo.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3},breakable=false]
+Urči celé $n$, pro které platí $\binom n2=45$.
+\tcblower
+Podmínka: celé $n\geq2$. Potom
+\begin{align*}
+ \binom n2=45&\iff n(n-1)=90\\
+ &\iff n^2-n-90=0\\
+ &\iff(n-10)(n+9)=0.
+\end{align*}
+Kořeny jsou $10$ a $-9$, druhý nevyhovuje podmínce. Zkouška: $\binom{10}{2}=10\cdot9/2=45$. Jediné řešení je $n=10$.
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/36_Kombinacni_cislo.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Vyřeš $\binom n2=3n$ v celých číslech $n\geq2$.
+\tcblower
+Pro celé $n\geq2$ je $n>0$, takže smíme dělit $n$:
+\[
+ \frac{n(n-1)}2=3n\iff n(n-1)=6n\iff n-1=6\iff n=7.
+\]
+Zkouška: $\binom72=21=3\cdot7$. Nula, která by vyšla po vynechání podmínky, nemá v tomto zadání význam.
+\end{prikladReseniBox}
+
+
+% Zdroj P5: import_hodiny/36_Kombinacni_cislo.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Z osmi lidí se vybírá čtyřčlenná komise. Dva konkrétní kandidáti musejí oba být vybráni.
+\tcblower
+Dva konkrétní lidé jsou pevně vybráni, zbývají dvě volná místa. Z ostatních šesti kandidátů vybereme neuspořádanou dvojici, tedy $\binom62=15$ komisí. Nemůžeme vybírat další dva z osmi, neboť předepsané lidi nelze vybrat podruhé.
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+C1–C2 počítej krácením. U C3–C4 napiš definiční obor a proveď zkoušku. U C5 vysvětli, co je jediným výsledkem každého z obou výběrů.
+
+% Zdroj C1: import_hodiny/36_Kombinacni_cislo.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Spočti \(\binom83\).
+\tcblower
+Po zkrácení $5!$ dostáváme $\binom83=\dfrac{8\cdot7\cdot6}{3\cdot2\cdot1}=56$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/36_Kombinacni_cislo.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Spočti \(\binom{11}{9}\).
+\tcblower
+$\binom{11}{9}=\dfrac{11!}{9!\,2!}=\dfrac{11\cdot10}{2}=55$.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/36_Kombinacni_cislo.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Najdi celé $n$, pro něž $\binom n1=13$.
+\tcblower
+Podmínka: celé $n\geq1$. Protože $\binom n1=n$, musí být $n=13$; zkouška $\binom{13}{1}=13$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/36_Kombinacni_cislo.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Najdi celé $n\geq2$, pro něž $\binom n2=28$.
+\tcblower
+Podmínka: celé $n\geq2$. Rovnice vede na $n(n-1)=56$, tedy $(n-8)(n+7)=0$. Z kořenů $8,-7$ vyhovuje jen $n=8$. Zkouška: $\binom82=28$.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/36_Kombinacni_cislo.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Kolik možností má výběr všech sedmi prvků ze sedmiprvkové množiny? Kolik možností má výběr žádného prvku?
+\tcblower
+Při výběru všech prvků je jediným výsledkem celá množina; při výběru žádného jediným výsledkem prázdná množina. Proto $\binom77=\binom70=1$. Také oba faktoriálové zlomky mají hodnotu $7!/(7!\,0!)=1$.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: $\binom n0=0$; přijetí záporného kořene; dělení $n$ bez ověření $n\ne0$. Ve výpočtu $\binom{12}{10}$ není třeba počítat deset činitelů ani používat ještě neprobranou větu. Příště zdůvodníme symetrii, Pascalův vztah a součet všech podmnožin.}
+\end{document}

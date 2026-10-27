@@ -1,0 +1,106 @@
+% Hodina 41, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 41.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Algebraicke_vyrazy/01_Vyrazy_definicni_obor.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/07%20V%C3%BDrazy/01%20V%C3%BDrazy,%20defini%C4%8Dn%C3%AD%20obor.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/01_Scitani_a_odcitani_mnohoclenu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/01%20S%C4%8D%C3%ADt%C3%A1n%C3%AD%20a%20od%C4%8D%C3%ADt%C3%A1n%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{41}{Algebraický výraz a mnohočlen}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Výrazy $3x+5$, $2a^2b$ nebo $1/x$ jsme již počítali pro konkrétní hodnoty. Nyní je budeme rozlišovat podle stavby. U každého zápisu odděl číselný faktor od proměnných a sleduj jejich exponenty.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Algebraický výraz} je matematický zápis sestavený z čísel, proměnných a početních operací. Jeho hodnota závisí na dosazených přípustných hodnotách proměnných.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Proměnná} je znak zastupující čísla ze stanoveného oboru. Konkrétní dosazení musí respektovat podmínky výrazu.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Jednočlen (monom)} je součin reálného číselného faktoru a nezáporných celočíselných mocnin proměnných. Konstantu také považujeme za jednočlen.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Mnohočlen (polynom)} je konečný součet jednočlenů. Proměnné v jeho zápisu mají pouze nezáporné celočíselné exponenty.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Člen mnohočlenu} je jednotlivý jednočlen v jeho součtu, včetně příslušného znaménka.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Koeficient členu} je jeho číselný faktor. Například člen $-xy$ má koeficient $-1$.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Stupeň nenulového jednočlenu} je součet exponentů jeho proměnných. Nenulová konstanta má stupeň $0$.
+\end{definiceBox}
+
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Stupeň nenulového mnohočlenu} je nejvyšší stupeň jeho nenulových členů po sloučení stejných členů. Stupeň nulového mnohočlenu zde neurčujeme.
+\end{definiceBox}
+
+
+U jedné proměnné je tedy stupeň největší exponent s nenulovým koeficientem. Číselný koeficient může být i zlomkem či odmocninou z konstanty: $\sqrt2x^2$ je mnohočlen, kdežto $\sqrt x$ ani $1/x$ mnohočleny nejsou.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Urči členy, jejich koeficienty a stupeň $P(x)=3x^4-2x^2+7$.
+\tcblower
+Členy jsou $3x^4$, $-2x^2$, $7$, koeficienty $3$, $-2$, $7$. Nejvyšší exponent je $4$, tedy $\deg P=4$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Urči stupeň $Q(x,y)=2x^3y^2-xy+1$.
+\tcblower
+Stupně jednotlivých členů jsou $3+2=5$, $1+1=2$ a $0$. Proto $\deg Q=5$. Nevybíráme jen největší samostatný exponent $3$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Rozhodni, zda $x^2+\frac1x$ a $x^2-\frac34x+\sqrt3$ jsou mnohočleny.
+\item Urči koeficient a stupeň jednočlenu $-5a^2b^3$.
+\item Urči stupeň mnohočlenu $7$ a vysvětli případ $0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item První není: obsahuje $x^{-1}$. Druhý je mnohočlen druhého stupně, protože zlomek a odmocnina jsou pouze číselné koeficienty.
+\item Koeficient je $-5$, stupeň $2+3=5$.
+\item Nenulová konstanta $7$ má stupeň $0$. Nulovému mnohočlenu stupeň nepřiřazujeme.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Pojmy zaváděj na jednom společném příkladu; nepožaduj osm izolovaných definic zpaměti. Každá je v samostatném boxu pro přehled učitele. Znaménko patří ke členu i jeho koeficientu. Systematické slučování členů ponech další hodině.}
+
+\end{document}

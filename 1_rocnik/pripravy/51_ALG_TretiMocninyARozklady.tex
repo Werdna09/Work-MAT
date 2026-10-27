@@ -1,0 +1,95 @@
+% Hodina 51, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 51.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: Procvičení c): učebnice, „Rozklad mnohočlenů“, příklad x^5+x^3-x^2-1. Rezerva: přesný výraz z kostry učitele. Ostatní vlastní.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/04_Pouziti_vzorcu_pri_uprave_mnohoclenu_II.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/04%20Pou%C5%BEit%C3%AD%20vzorc%C5%AF%20p%C5%99i%20%C3%BAprav%C4%9B%20mnoho%C4%8Dlen%C5%AF%20II.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/06_Rozklad_mnohoclenu_na_soucin_I_vytykani_.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/06%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20I%20(vyt%C3%BDk%C3%A1n%C3%AD).pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{51}{Třetí mocniny a rozklady}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Rozlišuj třetí mocninu celého dvojčlenu a součet třetích mocnin. Potřebné vztahy odvodíme násobením a potom je použijeme při rozkladu. Rozvoj součinu tří závorek navazuje na postup ze 44. hodiny.
+
+\begin{definiceBox}[title={Definice},breakable=false]
+\textbf{Třetí mocnina dvojčlenu} $(a+b)^3$ znamená součin tří stejných dvojčlenů. Výraz $a^3+b^3$ naproti tomu obsahuje jen dva sčítance.
+\end{definiceBox}
+
+
+Pro reálná $a,b$ platí
+\begin{align*}
+a^3-b^3&=(a-b)(a^2+ab+b^2),\\
+a^3+b^3&=(a+b)(a^2-ab+b^2),\\
+(a+b)^3&=a^3+3a^2b+3ab^2+b^3,\\
+(a-b)^3&=a^3-3a^2b+3ab^2-b^3.
+\end{align*}
+První vztah ověř roznásobením a zrušením prostředních členů, druhý získej nahrazením $b$ číslem $-b$. Rozvoj krychle odvoď jako $(a+b)^2(a+b)$; u rozdílu opět nahraď $b$ číslem $-b$.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Rozlož $x^3-8$ a $8a^3+27b^3$.
+\tcblower
+$x^3-8=(x-2)(x^2+2x+4)$. Dále $8a^3+27b^3=(2a+3b)(4a^2-6ab+9b^2)$. Ve druhé závorce jsou smíšený součin a dvě druhé mocniny.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Roznásob $(2x-1)^3$.
+\tcblower
+$8x^3-12x^2+6x-1$. Čtyři členy vzniknou jako $(2x)^3-3(2x)^2\cdot1+3(2x)\cdot1^2-1^3$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Rozlož $27x^3-1$.
+\item Roznásob $(x+2)^3$.
+\item Rozlož $x^5+x^3-x^2-1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(3x-1)(9x^2+3x+1)$.
+\item $x^3+6x^2+12x+8$.
+\item $x^3(x^2+1)-(x^2+1)=(x^2+1)(x^3-1)=(x^2+1)(x-1)(x^2+x+1)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Hodina propojuje čtyři vzorce a je obsahově náročná. Základ tvoří jejich odvození, P1 a procvičení a), b); P2 lze rozebrat krátce jako připomenutí násobení. Procvičení c) a náročnou rezervu ponech rychlejším žákům nebo domů. Nepřidávej další hodinu ani nové vzorce.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Rozlož výraz ze sešitu $3x^6-2x^3-3x^4+2$ na součin.
+\tcblower
+Seskupíme $3x^4(x^2-1)-2(x^3-1)$ a použijeme oba vzorce:
+\[
+(x-1)\bigl[3x^4(x+1)-2(x^2+x+1)\bigr].
+\]
+Po úpravě hranaté závorky dostaneme $3x^5+3x^4-2x^2-2x-2$. Dělení tohoto mnohočlenu výrazem $x-1$ má nulový zbytek a dává $3x^4+6x^3+6x^2+4x+2$. Výsledný součin je
+\[
+(x-1)^2(3x^4+6x^3+6x^2+4x+2).
+\]
+Správnost ověříme roznásobením; není třeba tvrdit, že poslední činitel už nelze dále rozložit.
+\end{prikladReseniBox}
+
+
+\end{document}

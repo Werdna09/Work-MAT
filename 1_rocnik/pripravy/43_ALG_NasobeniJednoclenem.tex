@@ -1,0 +1,76 @@
+% Hodina 43, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 43.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/02_Nasobeni_mnohoclenu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/02%20N%C3%A1soben%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{43}{Násobení mnohočlenu jednočlenem}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Výraz $3(x+2)$ má stejnou hodnotu jako $3x+6$, protože trojka násobí oba sčítance. Stejně pracujeme s proměnným jednočlenem. Není dovoleno vynásobit jen první člen závorky.
+
+\begin{definiceBox}[title={Připomenutí definice},breakable=false]
+\textbf{Jednočlen} je součin číselného koeficientu a nezáporných celočíselných mocnin proměnných.
+\end{definiceBox}
+
+
+Použij distributivní zákon $M(A+B)=MA+MB$. Při násobení jednočlenů násobíme koeficienty a sčítáme exponenty stejných proměnných. Záporný koeficient násobí každý člen včetně jeho znaménka.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Uprav $3x(2x^2-x+4)$.
+\tcblower
+$3x\cdot2x^2+3x\cdot(-x)+3x\cdot4=6x^3-3x^2+12x$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $-2ab(3a^2b-4ab^2+1)$.
+\tcblower
+$-6a^3b^2+8a^2b^3-2ab$. Ve druhém součinu se násobí dvě záporná znaménka, proto je výsledek kladný.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $2x(x^2+3x-1)$.
+\item Uprav $-3y(2y^2-y+5)$.
+\item Uprav $\frac12a(6a^2-4a+2)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2x^3+6x^2-2x$.
+\item $-6y^3+3y^2-15y$.
+\item $3a^3-2a^2+a$; nejprve krátíme číselné koeficienty.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Zpočátku označ všechny dílčí součiny. Jakmile žák postup zvládne, nemusí rozepisovat každý z nich. Samostatná práce má obsahovat kladný i záporný koeficient. Dvě mnohočlenné závorky ponech následující hodině.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Uprav $2x(x^2-1)-x(2x^2-3x+4)$.
+\tcblower
+$2x^3-2x-(2x^3-3x^2+4x)=3x^2-6x$. Minus před druhým součinem se týká celého jeho výsledku.
+\end{prikladReseniBox}
+
+
+\end{document}

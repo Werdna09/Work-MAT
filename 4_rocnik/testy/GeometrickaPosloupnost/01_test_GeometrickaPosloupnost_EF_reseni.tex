@@ -1,0 +1,204 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\setlength{\parindent}{0pt}
+\begin{document}
+\section*{Geometrická posloupnost E/F -- řešení a bodování}
+Podklad pro učitele k testu
+\texttt{01\_test\_GeometrickaPosloupnost\_EF.tex}.
+Zadání jsou doslova převzata z pracovního listu
+\texttt{4\_rocnik/pracovni\_listy/pracovniListGeoPosl.tex}.
+
+Zařazení: 4. ročník SPŠ; tematický plán
+\texttt{4\_rocnik/tematicke\_plany/SPS.pdf}, s.~1, září, bod 1.3.
+Celek posloupností má v září společnou dotaci 12 hodin.
+Test používá obecný člen, vztah mezi dvěma členy, konečný součet
+a vkládání kladných členů. Nevyžaduje další témata ani kalkulačku.
+Odhad doby řešení včetně kontroly je 25--30 minut; není ověřen ve třídě.
+
+\begin{center}
+\begin{tabular}{c|c|c|l}
+Úloha testu & Varianta E & Varianta F & Ověřovaná dovednost\\ \hline
+1 & 6 & 7 & Rozpoznání geometrické posloupnosti z obecného členu\\
+2 & 21 & 22 & Určení kvocientu a dalších členů ze dvou členů\\
+3 & 40 & 39 & Konečný součet se záporným kvocientem\\
+4 & 61 & 62 & Vložení kladných členů mezi dvě zadaná čísla
+\end{tabular}
+\end{center}
+
+\subsection*{Varianta E}
+\begin{enumerate}
+\item \textbf{Původní úloha 6.}
+Pro každé $n\in\mathbb N$, $n\geq1$, je $a_n=(-2)^{n+1}\ne0$.
+Můžeme tedy vytvořit podíl
+\[
+\frac{a_{n+1}}{a_n}=\frac{(-2)^{n+2}}{(-2)^{n+1}}=-2.
+\]
+Podíl je konstantní pro všechna přípustná $n$, posloupnost je geometrická a
+\[
+\boxed{a_1=4,\qquad q=-2.}
+\]
+Nezávislé ověření: $(-2)^{n+1}=4(-2)^{n-1}=a_1q^{n-1}$.
+
+\item \textbf{Původní úloha 21.}
+Nenulové členy $a_3=12$, $a_6=96$ vylučují $a_1=0$ i $q=0$.
+Vztah $a_6=a_3q^3$ dává
+\[
+96=12q^3\iff q^3=8\iff q=2.
+\]
+Rovnice $q^3=8$ má právě jeden reálný kořen;
+hodnota $q=-2$ podmínku nesplňuje. Dále
+\[
+a_1=\frac{a_3}{q^2}=\frac{12}{4}=3,\qquad
+a_9=a_6q^3=96\cdot8=768.
+\]
+Jediné řešení je $\boxed{q=2,\ a_1=3,\ a_9=768}$.
+Zkouška postupným násobením:
+\[
+3,6,12,24,48,96,192,384,768.
+\]
+Třetí, šestý a devátý člen souhlasí s použitými hodnotami.
+
+\item \textbf{Původní úloha 40.}
+Je dáno $a_1=6$, $q=-\frac12$. Protože $q\ne1$, platí vzorec
+$S_n=a_1\frac{1-q^n}{1-q}$. Dosadíme
+\[
+S_{10}=6\frac{1-\left(-\frac12\right)^{10}}{1-\left(-\frac12\right)}
+=6\frac{1-\frac1{1024}}{\frac32}
+=4\cdot\frac{1023}{1024}
+=\boxed{\frac{1023}{256}}.
+\]
+Nezávislá zkouška přímým součtem deseti členů:
+\[
+6-3+\frac32-\frac34+\frac38-\frac3{16}
++\frac3{32}-\frac3{64}+\frac3{128}-\frac3{256}
+=\frac{1536-768+384-192+96-48+24-12+6-3}{256}
+=\frac{1023}{256}.
+\]
+
+\item \textbf{Původní úloha 61.}
+Všech pět čísel je kladných, proto $q>0$. První člen je $a_1=2$
+a pátý $a_5=162$, tedy
+\[
+162=2q^4\iff q^4=81.
+\]
+Z reálných kořenů $q=3$ a $q=-3$ je přípustný pouze $q=3$;
+záporný kvocient by vedl k zápornému druhému a čtvrtému členu.
+Vkládáme tedy
+\[
+\boxed{6,18,54},\qquad\text{celá pětice je }2,6,18,54,162.
+\]
+Zkouška: $\frac62=\frac{18}6=\frac{54}{18}=\frac{162}{54}=3$;
+vložené členy jsou kladné. Kladný kořen rovnice pro $q$ je jediný,
+takže další přípustné řešení neexistuje.
+\end{enumerate}
+
+\newpage
+\subsection*{Varianta F}
+\begin{enumerate}
+\item \textbf{Původní úloha 7.}
+Pro každé $n\in\mathbb N$, $n\geq1$, je $2^n>0$ a $a_n=\frac5{2^n}\ne0$.
+Platí
+\[
+\frac{a_{n+1}}{a_n}=\frac{5}{2^{n+1}}\frac{2^n}{5}=\frac12.
+\]
+Podíl je konstantní pro všechna přípustná $n$, posloupnost je geometrická a
+\[
+\boxed{a_1=\frac52,\qquad q=\frac12.}
+\]
+Nezávislé ověření:
+$\frac5{2^n}=\frac52\left(\frac12\right)^{n-1}=a_1q^{n-1}$.
+
+\item \textbf{Původní úloha 22.}
+Z $a_2=-6\ne0$, $a_5=48\ne0$ plyne $a_1\ne0$, $q\ne0$.
+Vztah $a_5=a_2q^3$ dává
+\[
+48=-6q^3\iff q^3=-8\iff q=-2.
+\]
+Jde o jediný reálný kvocient. Pak
+\[
+a_1=\frac{a_2}{q}=\frac{-6}{-2}=3,\qquad
+a_8=a_5q^3=48(-8)=-384.
+\]
+Jediné řešení je $\boxed{q=-2,\ a_1=3,\ a_8=-384}$.
+Zkouška postupným násobením:
+\[
+3,-6,12,-24,48,-96,192,-384.
+\]
+Druhý, pátý a osmý člen souhlasí s použitými hodnotami.
+
+\item \textbf{Původní úloha 39.}
+Je dáno $a_1=3$, $q=-2\ne1$, proto
+\[
+S_9=3\frac{1-(-2)^9}{1-(-2)}
+=3\frac{1+512}{3}=\boxed{513}.
+\]
+Nezávislá zkouška přímým součtem devíti členů:
+\[
+3-6+12-24+48-96+192-384+768=513.
+\]
+Na rozdíl od sudé mocniny v úloze E3 je zde $(-2)^9$ záporné.
+
+\item \textbf{Původní úloha 62.}
+Všech šest čísel je kladných, proto $q>0$. Máme $a_1=3$, $a_6=96$ a
+\[
+96=3q^5\iff q^5=32\iff q=2.
+\]
+Rovnice $q^5=32$ má právě jeden reálný kořen, který je kladný.
+Vkládáme tedy
+\[
+\boxed{6,12,24,48},\qquad\text{celá šestice je }3,6,12,24,48,96.
+\]
+Zkouška:
+$\frac63=\frac{12}6=\frac{24}{12}=\frac{48}{24}=\frac{96}{48}=2$.
+Všechny vložené členy jsou kladné a jiné přípustné řešení neexistuje.
+\end{enumerate}
+
+\newpage
+\subsection*{Orientační bodování pro obě varianty}
+Nezávazný návrh pouze pro učitele. Uznávejte i jiné správné postupy;
+bodování a kritéria lze upravit podle odborného posouzení.
+Stejnou početní chybu netrestejte opakovaně, pokud na ni navazuje
+jinak správný postup.
+\begin{enumerate}
+\item 4 body: obecný podíl nebo ekvivalentní úprava obecného členu (1),
+závěr o geometrické posloupnosti pro všechna $n\geq1$ (1),
+správný kvocient (1), první člen (1).
+\item 5 bodů: vztah mezi známými členy (1), rovnice pro $q^3$ (1),
+jediný reálný kvocient (1), první člen (1), požadovaný další člen (1).
+\item 5 bodů: správný vzorec pro konečný součet (1), dosazení včetně
+znamének a závorek (1), správná mocnina (1), úprava zlomku (1), výsledek (1).
+\item 5 bodů: vztah mezi krajními členy se správným exponentem (1),
+kladný kvocient (1), všechny vložené členy (2),
+zohlednění kladnosti a úplnosti řešení (1).
+Ve F4 lze za jediný chybný vložený člen přiznat 1 ze 2 bodů stejně jako v E4.
+\end{enumerate}
+Celkem 19 bodů za každou variantu. Zkoušky uvedené v řešení slouží
+ke kontrole; žákovské zadání je výslovně nepožaduje, proto za jejich
+neprovedení neodečítejte body. Orientační doby řešení úloh jsou
+3, 6, 7 a 5 minut; s kontrolou přibližně 25--30 minut.
+
+\subsection*{Srovnatelnost a kontrola}
+První dvojice vyžaduje podíl obecných členů a práci s mocninami.
+Ve druhé dvojici vede rozdíl indexů vždy na třetí mocninu kvocientu
+a jediné reálné řešení; F2 navíc pracuje se záporným kvocientem.
+Ve třetí dvojici se používá stejný vzorec se záporným kvocientem.
+E3 je početně o něco náročnější kvůli zlomkům, F3 pracuje s celými čísly.
+Ve čtvrté dvojici se hledá jediný kladný kořen rovnice pro kvocient;
+E4 vyžaduje odmítnutí záporného kořene, F4 o jeden vložený člen více.
+Rozdíly jsou malé a obě varianty mají přibližně stejný rozsah i časovou
+náročnost. Výběr respektuje zadané úlohy běžného testu;
+obtížnost zde není navyšována nad ně pouze kvůli označení E/F.
+
+Každé z osmi zadání bylo ověřeno samostatně. U obecných členů
+je podíl doplněn totožností s tvarem $a_1q^{n-1}$; známé členy,
+součty a vložená čísla jsou kontrolovány přímým generováním posloupností,
+přesnou racionální aritmetikou a dosazením do původních podmínek.
+Úplnost řešení plyne z jednoznačnosti reálných lichých odmocnin
+a kladného kořene ve čtvrté mocnině. Před každým dělením je
+zajištěna nenulovost příslušného výrazu; při použití vzorce pro součet
+je splněno $q\ne1$.
+\end{document}

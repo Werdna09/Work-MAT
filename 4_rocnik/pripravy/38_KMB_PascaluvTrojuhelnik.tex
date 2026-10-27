@@ -1,0 +1,151 @@
+% Obsahový zdroj: import_hodiny/38_Pascaluv_trojuhelnik.tex a odpovídající PDF (obě strany).
+% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
+% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
+% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
+% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 38.
+% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
+% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
+% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
+% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{38}{Pascalův trojúhelník}
+\begin{document}
+
+
+Připomeň Pascalův vztah z hodiny 37 a nech z krajních jedniček postupně sestavit další řádky. Zápis zviditelní symetrii a umožní výpočet bez opakovaného dosazování faktoriálů.
+\poznamka{Předpoklady: Pascalův vztah, symetrie, součet řádku, kombinace a permutace s opakováním. Cíl: žák správně indexuje trojúhelník, vysvětlí jeho konstrukci a počítá monotónní cesty i cesty přes pevný bod. Důraz je na propojení tří pohledů: součty, výběr pozic kroků, mřížka.}
+
+\blok{Výklad a odvození}
+\begin{definiceBox}
+\textbf{Pascalův trojúhelník} je uspořádání kombinačních čísel do řádků. Řádek s indexem $n\in\mathbb N_0$ obsahuje postupně $\binom n0,\binom n1,\ldots,\binom nn$. Má $n+1$ členů; první řádek má index $0$.
+\end{definiceBox}
+
+Na krajích je vždy jedna; každý vnitřní člen je součtem dvou členů bezprostředně nad ním. Platnost konstrukce zaručuje Pascalův vztah, krajní hodnoty zaručuje $\binom n0=\binom nn=1$.
+\begin{center}
+\begin{tikzpicture}
+ \node at (-2.2,0.5) {$n$};
+ \node at (0,0.5) {čísla v řádku};
+ \draw (-1.85,0.75)--(-1.85,-2.9);
+ \foreach \n/\hodnoty in {0/{1},1/{1,1},2/{1,2,1},3/{1,3,3,1},4/{1,4,6,4,1},5/{1,5,10,10,5,1}} {
+   \node at (-2.2,-0.52*\n) {$\n$};
+   \foreach \v [count=\k from 0] in \hodnoty {
+     \node at (0.62*\k-0.31*\n,-0.52*\n) {$\v$};
+   }
+ }
+\end{tikzpicture}
+\end{center}
+Zrcadlová shoda čísel odpovídá symetrii; součet řádku $n$ je $2^n$. Index $k$ počítáme zleva od nuly, nikoli od jedné.\begin{definiceBox}
+\textbf{Monotónní cesta v jednotkové mřížce} zde používá pouze jednotkové kroky doprava $D$ a nahoru $N$. Cesta z $(0,0)$ do $(a,b)$ pro celá $a,b\geq0$ má právě $a+b$ kroků a je nejkratší cestou po hranách mřížky mezi těmito body.
+\end{definiceBox}
+
+Každá cesta je řetězec s $a$ znaky D a $b$ znaky N. Vybereme pozice kroků D a ostatní jsou určeny. Proto
+\[
+ \text{počet cest}=\binom{a+b}{a}=\binom{a+b}{b}
+ =\frac{(a+b)!}{a!\,b!}.
+\]
+Tím se výběr pozic shoduje s permutací opakovaných kroků. I mřížka sama dává Pascalův vztah: do vnitřního bodu přijdeme buď zleva, nebo zdola. Tyto dvě skupiny cest jsou disjunktní a jejich počty se sčítají. Na osách je do každého bodu pouze jedna monotónní cesta.
+
+Má-li cesta projít bodem $(u,v)$, musí být $0\leq u\leq a$, $0\leq v\leq b$. Volbu cesty k tomuto bodu a od něj násobíme, protože každá dvojice úseků určí právě jednu celou cestu. Pro bod mimo tento obdélník není taková monotónní cesta možná.
+
+
+\poznamka{Průběh: 0–10 min sestavení řádků a P1; 10–18 min indexy, P2 a P5; 18–31 min P3–P4; 31–42 min C1–C5; 42–45 min kontrola. P5 je krátké čtení z trojúhelníku, nikoli další dlouhý výpočet. Při pomalejším tempu přesuň C5 do domácí práce.}
+
+\blok{Společně řešené příklady}
+
+% Zdroj P1: import_hodiny/38_Pascaluv_trojuhelnik.tex, Příklad 1.
+\begin{prikladReseniBox}[title={Příklad P1}]
+Doplň řádek \(n=6\) Pascalova trojúhelníku.
+\tcblower
+Vyjdeme z řádku $n=5$: $1,5,10,10,5,1$. Doplníme krajní jedničky a mezi ně součty sousedních hodnot: $1+5=6$, $5+10=15$, $10+10=20$, $10+5=15$, $5+1=6$. Výsledný řádek $n=6$ je $1,6,15,20,15,6,1$. Má sedm členů, je symetrický a jeho součet je $64=2^6$.
+\end{prikladReseniBox}
+
+
+% Zdroj P2: import_hodiny/38_Pascaluv_trojuhelnik.tex, Příklad 2.
+\begin{prikladReseniBox}[title={Příklad P2}]
+Urči součet čísel v řádku \(n=5\).
+\tcblower
+Součet \(1+5+10+10+5+1=32\). Také přímo \(2^5=32\), protože řádek tvoří \(\binom5k\).
+\end{prikladReseniBox}
+
+
+% Zdroj P3: import_hodiny/38_Pascaluv_trojuhelnik.tex, Příklad 3.
+\begin{prikladReseniBox}[title={Příklad P3}]
+Kolik je nejkratších cest z \((0,0)\) do \((3,4)\), pouze doprava a nahoru?
+\tcblower
+Každá cesta je posloupnost sedmi kroků, v níž jsou právě tři \(D\) a čtyři \(N\). Výběr tří pozic pro \(D\): \(\binom73=35\).
+\end{prikladReseniBox}
+
+
+% Zdroj P4: import_hodiny/38_Pascaluv_trojuhelnik.tex, Příklad 4.
+\begin{prikladReseniBox}[title={Příklad P4}]
+Kolik monotónních cest z $(0,0)$ do $(4,3)$ prochází bodem $(2,1)$?
+\tcblower
+Od $(0,0)$ k $(2,1)$ potřebujeme dvě D a jedno N: $\binom32=3$ cesty. Od $(2,1)$ k $(4,3)$ se souřadnice změní o $(2,2)$: potřebujeme dvě D a dvě N, tedy $\binom42=6$ cest. Každý první úsek lze spojit s každým druhým, takže celkem $3\cdot6=18$. Průchod bodem jednoznačně rozděluje celou cestu, proto žádnou nezapočítáme dvakrát.
+\end{prikladReseniBox}
+
+\begin{center}
+\begin{tikzpicture}[scale=0.62]
+ \draw[step=1,black!25] (0,0) grid (4,3);
+ \draw[->] (0,0)--(4.7,0) node[right] {$x$};
+ \draw[->] (0,0)--(0,3.6) node[above] {$y$};
+ \draw[very thick,->] (0,0)--(1,0)--(1,1)--(2,1);
+ \draw[very thick,->] (2,1)--(3,1)--(3,2)--(4,2)--(4,3);
+ \fill (0,0) circle (2pt) node[below left] {$O(0,0)$};
+ \fill (2,1) circle (2pt) node[below right] {$P(2,1)$};
+ \fill (4,3) circle (2pt) node[above right] {$Q(4,3)$};
+\end{tikzpicture}
+\end{center}
+\poznamka{Náčrt ukazuje jednu přípustnou cestu k P a její pokračování k Q. Nejde o výpis všech cest; číslo 18 získáme násobením počtů obou úseků.}
+
+% Zdroj P5: import_hodiny/38_Pascaluv_trojuhelnik.tex, Příklad 5.
+\begin{prikladReseniBox}[title={Příklad P5}]
+Najdi v řádku \(n=8\) číslo se spodním indexem \(k=2\).
+\tcblower
+Je to \(\binom82=28\). Můžeme ho získat Pascalovým součtem \(\binom71+\binom72=7+21=28\).
+\end{prikladReseniBox}
+
+
+\newpage
+\blok{Samostatná práce a zásoba k procvičení}
+
+Řádky vždy označ indexem $n$. U C4–C5 i všech cest v této přípravě jsou povoleny pouze jednotkové kroky doprava a nahoru po hranách mřížky.
+
+% Zdroj C1: import_hodiny/38_Pascaluv_trojuhelnik.tex, Procvičování, položka 1.
+\begin{zadaniReseniBox}[title={Úloha C1}]
+Vypiš řádek \(n=4\).
+\tcblower
+Z řádku $1,3,3,1$ vytvoříme součty $1+3,3+3,3+1$ a přidáme kraje: řádek $n=4$ je $1,4,6,4,1$.
+\end{zadaniReseniBox}
+
+% Zdroj C2: import_hodiny/38_Pascaluv_trojuhelnik.tex, Procvičování, položka 2.
+\begin{zadaniReseniBox}[title={Úloha C2}]
+Urči střední číslo řádku \(n=6\).
+\tcblower
+Řádek $n=6$ má sedm členů. Střední je čtvrtý zleva, tedy s indexem $k=3$: $\binom63=20$.
+\end{zadaniReseniBox}
+
+% Zdroj C3: import_hodiny/38_Pascaluv_trojuhelnik.tex, Procvičování, položka 3.
+\begin{zadaniReseniBox}[title={Úloha C3}]
+Urči součet řádku \(n=7\).
+\tcblower
+Součet celého řádku je podle počtu všech podmnožin $2^7=128$.
+\end{zadaniReseniBox}
+
+% Zdroj C4: import_hodiny/38_Pascaluv_trojuhelnik.tex, Procvičování, položka 4.
+\begin{zadaniReseniBox}[title={Úloha C4}]
+Kolik monotónních nejkratších cest vede z $(0,0)$ do $(2,3)$, povolujeme-li jen jednotkové kroky doprava a nahoru?
+\tcblower
+Potřebujeme dvě D a tři N, celkem pět kroků. Pozice dvou D vybíráme $\binom52=10$ způsoby; ostatní pozice obsadí N.
+\end{zadaniReseniBox}
+
+% Zdroj C5: import_hodiny/38_Pascaluv_trojuhelnik.tex, Procvičování, položka 5.
+\begin{zadaniReseniBox}[title={Úloha C5}]
+Kolik monotónních nejkratších cest vede z $(0,0)$ do $(4,2)$ přes $(2,1)$, povolujeme-li jen jednotkové kroky doprava a nahoru?
+\tcblower
+K bodu $(2,1)$ vedou tři kroky, z toho dvě D: $\binom32=3$ možnosti. Druhý úsek má opět posun $(2,1)$, tedy další tři možnosti. Počty úseků násobíme: $3\cdot3=9$.
+\end{zadaniReseniBox}
+
+
+\poznamka{Typické chyby: zaměnění indexu řádku a jeho pořadového čísla; zaměnění bodů za kroky; sčítání počtů dvou po sobě jdoucích úseků. U P4 je sedm kroků celkem, ale rozdělují se na tři a čtyři. Příště se řádky trojúhelníku objeví jako koeficienty rozvoje mocnin dvojčlenu.}
+\end{document}

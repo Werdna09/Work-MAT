@@ -1,0 +1,84 @@
+% Hodina 50, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 50.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/06_Rozklad_mnohoclenu_na_soucin_I_vytykani_.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/06%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20I%20(vyt%C3%BDk%C3%A1n%C3%AD).pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/07_Rozklad_mnohoclenu_na_soucin_II_vzorce_.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/07%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20II%20(vzorce).pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/08_Rozklad_mnohoclenu_na_soucin_III.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/08%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20III.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{50}{Kombinované rozklady}
+
+\begin{document}
+
+\blok{Výklad a souvislosti}
+
+Rozklad obvykle nezačíná hledáním vzorce naslepo. Nejprve zkus vytknout společný činitel. Potom zkontroluj, zda zbylá závorka odpovídá známému vzorci. Každý získaný činitel ještě prohlédni.
+
+\begin{definiceBox}[title={Připomenutí definice},breakable=false]
+\textbf{Rozklad na součin} mění zápis součtu na součin se stejnou hodnotou pro všechna přípustná dosazení. Ověřujeme jej zpětným roznásobením.
+\end{definiceBox}
+
+
+Používej vytýkání, rozdíl čtverců a rozpoznání druhé mocniny dvojčlenu. V některých trojčlenech lze prostřední člen rozdělit a potom seskupovat. Tím neřešíme kvadratickou rovnici; jen kontrolujeme součin podle známého násobení závorek.
+
+\blok{Řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Rozlož $3x^3-12x$.
+\tcblower
+Nejprve $3x(x^2-4)$, potom $3x(x-2)(x+2)$. Kdybychom vynechali vytýkání, rozdíl čtverců by nebyl ihned patrný.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Rozlož $x^4-16$ a $x^2+5x+6$.
+\tcblower
+První výraz je $(x^2-4)(x^2+4)=(x-2)(x+2)(x^2+4)$. Druhý rozdělíme na $x^2+2x+3x+6=x(x+2)+3(x+2)=(x+2)(x+3)$.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Rozlož $2a^3-8a^2+8a$.
+\item Rozlož $5x^2-45y^2$.
+\item Rozlož $x^2-x-6$ seskupením.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2a(a^2-4a+4)=2a(a-2)^2$.
+\item $5(x^2-9y^2)=5(x-3y)(x+3y)$.
+\item $x^2-3x+2x-6=x(x-3)+2(x-3)=(x+2)(x-3)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Vyžaduj popis prvního rozhodnutí, nejen konečný součin. Důkazem není shoda pro jednu číselnou hodnotu. Součet a rozdíl třetích mocnin ponech příští hodině; tento blok vystačí s vytýkáním a druhými mocninami.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Rozlož $x^4-2x^2+1$.
+\tcblower
+Rozpoznáme druhou mocninu dvojčlenu $x^2-1$: $(x^2-1)^2=(x-1)^2(x+1)^2$.
+\end{prikladReseniBox}
+
+
+\end{document}

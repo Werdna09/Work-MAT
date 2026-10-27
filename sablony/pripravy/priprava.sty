@@ -1,0 +1,82 @@
+% Spolecny styl pro ucitelske pripravy MAT (Work/MAT)
+% Verze 1.1, 2026-10-23
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{priprava}[2026/10/23 v1.1 Sablona ucitelskych priprav MAT]
+
+% Zakladni typografie a cestina
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[czech]{babel}
+\RequirePackage{lmodern}
+\RequirePackage{microtype}
+\RequirePackage{amsmath,amssymb}
+\RequirePackage{xcolor}
+\RequirePackage{enumitem}
+\RequirePackage[most]{tcolorbox}
+\RequirePackage{tabularx,booktabs,array}
+\RequirePackage{fancyhdr}
+\RequirePackage{needspace}
+\RequirePackage{geometry}
+\RequirePackage[hidelinks]{hyperref}
+
+\geometry{a4paper,top=17mm,bottom=18mm,left=23mm,right=23mm}
+\definecolor{notegray}{gray}{0.39}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{2.5pt plus 1pt minus 0.5pt}
+\setlist[itemize]{topsep=2pt,itemsep=1pt,parsep=0pt,leftmargin=1.45em}
+\setlist[enumerate]{topsep=2pt,itemsep=2pt,parsep=0pt,leftmargin=1.65em}
+\setcounter{secnumdepth}{0}
+\renewcommand{\arraystretch}{1.12}
+
+% Zahlavi: vlevo rocnik | globalni tema, vpravo cislo: nazev hodiny
+% Zapati zustava zcela prazdne.
+\pagestyle{fancy}
+\fancyhf{}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headheight}{14pt}
+\newcommand{\nastavPripravu}[4]{%
+  \fancyhead[L]{\small #1\enspace\textbar\enspace #2}%
+  \fancyhead[R]{\small #3: #4}%
+}
+
+% Minimalisticke cernobile boxy. Kazda definice zvlast.
+\tcbset{commonlesson/.style={enhanced,breakable=false,colback=white,colframe=black,
+  colbacktitle=white,coltitle=black,boxrule=0.45pt,
+  arc=0.8mm,outer arc=0.8mm,left=3mm,right=3mm,top=1.6mm,bottom=1.6mm,
+  toptitle=1mm,bottomtitle=0.7mm,fonttitle=\bfseries,
+  attach boxed title to top left={xshift=2.5mm,yshift=-1.15mm},
+  boxed title style={colback=white,colframe=white,boxrule=0pt,left=1mm,right=1mm}}}
+\newtcolorbox{zadaniBox}[1][]{commonlesson,title={Zadání},#1}
+\newtcolorbox{prikladBox}[1][]{commonlesson,title={Příklad},#1}
+\newtcolorbox{definiceBox}[1][]{commonlesson,title={Definice},#1}
+
+% Spolecny box pro zadani a jeho reseni, bez mezery mezi castmi.
+% Pouziti:
+%   \begin{prikladReseniBox}
+%     Zadani ulohy.
+%     \tcblower
+%     \begin{align*} ... \end{align*}
+%   \end{prikladReseniBox}
+% Spodni cast ma jemny sedy podklad a delici linku; lze v ni sazet
+% vice radku matematiky. Obe casti maji jen jeden spolecny ramecek.
+\tcbset{solutionlesson/.style={
+  commonlesson,
+  enhanced jigsaw,
+  breakable,
+  colbacklower=black!3,
+  segmentation style={solid,draw=black!25,line width=0.35pt},
+  fontlower=\small\color{notegray},
+  before lower={\noindent\textbf{Řešení:}\enspace},
+  leftlower=3mm,rightlower=3mm
+}}
+\newtcolorbox{prikladReseniBox}[1][]{solutionlesson,title={Příklad},#1}
+\newtcolorbox{zadaniReseniBox}[1][]{solutionlesson,title={Zadání},#1}
+
+% Pomucky pro autora pripravy: sedive poznamky; \reseni pro starsi pripravy
+\newcommand{\poznamka}[1]{\par\begingroup\small\color{notegray}\itshape
+  \textnormal{\textbf{Poznámka pro učitele.}}\enspace #1\par\endgroup}
+\newcommand{\reseni}[1]{\par\begingroup\small\color{notegray}
+  \textbf{Očekávané řešení:}\enspace #1\par\endgroup}
+\newcommand{\blok}[1]{\needspace{5\baselineskip}\subsection*{#1}}
+\newcommand{\vyrok}[1]{\uv{#1}}

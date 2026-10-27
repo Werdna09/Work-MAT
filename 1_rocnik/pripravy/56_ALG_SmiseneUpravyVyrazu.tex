@@ -1,0 +1,76 @@
+% Hodina 56, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 56.
+
+% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
+
+% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
+
+% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
+
+% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/05_Zjednodusovani_lomenych_vyrazu_I.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/05%20Zjednodu%C5%A1ov%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF%20I.pdf
+
+% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/04_Nasobeni_a_deleni_lomenych_vyrazu.pdf
+
+% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/04%20N%C3%A1soben%C3%AD%20a%20d%C4%9Blen%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF.pdf
+
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{1. ročník}{Algebraické výrazy}{56}{Smíšené úpravy výrazů}
+
+\begin{document}
+
+U složené úpravy rozhoduje pořadí kroků: stanov podmínky, rozlož potřebné mnohočleny, sečti zlomky a teprve potom krať. V některé části je výhodný součin, v jiné roznásobený tvar; volbu zdůvodni podle dalšího kroku.
+
+\begin{definiceBox}[title={Připomenutí definice},breakable=false]
+\textbf{Ekvivalentní úprava výrazu} zachovává jeho hodnotu pro každé přípustné dosazení. Při porovnávání původního a upraveného zápisu zachováváme původní definiční obor.
+\end{definiceBox}
+
+
+Sčítance nelze krátit přes znaménka plus a minus. Součinové rozklady pomáhají při násobení a dělení, společný jmenovatel při sčítání. Po úpravě zkontroluj, zda některý původní zákaz nezmizel jen zdánlivě.
+
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Uprav $\left(\frac{x}{x-1}-\frac{x+1}{x}\right)(x^2-x)$.
+\tcblower
+Nejprve $x\ne0,1$. Rozdíl v závorce má čitatel $x^2-(x+1)(x-1)=1$ a jmenovatel $x(x-1)$. Násobení výrazem $x(x-1)$ dává $1$ pro $x\ne0,1$.
+\end{prikladReseniBox}
+
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\frac{x^2-4}{x^2+4x+4}\cdot\frac{x+2}{x-2}$.
+\tcblower
+Podmínky jsou $x\ne-2,2$. Součin je $\frac{(x-2)(x+2)}{(x+2)^2}\cdot\frac{x+2}{x-2}=1$ při obou původních zákazech.
+\end{prikladReseniBox}
+
+
+\blok{Samostatné procvičení}
+
+\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{(x+1)^2-(x-1)^2}{4x}$.
+\item Uprav $\frac{x^2-1}{x^2+2x+1}+\frac2{x+1}$.
+\item Uprav $\frac{x^3-8}{x^2-4}-\frac4{x+2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $x\ne0$ je čitatel $4x$, takže výsledek je $1$.
+\item Pro $x\ne-1$ dostaneme $\frac{x-1}{x+1}+\frac2{x+1}=1$.
+\item Pro $x\ne\pm2$ nejprve zkrátíme $x-2$. Zbývá $\frac{x^2+2x+4-4}{x+2}=x$. Oba původní zákazy zachováme.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Pokud žák příklad zbytečně prodlužuje, neukazuj rovnou výsledek: nech ho označit, který činitel bude chtít později krátit. Samostatné c) propojuje rozdíl krychlí s rozdílem čtverců; při pomalejším tempu je vhodné jako domácí procvičení.}
+
+\blok{Volitelná rezerva}
+
+\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
+Uprav $\dfrac{a/b-b/a}{a/b+b/a}$ pro reálné proměnné a urči obor.
+\tcblower
+Vnitřní zlomky vyžadují $a,b\ne0$. Dolní výraz je $(a^2+b^2)/(ab)$ a na tomto oboru nikdy není nulový. Výsledek je $(a^2-b^2)/(a^2+b^2)$ při $a,b\ne0$.
+\end{prikladReseniBox}
+
+
+\end{document}

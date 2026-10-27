@@ -1,0 +1,164 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\section*{Komplexní čísla A/B -- řešení běžného testu}
+Podklad pro učitele k testu \texttt{01\_test\_KomplexniCisla\_AB.tex}, šablona A5×2.
+
+Zdroj všech deseti zadání: přímé zadání učitele v této konverzaci,
+ve zprávě začínající „Potřebuji upravit organizaci testů na komplexní čísla.“
+Úlohy A1 až A5 odpovídají položkám 1 až 5 pod nadpisem „Varianta A“;
+obdobně B1 až B5 položkám pod nadpisem „Varianta B“.
+Zadání jsou převzata beze změn. Úhly uvádíme ve stupních.
+
+Zařazení: 3.~ročník SPŠ, tematický plán\\
+\texttt{3\_rocnik/tematicke\_plany/SPS.pdf}, s.~1, body 1.1--1.3,
+září, společná zářijová dotace pro komplexní čísla je 9 hodin.
+
+\subsection*{Varianta A}
+\begin{enumerate}
+\item Využijeme periodu čtyři mocnin imaginární jednotky:
+\[
+i^{14}=-1,\qquad i^{19}=-i,\qquad i^{24}=1,\qquad i^7=-i.
+\]
+Proto
+\[
+3i^{14}-2i^{19}+i^{24}-4i^7
+=-3+2i+1+4i=-2+6i.
+\]
+
+\item Pro $z=-\sqrt3+i$ platí
+\[
+|z|=\sqrt{(-\sqrt3)^2+1^2}=2,\qquad
+\cos\varphi=-\frac{\sqrt3}{2},\quad \sin\varphi=\frac12.
+\]
+Číslo leží ve II.~kvadrantu, volíme tedy $\varphi=150^\circ$.
+Goniometrický tvar je
+\[
+z=2(\cos150^\circ+i\sin150^\circ).
+\]
+Zpětný převod dává $2(-\frac{\sqrt3}{2}+\frac12i)=-\sqrt3+i$.
+
+\item Dosadíme hodnoty goniometrických funkcí:
+\[
+z=6(\cos150^\circ+i\sin150^\circ)
+=6\left(-\frac{\sqrt3}{2}+\frac12i\right)=-3\sqrt3+3i.
+\]
+Kontrola modulu: $\sqrt{27+9}=6$; číslo leží ve II.~kvadrantu
+a jeho složky po vydělení šesti odpovídají úhlu $150^\circ$.
+
+\item Pro $z_1=3+2i$, $z_2=1-i\neq0$ postupně dostáváme
+\begin{align*}
+z_1+z_2&=(3+2i)+(1-i)=4+i,\\
+z_1-z_2&=(3+2i)-(1-i)=2+3i,\\
+z_1z_2&=(3+2i)(1-i)=3-3i+2i-2i^2=5-i,\\
+\frac{z_1}{z_2}
+&=\frac{(3+2i)(1+i)}{(1-i)(1+i)}
+=\frac{1+5i}{2}=\frac12+\frac52i.
+\end{align*}
+Kontrola podílu zpětným násobením:
+$(\frac12+\frac52i)(1-i)=3+2i=z_1$.
+
+\item Pro $z_1=4(\cos120^\circ+i\sin120^\circ)$ a
+$z_2=2(\cos30^\circ+i\sin30^\circ)$
+při násobení násobíme moduly a sčítáme argumenty:
+\[
+z_1z_2=8\bigl(\cos(120^\circ+30^\circ)+i\sin(120^\circ+30^\circ)\bigr)
+=8(\cos150^\circ+i\sin150^\circ).
+\]
+Při dělení dělíme moduly a odečítáme argumenty. Protože $|z_2|=2>0$,
+\[
+\frac{z_1}{z_2}
+=2\bigl(\cos(120^\circ-30^\circ)+i\sin(120^\circ-30^\circ)\bigr)
+=2(\cos90^\circ+i\sin90^\circ).
+\]
+Nezávislá kontrola v algebraickém tvaru:
+$z_1=-2+2\sqrt3i$, $z_2=\sqrt3+i$.
+Přímé násobení dává $z_1z_2=-4\sqrt3+4i$, což odpovídá
+$8(\cos150^\circ+i\sin150^\circ)$.
+Podíl odpovídá číslu $2i$ a $(2i)(\sqrt3+i)=-2+2\sqrt3i=z_1$.
+\end{enumerate}
+
+\newpage
+\section*{Komplexní čísla -- varianta B}
+Řešení běžného testu \texttt{01\_test\_KomplexniCisla\_AB.tex}.
+\begin{enumerate}
+\item Z periody čtyři mocnin imaginární jednotky plyne
+\[
+i^{15}=-i,\qquad i^{18}=-1,\qquad i^{21}=i,\qquad i^{28}=1.
+\]
+Proto
+\[
+2i^{15}+3i^{18}-i^{21}+5i^{28}
+=-2i-3-i+5=2-3i.
+\]
+
+\item Pro $z=-1+\sqrt3i$ platí
+\[
+|z|=\sqrt{(-1)^2+(\sqrt3)^2}=2,\qquad
+\cos\varphi=-\frac12,\quad \sin\varphi=\frac{\sqrt3}{2}.
+\]
+Číslo leží ve II.~kvadrantu, volíme tedy $\varphi=120^\circ$.
+Goniometrický tvar je
+\[
+z=2(\cos120^\circ+i\sin120^\circ).
+\]
+Zpětný převod dává $2(-\frac12+\frac{\sqrt3}{2}i)=-1+\sqrt3i$.
+
+\item Dosadíme hodnoty goniometrických funkcí:
+\[
+z=8(\cos210^\circ+i\sin210^\circ)
+=8\left(-\frac{\sqrt3}{2}-\frac12i\right)=-4\sqrt3-4i.
+\]
+Kontrola modulu: $\sqrt{48+16}=8$; číslo leží ve III.~kvadrantu
+a jeho složky po vydělení osmi odpovídají úhlu $210^\circ$.
+
+\item Pro $z_1=2+3i$, $z_2=1+i\neq0$ postupně dostáváme
+\begin{align*}
+z_1+z_2&=(2+3i)+(1+i)=3+4i,\\
+z_1-z_2&=(2+3i)-(1+i)=1+2i,\\
+z_1z_2&=(2+3i)(1+i)=2+2i+3i+3i^2=-1+5i,\\
+\frac{z_1}{z_2}
+&=\frac{(2+3i)(1-i)}{(1+i)(1-i)}
+=\frac{5+i}{2}=\frac52+\frac12i.
+\end{align*}
+Kontrola podílu zpětným násobením:
+$(\frac52+\frac12i)(1+i)=2+3i=z_1$.
+
+\item Pro $z_1=6(\cos150^\circ+i\sin150^\circ)$ a
+$z_2=3(\cos60^\circ+i\sin60^\circ)$
+při násobení násobíme moduly a sčítáme argumenty:
+\[
+z_1z_2=18\bigl(\cos(150^\circ+60^\circ)+i\sin(150^\circ+60^\circ)\bigr)
+=18(\cos210^\circ+i\sin210^\circ).
+\]
+Při dělení dělíme moduly a odečítáme argumenty. Protože $|z_2|=3>0$,
+\[
+\frac{z_1}{z_2}
+=2\bigl(\cos(150^\circ-60^\circ)+i\sin(150^\circ-60^\circ)\bigr)
+=2(\cos90^\circ+i\sin90^\circ).
+\]
+Nezávislá kontrola v algebraickém tvaru:
+$z_1=-3\sqrt3+3i$, $z_2=\frac32+\frac{3\sqrt3}{2}i$.
+Přímé násobení dává $z_1z_2=-9\sqrt3-9i$, což odpovídá
+$18(\cos210^\circ+i\sin210^\circ)$.
+Podíl odpovídá číslu $2i$ a
+$(2i)(\frac32+\frac{3\sqrt3}{2}i)=-3\sqrt3+3i=z_1$.
+\end{enumerate}
+
+\subsection*{Kontrola a srovnatelnost variant}
+Ve druhé úloze lze k uvedenému argumentu přičíst libovolný celočíselný
+násobek $360^\circ$. Všechny použité jmenovatele jsou nenulové.
+Mocniny imaginární jednotky byly nezávisle ověřeny opakovaným násobením,
+ostatní výpočty přesnou aritmetikou a goniometrické převody také numericky.
+Pátá úloha používá pravidla pro součin a podíl dvou komplexních čísel.
+
+Obě varianty mají stejný počet úloh, shodné postupy a srovnatelnou náročnost.
+Orientační časy úloh jsou 2--3, 2--3, 1--2, 6--8 a 4--6 minut;
+celkem přibližně 20--25 minut včetně kontroly. Odhad nebyl ověřen ve třídě.
+\end{document}
