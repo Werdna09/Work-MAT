@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 58, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 58.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -71,5 +73,41 @@ Původní obor je $x\ne1$. Pro $x=2$ obě strany dávají $3$, pro $x=-1$ dávaj
 
 
 \poznamka{Formulace rozpisu „důkaz správnosti dosazením“ zde znamená kontrolní dosazení doplněné obecným zdůvodněním. Neuč, že konečný počet souhlasných pokusů automaticky dokazuje rovnost výrazů. Při pomalejším tempu zvol jedno rozložení a jednu lomenou úpravu a nech zdůvodnit každý krok.}
+
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Rezerva: odhal chybu, potom dokaž správnou verzi},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Žák tvrdí $\frac{x^2+1}{x+1}=x$. Zvol přípustnou hodnotu, která chybu odhalí, a vyděl se zbytkem.
+\item Ověř rozklad $x^3+3x^2-4=x^2(x+3)-4$. Je to už rozklad na součin? Najdi součin pomocí dělení výrazem $x-1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $x=0$ je vlevo $1$, vpravo $0$. Dělení dává $x-1+\frac2{x+1}$ pro $x\ne-1$, protože $(x+1)(x-1)+2=x^2+1$.
+\item Uvedená rovnost je pravdivá, ale pravá strana je stále rozdíl. Dělením dostaneme $x^3+3x^2-4=(x-1)(x^2+4x+4)=(x-1)(x+2)^2$. Roznásobení dokazuje identitu pro všechna reálná $x$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Základ: původní ověřování rozkladu, lomeného výrazu a dělení. Nová dvojice je diagnostická rezerva podle chyb z hodiny 57; nevyžaduj její řešení každým žákem. Domácí čtveřice odlišuje protipříklad od obecného důkazu a zachovává opakovací charakter. Nepřidáváme nové učivo ani další test.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí ověření},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Najdi protipříklad k $(x-1)^2=x^2-1$ a napiš správný rozvoj.
+\item Obecně ověř $\frac{x^2-9}{x-3}=x+3$ a určuj původní obor.
+\item Ověř dělení $x^3+1=(x-1)(x^2+x+1)+2$.
+\item Ověř $\frac1{x-1}+\frac1{x+1}=\frac{2x}{x^2-1}$ na původním oboru.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $x=0$ je $1\ne-1$. Správně $x^2-2x+1$.
+\item $x\ne3$; čitatel $(x-3)(x+3)$ dovoluje krátit nenulový činitel. Například při $x=0$ obě strany dávají $3$.
+\item Roznásobením pravé strany dostaneme $x^3-1+2=x^3+1$. Zbytek $2$ má stupeň $0<1$. Identita platí i pro $x=1$; podíl hodnot by tam definován nebyl.
+\item $x\ne\pm1$; čitatel po rozšíření je $(x+1)+(x-1)=2x$. Kontrolní dosazení třeba $x=0$ dává $0$ na obou stranách, obecný důkaz je úprava.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

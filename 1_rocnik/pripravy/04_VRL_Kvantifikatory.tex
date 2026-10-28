@@ -1,3 +1,10 @@
+% Revize: prostudovány indexované pasáže Realisticky.cz, nikoli celé přímé PDF.
+% 1.4.8: Př. 5, obě možné pravdivé kvantifikace
+% https://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/04%20Form%C3%A1ln%C3%AD%20logika%20%28v%C3%BDroky%29/08%20Kvantifikovan%C3%A9%20v%C3%BDroky.pdf
+% 1.4.9: Př. 8-9, negace a svědek
+% https://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/04%20Form%C3%A1ln%C3%AD%20logika%20%28v%C3%BDroky%29/09%20Negace%20kvantifikovan%C3%BDch%20v%C3%BDrok%C5%AF.pdf
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % 04_VRL_Kvantifikatory.tex
 % Příprava: 1. ročník, hodina 04, Výroková logika; běžná hodina 45 minut.
 % Návaznost: 02_VRL_CoJeVyrok.tex (otevřená formule),
@@ -10,7 +17,8 @@
 % b): „Negace výroků – jednoduché“, položka „Každé prvočíslo je liché“;
 % c): „Negace výroků s kvantifikátory“, poslední položka.
 % Ostatní konkrétní zadání a řešení: vlastní tvorba pro tuto přípravu.
-% Relevantní místní podklad Realisticky.cz nebyl nalezen; není použit.
+% Při původní tvorbě místní podklad Realisticky.cz nebyl použit.
+% Při této revizi ověřeny níže uvedené indexované pasáže webových lekcí.
 % Kompilace z Work/MAT: latexmk -cd -pdf -interaction=nonstopmode -halt-on-error 1_rocnik/pripravy/04_VRL_Kvantifikatory.tex
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
@@ -143,7 +151,7 @@ Nestačí jen zaměnit $\forall$ a $\exists$ nebo jen přidat zápor.}
 U každé položky zapiš původní výrok i jeho negaci pomocí kvantifikátoru,
 negaci přečti slovy a urči pravdivost obou výroků. Odpověď zdůvodni.
 \begin{enumerate}[label=\alph*)]
-  \item Doplň kvantifikátor tak, aby vznikl pravdivý výrok o všech
+  \item Doplň obecný kvantifikátor a ověř pravdivost výroku o všech
   reálných číslech: $\ldots\ x\in\mathbb{R}:\ x^2+1>0$.
   \item Každé prvočíslo je liché.
   \item Existuje přirozené číslo, které je menší než nula.
@@ -174,6 +182,21 @@ přirozená čísla; výsledek c) nezávisí na tom, zda mezi ně zahrnujeme nul
 Při pomalejším tempu řeš společně a), samostatně b) a c);
 následující rozšíření vynech.}
 
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Rezerva: proč záleží na množině},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Rozhodni o výroku $\forall x\in M:\ x>0$ nejprve pro $M=\{1,2,3\}$, pak pro $M=\{0,1,2\}$. Napiš jeho negaci.
+\item Je pravdivá věta \uv{Existuje právě jedno celé číslo, jehož druhá mocnina je $4$}? A co věta bez slov \uv{právě jedno}?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item V prvním případě pravdivý, ve druhém nepravdivý kvůli $0$. Negace v obou případech zní $\exists x\in M:\ x\le0$; má opačnou pravdivost.
+\item První nepravdivá: vyhovují $-2$ a $2$. Existenční věta bez požadavku jedinečnosti je pravdivá.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \blok{Volitelné rozšíření: kvantifikátor a implikace}
 \begin{prikladReseniBox}
 Neguj výrok $\forall n\in\mathbb{Z}:\ (n>0\Rightarrow n>1)$.
@@ -196,5 +219,24 @@ předpoklad $n>0$ je pro něj nepravdivý.}
 \textbf{Shrnutí na tabuli:} $\forall$: pro každé.
 $\exists$: alespoň jeden. Při negaci zaměníme kvantifikátor,
 negujeme vlastnost a zachováme množinu.
+
+
+\poznamka{Základ tvoří původní konečná množina, matematická věta a negace se zdůvodněním. Nové otázky o množině jsou rezerva; mohou nahradit původní rozšíření s implikací. Domácí trojice procvičuje hranici nerovnosti a hledání svědka či protipříkladu; nestačí jen prohodit značky kvantifikátorů.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí negace a zdůvodnění},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Neguj $\forall n\in\mathbb Z:\ n^2>0$. Urči pravdivost obou výroků.
+\item Neguj $\exists n\in\mathbb Z:\ n<0$. Urči pravdivost obou výroků.
+\item Neguj $\forall x\in\{1,2,3\}:\ x<4$. Urči pravdivost obou výroků.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\exists n\in\mathbb Z:\ n^2\le0$. Původní výrok nepravdivý, negace pravdivá: $n=0$.
+\item $\forall n\in\mathbb Z:\ n\ge0$. Původní pravdivý díky $n=-1$, negace nepravdivá.
+\item $\exists x\in\{1,2,3\}:\ x\ge4$. Původní pravdivý kontrolou všech tří prvků, negace nepravdivá.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

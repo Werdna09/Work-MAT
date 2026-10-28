@@ -1,0 +1,138 @@
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 10, T1.
+% Rozsah: logika a číselné obory z hodin 02–09, nikoli množiny z 12 a dalších hodin.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Vyrokova_logika/Výroková logika.tex,
+% Implikace, Negace složených výroků, Kvantifikované výroky a jejich negace;
+% Ciselne_obory/Číselné obory.tex, Porovnávání racionálních čísel a Intervaly.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/
+% 04_Formalni_logika_vyroky/010410_Formalni_logika_shrnuti/010410_Lekce.pdf,
+% úvodní shrnutí a Zádrhele; dále 02_Ciselne_obory/010203_Racionalni_cisla_I/
+% 010203_Lekce.pdf (dělení nulou, zápisy). Modelové opravné úlohy jsou vlastní tvorba.
+% Toto je pouze učitelská příprava, nikoli test ani návrh jeho konkrétní skladby.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Číselné obory}{10}{Průběžný test a rozbor}
+\begin{document}
+
+\blok{Organizace hodiny}
+Před hodinou zajisti samostatně připravené a schválené zadání průběžného
+testu z výrokové logiky a číselných oborů. Jeho vznik patří do postupu
+\texttt{vytvor-test}; tato příprava žádná testová zadání neobsahuje.
+Ověř soulad s hodinami 02–09: spojky, kvantifikátory a negace,
+číselné obory, znaménka, zlomky, osa, zaokrouhlování, intervaly a význam
+absolutní hodnoty. Zatím nepatří množinové operace ani obecné algoritmy
+řešení rovnic s absolutní hodnotou.
+
+\poznamka{Orientační průběh 45 min: organizace 2 min, test 18 min,
+krátký rozbor 8 min, navazující procvičení 12 min, závěrečná kontrola
+3 min a zadání domácí práce 2 min. Délku testu lze zvolit v rozmezí
+15–20 min; následné procvičení tomu uprav. Rezervní blok níže je zásoba
+na 10–15 min, kterou vybíráš místo části běžného procvičení, nikoli navíc
+k celému programu. Domácí práce přibližně 10–15 min.}
+
+Na začátku sděl délku testu, způsob odevzdání a pomůcky podle schváleného
+zadání. Během testu poskytuj jen organizační vysvětlení, nikoli nápovědu
+k řešení. Po vybrání zadání odděl hodnocenou práci od společné výuky.
+
+\blok{Krátký rozbor: pojmenovat chybu a opravit postup}
+Podle skutečně použitého zadání vyber dvě až tři důležité situace.
+Neopisuj celé řešení testu; nech nejprve žáky říci, kde rozhodovalo
+znaménko, obor proměnné nebo krajní bod. Pokud výsledky ještě nejsou
+opravené, použij následující \emph{modelové} chyby a skutečná zjištění
+z písemek přenes do hodiny 11. Neprohlašuj modelovou chybu za zjištěnou chybu třídy.
+
+\begin{definiceBox}
+Připomenutí: \textbf{negace výroku} má opačnou pravdivostní hodnotu
+než původní výrok. Nestačí napsat jiné nepravdivé tvrzení;
+negace musí pokrýt právě všechny případy, kdy původní výrok neplatí.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={P1: společný rozbor dvou modelových chyb},breakable=false]
+a) Žák negoval \uv{Každé celé číslo je kladné} větou
+\uv{Každé celé číslo je záporné}. Oprav negaci.
+
+b) Jiný žák přepsal $-1\le x<2$, $x\in\mathbb R$, jako $(-1;2\rangle$.
+Oprav zápis a ověř oba krajní body.
+\tcblower
+a) Správně: \uv{Existuje celé číslo, které není kladné}, tedy
+$\exists x\in\mathbb Z:\ x\le0$. Původní výrok je nepravdivý,
+negace pravdivá, například díky $x=0$. Neplatnost obecného výroku
+neznamená, že opačnou vlastnost mají všechny prvky.
+
+b) $\langle-1;2)$. Číslo $-1$ vyhovuje, číslo $2$ nevyhovuje;
+u každého kraje se proto musí změnit druh závorky.
+\end{prikladReseniBox}
+
+\blok{Navazující procvičování podle potřeby}
+\poznamka{Z následujících dvou bloků zvol základ podle pozorovaných potíží.
+Rychlejší žáci zpracují oba. Žák nejprve řeší samostatně, pak vysvětlí
+spolužákovi první rozhodující krok. Spodní části slouží učiteli ke kontrole.}
+
+\begin{zadaniReseniBox}[title={S1: znaménko, zlomek, interval},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočti $-18:(-3)-2\cdot[4-(-1)]$.
+\item Porovnej $-\frac56$ a $-\frac45$ a ukaž společného jmenovatele.
+\item Pro $x\in\mathbb R$ zapiš $-2<x\le0$ intervalem a nakresli osu.
+Patří tam $-2$, $-\frac12$ a $0$?
+\item Vypočti vzdálenost bodů $-3$ a $1$; je stejná jako rozdíl $-3-1$?
+\end{enumerate}
+\tcblower
+a) $6-2\cdot5=-4$.
+b) $-\frac{25}{30}<-\frac{24}{30}$, tedy $-\frac56<-\frac45$.
+c) $(-2;0\rangle$: prázdný kraj $-2$, plný $0$; patří $-\frac12$ a $0$.
+d) $|-3-1|=4$, ale rozdíl $-3-1=-4$; vzdálenost je nezáporná.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={S2: pravdivost a negace},breakable=false]
+Nechť $A$ je výrok $0\in\mathbb N$ a $B$ výrok $-2\in\mathbb Z$.
+Urči pravdivost $A\lor B$, $A\land B$, $A\Rightarrow B$, $B\Rightarrow A$,
+$A\Leftrightarrow B$. Potom neguj $\exists x\in\mathbb Q:\ x>3$.
+\tcblower
+Při naší konvenci je $A$ nepravdivý, $B$ pravdivý.
+Postupně: pravda, nepravda, pravda, nepravda, nepravda.
+Implikace je nepravdivá jen při pravdivém předpokladu a nepravdivém závěru.
+Negace: $\forall x\in\mathbb Q:\ x\le3$.
+Původní existenční výrok je pravdivý například pro $x=4$, negace nepravdivá.
+\end{zadaniReseniBox}
+
+\blok{Rezerva a závěrečná zpětná vazba}
+\begin{zadaniReseniBox}[title={R1: volitelná zásoba, 10–15 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Oprav výrok \uv{Každý nekonečný desetinný rozvoj je iracionální}
+pomocí protipříkladu. Co k určení iracionality chybí?
+\item Číslo $3{,}449$ zaokrouhli přímo na desetiny, potom přes setiny.
+Vysvětli rozdíl.
+\item Vyvrať $|a-b|=|a|-|b|$ vhodnou dvojicí čísel a vysvětli levý výraz.
+\end{enumerate}
+\tcblower
+a) $\frac13=0{,}\overline3$ je racionální. Iracionální číslo má rozvoj
+nekonečný a neperiodický, nikoli pouze nekonečný.
+b) Přímo $3{,}4$; přes $3{,}45$ vyjde $3{,}5$. Zaokrouhlujeme z původního čísla.
+c) Například $a=0,b=2$: vlevo $2$, vpravo $-2$.
+Levá strana vyjadřuje vzdálenost bodů $a,b$.
+\end{zadaniReseniBox}
+
+\poznamka{Závěr: každý žák napíše jednu chybu, které nyní rozumí,
+a jeden konkrétní správný příklad. Pro hodinu 11 si zaznamenej skutečné
+typy obtíží bez osobních údajů. Nezaměňuj tuto zpětnou vazbu za další test.}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: přibližně 10–15 minut},breakable=false]
+\begin{enumerate}[label=\arabic*)]
+\item Vypočti $-4-(-9)+2\cdot(-3)$ a vzdálenost bodů $-2$ a $5$.
+\item Zkrať $\frac{-42}{63}$ a porovnej výsledek s $-\frac35$.
+\item Zapiš intervalem $0\le x<4$, $x\in\mathbb R$, a zakresli ho.
+\item Neguj $\forall x\in\mathbb Z:\ x\ne0$ a rozhodni o pravdivosti
+původního výroku i negace.
+\item Pro nepravdivý $A$ a pravdivý $B$ urči pravdivost
+$A\Rightarrow B$ a $\neg(A\Rightarrow B)$. Vysvětli.
+\end{enumerate}
+\tcblower
+1. $5-6=-1$; $|-2-5|=7$.
+2. $-\frac23=-\frac{10}{15}<-\frac9{15}=-\frac35$.
+3. $\langle0;4)$: plný kraj $0$, prázdný $4$.
+4. $\exists x\in\mathbb Z:\ x=0$; původní nepravda, negace pravda.
+5. Implikace je pravdivá, její negace nepravdivá:
+nenastal případ pravdivého předpokladu a nepravdivého závěru.
+\end{zadaniReseniBox}
+
+\end{document}

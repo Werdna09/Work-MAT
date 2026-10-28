@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{34}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Variace s opakováním a kódy}\par
+{\sffamily\large\color{teal} Výukový podklad · 34. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.1\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Odvodit \(n^k\), poznat rozdíl mezi kódem a číslem, řešit úlohy s povoleným nebo zakázaným opakováním.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Variace s opakováním} délky \(k\) z \(n\) různých symbolů: na každém místě lze vybrat kterýkoli symbol, pořadí rozhoduje. Počet \(\overline V(n,k)=n^k\).\par
+\textbf{Proti tomu variace bez opakování}: \(V(n,k)=n(n-1)\cdots(n-k+1)\), neboť po každé volbě ubude jeden dovolený symbol.\par
+\textbf{Doplňková metoda.} Počet výsledků obsahujících aspoň jeden zakázaný/daný znak lze často spočítat jako \(\text{všechny}-\text{žádný}\). Je-li zakázán první znak \(0\), musíme samostatně vyřešit první pozici.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Kolik čtyřmístných PINů používá číslice \(0\) až \(9\)?\par
+\textit{Řešení.} Kód může začít nulou a číslice se mohou opakovat. \(10^4=10\,000\).\par\smallskip
+\textbf{Příklad 2.} Kolik je čtyřciferných přirozených čísel při dovoleném opakování?\par
+\textit{Řešení.} První pozice \(9\) možností (\(1\)--\(9\)), zbývající tři \(10\). \(9\cdot10^3=9000\), nikoli \(10^4\).\par\smallskip
+\textbf{Příklad 3.} Kolik trojznakových kódů sestavíme z šesti písmen, bez opakování?\par
+\textit{Řešení.} Máme \(6\) možností na první pozici, \(5\) na druhou a \(4\) na třetí. \(6\cdot5\cdot4=120\). Pro porovnání s opakováním by to bylo \(6^3=216\).\par\smallskip
+\textbf{Příklad 4.} Trojznakové heslo z \(A,B,C,D\). Kolik hesel obsahuje právě jedno \(A\)?\par
+\textit{Řešení.} Vybereme pozici znaku \(A\) (\(3\) možnosti); zbývající dvě pozice obsadíme nezávisle jedním z \(B,C,D\) (\(3^2\) možností). \(3\cdot3^2=27\).\par\smallskip
+\textbf{Příklad 5.} Kolik trojciferných kódů z \(0\) až \(9\) obsahuje alespoň jednu sedmičku?\par
+\textit{Řešení.} Ve všech kódech je \(10^3\) možností. Žádná sedmička: \(9^3\). Alespoň jedna sedmička: \(1000-729=271\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Kolik pětic symbolů vznikne ze tří znaků, s opakováním?
+\item Kolik dvoupísmenných hesel vznikne z pěti různých písmen bez opakování?
+\item Kolik čtyřznakových kódů z pěti symbolů neobsahuje symbol X?
+\item Kolik čtyřznakových kódů ze tří znaků obsahuje alespoň jedno \(A\)?
+\item Kolik čtyřmístných čísel lze vytvořit z cifer \(0\) až \(5\), s opakováním?
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(3^5=243\).
+\item \(5\cdot4=20\).
+\item Na každé pozici zbývají \(4\) možnosti: \(4^4=256\).
+\item \(3^4-2^4=81-16=65\).
+\item První cifra \(5\) možností, ostatní \(6\): \(5\cdot6^3=1080\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item \(n^k\) neplatí pro výběr bez opakování.
+\item Heslo/pin může začínat nulou, číslo ne.
+\item „Alespoň jedno“ zpravidla počítat doplňkem, ne výčtem mnoha překrývajících se případů.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–8 porovnání PINu a čísla; 8–18 \(n^k\) a \(V(n,k)\); 18–30 omezení; 30–42 úlohy; 42–45 kontrola.\par
+\textbf{Návaznost:} Příště na pořadí přestane záležet a budeme dělit počet pořadí téhož výběru.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

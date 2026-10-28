@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 55, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 55.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -41,7 +43,17 @@ Vnitřní zlomky vyžadují $y\ne0$, celý dělitel navíc $x\ne0$. Potom $\frac
 \begin{prikladReseniBox}[title={Příklad 2},breakable=false]
 Uprav $\dfrac{\dfrac{x+1}{x-1}-1}{\dfrac{x+1}{x-1}+1}$.
 \tcblower
-Nejprve $x\ne1$. Horní část je $2/(x-1)$, dolní $2x/(x-1)$, takže navíc $x\ne0$. Podíl je $1/x$ pro $x\ne0,1$.
+Nejprve $x\ne1$ kvůli vnitřním jmenovatelům. Každou část upravíme zvlášť:
+\begin{align*}
+\frac{x+1}{x-1}-1&=\frac{(x+1)-(x-1)}{x-1}=\frac2{x-1},\\
+\frac{x+1}{x-1}+1&=\frac{(x+1)+(x-1)}{x-1}=\frac{2x}{x-1}.
+\end{align*}
+Celá dolní část musí být nenulová, proto navíc $x\ne0$. Teprve pak dělíme:
+\[
+\frac{2/(x-1)}{2x/(x-1)}=\frac2{x-1}\cdot\frac{x-1}{2x}=\frac1x,
+\qquad x\ne0,1.
+\]
+Krátíme součin, nikoli sčítance; oba původní zákazy ponecháme.
 \end{prikladReseniBox}
 
 
@@ -64,6 +76,21 @@ Nejprve $x\ne1$. Horní část je $2/(x-1)$, dolní $2x/(x-1)$, takže navíc $x
 
 \poznamka{Nech žáka nahlas označit hlavní zlomkovou čáru a celý dělitel. Podmínky dolní části nestačí pouze opsat z jejích jmenovatelů: musí být i nenulová. Rezervu se dvěma proměnnými lze dokončit doma.}
 
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Rezerva: dvě cesty k témuž výsledku},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\dfrac{1+1/x}{1-1/x}$ dvěma způsoby: úpravou každé části a rozšířením celého zlomku.
+\item Uprav $\dfrac{1/(x-1)-1/(x+1)}{1/(x-1)+1/(x+1)}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x\ne0$ kvůli vnitřním zlomkům, $x\ne1$ kvůli dolní části. První cesta: $\frac{(x+1)/x}{(x-1)/x}=\frac{x+1}{x-1}$. Druhá: rozšířit celý zlomek nenulovým $x$, což dá tentýž tvar s oběma zákazy.
+\item $x\ne\pm1$; horní část $2/(x^2-1)$, dolní $2x/(x^2-1)$, proto navíc $x\ne0$. Výsledek $1/x$ při $x\ne-1,0,1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \blok{Volitelná rezerva}
 
 \begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
@@ -72,5 +99,26 @@ Uprav $\dfrac{1/x+1/y}{1/x-1/y}$.
 Nejprve $x,y\ne0$. Dolní část je $(y-x)/(xy)$, proto navíc $y\ne x$. Rozšířením výrazem $xy$ dostaneme $(x+y)/(y-x)$ na tomto oboru.
 \end{prikladReseniBox}
 
+
+
+\poznamka{Základ: původní P1 a P2 s doplněnými mezikroky, pak původní samostatné úlohy. Nová dvojice i původní dvě proměnné jsou rezervy, z nichž vybírej podle tempa. Domácí a) až c) jsou pro všechny, d) dobrovolně. U každého složeného zlomku žák musí ukázat, která čára je hlavní, a vypsat tři zdroje podmínek: vnitřní jmenovatele nahoře, dole a nenulovost celé dolní části.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\dfrac{2/x}{3/x}$.
+\item Uprav $\dfrac{1/x+1}{1/x-1}$.
+\item Uprav $\dfrac{1/(x-2)}{1/(x+2)}$.
+\item Rezerva: uprav $\dfrac{x/y-y/x}{1/y}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2/3$, $x\ne0$.
+\item $\frac{x+1}{1-x}$, $x\ne0,1$.
+\item $\frac{x+2}{x-2}$, $x\ne\pm2$.
+\item $\frac{x^2-y^2}{x}$, $x,y\ne0$. Dolní část $1/y$ je na tomto oboru nenulová.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

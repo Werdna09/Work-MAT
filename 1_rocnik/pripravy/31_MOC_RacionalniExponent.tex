@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 31, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 31.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -40,6 +42,20 @@ Pro $a>0$, $m\in\mathbb Z$, $n\in\mathbb N$, $n\ge2$ definujeme \textbf{mocninu 
 
 Čitatel exponentu určuje mocnění, jmenovatel odmocňování. Pro kladný základ lze psát také $a^{m/n}=\sqrt[n]{a^m}$ a platí známá pravidla pro mocniny. Zlomek v exponentu lze krátit. V těchto pravidlech pracujeme s $a>0$; nulu lze doplnit při kladném exponentu, ale záporné základy tímto obecným předpisem nezahrnujeme.
 
+\begin{zadaniReseniBox}[title={Mezikrok: co říká čitatel a jmenovatel exponentu?},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Zapiš pomocí odmocniny $a^{2/5}$ a $a^{-3/4}$ pro $a>0$.
+\item Vypočítej $32^{2/5}$, $81^{3/4}$ a $16^{-1/2}$.
+\item Uprav $x^{1/3}x^{5/6}$ a $\frac{(a^{3/4})^2}{a^{1/2}}$ pro kladné proměnné.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(\sqrt[5]a)^2$ a $\frac1{(\sqrt[4]a)^3}$. Jmenovatel exponentu určuje odmocninu, záporné znaménko převrácení.
+\item $2^2=4$, $3^3=27$, $1/4$.
+\item $x^{2/6+5/6}=x^{7/6}$ a $a^{3/2-1/2}=a$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \begin{prikladReseniBox}[title={Příklad 1},breakable=false]
 Vypočítej $8^{2/3}$ a $16^{3/4}$.
 \tcblower
@@ -71,7 +87,25 @@ $a^{3/2-1/2}=a$. Dále $27^{-2/3}=1/(\sqrt[3]{27})^2=1/9$. Kladnost $a$ ponechá
 \end{zadaniReseniBox}
 
 
+\needspace{4\baselineskip}
 \poznamka{V učebnici je v definici nepřesná podmínka „$a>b$“ s neurčeným $b$; zde je správně $a>0$. Nezaváděj iracionální exponenty ani logaritmy. Pravidla pro součin odmocnin budou samostatně ve 33. hodině.}
+
+
+\blok{Navazující procvičování ve třídě}
+
+
+
+\begin{zadaniReseniBox}[title={Rezerva: propojení pravidel},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Pro $a,b>0$ uprav $\frac{(a^{2/3}b^{-1/2})^3}{a^{1/2}b^{-1}}$.
+\item Proč v našem obecném zápisu racionálních mocnin nepočítáme $(-8)^{2/6}$ přímo stejným předpisem jako pro kladné základy?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a^{2-1/2}b^{-3/2+1}=a^{3/2}b^{-1/2}=\frac{a^{3/2}}{b^{1/2}}$.
+\item Předpis je zaveden pro kladné základy. Šestá odmocnina z $-8$ v $\mathbb R$ neexistuje, zatímco po zkrácení exponentu by vznikla třetí odmocnina. Kladný základ tuto nejednoznačnost vylučuje.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \blok{Volitelná rezerva}
 
@@ -81,5 +115,28 @@ Pro $a,b>0$ uprav $\frac{(a^{1/2}b^{-1/3})^6}{a^2b^{-1}}$.
 $\frac{a^3b^{-2}}{a^2b^{-1}}=ab^{-1}=\frac ab$. Všechny úpravy probíhají na zadaném oboru $a,b>0$.
 \end{prikladReseniBox}
 
+
+
+\poznamka{Nový převod exponentu na odmocninu řeš hned po definici a teprve pak přejdi k původním složeným příkladům. Tato první skupina a původní procvičení tvoří základ. Rezervní otázka o záporném základu je vysvětlení omezení definice, nikoli zavádění nové konvence. Domů zadej uvedených pět položek.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočítej $64^{1/3}$, $125^{2/3}$ a $81^{-1/4}$.
+\item Zapiš $\sqrt[3]{a^2}$ a $1/\sqrt[5]{a^3}$ jako mocniny pro $a>0$.
+\item Uprav $x^{3/4}x^{-1/2}$ pro $x>0$.
+\item Uprav $(a^{1/3}b^{-2/3})^3$ pro $a,b>0$.
+\item Uprav $\frac{a^{5/6}}{a^{1/3}}$ pro $a>0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $4$, $25$, $1/3$.
+\item $a^{2/3}$ a $a^{-3/5}$.
+\item $x^{1/4}$.
+\item $a/b^2$.
+\item $a^{1/2}$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

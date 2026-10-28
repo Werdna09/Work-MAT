@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 28, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 28.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -40,6 +42,20 @@ Pro $a\ne0$ a $n\in\mathbb N$ definujeme \textbf{mocninu se záporným celočís
 
 Pravidla pro mocniny nyní platí také pro celé exponenty, jsou-li všechny výrazy definovány. Záporný exponent znamená převrácenou hodnotu, nikoli záporný výsledek. Každý základ se záporným nebo nulovým exponentem musí být nenulový.
 
+\begin{zadaniReseniBox}[title={Mezikrok: převrácená hodnota a znaménko},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočítej $4^{-2}$, $(-2)^{-4}$, $-2^{-4}$ a $(-\tfrac12)^{-3}$.
+\item Uprav $a^{-3}a^5$, $\frac{x^{-2}}{x^3}$ a $(b^{-2})^{-3}$.
+\item Porovnej $2^{-3}$ s $2^{-2}$ a $(-2)^{-3}$ s $(-2)^{-2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac1{16}$, $\frac1{16}$, $-\frac1{16}$, $-8$. Záporný exponent říká převrátit, nikoli změnit znaménko.
+\item $a^2$ pro $a\ne0$; $\frac1{x^5}$ pro $x\ne0$; $b^6$ pro $b\ne0$.
+\item $\frac18<\frac14$; $-\frac18<\frac14$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \begin{prikladReseniBox}[title={Příklad 1},breakable=false]
 Vypočítej $2^{-3}$, $(-3)^{-2}$ a $\left(\frac23\right)^{-2}$.
 \tcblower
@@ -73,6 +89,23 @@ Původní zápis vyžaduje $a,b,c\ne0$. Potom $12a^{7-6}b^{-2+2}c^{-3-1}=\frac{1
 
 \poznamka{Před úpravou označ všechny původní nenulové základy a jmenovatele. Náročnou rezervu nech až po zvládnutí číselných příkladů a jednoduchých proměnných. Vyžaduj výsledek bez záporných exponentů tam, kde to zjednoduší čtení.}
 
+
+\blok{Navazující procvičování ve třídě}
+
+
+
+\begin{zadaniReseniBox}[title={Rezerva: více proměnných},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{(2a^{-2}b)^3}{4a^{-1}b^{-2}}$ a urči podmínky.
+\item Uprav $(a^2b^{-1})^0$ a vysvětli, proč nestačí pouze $b\ne0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{8a^{-6}b^3}{4a^{-1}b^{-2}}=\frac{2b^5}{a^5}$, $a,b\ne0$.
+\item Výsledek je $1$ při $a,b\ne0$. Vedle existence $b^{-1}$ musí být i celý základ nulové mocniny nenulový.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \blok{Volitelná rezerva}
 
 \begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
@@ -81,5 +114,28 @@ Pro $n\in\mathbb Z$ uprav $\frac{2^{3n+1}\cdot4^{2n-2}}{8^{n-1}}$.
 Všechny základy jsou kladné, proto další omezení na celé $n$ nevzniká. Přepisem $4=2^2$, $8=2^3$ dostaneme $2^{3n+1+4n-4-3n+3}=2^{4n}$. Například pro $n=0$ je hodnota $1$.
 \end{prikladReseniBox}
 
+
+
+\poznamka{Začni novým číselným mezikrokem hned po definici záporné mocniny, pak se vrať k původnímu P2 a samostatným úlohám. Tato skupina a původní procvičení jsou základ; nové úlohy s více proměnnými i původní parametr n jsou rezervy podle tempa. Domácí pětici zakonči vysvětlením podmínek, nejen výsledkem.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočítej $(-3)^{-3}$ a $(\tfrac25)^{-2}$.
+\item Uprav $x^{-4}x^7$ a $\frac{y^2}{y^{-3}}$.
+\item Uprav $(2a^{-1}b^2)^{-2}$.
+\item Uprav $\frac{3x^{-2}y^4}{6x^3y^{-1}}$.
+\item Urči podmínky a hodnotu $(x-1)^0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-\frac1{27}$ a $\frac{25}{4}$.
+\item $x^3$, $x\ne0$; $y^5$, $y\ne0$.
+\item $\frac{a^2}{4b^4}$, $a,b\ne0$.
+\item $\frac{y^5}{2x^5}$, $x,y\ne0$.
+\item $x\ne1$, hodnota $1$; pro $x=1$ by vznikl nedefinovaný zápis $0^0$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

@@ -1,0 +1,177 @@
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 9;
+% SPS.pdf, oddíl 1.2. Návaznost: 05 (znaménka), 07 (osa), 08 (intervaly).
+% Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
+% oddíl Absolutní hodnota, definice a geometrický význam; bez obecných nerovností.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/
+% 02_Ciselne_obory/010210_Absolutni_hodnota_I/010210_Lekce.pdf, definice,
+% Př. 2–4 a práce s osou. Prostudovány tyto části, nikoli mechanicky převzaty úlohy.
+% Všechna konkrétní zadání, obrázek a řešení jsou vlastní tvorba.
+% Rovnice jen jako jednoduché hledání bodů v dané vzdálenosti;
+% systematické řešení rovnic/nerovnic s absolutní hodnotou patří později.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Číselné obory}{09}{Absolutní hodnota}
+\begin{document}
+
+\poznamka{Orientačně: osa a motivace 4 min, definice s příklady 8 min,
+výpočty a vzdálenost dvou bodů 10 min, samostatná práce s rozborem
+11 min, shrnutí 2 min; základ asi 35 min. Rezerva 10–15 min k výběru,
+domácí práce 15–20 min. Rovnice zde čteme geometricky, nezavádíme algoritmus
+rozštěpování obecného výrazu podle nulových bodů.}
+
+\blok{Poloha má znaménko, vzdálenost nikoli}
+Bod $-3$ a bod $3$ mají různé polohy, ale od počátku jsou stejně daleko:
+tři jednotky. Vzdálenost nemůže být záporná. Znak pro číslo,
+které tuto vzdálenost vyjadřuje, jsou dvě svislé čáry.
+
+\begin{definiceBox}
+\textbf{Absolutní hodnota} reálného čísla $a$, značená $|a|$,
+je vzdálenost jeho obrazu od nuly na číselné ose. Platí
+\[
+|a|=\begin{cases}a,&a\ge0,\\-a,&a<0.\end{cases}
+\]
+\end{definiceBox}
+
+Proto $|0|=0$, $|5|=5$ a $|-5|=-(-5)=5$.
+Absolutní hodnota je \emph{nezáporná}, nikoli vždy kladná.
+Čísla opačná mají stejnou absolutní hodnotu: $|-a|=|a|$.
+Samotný zápis $-a$ však nemusí být záporný, jak víme z hodiny 05.
+
+\begin{prikladReseniBox}[title={P1: záleží na místě svislých čar},breakable=false]
+Vypočti $|-7|$, $-|7|$, $|-7+2|$, $|-7|+2$ a $|-\frac35|$.
+\tcblower
+$|-7|=7$, ale $-|7|=-7$.
+Dále $|-7+2|=|-5|=5$, zatímco $|-7|+2=7+2=9$.
+Nakonec $|-\frac35|=\frac35$.
+Absolutní hodnota působí jen na výraz uvnitř svých čar;
+například výraz $-|7|$ může být záporný.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P2: běžné pořadí operací stále platí},breakable=false]
+Vypočti $3-2\cdot|-4+1|+|-8|:2$ a $\bigl||-5|-8\bigr|$.
+\tcblower
+Nejprve spočítáme výrazy uvnitř čar:
+\begin{align*}
+3-2\cdot|-4+1|+|-8|:2&=3-2\cdot3+8:2=3-6+4=1,\\
+\bigl||-5|-8\bigr|&=|5-8|=|-3|=3.
+\end{align*}
+U vnořeného zápisu postupujeme od nejvnitřnějších čar ven.
+\end{prikladReseniBox}
+
+\poznamka{Vnořené čáry piš na tabuli v různých výškách. Ptej se:
+\uv{Který celý výraz se právě nachází uvnitř?} Chybu neopravuj pouhým
+smazáním záporných znamének, ale vrať se k hodnotě a vzdálenosti.}
+
+\newpage
+\blok{Vzdálenost mezi dvěma body}
+\begin{definiceBox}
+\textbf{Vzdálenost bodů} se souřadnicemi $a,b\in\mathbb R$ na číselné ose
+je $d(a,b)=|a-b|$. Stejně dostaneme $d(a,b)=|b-a|$.
+\end{definiceBox}
+
+Je-li $a\ge b$, je vzdálenost $a-b$; je-li $a<b$, je to $b-a$.
+Obě situace shrnuje absolutní hodnota rozdílu.
+
+\begin{prikladReseniBox}[title={P3: rozdíl a délka úseku},breakable=false]
+Urči vzdálenost bodů $A=-3$ a $B=2$ i bodů $C=-4$ a $D=-1$.
+\tcblower
+$d(A,B)=|-3-2|=|-5|=5$ a $d(C,D)=|-4-(-1)|=|-3|=3$.
+V prvním případě jdeme tři jednotky k nule a další dvě k $B$;
+ve druhém jsou oba body vlevo od nuly a dělí je pouze tři jednotky.
+\begin{center}
+\begin{tikzpicture}[x=1.35cm,y=0.65cm]
+\draw[->] (-4.5,0)--(3,0);
+\foreach \x in {-4,-3,-2,-1,0,1,2}{\draw (\x,-0.08)--(\x,0.08) node[below=4pt] {$\x$};}
+\fill (-3,0) circle (2pt) node[above=3pt] {$A$};
+\fill (2,0) circle (2pt) node[above=3pt] {$B$};
+\draw[<->] (-3,0.9)--(2,0.9) node[midway,above] {$5$};
+\end{tikzpicture}
+\end{center}
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P4: hledej všechny body v dané vzdálenosti},breakable=false]
+Najdi všechna reálná $x$, pro která platí a) $|x|=4$;
+b) $|x|=0$; c) $|x|=-2$. Zdůvodni, proč další možnosti nejsou.
+\tcblower
+a) Ve vzdálenosti $4$ od nuly jsou právě dva body: $x=-4$ a $x=4$.
+Na každé straně počátku je právě jeden.
+b) Nulovou vzdálenost od nuly má pouze $x=0$.
+c) Žádné reálné číslo nevyhovuje; vzdálenost není záporná.
+Dosazení $|-4|=|4|=4$ a $|0|=0$ potvrzuje nalezené možnosti.
+\end{prikladReseniBox}
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={S1: výpočet a vzdálenost},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočti $|-12|$, $|0|$, $-|-6|$, $|3-8|$, $|-3|-8$, $|-0{,}4|$.
+\item Vypočti $2\cdot|-3|-|4-9|$ a $\bigl|-2+|-7|\bigr|$.
+\item Urči vzdálenosti dvojic $(-5,1)$, $(-6,-2)$, $(\frac12,-\frac34)$.
+\item Najdi všechna reálná $x$ s $|x|=\frac32$ a s $|x|=-\frac12$.
+\end{enumerate}
+\tcblower
+a) $12$, $0$, $-6$, $5$, $-5$, $0{,}4$.
+b) $6-5=1$; $|-2+7|=5$.
+c) $6$, $4$, $|\frac12+\frac34|=\frac54$.
+d) $x=-\frac32$ nebo $x=\frac32$; druhé podmínce nevyhovuje žádné číslo.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={S2: obhaj nebo vyvrať},breakable=false]
+Platí pro všechna reálná $a,b$: a) $|a|>0$;
+b) $|a+b|=|a|+|b|$; c) $|a-b|=|b-a|$?
+\tcblower
+a) Ne, pro $a=0$ je $|a|=0$; správně $|a|\ge0$.
+b) Ne, pro $a=2,b=-2$ vlevo $0$, vpravo $4$.
+c) Ano, oba zápisy vyjadřují vzdálenost týchž dvou bodů.
+\end{zadaniReseniBox}
+
+\poznamka{Na závěr nech slovně rozlišit polohu $-5$ od vzdálenosti $5$.
+Pro slabší žáky nahraď vnořený výraz konkrétním měřením na ose.
+V příští hodině následuje krátký test a rozbor; připomeň i logiku z hodin 02–04.}
+
+\newpage
+\blok{Rezerva: uvažování nad osou}
+\begin{zadaniReseniBox}[title={R1: volitelně, 10–15 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Najdi všechny body ve vzdálenosti $3$ od bodu $2$.
+Zapiš kontrolu pomocí absolutní hodnoty rozdílu.
+\item Která reálná čísla jsou od nuly vzdálena méně než $2$?
+Zapiš je nerovností i intervalem. Co se změní pro vzdálenost nejvýše $2$?
+\item Najdi bod stejně vzdálený od $-4$ a $2$. Vysvětli jedinečnost.
+\item Je-li $a<0$, jaké jsou hodnoty $|a|$, $|-a|$ a $-|a|$?
+Ověř odpověď pro $a=-6$.
+\end{enumerate}
+\tcblower
+a) Tři jednotky vlevo a vpravo od $2$: $x=-1$ nebo $x=5$.
+Kontroly $|-1-2|=3$ a $|5-2|=3$; na každé straně je právě jeden bod.
+b) $-2<x<2$, interval $(-2;2)$; pro nejvýše $2$ je to
+$-2\le x\le2$, interval $\langle-2;2\rangle$.
+c) Střed úseku je $-1$, od obou krajů má vzdálenost $3$.
+Mimo úsek je jeden kraj vždy blíže; uvnitř se obě vzdálenosti rovnají
+jen při rozdělení celkové délky $6$ napůl.
+d) $|a|=-a$, $|-a|=-a$, $-|a|=a$. Pro $a=-6$ postupně $6,6,-6$.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: přibližně 15–20 minut},breakable=false]
+\begin{enumerate}[label=\arabic*)]
+\item Vypočti $|-15|$, $|2-9|$, $-|2-9|$, $|-\frac78|$.
+\item Vypočti $|-6+2|+3\cdot|-2|$ a $\bigl||-9|-4\bigr|$.
+\item Vypočti $5-2\cdot|-4|$; vysvětli, proč výsledek může být záporný.
+\item Nakresli body $-2$ a $3{,}5$ a urči jejich vzdálenost.
+Totéž proveď pro $-\frac32$ a $-\frac14$.
+\item Najdi všechna reálná $x$ s $|x|=2{,}5$, s $|x|=0$ a s $|x|=-3$.
+\item Vyvrať vhodnými čísly tvrzení $|a-b|=|a|-|b|$ pro všechna reálná
+$a,b$. Napiš, co skutečně vyjadřuje levá strana.
+\end{enumerate}
+\tcblower
+1. $15$, $7$, $-7$, $\frac78$.
+2. $4+6=10$; $|9-4|=5$.
+3. $5-8=-3$; absolutní hodnota zaručuje nezápornost pouze hodnoty uvnitř
+příslušných čar, ne celého výrazu s odčítáním.
+4. $|-2-3{,}5|=5{,}5$; $|-\frac32+\frac14|=\frac54$.
+5. $x=-2{,}5$ nebo $2{,}5$; pouze $x=0$; žádné reálné číslo.
+6. Například $a=1,b=3$: vlevo $2$, vpravo $-2$. Levá strana je vzdálenost
+bodů se souřadnicemi $a,b$ a nemůže být záporná.
+\end{zadaniReseniBox}
+
+\end{document}

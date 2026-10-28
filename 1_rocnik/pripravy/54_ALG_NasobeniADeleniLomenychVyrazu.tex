@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 54, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 54.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -63,5 +65,43 @@ Jmenovatele vyžadují $x\ne0,1$, nenulový dělitel navíc $x\ne-2$. Potom $\fr
 
 
 \poznamka{V učebnici jsou v obecném vzorci pro dělení vypsány jen dvě ze tří podmínek. V této přípravě trváme také na existenci původního dělitele. Učebnici neupravujeme. Chybu žáka odhalí zkouška hodnoty, která po převrácení zmizela z jmenovatele.}
+
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Navázání: nulový čitatel a nulový dělitel},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{x^2-9}{x^2-x}:\frac{x+3}{x}$ a urči, zda lze dosadit $x=3$.
+\item Rezerva: uprav $\frac{x^2-4}{x+1}\cdot\frac{x+1}{2-x}$.
+\item Rezerva: porovnej podmínky součinu a podílu: $\frac{x}{x-1}\cdot\frac{x+2}{x+3}$ a $\frac{x}{x-1}:\frac{x+2}{x+3}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x\ne0,1,-3$; výsledek $\frac{x-3}{x-1}$. Hodnota $x=3$ je přípustná a dává nulu, protože dělitel tehdy nulový není.
+\item Podmínky $x\ne-1,2$; z $2-x=-(x-2)$ dostaneme $-(x+2)$.
+\item U součinu $x\ne1,-3$; $x=-2$ je povoleno. U podílu navíc $x\ne-2$, protože druhý zlomek nesmí být nulový. Nulový první čitatel je v obou případech přípustný.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Základ: původní příklady a nová první položka s rozhodnutím o nule. Nová druhá a třetí položka jsou rezerva, která oddělí existenci zlomku od nenulovosti dělitele. Domácí čtveřici kontroluj zpětným vynásobením původním dělitelem na původním oboru; zakázané hodnoty se nesmějí vrátit.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{x^2-4}{x}\cdot\frac{3x}{x+2}$.
+\item Uprav $\frac{x^2-1}{x}:\frac{x-1}{2x}$.
+\item Uprav $\frac{a+1}{a-2}:\frac{(a+1)^2}{a-2}$.
+\item Uprav $\frac{x}{x-2}:\frac{x+1}{x-2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3(x-2)$, $x\ne0,-2$.
+\item $2(x+1)$, $x\ne0,1$.
+\item $\frac1{a+1}$, $a\ne2,-1$.
+\item $\frac{x}{x+1}$, $x\ne2,-1$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

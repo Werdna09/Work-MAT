@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 26, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 26.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -64,6 +66,35 @@ Původní jmenovatel vyžaduje $x\ne0$. Potom $\frac{x^7x^2}{x^4}=x^{7+2-4}=x^5$
 
 \poznamka{Zatím nezaváděj mocninu mocniny ani exponent nula. U podílu se stejnými exponenty stačí přímé krácení. Častá chyba $a^m+a^n=a^{m+n}$ není pravidlem pro součet; vyvrať ji například čísly $2^2+2^3=12\ne32$.}
 
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Základ: součin, podíl a společný základ},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $a^4a^3a^2$, $\frac{x^9}{x^4}$ a $\frac{y^3}{y^7}$. U podílů napiš podmínku.
+\item Uprav $\frac{3^5\cdot3^2}{3^4}$ a $\frac{2^3\cdot4^2}{2^5}$; $4^2$ nejprve vyčísli jako $16=2^4$.
+\item Rozhodni, zda $a^3+a^2=a^5$ platí pro všechna $a$. Porovnej se součinem $a^3a^2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a^9$, $x^5$ pro $x\ne0$, $\frac1{y^4}$ pro $y\ne0$. V posledním zlomku zůstanou čtyři činitelé ve jmenovateli.
+\item $3^{5+2-4}=3^3=27$; $2^{3+4-5}=2^2=4$.
+\item Součet nelze tímto pravidlem upravit; pro $a=2$ je $8+4=12\ne32$. Součin je vždy $a^5$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rezerva: krácení po činitelích},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{a^6b^3\cdot ab^2}{a^4b^6}$ a urči podmínky.
+\item Bez vyčíslení velkých čísel porovnej $\frac{7^8}{7^5}$ a $7^2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{a^3}{b}$, $a\ne0$, $b\ne0$. Podmínka $a\ne0$ zůstává, i když zmizí z upraveného jmenovatele.
+\item První výraz je $7^3=7\cdot7^2>7^2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \blok{Volitelná rezerva}
 
 \begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
@@ -72,5 +103,26 @@ Uprav $\frac{2^5\cdot2^7}{2^{10}}$.
 Po sloučení činitelů a krácení je výsledek $2^{5+7-10}=2^2=4$.
 \end{prikladReseniBox}
 
+
+
+\poznamka{Základ jsou původní příklady a nová první skupina; druhá je rezerva. Každý žák ať nejméně jeden podíl ověří rozepsáním činitelů. Záporné exponenty zatím nenazýváme ani nepoužíváme ve výsledku: pokud zbyde mocnina v jmenovateli, ponecháme ji tam. Domů patří uvedené čtyři položky.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $m^2m^5m$ a $\frac{z^8}{z^3}$.
+\item Uprav $\frac{c^2}{c^6}$ a $\frac{a^5b^4}{a^2b^3}$.
+\item Vypočítej $\frac{5^4\cdot5^3}{5^5}$ a $\frac{2^2}{2^6}$.
+\item Vysvětli, proč nelze do původního $\frac{x^4}{x^4}$ dosadit nulu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $m^8$; $z^5$, $z\ne0$.
+\item $\frac1{c^4}$, $c\ne0$; $a^3b$, $a,b\ne0$.
+\item $25$ a $\frac1{16}$.
+\item Původní jmenovatel by byl nula. Výsledek $1$ platí pouze pro $x\ne0$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

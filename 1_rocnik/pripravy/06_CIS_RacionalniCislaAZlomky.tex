@@ -1,0 +1,312 @@
+% Rozpis a plán: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex,
+% hodina 6; SPS.pdf, oddíl 1.2. Návaznost: hodiny 05 a 07, konvence N jako v 12.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
+% Racionální čísla, Zápisy racionálních čísel, Porovnávání racionálních čísel.
+% Metodická inspirace: místní Realisticky.cz, pod externi_zdroje/realisticky/:
+% 01_Zakladni_poznatky/01_Opakovani/010108_Zlomky_I/010108_Lekce.pdf (Př. 3–5);
+% 01_Zakladni_poznatky/02_Ciselne_obory/010203_Racionalni_cisla_I/010203_Lekce.pdf
+% (dělení nulou, základní tvar a různé zápisy);
+% 01_Zakladni_poznatky/02_Ciselne_obory/010204_Racionalni_cisla_II/010204_Lekce.pdf
+% (úvod a Př. 3, účelné krácení).
+% Prostudovány uvedené části, nikoli převzat soubor úloh. Všechny úlohy jsou vlastní.
+% Chybná položka -126/-198 v řetězci ekvivalentních zlomků v naší učebnici
+% nebyla použita: její hodnota je 7/11, nikoli 2/3. Zdroj ponechán beze změny.
+% Cílená revize: vlastní výklad a úlohy V1–V3, R2 k rozšíření Z -> Q,
+% opačnému/převrácenému prvku a distributivitě podle zadání učitele.
+% Podklady: v uvedené kapitole učebnice Vlastnosti racionálních čísel
+% a Převrácené číslo; místní Realisticky 010203, Př. 1–2 a převrácené číslo,
+% 010204, Př. 1–3. Důsledně rozlišena oboustranná neutralita a dělení nulou.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Číselné obory}{06}{Racionální čísla a zlomky}
+\begin{document}
+
+\poznamka{Rozšířená příprava obsahuje více materiálu než na jedinou
+hodinu. Pro 45 minut orientačně vyber: význam zlomku a rozšíření oboru
+6 min, ekvivalentní zápisy 8 min, opačné a převrácené číslo 9 min,
+distributivita 7 min, porovnávání a vybrané samostatné úlohy 13 min,
+shrnutí 2 min. Další procvičení je zásoba; původní D1 je asi na 15–20 min.
+Rezervu zadávej výběrově. Přednost má vysvětlení kroků před dlouhým počítáním.}
+
+\blok{Jedno číslo může mít více zápisů}
+Tři stejné tyče rozdělíme rovným dílem mezi pět lidí. Každý dostane
+$\frac35$ tyče. Rozdělením každé pětiny ještě napůl dostane každý
+šest desetin téže tyče. Zápisy $\frac35$ a $\frac6{10}$ označují stejné číslo.
+
+\begin{definiceBox}
+\textbf{Racionální číslo} je číslo zapsatelné jako $\frac pq$, kde
+$p,q\in\mathbb Z$ a $q\ne0$. Obor racionálních čísel značíme $\mathbb Q$.
+\end{definiceBox}
+
+Ve zlomku $\frac pq$ je $p$ čitatel, $q$ jmenovatel a zlomková čára
+znamená dělení. Každé celé číslo je racionální: například $-4=\frac{-4}{1}$.
+Zlomek s nulovým čitatelem a nenulovým jmenovatelem je nula,
+například $\frac07=0$. Zápisy $\frac50$ ani $\frac00$ číslo nevyjadřují.
+Pro přehlednost budeme záporné znaménko psát před zlomek a jmenovatel kladný.
+
+\begin{definiceBox}
+\textbf{Rozšiřování zlomku} znamená vynásobení čitatele i jmenovatele
+týmž nenulovým celým číslem $k$:
+$\frac pq=\frac{kp}{kq}$. Hodnota se nemění, protože násobíme číslem $\frac kk=1$.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Krácení zlomku} znamená vydělení čitatele i jmenovatele
+týmž jejich nenulovým společným celočíselným dělitelem. Hodnota zlomku se nemění.
+\end{definiceBox}
+
+\begin{definiceBox}
+Zlomek s kladným jmenovatelem je v \textbf{základním tvaru}, jestliže
+čitatel a jmenovatel nemají společného kladného dělitele většího než $1$.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={P1: zjednodušení a kontrola},breakable=false]
+Zkrať do základního tvaru $\frac{-84}{126}$ a $\frac{-45}{-60}$.
+První výsledek rozšiř na jmenovatele $30$.
+\tcblower
+$\frac{-84}{126}=-\frac{2\cdot42}{3\cdot42}=-\frac23$;
+$\frac{-45}{-60}=\frac{45}{60}=\frac34$.
+Rozšíření: $-\frac23=-\frac{20}{30}$. Zpětně $(-2)\cdot126=(-84)\cdot3=-252$.
+U druhého zlomku dvě záporná znaménka dávají kladný podíl.
+\end{prikladReseniBox}
+
+\poznamka{U zlomku $0/q$ vede základní tvar k $0/1$.
+Krátíme společné \emph{činitele}, ne podobně vypadající číslice ani části součtu.
+Čitatel a jmenovatel nesčítáme, chceme-li zlomek rozšířit.}
+
+\newpage
+\blok{Proč při dělení nevystačíme s celými čísly}
+V $\mathbb Z$ lze sčítat, odčítat a násobit bez opuštění oboru.
+U dělení to nestačí ani po vyloučení nuly z dělitelů: některý podíl
+celý je, jiný není. Racionální čísla doplní všechny podíly celých čísel
+s nenulovým dělitelem.
+
+\begin{prikladReseniBox}[title={V1: některé dělení vyjde v Z, jiné až v Q},breakable=false]
+Vypočti $12:3$, $5:2$, $(-7):3$ a $0:4$.
+Které výsledky jsou celé? Výsledky ověř násobením dělitelem.
+\tcblower
+$12:3=4\in\mathbb Z$ a $0:4=0\in\mathbb Z$.
+Naproti tomu $5:2=\frac52=2{,}5\notin\mathbb Z$ a
+$(-7):3=-\frac73\notin\mathbb Z$; oba podíly jsou racionální.
+Zkoušky: $3\cdot4=12$, $2\cdot\frac52=5$,
+$3\cdot(-\frac73)=-7$ a $4\cdot0=0$.
+Věta \uv{V celých číslech dělení nikdy nevyjde} je tedy stejně chybná
+jako tvrzení, že vyjde vždy.
+\end{prikladReseniBox}
+
+\blok{Opačné číslo sčítáme, převráceným násobíme}
+\begin{definiceBox}
+Připomenutí: \textbf{opačné číslo} k $a\in\mathbb Q$ je $-a$;
+platí $a+(-a)=0$. Jde o opačný prvek vzhledem ke sčítání.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Převrácené číslo} k nenulovému $a\in\mathbb Q$ je číslo $\frac1a$,
+jehož součin s $a$ je $1$. Jde o inverzní prvek vzhledem k násobení:
+$a\cdot\frac1a=1$.
+\end{definiceBox}
+
+Proč existuje pro každé nenulové racionální číslo? Zapíšeme
+$a=\frac pq$ s celými $p,q$, kde $q\ne0$. Z předpokladu $a\ne0$ plyne
+také $p\ne0$. Číslo $\frac qp$ je proto opět racionální a
+\[
+\frac pq\cdot\frac qp=\frac{pq}{qp}=1.
+\]
+Nula má opačné číslo $0$, ale převrácené číslo nemá:
+pro žádné $b$ neplatí $0\cdot b=1$.
+
+\begin{prikladReseniBox}[title={V2: dva různé návraty k neutrálnímu prvku},breakable=false]
+Doplň opačné a převrácené číslo k $-\frac34$, $\frac25$, $-1$ a $0$.
+U prvního čísla proveď zkoušku součtem i součinem.
+\tcblower
+\begin{center}
+\begin{tabular}{ccc}
+\toprule
+Číslo $a$ & Opačné $-a$ & Převrácené $\frac1a$, pokud existuje\\
+\midrule
+$-\frac34$ & $\frac34$ & $-\frac43$\\
+$\frac25$ & $-\frac25$ & $\frac52$\\
+$-1$ & $1$ & $-1$\\
+$0$ & $0$ & neexistuje\\
+\bottomrule
+\end{tabular}
+\end{center}
+Zkoušky: $-\frac34+\frac34=0$ a
+$(-\frac34)\cdot(-\frac43)=1$. Opačné číslo u nenulového čísla
+změní znaménko; převrácené číslo je stejného znaménka jako původní číslo.
+\end{prikladReseniBox}
+
+V $\mathbb Z$ nemá například $2$ převrácený prvek pro násobení,
+protože $\frac12$ není celé číslo. V $\mathbb Q$ už jej má.
+Pro $b\ne0$ tak dělení nahradíme násobením převráceným číslem:
+například $\frac34:\frac25=\frac34\cdot\frac52=\frac{15}{8}$.
+Zkouška $\frac{15}{8}\cdot\frac25=\frac34$ vrací původní dělenec.
+
+\poznamka{U každého \uv{inverzního} prvku chtěj doplnit operaci
+a její neutrální prvek: pro součet jde o $0$, pro součin o $1$.
+Dělení samo není komutativní: $6:3=2$, ale $3:6=\frac12$.
+Jednička není oboustranně neutrální pro dělení: $6:1=6$, ale $1:6\ne6$.
+To je jiný výrok než neutralita jedničky pro násobení.}
+
+\blok{Distributivita propojuje násobení se sčítáním}
+\begin{definiceBox}
+\textbf{Distributivita násobení vzhledem ke sčítání} znamená, že pro
+všechna $a,b,c\in\mathbb Q$ platí
+\[
+a\cdot(b+c)=a\cdot b+a\cdot c.
+\]
+Stejně platí $(b+c)\cdot a=b\cdot a+c\cdot a$.
+\end{definiceBox}
+
+Pravidlo platí už v $\mathbb N$ a $\mathbb Z$, nyní také pro zlomky.
+Šest stejných dvojic dílů můžeme spočítat jako šestkrát součet,
+nebo zvlášť šestkrát každý díl a výsledky sečíst. Podstatné je,
+že vně závorky je násobení, uvnitř sčítání.
+
+\begin{prikladReseniBox}[title={V3: dvě cesty k témuž výsledku},breakable=false]
+Vypočti dvojím způsobem $6\cdot(\frac56-\frac13)$ a
+$-\frac32\cdot(\frac23+\frac49)$. Potom posuď chybný přepis
+$6:(2+1)=6:2+6:1$.
+\tcblower
+Nejprve závorky, potom roznásobení:
+\begin{align*}
+6\cdot\left(\frac56-\frac13\right)&=6\cdot\frac12=3,\\
+6\cdot\frac56-6\cdot\frac13&=5-2=3,\\
+-\frac32\cdot\left(\frac23+\frac49\right)&=-\frac32\cdot\frac{10}{9}=-\frac53,\\
+-\frac32\cdot\frac23-\frac32\cdot\frac49&=-1-\frac23=-\frac53.
+\end{align*}
+Odčítání v první závorce je sčítání opačného čísla, takže pravidlo platí
+i v tomto zápisu. U dělení součtem přepis neplatí: vlevo je $6:3=2$,
+vpravo $3+6=9$. Dělení každým sčítancem je jiná operace než dělení součtem.
+\end{prikladReseniBox}
+
+\poznamka{Příklad s roznásobením nevyužívá žádný nový vzorec pro
+algebraické výrazy. Zachovej konkrétní zlomky, nech žáky porovnat oba
+postupy. Samotná shoda příkladů ilustruje obecné pravidlo, nedokazuje je.}
+
+\newpage
+\blok{Porovnávání bez odhadování}
+Při stejném kladném jmenovateli rozhoduje čitatel. Při různých kladných
+jmenovatelích zlomky rozšíříme na společný jmenovatel. Pro $b,d>0$
+tedy platí $\frac ab<\frac cd$ právě tehdy, když $ad<bc$.
+Podmínka kladných jmenovatelů brání chybě se znaménkem nerovnosti.
+
+\begin{prikladReseniBox}[title={P2: záporná čísla a společný jmenovatel},breakable=false]
+Porovnej $-\frac56$ a $-\frac78$. Potom seřaď vzestupně
+$-\frac56$, $-\frac78$, $-\frac34$, $0$.
+\tcblower
+$-\frac56=-\frac{20}{24}$, $-\frac78=-\frac{21}{24}$,
+$-\frac34=-\frac{18}{24}$. Proto
+\[
+-\frac78<-\frac56<-\frac34<0.
+\]
+Číslo $-21$ je menší než $-20$; záporné znaménko nesmíme při porovnávání ignorovat.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P3: desetinný zápis a číslo mezi zlomky},breakable=false]
+Zapiš $0{,}375$ jako zlomek v základním tvaru.
+Najdi racionální číslo ostře mezi $\frac23$ a $\frac34$.
+\tcblower
+$0{,}375=\frac{375}{1000}=\frac38$.
+Dále $\frac23=\frac{16}{24}$ a $\frac34=\frac{18}{24}$,
+takže vyhovuje $\frac{17}{24}$. Nejde o jediné možné číslo.
+\end{prikladReseniBox}
+
+\blok{Samostatně: zápis, velikost, časté chyby}
+\begin{zadaniReseniBox}[title={S1: základní sada},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Zkrať $\frac{54}{90}$, $\frac{72}{-120}$, $\frac{-63}{-84}$.
+\item Doplň $\frac{-3}{5}=\frac{\square}{35}$,
+$\frac7{12}=\frac{42}{\square}$ a $\frac07=\frac{\square}{1}$.
+\item Porovnej $\frac7{10}$ a $\frac{11}{15}$;
+$-\frac49$ a $-\frac5{12}$; $\frac{-5}{-8}$ a $\frac35$.
+\item Zapiš $-1{,}25$ jako zlomek a $\frac7{20}$ desetinným číslem.
+\item Najdi jedno racionální číslo mezi $\frac35$ a $\frac23$.
+\end{enumerate}
+\tcblower
+a) $\frac35$, $-\frac35$, $\frac34$.
+b) $-21$, $72$, $0$.
+c) $\frac{21}{30}<\frac{22}{30}$;
+$-\frac{16}{36}<-\frac{15}{36}$;
+$\frac58=\frac{25}{40}>\frac{24}{40}=\frac35$.
+d) $-\frac{125}{100}=-\frac54$; $0{,}35$.
+e) Například $\frac{19}{30}$, protože $\frac35=\frac{18}{30}$ a $\frac23=\frac{20}{30}$.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={S2: oprav a vysvětli},breakable=false]
+Rozhodni, zda platí: a) $\frac23=\frac{2+3}{3+3}$;
+b) $\frac{2+6}{2+10}=\frac6{10}$;
+c) $\frac{6\cdot5}{6\cdot7}=\frac57$.
+\tcblower
+a) Ne, $\frac56\ne\frac23=\frac46$: přičtení stejného čísla není rozšíření.
+b) Ne, vlevo je $\frac8{12}=\frac23$, vpravo $\frac35$.
+Nelze krátit sčítance. c) Ano, krátíme společného činitele $6$.
+\end{zadaniReseniBox}
+
+\poznamka{Při rozboru chtěj vedle výsledku vysvětlení: která společná
+jednotka se použila a proč znaménko vyšlo právě takto. Závěrečná otázka:
+\uv{Je každý zlomek jiné číslo?} Hodina 07 rozšíří obor o čísla,
+která jako podíl celých čísel vyjádřit nejdou.}
+
+\newpage
+\blok{Rezerva}
+\begin{zadaniReseniBox}[title={R1: volitelně, 10–15 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Porovnej bez desetinného dělení $\frac{101}{102}$ a $\frac{100}{101}$.
+\item Urči všechna přirozená $n$, pro která $\frac23<\frac n{12}<\frac56$.
+\item Tři čtvrtiny objemu nádrže tvoří $18$ litrů. Kolik litrů
+má celá nádrž a kolik litrů představuje jedna šestina jejího objemu?
+\item Vysvětli, proč \uv{větší jmenovatel znamená menší zlomek} bez dalších
+podmínek nestačí. Uveď dva kladné zlomky jako protipříklad.
+\end{enumerate}
+\tcblower
+a) První je $1-\frac1{102}$, druhý $1-\frac1{101}$.
+Protože $\frac1{102}<\frac1{101}$, je první zlomek větší.
+Také $101\cdot101=10\,201>10\,200=100\cdot102$.
+b) $\frac8{12}<\frac n{12}<\frac{10}{12}$, tedy pouze $n=9$.
+c) Jedna čtvrtina je $6$ litrů, celek $24$ litrů, šestina $4$ litry.
+d) Například $\frac45>\frac12$, ačkoli $5>2$.
+Pravidlo platí při stejném kladném čitateli a kladných jmenovatelích.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={R2: volitelně k novým vlastnostem},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Urči opačné a převrácené číslo k $-\frac58$ a proveď obě zkoušky.
+\item Vypočti pomocí roznásobení $-\frac23\cdot(\frac94-\frac32)$.
+Ověř výpočet nejprve sečtením v závorce.
+\item Najdi všechna celá nenulová čísla, která mají také celočíselnou
+převrácenou hodnotu. Zdůvodni úplnost výčtu.
+\end{enumerate}
+\tcblower
+a) Opačné $\frac58$, převrácené $-\frac85$;
+$-\frac58+\frac58=0$, $(-\frac58)\cdot(-\frac85)=1$.
+b) $-\frac32+1=-\frac12$; kontrola $-\frac23\cdot\frac34=-\frac12$.
+c) Právě $1$ a $-1$. Součin dvou celých čísel může být $1$ pouze jako
+$1\cdot1$ nebo $(-1)\cdot(-1)$; celočíselní dělitelé jedničky jsou jen $1$ a $-1$.
+\end{zadaniReseniBox}
+
+\poznamka{R2 je volitelná rezerva nebo náhrada části následujícího D1,
+nikoli povinný přídavek k celé domácí práci.}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: přibližně 15–20 minut},breakable=false]
+\begin{enumerate}[label=\arabic*)]
+\item Zkrať $\frac{96}{144}$, $\frac{-75}{105}$, $\frac{-56}{-98}$.
+\item Rozšiř $-\frac7{12}$ na jmenovatele $60$ a $\frac9{14}$ na $42$.
+\item Porovnej $\frac58$ a $\frac{11}{18}$; $-\frac7{10}$ a $-\frac23$.
+\item Seřaď vzestupně $\frac34$, $-\frac12$, $0{,}7$, $-\frac58$.
+\item Zapiš $0{,}125$ jako zlomek; najdi číslo mezi $\frac14$ a $\frac13$.
+\item Rozhodni, zda $\frac{3+9}{3+15}=\frac9{15}$. Ověř oba zlomky
+zkrácením; pojmenuj chybu. Rozhodni také, zda $\frac04$ a $\frac40$ označují čísla.
+\end{enumerate}
+\tcblower
+1. $\frac23$, $-\frac57$, $\frac47$.
+2. $-\frac{35}{60}$, $\frac{27}{42}$.
+3. $\frac{45}{72}>\frac{44}{72}$; $-\frac{21}{30}<-\frac{20}{30}$.
+4. $-\frac58<-\frac12<0{,}7<\frac34$.
+5. $\frac18$; například $\frac7{24}$ mezi $\frac6{24}$ a $\frac8{24}$.
+6. Ne: vlevo $\frac{12}{18}=\frac23$, vpravo $\frac35$; chybně se krátí
+sčítance. $\frac04=0$ je číslo, $\frac40$ není definováno.
+\end{zadaniReseniBox}
+
+\end{document}

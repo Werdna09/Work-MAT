@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Příprava: 1. ročník SPŠ, hodina 12, Množina a její prvky.
 % Závazný rozsah: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex,
 % řádek 12 (TP 1.1–1.2); návaznost na hodiny 5–11 podle rozpisu.
@@ -192,6 +194,23 @@ sudá celá čísla nebo zamění $\varnothing$ a $\{0\}$.
 Vrať ho ke konkrétnímu prvku a otázce, zda vyhovuje zadání.
 Ani prázdnou množinu neztotožňuj se samotným číslem $0$.}
 
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Rezerva: kontrola zápisu},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Kolik různých prvků obsahuje zápis $K=\{2,0,2,-1,0\}$? Zapiš jej bez opakování.
+\item Vypiš $L=\{x\in\mathbb Z\mid -2<x<2\}$. Najdi chybu v odpovědi $L=\{-2,-1,0,1,2\}$.
+\item Zapiš charakteristickou vlastností $P=\{-3,0,3,6\}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Tři: $K=\{-1,0,2\}$. Opakovaný zápis prvku nový prvek nevytváří.
+\item $L=\{-1,0,1\}$. Obě meze jsou ostré, krajní hodnoty nepatří do množiny.
+\item Například $P=\{x\in\mathbb Z\mid x\text{ je násobek tří a }-3\le x\le6\}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \blok{Volitelná rezerva: stejná podmínka, jiný číselný obor}
 \begin{prikladReseniBox}
 Urči množiny $\{x\in\mathbb N\mid -1\le x<4\}$,
@@ -215,5 +234,26 @@ ve 13. hodině, diagramy a operace až v dalších hodinách.}
 \textbf{Závěrečné ověření:} Nech žáka přečíst jeden zápis
 charakteristickou vlastností, uvést vyhovující a nevyhovující číslo
 a vysvětlit, proč množina obsahující nulu není prázdná.
+
+
+\poznamka{Základ: původní příklady 1 až 5 a samostatné úlohy. Nová trojice a porovnání číselných oborů jsou dvě možné rezervy; není nutné vyřešit obě. Domácí čtveřice je konkrétní zadání pro všechny. Operace s množinami, podmnožiny ani diagramy zde nezavádíme.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí výčet a vlastnost},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypiš $A=\{x\in\mathbb Z\mid -4\le x<-1\}$ a rozhodni, zda $-1\in A$.
+\item Zapiš charakteristickou vlastností $B=\{1,3,5,7\}$.
+\item Urči $C=\{x\in\mathbb N\mid x<1\}$ a $D=\{x\in\mathbb Z\mid -1<x<1\}$.
+\item Je množina všech záporných celých čísel konečná? Zdůvodni.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $A=\{-4,-3,-2\}$, $-1\notin A$.
+\item Například $B=\{x\in\mathbb N\mid x\text{ je liché a }x<8\}$.
+\item Při naší konvenci $\mathbb N=\{1,2,\ldots\}$ je $C=\varnothing$, zatímco $D=\{0\}$.
+\item Je nekonečná: za každým záporným celým číslem lze najít další, menší o $1$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

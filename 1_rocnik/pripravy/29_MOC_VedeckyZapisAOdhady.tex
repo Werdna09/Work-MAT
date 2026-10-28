@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 29, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 29.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -24,7 +26,7 @@
 
 \blok{Výklad a souvislosti}
 
-Mocniny desítky umožňují porovnat rozměry, které se liší mnoha nulami. Nejdříve stanov, zda je číslo větší, nebo menší než jedna, a teprve potom určuj znaménko exponentu.
+Mocniny desítky umožňují porovnat rozměry, které se liší mnoha nulami. Nejdříve stanov, zda je absolutní hodnota čísla větší, rovna, nebo menší než jedna, a teprve potom určuj znaménko exponentu.
 
 \begin{definiceBox}[title={Definice},breakable=false]
 \textbf{Vědecký zápis} nenulového reálného čísla je tvar $c\cdot10^k$, kde $k\in\mathbb Z$ a $1\le |c|<10$. Nulu zapisujeme prostě $0$.
@@ -68,6 +70,35 @@ $\frac{12}{6}\cdot10^{5-3-2}=2$. Hrubý odhad $300\,000\cdot0{,}004:600$ také d
 
 \poznamka{Ověř jednotky i řád výsledku. Řádový odhad zde znamená hrubé určení velikosti, nikoli nevyloženou konvenci „nejbližší mocnina deseti“. Kalkulačku k těmto úlohám nepotřebujeme.}
 
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Základ: normalizace a výpočty},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Zapiš vědecky $-0{,}00048$, $18{,}2\cdot10^5$ a $0{,}36\cdot10^{-4}$.
+\item Vypočítej $(8\cdot10^{-3})(5\cdot10^6)$ a $(6\cdot10^{-4}):(2\cdot10^3)$.
+\item Vypočítej $3{,}2\cdot10^5+4{,}5\cdot10^4$. Proč nelze sečíst jen koeficienty při ponechání různých exponentů?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-4{,}8\cdot10^{-4}$, $1{,}82\cdot10^6$, $3{,}6\cdot10^{-5}$. Zpětné roznásobení musí dát původní číslo.
+\item $40\cdot10^3=4\cdot10^4$ a $3\cdot10^{-7}$.
+\item $3{,}2\cdot10^5+0{,}45\cdot10^5=3{,}65\cdot10^5$. Sčítáme násobky téže mocniny deseti.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rezerva: odhad a převod jednotek},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Před výpočtem odhadni $(9{,}6\cdot10^6):(3{,}2\cdot10^{-2})$.
+\item Převeď $4{,}8\cdot10^{-5}\,\mathrm m$ na milimetry a porovnej s $0{,}05\,\mathrm{mm}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Odhad $10^7:(3\cdot10^{-2})\approx3{,}3\cdot10^8$, přesně $3\cdot10^8$.
+\item $4{,}8\cdot10^{-2}\,\mathrm{mm}=0{,}048\,\mathrm{mm}<0{,}05\,\mathrm{mm}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
 \blok{Volitelná rezerva}
 
 \begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
@@ -76,5 +107,28 @@ Odhadni a potom vypočítej $(7{,}8\cdot10^7):(2{,}6\cdot10^{-2})$.
 Odhad $8\cdot10^7:(3\cdot10^{-2})\approx2{,}7\cdot10^9$. Přesně $3\cdot10^9$.
 \end{prikladReseniBox}
 
+
+
+\poznamka{Základ tvoří původní zápisy, samostatné úlohy a nová normalizace s výpočty. Rezervní odhady a převody vybírej podle chyb; domácí pětice je pro všechny. U záporného čísla odděl znaménko koeficientu od znaménka exponentu. Nevyžaduj znalost fyzikálních předpon, které nebyly zavedeny.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Zapiš vědecky $-72\,000\,000$ a $0{,}0000091$.
+\item Normalizuj $45\cdot10^{-6}$ a $0{,}008\cdot10^7$.
+\item Vypočítej $(2{,}5\cdot10^3)(4\cdot10^{-5})$.
+\item Vypočítej $7\cdot10^{-3}-2\cdot10^{-4}$.
+\item Převeď $3{,}2\cdot10^4\,\mathrm{mm}$ na metry.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-7{,}2\cdot10^7$ a $9{,}1\cdot10^{-6}$.
+\item $4{,}5\cdot10^{-5}$ a $8\cdot10^4$.
+\item $10\cdot10^{-2}=1\cdot10^{-1}$.
+\item $6{,}8\cdot10^{-3}$.
+\item $3{,}2\cdot10^1\,\mathrm m=32\,\mathrm m$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

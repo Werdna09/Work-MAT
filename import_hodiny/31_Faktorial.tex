@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{31}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Faktoriál a jeho algebraické úpravy}\par
+{\sffamily\large\color{teal} Výukový podklad · 31. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.2\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Rozumět významu \(n!\), použít \(0!=1\), zkracovat poměry faktoriálů a řešit jednoduché rovnice s faktoriály.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+Pro každé přirozené \(n\ge1\) definujeme \(n!=1\cdot2\cdot\ldots\cdot n\). Dále \(0!=1\); tato volba je slučitelná se vzorcem \(n!=n(n-1)!\), například \(1!=1\cdot0!\).\par
+\textbf{Základní vztah:} \(n!=n(n-1)!\). Proto \((n+2)!=(n+2)(n+1)n!\).\par
+\textbf{Zkracování:} nikdy nerozvíjej obrovské faktoriály bez potřeby; rozepiš jen větší faktor až ke společnému menšímu. Definici nepoužívej pro záporná celá čísla.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Vypočti \(6!\) a \(\frac{8!}{6!}\).\par
+\textit{Řešení.} \(6!=1\cdot2\cdot3\cdot4\cdot5\cdot6=720\). Dále \(8!=8\cdot7\cdot6!\), tedy \(\frac{8!}{6!}=8\cdot7=56\).\par\smallskip
+\textbf{Příklad 2.} Zjednoduš \(\frac{(n+2)!}{n!}\) pro \(n\in\mathbb N_0\).\par
+\textit{Řešení.} \((n+2)!=(n+2)(n+1)n!\); po zkrácení \(n!\) dostaneme \((n+2)(n+1)\).\par\smallskip
+\textbf{Příklad 3.} Vypočti bez kalkulačky \(\frac{9!}{7!\,2!}\).\par
+\textit{Řešení.} Čitatel \(9!=9\cdot8\cdot7!\); jmenovatel \(7!\cdot2\). Výsledek \(\frac{9\cdot8}{2}=36\).\par\smallskip
+\textbf{Příklad 4.} Vyřeš v přirozených číslech \(\frac{(n+1)!}{(n-1)!}=30\).\par
+\textit{Řešení.} Předpokládáme \(n\ge1\). Levá strana je \(n(n+1)\). Řešíme \(n^2+n-30=0\), tedy \((n+6)(n-5)=0\). Z přípustných čísel vyhoví \(n=5\).\par\smallskip
+\textbf{Příklad 5.} Zjednoduš \(\frac{n!+(n+1)!}{n!}\).\par
+\textit{Řešení.} Vytkneme \(n!\): \(\frac{n!\,[1+(n+1)]}{n!}=n+2\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Vypočti \(5!\).
+\item Zjednoduš \(\frac{11!}{9!}\).
+\item Zjednoduš \(\frac{(n+3)!}{(n+1)!}\).
+\item Vypočti \(\frac{7!}{5!\,2!}\).
+\item Urči \(n\in\mathbb N\), pro které \(\frac{n!}{(n-2)!}=42\).
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(5!=120\).
+\item \(11\cdot10=110\).
+\item \((n+3)(n+2)\), pro \(n\ge0\).
+\item \(\frac{7\cdot6}{2}=21\).
+\item Pro \(n\ge2\) platí \(n(n-1)=42\); \(n^2-n-42=0\); \(n=7\) (záporný kořen nevyhovuje).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Platí \(0!=1\), nikoli \(0\).
+\item Faktoriál nelze „rozdělit“: \((a+b)!\ne a!+b!\).
+\item V rovnicích kontrolovat definiční podmínky argumentů faktoriálů.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–8 význam a definice; 8–18 zkracování; 18–30 rovnice; 30–42 cvičení; 42–45 rekapitulace.\par
+\textbf{Návaznost:} Faktoriál kompaktně zapíše počty uspořádání a později také kombinační čísla.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

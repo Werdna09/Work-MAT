@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{37}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Vlastnosti kombinačních čísel}\par
+{\sffamily\large\color{teal} Výukový podklad · 37. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.2\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Dokázat symetrii a Pascalův vztah, používat základní součtové identity a rozlišit jejich kombinatorické zdůvodnění.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Symetrie:} \(\displaystyle\binom nk=\binom n{n-k}\). Vybrat \(k\) osob znamená zároveň určit zbylých \(n-k\).\par
+\textbf{Pascalův vztah:} Pro \(1\le k\le n-1\)
+\[\binom nk=\binom{n-1}{k-1}+\binom{n-1}k.\]
+Důkaz: při výběru \(k\)-členné skupiny rozdělíme případy na ty, které obsahují pevně zvolenou osobu P, a ty, které ji neobsahují. V prvním případě přidáme \(k-1\) z ostatních \(n-1\), ve druhém \(k\) z ostatních.\par
+\textbf{Součet řádku:} \(\displaystyle\sum_{k=0}^n\binom nk=2^n\), neboť \(n\)-prvková množina má \(2^n\) podmnožin (u každého prvku volíme ano/ne).
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Vypočti \(\binom{10}{8}\).\par
+\textit{Řešení.} Symetrií \(\binom{10}{8}=\binom{10}{2}=45\).\par\smallskip
+\textbf{Příklad 2.} Vypočti \(\binom94+\binom93\) jediným kombinačním číslem.\par
+\textit{Řešení.} Pascalův vztah s \(n=10,k=4\): \(\binom94+\binom93=\binom{10}4=210\). Přímá kontrola: \(126+84=210\).\par\smallskip
+\textbf{Příklad 3.} Vysvětli rovnost \(\binom{10}4=\binom94+\binom93\) na výběru čtyřčlenné komise.\par
+\textit{Řešení.} V desetihlavé skupině vybereme konkrétní osobu P. Buď P není v komisi: \(\binom94\), nebo je: \(\binom93\). Případy se nepřekrývají a pokrývají všechny komise.\par\smallskip
+\textbf{Příklad 4.} Kolik podmnožin má pětiprvková množina?\par
+\textit{Řešení.} U každého z pěti prvků se nezávisle rozhodneme, zda patří do podmnožiny; \(2^5=32\). Současně je to \(\binom50+\cdots+\binom55\).\par\smallskip
+\textbf{Příklad 5.} Zapiš \(\binom nk\) pomocí \(\binom{n-1}{k-1}\).\par
+\textit{Řešení.} Z faktoriálů \(\binom nk=\frac{n}{k}\binom{n-1}{k-1}\), pro \(1\le k\le n\). Lze to ověřit po dosazení obou vzorců.\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Zjednoduš \(\binom{12}{11}\).
+\item Dopočti \(\binom73+\binom74\).
+\item Vyjádři \(\binom83+\binom82\) jediným členem.
+\item Urči součet \(\binom60+\binom61+\cdots+\binom66\).
+\item Kolik výběrů ze sedmi prvků má lichý počet prvků?
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item Symetrie: \(\binom{12}1=12\).
+\item Pascalův vztah: \(\binom73+\binom74=\binom84=70\). Také symetrií \(2\binom73=70\).
+\item Pascalův vztah: \(\binom93=84\).
+\item \(2^6=64\).
+\item \(2^{7-1}=64\). Zdůvodnění: doplněním nebo odstraněním pevného prvku navzájem párujeme podmnožiny sudé a liché velikosti; celkem je \(2^7\) podmnožin.
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Pascalův vztah má shodný horní index \(n-1\) na pravé straně.
+\item \(\binom nk=\binom n{n-k}\) není obecně rovno \(\binom{k}n\).
+\item Součet \(\sum\binom nk\) zahrnuje také prázdnou a úplnou množinu.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–12 symetrie a důkaz; 12–25 Pascalův vztah; 25–33 součet podmnožin; 33–42 úlohy; 42–45 shrnutí.\par
+\textbf{Návaznost:} Následující hodina vizualizuje Pascalův vztah a propojí ho s počtem cest v mřížce.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

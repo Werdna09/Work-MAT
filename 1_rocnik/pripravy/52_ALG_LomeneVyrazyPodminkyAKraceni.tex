@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 52, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 52.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -34,6 +36,13 @@ Zlomek s proměnnou ve jmenovateli může být pro některá dosazení nedefinov
 
 Krátíme činitele, nikoli jednotlivé sčítance. Rozšiřování je opačný postup: násobíme čitatele i jmenovatele stejným nenulovým výrazem. Po krácení ponecháme původní podmínky, i když z výsledného jmenovatele už některý zákaz nevyplývá.
 
+
+\begin{zadaniReseniBox}[title={Mezikrok: od číselných zlomků k proměnné},breakable=false]
+Porovnej $\frac{3\cdot5}{2\cdot5}$ a $\frac{3+5}{2+5}$. Potom uprav $\frac{3(x-1)}{2(x-1)}$.
+\tcblower
+První zlomek je $3/2$, druhý $8/7$, protože krátit lze činitele, nikoli sčítance. Proměnný zlomek se rovná $3/2$ pouze pro $x\ne1$; podmínka zajišťuje nenulový krácený činitel.
+\end{zadaniReseniBox}
+
 \blok{Řešené příklady}
 
 \begin{prikladReseniBox}[title={Příklad 1},breakable=false]
@@ -68,5 +77,43 @@ Rozklady jsou $(x-3)(x+3)$ a $(x-2)(x-3)$. Proto $x\ne2,3$ a výsledek je $\frac
 
 
 \poznamka{Ke každému výrazu piš podmínky na stejný řádek jako výsledek. Nepřeváděj je jen na podmínky zjednodušeného tvaru. V dalším procvičování vrať vždy alespoň jednu zakázanou hodnotu, která po krácení zmizela ze jmenovatele.}
+
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Základ a navázání: rozklad před krácením},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{3x^2-6x}{6x}$ a $\frac{(x-2)^2}{x^2-4}$.
+\item Rezerva: uprav $\frac{1-x^2}{x^2+2x+1}$ a zachovej původní zákazy.
+\item Rezerva: rozhodni, zda $\frac{x^2-x}{x}=x-1$ dovoluje dosadit $x=0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{x-2}{2}$ při $x\ne0$; $\frac{x-2}{x+2}$ při $x\ne\pm2$.
+\item $\frac{-(x-1)(x+1)}{(x+1)^2}=\frac{1-x}{x+1}$ při $x\ne-1$.
+\item Ne. Rovnost platí pouze pro $x\ne0$. Upravený výraz může existovat i tam, kde původní zlomek neexistuje.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Základ: číselný mezikrok, oba původní příklady a nová první položka. Zbývající nové otázky jsou rezerva pro upevnění znamének a oboru. Domácí čtveřice má výsledky s úplnými podmínkami. V každém rozkladu označ celý společný činitel; nikdy nepřeškrtávej izolované sčítance.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\frac{x^2-16}{x^2+4x}$.
+\item Uprav $\frac{2x^2-8}{x-2}$.
+\item Uprav $\frac{x^2+6x+9}{x^2-9}$.
+\item Je $\frac{x+1}{x+2}$ rovno $1/2$ pro všechna přípustná $x$? Uveď protipříklad.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{x-4}{x}$, $x\ne0,-4$.
+\item $2(x+2)$, $x\ne2$.
+\item $\frac{x+3}{x-3}$, $x\ne\pm3$.
+\item Ne; pro $x=1$ je hodnota $2/3\ne1/2$. Původní podmínka $x\ne-2$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

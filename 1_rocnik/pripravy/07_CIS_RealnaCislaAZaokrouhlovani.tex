@@ -1,0 +1,308 @@
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 7;
+% SPS.pdf, oddíl 1.2. Návaznost: 06 (zlomky), 08 (intervaly), 12 (konvence oborů).
+% Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
+% Reálná čísla a Číselná osa (bez konstrukcí dalších odmocnin a bez intervalů).
+% Realisticky.cz, prostudované části v místní knihovně externi_zdroje/realisticky/:
+% 01_Zakladni_poznatky/02_Ciselne_obory/010205_Realna_cisla_I/010205_Lekce.pdf
+% (úvod, Př. 4–5: zaokrouhlování, přenos přes devítku);
+% 01_Zakladni_poznatky/02_Ciselne_obory/010206_Realna_cisla_II/010206_Lekce.pdf
+% (úvodní metodická poznámka, rozbor znamének).
+% Konkrétní úlohy, formulace a řešení jsou vlastní tvorba. Platné cifry nezařazeny.
+% Cílená revize: vlastní TikZ diagram, srovnávací tabulka a úlohy V1–V2
+% podle zadání učitele. Další podklady v uvedené kapitole učebnice:
+% Druhy číselných oborů a tabulky vlastností N, Z, Q;
+% místní Realisticky 010205, Př. 1 a dodatek o neuzavřenosti iracionálních čísel,
+% a 010201, úvodní přehled oborů a Zajímavé vlastnosti operací.
+% Diagram: vnořené oblasti pro skutečné inkluze, nikoli velikosti nebo číselná osa.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Číselné obory}{07}{Reálná čísla a zaokrouhlování}
+\begin{document}
+
+\poznamka{Rozšířená příprava je zásobníkem; všechna procvičení se nemusejí
+vejít do 45 minut. Orientační výběr: rozšíření oboru a osa 10 min,
+diagram s příklady 8 min, uzavřenost a její meze 10 min,
+zaokrouhlování 10 min, vybrané samostatné úlohy a shrnutí 7 min.
+Původní D1 je asi na 15 min; rezervu vybírej podle potřeb třídy.
+Nepředbíhej úpravy odmocnin ani vědecký zápis.}
+
+\blok{Která čísla ještě na ose chybějí?}
+Zlomek $\frac18$ má konečný zápis $0{,}125$, zlomek $\frac13$ nekonečný
+periodický zápis $0{,}\overline3$. Nekonečný počet desetinných míst tedy
+sám o sobě neznamená, že číslo není racionální.
+Úhlopříčka jednotkového čtverce má podle známé Pythagorovy věty délku
+$\sqrt2$. Tuto přesnou délku jako podíl celých čísel zapsat nelze.
+
+\begin{definiceBox}
+\textbf{Iracionální číslo} je reálné číslo, které nelze vyjádřit
+zlomkem $\frac pq$ s celými $p,q$ a $q\ne0$.
+Jeho desetinný rozvoj je nekonečný a není od žádného místa periodický.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Reálná čísla} zahrnují racionální i iracionální čísla.
+Jejich obor značíme $\mathbb R$ a geometricky je představujeme všemi
+body číselné osy bez mezer.
+\end{definiceBox}
+
+Příklady iracionálních čísel jsou $\sqrt2$ a $\pi$. Naproti tomu
+$\sqrt9=3$ je přirozené číslo. Značka odmocniny sama o sobě nerozhoduje.
+Všechna přirozená čísla jsou celá, všechna celá racionální a všechna
+racionální reálná. Iracionální číslo je reálné, ale není racionální.
+
+\poznamka{Iracionalitu $\sqrt2$ a $\pi$ zde sděl jako známou vlastnost,
+ne jako závěr z displeje kalkulačky. Konečný výpis číslic nedokazuje
+neperiodičnost nekonečného rozvoje. Úplný důkaz nyní není cílem hodiny.}
+
+\begin{definiceBox}
+\textbf{Číselná osa} je přímka se zvoleným počátkem $0$, jednotkou délky
+a kladným směrem. Každému reálnému číslu odpovídá právě jeden bod a naopak.
+Při obvyklém směru doprava leží větší čísla více vpravo.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={P1: přesná hodnota a poloha},breakable=false]
+Seřaď vzestupně a přibližně umísti na osu
+$-\frac32$, $-\sqrt2$, $0$, $\frac54$, $\sqrt2$.
+Použij $1{,}41<\sqrt2<1{,}42$.
+\tcblower
+$-1{,}42<-\sqrt2<-1{,}41$, proto
+\[
+-\frac32<-\sqrt2<0<\frac54<\sqrt2.
+\]
+Hodnoty $-\frac32=-1{,}5$ a $\frac54=1{,}25$ jsou přesné.
+Číslo $\sqrt2$ je na obrázku umístěno pouze přibližně.
+\begin{center}
+\begin{tikzpicture}[x=2.7cm,y=0.75cm]
+\draw[->] (-2.1,0)--(2.12,0);
+\foreach \x in {-2,-1,0,1,2}{\draw (\x,-0.08)--(\x,0.08) node[below=5pt] {$\x$};}
+\fill (-1.5,0) circle (1.4pt) node[above=9pt] {$-\frac32$};
+\fill (-1.4142,0) circle (1.4pt) node[below=22pt] {$-\sqrt2$};
+\fill (1.25,0) circle (1.4pt) node[above=9pt] {$\frac54$};
+\fill (1.4142,0) circle (1.4pt) node[below=22pt] {$\sqrt2$};
+\end{tikzpicture}
+\end{center}
+\end{prikladReseniBox}
+
+\newpage
+\blok{Vennův diagram číselných oborů}
+Zápis
+\[
+\mathbb N\subset\mathbb Z\subset\mathbb Q\subset\mathbb R
+\]
+čteme: každé číslo z menšího oboru patří také do následujících větších
+oborů. Zde jsou všechny uvedené inkluze vlastní: větší obor obsahuje
+i další čísla. Značení zatím slouží ke čtení obrázku;
+obecné vztahy a operace mezi množinami budeme probírat později.
+
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\normalsize]
+\draw[rounded corners=3mm,fill=black!4,line width=0.8pt] (0,0) rectangle (13.2,6.2);
+\node[anchor=west] at (0.35,5.8) {$\mathbb R$};
+\draw[fill=white,line width=0.8pt] (4.4,3.1) ellipse [x radius=4cm,y radius=2.5cm];
+\node at (4.4,5.25) {$\mathbb Q$};
+\draw[fill=black!8,line width=0.8pt] (3.8,2.8) ellipse [x radius=2.8cm,y radius=1.6cm];
+\node at (3.6,4.0) {$\mathbb Z$};
+\draw[fill=white,line width=0.8pt] (3.1,2.65) ellipse [x radius=1.5cm,y radius=0.85cm];
+\node at (3.1,3.05) {$\mathbb N$};
+\node at (3.1,2.45) {$1,\ 2,\ 5$};
+\node at (5.3,2.8) {$0$};
+\node at (3.8,1.5) {$-3$};
+\node at (6.9,3.2) {$\frac12$};
+\node at (4.5,4.75) {$-\frac74$};
+\node[align=center] at (10.7,4.8) {$\mathbb R\setminus\mathbb Q$\\iracionální čísla};
+\node at (9.7,3.3) {$\sqrt2$};
+\node at (11.6,2.65) {$-\sqrt2$};
+\node at (10.5,1.5) {$\pi$};
+\end{tikzpicture}
+\end{center}
+
+Číslo napsané uvnitř $\mathbb N$ leží současně uvnitř $\mathbb Z$,
+$\mathbb Q$ i $\mathbb R$. Oblast $\mathbb R\setminus\mathbb Q$ tvoří
+všechna reálná čísla mimo $\mathbb Q$, tedy právě iracionální čísla.
+Nula je mimo $\mathbb N$, ale uvnitř $\mathbb Z$.
+Velikosti ploch ani vzdálenosti v diagramu nic neříkají o velikosti
+čísel nebo o počtu prvků.
+
+\begin{prikladReseniBox}[title={V1: přečti vnořené oblasti},breakable=false]
+a) Do kterých ze čtyř oborů patří $5$ a $0$?
+b) Patří $\frac12$ do $\mathbb Z$? Je $-\sqrt2$ racionální?
+c) Kam bys připsal $\sqrt9$ a $0{,}5$?
+\tcblower
+a) $5$ patří do všech čtyř; $0$ do $\mathbb Z,\mathbb Q,\mathbb R$.
+b) $\frac12\notin\mathbb Z$ a $-\sqrt2\notin\mathbb Q$.
+c) $\sqrt9=3$ do nejvnitřnější oblasti $\mathbb N$;
+$0{,}5=\frac12$ do $\mathbb Q$ mimo $\mathbb Z$.
+Různé zápisy téhož čísla nepředstavují různé prvky.
+\end{prikladReseniBox}
+
+\poznamka{Nech žáky jednotlivé oblasti skutečně ukázat prstem
+a u každého příkladu říci i všechny větší obory. Nečti obrázek jako
+několik oddělených přihrádek. Vnoření vyjadřuje vztahy oborů,
+nikoli relativní polohy jejich čísel na ose.}
+
+\newpage
+\blok{Rozšíření oboru a uzavřenost operací}
+Z potřeby počítat předměty vycházíme z $\mathbb N$. Chceme-li vždy
+odečítat, potřebujeme také nulu a záporná čísla: například $2-5=-3$.
+Chceme-li dělit i při necelém podílu, přidáme zlomky: $1:2=\frac12$.
+Rozšíření číselných oborů tak souvisí mimo jiné s operacemi,
+které v předchozím oboru nebylo vždy možné provést bez jeho opuštění.
+
+Tabulka říká, zda pro \emph{každou} přípustnou dvojici čísel z uvedeného
+oboru zůstane výsledek ve stejném oboru. \uv{Ne} neznamená, že se to
+nepodaří nikdy. U dělení zkoumáme pouze dvojice s nenulovým dělitelem.
+
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Obor čísel $a,b$ & $a+b$ & $a-b$ & $a\cdot b$ & $a:b$, $b\ne0$\\
+\midrule
+$\mathbb N$ & ano & ne & ano & ne\\
+$\mathbb Z$ & ano & ano & ano & ne\\
+$\mathbb Q$ & ano & ano & ano & ano\\
+$\mathbb R$ & ano & ano & ano & ano\\
+$\mathbb R\setminus\mathbb Q$ & ne & ne & ne & ne\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\textbf{Dělení nulou není definováno v žádném z těchto oborů.}
+\uv{Ano} v posledním sloupci pro $\mathbb Q$ a $\mathbb R$ tuto výjimku
+neruší. V posledním řádku porovnáváme samostatně iracionální čísla;
+nejde o všechny reálné hodnoty.
+
+\begin{prikladReseniBox}[title={V2: zdůvodni záporné odpovědi protipříkladem},breakable=false]
+Ke každému \uv{ne} v tabulce najdi dvojici příslušného typu.
+U dělení se drž nenulového dělitele.
+\tcblower
+V $\mathbb N$ například $3-3=0\notin\mathbb N$.
+Pro dělení v $\mathbb N$ i $\mathbb Z$ stačí $1:2=\frac12$, které není celé.
+Pro dvě iracionální čísla dostáváme například
+\begin{align*}
+\sqrt2+(-\sqrt2)&=0, & \sqrt2-\sqrt2&=0,\\
+\sqrt2\cdot\sqrt2&=2, & \sqrt2:\sqrt2&=1.
+\end{align*}
+Všechny výsledky jsou racionální. Protipříklady vyvracejí uzavřenost,
+nikoli možnost správně tyto výpočty provést v širším oboru $\mathbb R$.
+\end{prikladReseniBox}
+
+V $\mathbb Q$ jsou již součet, rozdíl, součin a podíl nenulovým číslem
+racionální: při počítání se zlomky dostaneme opět podíl celých čísel
+s nenulovým jmenovatelem. Přesto potřebujeme širší $\mathbb R$,
+například pro délku $\sqrt2$ nebo pro řešení $x^2=2$.
+Přechod z $\mathbb Q$ do $\mathbb R$ tedy není potřebný k uzavření
+těchto čtyř operací; doplňuje další skutečné hodnoty, například některé odmocniny.
+
+\poznamka{Jeden příklad dokazuje odpověď \uv{ne}, ale ne obecné \uv{ano}.
+U racionálních čísel se opři o obecná pravidla počítání se zlomky,
+nikoli jen o několik dosazení. Neměň tabulku uzavřenosti na tabulku
+komutativity či asociativity: odpovídá na jinou otázku.}
+
+\newpage
+\blok{Zaokrouhlení mění hodnotu zápisu}
+\begin{definiceBox}
+\textbf{Zaokrouhlení na daný řád} znamená nahrazení čísla nejbližším
+násobkem jednotky tohoto řádu. Při přesné polovině zde volíme násobek
+dále od nuly, například $2{,}45\doteq2{,}5$ a $-2{,}45\doteq-2{,}5$ na desetiny.
+\end{definiceBox}
+
+U kladného čísla sledujeme první vynechanou číslici: je-li menší než $5$,
+ponechanou část neměníme; je-li alespoň $5$, přičteme jednotku posledního
+ponechaného řádu. U záporného čísla stejně zaokrouhlíme jeho kladný
+protějšek a vrátíme znaménko. Používáme $\doteq$, pokud zaokrouhlení
+není přesná rovnost; příslušný řád vždy uvedeme.
+
+\begin{prikladReseniBox}[title={P2: devítky a záporné číslo},breakable=false]
+Zaokrouhli na setiny: $3{,}146$, $9{,}995$, $-2{,}345$ a $-2{,}341$.
+\tcblower
+$3{,}146\doteq3{,}15$; $9{,}995\doteq10{,}00$;
+$-2{,}345\doteq-2{,}35$; $-2{,}341\doteq-2{,}34$.
+V druhém případě se přenos dotkne i celé části. Koncové nuly
+v $10{,}00$ sdělují požadované zaokrouhlení na setiny.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P3: rozhoduj z původního čísla},breakable=false]
+Zaokrouhli $1{,}249$ přímo na desetiny. Porovnej s postupem,
+při kterém se nejprve zaokrouhlí na setiny a pak znovu na desetiny.
+\tcblower
+Přímo: první vynechaná číslice je $4$, tedy $1{,}249\doteq1{,}2$.
+Přes mezivýsledek: $1{,}249\doteq1{,}25\doteq1{,}3$.
+Dvojí zaokrouhlování dalo jiný výsledek. Pro požadovaný řád proto
+vycházíme z původního čísla.
+\end{prikladReseniBox}
+
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={S1: obor, osa, přesnost},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item U každého čísla uveď všechny vhodné obory z $\mathbb N,\mathbb Z,
+\mathbb Q,\mathbb R$; není-li racionální, řekni to:
+$0$, $-\frac72$, $\sqrt{16}$, $0{,}\overline{27}$, $-\sqrt2$.
+\item Seřaď a zakresli přibližně na osu: $-1{,}5$, $-\frac54$, $-\sqrt2$, $-1$.
+\item Na setiny zaokrouhli $4{,}736$, $0{,}0049$, $-7{,}895$, $12{,}999$.
+\item Na stovky zaokrouhli $14\,950$ a $-2\,449$.
+\item Platí $\sqrt2=1{,}41$? Stačí zápis $0{,}123456\ldots$ k rozhodnutí,
+zda jde o racionální číslo?
+\end{enumerate}
+\tcblower
+a) $0$: $\mathbb Z,\mathbb Q,\mathbb R$;
+$-\frac72$: $\mathbb Q,\mathbb R$;
+$\sqrt{16}=4$: všechny čtyři;
+$0{,}\overline{27}=\frac{27}{99}=\frac3{11}$: $\mathbb Q,\mathbb R$;
+$-\sqrt2$: jen $\mathbb R$, je iracionální.
+b) $-1{,}5<-\sqrt2<-\frac54<-1$.
+c) $4{,}74$; $0{,}00$; $-7{,}90$; $13{,}00$.
+d) $15\,000$; $-2\,400$.
+e) Ne, pouze $\sqrt2\doteq1{,}41$ na setiny.
+Konečný začátek rozvoje nerozhoduje o jeho dalším průběhu.
+\end{zadaniReseniBox}
+
+\poznamka{Při zakreslování trvej na stejné délce jednotky v kladné
+i záporné části osy. Závěr: každý žák rozliší přesné $\frac14=0{,}25$
+od přibližného $\pi\doteq3{,}14$. Příště budeme vyznačovat celé úseky osy.}
+
+\newpage
+\blok{Rezerva: proč výsledek platí}
+\begin{zadaniReseniBox}[title={R1: volitelně, 10–15 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Ověř $1{,}41<\sqrt2<1{,}42$ porovnáním druhých mocnin.
+Vysvětli, proč je možné takto porovnávat právě kladná čísla.
+\item Může být součet dvou iracionálních čísel racionální?
+Uveď příklad. Dokaž, že $1+\sqrt2$ je iracionální.
+\item Změřená kladná délka se po zaokrouhlení na desetiny zobrazila
+jako $2{,}4$ m. Popiš slovy a nerovností všechny možné původní délky.
+\end{enumerate}
+\tcblower
+a) $1{,}41^2=1{,}9881<2<2{,}0164=1{,}42^2$.
+U nezáporných čísel zachovává druhá mocnina uspořádání; u záporných
+čísel to obecně neplatí, například $-3<-2$, ale $9>4$.
+b) Ano: $\sqrt2+(-\sqrt2)=0$. Kdyby $1+\sqrt2$ bylo racionální,
+odečtením racionální jedničky by bylo racionální i $\sqrt2$, což není.
+c) $2{,}35\le d<2{,}45$ v metrech. Dolní mez se zaokrouhlí na $2{,}4$,
+horní už na $2{,}5$. Nejde o jedinou přesnou původní délku.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: přibližně 15 minut},breakable=false]
+\begin{enumerate}[label=\arabic*)]
+\item Uveď všechny vhodné obory $\mathbb N,\mathbb Z,\mathbb Q,\mathbb R$
+pro $\sqrt{25}$, $-6$, $\frac29$ a $\pi$.
+\item Seřaď a přibližně vyznač na ose $-\frac74$, $-\sqrt2$, $0$, $\frac32$.
+\item Na desetiny zaokrouhli $6{,}24$, $6{,}25$, $-6{,}25$, $9{,}96$.
+\item Na tisíciny zaokrouhli $0{,}07856$ a $-3{,}0005$.
+\item Číslo $2{,}449$ zaokrouhli přímo na desetiny a pak porovnej s postupem
+přes setiny. Který výsledek odpovídá zadání?
+\item Napiš racionální a iracionální číslo ostře mezi $1$ a $2$.
+Vysvětli, proč konečný údaj $1{,}4142$ není totéž co $\sqrt2$.
+\end{enumerate}
+\tcblower
+1. $\sqrt{25}=5$: všechny čtyři; $-6$: $\mathbb Z,\mathbb Q,\mathbb R$;
+$\frac29$: $\mathbb Q,\mathbb R$; $\pi$: pouze $\mathbb R$, iracionální.
+2. $-\frac74<-\sqrt2<0<\frac32$.
+3. $6{,}2$; $6{,}3$; $-6{,}3$; $10{,}0$.
+4. $0{,}079$; $-3{,}001$.
+5. Přímo $2{,}4$, přes $2{,}45$ dostaneme $2{,}5$; správný je přímý výsledek.
+6. Například $\frac32$ a $\sqrt2$. Konečné $1{,}4142=\frac{7071}{5000}$
+je racionální, $\sqrt2$ iracionální; jde pouze o přiblížení.
+\end{zadaniReseniBox}
+
+\end{document}

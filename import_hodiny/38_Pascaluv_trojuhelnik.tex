@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{38}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Pascalův trojúhelník a počítání cest}\par
+{\sffamily\large\color{teal} Výukový podklad · 38. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.3\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Sestavit Pascalův trojúhelník, určit jeho řádky pomocí kombinačních čísel a využít ho při počítání mřížkových cest.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+Pascalův trojúhelník vzniká tak, že na krajích píšeme \(1\) a každý vnitřní člen je součtem dvou členů bezprostředně nad ním. \textbf{Řádek indexovaný \(n\)} obsahuje \(\binom n0,\binom n1,\ldots,\binom nn\). Začínáme \(n=0\), první řádek tedy obsahuje jedinou jedničku.\par
+\[\begin{array}{c}1\\1\quad1\\1\quad2\quad1\\1\quad3\quad3\quad1\\1\quad4\quad6\quad4\quad1\\1\quad5\quad10\quad10\quad5\quad1\end{array}\]
+\textbf{Cesty v mřížce:} Na nejkratší cestě složené pouze z kroků doprava \(D\) a nahoru \(N\) určuje každý výsledek pořadí kroků. Pro \(a\) kroků doprava a \(b\) nahoru je cest \(\binom{a+b}{a}=\binom{a+b}{b}\).
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Doplň řádek \(n=6\) Pascalova trojúhelníku.\par
+\textit{Řešení.} Každé nové číslo je součtem dvou předcházejících nad ním: \(1,6,15,20,15,6,1\).\par\smallskip
+\textbf{Příklad 2.} Urči součet čísel v řádku \(n=5\).\par
+\textit{Řešení.} Součet \(1+5+10+10+5+1=32\). Také přímo \(2^5=32\), protože řádek tvoří \(\binom5k\).\par\smallskip
+\textbf{Příklad 3.} Kolik je nejkratších cest z \((0,0)\) do \((3,4)\), pouze doprava a nahoru?\par
+\textit{Řešení.} Každá cesta je posloupnost sedmi kroků, v níž jsou právě tři \(D\) a čtyři \(N\). Výběr tří pozic pro \(D\): \(\binom73=35\).\par\smallskip
+\textbf{Příklad 4.} Kolik takových cest z \((0,0)\) do \((4,3)\) prochází bodem \((2,1)\)?\par
+\textit{Řešení.} K bodu \((2,1)\): dvě \(D\), jedno \(N\), tedy \(\binom32=3\) cesty. Odtud do \((4,3)\): dvě \(D\) a dvě \(N\), tedy \(\binom42=6\) cest. Pravidlem součinu \(3\cdot6=18\).\par\smallskip
+\textbf{Příklad 5.} Najdi v řádku \(n=8\) číslo se spodním indexem \(k=2\).\par
+\textit{Řešení.} Je to \(\binom82=28\). Můžeme ho získat Pascalovým součtem \(\binom71+\binom72=7+21=28\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Vypiš řádek \(n=4\).
+\item Urči střední číslo řádku \(n=6\).
+\item Urči součet řádku \(n=7\).
+\item Kolik nejkratších cest vede z \((0,0)\) do \((2,3)\)?
+\item Kolik nejkratších cest vede z \((0,0)\) do \((4,2)\) přes \((2,1)\)?
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(1,4,6,4,1\).
+\item \(\binom63=20\).
+\item \(2^7=128\).
+\item Pět kroků, z toho dva doprava: \(\binom52=10\).
+\item První část má \(\binom32=3\) cesty, druhá také \(\binom32=3\), celkem \(9\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Počáteční řádek indexujeme \(n=0\); „sedmý řádek“ bez upřesnění indexace může být nejednoznačný.
+\item V mřížce počítáme pouze nejkratší cesty, tedy bez kroků zpět.
+\item Při cestě přes daný bod se počty obou úseků násobí, ne sčítají.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–10 sestavení trojúhelníku; 10–20 indexy a součty; 20–32 mřížkové cesty; 32–42 procvičení; 42–45 rekapitulace.\par
+\textbf{Návaznost:} Koeficienty Pascalova trojúhelníku se v další hodině stanou koeficienty při rozvoji mocnin dvojčlenu.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

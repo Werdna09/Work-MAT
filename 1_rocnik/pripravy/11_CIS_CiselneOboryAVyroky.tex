@@ -1,0 +1,206 @@
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 11;
+% SPS.pdf, oddíl 1.2. Opakuje 02–09; připravuje výčet a vlastnost množin v 12.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Vyrokova_logika/Výroková logika.tex,
+% Kvantifikované výroky a jejich negace, Implikace; Ciselne_obory/Číselné obory.tex,
+% Druhy číselných oborů a Absolutní hodnota.
+% Realisticky.cz, místní knihovna externi_zdroje/realisticky/01_Zakladni_poznatky/:
+% 04_Formalni_logika_vyroky/010408_Kvantifikovane_vyroky/010408_Lekce.pdf
+% (Př. 1 a 5: význam kvantifikace, pravdivost obou kvantifikací);
+% 04_Formalni_logika_vyroky/010409_Negace_kvantifikovanych_vyroku/010409_Lekce.pdf
+% (Př. 3–7 a tabulka);
+% 04_Formalni_logika_vyroky/010410_Formalni_logika_shrnuti/010410_Lekce.pdf
+% (úvodní Zádrhele).
+% Inspirace postupem svědek/protipříklad, nikoli doslovné převzetí.
+% Všechna konkrétní zadání a řešení jsou vlastní tvorba; chyby z testu
+% nelze znát předem, níže jsou výslovně modelové situace.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Číselné obory}{11}{Číselné obory a výroky}
+\begin{document}
+
+\poznamka{Orientačně: skutečné chyby z testu 5 min, obor a kvantifikace
+8 min, řešené příklady 9 min, samostatná práce s rozborem 11 min,
+shrnutí 2 min; základ asi 35 min. Rezerva 10–15 min k výběru, domácí
+práce 15–20 min. Modelové chyby použij jen tam, kde odpovídají potřebám
+třídy; netvrď, že se v písemkách opravdu vyskytly.}
+
+\blok{Stejná formule, jiný výběr čísel}
+Vrať dvě až tři skutečné chyby z předchozího testu jako krátké opravy
+postupu. Ptej se: \uv{Co je zadáno? Odkud číslo vybíráme? Chceme všechny,
+nebo stačí jedno?} Nemáme-li výsledky opravené, začni následujícím příkladem.
+Konvence zůstává $\mathbb N=\{1,2,3,\ldots\}$.
+
+\begin{definiceBox}
+\textbf{Obor proměnné} určuje, která čísla smíme za proměnnou dosazovat.
+U výrokové formy $P(x)$ je součástí zadání; při změně oboru se může
+změnit pravdivost kvantifikovaného výroku.
+\end{definiceBox}
+
+\begin{definiceBox}
+Připomenutí: \textbf{obecný výrok} $\forall x\in M:\ P(x)$ říká,
+že vlastnost platí pro každý prvek určeného oboru $M$.
+Jediný nevyhovující prvek je protipříkladem a výrok vyvrací.
+\end{definiceBox}
+
+\begin{definiceBox}
+Připomenutí: \textbf{existenční výrok} $\exists x\in M:\ P(x)$ říká,
+že existuje alespoň jeden vyhovující prvek daného oboru.
+Takový prvek můžeme uvést jako svědka pravdivosti.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={P1: měníme pouze obor},breakable=false]
+Rozhodni o $\exists x\in M:\ 2x=1$ postupně pro
+$M=\mathbb N$, $\mathbb Z$, $\mathbb Q$ a $\mathbb R$.
+Potom stejně posuď $\forall x\in M:\ x>0$.
+\tcblower
+Rovnost $2x=1$ vyžaduje jedinou hodnotu $x=\frac12$.
+V $\mathbb N$ a $\mathbb Z$ proto existenční výrok neplatí,
+v $\mathbb Q$ a $\mathbb R$ platí.
+
+Obecný výrok $x>0$ platí v $\mathbb N$ podle definice.
+V $\mathbb Z,\mathbb Q,\mathbb R$ neplatí, například kvůli $x=0$.
+Polovinu nelze použít jako svědka výroku, jehož oborem je $\mathbb Z$.
+\end{prikladReseniBox}
+
+Při důkazu obecného výroku o nekonečném oboru nestačí několik pokusů.
+Musíme zdůvodnit všechny možnosti. Naopak protipříklad hledáme jediný,
+ale musí pocházet ze zadaného oboru.
+
+\newpage
+\blok{Negace zachová obor a obrátí požadavek}
+Z hodiny 04 připomeň:
+\[
+\neg(\forall x\in M:P(x))\ \Leftrightarrow\ \exists x\in M:\neg P(x),
+\]
+\[
+\neg(\exists x\in M:P(x))\ \Leftrightarrow\ \forall x\in M:\neg P(x).
+\]
+Při negaci se obor $M$ nemění. Negace $x>0$ je $x\le0$, nikoli $x<0$.
+
+\begin{prikladReseniBox}[title={P2: omezení oboru se projeví i v negaci},breakable=false]
+Posuď $V:\ \forall x\in M:\ x\ge1$ pro $M=\mathbb N$ a pro $M=\mathbb Q$.
+Pro oba obory napiš negaci a dolož její pravdivost nebo nepravdivost.
+\tcblower
+Pro $\mathbb N$ je $V$ pravdivý, protože každé přirozené číslo je alespoň $1$.
+Negace $\exists x\in\mathbb N:\ x<1$ je nepravdivá.
+
+Pro $\mathbb Q$ je $V$ nepravdivý, například pro $x=\frac12$.
+Negace $\exists x\in\mathbb Q:\ x<1$ je pravdivá se stejným svědkem.
+Negace neříká, že menší než $1$ musejí být všechna racionální čísla.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P3: nezaměňuj implikaci s jejím obrácením},breakable=false]
+Pro libovolné reálné $x$ porovnej tvrzení:
+\[
+x<0\Rightarrow |x|>0,\qquad |x|>0\Rightarrow x<0.
+\]
+\tcblower
+První implikace platí pro každé reálné $x$: když $x<0$, je $|x|=-x>0$;
+při nepravdivém předpokladu je implikace rovněž pravdivá.
+Druhá obecně neplatí: pro $x=2$ je předpoklad pravdivý a závěr nepravdivý.
+Samotná kladná vzdálenost od nuly nerozhoduje o straně osy.
+\end{prikladReseniBox}
+
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}[title={S1: pravdivost vždy dolož},breakable=false]
+U každého výroku rozhodni o pravdivosti, uveď zdůvodnění nebo protipříklad
+a napiš jeho negaci. Značky P a N v řešení znamenají pravdu a nepravdu.
+\begin{enumerate}[label=\alph*)]
+\item $\forall x\in\mathbb Z:\ x^2\ge0$.
+\item $\exists x\in\mathbb Z:\ 0<x<1$.
+\item $\exists x\in\mathbb Q:\ 0<x<1$.
+\item $\forall x\in\mathbb R:\ |x|=x$.
+\item $\forall x\in\langle-1;1\rangle:\ x<1$.
+\end{enumerate}
+\tcblower
+a) P: nula má čtverec $0$, jinak násobíme dvě čísla stejného znaménka.
+Negace $\exists x\in\mathbb Z:\ x^2<0$ je N.
+
+b) N: mezi sousedními celými čísly $0$ a $1$ další celé není.
+Negace $\forall x\in\mathbb Z:\ x\le0\ \lor\ x\ge1$ je P.
+
+c) P: například $x=\frac12$. Negace
+$\forall x\in\mathbb Q:\ x\le0\ \lor\ x\ge1$ je N.
+
+d) N: pro $x=-1$ je $|x|=1\ne-1$.
+Negace $\exists x\in\mathbb R:\ |x|\ne x$ je P.
+
+e) N: $x=1$ patří do oboru a nesplňuje ostrou nerovnost.
+Negace $\exists x\in\langle-1;1\rangle:\ x\ge1$ je P.
+\end{zadaniReseniBox}
+
+\newpage
+\begin{zadaniReseniBox}[title={S2: oprav modelové úvahy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item \uv{Dosadil jsem $1,2,3$ a vždy vyšlo $x^2>x$. Platí to tedy pro všechna
+reálná čísla.} Najdi chybu v dosazení i v zobecnění.
+\item \uv{Výrok $\exists x\in\mathbb Z:\ 2x=3$ platí, protože $x=1{,}5$.}
+\item \uv{Negace $x<2$ je $x>2$.} Ověř obě tvrzení pro $x=2$.
+\end{enumerate}
+\tcblower
+a) Už pro $x=1$ je $1>1$ nepravda. Ani několik správných dosazení by
+nedokázalo obecný výrok o $\mathbb R$; dalším protipříkladem je $x=0$.
+b) Hodnota $1{,}5$ není celé číslo, a nelze ji tedy použít jako svědka.
+Jiné řešení $2x=3$ není; existenční výrok je nepravdivý.
+c) Pro $x=2$ jsou obě ostré nerovnosti nepravdivé, takže nejde o negaci.
+Správně $x\ge2$.
+\end{zadaniReseniBox}
+
+\poznamka{Na konci zvol obor celých čísel a podmínku $-1\le x<3$.
+Nech žáky říci všechna vyhovující čísla: $-1,0,1,2$. Po změně oboru
+na reálná už nelze vypsat všechna jednotlivě. Tím připravíš hodinu 12;
+formální zadávání množin a další definice ponech jí.}
+
+\blok{Rezerva: od příkladu k obecnému zdůvodnění}
+\begin{zadaniReseniBox}[title={R1: volitelně, 10–15 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Platí $\forall x\in\mathbb Z:\ x^2\ge x$? Dokaž nebo vyvrať.
+Co se změní po nahrazení $\mathbb Z$ oborem $\mathbb Q$?
+\item Pro $M=\{-2,0,3\}$ urči pravdivost
+$\forall x\in M:\ (x>0\Rightarrow x\ge1)$. Napiš negaci.
+Pak posuď původní výrok pro $M=\mathbb Q$.
+\item Utvoř pravdivý obecný a pravdivý existenční výrok z téže vlastnosti
+$x^2+1>0$ v oboru $\mathbb R$. Vysvětli rozdíl v jejich sdělení.
+\end{enumerate}
+\tcblower
+a) V $\mathbb Z$ platí: pro $x\le0$ je $x^2\ge0\ge x$;
+pro celé $x\ge1$ násobíme $x\ge1$ kladným $x$, takže $x^2\ge x$.
+Jiné celé hodnoty nejsou. V $\mathbb Q$ neplatí: $x=\frac12$ dává
+$\frac14<\frac12$.
+
+b) Ve výčtu platí: pro $-2$ a $0$ je předpoklad nepravdivý,
+pro $3$ je předpoklad i závěr pravdivý.
+Negace $\exists x\in M:\ x>0\ \land\ x<1$ v tomto $M$ neplatí.
+V $\mathbb Q$ je původní obecný výrok nepravdivý kvůli $x=\frac12$.
+
+c) $\forall x\in\mathbb R:\ x^2+1>0$ je pravdivý, neboť $x^2+1\ge1$.
+$\exists x\in\mathbb R:\ x^2+1>0$ také platí, například pro $x=0$.
+První říká, že vyhovují všichni, druhý požaduje alespoň jednoho.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: přibližně 15–20 minut},breakable=false]
+U 1–4 urči pravdivost, zdůvodni a zapiš negaci.
+\begin{enumerate}[label=\arabic*)]
+\item $\forall n\in\mathbb N:\ n\ge1$.
+\item $\exists x\in\mathbb Z:\ 2x=-3$.
+\item $\exists x\in\mathbb Q:\ 2x=-3$.
+\item $\forall x\in(-1;1):\ |x|<1$.
+\item Posuď pro všechny reálné hodnoty tvrzení
+$x>2\Rightarrow x>0$ a jeho obrácení. Nepravdivé tvrzení vyvrať.
+\item Vyber všechna celá čísla s $-2<x\le2$. Rozhodni o pravdivosti
+výroku \uv{Každé z vybraných čísel je kladné}. Utvoř negaci.
+\end{enumerate}
+\tcblower
+1. P podle definice $\mathbb N$; negace $\exists n\in\mathbb N:\ n<1$ je N.
+2. N, jediné možné $x=-\frac32$ není celé;
+negace $\forall x\in\mathbb Z:\ 2x\ne-3$ je P.
+3. P se svědkem $x=-\frac32$; negace $\forall x\in\mathbb Q:\ 2x\ne-3$ je N.
+4. P: každý bod otevřeného úseku mezi $-1$ a $1$ je od nuly vzdálen
+méně než $1$; negace $\exists x\in(-1;1):\ |x|\ge1$ je N.
+5. První platí, protože $x>2>0$; obrácení neplatí například pro $x=1$.
+6. $-1,0,1,2$; obecný výrok je N. Negace: alespoň jedno z vybraných
+čísel je nekladné; je P, například díky $-1$ nebo $0$.
+\end{zadaniReseniBox}
+
+\end{document}

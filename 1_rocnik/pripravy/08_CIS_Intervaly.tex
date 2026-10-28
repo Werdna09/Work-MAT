@@ -1,0 +1,183 @@
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 8;
+% SPS.pdf, oddíl 1.2. Navazuje na číselnou osu 07; operace s intervaly až v 18.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
+% oddíl Intervaly. Značení s lomenými závorkami zachováno.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/
+% 03_Mnoziny/010308_Intervaly/010308_Lekce.pdf, úvod, Př. 1–3 a přehled intervalů.
+% Metodická inspirace: rozdíl mezi spojitým intervalem a výběrem celých čísel;
+% slovní podmínka -> osa -> symboly. Žádné množinové operace nepřebírány.
+% Výklad, obrázky, konkrétní úlohy a řešení jsou vlastní tvorba.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Číselné obory}{08}{Intervaly}
+\begin{document}
+
+\poznamka{Orientačně: motivace a osa 4 min, význam závorek 9 min,
+řešené převody 9 min, samostatná práce s kontrolou krajních bodů 11 min,
+shrnutí 2 min; základ asi 35 min. Rezerva 10–15 min k výběru,
+domácí práce 15–20 min. Každý žák kreslí vlastní osy, nesleduje jen hotové obrázky.}
+
+\blok{Jak zapsat všechny přípustné hodnoty?}
+Součástka smí mít délku alespoň $9{,}8$ mm a nejvýše $10{,}2$ mm.
+Vyhovují krajní délky i všechna reálná čísla mezi nimi, nejen desetinná
+čísla s jedním místem. Nekonečný výčet nahradíme zápisem intervalu.
+
+\begin{definiceBox}
+\textbf{Interval} je souvislá část číselné osy: spolu s libovolnými dvěma
+svými čísly obsahuje všechna reálná čísla mezi nimi.
+Zahrnutí krajních bodů vyznačujeme závorkami.
+\end{definiceBox}
+
+V následujících definicích předpokládáme $a,b\in\mathbb R$ a $a<b$.
+V zápisu oddělujeme meze středníkem, aby se nepletl s desetinnou čárkou.
+
+\begin{definiceBox}
+\textbf{Uzavřený interval} $\langle a;b\rangle$ obsahuje právě všechna
+reálná $x$, pro která $a\le x\le b$. Oba krajní body do něj patří.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Otevřený interval} $(a;b)$ obsahuje právě všechna reálná $x$,
+pro která $a<x<b$. Ani jeden krajní bod do něj nepatří.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Polouzavřený interval} zahrnuje právě jeden krajní bod:
+$\langle a;b)$ znamená $a\le x<b$, zatímco $(a;b\rangle$ znamená $a<x\le b$.
+\end{definiceBox}
+
+Na ose značíme zahrnutý kraj plným kolečkem a nezahrnutý prázdným.
+Úsek mezi nimi zvýrazníme spojitou čarou, protože zahrnuje i necelá čísla.
+
+\begin{prikladReseniBox}[title={P1: nejprve rozhodni o krajích},breakable=false]
+Zapiš intervalem a nakresli všechna reálná čísla $x$ s vlastností $-2\le x<3$.
+Rozhodni, zda vyhovují čísla $-2$, $0{,}5$ a $3$.
+\tcblower
+Jde o $\langle-2;3)$. První dvě čísla vyhovují, $3$ nikoli.
+\begin{center}
+\begin{tikzpicture}[x=1.3cm,y=0.7cm]
+\draw[->] (-3.1,0)--(4,0);
+\foreach \x in {-3,-2,-1,0,1,2,3}{\draw (\x,-0.08)--(\x,0.08) node[below=4pt] {$\x$};}
+\draw[line width=1.4pt] (-2,0)--(3,0);
+\fill (-2,0) circle (2.8pt);
+\draw[fill=white,line width=0.9pt] (3,0) circle (2.8pt);
+\end{tikzpicture}
+\end{center}
+Dosazení do původní podmínky je kontrolou závorek:
+$-2\le-2<3$ platí, ale $-2\le3<3$ neplatí.
+\end{prikladReseniBox}
+
+\newpage
+\blok{Když je omezení jen na jedné straně}
+\begin{definiceBox}
+\textbf{Neomezený interval} pokračuje alespoň jedním směrem bez konce.
+Například $(a;+\infty)$ znamená $x>a$, $\langle a;+\infty)$ znamená $x\ge a$,
+$(-\infty;b)$ znamená $x<b$ a $(-\infty;b\rangle$ znamená $x\le b$.
+Vždy uvažujeme reálná $x$.
+\end{definiceBox}
+
+Symboly $-\infty,+\infty$ nejsou reálná čísla a neoznačují krajní body,
+které by šly zahrnout. U nekonečna je vždy kulatá závorka.
+Celé $\mathbb R$ zapíšeme $(-\infty;+\infty)$.
+
+\begin{prikladReseniBox}[title={P2: převod oběma směry},breakable=false]
+a) Zapiš $x\le-1$ intervalem a zakresli na osu.
+b) Přečti $(\frac12;+\infty)$ jako nerovnost.
+c) Zapiš přípustné délky součástky z úvodu.
+\tcblower
+a) $(-\infty;-1\rangle$; zahrnujeme $-1$ a všechna menší čísla.
+\begin{center}
+\begin{tikzpicture}[x=1.4cm,y=0.7cm]
+\draw[->] (-4,0)--(2,0);
+\foreach \x in {-3,-2,-1,0,1}{\draw (\x,-0.08)--(\x,0.08) node[below=4pt] {$\x$};}
+\draw[<-,line width=1.4pt] (-4,0)--(-1,0);
+\fill (-1,0) circle (2.8pt);
+\end{tikzpicture}
+\end{center}
+b) $x>\frac12$, $x\in\mathbb R$; polovina nepatří.
+c) $d\in\langle9{,}8;10{,}2\rangle$ v milimetrech.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P3: obor nelze vynechat},breakable=false]
+Je zápis $\langle-1;2\rangle$ přesným popisem \emph{celých} čísel mezi
+$-1$ a $2$ včetně? Jaká celá čísla dané podmínce vyhovují?
+\tcblower
+Není. Interval obsahuje také například $\frac12$, které není celé.
+Celá čísla splňující podmínku jsou pouze $-1,0,1,2$.
+Interval vždy označuje všechna \emph{reálná} čísla mezi mezemi.
+\end{prikladReseniBox}
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={S1: zápis a obrázek},breakable=false]
+U každé položky zapiš druhou podobu (interval nebo nerovnost)
+a nakresli osu s vyznačenými kraji. Všude je $x\in\mathbb R$.
+\begin{enumerate}[label=\alph*)]
+\item $-4<x\le1$;\quad b) $0\le x<\frac32$;
+\item[c)] $x>-2$;\quad d) $x\le0$;
+\item[e)] $(-3;-1)$;\quad f) $\langle2;5\rangle$.
+\end{enumerate}
+\tcblower
+a) $(-4;1\rangle$: prázdný kraj $-4$, plný $1$.
+b) $\langle0;\frac32)$: plný $0$, prázdný $\frac32$.
+c) $(-2;+\infty)$: prázdný $-2$, doprava bez konce.
+d) $(-\infty;0\rangle$: doleva bez konce, plný $0$.
+e) $-3<x<-1$: oba kraje prázdné.
+f) $2\le x\le5$: oba kraje plné.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={S2: zkontroluj význam},breakable=false]
+a) Která z čísel $-2,-\frac32,0,2$ patří do $(-2;2\rangle$?
+b) Oprav zápis $\langle-\infty;4\rangle$ pro $x\le4$.
+c) Žák zapsal $2<x\le5$ jako $\langle2;5)$. Najdi obě chyby.
+\tcblower
+a) Patří $-\frac32,0,2$; $-2$ nepatří.
+b) Správně $(-\infty;4\rangle$.
+c) U $2$ musí být kulatá a u $5$ lomená závorka: $(2;5\rangle$.
+\end{zadaniReseniBox}
+
+\poznamka{Závěrečná kontrola: žák zdůvodní každé kolečko dosazením
+krajního čísla do nerovnosti. Sjednocení ani průnik intervalů dnes nezaváděj.}
+
+\newpage
+\blok{Rezerva}
+\begin{zadaniReseniBox}[title={R1: volitelně, 10–15 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypiš všechna celá čísla ležící v $(-\frac52;\frac72\rangle$.
+Kolik jich je? Proč to není úplný výčet prvků intervalu?
+\item Najdi racionální i iracionální číslo v $(1;\frac32)$.
+\item Zapiš interval, který má levý kraj $-3$, pravý kraj $2$,
+obsahuje $2$, ale neobsahuje $-3$. Má největší a nejmenší číslo?
+\item Zapiš podmínkou všechna reálná čísla v $(-\infty;-0{,}5)$.
+Patří tam $-\frac23$? Zdůvodni přesným porovnáním.
+\end{enumerate}
+\tcblower
+a) $-2,-1,0,1,2,3$, celkem šest. Interval obsahuje i necelá čísla,
+například $\frac14$, a má nekonečně mnoho prvků.
+b) Například $\frac54$ a $\sqrt2$, protože $1<\sqrt2<1{,}5$.
+c) $(-3;2\rangle$. Největší je $2$. Nejmenší neexistuje:
+mezi $-3$ a kterýmkoli zvoleným prvkem leží další prvek intervalu.
+d) $x<-\frac12$; ano, $-\frac23=-\frac46<-\frac36=-\frac12$.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: přibližně 15–20 minut},breakable=false]
+\begin{enumerate}[label=\arabic*)]
+\item Zapiš intervalem a zakresli: $-5\le x<0$ a $1<x<4$, $x\in\mathbb R$.
+\item Zapiš intervalem a zakresli: $x\ge\frac32$ a $x<-1$, $x\in\mathbb R$.
+\item Přepiš jako nerovnosti a zakresli $(-2;6\rangle$ a $(-\infty;3)$.
+\item Z čísel $-1,0,\frac12,1$ vyber ta, která patří do $\langle0;1)$.
+\item Vypiš všechna celá čísla z $(-3;2)$ a vysvětli, proč jimi interval nevyčerpáš.
+\item Přípustná teplota je vyšší než $-10\,^{\circ}\mathrm C$ a nejvýše
+$5\,^{\circ}\mathrm C$. Zapiš rozsah intervalem a ověř obě krajní teploty.
+\end{enumerate}
+\tcblower
+1. $\langle-5;0)$ (plný, prázdný); $(1;4)$ (oba prázdné).
+2. $\langle\frac32;+\infty)$ (plný kraj, doprava);
+$(-\infty;-1)$ (doleva, prázdný kraj).
+3. $-2<x\le6$ (prázdný, plný); $x<3$ (doleva, prázdný kraj).
+4. $0,\frac12$.
+5. $-2,-1,0,1$; interval navíc obsahuje i necelá čísla, například $0{,}1$.
+6. $(-10;5\rangle$ ve stupních Celsia; $-10$ nevyhovuje, $5$ vyhovuje.
+\end{zadaniReseniBox}
+
+\end{document}

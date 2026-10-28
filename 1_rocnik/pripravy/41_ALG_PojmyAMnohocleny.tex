@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 41, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 41.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -25,6 +27,13 @@
 \blok{Výklad a souvislosti}
 
 Výrazy $3x+5$, $2a^2b$ nebo $1/x$ jsme již počítali pro konkrétní hodnoty. Nyní je budeme rozlišovat podle stavby. U každého zápisu odděl číselný faktor od proměnných a sleduj jejich exponenty.
+
+\poznamka{Nečti následující boxy jako seznam k memorování. Nejprve polož konkrétní otázku; název zaváděj až při pojmenování odpovědi.}
+\begin{prikladReseniBox}[title={Úvodní společný příklad},breakable=false]
+Pro zápis $3x^2-2x+5$ urči hodnotu při $x=2$. Která čísla násobí $x^2$ a $x$ a který člen je bez proměnné?
+\tcblower
+$3\cdot2^2-2\cdot2+5=13$. Číselné faktory jsou $3$ a $-2$, konstantní člen je $5$. Na těchto částech postupně zavedeme pojmy proměnná, člen, koeficient a stupeň; nejvyšší exponent je $2$.
+\end{prikladReseniBox}
 
 \begin{definiceBox}[title={Definice},breakable=false]
 \textbf{Algebraický výraz} je matematický zápis sestavený z čísel, proměnných a početních operací. Jeho hodnota závisí na dosazených přípustných hodnotách proměnných.
@@ -102,5 +111,55 @@ Stupně jednotlivých členů jsou $3+2=5$, $1+1=2$ a $0$. Proto $\deg Q=5$. Nev
 
 
 \poznamka{Pojmy zaváděj na jednom společném příkladu; nepožaduj osm izolovaných definic zpaměti. Každá je v samostatném boxu pro přehled učitele. Znaménko patří ke členu i jeho koeficientu. Systematické slučování členů ponech další hodině.}
+
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Základ: pojmy používej při práci s příklady},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Pro $P(x)=-x^3+\frac12x^2-4$ urči členy, koeficienty a stupeň; vypočítej $P(0)$ a $P(-2)$.
+\item Urči koeficient a stupeň $3a^2b^4$, $-xy^3$, $\frac12x$ a $-8$.
+\item Které zápisy jsou mnohočleny: $\frac{x^2}{3}+1$, $\frac3x+1$, $\sqrt5x^2-x$, $\sqrt x+1$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Členy $-x^3$, $\frac12x^2$, $-4$; koeficienty $-1$, $\frac12$, $-4$; stupeň $3$. Hodnoty $P(0)=-4$, $P(-2)=8+2-4=6$.
+\item Po řadě: koeficient $3$, stupeň $6$; $-1$, stupeň $4$; $\frac12$, stupeň $1$; $-8$, stupeň $0$.
+\item První ano, druhý ne, třetí ano, čtvrtý ne. Rozhodující je proměnná ve jmenovateli či pod odmocninou; konstantní zlomek ani $\sqrt5$ nevadí.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rezerva: zápis může klamat},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Urči stupeň $3x^4-3x^4+2$ a $2x^2y^3+xy^5$.
+\item Obdélník má strany $x+2$ a $3$ v centimetrech, $x>0$. Zapiš obsah a urči jeho hodnotu pro $x=4$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item První má po vyrušení dvou členů stupeň $0$; druhý stupeň $6$, neboť členy mají stupně $5$ a $6$.
+\item $S=3(x+2)\,\mathrm{cm}^2$, pro $x=4$ je $18\,\mathrm{cm}^2$. Roznásobovat zatím nemusíme.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Základ: nejprve konkrétní P1, potom připojuj názvy k jeho částem a průběžně odkazuj na samostatné definiční boxy. Nová první skupina je praktické použití pojmů, druhá rezerva. Nezkoušej reprodukci osmi definic zpaměti. Domácí čtveřice procvičuje rozpoznání, stupeň a dosazení; soustavné slučování patří hodině 42.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item U $Q(x)=2x^3-x+5$ vypiš členy a koeficienty, urči stupeň a $Q(-1)$.
+\item Urči stupeň $-4a^3b^2+2ab^4+1$.
+\item Rozhodni, zda $x/5+2$, $5/x+2$ a $\sqrt2x+1$ jsou mnohočleny.
+\item Urči stupeň konstant $9$ a $0$ podle naší konvence.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Členy $2x^3,-x,5$; koeficienty $2,-1,5$; stupeň $3$; $Q(-1)=-2+1+5=4$.
+\item $5$; oba nekonstantní členy mají stupeň $5$.
+\item Ano, ne, ano.
+\item Konstanta $9$ má stupeň $0$; stupeň nulového mnohočlenu neurčujeme.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

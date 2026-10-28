@@ -1,0 +1,83 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{41}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Smíšené kombinatorické úlohy a omezení}\par
+{\sffamily\large\color{teal} Výukový podklad · 41. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.1–2.3\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Zvolit správný model v kombinovaných úlohách, použít rozdělení na případy, doplněk nebo blok a připravit návaznost na pravděpodobnost.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Rozhodovací schéma:} (1) jsou případy disjunktní? Pak sčítat; (2) skládá se výsledek z nezávisle nebo podmíněně po sobě jdoucích voleb? Pak násobit; (3) rozlišuje pořadí? (4) je opakování dovoleno? (5) má úloha další omezení?\par
+\textbf{Typické techniky:} rozdělení na případy podle poslední cifry, výpočet doplňku „alespoň jeden“, blokování sousedních osob, výběr s podmínkou „právě jeden“.\par
+\textbf{Přemostění k pravděpodobnosti:} při rovnoměrně náhodném výběru je důležitý počet všech výsledků a počet vyhovujících výsledků. Samotný poměr použijeme až v následném tématu o pravděpodobnosti.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Z devíti osob (pět žen, čtyři muži) vyber tříčlennou komisi s alespoň jednou ženou.\par
+\textit{Řešení.} Všechny komise: \(\binom93=84\). Bez ženy jsou pouze komise ze čtyř mužů: \(\binom43=4\). Celkem \(84-4=80\).\par\smallskip
+\textbf{Příklad 2.} Kolik pětiznakových kódů ze čtyř různých symbolů obsahuje alespoň jeden symbol A?\par
+\textit{Řešení.} Celkem \(4^5\) kódů; bez A je \(3^5\). Počet \(4^5-3^5=1024-243=781\).\par\smallskip
+\textbf{Příklad 3.} Z číslic \(0,1,2,3,4,5,6\) vytvoř čtyřciferná sudá čísla bez opakování.\par
+\textit{Řešení.} Rozdělíme podle poslední cifry. Poslední \(0\): první má \(6\) možností, další dvě \(5\) a \(4\): \(120\). Poslední \(2,4\) nebo \(6\): \(3\) volby konce; první má \(5\) nenulových zbývajících cifer, další dvě \(5\) a \(4\): \(3\cdot5\cdot5\cdot4=300\). Součet \(420\).\par\smallskip
+\textbf{Příklad 4.} Šest různých žáků v řadě, A a B nesmějí stát vedle sebe.\par
+\textit{Řešení.} Všechna pořadí \(6!=720\). Nepřípustná: blok AB/BA plus čtyři lidé, \(2\cdot5!=240\). Přípustná: \(720-240=480\).\par\smallskip
+\textbf{Příklad 5.} Kolik osmimístných binárních řetězců obsahuje právě tři jedničky?\par
+\textit{Řešení.} Vybereme tři pozice pro jedničky, ostatní jsou nuly. \(\binom83=56\). Stejný výsledek dává \(\frac{8!}{3!5!}\).\par\smallskip
+\textbf{Příklad 6.} Ze sedmi lidí vyber tři, přičemž konkrétní lidé P a Q nesmějí být vybráni současně.\par
+\textit{Řešení.} Celkem \(\binom73=35\). Zakázané trojice obsahují P i Q a jednoho z ostatních pěti: \(\binom51=5\). Výsledek \(35-5=30\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Z osmi lidí vyber tři, alespoň jeden ze dvou konkrétních A,B.
+\item Kolik trojznakových kódů z pěti symbolů má alespoň jedno X?
+\item Kolik pětic ze dvou znaků obsahuje přesně dvě jedničky?
+\item Na polici stojí pět různých knih; dvě konkrétní musí sousedit.
+\item Ze šesti žen a čtyř mužů vyber čtyři, přičemž právě dvě mají být ženy.
+\item Kolik nejkratších cest po mřížce vede z \((0,0)\) do \((3,3)\)?
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item Celkem \(\binom83=56\); bez A i B: \(\binom63=20\). Počet \(36\).
+\item \(5^3-4^3=125-64=61\).
+\item Vybereme dvě pozice pro jedničku: \(\binom52=10\).
+\item Blok dvou knih a další tři knihy tvoří \(4\) objekty. Počet \(4!\cdot2=48\).
+\item \(\binom62\binom42=15\cdot6=90\).
+\item Z šesti kroků vybereme tři směrem doprava: \(\binom63=20\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Za slovem „alespoň“ hledat vhodný doplněk.
+\item Při dělitelnosti dvěma rozhoduje poslední cifra a nula v čele je zakázána.
+\item Když podmínky mění počet možností, nestačí automaticky mocnina \(n^k\).
+\item Při přechodu k pravděpodobnosti musíme navíc zdůvodnit, zda jsou elementární výsledky stejně pravděpodobné.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–8 rozhodovací schéma; 8–25 úlohy s omezeními; 25–37 samostatná práce; 37–43 společná kontrola; 43–45 přechod k pravděpodobnosti.\par
+\textbf{Návaznost:} Na hodině 42 začíná práce s výsledkovým prostorem a elementárními jevy, například u mincí a kostek.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

@@ -1,5 +1,10 @@
+% Revize: prostudovány indexované pasáže Realisticky.cz, nikoli celé přímé PDF.
+% 1.4.1: úvod, rozlišení sdělení a otevřené formule, Př. 1
+% https://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/04%20Form%C3%A1ln%C3%AD%20logika%20%28v%C3%BDroky%29/01%20V%C3%BDroky.pdf
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % 02_VRL_CoJeVyrok.tex
-% Rozpracovana priprava: 1. rocnik, hodina 02, Vyrokova logika.
+% Priprava: 1. rocnik, hodina 02, Vyrokova logika.
 % Kompilace z Work/MAT: latexmk -cd -pdf 1_rocnik/pripravy/02_VRL_CoJeVyrok.tex
 \documentclass[11pt,a4paper]{article}
 
@@ -103,9 +108,26 @@ Nechť $p$: \vyrok{Prší.} a $q$: \vyrok{Mám deštník.} Přečti nahlas výro
   p\land q,\qquad p\lor q,\qquad p\Rightarrow q,\qquad p\Leftrightarrow q,\qquad \neg p.
 \]
 \tcblower
-Například $p\Rightarrow q$: \uv{Jestliže prší, pak mám deštník.} Ostatní čteme analogicky podle tabulky.
+$p\land q$: \uv{Prší a mám deštník.} $p\lor q$: \uv{Prší nebo mám deštník (případně obojí).} $p\Rightarrow q$: \uv{Jestliže prší, pak mám deštník.} $p\Leftrightarrow q$: \uv{Prší právě tehdy, když mám deštník.} $\neg p$: \uv{Neprší.}
 \end{zadaniReseniBox}
 \poznamka{Upozorni, že matematické \uv{nebo} je zpravidla nevýlučné. Zatím po žácích nechci všechny pravdivostní hodnoty složených výroků ani jejich tabulky.}
+
+
+\begin{zadaniReseniBox}[title={Rezerva: od věty k přesnému zápisu},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Je $x+2=5$ s neurčeným $x$ výrok? Dosaď $x=3$ a potom $x=1$ a popiš, co se změnilo.
+\item Je zápis \uv{Číslo $12$ je velké} jednoznačný? Zpřesni jej dvěma způsoby, jedním pravdivým a jedním nepravdivým.
+\item Nechť $p$: \uv{Číslo $8$ je sudé}, $q$: \uv{Číslo $8$ je dělitelné čtyřmi}. Zapiš symboly \uv{Osm je sudé nebo dělitelné čtyřmi} a \uv{Jestliže je osm dělitelné čtyřmi, pak je sudé}.
+\item Je věta \uv{Číslo $9$ je sudé} nevýrok? Vysvětli rozdíl mezi nevýrokem a nepravdivým výrokem.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Neurčený zápis je otevřená formule. Dosazením vzniknou výroky $3+2=5$ (pravdivý) a $1+2=5$ (nepravdivý).
+\item Bez kritéria ne. Například \uv{Dvanáct je větší než deset} je pravdivé a \uv{Dvanáct je větší než dvacet} nepravdivé; obě zpřesněná sdělení jsou výroky.
+\item $p\lor q$ a $q\Rightarrow p$. Pořadí v implikaci je dáno předpokladem, ne pořadím zavedení písmen.
+\item Je to nepravdivý výrok: lze určit pravdivostní hodnotu. Nevýroku, například otázce či rozkazu, ji tímto způsobem nepřiřazujeme.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \blok{6. Závěr a rychlé ověření}
 \begin{zadaniReseniBox}
@@ -121,5 +143,24 @@ Například $p\Rightarrow q$: \uv{Jestliže prší, pak mám deštník.} Ostatn�
 \textbf{Shrnutí na tabuli:} \;Výrok $\to$ pravdivostní hodnota $\to$ atomický/složený výrok $\to$ logické spojky.
 
 \textbf{Domácí procvičení (volitelné):} Napiš tři výroky, dva nevýroky a dva složené výroky. U složených výroků podtrhni spojku.
+
+
+\poznamka{Základ tvoří původní rozlišování výroků a čtení spojek. Nech žáky každé rozhodnutí obhájit a vytvořit protipříklad k názoru, že každá věta s čísly je výrok. Nová skupina před závěrem a tvořivý úkol jsou rezerva pro rychlé; konkrétní domácí položky a) a b) zadej všem. Pravdivostní tabulky patří do příští hodiny.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy s kontrolou},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Rozhodni, zda jde o výrok, a případně urči pravdivost: $11$ je sudé; $3\cdot4=12$; Vypočítej $3\cdot4$; $x+1=5$ s neurčeným $x$.
+\item Nechť $p$: \uv{Číslo $6$ je sudé}, $q$: \uv{Číslo $6$ je dělitelné třemi}. Zapiš slovy $p\land q$, $p\lor q$ a $\neg p$.
+\item K původnímu tvořivému domácímu úkolu uveď vlastní příklady.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Postupně: nepravdivý výrok; pravdivý výrok; rozkaz, není výrok; otevřená formule, zatím není výrok.
+\item \uv{Šest je sudé a dělitelné třemi}; \uv{Šest je sudé nebo dělitelné třemi (případně obojí)}; \uv{Šest není sudé}.
+\item Například výroky: $2<3$, $5=7$, \uv{Osm je sudé}; nevýroky: \uv{Kolik je hodin?}, \uv{Otevři knihu!}; složené výroky: \uv{Dva je sudé a tři je liché}, \uv{Jestliže je číslo dělitelné čtyřmi, pak je sudé}. Jiné správné příklady uznáme.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

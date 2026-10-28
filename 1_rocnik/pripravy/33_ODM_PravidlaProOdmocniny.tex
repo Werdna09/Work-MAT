@@ -1,3 +1,5 @@
+% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
+% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 33, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 33.
 
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
@@ -69,5 +71,57 @@ $\sqrt{x^2}=|x|$; například pro $x=-3$ je výsledek $3$. U součtu je levá st
 
 
 \poznamka{Do obecného pravidla druhé odmocniny nedosazuj záporné činitele, i když je jejich součin kladný: $\sqrt{(-2)(-8)}=4$, ale $\sqrt{-2}\sqrt{-8}$ v reálných číslech smysl nemá. Zkouška znaménkem je nezbytná.}
+
+
+\blok{Navazující procvičování ve třídě}
+
+\begin{zadaniReseniBox}[title={Základ: podmínky jsou součástí pravidla},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočítej $\sqrt8\sqrt{18}$, $\frac{\sqrt{147}}{\sqrt3}$ a $\sqrt[3]{-4}\sqrt[3]{16}$.
+\item Je správný krok $\sqrt{(-2)(-8)}=\sqrt{-2}\sqrt{-8}$ v reálných číslech?
+\item Urči podmínky $\frac{\sqrt{x+2}}{\sqrt x}$ a sluč odmocniny.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{144}=12$, $\sqrt{49}=7$, $\sqrt[3]{-64}=-4$.
+\item Ne. Levá strana existuje a je $4$, pravá v $\mathbb R$ neexistuje. Pro rozdělení druhé odmocniny musí být oba činitelé nezáporní.
+\item $x>0$; pak $\sqrt{\frac{x+2}{x}}$. Původní přísnější podmínku zachováme.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rezerva: sudá a lichá odmocnina},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\sqrt{a^2b^2}$ a $\sqrt[3]{a^3b^3}$ pro reálná $a,b$.
+\item Vypočítej $\frac{\sqrt{(-3)^2}}{\sqrt{9}}$ a vysvětli, proč výsledek není $-1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $|ab|=|a||b|$ a $ab$. Druhá odmocnina je nezáporná, třetí zachovává znaménko.
+\item $3/3=1$; ve jmenovateli i čitateli je nezáporná odmocnina.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\poznamka{Základ: původní pravidla a první nová skupina od čísel k proměnné. Druhá skupina je rezerva; u absolutní hodnoty vždy vyzkoušej i záporný činitel. Domácí pětice obsahuje kontrolu podmínek i protipříklad. Částečné odmocňování zatím soustavně netrénujeme, to je náplň příští hodiny.}
+
+\blok{Domácí procvičení}
+
+\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypočítej $\sqrt{15}\sqrt{60}$ a $\frac{\sqrt{180}}{\sqrt5}$.
+\item Vypočítej $\sqrt[3]{-12}\sqrt[3]{18}$.
+\item Uprav $\sqrt{(x-2)^2}$.
+\item Urči podmínky a sluč $\frac{\sqrt{x-1}}{\sqrt{x+1}}$.
+\item Vyvrat rovnost $\sqrt{a+b}=\sqrt a+\sqrt b$ konkrétní dvojicí nezáporných čísel.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $30$ a $6$.
+\item $\sqrt[3]{-216}=-6$.
+\item $|x-2|$ pro všechna reálná $x$.
+\item $x\ge1$, výsledek $\sqrt{\frac{x-1}{x+1}}$ s touto podmínkou.
+\item Například $a=9,b=16$: $5\ne7$.
+\end{enumerate}
+\end{zadaniReseniBox}
 
 \end{document}

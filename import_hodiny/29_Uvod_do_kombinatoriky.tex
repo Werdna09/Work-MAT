@@ -1,0 +1,77 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{29}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Úvod do kombinatoriky}\par
+{\sffamily\large\color{teal} Výukový podklad · 29. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.1\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Rozlišit uspořádaný a neuspořádaný výběr, opakování prvků a systematicky vypsat konečný soubor možností.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Co zkoumá kombinatorika.} Počítáme všechny přípustné možnosti vytvořené podle přesně formulovaných pravidel. Nejprve musíme vědět, co pokládáme za \emph{různé} výsledky.\par
+\textbf{Uspořádaný výběr:} posloupnosti \(AB\) a \(BA\) jsou různé, pokud rozlišujeme první a druhé místo. \textbf{Neuspořádaný výběr:} skupina \(\{A,B\}\) je stejná jako \(\{B,A\}\).\par
+\textbf{Opakování:} v PINu se číslice mohou opakovat, při udělování různých medailí tým nemůže obsadit dvě místa. \textbf{Velikost výběru:} někdy uspořádáme všechny prvky, jindy jen jejich část.\par
+\textbf{Postup:} (1) přesně určím, co je jeden výsledek; (2) rozhodnu o pořadí a opakování; (3) zvolím systematický výpis, strom, součet nebo součin; (4) zkontroluji dvojí započtení.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Tři označené kartičky \(A,B,C\) postavíme do řady. Kolik vznikne pořadí?\par
+\textit{Řešení.} Rozlišuji všechny pozice; pořadí rozhoduje. Všechna uspořádání jsou \[ABC,\ ACB,\ BAC,\ BCA,\ CAB,\ CBA.\] Celkem \(6\) pořadí.\par\smallskip
+\textbf{Příklad 2.} Ze stejných tří kartiček vybereme dvě bez rozlišení pořadí.\par
+\textit{Řešení.} Přípustné dvojice jsou \(\{A,B\},\{A,C\},\{B,C\}\). Nejsou to šestice: \(AB\) a \(BA\) označují stejný výběr. Výsledek: \(3\).\par\smallskip
+\textbf{Příklad 3.} Čtyři různí žáci: vyber dva členy komise a zvlášť přiděl první a druhé místo.\par
+\textit{Řešení.} Komise: \(\{A,B\},\{A,C\},\{A,D\},\{B,C\},\{B,D\},\{C,D\}\), tedy \(6\) možností. Při přidělení prvního a druhého místa má každá dvojice dvě pořadí, tedy \(12\) možností.\par\smallskip
+\textbf{Příklad 4.} Tříznakový kód ze symbolů \(0,1,2\), s opakováním. Jaký počet očekáváš?\par
+\textit{Řešení.} Každá ze tří pozic má tři možnosti, včetně opakování; \(3\cdot3\cdot3=27\). Například \(000\) je přípustný kód, protože kód není trojciferné číslo.\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Kolik různých dvojic vznikne výběrem ze čtyř lidí?
+\item Kolika způsoby obsadí tři lidé tři židle v řadě?
+\item Kolik výsledků mají dva po sobě jdoucí hody mincí?
+\item U výběru tříčlenné komise ze sedmi žáků rozhodni: záleží na pořadí, lze opakovat žáka?
+\item U čtyřmístného PINu rozhodni: pořadí? opakování? počáteční nula?
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item Každou neuspořádanou dvojici vypíšu jednou: \(AB,AC,AD,BC,BD,CD\). Celkem \(6\).
+\item První židle: \(3\) osoby, druhá \(2\), poslední \(1\), tedy \(3\cdot2\cdot1=6\).
+\item Jeden výsledek je uspořádaná dvojice hodů: \(HH,HT,TH,TT\); jsou \(4\).
+\item Nezáleží na pořadí; každý žák může v komisi figurovat nejvýše jednou. Jde o neuspořádaný výběr bez opakování.
+\item Na pořadí záleží, opakování je dovoleno a počáteční nula ano: \(0123\) je platný PIN.
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Nezaměňovat kód za celé číslo: kód může začínat nulou.
+\item Nevypisovat stejnou neuspořádanou dvojici v obou pořadích.
+\item Před jakýmkoli vzorcem položit dvě otázky: pořadí a opakování.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–8 motivace a výpis; 8–22 pořadí a výběr; 22–33 opakování a kódy; 33–42 samostatné úlohy; 42–45 shrnutí.\par
+\textbf{Návaznost:} Příště se z intuitivního počítání stane pravidlo součtu a součinu; systematický výpis bude sloužit ke kontrole.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}
