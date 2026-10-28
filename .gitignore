@@ -19,3 +19,6 @@
 
 # Neovereny archiv puvodnich testu
 /import_testu/
+
+# Externi knihovna Realisticky.cz - pouze lokalne
+/externi_zdroje/realisticky/
