@@ -1,0 +1,97 @@
+% Hodina 60: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 60.
+% Odborný podklad: učebnice
+% ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex,
+% oddíly Definiční obor a obor hodnot, Způsoby zadání funkce.
+% Metodické srovnání: lokální Realisticky.cz 020104_Lekce.pdf (předpis,
+% přirozený a věcný obor), 020105_Lekce.pdf (čtení z grafu).
+% Příklady a grafy jsou vlastní tvorba.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{60}{Definiční obor a obor hodnot}
+\begin{document}
+\blok{Motivace a návaznost}
+V minulé hodině byla funkce přiřazením každému přípustnému vstupu právě jedné hodnoty. Dnes určíme dvě základní množiny: které vstupy jsou přípustné a které hodnoty přiřazení skutečně vytvoří. U předpisu $S(a)=a^2$ pro obsah čtverce má smysl věcné omezení $a>0$; samotný algebraický výraz $a^2$ lze ovšem vypočítat pro každé reálné $a$. Zadání funkce tedy rozhoduje o jejím oboru.
+\blok{Definiční obor}
+\begin{definiceBox}
+\textbf{Definiční obor} $D(f)$ je množina všech argumentů $x$, pro které je funkce $f$ zadána. Je-li funkce určena jako $f\colon A\to B$, pak $D(f)=A$.
+\end{definiceBox}
+Předpis a výslovné zadání oboru čteme společně. \emph{Přirozený definiční obor předpisu} tvoří reálná čísla, pro která lze daný výraz vypočítat. Funkce však může mít výslovně menší obor, například $f(x)=x^2$ pro $x\in\langle0;3\rangle$. Výraz lze vypočítat na $\mathbb R$, ale zadaná funkce existuje jen na uvedeném intervalu.
+\begin{prikladReseniBox}
+Určete přirozené definiční obory funkcí $f(x)=\frac{3}{x-2}$ a $g(x)=\sqrt{x+1}$. Funkce $h(x)=x^2$ je výslovně zadána pro $x\in\langle-1;2\rangle$; určete také její definiční obor.
+\tcblower
+U $f$ nesmí být jmenovatel nulový: $x-2\ne0$, tedy $D(f)=\mathbb R\setminus\{2\}$. U $g$ musí být výraz pod druhou odmocninou nezáporný: $x+1\ge0$, tedy $D(g)=\langle-1;\infty)$. Předpis $x^2$ sice dává smysl pro každé reálné číslo, ale u $h$ je obor výslovně omezen: $D(h)=\langle-1;2\rangle$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Pro model ceny $C(n)=80n+250$ Kč, kde $n\in\mathbb N_0$ je počet kusů, porovnejte přirozený obor výrazu a obor zadané funkce.
+\tcblower
+Algebraický výraz $80n+250$ lze spočítat pro všechna reálná $n$. Počet výrobků je však nezáporné celé číslo, proto $D(C)=\mathbb N_0$. Například $C(3)=490$ Kč; hodnota $C(-1)$ do modelu nepatří, i když ji umíme algebraicky vypočítat.
+\end{prikladReseniBox}
+\poznamka{Ptej se vždy „co dovoluje výraz?“ a odděleně „co dovoluje celé zadání?“. U lomeného výrazu se vracej k podmínce nenulového jmenovatele z hodin algebry.}
+\blok{Obor hodnot a cílová množina}
+\begin{definiceBox}
+\textbf{Obor hodnot} $H(f)$ je množina všech hodnot, které funkce skutečně nabývá: $H(f)=\{f(x)\mid x\in D(f)\}$. Je-li $f\colon A\to B$, pak $H(f)\subseteq B$; cílová množina $B$ může být větší.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Funkce $u\colon\{-2,0,1\}\to\{0,1,2,4,5\}$ je dána $u(x)=x^2$. Určete $D(u)$, $H(u)$ a cílovou množinu.
+\tcblower
+$D(u)=\{-2,0,1\}$. Dosazením získáme $u(-2)=4$, $u(0)=0$, $u(1)=1$, a tedy $H(u)=\{0,1,4\}$. Cílová množina je $\{0,1,2,4,5\}$; čísla $2$ a $5$ nejsou hodnotami této funkce.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Je dána funkce $v(x)=x^2$ na $D(v)=\langle-2;1\rangle$. Určete její obor hodnot a zdůvodněte oba krajní body.
+\tcblower
+Druhá mocnina je vždy nezáporná a $v(0)=0$. Na zadaném intervalu je největší absolutní hodnota argumentu $2$, proto největší druhá mocnina je $v(-2)=4$. Každá hodnota mezi $0$ a $4$ se skutečně objeví: pro $y\in\langle0;4\rangle$ leží $x=-\sqrt y$ v $\langle-2;0\rangle$ a $v(x)=y$. Tedy $H(v)=\langle0;4\rangle$.
+\end{prikladReseniBox}
+\blok{Čtení obou množin z grafu}
+Z grafu čteme definiční obor jako všechna $x$, nad nimiž je bod grafu, a obor hodnot jako všechna $y$, k nimž sahá nějaký bod grafu. Plný krajní bod patří do grafu, prázdný nikoli. Graf níže je úsečka $y=x+1$ pro $-2\le x<2$.
+\begin{center}
+\begin{tikzpicture}[x=1.05cm,y=.85cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-3,-2) grid (3,4);
+\draw[->] (-3.2,0)--(3.3,0) node[right] {$x$};\draw[->] (0,-2.2)--(0,4.25) node[above] {$y$};
+\foreach \x in {-2,-1,1,2}{\draw (\x,.07)--(\x,-.07) node[below] {\small $\x$};}
+\foreach \y in {-1,1,2,3}{\draw (.07,\y)--(-.07,\y) node[left] {\small $\y$};}
+\draw[very thick] (-2,-1)--(2,3);\fill (-2,-1) circle (2.5pt);\draw[fill=white,thick] (2,3) circle (2.8pt);
+\node[below left] at (-2,-1) {\small $(-2;-1)$};\node[above right] at (2,3) {\small $(2;3)$};
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+Z předchozího grafu určete $D(f)$ a $H(f)$. Rozhodněte, zda má funkce hodnotu $3$.
+\tcblower
+Vodorovně graf začíná u $x=-2$ plným bodem a končí před $x=2$ prázdným bodem: $D(f)=\langle-2;2)$. Svisle jsou hodnoty od $-1$ včetně do $3$ bez trojky: $H(f)=\langle-1;3)$. Hodnotu $3$ funkce nenabývá, protože bod $(2,3)$ v grafu chybí.
+\end{prikladReseniBox}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Určete $D(f)$ pro $f(x)=\frac1{x+4}$ a $D(g)$ pro $g(x)=\sqrt{5-x}$.
+\item Funkce $p(x)=2x-1$ je zadána jen pro $x\in\{-1,0,3\}$. Vypište $D(p)$ a $H(p)$.
+\item Pro $q(x)=x^2$, $x\in\langle0;3\rangle$, určete $H(q)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x+4\ne0$ dává $D(f)=\mathbb R\setminus\{-4\}$. Podmínka $5-x\ge0$ dává $D(g)=(-\infty;5\rangle$.
+\item $D(p)=\{-1,0,3\}$. Hodnoty jsou $-3,-1,5$, takže $H(p)=\{-3,-1,5\}$.
+\item Na nezáporném intervalu od $0$ do $3$ roste druhá mocnina od $0$ do $9$ a obě krajní hodnoty nastávají: $H(q)=\langle0;9\rangle$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Pro $r(x)=\sqrt{4-x^2}$ určete přirozený definiční obor a obor hodnot.
+\tcblower
+Požadavek $4-x^2\ge0$ znamená $x^2\le4$, tedy $D(r)=\langle-2;2\rangle$. Odmocnina je nezáporná; hodnotu $0$ dostaneme při $x=\pm2$, hodnotu $2$ při $x=0$. Pro každé $y\in\langle0;2\rangle$ lze vybrat $x=\sqrt{4-y^2}$, proto $H(r)=\langle0;2\rangle$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Určete přirozený obor $a(x)=\frac{x+1}{x-3}$.
+\item Funkce $b(x)=3-x$ je dána na $\langle0;4\rangle$. Určete $H(b)$.
+\item U funkce $c\colon\{0,1,2\}\to\{0,1,2,3,4\}$, $c(x)=x^2$, rozlište obor a cílovou množinu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Jmenovatel nesmí být nula: $D(a)=\mathbb R\setminus\{3\}$.
+\item Pro $x=0$ vyjde $3$, pro $x=4$ vyjde $-1$; všechny mezilehlé hodnoty nastanou, takže $H(b)=\langle-1;3\rangle$.
+\item $D(c)=\{0,1,2\}$, skutečné hodnoty jsou $H(c)=\{0,1,4\}$, cílová množina je $\{0,1,2,3,4\}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: návaznost 3, definice a dvě úlohy na obor 12, obor hodnot a konečná tabulka 10, graf a čtení krajních bodů 10, pokus žáků 6, společná kontrola 3, organizace 1 min. Rezerva 5–8 min navíc. Domácí práce 10–15 min. V další hodině se zaměříme na graf, průsečíky a intervaly růstu či poklesu; zde je graf prostředkem k určení oborů.}
+\end{document}

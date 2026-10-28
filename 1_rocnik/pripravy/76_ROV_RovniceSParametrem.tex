@@ -1,0 +1,70 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex,
+% pododdíl Lineární rovnice s parametrem (ř. 2023–2151).
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/08_Rovnice_a_nerovnice_s_parametrem/020801_Linearni_rovnice_s_parametrem_I/020801_Lekce.pdf
+% a 020802_Linearni_rovnice_s_parametrem_II/020802_Lekce.pdf; využito rozdělení podle nulového koeficientu a kontroly zvláštní hodnoty. Úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{76}{Rovnice s parametrem}
+\begin{document}
+\blok{Jedna rovnice pro mnoho různých zadání}
+V rovnici $(m-2)x=4$ je $x$ neznámá a $m$ označuje zvolené číslo. Pro každé konkrétní $m$ vznikne jiná rovnice. Při $m=0$ je $-2x=4$, při $m=2$ dostaneme $0x=4$. Proto nelze bez podmínky napsat $x=4/(m-2)$.
+\begin{definiceBox}
+\textbf{Parametr} je číslo, jehož hodnota se v zadání mění mezi jednotlivými případy, zatímco hledáme neznámou $x$. Výsledek zapisujeme zvlášť pro ty hodnoty parametru, při kterých mají použité úpravy odlišné podmínky.
+\end{definiceBox}
+\begin{definiceBox}
+Rovnice $A(m)x=B(m)$ má pro dané $m$ právě jedno řešení $x=B(m)/A(m)$, je-li $A(m)\ne0$; nemá řešení, je-li $A(m)=0$ a $B(m)\ne0$; má všechna reálná čísla za řešení, je-li $A(m)=B(m)=0$.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Vyřešte $(m-2)x=4$ pro všechna $m\in\mathbb R$. Zvlášť ověřte $m=2$.
+\tcblower
+Pro $m\ne2$ je koeficient u $x$ nenulový, tedy $K_m=\{4/(m-2)\}$. Pro $m=2$ dosadíme do původní rovnice: $0\cdot x=4$, což neplatí pro žádné $x$, tedy $K_2=\varnothing$. Kontrola obecné větve: $(m-2)\cdot4/(m-2)=4$ pouze při $m\ne2$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Vyřešte $(a-3)x=2a-6$ a porovnejte výjimečný případ s předchozím příkladem.
+\tcblower
+Pro $a\ne3$ dělíme nenulovým $a-3$ a dostaneme $x=2(a-3)/(a-3)=2$, tedy $K_a=\{2\}$. Při $a=3$ původní rovnice zní $0x=0$ a vyhovuje každé $x$, tedy $K_3=\mathbb R$. Samotný vyloučený jmenovatel proto neznamená „žádné řešení“.
+\end{prikladReseniBox}
+\poznamka{Nech žáky dosadit konkrétní $a=0$ a $a=3$ do původní rovnice. Rozlišení nulového koeficientu je důležitější než mechanické krácení.}
+\blok{Úprava před rozdělením případů}
+\begin{prikladReseniBox}
+Vyřešte $p(x-1)=2x+3$ s neznámou $x$ a parametrem $p$.
+\tcblower
+Rozevřeme závorku a shromáždíme členy: $px-p=2x+3$, tedy $(p-2)x=p+3$. Pro $p\ne2$ dostaneme jediné řešení $x=(p+3)/(p-2)$. Pro $p=2$ dosadíme do \emph{původní} rovnice: $2(x-1)=2x+3$, tedy $-2=3$, což je nepravda; $K_2=\varnothing$. Zkouška obecné větve: $(p-2)\cdot(p+3)/(p-2)=p+3$, ekvivalentní upravené rovnici.
+\end{prikladReseniBox}
+\newpage
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Vyřešte $(t+1)x=3$ pro všechna $t$.
+\item Vyřešte $k(x+2)=kx+5$ pro všechna $k$.
+\item Vyřešte $(s+4)x=2(s+4)$ pro všechna $s$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $t\ne-1$ je $K_t=\{3/(t+1)\}$; pro $t=-1$ dostaneme $0=3$, tedy $K_{-1}=\varnothing$.
+\item Po odečtení $kx$ je $2k=5$. Pro $k=5/2$ platí rovnice pro každé $x$, tedy $K_k=\mathbb R$; pro všechny ostatní $k$ je $K_k=\varnothing$. Nelze „dělit $x$“, protože se vyrušilo.
+\item Pro $s\ne-4$ je $K_s=\{2\}$. Pro $s=-4$ se obě strany rovnají nule pro každé $x$, tedy $K_{-4}=\mathbb R$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Vyřešte $(m^2-1)x=m-1$ pro všechna $m\in\mathbb R$ a najděte všechny tři možné typy výsledku.
+\tcblower
+$m^2-1=(m-1)(m+1)$ je nulové při $m=1$ nebo $m=-1$. Pro $m\notin\{-1,1\}$ je $x=(m-1)/[(m-1)(m+1)]=1/(m+1)$. Při $m=1$ zní původní rovnice $0=0$, tedy $K_1=\mathbb R$. Při $m=-1$ zní $0=-2$, tedy $K_{-1}=\varnothing$. Krácení $m-1$ platilo pouze v obecné větvi.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Vyřešte $(b-5)x=b-5$ pro každé $b$.
+\item Vyřešte $3x+c=cx+6$ pro každé $c$.
+\item Uveďte konkrétní hodnoty parametrů, pro něž příklady a), b) mají jedno, žádné nebo všechna řešení.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $b\ne5$ je $x=1$, tedy $K_b=\{1\}$. Pro $b=5$ vyjde $0=0$, tedy $K_5=\mathbb R$.
+\item $(3-c)x=6$. Pro $c\ne3$ je $K_c=\{6/(3-c)\}$. Pro $c=3$ vyjde $0=6$, tedy $K_3=\varnothing$.
+\item Např. v a) $b=0$ dává jedno řešení a $b=5$ všechna; žádné tam nenastane. V b) $c=0$ dává jedno řešení a $c=3$ žádné; všechna tam nenastanou.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: motivace a pravidlo 11 min, dvě společné větve 14 min, samostatné úlohy s kontrolou 17 min, organizace 3 min. Třetí řešený příklad lze vybrat podle tempa; rezerva je nad rámec. Domácí práce 15–20 min. Soustavy s parametrem neprobírej.}
+\end{document}

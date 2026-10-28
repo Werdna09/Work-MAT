@@ -1,0 +1,88 @@
+% Hodina 66, rozpis řádek 66. Zdroje: učebnice
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Lineární funkce.tex,
+% části Lineární funkce a konstantní případ; lokální Realisticky.cz
+% 020111_Linearni_funkce_IV/020111_Lekce.pdf. Příklady a graf vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{66}{Konstantní funkce}
+\begin{document}
+\blok{Návaznost}
+Při konstrukci $f(x)=ax+b$ jsme v hodině 65 používali svislou změnu $\Delta y=a\Delta x$. Co se stane při $a=0$? Každá změna argumentu dává $\Delta y=0$. Výstup se nemění, i když se vstup mění.
+\begin{definiceBox}
+\textbf{Konstantní funkce} na oboru $D$ má předpis $f(x)=c$ pro každé $x\in D$, kde $c$ je pevné reálné číslo. Na $D=\mathbb R$ je zvláštním případem lineární funkce $f(x)=ax+b$ se směrnicí $a=0$ a $b=c$; jejím grafem je vodorovná přímka $y=c$. Na menším oboru jde o příslušnou část tohoto grafu.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Je dáno $f(x)=3$ na $\mathbb R$. Určete $f(-2),f(0),f(5)$, definiční obor, obor hodnot a průsečíky s osami.
+\tcblower
+Všechny tři hodnoty jsou $3$. $D(f)=\mathbb R$ a $H(f)=\{3\}$. Graf prochází bodem $(0;3)$, což je průsečík s osou $y$. Osu $x$ neprotíná: rovnice $3=0$ nemá řešení. Vodorovná přímka leží tři jednotky nad osou $x$.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.75cm,y=.7cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-4,-1) grid (4,4);
+\draw[->] (-4.4,0)--(4.5,0) node[right] {$x$};\draw[->] (0,-1.4)--(0,4.4) node[above] {$y$};
+\foreach \x in {-4,-2,2,4}{\draw (\x,.07)--(\x,-.07) node[below] {\small $\x$};}
+\foreach \y in {1,2,3,4}{\draw (.07,\y)--(-.07,\y) node[left] {\small $\y$};}
+\draw[very thick] (-4,3)--(4,3) node[right] {$y=3$};\fill (0,3) circle (2.5pt);
+\end{tikzpicture}
+\end{center}
+\blok{Vztah k monotonii a k oboru}
+Konstantní funkce na intervalu je současně neklesající i nerostoucí: pro $x_1<x_2$ vždy platí $f(x_1)=f(x_2)=c$, tedy obě neostré nerovnosti. Není však přísně rostoucí ani přísně klesající. Pokud $0\in D$, má průsečík s osou $y$ v bodě $(0;c)$; při $c=0$ splývá graf na $\mathbb R$ s osou $x$ a každé $x\in D$ dává funkční hodnotu $0$. Na omezeném oboru kreslíme jen část vodorovné přímky.
+\begin{prikladReseniBox}
+Funkce $g(x)=-2$ je zadána pro $x\in\langle-1;3)$. Určete její graf, obor hodnot a průsečíky s osami.
+\tcblower
+Grafem je vodorovná úsečka od plného bodu $(-1;-2)$ k prázdnému bodu $(3;-2)$. $H(g)=\{-2\}$. Protože $0\in\langle-1;3)$, graf protíná osu $y$ v $(0;-2)$. Osu $x$ neprotíná, neboť hodnota je stále $-2$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Porovnejte rovnice $y=2$ a $x=2$ jako obrázky v souřadnicové rovině. Která z nich udává funkci $y$ proměnné $x$?
+\tcblower
+$y=2$ je vodorovná přímka: každé reálné $x$ má právě jednu hodnotu $2$, tedy jde o konstantní funkci. $x=2$ je svislá přímka: při argumentu $x=2$ obsahuje nekonečně mnoho různých $y$, zatímco jiná $x$ nemají žádné $y$. Svislicový test selže, takže nejde o graf funkce $y(x)$.
+\end{prikladReseniBox}
+\poznamka{Nezaměňovat konstantní funkci $y=c$ se svislou přímkou $x=c$. Výrok „konstantní funkce je rostoucí“ je při zde používané přísné definici nepravdivý; správně je neklesající a nerostoucí.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item U $p(x)=0$ na $\mathbb R$ určete obor hodnot a množinu průsečíků s osou $x$.
+\item U $q(x)=5$ na $\{-2,0,4\}$ vypište všechny body grafu a obor hodnot.
+\item Může mít konstantní funkce $r(x)=7$ při $x=1$ hodnotu $8$? Zdůvodněte.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $H(p)=\{0\}$; celý graf je osa $x$, takže každé $x\in\mathbb R$ dává bod $(x;0)$.
+\item Graf tvoří tři body $(-2;5),(0;5),(4;5)$, nikoli souvislá úsečka. $H(q)=\{5\}$.
+\item Nemůže, pokud $1\in D(r)$: z předpisu plyne $r(1)=7$. Pokud $1$ v oboru není, hodnota $r(1)$ není zadána vůbec.
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Diagnostika: co skutečně určuje graf?}]
+\begin{enumerate}[label=\alph*)]
+\item Graf obsahuje body $(-2;4),(0;4),(2;4)$. Dokazují tyto tři body samy, že funkce je konstantní na celé $\mathbb R$?
+\item Je předpis $v(x)=5+0x$ na $\mathbb R$ konstantní? Určete jeho směrnici a průsečík s osou $y$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Nedokazují: mimo uvedené argumenty mohou být hodnoty jiné. Například $w(x)=4+x(x^2-4)$ má v těchto třech bodech hodnotu $4$, ale $w(1)=1$.
+\item Ano, $v(x)=5$ pro všechna reálná $x$. Směrnice je $0$ a průsečík s osou $y$ je $(0;5)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}
+Funkce $s(x)=4$ je dána na neprázdné množině $D=\{-1,1\}$. Je sudá či lichá?
+\tcblower
+Obor je souměrný vůči nule a $s(-x)=4=s(x)$, proto je sudá. Lichá není: podmínka $s(-x)=-s(x)$ by vyžadovala $4=-4$, což neplatí. Konstantní nulová funkce by na souměrném oboru byla současně sudá i lichá.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Pro $f(x)=-3$ na $\mathbb R$ určete $D(f),H(f)$ a průsečíky s osami.
+\item Pro $g(x)=2$ na $(-2;1\rangle$ popište konce grafu a vypočtěte $g(0)$.
+\item Rozhodněte, zda $y=-1$ a $x=-1$ představují funkci $y(x)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $D(f)=\mathbb R$, $H(f)=\{-3\}$. Průsečík s osou $y$ je $(0;-3)$, s osou $x$ žádný.
+\item Prázdný bod $(-2;2)$, plný bod $(1;2)$; $g(0)=2$.
+\item $y=-1$ je konstantní funkce. $x=-1$ je svislá přímka, která při jednom $x$ připouští mnoho hodnot $y$, takže funkcí $y(x)$ není.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: motivace a definice 8, graf a úplný rozbor 10, omezený obor 8, srovnání vodorovné a svislé přímky 6, samostatný pokus 7, kontrola a organizace 6 min. Rezerva 5 min, domácí 10–15 min. Další hodina použije lineární funkci jako model reálných veličin.}
+\end{document}

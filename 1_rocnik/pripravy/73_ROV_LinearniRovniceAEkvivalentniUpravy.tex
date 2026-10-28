@@ -1,0 +1,86 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex,
+% část Lineární rovnice o jedné neznámé, Ekvivalentní úpravy, Zkouška (ř. 57–310).
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/02_Linearni_rovnice_a_nerovnice/020201_Rovnice_ekvivalentni_upravy/020201_Lekce.pdf
+% a 020203_Linearni_rovnice_I/020203_Lekce.pdf; použita myšlenka stejných operací na obou stranách a vazba na průsečík grafu. Úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{73}{Lineární rovnice a ekvivalentní úpravy}
+\begin{document}
+\blok{Rovnice jako hledání argumentu}
+V hodině 72 jsme hledali, kdy mají dvě funkce stejnou hodnotu. Nyní chceme určit všechny argumenty, které rovnost splňují, a přitom umět zdůvodnit každý krok. Pro výrazy $L(x)$ a $P(x)$ může jeden dosazený argument rovnost splnit, jiný ne.
+\begin{definiceBox}
+\textbf{Kořen rovnice} $L(x)=P(x)$ je číslo $x_0$ z přípustného oboru, pro které $L(x_0)=P(x_0)$. Množinu všech kořenů označíme $K$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Lineární rovnice o jedné neznámé} je rovnice převoditelná na $ax+b=0$, kde $a,b\in\mathbb R$ a $a\ne0$. Při $a=0$ dostáváme mezní případ $b=0$, který vyhodnotíme zvlášť jako pravdivý či nepravdivý výrok.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Ekvivalentní úprava rovnice} je úprava, která zachovává množinu všech řešení. Na obou stranách lze přičíst či odečíst stejný výraz; násobit nebo dělit lze stejným číslem různým od nuly. U výrazu s neznámou je nutno před dělením ověřit nenulovost pro všechny uvažované hodnoty nebo rozdělit případy.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Zkouška} nalezeného kořene spočívá v jeho dosazení zvlášť do levé a pravé strany původní rovnice. Shodné hodnoty potvrzují, že kandidát rovnici splňuje; úplnost množiny řešení musí plynout z postupu.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Řešte $3x-5=x+7$ a proveďte zkoušku. Každou změnu vysvětlete jako operaci s oběma stranami.
+\tcblower
+Odečteme $x$: $2x-5=7$. Přičteme $5$: $2x=12$. Vydělíme nenulovým číslem $2$: $x=6$, tedy $K=\{6\}$. Zkouška v původní rovnici: $L(6)=18-5=13$, $P(6)=6+7=13$. Všechny úpravy byly ekvivalentní, takže jiné řešení není.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.65cm,y=.5cm,>=stealth]
+\draw[step=1,gray!25,very thin] (3,-4) grid (8,4);
+\draw[->] (2.7,0)--(8.4,0) node[right] {$x$};
+\foreach \x in {4,5,6,7,8}{\draw (\x,.1)--(\x,-.1) node[below] {\small $\x$};}
+\draw[very thick] (4,-4)--(8,4);
+\fill (6,0) circle (2.6pt) node[below right=6pt] {\small $(6;0)$};
+\end{tikzpicture}
+\end{center}
+\poznamka{Graf rozdílu $y=(3x-5)-(x+7)=2x-12$ protíná osu $x$ právě při řešení původní rovnice. Jde o přesný graf v zobrazeném okně; hodnoty obou stran rovnice při $x=6$ jsou shodně 13.}
+\poznamka{Jádro: motivace a definice 12 min, společné příklady a zkouška 15 min, samostatná práce s kontrolou 15 min, organizace 3 min. Rezerva nad rámec, domácí práce asi 15 min. Další hodina přidá závorky a zlomky.}
+\newpage
+\blok{Rovnice s více či žádným řešením}
+\begin{prikladReseniBox}[breakable=false]
+Rozhodněte o množině řešení rovnic $2(x+3)=2x+6$ a $2(x+3)=2x+5$.
+\tcblower
+První po roznásobení dává $2x+6=2x+6$, tedy $0=0$ pro každé reálné $x$ a $K=\mathbb R$. Druhá dává $2x+6=2x+5$, tedy $6=5$, což je nepravda pro každé $x$; $K=\varnothing$. Není dovoleno z obou rovnic po zrušení $x$ usoudit stejný výsledek.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[breakable=false]
+Proč není dělení výrazem $x-2$ bez další úvahy ekvivalentní u rovnice $(x-2)(x+1)=0$?
+\tcblower
+Původní rovnice má kořeny $x=2$ a $x=-1$. Dělení $x-2$ by pro $x=2$ znamenalo dělení nulou a tento kořen by ztratilo. Bezpečný postup je nulový součin: $x-2=0$ nebo $x+1=0$; kontrola obou kořenů v původním součinu dává nulu.
+\end{prikladReseniBox}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $5x+4=2x-8$ a ověřte kořen.
+\item Řešte $4(x-1)=2(2x+1)$; určete množinu řešení.
+\item Žák z $-3x=12$ odvodil $x=4$. Najděte chybu a ověřte opravu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3x=-12$, $x=-4$. Zkouška: $5(-4)+4=-16$ a $2(-4)-8=-16$; $K=\{-4\}$.
+\item $4x-4=4x+2$ vede k $-4=2$, tedy $K=\varnothing$.
+\item Dělení číslem $-3$ dává $x=-4$. Kontrola: $-3(-4)=12$; $x=4$ by dalo $-12\ne12$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+U rovnice $a x+b=0$ pro daná reálná čísla $a,b$ rozlište případy $a\ne0$, $a=0,b\ne0$ a $a=b=0$.
+\tcblower
+Pro $a\ne0$ je jediný kořen $x=-b/a$. Pro $a=0,b\ne0$ je rovnice $b=0$ nepravdivá, tedy $K=\varnothing$. Pro $a=b=0$ je $0=0$ vždy pravdivé, tedy $K=\mathbb R$. Nejde zatím o obecný rozbor parametru v zadání; ten přijde v hodině 76.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Vyřešte $7-2x=x+1$ a proveďte zkoušku.
+\item Rozhodněte, zda $3(x+2)-x=2x+6$ má jeden, žádný či nekonečně mnoho kořenů.
+\item Vysvětlete na příkladu, proč dělení rovnice nulou není přípustné.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $6=3x$, $x=2$; $L=7-4=3$, $P=2+1=3$, tedy $K=\{2\}$.
+\item Po úpravě je $2x+6=2x+6$, tedy pravda pro všechna $x\in\mathbb R$ a $K=\mathbb R$.
+\item Např. $2x=4$ má $x=2$. Vynásobení obou stran nulou dává $0=0$ pro každé $x$ a ztratí informaci o původním kořeni; dělení nulou vůbec není definováno.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

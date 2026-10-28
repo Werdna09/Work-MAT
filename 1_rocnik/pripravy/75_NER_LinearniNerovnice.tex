@@ -1,0 +1,86 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex,
+% část Lineární nerovnice o jedné neznámé (ř. 503–690); nejednotné zápisy intervalů ve zdroji byly ověřeny nezávisle.
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/02_Linearni_rovnice_a_nerovnice/020205_Nerovnice_upravy_nerovnic/020205_Lekce.pdf
+% a 020206_Linearni_nerovnice/020206_Lekce.pdf; využito vysvětlení obratu znaménka pomocí pořadí čísel a grafu. Úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{75}{Lineární nerovnice}
+\begin{document}
+\blok{Proč se někdy mění směr nerovnosti}
+Rovnice hledá rovnost, nerovnice hledá všechny argumenty, při nichž je jedna strana větší či menší. Například $2<5$, ale po násobení číslem $-1$ platí $-2>-5$. Záporné násobení převrátí pořadí čísel na ose. Přičtení stejného čísla pořadí nemění; násobení kladným číslem také ne.
+\begin{definiceBox}
+\textbf{Řešení nerovnice} $L(x)<P(x)$ na oboru $D$ je každé $x\in D$, pro které po dosazení platí nerovnost; obdobně pro $>,\le,\ge$. Množina všech řešení se obvykle zapisuje intervalem či sjednocením intervalů.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Lineární nerovnice o jedné neznámé} je nerovnice převoditelná na $ax+b\mathrel{\square}0$, kde $a,b\in\mathbb R$, $a\ne0$ a $\square$ je jeden ze znaků $<,>,\le,\ge$. Při $a=0$ rozhodneme pravdivost číselné nerovnosti zvlášť.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Ekvivalentní úpravy nerovnice}: k oběma stranám můžeme přičíst stejný výraz. Násobení nebo dělení kladným číslem zachová směr, záporným číslem jej obrátí. Nulou nedělíme; při násobení nulou by se ztratila informace o pořadí.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Řešte $-3x+4\le10$ a výsledek znázorněte na číselné ose. Ověřte jeden bod uvnitř a jeden mimo množinu řešení.
+\tcblower
+Odečteme $4$: $-3x\le6$. Dělíme $-3<0$, proto obrátíme směr: $x\ge-2$. Tedy $K=\langle-2;\infty)$. Kontrola: $x=0$ dává $4\le10$ (vyhovuje), $x=-3$ dává $13\le10$ (nevyhovuje). Bod $-2$ patří do řešení, protože původní nerovnost dává $10\le10$.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.8cm,>=stealth]
+\draw[->] (-5,0)--(5,0) node[right] {$x$};
+\foreach \x in {-4,-3,-2,-1,0,1,2,3,4}{\draw (\x,.09)--(\x,-.09) node[below] {\small $\x$};}
+\draw[very thick] (-2,0)--(4.7,0);\fill (-2,0) circle (2.8pt);
+\node[above] at (1.5,0) {\small $K=\langle-2;\infty)$};
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+Řešte $2(x-1)>x+3$ a vysvětlete, proč mezní bod do výsledku nepatří.
+\tcblower
+$2x-2>x+3$, po odečtení $x$ a přičtení $2$ dostaneme $x>5$. Množina řešení je $(5;\infty)$. Pro $x=5$ mají obě strany hodnotu $8$, ale požadujeme ostrou nerovnost $8>8$, což neplatí. Např. $x=6$ dává $10>9$.
+\end{prikladReseniBox}
+\blok{Přepis na znaménko funkce}
+Nerovnice $ax+b>0$ se ptá, na které části osy $x$ leží graf $y=ax+b$ nad osou $x$. Hranici nejprve najdeme z rovnice $ax+b=0$; potom podle znaménka směrnice či dosazení jednoho čísla rozhodneme stranu. Tento pohled vysvětluje interval, ale neomlouvá chybné algebraické obrácení nerovnosti.
+\begin{prikladReseniBox}
+Řešte $-2x+6>0$ početně i pomocí grafu přímky.
+\tcblower
+Početně $-2x>-6$, dělením $-2$ dostaneme $x<3$, tedy $K=(-\infty;3)$. Graf $y=-2x+6$ protíná osu $x$ v $(3;0)$ a vlevo od $3$ leží nad osou, protože klesá a například při $x=0$ má hodnotu $6>0$. Bod $3$ kvůli ostré nerovnosti nepatří.
+\end{prikladReseniBox}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $5-2x\ge1$.
+\item Řešte $\frac{x-1}{3}<2$.
+\item Řešte $3(x+1)\le x-5$ a znázorněte výsledek na ose.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-2x\ge-4$, po dělení $-2$ je $x\le2$; $K=(-\infty;2\rangle$. Kontrola hranice: $5-4=1$.
+\item Násobíme kladným $3$: $x-1<6$, tedy $x<7$ a $K=(-\infty;7)$; $x=7$ dává rovnost, ne ostré $<$.
+\item $3x+3\le x-5$, tedy $2x\le-8$ a $x\le-4$; $K=(-\infty;-4\rangle$. Na ose plný bod $-4$ a polopřímka vlevo.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Na oboru $x\in\mathbb N_0$ řešte $4x+7<30$ a určete největší přípustné řešení.
+\tcblower
+Na $\mathbb R$ vyjde $4x<23$, tedy $x<23/4=5{,}75$. Průnik s $\mathbb N_0$ je $K=\{0,1,2,3,4,5\}$, největší řešení je $5$. Kontrola: při $5$ je $27<30$, při $6$ je $31<30$ nepravda.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}
+Žák z $-4x<-8$ odvodil $x<2$. Určete chybu i správnou množinu řešení.
+\tcblower
+Při dělení záporným $-4$ musíme směr obrátit: $x>2$, $K=(2;\infty)$. Např. $x=3$ dává $-12<-8$; chybný návrh $x=1$ by dal $-4<-8$, což neplatí.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $7-3x>1$; rozhodněte o krajním bodu.
+\item Řešte $\frac{2x+1}{4}\ge\frac{x-2}{2}$.
+\item Vysvětlete na číslech, proč násobení záporným číslem obrací pořadí.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-3x>-6$, tedy $x<2$ a $K=(-\infty;2)$. Při $x=2$ nastane rovnost $1=1$, bod nepatří.
+\item Násobíme kladným $4$: $2x+1\ge2x-4$, tedy $1\ge-4$, což platí pro všechna $x$; $K=\mathbb R$.
+\item Např. $1<3$, ale po násobení $-2$ platí $-2>-6$: obrazy čísel si na ose vymění pořadí.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: význam a pravidlo 12 min, příklady 13 min, samostatné úlohy s kontrolou 17 min, organizace 3 min. Rezerva mimo součet; domácí práce asi 15 min. Při nejistotě nech ověřit mezní bod a jedno číslo na každé straně.}
+\end{document}

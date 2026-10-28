@@ -1,0 +1,79 @@
+% Hodina 67, rozpis řádek 67. Zdroje: učebnice
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Lineární funkce.tex,
+% motivace rovnoměrnou závislostí a aplikační úlohy; lokální Realisticky.cz
+% 020115_Slovni_ulohy_na_linearni_funkce/020115_Lekce.pdf – metodická reference.
+% Úlohy a graf jsou vlastní tvorba.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{67}{Lineární funkce v praxi}
+\begin{document}
+\blok{Od předpisu k modelu}
+V hodinách 63–66 jsme počítali s předpisem $y=ax+b$ a jeho grafem. V praxi musí mít argument i hodnota jednotku a obor odpovídá smyslu veličiny. Koeficient $a$ vyjadřuje změnu výstupu na jednu jednotku vstupu; koeficient $b$ je hodnota při nulovém vstupu, pokud nula do modelu patří. Model pracuje jen v rozsahu, v němž se předpoklady uplatní.
+\begin{definiceBox}
+\textbf{Lineární model} veličiny $y$ podle veličiny $x$ má tvar $y=ax+b$ na určeném věcném oboru. Koeficient $a$ má jednotku „jednotka $y$ na jednotku $x$“, koeficient $b$ má stejnou jednotku jako $y$.
+\end{definiceBox}
+\blok{Výrobní náklady}
+\begin{prikladReseniBox}
+Dílna má fixní náklady $600$ Kč a za každý vyrobený kus platí dalších $75$ Kč. Zapište náklady $C(n)$, určete smysluplný obor, vypočtěte $C(8)$ a interpretujte výsledek.
+\tcblower
+Počet kusů $n$ je celé nezáporné číslo, tedy $n\in\mathbb N_0$. Model je $C(n)=75n+600$ Kč. Číslo $75$ má jednotku Kč/kus, $600$ Kč jsou náklady i při $n=0$. Pro osm kusů $C(8)=75\cdot8+600=1200$ Kč. Předpokládáme stejné náklady na každý kus; při velkých objemech výroby se model může přestat hodit.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Kdy v předchozím modelu náklady poprvé dosáhnou alespoň $1500$ Kč? Rozlišujte spojitý výpočet a celé kusy.
+\tcblower
+Nejprve zjistíme, kdy náklady dosáhnou právě $1500$ Kč: $75n+600=1500$, tedy $75n=900$ a $n=12$. Náklady s každým dalším kusem rostou o $75$ Kč, proto jde zároveň o první počet kusů, při němž dosáhnou alespoň $1500$ Kč. Kontrola: $C(11)=1425$ Kč, $C(12)=1500$ Kč. Závěr „po 12 kusech“ má smysl; desetinný počet kusů by zde přípustný nebyl.
+\end{prikladReseniBox}
+\blok{Rovnoměrný pohyb}
+\begin{prikladReseniBox}
+Vlak je na začátku měření $18$ km od výchozí stanice a pokračuje stálou rychlostí $60$ km/h. Sestavte model vzdálenosti $s(t)$ po $t$ hodinách pro $0\le t\le2$. Určete $s(0{,}5)$ a význam parametrů.
+\tcblower
+$s(t)=60t+18$ km pro $t\in\langle0;2\rangle$. Směrnice $60$ km/h je rychlost, úsek $18$ km je počáteční vzdálenost. Při $t=0{,}5$ h vyjde $s(0{,}5)=60\cdot0{,}5+18=48$ km. Model předpokládá stálou rychlost a platí jen pro uvedené dvě hodiny; bez další informace jej neprodlužujeme do libovolné budoucnosti.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=2.0cm,y=.035cm,>=stealth]
+\draw[->] (0,0)--(2.45,0) node[right] {$t$ [h]};\draw[->] (0,0)--(0,155) node[above] {$s$ [km]};
+\foreach \x in {1,2}{\draw (\x,2)--(\x,-2) node[below] {\small $\x$};}
+\foreach \y in {18,48,78,138}{\draw (.03,\y)--(-.03,\y) node[left] {\small $\y$};}
+\draw[very thick] (0,18)--(2,138);\fill (0,18) circle (2pt);\fill (2,138) circle (2pt);
+\fill (0.5,48) circle (2pt);\node[right] at (.5,48) {\small $(0{,}5;48)$};
+\end{tikzpicture}
+\end{center}
+Graf má vodorovnou osu v hodinách a svislou v kilometrech. Krajní body $(0;18)$ a $(2;138)$ patří do modelu. Přímku mimo časový interval nekreslíme jako tvrzení o skutečné jízdě.
+\poznamka{U praktických úloh nevynechávej jednotky a věcný obor. Počet výrobků je diskrétní, čas obvykle spojitý. Výsledek dosazení mimo obor může být početně správný, ale nevypovídá o modelované situaci.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Taxi účtuje nástupní částku $90$ Kč a $25$ Kč za kilometr. Zapište cenu $T(d)$ pro $0\le d\le20$ km a určete cenu za $6$ km.
+\item Nádrž obsahuje $120$ litrů vody a odtéká $8$ litrů za minutu. Sestavte objem $V(t)$ a určete, kdy je prázdná.
+\item U výrobního modelu $C(n)=75n+600$ vysvětlete význam rozdílu $C(n+1)-C(n)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $T(d)=25d+90$ Kč, $d\in\langle0;20\rangle$ km. $T(6)=25\cdot6+90=240$ Kč. Směrnice má jednotku Kč/km.
+\item $V(t)=120-8t$ litrů. Z $120-8t=0$ dostaneme $t=15$ min, proto věcný obor je $\langle0;15\rangle$. Kontrola $V(15)=0$; záporné objemy nepřipouštíme.
+\item $C(n+1)-C(n)=75(n+1)+600-(75n+600)=75$ Kč: každý další kus zvýší náklady o $75$ Kč.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}
+Teplota se během měření od $t=0$ do $t=4$ hodin rovnoměrně zvýšila z $12\,^\circ\mathrm C$ na $20\,^\circ\mathrm C$. Sestavte model a určete teplotu po $1{,}5$ hodině.
+\tcblower
+Změna je $8\,^\circ\mathrm C$ za $4$ h, tedy $a=2\,^\circ\mathrm C/\mathrm h$. Model je $T(t)=12+2t$ pro $t\in\langle0;4\rangle$. $T(1{,}5)=12+3=15\,^\circ\mathrm C$. Kontrola $T(4)=20\,^\circ\mathrm C$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Půjčovna účtuje $200$ Kč pevně a $50$ Kč za hodinu. Zapište cenu $P(t)$ pro celé hodiny $t=0,1,\ldots,8$ a vypočtěte $P(5)$.
+\item Cyklista je $4$ km od startu a jede stálou rychlostí $12$ km/h další $3$ hodiny. Určete $s(t)$ a $s(2)$.
+\item U modelu $V(t)=50-5t$ litrů, kde $t\ge0$ je čas v minutách, stanovte interval, v němž objem zůstává nezáporný.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $P(t)=200+50t$ Kč na uvedeném diskrétním oboru; $P(5)=450$ Kč.
+\item $s(t)=4+12t$ km, $t\in\langle0;3\rangle$ h; $s(2)=28$ km. Směrnice má jednotku km/h.
+\item $50-5t\ge0$ dává $t\le10$; spolu s $t\ge0$ je věcný interval $\langle0;10\rangle$ minut. Na konci je objem $0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: význam koeficientů a jednotek 6, výrobní model 10, pohyb a graf 11, pokus žáků 9, společná kontrola 6, organizace 3 min. Rezerva 5–8 min, domácí 10–20 min. Hodina 68 porovná dvě lineární závislosti v jedné soustavě.}
+\end{document}

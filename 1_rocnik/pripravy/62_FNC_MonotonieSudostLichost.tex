@@ -1,0 +1,114 @@
+% Hodina 62 podle ročníkového rozpisu, řádek 62.
+% Zdroje: učebnice
+% ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex,
+% oddíly Monotónnost a Sudá a lichá funkce; metodicky Realisticky.cz
+% 020113_Rostouci_a_klesajici_funkce_I/020113_Lekce.pdf (monotonie).
+% Sudost a lichost: uvedený oddíl projektové učebnice Funkce.tex.
+% Úlohy a diagramy jsou vlastní tvorba.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{62}{Monotonie, sudost a lichost}
+\begin{document}
+\blok{Návaznost}
+V hodině 61 jsme na lomeném grafu slovně poznali úseky, kde se hodnota při pohybu zleva doprava zvyšuje nebo snižuje. Dnes tento popis vyjádříme přesnou nerovností a doplníme souměrnost grafů podle osy $y$ a počátku. Všechny vlastnosti se posuzují na uvedeném definičním oboru či jeho části.
+\blok{Monotonie na intervalu}
+\begin{definiceBox}
+Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{rostoucí}, jestliže pro každá $x_1,x_2\in I$ s $x_1<x_2$ platí $f(x_1)<f(x_2)$.
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{klesající}, jestliže pro každá $x_1,x_2\in I$ s $x_1<x_2$ platí $f(x_1)>f(x_2)$.
+\end{definiceBox}
+Rostoucí a klesající jsou přísné vlastnosti: pro různé argumenty musí být různé hodnoty. Na grafu sledujeme změnu hodnot při pohybu zleva doprava, nikoli polohu grafu vůči ose $x$.
+\begin{prikladReseniBox}
+Dokažte, že $f(x)=3x-2$ je na $\mathbb R$ rostoucí a $g(x)=5-2x$ je na $\mathbb R$ klesající.
+\tcblower
+Pro $x_1<x_2$ máme $f(x_2)-f(x_1)=3(x_2-x_1)>0$, tedy $f(x_1)<f(x_2)$. U druhé funkce je $g(x_2)-g(x_1)=-2(x_2-x_1)<0$, a proto $g(x_1)>g(x_2)$. Odvozujeme vztah pro libovolnou dvojici argumentů, ne jen z několika vybraných bodů.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=.7cm,>=stealth]
+\draw[->] (-3.5,0)--(3.6,0) node[right] {$x$};\draw[->] (0,-.4)--(0,4.3) node[above] {$y$};
+\foreach \x in {-3,-1,1,2,3}{\draw (\x,.07)--(\x,-.07) node[below] {\small $\x$};}
+\foreach \y in {1,3}{\draw (.07,\y)--(-.07,\y) node[left] {\small $\y$};}
+\draw[thick] (-3,3)--(-1,1)--(0,1)--(2,3)--(3,3);
+\foreach \x/\y in {-3/3,-1/1,0/1,2/3,3/3}{\fill (\x,\y) circle (2pt);}
+\node[above right=4pt] at (-2,2) {\small klesá};\node[below=5pt] at (-.5,1) {\small konstantní};\node[below right=4pt] at (1,2) {\small roste};\node[above=5pt] at (2.5,3) {\small konstantní};
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+U grafu spojujícího body $(-3;3),(-1;1),(0;1),(2;3),(3;3)$ určete intervaly přísného růstu a poklesu.
+\tcblower
+Přísně klesá na $\langle-3;-1\rangle$ a přísně roste na $\langle0;2\rangle$. Na úsecích $\langle-1;0\rangle$ a $\langle2;3\rangle$ je konstantní.
+\end{prikladReseniBox}
+\poznamka{Neklesající a nerostoucí funkci i vodorovné úseky grafu využij jako volitelné rozšíření níže. V jádru stačí přísný růst a pokles.}
+\blok{Sudost a lichost}
+Než zkoumáme vztah mezi $f(x)$ a $f(-x)$, musíme mít pro každý přípustný argument $x$ přípustný také argument $-x$. Tomu říkáme souměrnost definičního oboru vůči nule.
+\begin{definiceBox}
+Funkce $f$ je \textbf{sudá}, jestliže její definiční obor je souměrný vůči nule a pro každé $x\in D(f)$ platí $f(-x)=f(x)$. Její graf je souměrný podle osy $y$.
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ je \textbf{lichá}, jestliže její definiční obor je souměrný vůči nule a pro každé $x\in D(f)$ platí $f(-x)=-f(x)$. Její graf je souměrný podle počátku souřadnic.
+\end{definiceBox}
+\begin{center}
+\begin{tikzpicture}[x=.7cm,y=.45cm,>=stealth]
+\draw[->] (-2.5,0)--(2.6,0) node[right] {$x$};\draw[->] (0,-.5)--(0,4.5) node[above] {$y$};
+\draw[thick,domain=-2:2,samples=60] plot (\x,{\x*\x});
+\node at (1.6,4.5) {\small $y=x^2$};
+\end{tikzpicture}\qquad
+\begin{tikzpicture}[x=.7cm,y=.7cm,>=stealth]
+\draw[->] (-2.5,0)--(2.6,0) node[right] {$x$};\draw[->] (0,-2.5)--(0,2.6) node[above] {$y$};
+\draw[thick] (-2,-2)--(2,2);\node at (1.4,2.5) {\small $y=x$};
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+Rozhodněte o sudosti či lichosti funkcí $f(x)=x^2+1$, $g(x)=x^3-x$ a $h(x)=x^2$ pro $x\in\langle0;2\rangle$.
+\tcblower
+U $f$ je $D(f)=\mathbb R$ souměrný a $f(-x)=(-x)^2+1=x^2+1=f(x)$: funkce je sudá. U $g$ je obor také $\mathbb R$ a $g(-x)=(-x)^3-(-x)=-x^3+x=-g(x)$: je lichá. Výraz $x^2$ je sudého tvaru, ale $D(h)=\langle0;2\rangle$ není souměrný vůči nule; $h$ proto jako zadaná funkce sudá ani lichá není.
+\end{prikladReseniBox}
+\poznamka{Častá chyba: rozhodnout podle samotného tvaru předpisu bez kontroly oboru. Další chyba: zaměnit grafickou souměrnost podle osy $y$ se souměrností podle počátku.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Rozhodněte, zda $p(x)=-4x+1$ roste, nebo klesá na $\mathbb R$; použijte rozdíl hodnot.
+\item Rozhodněte o sudosti či lichosti $q(x)=x^4-2x^2$ na $\mathbb R$ a $r(x)=2x^3$ na $\mathbb R$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $x_1<x_2$ je $p(x_2)-p(x_1)=-4(x_2-x_1)<0$, proto klesá.
+\item $q(-x)=(-x)^4-2(-x)^2=x^4-2x^2=q(x)$, tedy $q$ je sudá. $r(-x)=2(-x)^3=-2x^3=-r(x)$, tedy $r$ je lichá. Oba obory jsou souměrné.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{definiceBox}
+Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{neklesající}, jestliže pro každá $x_1,x_2\in I$ s $x_1<x_2$ platí $f(x_1)\le f(x_2)$.
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{nerostoucí}, jestliže pro každá $x_1,x_2\in I$ s $x_1<x_2$ platí $f(x_1)\ge f(x_2)$.
+\end{definiceBox}
+Rostoucí a klesající jsou přísné vlastnosti: rovnost hodnot při dvou různých argumentech je vylučuje. Neklesající a nerostoucí rovnost dovolují. Konstantní funkce je tedy současně neklesající i nerostoucí. Na grafu sledujeme hodnoty při pohybu zleva doprava, nikoli to, zda graf leží nad osou $x$.
+\begin{prikladReseniBox}
+Je funkce z lomeného grafu na $\langle-1;3\rangle$ neklesající? Je konstantní funkce $s(x)=3$ na $\mathbb R$ rostoucí, neklesající, klesající či nerostoucí?
+\tcblower
+Na $\langle-1;3\rangle$ hodnota v grafu nikdy neklesne, takže je zde funkce neklesající; kvůli vodorovným částem však není na tomto celku přísně rostoucí. Funkce $s$ je neklesající i nerostoucí, protože při různých argumentech má stejné hodnoty. Není přísně rostoucí ani přísně klesající.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}
+Je $u(x)=x^2$ sudá na $D(u)=\{-2,-1,1,2\}$? A je $v(x)=x^2$ sudá na $D(v)=\{-2,-1,1\}$?
+\tcblower
+První obor je souměrný a $(-x)^2=x^2$, tedy $u$ je sudá. Ve druhém oboru chybí k argumentu $-2$ odpovídající $2$, proto $v$ sudá není; samotná shoda hodnot tam, kde oba argumenty existují, nestačí.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Ověřte monotonii $f(x)=7-3x$ pomocí rozdílu $f(x_2)-f(x_1)$.
+\item Rozhodněte, zda $g(x)=x^5+x$ na $\mathbb R$ je sudá, lichá, nebo ani jedna.
+\item Pro $h(x)=x^2$ na $\langle-3;1\rangle$ určete intervaly růstu a poklesu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $x_1<x_2$ platí $f(x_2)-f(x_1)=-3(x_2-x_1)<0$, tedy $f$ je klesající.
+\item $g(-x)=(-x)^5+(-x)=-x^5-x=-g(x)$ a obor $\mathbb R$ je souměrný; $g$ je lichá.
+\item Na $\langle-3;0\rangle$ při přibližování k nule druhá mocnina klesá, na $\langle0;1\rangle$ roste. Pro $x_1<x_2\le0$ platí $-x_1>-x_2\ge0$, takže $x_1^2>x_2^2$. Pro $0\le x_1<x_2$ druhá mocnina zachová ostré pořadí, tedy $x_1^2<x_2^2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: navázání na graf 3, čtyři typy monotonie 12, důkaz na jednoduchém předpisu 6, sudost a lichost s grafy 12, samostatný pokus 7, společná kontrola 3, organizace 2 min. Rezerva 5 min, domácí práce 10–15 min. V další hodině začíná konkrétní třída lineárních funkcí.}
+\end{document}

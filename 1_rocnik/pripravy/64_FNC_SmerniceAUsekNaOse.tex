@@ -1,0 +1,93 @@
+% Hodina 64, rozpis řádek 64. Zdroje: učebnice
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Lineární funkce.tex,
+% oddíl význam směrnice a parametrů; Realisticky.cz 020110_Linearni_funkce_III/
+% 020110_Lekce.pdf – porovnání sklonů a posunů. Úlohy a obrázek vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{64}{Směrnice a úsek na ose}
+\begin{document}
+\blok{Návaznost}
+V hodině 63 jsme poznali lineární funkci $f(x)=ax+b$ a její přímkový graf. Dnes vyložíme, jak přesně koeficienty $a$ a $b$ určují sklon a polohu přímky. Klíčem je porovnat dvě funkční hodnoty.
+\begin{definiceBox}
+Koeficient $a$ v předpisu $f(x)=ax+b$ se nazývá \textbf{směrnice}. Pro libovolná různá $x_1,x_2$ platí $a=\dfrac{f(x_2)-f(x_1)}{x_2-x_1}=\dfrac{\Delta y}{\Delta x}$. Vyjadřuje změnu funkční hodnoty na jednotkovou změnu argumentu.
+\end{definiceBox}
+\begin{definiceBox}
+Koeficient $b$ je \textbf{úsek na ose $y$}: při $x=0$ platí $f(0)=b$, proto graf prochází bodem $(0;b)$.
+\end{definiceBox}
+Odvození směrnice: $f(x_2)-f(x_1)=(ax_2+b)-(ax_1+b)=a(x_2-x_1)$. Při $x_2\ne x_1$ podělíme rozdílem argumentů. Hodnota $b$ se odečtením vyruší; neovlivňuje sklon. Je-li $a>0$, graf stoupá, je-li $a<0$, klesá. Při $a=0$ je vodorovný; toto téma podrobně probereme v hodině 66. Při stejné směrnici a různém $b$ jsou grafy rovnoběžné.
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.65cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-2,-2) grid (4,4);
+\draw[->] (-2.4,0)--(4.4,0) node[right] {$x$};\draw[->] (0,-2.4)--(0,4.4) node[above] {$y$};
+\draw[very thick] (-1,-2)--(3,4);\fill (0,-.5) circle (2pt);\fill (2,2.5) circle (2pt);
+\draw[dashed] (0,-.5)--(2,-.5)--(2,2.5);
+\node[below] at (1,-.5) {$\Delta x=2$};\node[right] at (2,1) {$\Delta y=3$};
+\node[left] at (0,-.5) {\small $(0;-\frac12)$};\node[above=5pt] at (2,2.5) {\small $(2;\frac52)$};
+\end{tikzpicture}
+\end{center}
+Na obrázku je $\Delta y/\Delta x=3/2$ a průsečík s osou $y$ je $(0;-1/2)$, proto přímka má předpis $y=\frac32x-\frac12$. Kontrola v bodě $(2;5/2)$: $\frac32\cdot2-\frac12=\frac52$.
+V následujícím obrázku mají plné přímky stejný úsek $b=1$, ale směrnice $1$ a $-1$. Čárkovaná přímka má stejnou směrnici $1$ jako rostoucí plná přímka, avšak úsek $b=-1$: jde o svislé posunutí o dvě jednotky.
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=.7cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-2,-2) grid (3,4);
+\draw[->] (-2.3,0)--(3.5,0) node[right] {$x$};
+\draw[->] (0,-2.3)--(0,4.3) node[above] {$y$};
+\draw[thick] (-2,-1)--(3,4) node[above right] {\small $y=x+1$};
+\draw[thick] (-2,3)--(3,-2) node[below right] {\small $y=-x+1$};
+\draw[thick,dashed] (-1,-2)--(3,2) node[right] {\small $y=x-1$};
+\fill (0,1) circle (2pt);\fill (0,-1) circle (2pt);
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+Určete směrnici a úsek na ose $y$ funkce $f(x)=-2x+3$. Jak se změní hodnota při zvětšení argumentu o $4$?
+\tcblower
+Směrnice je $a=-2$, úsek $b=3$; graf prochází $(0;3)$ a klesá. Z rovnosti $\Delta y=a\Delta x$ dostáváme $\Delta y=-2\cdot4=-8$. Kontrola na argumentech $0,4$: $f(0)=3$, $f(4)=-5$, rozdíl je $-8$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Přímkový graf prochází body $A(-1;4)$ a $B(2;-2)$. Určete směrnici, úsek i předpis.
+\tcblower
+$a=\dfrac{-2-4}{2-(-1)}=\dfrac{-6}{3}=-2$. V $A$ platí $4=-2(-1)+b=2+b$, takže $b=2$. Předpis je $f(x)=-2x+2$. Kontrola v $B$: $f(2)=-4+2=-2$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Porovnejte $p(x)=2x-1$ a $q(x)=2x+3$. Co mají společné a v čem se liší?
+\tcblower
+Obě mají směrnici $2$, takže při stejné změně argumentu se jejich hodnoty změní stejně a grafy jsou rovnoběžné. Úseky na ose $y$ jsou $-1$ a $3$; v každém $x$ je $q(x)-p(x)=4$. Graf $q$ leží o čtyři jednotky výše.
+\end{prikladReseniBox}
+\poznamka{Směrnice je podíl změn, nikoli funkční hodnota v nule. Při výpočtu ze dvou bodů zachovej stejné pořadí v čitateli i jmenovateli. „Strmější“ při záporné směrnici znamená větší absolutní hodnotu $a$, nikoli větší číslo $a$.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item U $g(x)=\frac12x-4$ určete $a,b$ a změnu $g$ při $\Delta x=6$.
+\item Určete předpis přímky procházející $(0;5)$ a $(3;2)$.
+\item Mají grafy $u(x)=-3x+1$ a $v(x)=-3x-2$ stejný sklon? Jaký je jejich svislý odstup?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a=\frac12$, $b=-4$, změna je $\Delta y=\frac12\cdot6=3$. Kontrola $g(6)=-1$, $g(0)=-4$.
+\item $a=(2-5)/(3-0)=-1$, $b=5$, tedy $y=-x+5$; pro $x=3$ vyjde $2$.
+\item Obě směrnice jsou $-3$, přímky jsou rovnoběžné. $u(x)-v(x)=3$ pro každé $x$; $u$ leží o $3$ výše.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}
+Přímka prochází $(-2;-1)$ a $(4;2)$. Určete předpis a rozhodněte, zda je funkce rostoucí.
+\tcblower
+$a=(2-(-1))/(4-(-2))=3/6=1/2$. Z $-1=(1/2)(-2)+b$ plyne $b=0$, tedy $f(x)=x/2$. Směrnice je kladná, proto funkce roste. Kontrola $f(4)=2$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Pro $f(x)=3x-5$ určete oba koeficienty a změnu hodnoty při zvýšení $x$ o $2$.
+\item Určete předpis přímky procházející $(1;2)$ a $(3;8)$.
+\item Vysvětlete polohu grafů $y=-x+2$ a $y=-x-1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a=3,b=-5$, změna je $3\cdot2=6$; například $f(2)-f(0)=1-(-5)=6$.
+\item $a=(8-2)/(3-1)=3$, z $2=3+b$ je $b=-1$, tedy $y=3x-1$; kontrola pro $x=3$: $8$.
+\item Obě mají směrnici $-1$, proto jsou rovnoběžné; první leží o $3$ jednotky výše, neboť jejich hodnoty se vždy liší o $3$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: odvození směrnice 10, geometrický význam s grafem 8, dvě řešené úlohy 10, samostatný pokus 8, kontrola 6, organizace 3 min. Rezerva 5–8 min, domácí 10–15 min. V hodině 65 žáci použijí směrnici i tabulku k přesné konstrukci přímky.}
+\end{document}

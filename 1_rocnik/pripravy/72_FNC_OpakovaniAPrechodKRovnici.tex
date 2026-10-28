@@ -1,0 +1,82 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex (D/H, graf a vlastnosti),
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Lineární funkce.tex (průsečíky a graf),
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex, úvod k rovnici.
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/02_Linearni_rovnice_a_nerovnice/020209_Graficke_reseni_rovnic_a_nerovnic/020209_Lekce.pdf;
+% využita vazba rovnosti dvou výrazů a průsečíku dvou grafů. Úlohy a graf vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{72}{Opakování funkcí a přechod k rovnici}
+\begin{document}
+\blok{Od hodnoty funkce k otázce po argumentu}
+Při výpočtu $f(2)$ známe argument a hledáme výstup. V rovnici $f(x)=5$ známe požadovaný výstup a hledáme všechny přípustné argumenty. Graficky jde o průsečíky grafu $f$ s vodorovnou přímkou $y=5$. Dnes tento vztah ukážeme na známých lineárních grafech; pravidla ekvivalentních úprav přijdou v hodině 73.
+\begin{definiceBox}
+\textbf{Řešení rovnice} $L(x)=P(x)$ na určeném oboru $D$ je každé $x\in D$, pro které mají oba výrazy po dosazení stejnou hodnotu. \textbf{Množina řešení} je množina všech takových argumentů.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Pro $f(x)=2x+1$ na $\mathbb R$ určete $f(0)$, nulovou hodnotu, argument s hodnotou $5$ a význam obou úloh v grafu.
+\tcblower
+$f(0)=1$. Nulová hodnota nastane, když $2x+1=0$, tedy při $x=-\frac12$; bod $(-\frac12;0)$ leží na ose $x$. Hodnota $5$ nastane při $2x+1=5$, tedy $x=2$ a průsečík s vodorovnou přímkou $y=5$ je $(2;5)$. Dosazením: $f(-\frac12)=0$ a $f(2)=5$.
+\end{prikladReseniBox}
+\blok{Rovnost dvou funkčních hodnot}
+Z hodiny 68 známe porovnání dvou přímek. Rovnice $f(x)=g(x)$ se ptá, pro které stejné $x$ jsou body obou grafů ve stejné výšce. Výsledek musí patřit do společného definičního oboru.
+\begin{prikladReseniBox}
+Sestrojte $f(x)=x+2$ a $g(x)=-x+4$ na $\mathbb R$; z grafu odečtěte řešení $f(x)=g(x)$ a ověřte je výpočtem.
+\tcblower
+Pro $f$ použijeme body $(0;2),(2;4)$, pro $g$ body $(0;4),(2;2)$. Grafy se protínají v $(1;3)$. Početně $x+2=-x+4$, tedy $2x=2$ a $x=1$. Zkouška: $f(1)=3=g(1)$. Množina řešení je $K=\{1\}$; rovnice hledá první souřadnici průsečíku, nikoli celou dvojici.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=.7cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-1,-1) grid (4,5);
+\draw[->] (-1.3,0)--(4.4,0) node[right] {$x$};\draw[->] (0,-1.2)--(0,5.4) node[above] {$y$};
+\foreach \x in {1,2,3,4}{\draw (\x,.08)--(\x,-.08) node[below] {\small $\x$};}
+\foreach \y in {1,2,3,4}{\draw (.08,\y)--(-.08,\y) node[left] {\small $\y$};}
+\draw[very thick] (-1,1)--(3,5) node[above right] {\small $f$};
+\draw[very thick,dashed] (-1,5)--(4,0);
+\node[above right] at (3,1) {\small $g$};
+\fill (1,3) circle (2.5pt) node[above right=5pt] {\small $(1;3)$};
+\end{tikzpicture}
+\end{center}
+\poznamka{Nech žáky nejprve odečíst průsečík. Výpočet je kontrola přesné první souřadnice. Přímku vymezujeme jen oknem obrázku, nikoli skutečným omezením $D(f)=\mathbb R$.}
+\newpage
+\blok{Opakování v souvislostech}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Funkce $h(x)=-x+3$ je zadána na $\langle0;4\rangle$. Určete $D,H$, oba krajní body, průsečíky s osami a monotonii.
+\item Pro $p(x)=|x-1|+2$ určete vrchol, obor hodnot a všechna $x$ s $p(x)=3$.
+\item Dvě dílny mají náklady $A(n)=50n+300$ a $B(n)=70n+100$ Kč, kde $n\in\mathbb N_0$. Při jakém počtu kusů jsou náklady stejné? Která dílna je levnější při pěti kusech?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Krajní body $(0;3),(4;-1)$, tedy $D=\langle0;4\rangle$, $H=\langle-1;3\rangle$. Průsečíky jsou $(0;3)$ a $(3;0)$. Směrnice $-1$ znamená pokles.
+\item Vrchol $(1;2)$, $H=\langle2;\infty)$. $|x-1|+2=3$ dává $|x-1|=1$, tedy $x=0$ nebo $x=2$; obě hodnoty kontrolou vyhovují.
+\item $50n+300=70n+100$ znamená $200=20n$, tedy $n=10$. Obor $\mathbb N_0$ jej připouští. Při $n=5$ je $A(5)=550$ Kč a $B(5)=450$ Kč, takže levnější je B.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Funkce $u(x)=2x-1$ je zadána jen pro $x\in\langle0;2\rangle$ a $v(x)=x+1$ na $\mathbb R$. Vyřešte $u(x)=v(x)$. Proč nestačí rovnost předpisů na celé $\mathbb R$?
+\tcblower
+$2x-1=x+1$ dává $x=2$, který patří do společného oboru $\langle0;2\rangle$; $u(2)=v(2)=3$. Kdyby algebraický kořen ležel mimo obor $u$, nebyl by řešením zadané rovnice funkcí.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}
+Načrtněte graf $y=|x|$ a odhadněte počet řešení $|x|=c$ pro $c=-1,0,2$.
+\tcblower
+Vodorovná přímka pod osou $x$ graf neprotne, tedy pro $c=-1$ žádné řešení. Při $c=0$ se dotkne vrcholu: $x=0$. Při $c=2$ protne obě větve: $x=-2,2$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Určete z grafu a poté početně, kdy $2x+3=7$.
+\item Najděte společnou hodnotu $f(x)=3x-2$ a $g(x)=x+4$ a příslušný argument.
+\item Rozhodněte, zda rovnice $x+1=4$ má řešení pro funkci $f(x)=x+1$ na $\langle0;2\rangle$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Přímky $y=2x+3$ a $y=7$ se protínají při $x=2$; kontrola $2\cdot2+3=7$.
+\item $3x-2=x+4$ dává $2x=6$, $x=3$; společná hodnota je $7$ a průsečík $(3;7)$.
+\item Předpisová rovnice dává $x=3$, ale $3\notin\langle0;2\rangle$. Pro zadanou funkci tedy řešení neexistuje.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: motivace a vzor 9 min, grafická rovnost 14 min, samostatné opakování a kontrola 19 min, organizace 3 min. Rezerva nad rámec; domácí práce asi 15 min. Dnes používáme jen snadné rovnosti známých předpisů, úplná teorie ekvivalentních úprav patří hodině 73.}
+\end{document}

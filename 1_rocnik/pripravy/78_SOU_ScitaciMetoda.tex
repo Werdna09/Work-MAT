@@ -1,0 +1,72 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex,
+% Soustavy lineárních rovnic, pododdíl Sčítací metoda (ř. 1123–1218), a kontrola společné dvojice.
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/03_Nektere_rovnice_a_nerovnice_prevoditelne_na_linearni/020310_Soustavy_dvou_linearnich_rovnic_o_dvou_neznamych_I/020310_Lekce.pdf
+% a 020311_Soustavy_dvou_linearnich_rovnic_o_dvou_neznamych_II/020311_Lekce.pdf; využito srovnání metod a významu eliminace. Úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Soustavy rovnic}{78}{Sčítací metoda}
+\begin{document}
+\blok{Odstranění jedné neznámé součtem}
+V minulé hodině jsme jednu neznámou vyjádřili a dosadili. Někdy jsou koeficienty u jedné neznámé opačné, takže při sečtení rovnic tato neznámá zmizí. Sčítáme celé levé strany i celé pravé strany; upravujeme-li nejprve rovnici násobením, násobíme každou její část.
+\begin{definiceBox}
+\textbf{Sčítací metoda} spočívá v ekvivalentním vynásobení jedné či obou rovnic nenulovým číslem tak, aby koeficienty u zvolené neznámé byly opačné. Součet rovnic pak dá rovnici s jednou neznámou; druhou hodnotu dopočteme z některé původní rovnice a ověříme obě.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Řešte soustavu $2x+y=7$, $3x-y=8$ sčítací metodou a ověřte výsledek.
+\tcblower
+Koeficienty u $y$ jsou $1$ a $-1$. Sečtením dostaneme $5x=15$, tedy $x=3$. Z první rovnice $2\cdot3+y=7$, takže $y=1$. Zkouška: $2\cdot3+1=7$ a $3\cdot3-1=8$. Proto $K=\{(3;1)\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Řešte $3x+2y=12$, $2x-3y=-5$. Připravte opačné koeficienty u $y$.
+\tcblower
+První rovnici násobíme $3$ a druhou $2$:
+\[
+9x+6y=36,\qquad 4x-6y=-10.
+\]
+Součet dává $13x=26$, tedy $x=2$. Z původní první rovnice $6+2y=12$, takže $y=3$. Zkouška: $3\cdot2+2\cdot3=12$ a $2\cdot2-3\cdot3=4-9=-5$; $K=\{(2;3)\}$.
+\end{prikladReseniBox}
+\poznamka{Sečtená rovnice sama o sobě nenahrazuje celou soustavu: určí jednu hodnotu a druhou musíme dopočítat i ověřit. Při násobení rovnice číslem $-1$ se mění znaménka všech členů včetně pravé strany.}
+\blok{Rozhodnutí mezi metodami}
+Dosazování je obvykle rychlé při koeficientu $1$ či $-1$ u některé neznámé. Sčítání je výhodné, když jsou koeficienty již opačné nebo se snadno stanou opačnými. Metody mají dát stejnou množinu řešení; volba je otázkou úsporného postupu, nikoli jiné matematiky.
+\begin{prikladReseniBox}
+Vyřešte $x+2y=9$, $2x-2y=0$ sčítáním a pak v jedné větě popište dosazovací kontrolu.
+\tcblower
+Součet dává $3x=9$, tedy $x=3$. Z druhé rovnice $6-2y=0$, takže $y=3$. Zkouška: $3+6=9$, $6-6=0$. Dosazovací kontrola: z druhé rovnice $x=y$, vložení do první dává $3y=9$.
+\end{prikladReseniBox}
+\newpage
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $x+y=6$, $x-y=2$.
+\item Řešte $2x+3y=12$, $2x-y=4$.
+\item Řešte $3x-y=8$, $x+2y=5$; zvolte násobení, které odstraní $y$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Součet: $2x=8$, $x=4$, $y=2$. Kontrola $4+2=6$, $4-2=2$.
+\item Odečteme druhou rovnici od první: $4y=8$, $y=2$. Pak $2x-2=4$, $x=3$. Kontrola $6+6=12$, $6-2=4$.
+\item Druhou rovnici ponecháme, první vynásobíme $2$: $6x-2y=16$ a $x+2y=5$. Součet $7x=21$, $x=3$, $y=1$. Kontrola $9-1=8$, $3+2=5$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Porovnejte soustavy $2x-3y=1$, $4x-6y=2$ a $2x-3y=1$, $4x-6y=3$. Co ukáže eliminace?
+\tcblower
+Po odečtení dvojnásobku první rovnice od druhé dostaneme v prvním případě $0=0$: druhá podmínka je totožná s první. Nekonečně mnoho řešení lze zapsat $K=\{((1+3t)/2;t):t\in\mathbb R\}$. Ve druhém případě dostaneme $0=1$, tedy $K=\varnothing$. Výsledek eliminace je nutno interpretovat, ne dělit nulovým koeficientem.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $5x+2y=16$, $3x-2y=0$.
+\item Řešte $2x+y=9$, $4x-2y=6$.
+\item Vysvětlete, proč z $2x+y=7$ a $3x-y=8$ lze odvodit $5x=15$, avšak pro kontrolu dvojice nestačí ověřit jen poslední rovnici.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Sečtením $8x=16$, tedy $x=2$, $y=3$. Kontrola $10+6=16$, $6-6=0$.
+\item První rovnici vynásobíme $2$: $4x+2y=18$. Součet s druhou dává $8x=24$, $x=3$, $y=3$. Kontrola $6+3=9$, $12-6=6$.
+\item Součet původních rovnic je nutnou podmínkou, ale $5x=15$ neobsahuje informaci o $y$. Např. $(3;0)$ ji splňuje, avšak první původní rovnici ne ($6\ne7$). Proto druhou hodnotu dopočteme a ověříme obě rovnice.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: princip 8 min, dva vzory 15 min, samostatná práce a kontrola 19 min, organizace 3 min. Třetí vzor a rezerva podle tempa; domácí práce 15–20 min. Příští hodina spojí počet řešení s polohou přímek.}
+\end{document}

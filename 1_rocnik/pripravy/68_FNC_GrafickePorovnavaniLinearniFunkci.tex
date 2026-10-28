@@ -1,0 +1,83 @@
+% Hodina 68, rozpis řádek 68. Zdroje: učebnice
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Lineární funkce.tex,
+% oddíly grafy lineárních funkcí a průsečíky; Realisticky.cz lokální
+% 020110_Linearni_funkce_III/020110_Lekce.pdf – metodika porovnání více
+% přímek v jedné souřadnicové soustavě.
+% Úlohy a graf vlastní tvorba. Návaznost na hodinu 69: pololetní písemná práce.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{68}{Grafické porovnávání lineárních funkcí}
+\begin{document}
+\blok{Motivace a návaznost}
+Dvě lineární funkce můžeme nakreslit do stejné soustavy a pro každý argument porovnávat jejich výšky. Průsečík grafů je situace, kdy obě funkce při stejném vstupu dávají stejný výstup. Předchozí hodina ukázala praktické významy parametrů; nyní je spojíme s grafickým a algebraickým porovnáním.
+\begin{definiceBox}
+\textbf{Průsečík grafů} funkcí $f$ a $g$ je bod $(x;y)$, pro který $x\in D(f)\cap D(g)$ a $y=f(x)=g(x)$. Jeho argument získáme řešením rovnice $f(x)=g(x)$; výsledek musí patřit do společného definičního oboru.
+\end{definiceBox}
+\blok{Dvě různě skloněné přímky}
+\begin{prikladReseniBox}
+Porovnejte $f(x)=x+1$ a $g(x)=-x+5$ na $\mathbb R$. Určete jejich průsečík a rozhodněte, která má vyšší hodnotu vlevo a vpravo od něj.
+\tcblower
+Rovnost hodnot dává $x+1=-x+5$, tedy $2x=4$ a $x=2$. Obě funkce tam mají hodnotu $3$, takže průsečík je $(2;3)$. Rozdíl $f(x)-g(x)=2x-4=2(x-2)$ je pro $x<2$ záporný a pro $x>2$ kladný. Vlevo je výše graf $g$, vpravo graf $f$. Kontrola dosazením: při $x=0$ jsou hodnoty $1$ a $5$; při $x=3$ jsou $4$ a $2$.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.8cm,y=.6cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-1,-1) grid (5,6);
+\draw[->] (-1.3,0)--(5.4,0) node[right] {$x$};\draw[->] (0,-1.3)--(0,6.4) node[above] {$y$};
+\foreach \x in {1,2,3,4,5}{\draw (\x,.08)--(\x,-.08) node[below] {\small $\x$};}
+\foreach \y in {1,3,5}{\draw (.08,\y)--(-.08,\y) node[left] {\small $\y$};}
+\draw[very thick] (-1,0)--(5,6) node[above] {\small $f$};
+\draw[very thick,dashed] (-1,6)--(5,0);
+\node[above right=3pt] at (4,1) {\small $g$};
+\fill (2,3) circle (2.5pt);\node[right=8pt] at (2,3) {\small $(2;3)$};
+\end{tikzpicture}
+\end{center}
+Plná a čárkovaná čára zůstávají rozlišitelné i při černobílém tisku. Na svislici $x=2$ se setkají ve stejné výšce; jinde lze vyšší hodnotu odečítat přibližně z grafu a ověřit výpočtem. Při nejistotě se znaménkem rozdílu $f(x)-g(x)$ nejprve porovnejte výšky obou grafů v konkrétním bodě na každé straně průsečíku.
+\blok{Rovnoběžné a totožné grafy}
+\begin{prikladReseniBox}
+Porovnejte $p(x)=2x+1$ a $q(x)=2x-3$ na $\mathbb R$. Mají průsečík?
+\tcblower
+Směrnice jsou stejné, grafy jsou rovnoběžné. Rovnost $2x+1=2x-3$ by vyžadovala $1=-3$, což není možné. Průsečík nemají. Pro každé $x$ platí $p(x)-q(x)=4$, takže graf $p$ leží stále o $4$ výše.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Porovnejte $u(x)=3(x-1)+2$ a $v(x)=3x-1$ na $\mathbb R$.
+\tcblower
+Po roznásobení $u(x)=3x-3+2=3x-1=v(x)$ pro všechna reálná $x$. Grafy splývají a každý jejich bod je společný. Kontrola například při $x=0$: obě hodnoty jsou $-1$.
+\end{prikladReseniBox}
+\poznamka{Rozliš tři možnosti: různá směrnice znamená jeden průsečík na $\mathbb R$; stejná směrnice s různým úsekem žádný; shodné oba koeficienty totožné grafy. U omezených oborů musí vypočtený argument průsečíku ležet v obou oborech.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Sestrojte do jedné soustavy grafy $f(x)=2x-1$ a $g(x)=x+2$ (např. z bodů pro $x=0$ a $x=2$). Z grafu odečtěte průsečík i intervaly, kde je která funkční hodnota vyšší. Výsledek ověřte algebraicky.
+\item Mají průsečík $h(x)=-x+3$ a $k(x)=-x-2$?
+\item Funkce $m(x)=x+1$ je dána jen pro $x\in\langle0;1\rangle$, funkce $n(x)=-x+5$ pro $x\in\langle0;3\rangle$. Protínají se jejich skutečné grafy?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Z předpisů sestrojíme $f$ přes $(0;-1),(2;3)$ a $g$ přes $(0;2),(2;4)$. V grafu čteme průsečík $(3;5)$; pro $x<3$ leží výše graf $g$, pro $x>3$ graf $f$, v $x=3$ se hodnoty rovnají. Algebraicky $2x-1=x+2$ dává $x=3$ a obě hodnoty $5$. Rozdíl $f(x)-g(x)=x-3$ potvrzuje pořadí pro všechny argumenty. Kontrola: při $x=0$ jsou hodnoty $-1,2$ a při $x=4$ hodnoty $7,6$.
+\item Ne: směrnice jsou obě $-1$, ale úseky $3$ a $-2$ se liší. Rozdíl hodnot je stále $5$.
+\item Rovnice předpisů dává $x=2$, ale $2\notin D(m)=\langle0;1\rangle$. Skutečné grafy nemají společný bod, i když prodloužené přímky se protínají v $(2;3)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Dva tarify stojí $A(t)=100+4t$ a $B(t)=40+7t$ Kč pro $t\ge0$ minut. Při jaké době jsou ceny stejné a který tarif je levnější po $10$ minutách?
+\tcblower
+$100+4t=40+7t$ znamená $60=3t$, tedy $t=20$ min; oba stojí $180$ Kč. Po $10$ min je $A(10)=140$ Kč a $B(10)=110$ Kč, levnější je $B$. Před $20$ min leží jeho graf níže, po $20$ min je levnější $A$. Model předpokládá ceny lineární pro uvedený čas.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Najděte průsečík $f(x)=-2x+6$ a $g(x)=x$ a ověřte jej dosazením.
+\item Porovnejte $p(x)=\frac12x+1$ a $q(x)=\frac12x-2$.
+\item Dva náklady jsou $C_1(n)=50n+300$ a $C_2(n)=70n+100$ Kč, $n\in\mathbb N_0$. Pro kolik kusů jsou stejné?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-2x+6=x$ dává $x=2$, hodnota $2$, průsečík $(2;2)$. Kontrola $f(2)=2=g(2)$.
+\item Směrnice jsou stejné, rozdíl $p(x)-q(x)=3$. Přímky jsou rovnoběžné a $p$ leží všude o $3$ výše.
+\item $50n+300=70n+100$ dává $200=20n$, tedy $n=10$ kusů. Obě ceny jsou $800$ Kč; $10\in\mathbb N_0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: návaznost 4, dvě přímky a jejich graf 13, rovnoběžnost a totožnost 8, samostatný pokus 9, společná kontrola 8, organizace 3 min. Rezerva 6–8 min, domácí 10–15 min. Následuje hodina 69: pololetní písemná práce z algebry a základů funkcí; zde nepřidávej novou látku mimo grafické porovnávání.}
+\end{document}

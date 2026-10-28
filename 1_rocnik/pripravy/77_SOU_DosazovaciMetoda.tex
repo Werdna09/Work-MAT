@@ -1,0 +1,71 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex,
+% část Soustavy lineárních rovnic, řešení a dosazovací metoda (ř. 998–1123 a 1219–1337).
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/03_Nektere_rovnice_a_nerovnice_prevoditelne_na_linearni/020310_Soustavy_dvou_linearnich_rovnic_o_dvou_neznamych_I/020310_Lekce.pdf
+% a 020311_Soustavy_dvou_linearnich_rovnic_o_dvou_neznamych_II/020311_Lekce.pdf; využito odvození dosazení a upozornění na chybu dosazení do téže rovnice. Úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Soustavy rovnic}{77}{Dosazovací metoda}
+\begin{document}
+\blok{Dvě podmínky pro jednu dvojici}
+Jedna rovnice se dvěma neznámými připouští zpravidla mnoho dvojic. Soustava požaduje, aby stejná dvojice splnila obě podmínky současně. Z hodiny 68 víme, že graficky jde o společný bod dvou přímek; dnes jej najdeme přesně dosazováním.
+\begin{definiceBox}
+\textbf{Soustava dvou lineárních rovnic o dvou neznámých} je dvojice rovnic $a_1x+b_1y=c_1$ a $a_2x+b_2y=c_2$, kde $a_i,b_i,c_i\in\mathbb R$ a v každé rovnici je alespoň jeden z koeficientů u neznámých nenulový.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Řešení soustavy} je uspořádaná dvojice $(x_0;y_0)$, která splňuje \emph{obě} rovnice. Množina všech řešení je $K$; u jediného řešení píšeme například $K=\{(4;3)\}$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Dosazovací metoda}: z jedné rovnice vyjádříme jednu neznámou, tento výraz dosadíme za tutéž neznámou do \emph{druhé} rovnice, dopočteme obě hodnoty a ověříme je v původní soustavě.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Řešte dosazováním soustavu $x+y=7$, $x-y=1$. Proveďte zkoušku v obou rovnicích.
+\tcblower
+Z první rovnice $x=7-y$. Dosadíme do druhé: $(7-y)-y=1$, tedy $7-2y=1$, $y=3$. Zpět $x=7-3=4$. Zkouška: $4+3=7$ a $4-3=1$. Tedy $K=\{(4;3)\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Řešte $2x+y=8$, $x-2y=-1$. Kterou neznámou je výhodné vyjádřit?
+\tcblower
+Z první rovnice je snadné vyjádřit $y=8-2x$. Dosazení do druhé dává $x-2(8-2x)=-1$, tedy $x-16+4x=-1$, $5x=15$, $x=3$. Pak $y=8-6=2$. Zkouška: $2\cdot3+2=8$ a $3-2\cdot2=-1$; $K=\{(3;2)\}$.
+\end{prikladReseniBox}
+\poznamka{Trvej na dosazení do druhé rovnice. Dosazení vyjádřeného $x$ zpět do téže rovnice vede jen k identitě, aniž by využilo druhou podmínku.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $x+y=5$, $2x-y=1$.
+\item Řešte $y=3x-2$, $x+y=6$.
+\item Pro soustavu $x=2y+1$, $3x-y=8$ určete, zda je dvojice $(3;1)$ řešením, a potom najděte celé řešení.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $y=5-x$; $2x-(5-x)=1$ dává $3x=6$, $x=2$, $y=3$. Zkouška $2+3=5$, $4-3=1$.
+\item $(3x-2)+x=6$, tedy $4x=8$, $x=2$, $y=4$. Kontrola $4=3\cdot2-2$ a $2+4=6$.
+\item Dvojice $(3;1)$ splňuje obě rovnice: $3=2\cdot1+1$ a $3\cdot3-1=8$. Dosazení $x=2y+1$ do druhé dává $3(2y+1)-y=8$, $5y=5$, $y=1$, $x=3$. Jediné řešení je $K=\{(3;1)\}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Řešte $3x-2y=4$, $x+y=3$ dvěma různými volbami vyjádřené neznámé.
+\tcblower
+Z druhé rovnice $y=3-x$: $3x-2(3-x)=4$, tedy $5x=10$, $x=2$, $y=1$. Lze také vyjádřit $x=3-y$: $3(3-y)-2y=4$, tedy $9-5y=4$, $y=1$, $x=2$. Kontrola $6-2=4$ a $2+1=3$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}
+Najděte chybu v postupu: z $x+y=7$ vyjádříme $x=7-y$ a dosadíme zpět do $x+y=7$, čímž vyjde $7=7$; závěr „soustava $x+y=7$, $x-y=1$ má nekonečně mnoho řešení“.
+\tcblower
+Dosazovalo se do téže rovnice, z níž se $x$ vyjádřilo. Rovnice $x-y=1$ nebyla vůbec použita. Po dosazení do ní vyjde $7-2y=1$, tedy jediná dvojice $(4;3)$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $x+2y=7$, $3x-y=0$.
+\item Řešte $2x-y=5$, $x+y=4$.
+\item Vysvětlete, proč samotná dvojice splňující první rovnici soustavy nemusí být řešením soustavy.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Z druhé rovnice $y=3x$. Dosazení: $x+6x=7$, tedy $x=1$, $y=3$. Zkouška $1+6=7$, $3-3=0$.
+\item Z druhé rovnice $y=4-x$. Pak $2x-(4-x)=5$, $3x=9$, $x=3$, $y=1$. Zkouška $6-1=5$, $3+1=4$.
+\item Např. $(0;7)$ splňuje $x+y=7$, ale nesplňuje $x-y=1$, protože $0-7=-7$. Soustava znamená průnik podmínek.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: význam dvojice a metoda 11 min, dva řešené příklady 13 min, samostatné řešení a kontrola 18 min, organizace 3 min. Rezerva je nad rámec; domácí práce 15–20 min. Hodina 78 zavede jiný způsob odstranění neznámé.}
+\end{document}

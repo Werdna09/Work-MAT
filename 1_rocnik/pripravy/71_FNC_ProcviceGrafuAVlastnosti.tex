@@ -1,0 +1,86 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex, části D/H, monotonie, sudost a lichost;
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Lineární funkce.tex, předpis a graf lineární funkce.
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/01_Linearni_funkce/020105_Graf_funkce_I/020105_Lekce.pdf
+% a 020113_Rostouci_a_klesajici_funkce_I/020113_Lekce.pdf; metodika přechodu mezi osami a zdůvodnění růstu. Úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{71}{Procvičování grafů a vlastností}
+\begin{document}
+\blok{Samostatné procvičování s cílenou podporou}
+Hodina navazuje na grafy lineárních a konstantních funkcí i na nový graf absolutní hodnoty. Žáci nejprve sami převedou předpis na tabulku a graf, potom z grafu zpět vyčtou vlastnosti. Učitel před rozdáním úloh ukáže měřítko os a připomene, že definiční obor určuje, kterou část přímky skutečně kreslíme.
+\begin{definiceBox}
+\textbf{Graf funkce} $f$ je množina bodů $(x;f(x))$ pro všechna $x\in D(f)$. Bod patří do grafu právě tehdy, když jeho první souřadnice patří do $D(f)$ a druhá se rovná $f(x)$.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Na oboru $\langle-2;3)$ je dána funkce $f(x)=x+1$. Sestrojte graf, určete $D(f)$, $H(f)$, průsečíky s osami a monotonii.
+\tcblower
+Tabulka pro $x=-2,-1,0,2$ dává $f(x)=-1,0,1,3$. Kreslíme část přímky od plného bodu $(-2;-1)$ k prázdnému bodu $(3;4)$. Proto $D(f)=\langle-2;3)$ a $H(f)=\langle-1;4)$. Průsečíky jsou $(-1;0)$ a $(0;1)$. Pro $x_1<x_2$ je $f(x_2)-f(x_1)=x_2-x_1>0$, tedy funkce roste na celém oboru.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.68cm,y=.58cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-3,-2) grid (4,5);
+\draw[->] (-3.3,0)--(4.3,0) node[right] {$x$};\draw[->] (0,-2.3)--(0,5.3) node[above] {$y$};
+\foreach \x in {-2,-1,1,2,3}{\draw (\x,.08)--(\x,-.08) node[below] {\small $\x$};}
+\foreach \y in {-1,1,2,4}{\draw (.08,\y)--(-.08,\y) node[left] {\small $\y$};}
+\draw[very thick] (-2,-1)--(3,4);
+\fill (-2,-1) circle (2.4pt);\draw[fill=white,thick] (3,4) circle (2.7pt);
+\node[below left] at (-2,-1) {\small plný};\node[above right] at (3,4) {\small prázdný};
+\end{tikzpicture}
+\end{center}
+\poznamka{V hlavním procvičení neprozrazuj celý postup. Vzor slouží jen k připomenutí otevřeného konce. Žák musí vždy říci, zda určuje vlastnost předpisu na $\mathbb R$, nebo skutečně zadané funkce na omezeném oboru.}
+\blok{Jádro samostatné práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Pro $g(x)=-2x+2$ na $\mathbb R$ sestavte tabulku pro $x=-1,0,1,2$, sestrojte přímku a určete průsečíky s osami i směr změny.
+\item Pro $h(x)=3$ na $\langle-1;2\rangle$ sestrojte graf, určete obor hodnot a rozhodněte, zda je funkce rostoucí, klesající, neklesající či nerostoucí.
+\item Z grafu určeného úsečkami přes $A(-2;1),B(0;-1),C(2;1)$ určete $D,H$, nulové hodnoty, intervaly růstu a poklesu. Ověřte jedním výpočtem hodnotu v $x=-1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Hodnoty $4,2,0,-2$; přímka prochází $(0;2)$ a $(1;0)$. Při zvýšení $x$ o 1 klesne hodnota o 2, tedy je klesající; průsečíky jsou $(0;2)$ a $(1;0)$.
+\item Graf je vodorovná uzavřená úsečka od $(-1;3)$ do $(2;3)$; $H(h)=\{3\}$. Není přísně rostoucí ani klesající; je současně neklesající i nerostoucí, protože pro libovolná $x_1<x_2$ vyjde $h(x_1)=h(x_2)$.
+\item $D=\langle-2;2\rangle$, $H=\langle-1;1\rangle$. Nuly jsou $x=-1$ a $x=1$. Funkce klesá na $\langle-2;0\rangle$ a roste na $\langle0;2\rangle$. První úsečka má sklon $-1$ a předpis $y=-x-1$, tedy $f(-1)=0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Kontrola porozumění a argumentace}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Mohou mít různé lineární funkce stejný průsečík s osou $y$? Uveďte dvě a vysvětlete parametr.
+\item Žák tvrdí: „Z tabulky $(-1;1),(0;0),(1;1)$ plyne, že funkce je $x^2$.“ Posuďte závěr.
+\item Rozhodněte, zda $r(x)=2x$ na $\mathbb R$ je sudá, lichá, nebo ani jedna; zdůvodněte předpisem i souměrností grafu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Ano, např. $y=x+2$ a $y=-2x+2$ mají společnou hodnotu $b=2$ při $x=0$, ale různé směrnice.
+\item Neplyne. Stejné tři hodnoty má například $x^2+x(x-1)(x+1)$; přidaný součin je v $-1,0,1$ nulový, jinde se předpisy liší. Bez další podmínky tabulka obecný předpis neurčuje.
+\item $r(-x)=-2x=-r(x)$ pro všechna $x\in\mathbb R$, takže je lichá. Graf $y=2x$ je souměrný podle počátku.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Pro $p(x)=|x-1|$ na $\langle-1;3)$ sestrojte graf, určete $D,H$, minimum a monotónní části. Jak se změní obor hodnot po nahrazení pravého konce intervalem uzavřeným?
+\tcblower
+Vrchol $(1;0)$ do oboru patří. Vlevo je $p(-1)=2$, vpravo se hodnota blíží $2$ a koncový bod chybí; hodnota $2$ však již nastává vlevo. Tedy $H=\langle0;2\rangle$. Klesá na $\langle-1;1\rangle$, roste na $\langle1;3)$ a minimum je $0$. Uzavření pravého konce obor hodnot nezmění.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}
+Najděte lineární funkci s nulovou hodnotou při $x=3$ a s hodnotou $2$ při $x=1$.
+\tcblower
+Směrnice je $(0-2)/(3-1)=-1$. Z $2=-1\cdot1+b$ plyne $b=3$, tedy $f(x)=-x+3$. Kontrola: $f(3)=0$ a $f(1)=2$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Sestrojte $f(x)=\frac12x-1$ na $\mathbb R$ pomocí tří bodů a určete průsečíky s osami.
+\item Pro $g(x)=2-x$ na $\langle0;4\rangle$ určete $D,H$, krajní body, nulovou hodnotu a monotonii.
+\item Vysvětlete, proč funkce $h(x)=|x|$ na $\mathbb R$ není rostoucí na celém oboru, přestože pro $x>0$ roste.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Např. pro $x=0,2,4$ jsou hodnoty $-1,0,1$; průsečíky $(0;-1)$ a $(2;0)$.
+\item Krajní body $(0;2),(4;-2)$; $D=\langle0;4\rangle$, $H=\langle-2;2\rangle$, nula v $x=2$. Směrnice $-1$ značí pokles.
+\item Pro $-2<-1$ dostaneme $h(-2)=2>1=h(-1)$, což odporuje požadavku růstu na celé $\mathbb R$. Na $\langle0;\infty)$ roste.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: organizace 3, rychlé připomenutí a vzor 7, samostatná práce 22, společná kontrola a oprava argumentace 13. Rezerva je mimo součet. Domácí práce přibližně 15 minut. U slabší skupiny dej úlohu c) z jádra až po první kontrole.}
+\end{document}

@@ -1,0 +1,95 @@
+% Zdroje skutečně prostudované: ucebnice/02_Funkce_a_rovnice/Funkce_s_absolutni_hodnotou/Lineární funkce s abs.tex,
+% části Absolutní hodnota, Funkce absolutní hodnoty a základní posuny grafu (ř. 63–437).
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/04_Funkce_absolutni_hodnota_rovnice_a_nerovnice_s_absolutni_hodnotou/020401_Funkce_absolutni_hodnota/020401_Lekce.pdf;
+% využita metodika odvození grafu z y=x a důraz na interpretaci vzdálenosti. Zadání a grafy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{70}{Funkce s absolutní hodnotou}
+\begin{document}
+\blok{Od lineární funkce ke dvěma větvím}
+Z předchozích hodin známe graf $y=x$. Absolutní hodnota ponechá nezáporné výstupy a záporné změní na jejich opačná čísla. Levá část přímky se proto odrazí nad osu $x$. Nejde o novou metodu kreslení od nuly: použijeme známé přímky $y=x$ a $y=-x$ na správných polovinách oboru.
+\begin{definiceBox}
+\textbf{Absolutní hodnota} čísla $x$ je jeho vzdálenost od nuly: $|x|=x$ pro $x\ge0$ a $|x|=-x$ pro $x<0$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Funkce absolutní hodnoty} je $f:\mathbb R\to\mathbb R$, $f(x)=|x|$. Její definiční obor je $\mathbb R$ a obor hodnot $\langle0;\infty)$.
+\end{definiceBox}
+Pro $x<0$ máme $f(x)=-x$, pro $x\ge0$ máme $f(x)=x$. V bodě $(0;0)$ se části setkají. Z obou větví je patrná sudost $f(-x)=f(x)$, minimum $0$ a pokles vlevo, růst vpravo. Využijeme také tabulku $x=-2,-1,0,1,2$ a hodnoty $2,1,0,1,2$; sama tabulka neurčuje celý graf, předpis ano.
+\begin{center}
+\begin{tikzpicture}[x=.82cm,y=.72cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-4,-1) grid (4,4);
+\draw[->] (-4.3,0)--(4.4,0) node[right] {$x$};\draw[->] (0,-1.2)--(0,4.4) node[above] {$y$};
+\foreach \x in {-4,-2,2,4}{\draw (\x,.08)--(\x,-.08) node[below] {\small $\x$};}
+\foreach \y in {1,2,3,4}{\draw (.08,\y)--(-.08,\y) node[left] {\small $\y$};}
+\draw[very thick] (-4,4)--(0,0)--(4,4);
+\draw[dashed,gray] (-3,-3)--(0,0);
+\fill (0,0) circle (2.4pt);\fill (-2,2) circle (2.3pt);\fill (2,2) circle (2.3pt);
+\node[above left] at (-2,2) {\small $(-2;2)$};\node[above right] at (2,2) {\small $(2;2)$};
+\node at (3.2,3.8) {\small $y=|x|$};
+\end{tikzpicture}
+\end{center}
+\poznamka{Čárkovaná část ukazuje původní $y=x$ pod osou; není součástí grafu $y=|x|$. Ptej se, proč $|-2|$ není záporné, i když ve větvi stojí výraz $-x$.}
+\blok{Základní posuny grafu}
+\begin{prikladReseniBox}
+Sestrojte $g(x)=|x-2|+1$. Určete vrchol, obor hodnot, průsečík s osou $y$ a popište obě větve.
+\tcblower
+Výraz uvnitř modulu se mění v nule při $x=2$. Pro $x<2$ je $g(x)=-(x-2)+1=3-x$, pro $x\ge2$ je $g(x)=x-2+1=x-1$. Vrchol je $(2;1)$, $D(g)=\mathbb R$, $H(g)=\langle1;\infty)$ a $g(0)=3$, tedy průsečík s osou $y$ je $(0;3)$. Základní véčko se posunulo o 2 doprava a o 1 nahoru.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.75cm,y=.65cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-1,-1) grid (5,5);
+\draw[->] (-1.3,0)--(5.4,0) node[right] {$x$};\draw[->] (0,-1.2)--(0,5.4) node[above] {$y$};
+\foreach \x in {1,2,3,4,5}{\draw (\x,.08)--(\x,-.08) node[below] {\small $\x$};}
+\foreach \y in {1,3,5}{\draw (.08,\y)--(-.08,\y) node[left] {\small $\y$};}
+\draw[very thick] (-1,4)--(2,1)--(5,4);
+\fill (2,1) circle (2.5pt) node[above right=5pt] {\small $V(2;1)$};
+\fill (0,3) circle (2.2pt) node[above left] {\small $(0;3)$};
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+Porovnejte $u(x)=|x+1|$ a $v(x)=|x|-2$. Určete vrcholy a hodnoty v $x=0$.
+\tcblower
+$u$ vznikne posunem $|x|$ o 1 doleva: vrchol $(-1;0)$ a $u(0)=1$. Funkce $v$ je posunutá o 2 dolů: vrchol $(0;-2)$ a $v(0)=-2$. Zápis $|x+1|$ proto neposouvá graf doprava.
+\end{prikladReseniBox}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Pro $h(x)=|x-3|$ sestavte tabulku pro $x=1,2,3,4,5$, najděte vrchol a obor hodnot.
+\item Pro $p(x)=|x|+2$ určete průsečík s osou $y$ a rozhodněte, zda má nulovou hodnotu.
+\item U $q(x)=|x+2|-1$ určete vrchol, $q(0)$ a dvojici argumentů s hodnotou $0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Hodnoty jsou $2,1,0,1,2$; vrchol $(3;0)$ a $H(h)=\langle0;\infty)$.
+\item $p(0)=2$, tedy $(0;2)$. Protože $|x|\ge0$, je $p(x)\ge2$ a nulové hodnoty nenabývá.
+\item Vrchol $(-2;-1)$, $q(0)=1$. Z $|x+2|=1$ plyne $x+2=1$ nebo $x+2=-1$, tedy $x=-1$ nebo $x=-3$. Dosazením vyjde v obou případech nula.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{prikladReseniBox}
+Jak se liší $|2x|$ a $-2|x|$? Uveďte jejich obory hodnot a hodnoty pro $x=-1$.
+\tcblower
+$|2x|=2|x|$ je nezáporná funkce se strmějšími větvemi, $H=\langle0;\infty)$ a hodnota při $-1$ je $2$. Funkce $-2|x|$ je její odraz podle osy $x$, $H=(-\infty;0\rangle$ a hodnota při $-1$ je $-2$. Záporné znaménko uvnitř modulu by odraz nezpůsobilo.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}
+Na omezeném oboru $\langle-1;3\rangle$ určete obor hodnot $r(x)=|x-2|+1$.
+\tcblower
+Vrchol $(2;1)$ do oboru patří, tedy minimum je $1$. Na levém konci je $r(-1)=4$, na pravém $r(3)=2$. Na obou úsečkách grafu se nejvyšší hodnota $4$ objeví vlevo, takže $H(r)=\langle1;4\rangle$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Sestrojte $f(x)=|x+2|+1$ pomocí vrcholu a bodů se vzdáleností 1 od něj; určete $D,H,f(0)$.
+\item U $g(x)=|x-1|-2$ určete vrchol, průsečík s osou $y$ a nulové hodnoty.
+\item Vysvětlete, proč má $|x|$ pro $x=-a$ a $x=a$ stejnou hodnotu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Vrchol $(-2;1)$, další body $(-3;2),(-1;2)$; $D=\mathbb R$, $H=\langle1;\infty)$, $f(0)=3$.
+\item Vrchol $(1;-2)$; $g(0)=1-2=-1$, tedy $(0;-1)$. $|x-1|=2$ dává $x-1=\pm2$, tedy $x=-1,3$; kontrola dosazením.
+\item $|-a|=|a|$ z významu vzdálenosti od nuly; body $-a$ a $a$ jsou od ní stejně daleko.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: význam modulu a graf $|x|$ (asi 13 min), společné posuny a vlastní náčrt (asi 16 min), samostatné úlohy s kontrolou (asi 13 min), organizace (asi 3 min). Rozšíření je nad rámec 45 minut; domácí práce přibližně 15 minut. Rovnice s absolutní hodnotou se systematicky probírají až později.}
+\end{document}

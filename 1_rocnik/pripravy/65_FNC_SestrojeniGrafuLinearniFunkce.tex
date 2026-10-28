@@ -1,0 +1,104 @@
+% Hodina 65, rozpis řádek 65. Zdroje: učebnice
+% ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Lineární funkce.tex,
+% oddíl Způsoby, jak vytvořit graf; Realisticky.cz lokální 020109 a 020110,
+% lekce o lineární funkci – metodika konstrukce. Úlohy a graf vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{65}{Sestrojení grafu lineární funkce}
+\begin{document}
+\blok{Návaznost a princip}
+Z hodiny 64 víme, že $b=f(0)$ určuje bod na svislé ose a směrnice $a=\Delta y/\Delta x$ určuje sklon. Dnes obojí využijeme při přesné konstrukci. U předpisu $f(x)=ax+b$ na $\mathbb R$ stačí dva různé body, protože přímku určují jednoznačně. Třetí vypočtený bod poskytne užitečnou kontrolu. Je-li funkce zadána jen na intervalu, kreslíme pouze příslušnou část přímky.
+\blok{Konstrukce z tabulky}
+Nejprve zvolíme vhodné argumenty, dosadíme do předpisu a vytvoříme tabulku. Na obou osách stanovíme stejnoměrné a popsané měřítko. Body $(x,f(x))$ zakreslíme a spojíme přímkou; délku grafu přizpůsobíme oboru.
+\begin{prikladReseniBox}
+Sestrojte graf $f(x)=\frac12x+1$ na $\mathbb R$ pomocí tabulky a ověřte bod pro $x=4$.
+\tcblower
+Volíme sudé argumenty, aby hodnoty vyšly celá čísla:
+\[
+\begin{array}{c|rrrr}x&-2&0&2&4\\\hline f(x)&0&1&2&3\end{array}
+\]
+Zakreslíme $(-2;0)$, $(0;1)$, $(2;2)$ a $(4;3)$. První dva body určují přímku; další dva kontrolují sazbu a výpočet. Dosazení $f(4)=2+1=3$ potvrzuje poslední bod.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.8cm,y=.8cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-4,-1) grid (5,4);
+\draw[->] (-4.3,0)--(5.4,0) node[right] {$x$};\draw[->] (0,-1.3)--(0,4.3) node[above] {$y$};
+\foreach \x in {-4,-2,2,4}{\draw (\x,.07)--(\x,-.07) node[below] {\small $\x$};}
+\foreach \y in {1,2,3,4}{\draw (.07,\y)--(-.07,\y) node[left] {\small $\y$};}
+\draw[very thick] (-4,-1)--(5,3.5);
+\foreach \x/\y in {-2/0,0/1,2/2,4/3}{\fill (\x,\y) circle (2.2pt);}
+\node[above left] at (-2,0) {\small $(-2;0)$};\node[below right=5pt] at (4,3) {\small $(4;3)$};
+\end{tikzpicture}
+\end{center}
+\blok{Konstrukce pomocí směrnice a úseku}
+Zaznačíme $P=(0;b)$. Zvolíme vodorovný krok $\Delta x\ne0$ a vypočteme svislý krok $\Delta y=a\Delta x$. Druhý bod je $Q=(\Delta x;b+a\Delta x)$. Při zlomkové směrnici bývá výhodné zvolit jmenovatel jako vodorovný krok.
+\begin{prikladReseniBox}
+Sestrojte $g(x)=-\frac23x+2$ pomocí bodu na ose $y$ a směrnice. Ověřte druhý bod dosazením.
+\tcblower
+První bod je $P=(0;2)$. Vezmeme $\Delta x=3$; pak $\Delta y=(-2/3)\cdot3=-2$. Dostaneme $Q=(3;0)$. Kontrola: $g(3)=-(2/3)\cdot3+2=0$. Grafem je přímka procházející $P,Q$; při pohybu doprava klesá.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.75cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-1,-1) grid (4,3);
+\draw[->] (-1.3,0)--(4.4,0) node[right] {$x$};\draw[->] (0,-1.3)--(0,3.4) node[above] {$y$};
+\draw[thick] (-1,{8/3})--(4,{-2/3});
+\draw[dashed] (0,2)--(3,2)--(3,0);
+\fill (0,2) circle (2.3pt) node[below left=6pt] {\small $P(0;2)$};
+\fill (3,0) circle (2.3pt) node[below left=5pt] {\small $Q(3;0)$};
+\node[above] at (1.5,2) {\small $\Delta x=3$};
+\node[right] at (3,1) {\small $\Delta y=-2$};
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+Funkce $h(x)=2x-1$ je zadána jen pro $x\in\langle-1;2)$. Kterou část přímky nakreslíme a jak označíme konce?
+\tcblower
+Krajní hodnoty předpisu jsou $h(-1)=-3$ a $h(2)=3$. Kreslíme úsečku od plného bodu $(-1;-3)$ k prázdnému bodu $(2;3)$; pravý konec není součástí grafu. Kontrolní vnitřní bod $(0;-1)$ leží na úsečce.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.55cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-2,-4) grid (3,4);
+\draw[->] (-2.3,0)--(3.4,0) node[right] {$x$};\draw[->] (0,-4.3)--(0,4.4) node[above] {$y$};
+\draw[very thick] (-1,-3)--(2,3);
+\fill (-1,-3) circle (2.5pt) node[below left] {\small $(-1;-3)$};
+\draw[fill=white,thick] (2,3) circle (2.8pt) node[above right] {\small $(2;3)$};
+\fill (0,-1) circle (2pt);
+\end{tikzpicture}
+\end{center}
+\poznamka{Kontroluj měřítko, pořadí souřadnic a vyznačení otevřeného konce. Při tabulce nepropojuj body přes mezeru v definičním oboru. Naopak u funkce na celé $\mathbb R$ nekončí graf v posledním tabulkovém bodě.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Pro $p(x)=2x-3$ vypočtěte body při $x=0,1,2$ a z nich načrtněte graf.
+\item U $q(x)=\frac34x-2$ určete bod na ose $y$ a vhodný druhý bod pomocí kroku $\Delta x=4$.
+\item U $r(x)=-x+1$ na $\langle0;3\rangle$ určete krajní body grafu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Body $(0;-3),(1;-1),(2;1)$ leží na jedné přímce; rozdíl hodnot při kroku $1$ je vždy $2$.
+\item $P=(0;-2)$, $\Delta y=(3/4)\cdot4=3$, tedy $Q=(4;1)$. Dosazení $q(4)=1$.
+\item $r(0)=1$, $r(3)=-2$, tedy plné krajní body $(0;1)$ a $(3;-2)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}
+Dva žáci sestrojili graf $y=-\frac12x+3$. První použil body $(0;3),(2;2)$, druhý $(0;3),(-2;4)$. Mohou mít oba pravdu?
+\tcblower
+Ano. Dosazením $x=2$ dostaneme $2$, pro $x=-2$ dostaneme $4$. Všechny tři body leží na stejné přímce; vodorovný krok může být kladný i záporný, jen musí odpovídat svislému kroku podle směrnice.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Tabulkou pro $x=-1,0,1$ připravte graf $f(x)=-2x+1$.
+\item Směrnicí sestrojte $g(x)=\frac25x-1$; použijte $\Delta x=5$.
+\item U $h(x)=x+2$ na $(-1;2\rangle$ určete oba krajní body a jejich vyznačení.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Hodnoty jsou $3,1,-1$, tedy body $(-1;3),(0;1),(1;-1)$; leží na klesající přímce.
+\item $P=(0;-1)$, $\Delta y=(2/5)\cdot5=2$, tedy $Q=(5;1)$; kontrola $g(5)=1$.
+\item Při $x=-1$ by hodnota byla $1$, ale tento bod je prázdný. Při $x=2$ je hodnota $4$, bod $(2;4)$ je plný. Kreslíme úsečku mezi nimi.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: připomenutí 3, konstrukce tabulkou 12, konstrukce směrnicí 10, omezený obor 5, samostatné kreslení 9, kontrola a organizace 6 min. Rezerva 5 min, domácí 10–15 min. Příští hodina probere vodorovnou přímku při nulové směrnici.}
+\end{document}

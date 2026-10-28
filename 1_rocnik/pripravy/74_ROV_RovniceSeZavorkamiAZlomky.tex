@@ -1,0 +1,71 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex,
+% část Lineární rovnice o jedné neznámé, ekvivalentní úpravy a příklady (ř. 135–500).
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/02_Linearni_rovnice_a_nerovnice/020204_Linearni_rovnice_II/020204_Lekce.pdf;
+% využito pořadí úprav: nejprve závorky a jmenovatele, potom srovnání koeficientů. Úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{74}{Rovnice se závorkami a zlomky}
+\begin{document}
+\blok{Promyšlené pořadí úprav}
+Z minulé hodiny víme, že stejná operace na obou stranách zachová řešení. U složitějšího zápisu se vyplatí nejdříve odstranit závorky a číselné jmenovatele, pak teprve sdružovat členy. Při násobení rovnice nejmenším společným násobkem jmenovatelů násobíme \emph{celé} obě strany včetně každého sčítance.
+\begin{definiceBox}
+\textbf{Společný násobek jmenovatelů} při řešení rovnice se zlomky je nenulové číslo dělitelné každým číselným jmenovatelem. Násobení obou stran takovým číslem je ekvivalentní a odstraní číselné zlomky.
+\end{definiceBox}
+\poznamka{V povinném jádru jsou pouze číselné jmenovatele, takže definiční obor je $\mathbb R$. Lomené výrazy s neznámou ve jmenovateli vyžadují podmínky a nepřidávej je bez výběru jako běžný krok.}
+\begin{prikladReseniBox}
+Řešte $3(x-2)-2(x+1)=4$. Proveďte zkoušku v původní rovnici.
+\tcblower
+Rozevřeme závorky: $3x-6-2x-2=4$, tedy $x-8=4$ a $x=12$. Zkouška: $3(12-2)-2(12+1)=30-26=4$. Množina řešení je $K=\{12\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Řešte $\dfrac{x-1}{3}+\dfrac{x+2}{2}=3$ a zdůvodněte násobení šesti.
+\tcblower
+Společný násobek jmenovatelů $3,2$ je $6\ne0$. Po násobení obou stran dostaneme $2(x-1)+3(x+2)=18$, tedy $2x-2+3x+6=18$, $5x=14$ a $x=\frac{14}{5}$. Zkouška: $(14/5-1)/3=3/5$ a $(14/5+2)/2=12/5$; součet je $15/5=3$. Proto $K=\{14/5\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Řešte $\dfrac{2x+1}{4}-\dfrac{x-2}{3}=1$. Vysvětlete znaménko před druhým zlomkem.
+\tcblower
+Násobíme $12$: $3(2x+1)-4(x-2)=12$. Mínus se vztahuje na celou závorku, proto $6x+3-4x+8=12$. Odtud $2x+11=12$ a $x=\frac12$. Zkouška: $(2\cdot\frac12+1)/4=\frac12$ a $(\frac12-2)/3=-\frac12$; rozdíl je $1$. Tedy $K=\{\frac12\}$.
+\end{prikladReseniBox}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $4(2x-1)-3(x+2)=5$.
+\item Řešte $\dfrac{x+1}{2}=\dfrac{x-2}{3}+2$.
+\item Rozhodněte o počtu řešení $2(x+4)=2x+8$ a $2(x+4)=2x+7$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $8x-4-3x-6=5$, $5x=15$, $x=3$. Kontrola: $4(5)-3(5)=5$.
+\item Násobíme $6$: $3(x+1)=2(x-2)+12$, tedy $3x+3=2x+8$ a $x=5$. Kontrola: $6/2=3$ a $3/3+2=3$.
+\item První je po roznásobení identita $2x+8=2x+8$, takže $K=\mathbb R$. Druhá vede k $8=7$, tedy $K=\varnothing$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Diagnostika chyb}
+\begin{zadaniReseniBox}
+Žák napsal z $\frac{x+1}{2}+\frac{x-1}{3}=4$ po násobení šesti rovnici $3(x+1)+(x-1)=24$. Opravte ji a rovnici dopočítejte.
+\tcblower
+Druhý zlomek se po násobení šesti násobí $6/3=2$, ne jedničkou. Správně $3(x+1)+2(x-1)=24$, tedy $3x+3+2x-2=24$, $5x=23$, $x=23/5$. Kontrola: $(28/5)/2=14/5$, $(18/5)/3=6/5$, součet $4$.
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Řešte $\dfrac{2(x-1)-3}{5}=\dfrac{x+4}{2}-2$ a prověřte, zda nenastala ztráta řešení.
+\tcblower
+Násobíme $10$: $2(2x-5)=5(x+4)-20$. Odtud $4x-10=5x$, tedy $x=-10$. Zkouška: vlevo $(2(-11)-3)/5=-25/5=-5$, vpravo $(-6)/2-2=-5$. Číselné jmenovatele $5,2$ jsou nenulové; ztráta řešení nenastala.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Řešte $5(x-2)-2(2x+1)=3$ a proveďte zkoušku.
+\item Řešte $\dfrac{x-3}{4}+\dfrac{x+1}{2}=1$.
+\item Vysvětlete rozdíl mezi násobením rovnice číslem $6$ a násobením jen jednoho jejího členu.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $5x-10-4x-2=3$, tedy $x=15$; kontrola $5(13)-2(31)=65-62=3$.
+\item Násobíme $4$: $x-3+2(x+1)=4$, tedy $3x-1=4$ a $x=5/3$. Kontrola: $(5/3-3)/4=-1/3$, $(5/3+1)/2=4/3$, součet $1$.
+\item Ekvivalentní je násobit \emph{obě celé strany} stejným nenulovým číslem. Násobení jediného členu mění hodnotu strany, a zpravidla tedy i množinu kořenů.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: strategie 5 min, společné příklady 17 min, samostatná práce včetně kontroly 20 min, organizace 3 min. Diagnostiku využij při opravě; rezerva nad rámec. Domácí práce 15–20 min. Před další hodinou upevni zápis intervalů.}
+\end{document}

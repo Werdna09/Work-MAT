@@ -1,0 +1,93 @@
+% Prostudováno: ucebnice/02_Funkce_a_rovnice/Linearni_funkce_a_rovnice/Linerání rovnice.tex,
+% Soustavy lineárních rovnic, geometrický význam a počet řešení (ř. 998–1122).
+% Realisticky.cz: externi_zdroje/realisticky/02_Funkce_a_rovnice/03_Nektere_rovnice_a_nerovnice_prevoditelne_na_linearni/020320_Graficke_reseni_soustav_linearnich_rovnic_a_nerovnic/020320_Lekce.pdf
+% a 020311_Soustavy_dvou_linearnich_rovnic_o_dvou_neznamych_II/020311_Lekce.pdf; využito propojení algebraického výsledku 0=0/0=c s polohou přímek. Grafy a úlohy vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Soustavy rovnic}{79}{Geometrická interpretace soustav}
+\begin{document}
+\blok{Soustava jako průnik dvou přímek}
+Každá rovnice $ax+by=c$ s alespoň jedním nenulovým koeficientem určuje v rovině přímku. Dvojice $(x;y)$ řeší soustavu právě tehdy, když leží na obou přímkách. Z hodin 77–78 známe výpočet; nyní algebraický výsledek spojíme s obrazem a počtem společných bodů.
+\begin{definiceBox}
+\textbf{Grafické řešení soustavy} je hledání společných bodů grafů obou rovnic v souřadnicové rovině. Množina řešení je průnik množin bodů obou přímek.
+\end{definiceBox}
+\begin{definiceBox}
+Dvě přímky v rovině mohou mít \textbf{právě jeden společný bod}, být \textbf{rovnoběžné různé} (žádný společný bod), nebo \textbf{splývat} (nekonečně mnoho společných bodů). Pro soustavu tomu odpovídá jedno, žádné nebo nekonečně mnoho řešení.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Řešte početně a graficky soustavu $x+y=4$, $2x-y=5$.
+\tcblower
+Sečtením rovnic dostaneme $3x=9$, tedy $x=3$, a z $x+y=4$ vyjde $y=1$. Zkouška: $3+1=4$ a $2\cdot3-1=5$. Pro grafy vyjádříme $y=4-x$ a $y=2x-5$; první prochází $(0;4),(4;0)$, druhá např. $(2;-1),(3;1)$. Protínají se v $(3;1)$, tedy $K=\{(3;1)\}$.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.72cm,y=.63cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-1,-2) grid (5,5);
+\draw[->] (-1.3,0)--(5.4,0) node[right] {$x$};\draw[->] (0,-2.3)--(0,5.4) node[above] {$y$};
+\foreach \x in {1,2,3,4,5}{\draw (\x,.08)--(\x,-.08) node[below] {\small $\x$};}
+\foreach \y in {1,2,3,4}{\draw (.08,\y)--(-.08,\y) node[left] {\small $\y$};}
+\draw[very thick] (-1,5)--(5,-1);
+\draw[very thick,dashed] (1.5,-2)--(5,5);
+\fill (3,1) circle (2.7pt) node[above left=5pt] {\small $(3;1)$};
+\end{tikzpicture}
+\end{center}
+\poznamka{Plná čára značí $y=4-x$, čárkovaná $y=2x-5$; jsou rozlišitelné i černobíle. Nech žáky nejprve odhadnout průsečík a pak vyžaduj přesnou zkoušku; z nepřesného náčrtu nemusí být možné odečíst zlomek.}
+\blok{Dva krajní případy}
+\begin{prikladReseniBox}
+Porovnejte soustavy (A) $x+y=4$, $2x+2y=6$ a (B) $x+y=4$, $2x+2y=8$. Co ukáže graf a eliminace?
+\tcblower
+(A) Po odečtení dvojnásobku první rovnice od druhé vyjde $0=-2$, takže $K=\varnothing$. Grafy $y=4-x$ a $y=3-x$ mají stejnou směrnici $-1$, ale jiný úsek na ose $y$: jsou rovnoběžné různé. (B) Stejná eliminace dává $0=0$; druhá rovnice jen opakuje první. Grafy splývají a $K=\{(t;4-t):t\in\mathbb R\}$.
+\end{prikladReseniBox}
+\begin{center}
+\begin{tikzpicture}[x=.58cm,y=.5cm,>=stealth]
+\begin{scope}
+\draw[step=1,gray!25,very thin] (-1,-1) grid (4,5);
+\draw[->] (-1.2,0)--(4.3,0) node[right] {$x$};\draw[->] (0,-1.2)--(0,5.2) node[above] {$y$};
+\draw[very thick] (-1,5)--(4,0);\draw[very thick,dashed] (-1,4)--(4,-1);
+\node at (1.5,-2) {\small (A) žádné řešení};
+\end{scope}
+\begin{scope}[xshift=5.2cm]
+\draw[step=1,gray!25,very thin] (-1,-1) grid (4,5);
+\draw[->] (-1.2,0)--(4.3,0) node[right] {$x$};\draw[->] (0,-1.2)--(0,5.2) node[above] {$y$};
+\draw[very thick] (-1,5)--(4,0);\draw[very thick,dashed] (-1,5)--(4,0);
+\node at (1.5,-2) {\small (B) nekonečně mnoho};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Sestrojte přímky $y=x+1$ a $y=-x+3$. Odečtěte jejich průsečík a ověřte jej výpočtem.
+\item Určete bez kreslení počet řešení soustav $x-2y=3$, $2x-4y=6$ a $x-2y=3$, $2x-4y=7$. Vysvětlete polohu grafů.
+\item Vymyslete druhou rovnici k $y=2x-1$ tak, aby soustava měla právě jedno řešení v $(1;1)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Rovnost $x+1=-x+3$ dává $2x=2$, $x=1$, $y=2$. Obě přímky procházejí $(1;2)$; první určují např. $(0;1),(1;2)$, druhou $(0;3),(1;2)$.
+\item První druhá rovnice je dvojnásobkem první, grafy splývají a $K=\{(3+2t;t):t\in\mathbb R\}$. U druhé soustavy by dvojnásobek první pravé strany byl $6$, ale stojí $7$; přímky jsou rovnoběžné různé a $K=\varnothing$.
+\item Např. $y=-x+2$ prochází $(1;1)$ a má jinou směrnici než $y=2x-1$, takže jde o jediný průsečík. Kontrola: $2\cdot1-1=1$ a $-1+2=1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\newpage
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Mohou se dvě různé přímky v rovině protnout ve dvou bodech? Jaký důsledek má odpověď pro počet řešení soustavy dvou nezávislých lineárních rovnic?
+\tcblower
+Ne. Dva různé body určují jedinou přímku; kdyby obě přímky obsahovaly stejné dva body, musely by být totožné. Dvě různé nerovnoběžné přímky se tedy protínají právě jednou a soustava má právě jednu dvojici.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Graficky i početně vyřešte $y=2x+1$, $y=-x+4$.
+\item Určete počet řešení soustavy $3x+y=5$, $6x+2y=10$ a zapište celou množinu.
+\item Změňte jen pravou stranu druhé rovnice v b) tak, aby nová soustava neměla řešení; zdůvodněte.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2x+1=-x+4$ dává $x=1$, $y=3$. Grafy se protínají v $(1;3)$; zkouška $3=3$.
+\item Druhá rovnice je dvojnásobkem první, tedy grafy splývají a $K=\{(t;5-3t):t\in\mathbb R\}$.
+\item Např. $6x+2y=11$: levá strana je stále dvojnásobek první rovnice, jejíž dvojnásobná pravá strana je $10$. Vyšlo by $10=11$, tedy žádné společné řešení.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro: vazba soustavy na graf 8 min, průsečík a zkouška 15 min, tři polohy přímek 9 min, samostatné úlohy s kontrolou 10 min, organizace 3 min. Rezerva nad rámec; domácí práce asi 15 min. Navazující rovnice s absolutní hodnotou patří až hodině 80.}
+\end{document}

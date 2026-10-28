@@ -1,0 +1,96 @@
+% Hodina 61 podle ročníkového rozpisu, řádek 61.
+% Zdroje: učebnice
+% ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex,
+% oddíly Grafické znázornění a Monotónnost; Realisticky.cz lokální lekce
+% 020105_Graf_funkce_I/020105_Lekce.pdf a 020106_Graf_funkce_II/020106_Lekce.pdf
+% (metoda čtení hodnot z grafu). Úlohy a grafy jsou vlastní tvorba.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Funkce}{61}{Graf funkce a průsečíky s osami}
+\begin{document}
+\blok{Návaznost a cíl}
+V hodině 60 jsme četli z grafu přípustné argumenty a skutečně nabývané hodnoty. Nyní se soustředíme na samotné body grafu: určíme hodnotu funkce, zjistíme, kde graf protíná souřadnicové osy, a slovně popíšeme, kde při pohybu zleva doprava stoupá nebo klesá. Přesné obecné definice monotonie patří do hodiny 62.
+\blok{Bod grafu a funkční hodnota}
+\begin{definiceBox}
+\textbf{Graf funkce} $f$ je množina všech bodů $(x,f(x))$ pro $x\in D(f)$. Bod $(a,b)$ leží na grafu právě tehdy, když $a\in D(f)$ a $b=f(a)$.
+\end{definiceBox}
+Při čtení z grafu najdeme argument $a$ na vodorovné ose, vedeme svislici ke grafu a z průsečíku čteme odpovídající svislou souřadnici. Při předpisu ověříme bod dosazením; obrázek je kontrola, přesný výpočet dává předpis.
+\begin{prikladReseniBox}
+Je dána funkce $f(x)=x^2-1$ na $\mathbb R$. Patří do grafu body $A(2;3)$, $B(-2;3)$ a $C(0;1)$?
+\tcblower
+$f(2)=4-1=3$, tedy $A$ do grafu patří. Rovněž $f(-2)=4-1=3$, takže patří i $B$. Protože $f(0)=-1\ne1$, bod $C$ do grafu nepatří. Dva různé argumenty mohou mít stejnou hodnotu; svislicový test tím není porušen.
+\end{prikladReseniBox}
+\blok{Průsečíky s osami}
+\begin{definiceBox}
+\textbf{Průsečík s osou $y$} má argument $x=0$, pokud $0\in D(f)$; jeho souřadnice jsou $(0;f(0))$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Průsečík s osou $x$} má funkční hodnotu $0$; najdeme jej řešením rovnice $f(x)=0$ na definičním oboru.
+\end{definiceBox}
+\begin{prikladReseniBox}
+Určete průsečíky grafu $g(x)=2x-4$, $x\in\mathbb R$, s oběma osami.
+\tcblower
+Na ose $y$ je $x=0$: $g(0)=-4$, takže bod je $(0;-4)$. Na ose $x$ je $y=0$: $2x-4=0$, tedy $x=2$ a bod $(2;0)$. Kontrola dosazením: $g(2)=0$. Dva body jednoznačně určují tuto přímku, detailní konstrukci budeme procvičovat v hodinách 63–65.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Určete průsečíky grafu $h(x)=x^2-4$ na $\langle-1;3\rangle$ s osami.
+\tcblower
+Protože $0$ patří do oboru, průsečík s osou $y$ je $(0;-4)$. Rovnice $x^2-4=0$ má řešení $x=\pm2$, ale $-2$ neleží v zadaném oboru. Graf proto protíná osu $x$ pouze v $(2;0)$. Kořeny předpisu vždy porovnej se skutečným oborem funkce.
+\end{prikladReseniBox}
+\blok{Čtení intervalů růstu a poklesu}
+Pro první grafické pozorování stačí otázka: Jak se při pohybu zleva doprava mění výška bodu grafu? Na obrázku jsou body $(-3;2)$, $(-1;0)$, $(1;3)$ a $(3;1)$ spojeny úsečkami. Příslušná funkce klesá mezi $-3$ a $-1$, roste mezi $-1$ a $1$ a klesá mezi $1$ a $3$.
+\begin{center}
+\begin{tikzpicture}[x=.9cm,y=.75cm,>=stealth]
+\draw[step=1,gray!25,very thin] (-3,-1) grid (3,4);
+\draw[->] (-3.5,0)--(3.6,0) node[right] {$x$};\draw[->] (0,-1.2)--(0,4.2) node[above] {$y$};
+\foreach \x in {-3,-2,-1,1,2,3}{\draw (\x,.07)--(\x,-.07) node[below] {\small $\x$};}
+\foreach \y in {1,2,3}{\draw (.07,\y)--(-.07,\y) node[left] {\small $\y$};}
+\draw[very thick] (-3,2)--(-1,0)--(1,3)--(3,1);
+\foreach \x/\y in {-3/2,-1/0,1/3,3/1}{\fill (\x,\y) circle (2.5pt);}
+\node[above left] at (-3,2) {\small $(-3;2)$};
+\node[above right] at (1,3) {\small $(1;3)$};\node[above right] at (3,1) {\small $(3;1)$};
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}
+Z nakresleného grafu určete $f(-2)$, $f(0)$, průsečíky s osami a intervaly, na nichž funkce stoupá či klesá.
+\tcblower
+Na první úsečce od $(-3;2)$ do $(-1;0)$ klesne při jednotkovém kroku o $1$, tedy $f(-2)=1$. Prostřední úsečka spojuje $(-1;0)$ a $(1;3)$; uprostřed při $x=0$ má hodnotu $3/2$. Průsečík s osou $x$ je $(-1;0)$, s osou $y$ $(0;3/2)$. Při pohybu zleva doprava graf klesá na $\langle-3;-1\rangle$, roste na $\langle-1;1\rangle$ a klesá na $\langle1;3\rangle$. Krajní body úseků patří do grafu.
+\end{prikladReseniBox}
+\poznamka{Žáci často pletou znaménko funkční hodnoty s růstem: graf může být pod osou $x$ a přesto růst. Naopak $f(x)>0$ neříká, že funkce roste. U zlomu odděl jednotlivé intervaly.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Pro $p(x)=3-x$, $x\in\langle0;5\rangle$, určete oba průsečíky s osami a rozhodněte, zda graf stoupá či klesá.
+\item Pro $q(x)=x^2-1$, $x\in\langle0;2\rangle$, určete $q(0)$, $q(2)$ a průsečík s osou $x$.
+\item Má graf funkce $r(x)=x+2$ na oboru $\langle1;3\rangle$ průsečík s osou $y$? Zdůvodněte.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $p(0)=3$, tedy $(0;3)$. Z $3-x=0$ plyne $x=3$, tedy $(3;0)$. Při zvýšení $x$ o $1$ se hodnota sníží o $1$: graf klesá na celém daném intervalu.
+\item $q(0)=-1$, $q(2)=3$. Z $x^2-1=0$ vyjde $x=\pm1$, ale v daném oboru leží jen $1$, tedy průsečík $(1;0)$.
+\item Nemá: osa $y$ vyžaduje argument $0$, ale $0\notin\langle1;3\rangle$. Výpočet $r(0)=2$ by se týkal rozšíření předpisu, ne zadané funkce.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelné rozšíření a rezerva}
+\begin{zadaniReseniBox}
+Graf funkce tvoří úsečky spojující $A(-2;1)$, $B(0;-1)$ a $C(3;2)$. Najděte všechny průsečíky s osou $x$ i s osou $y$.
+\tcblower
+Úsečka $AB$ má předpis $y=-x-1$ pro $-2\le x\le0$; nulová hodnota nastane při $x=-1$. Úsečka $BC$ má předpis $y=x-1$ pro $0\le x\le3$; nulová hodnota nastane při $x=1$. Průsečíky s osou $x$ jsou $(-1;0)$ a $(1;0)$, s osou $y$ bod $B(0;-1)$.
+\end{zadaniReseniBox}
+\blok{Domácí práce}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item Určete průsečíky $y=-2x+6$ s osami a ověřte oba body dosazením.
+\item Pro $f(x)=x^2-9$, $x\in\langle-1;4\rangle$, určete všechny průsečíky s osami.
+\item Určete funkční hodnotu v $x=1$ na úsečce spojující $(0;2)$ a $(2;6)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pro $x=0$ je $y=6$, tedy $(0;6)$; pro $y=0$ je $x=3$, tedy $(3;0)$. Dosazení $-2\cdot0+6=6$ a $-2\cdot3+6=0$ potvrzuje oba body.
+\item Na ose $y$ bod $(0;-9)$. Nuly předpisu jsou $\pm3$, ale zadanému oboru patří jen $3$, takže průsečík s osou $x$ je $(3;0)$.
+\item Uprostřed mezi argumenty $0$ a $2$ je hodnota uprostřed mezi $2$ a $6$, tedy $4$. Lze také dosadit do předpisu úsečky $y=2x+2$: pro $x=1$ vyjde $4$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Jádro 45 min: návaznost a bod grafu 7, průsečíky a řešené příklady 13, čtení lomené čáry 10, pokus žáků 7, společná kontrola 5, organizace 3 min. Rezerva 6–10 min, domácí práce 10–15 min. Příští hodina převede grafické pozorování růstu a poklesu do přesných definic a přidá sudost a lichost.}
+\end{document}
