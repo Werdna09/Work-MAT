@@ -1,130 +1,264 @@
-% Nová příprava: 2026-10-28; 1. ročník SPŠ, etapa 13–24.
-% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 13.
-% Původ: vlastní formulace výkladu a vlastní úlohy; metodická inspirace uvedenými zdroji.
-% Kontrola, obsahové porovnání zdrojů a časy: planovani/DOKONCENI_PRIPRAV_13_24.md.
-% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
-% oddíly Rovnost množin, Podmnožiny, Množinové operace a Vennovy diagramy; dle tématu hodiny.
-% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010301_Mnoziny_I/010301_Lekce.pdf
-% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010302_Mnoziny_II_P/010302_Lekce.pdf
+% Work/MAT — přepracovaná hodina 13, PODMNOŽINY A MNOŽINOVÉ OPERACE.
+% Nahrazuje dosavadní obsah 13–16 v rozsahu jedné úvodní hodiny;
+% rozpis hodin je třeba následně koordinovaně aktualizovat, nikoli jej tiše měnit.
+% Návaznost: 12_MNZ_MnozinaAJejiPrvky.tex (množina, výčet, charakteristika, rovnost).
+% Hlavní odborný zdroj: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
+%   oddíly Rovnost množin, Podmnožiny, Množinové operace,
+%   Doplněk množiny, Průnik, Sjednocení, Rozdíl.
+% Realisticky.cz: 010302 Množiny II (P) — podmnožiny, rovnost,
+%   doplněk vzhledem k univerzu a srozumitelné příklady.
+%   https://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/03%20Mno%C5%BEiny/02%20Mno%C5%BEiny%20II.pdf
+% Realisticky.cz: 010303 Množinové operace — odhad významu názvů,
+%   postupný přechod k matematickému zápisu.
+%   https://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/03%20Mno%C5%BEiny/03%20Mno%C5%BEinov%C3%A9%20operace.pdf
+% Přesné originální úlohy zde z důvodu autorských práv nepřebíráme;
+% následující zadání a řešení jsou původní didaktické zpracování.
+% Metodicky: současné splnění podmínek (průnik) a alespoň jedna (sjednocení)
+% navazují na již probranou výrokovou logiku.
+% Připomínka pro následující hodinu: všechny oblasti znázornit Vennovými diagramy.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
-\nastavPripravu{1. ročník}{Množiny}{13}{Podmnožina a rovnost}
+\nastavPripravu{1. ročník}{Množiny}{13}{Podmnožiny a operace}
 \begin{document}
-\blok{Od jednotlivého prvku k celé množině}
-V minulé hodině jsme rozhodovali, zda určitý objekt patří do množiny.
-Dnes porovnáváme celé množiny: leží všechny prvky jedné také ve druhé?
-Uvažuj $A=\{2,5\}$ a $B=\{0,2,5,8\}$. Nejdříve ověř každý prvek $A$ zvlášť.
 
+\blok{Motivace: podmínky jako výběr prvků}
+Ve školní dílně máme evidenci součástek. Množina $A$ obsahuje součástky
+\emph{z hliníku}, množina $B$ součástky \emph{s otvorem}. Jak vybrat součástky,
+které mají \textbf{obě} vlastnosti? A jak vybrat ty, které mají
+\textbf{alespoň jednu} z nich? Stejnými otázkami jsme se už zabývali
+ve výrokové logice pomocí spojek $\land$, $\lor$ a negace.
+
+\poznamka{Před zápisem symbolů nech žáky slovně rozlišit „a zároveň“,
+„nebo (včetně obou)“ a „bez“. Připomeň, že množina není seznam s opakováním.
+\textbf{Jádro 45 min:} motivace a podmnožina 8 min; průnik a sjednocení
+12 min; rozdíl a doplněk 12 min; samostatné úlohy a kontrola 10 min;
+shrnutí a organizace 3 min. Vyber jen úlohy označené \uv{jádro}.}
+
+\blok{1. Podmnožina: jedna množina je obsažena ve druhé}
 \begin{definiceBox}
-Množina $A$ je \textbf{podmnožinou} množiny $B$, právě když každý prvek $A$
-patří také do $B$. Píšeme $A\subseteq B$, tedy
-$\forall x:\ x\in A\Rightarrow x\in B$.
+Množina $A$ je \textbf{podmnožinou} množiny $B$, jestliže
+\textbf{každý} prvek $A$ patří také do $B$.
+Zapisujeme $A\subseteq B$, formálně
+\[
+A\subseteq B\quad\Longleftrightarrow\quad
+\forall x\,(x\in A\Rightarrow x\in B).
+\]
 \end{definiceBox}
-Zápis $A\nsubseteq B$ znamená, že existuje alespoň jeden prvek $A$,
-který do $B$ nepatří. K vyvrácení stačí tento konkrétní prvek; k potvrzení
-konečného výčtu musíme ověřit všechny prvky.
+\begin{definiceBox}
+Množina $A$ je \textbf{vlastní podmnožinou} $B$, pokud
+$A\subseteq B$ a zároveň $A\ne B$. Značíme $A\subsetneq B$.
+\end{definiceBox}
 
-\begin{prikladReseniBox}[title={P1: oběma směry},breakable=false]
-Pro uvedené $A,B$ rozhodni o $A\subseteq B$ a $B\subseteq A$.
+\begin{prikladReseniBox}[title={P1 — jádro: porovnání množin}]
+Nechť $A=\{1,2,4,6,9\}$, $B=\{2,3,6,8\}$ a $C=\{2,6\}$.
+Rozhodni, zda $C\subseteq A$, $C\subseteq B$, $A\subseteq B$.
+Je některé zahrnutí vlastní?
 \tcblower
-$A\subseteq B$: prvky $2$ i $5$ jsou v $B$. Obrácený vztah neplatí,
-například $0\in B$, ale $0\notin A$. Podmnožina tedy není souměrný vztah.
+Oba prvky $C$ (čísla $2,6$) leží v $A$ i v $B$;
+platí tedy $C\subsetneq A$ a $C\subsetneq B$.
+Naopak $A\nsubseteq B$, protože například $1\in A$, ale $1\notin B$.
+K vyvrácení zahrnutí stačí \textbf{jeden protipříklad}.
+\end{prikladReseniBox}
+
+\poznamka{Připomeň rovnost z hodiny 12: $A=B$ právě tehdy, když
+$A\subseteq B$ a $B\subseteq A$. Každá množina je podmnožinou sebe samé;
+$\varnothing\subseteq A$ pro libovolné $A$. Zdůrazni rozdíl $2\in A$
+a $\{2\}\subseteq A$. Pokud se žáci zaseknou, odlož vlastní podmnožinu do rezervy.}
+
+\blok{2. Průnik a sjednocení: společné versus všechny vybrané prvky}
+\begin{definiceBox}
+\textbf{Průnik množin} $A$ a $B$ tvoří právě ty prvky, které
+patří \textbf{současně do obou} množin:
+\[
+A\cap B=\{x\mid x\in A\land x\in B\}.
+\]
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Sjednocení množin} $A$ a $B$ tvoří právě ty prvky,
+které patří \textbf{alespoň do jedné} z množin:
+\[
+A\cup B=\{x\mid x\in A\lor x\in B\}.
+\]
+Slovo \uv{nebo} znamená i možnost, že prvek patří do obou množin.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={P2 — jádro: dvě operace nad stejnými množinami}]
+Pro $A=\{1,2,4,6,9\}$ a $B=\{2,3,6,8\}$ vypočti
+$A\cap B$ a $A\cup B$. Jaký význam má prvek $2$?
+\tcblower
+Průnik tvoří společné prvky:
+$A\cap B=\{2,6\}$.
+Sjednocení obsahuje všechny různé prvky obou množin:
+$A\cup B=\{1,2,3,4,6,8,9\}$.
+Prvek $2$ splňuje obě podmínky, proto je i v průniku i ve sjednocení;
+ve sjednocení se nepíše dvakrát.
 \end{prikladReseniBox}
 
 \begin{definiceBox}
-Množiny $A,B$ jsou \textbf{rovny}, mají-li právě stejné prvky.
-Platí $A=B$ právě tehdy, když $A\subseteq B$ a současně $B\subseteq A$.
+Dvě množiny jsou \textbf{disjunktní}, jestliže nemají žádný
+společný prvek, tedy $A\cap B=\varnothing$.
 \end{definiceBox}
+\poznamka{Rychlá otázka: Jsou disjunktní množiny sudých a lichých celých čísel?
+Ano. Jejich sjednocením je $\mathbb Z$. Není třeba zavádět Vennovy diagramy;
+ty přijdou podrobně v hodině 14.}
+
+\blok{3. Rozdíl: z první množiny vybereme, co není ve druhé}
 \begin{definiceBox}
-$A$ je \textbf{vlastní podmnožinou} $B$, jestliže $A\subseteq B$ a $A\ne B$.
-Značíme $A\subsetneq B$.
+\textbf{Rozdíl množin} $A\setminus B$ tvoří prvky, které
+patří do $A$, ale \textbf{nepatří do $B$}:
+\[
+A\setminus B=\{x\mid x\in A\land x\notin B\}.
+\]
 \end{definiceBox}
-Rovnost se nemění přeuspořádáním výčtu ani opakováním prvku.
-Značku $\subset$ různí autoři používají různě; zde pro jednoznačnost rozlišujeme
-$\subseteq$ a $\subsetneq$.
 
-\begin{prikladReseniBox}[title={P2: stejná čísla, různé zápisy},breakable=false]
-Porovnej $C=\{x\in\mathbb Z\mid -2<x\le2\}$,
-$D=\{2,0,-1,1,2\}$ a $E=(-2;2\rangle$.
+\begin{prikladReseniBox}[title={P3 — jádro: záleží na pořadí}]
+Pro $A=\{1,2,4,6,9\}$ a $B=\{2,3,6,8\}$ urči oba rozdíly.
+Rozhodni, zda obecně platí $A\setminus B=B\setminus A$.
 \tcblower
-$C=\{-1,0,1,2\}=D$. Oba zápisy dávají právě stejné čtyři prvky.
-Platí $C\subsetneq E$: všechna čtyři čísla leží v intervalu,
-ale například $\frac12\in E$ a $\frac12\notin C$. Rozhoduje i číselný obor.
+$A\setminus B=\{1,4,9\}$, protože $2$ a $6$ jsou i v $B$.
+$B\setminus A=\{3,8\}$, protože $2$ a $6$ jsou i v $A$.
+Výsledky se liší; \textbf{rozdíl není komutativní}.
 \end{prikladReseniBox}
 
-\blok{Prázdná množina a význam závorek}
-Vždy $A\subseteq A$. Také $\varnothing\subseteq A$: neexistuje prvek prázdné
-množiny, který by vztah porušil. Netvrdíme tím $\varnothing\in A$.
-O prvku píšeme $\in$, o zahrnutí celé množiny $\subseteq$.
+\blok{4. Doplněk: co zbývá v základní množině}
+\begin{definiceBox}
+Je-li $A\subseteq U$, nazýváme \textbf{doplňkem $A$ v základní množině $U$}
+právě množinu $U\setminus A$. Značíme ji například $A'_U$:
+\[
+A'_U=U\setminus A=\{x\in U\mid x\notin A\}.
+\]
+Je-li $U$ předem jasné, lze psát stručně $A'$.
+\end{definiceBox}
 
-\begin{prikladReseniBox}[title={P3: co je objekt a co soubor?},breakable=false]
-Pro $M=\{0,2\}$ rozhodni: $0\in M$, $\{0\}\subseteq M$,
-$\{0\}\in M$, $\varnothing\subseteq M$ a $\varnothing\in M$.
+\begin{prikladReseniBox}[title={P4 — jádro: doplněk potřebuje základní množinu}]
+Uvažuj $U=\{1,2,3,4,5,6,7,8,9,10\}$ a
+$A=\{1,2,4,6,9\}$. Urči $A'_U$.
+Jak by se výsledek změnil pro $V=\{1,2,3,4,5,6,9\}$?
 \tcblower
-Postupně pravda, pravda, nepravda, pravda, nepravda.
-Prvky $M$ jsou čísla $0$ a $2$, nikoli množiny $\{0\}$ nebo $\varnothing$.
-Množina $\{0\}$ obsahuje jen číslo $0$, které v $M$ skutečně je.
+$A'_U=\{3,5,7,8,10\}$: vypsali jsme prvky $U$ mimo $A$.
+V menší základní množině $V$ by doplněk byl $A'_V=\{3,5\}$.
+\textbf{Stejná množina může mít různé doplňky podle univerza.}
 \end{prikladReseniBox}
-\poznamka{Nejdříve nech vyslovit definici vlastními slovy. Jádro tvoří P1–P3
-a S1; rozlišení vnořených množin dále nerozvíjej. Počítej se třemi minutami
-organizace a přibližně 39 minutami práce a kontroly, závěr a domácí zadání 3 minuty.}
 
-\blok{Samostatné procvičení}
-\begin{zadaniReseniBox}[title={S1: rozhodnutí musí mít důvod}]
+\poznamka{Běžná chyba: označit doplněk bez určení $U$ nebo zaměnit
+$A\setminus B$ s $B\setminus A$. Ptej se \uv{Z čeho vybíráme?}
+a \uv{Co vyškrtáme?}. Obecné vlastnosti operací budou až v další hodině
+věnované jejich zákonům.}
+
+\blok{Přehled: stejné množiny, čtyři různé výsledky}
+Pro $U=\{1,2,\ldots,10\}$, $A=\{1,2,4,6,9\}$,
+$B=\{2,3,6,8\}$:
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{35mm}X@{}}
+\toprule
+Operace & Výsledek\\
+\midrule
+$A\cap B$ & $\{2,6\}$\\
+$A\cup B$ & $\{1,2,3,4,6,8,9\}$\\
+$A\setminus B$ & $\{1,4,9\}$\\
+$A'_U$ & $\{3,5,7,8,10\}$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\blok{Samostatné procvičení — povinné jádro}
+\begin{zadaniReseniBox}[title={S1 — základní výpočty}]
+Pro $U=\{0,1,2,3,4,5,6,7,8\}$, $K=\{0,2,4,6,8\}$ a
+$L=\{1,2,3,4\}$ rozhodni:
 \begin{enumerate}[label=\alph*)]
-\item Pro $A=\{-1,0,4\}$, $B=\{0,4\}$, $C=\{4,0\}$ zapiš všechny platné
-vztahy $\subseteq$ mezi různě označenými množinami. Které jsou si rovny?
-\item Platí $\{0\}=\varnothing$? Uveď rozlišující prvek.
-\item Jsou si rovny $\{x\in\mathbb N\mid x<4\}$ a $\{x\in\mathbb Z\mid0<x<4\}$?
-\item Platí $\mathbb N\subseteq\mathbb Z$ a $\mathbb Z\subseteq\mathbb N$?
-Používáme $\mathbb N=\{1,2,\ldots\}$.
-\item Vypiš všechny podmnožiny $\{p,q\}$, kde $p\ne q$. Které jsou vlastní?
+\item Je $\{2,4\}\subseteq K$? Je $L\subseteq K$? U neplatného tvrzení
+napiš protipříklad.
+\item Vypočti $K\cap L$ a $K\cup L$.
+\item Vypočti $K\setminus L$ a $L\setminus K$.
+\item Urči $L'_U$ a $K'_U$. Co je $K\cap K'_U$?
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $B\subseteq A$, $C\subseteq A$, $B\subseteq C$, $C\subseteq B$.
-$B=C$; $A$ se jim nerovná kvůli prvku $-1$.
-\item Ne: $0\in\{0\}$, ale $0\notin\varnothing$.
-\item Ano, obě jsou $\{1,2,3\}$. Nula první množině nepatří.
-\item První vztah ano, druhý ne, například kvůli $0\in\mathbb Z$.
-\item $\varnothing$, $\{p\}$, $\{q\}$, $\{p,q\}$.
-Vlastní jsou první tři, poslední je podmnožinou sebe samé.
+\item $\{2,4\}\subseteq K$ ano, dokonce vlastní;
+$L\nsubseteq K$, protože např. $1\in L$, ale $1\notin K$.
+\item $K\cap L=\{2,4\}$;
+$K\cup L=\{0,1,2,3,4,6,8\}$.
+\item $K\setminus L=\{0,6,8\}$;
+$L\setminus K=\{1,3\}$.
+\item $L'_U=\{0,5,6,7,8\}$;
+$K'_U=\{1,3,5,7\}$;
+$K\cap K'_U=\varnothing$.
 \end{enumerate}
 \end{zadaniReseniBox}
 
-\blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={R1: systematický výčet a obecný vztah}]
+\poznamka{Ve 45minutovém jádru dej přednost S1 a)–c), případně pouze
+části d). Krátká samostatná práce po výkladu je důležitější než dokončení
+všech příkladů před tabulí. V S1 c) nech vždy vyslovit pořadí rozdílu.}
+
+\blok{Rychlé závěrečné ověření (1–2 minuty)}
+Zeptej se: Co znamená $x\in A\cap B$? Jak se liší $A\setminus B$ od
+$B\setminus A$? Bez které informace nevíme, co je doplněk množiny?
+Očekávané odpovědi: patří do obou; rozdíl závisí na pořadí; chybí základní
+množina $U$.
+
+\blok{Volitelné rozšíření: nečti značku mechanicky}
+\begin{zadaniReseniBox}[title={R1 — překlad z podmínky do výsledku}]
+Uvažuj $U=\{1,2,3,4,5,6,7,8,9\}$,
+$A=\{1,3,5,7,9\}$ (lichá čísla) a
+$B=\{3,6,9\}$ (násobky tří).
 \begin{enumerate}[label=\alph*)]
-\item Vypiš všechny podmnožiny $\{1,4,6\}$ podle počtu prvků.
-\item Zdůvodni: z $A\subseteq B$ a $B\subseteq C$ plyne $A\subseteq C$.
+\item Vypiš čísla, která jsou \emph{lichá a zároveň násobkem tří}.
+\item Vypiš čísla, která jsou \emph{lichá nebo násobkem tří}.
+\item Vypiš čísla, která jsou \emph{násobkem tří, ale nejsou lichá}.
+\item Urči doplněk množiny lichých čísel v $U$.
+\item Vysvětli, proč $A\cap B\subseteq A$, a zda je to zde vlastní
+podmnožina.
 \end{enumerate}
 \tcblower
-a) $\varnothing$; $\{1\},\{4\},\{6\}$;
-$\{1,4\},\{1,6\},\{4,6\}$; $\{1,4,6\}$. Je jich osm.
-Každý ze tří prvků buď zařadíme, nebo nezařadíme.
-
-b) Libovolný prvek $A$ je podle první podmínky v $B$ a podle druhé také v $C$.
-Tím jsme ověřili definici $A\subseteq C$, nikoli jen jeden číselný pokus.
+\begin{enumerate}[label=\alph*)]
+\item $A\cap B=\{3,9\}$.
+\item $A\cup B=\{1,3,5,6,7,9\}$.
+\item $B\setminus A=\{6\}$.
+\item $A'_U=\{2,4,6,8\}$.
+\item Každý prvek průniku je už v $A$; zde je zahrnutí vlastní,
+protože například $1\in A$, ale $1\notin A\cap B$.
+\end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Rezerva přibližně 8–12 minut, nepočítá se navíc do jádra.
-Závěrem požaduj protipříklad k jednomu neplatnému zahrnutí.}
+
+\begin{zadaniReseniBox}[title={R2 — dvě závorkování, dva možné výsledky}]
+Nechť $A=\{1,2,3\}$, $B=\{2,3,4\}$, $C=\{3,4,5\}$.
+Porovnej $(A\cup B)\cap C$ a $A\cup(B\cap C)$.
+\tcblower
+$(A\cup B)\cap C=\{3,4\}$, zatímco
+$A\cup(B\cap C)=\{1,2,3,4\}$. Závorky nelze libovolně přesouvat
+mezi dvěma různými operacemi.
+\end{zadaniReseniBox}
+\poznamka{R2 předjímá až hodinu o vlastnostech. Nepoužívej ji, pokud
+žáci dosud potřebují upevnit samotné významy operací.}
 
 \blok{Domácí procvičení}
-\begin{zadaniReseniBox}[title={D1: přibližně 12–15 minut}]
+\begin{zadaniReseniBox}[title={D1 — tři úlohy s kontrolou}]
 \begin{enumerate}[label=\alph*)]
-\item Pro $K=\{-2,0,3\}$, $L=\{3,-2,0,0\}$ a $M=\{-2,3\}$ urči rovnost a vlastní zahrnutí.
-\item Rozhodni a zdůvodni: $\varnothing\subseteq\{0\}$, $0\in\varnothing$,
-$\{3\}\subseteq K$.
-\item Zapiš výčtem $P=\{x\in\mathbb Z\mid-1\le x<3\}$ a ověř $P\subseteq\mathbb N$.
-\item Vypiš všechny podmnožiny $\{-1,2\}$.
-\item Najdi dvě různé dvouprvkové množiny, z nichž žádná není podmnožinou druhé.
+\item Pro $A=\{-2,0,2,4\}$ a $B=\{0,1,4,6\}$ urči
+$A\cap B$, $A\cup B$, $A\setminus B$ a $B\setminus A$.
+\item Je-li $U=\{0,1,2,3,4,5,6\}$ a $C=\{1,3,5\}$,
+vypiš $C'_U$, $C\cap C'_U$ a $C\cup C'_U$.
+\item Zapiš $M=\{x\in\mathbb Z\mid -2\le x\le3\}$ výčtem.
+Nechť $N=\{-1,1,3,5\}$. Urči $M\cap N$, $M\setminus N$ a
+rozhodni, zda $N\subseteq M$.
 \end{enumerate}
 \tcblower
-a) $K=L$, $M\subsetneq K$ a $M\subsetneq L$.
-b) Pravda (žádný odporující prvek), nepravda (prázdná množina nemá prvky),
-pravda ($3\in K$).
-c) $P=\{-1,0,1,2\}$; zahrnutí neplatí například kvůli $-1$.
-d) $\varnothing,\{-1\},\{2\},\{-1,2\}$.
-e) Například $\{1,2\}$ a $\{2,3\}$: rozhodují prvky $1$ a $3$.
+\begin{enumerate}[label=\alph*)]
+\item $A\cap B=\{0,4\}$,
+$A\cup B=\{-2,0,1,2,4,6\}$,
+$A\setminus B=\{-2,2\}$,
+$B\setminus A=\{1,6\}$.
+\item $C'_U=\{0,2,4,6\}$,
+$C\cap C'_U=\varnothing$, $C\cup C'_U=U$.
+\item $M=\{-2,-1,0,1,2,3\}$;
+$M\cap N=\{-1,1,3\}$;
+$M\setminus N=\{-2,0,2\}$;
+$N\nsubseteq M$, protože $5\in N$ a $5\notin M$.
+\end{enumerate}
 \end{zadaniReseniBox}
+
+\poznamka{\textbf{Pro následující hodinu:} místo dalšího opakování
+numerických výčtů sestrojíme Vennovy diagramy dvou a tří množin;
+všechny čtyři operace a podmnožinu budeme vyznačovat geometricky.
+Zákony a algebraické úpravy množin ponecháme samostatné hodině.}
 \end{document}
