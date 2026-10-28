@@ -1,6 +1,6 @@
 # Katalog referenčních materiálů – Work/MAT
 
-> Tento katalog je **rozcestník na existující soubory**, nikoli další šablona ani banka automaticky schválených příkladů. Všechny cesty jsou relativní ke kořeni `~/Work/MAT`. Poslední sestavení katalogu: 23. 10. 2026.
+> Tento katalog je **rozcestník na existující soubory**, nikoli další šablona ani banka automaticky schválených příkladů. Všechny cesty jsou relativní ke kořeni `~/Work/MAT`. Poslední aktualizace popisů a cest: 28. 10. 2026; nejde o nové matematické schválení vzorů.
 
 ## 1. Jak katalog používat
 
@@ -35,11 +35,11 @@
 | ID | Soubor | Proč se do něj podívat | Stav a omezení |
 |---|---|---|---|
 | P-01 | `1_rocnik/pripravy/01_ÚVD_ÚvodníHodina.tex` | Organizační hodina: praktické učitelské pokyny místo matematického výkladu. | Kandidát. Nevyvozuj z něj povinnou strukturu matematických hodin. |
-| P-02 | `1_rocnik/pripravy/02_VRL_CoJeVyrok.tex` | Motivace, krátké definice v oddělených boxech, klasifikace výroků, jednoduché úlohy s řešením. | Kandidát. Ve zdroji je označen jako rozpracovaná příprava; neoznačuj ho bez další revize za schválený. |
+| P-02 | `1_rocnik/pripravy/02_VRL_CoJeVyrok.tex` | Motivace, krátké definice v oddělených boxech, klasifikace výroků, jednoduché úlohy s řešením. | Kandidát. V aktuálním zdroji není označení rozpracovanosti; jeho nepřítomnost sama nedokládá schválení. |
 | P-03 | `1_rocnik/pripravy/03_VRL_PravdivostSlozenychVyroku.tex` | Přehledná pravdivostní tabulka, postupné výpočty logických formulí, práce s implikací a metodické poznámky. | Kandidát. Vždy ověř konkrétní matematický obsah a aktuální verzi. |
-| P-04 | `1_rocnik/pripravy/04_VRL_Kvantifikatory.tex` | Souvislý výklad na více stranách, kvantifikátory, kombinace řešených příkladů, samostatného procvičení a volitelného rozšíření. | **Technicky ověřený kandidát:** v říjnu 2026 proběhla kontrola třístránkového PDF a matematická kontrola podle reportu Codexu; učitelské schválení tím není doloženo. Viz upozornění níže. |
+| P-04 | `1_rocnik/pripravy/04_VRL_Kvantifikatory.tex` | Souvislý výklad na více stranách, kvantifikátory, kombinace řešených příkladů, samostatného procvičení a volitelného rozšíření. | Kandidát. Dřívější záznam technické kontroly se týkal staršího třístránkového PDF; aktuální PDF má čtyři strany. Kontrolu starší verze nepřenášej automaticky na současnou. Učitelské schválení zde není doloženo. |
 
-**Poznámka k P-04:** V části *Samostatné procvičení*, úloze **a)**, se má doplnit kvantifikátor. Slovní spojení „o všech reálných číslech“ nasměruje žáka ke `∀`, ale samotné kritérium „aby vznikl pravdivý výrok“ nestačí: nad reálnými čísly jsou pro vlastnost `x² + 1 > 0` pravdivé **obě** kvantifikace (`∀` i `∃`). Doporučené zpřesnění: „Doplň **obecný kvantifikátor**“. Jde o didaktickou jednoznačnost, nikoli chybu v uvedeném řešení. Při vytváření dalších úloh toto znění nepřebírej bez úpravy.
+**Poznámka k P-04:** Dřívější připomínka k části *Samostatné procvičení*, úloze **a)**, je v aktuálním zdroji již zapracována zněním „Doplň **obecný kvantifikátor**“. Původní kritérium „aby vznikl pravdivý výrok“ samo neurčovalo jedinou možnost: nad reálnými čísly jsou pro vlastnost `x² + 1 > 0` pravdivé **obě** kvantifikace (`∀` i `∃`). Při použití vzoru rozlišuj tento konkrétní ověřený stav formulace od neprovedené nové kontroly celého dokumentu.
 
 ## 4. Testy, pracovní listy a zdroje úloh
 

@@ -1,0 +1,130 @@
+% Nová příprava: 2026-10-28; 1. ročník SPŠ, etapa 13–24.
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 13.
+% Původ: vlastní formulace výkladu a vlastní úlohy; metodická inspirace uvedenými zdroji.
+% Kontrola, obsahové porovnání zdrojů a časy: planovani/DOKONCENI_PRIPRAV_13_24.md.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
+% oddíly Rovnost množin, Podmnožiny, Množinové operace a Vennovy diagramy; dle tématu hodiny.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010301_Mnoziny_I/010301_Lekce.pdf
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010302_Mnoziny_II_P/010302_Lekce.pdf
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Množiny}{13}{Podmnožina a rovnost}
+\begin{document}
+\blok{Od jednotlivého prvku k celé množině}
+V minulé hodině jsme rozhodovali, zda určitý objekt patří do množiny.
+Dnes porovnáváme celé množiny: leží všechny prvky jedné také ve druhé?
+Uvažuj $A=\{2,5\}$ a $B=\{0,2,5,8\}$. Nejdříve ověř každý prvek $A$ zvlášť.
+
+\begin{definiceBox}
+Množina $A$ je \textbf{podmnožinou} množiny $B$, právě když každý prvek $A$
+patří také do $B$. Píšeme $A\subseteq B$, tedy
+$\forall x:\ x\in A\Rightarrow x\in B$.
+\end{definiceBox}
+Zápis $A\nsubseteq B$ znamená, že existuje alespoň jeden prvek $A$,
+který do $B$ nepatří. K vyvrácení stačí tento konkrétní prvek; k potvrzení
+konečného výčtu musíme ověřit všechny prvky.
+
+\begin{prikladReseniBox}[title={P1: oběma směry},breakable=false]
+Pro uvedené $A,B$ rozhodni o $A\subseteq B$ a $B\subseteq A$.
+\tcblower
+$A\subseteq B$: prvky $2$ i $5$ jsou v $B$. Obrácený vztah neplatí,
+například $0\in B$, ale $0\notin A$. Podmnožina tedy není souměrný vztah.
+\end{prikladReseniBox}
+
+\begin{definiceBox}
+Množiny $A,B$ jsou \textbf{rovny}, mají-li právě stejné prvky.
+Platí $A=B$ právě tehdy, když $A\subseteq B$ a současně $B\subseteq A$.
+\end{definiceBox}
+\begin{definiceBox}
+$A$ je \textbf{vlastní podmnožinou} $B$, jestliže $A\subseteq B$ a $A\ne B$.
+Značíme $A\subsetneq B$.
+\end{definiceBox}
+Rovnost se nemění přeuspořádáním výčtu ani opakováním prvku.
+Značku $\subset$ různí autoři používají různě; zde pro jednoznačnost rozlišujeme
+$\subseteq$ a $\subsetneq$.
+
+\begin{prikladReseniBox}[title={P2: stejná čísla, různé zápisy},breakable=false]
+Porovnej $C=\{x\in\mathbb Z\mid -2<x\le2\}$,
+$D=\{2,0,-1,1,2\}$ a $E=(-2;2\rangle$.
+\tcblower
+$C=\{-1,0,1,2\}=D$. Oba zápisy dávají právě stejné čtyři prvky.
+Platí $C\subsetneq E$: všechna čtyři čísla leží v intervalu,
+ale například $\frac12\in E$ a $\frac12\notin C$. Rozhoduje i číselný obor.
+\end{prikladReseniBox}
+
+\blok{Prázdná množina a význam závorek}
+Vždy $A\subseteq A$. Také $\varnothing\subseteq A$: neexistuje prvek prázdné
+množiny, který by vztah porušil. Netvrdíme tím $\varnothing\in A$.
+O prvku píšeme $\in$, o zahrnutí celé množiny $\subseteq$.
+
+\begin{prikladReseniBox}[title={P3: co je objekt a co soubor?},breakable=false]
+Pro $M=\{0,2\}$ rozhodni: $0\in M$, $\{0\}\subseteq M$,
+$\{0\}\in M$, $\varnothing\subseteq M$ a $\varnothing\in M$.
+\tcblower
+Postupně pravda, pravda, nepravda, pravda, nepravda.
+Prvky $M$ jsou čísla $0$ a $2$, nikoli množiny $\{0\}$ nebo $\varnothing$.
+Množina $\{0\}$ obsahuje jen číslo $0$, které v $M$ skutečně je.
+\end{prikladReseniBox}
+\poznamka{Nejdříve nech vyslovit definici vlastními slovy. Jádro tvoří P1–P3
+a S1; rozlišení vnořených množin dále nerozvíjej. Počítej se třemi minutami
+organizace a přibližně 39 minutami práce a kontroly, závěr a domácí zadání 3 minuty.}
+
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}[title={S1: rozhodnutí musí mít důvod}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $A=\{-1,0,4\}$, $B=\{0,4\}$, $C=\{4,0\}$ zapiš všechny platné
+vztahy $\subseteq$ mezi různě označenými množinami. Které jsou si rovny?
+\item Platí $\{0\}=\varnothing$? Uveď rozlišující prvek.
+\item Jsou si rovny $\{x\in\mathbb N\mid x<4\}$ a $\{x\in\mathbb Z\mid0<x<4\}$?
+\item Platí $\mathbb N\subseteq\mathbb Z$ a $\mathbb Z\subseteq\mathbb N$?
+Používáme $\mathbb N=\{1,2,\ldots\}$.
+\item Vypiš všechny podmnožiny $\{p,q\}$, kde $p\ne q$. Které jsou vlastní?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $B\subseteq A$, $C\subseteq A$, $B\subseteq C$, $C\subseteq B$.
+$B=C$; $A$ se jim nerovná kvůli prvku $-1$.
+\item Ne: $0\in\{0\}$, ale $0\notin\varnothing$.
+\item Ano, obě jsou $\{1,2,3\}$. Nula první množině nepatří.
+\item První vztah ano, druhý ne, například kvůli $0\in\mathbb Z$.
+\item $\varnothing$, $\{p\}$, $\{q\}$, $\{p,q\}$.
+Vlastní jsou první tři, poslední je podmnožinou sebe samé.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={R1: systematický výčet a obecný vztah}]
+\begin{enumerate}[label=\alph*)]
+\item Vypiš všechny podmnožiny $\{1,4,6\}$ podle počtu prvků.
+\item Zdůvodni: z $A\subseteq B$ a $B\subseteq C$ plyne $A\subseteq C$.
+\end{enumerate}
+\tcblower
+a) $\varnothing$; $\{1\},\{4\},\{6\}$;
+$\{1,4\},\{1,6\},\{4,6\}$; $\{1,4,6\}$. Je jich osm.
+Každý ze tří prvků buď zařadíme, nebo nezařadíme.
+
+b) Libovolný prvek $A$ je podle první podmínky v $B$ a podle druhé také v $C$.
+Tím jsme ověřili definici $A\subseteq C$, nikoli jen jeden číselný pokus.
+\end{zadaniReseniBox}
+\poznamka{Rezerva přibližně 8–12 minut, nepočítá se navíc do jádra.
+Závěrem požaduj protipříklad k jednomu neplatnému zahrnutí.}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={D1: přibližně 12–15 minut}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $K=\{-2,0,3\}$, $L=\{3,-2,0,0\}$ a $M=\{-2,3\}$ urči rovnost a vlastní zahrnutí.
+\item Rozhodni a zdůvodni: $\varnothing\subseteq\{0\}$, $0\in\varnothing$,
+$\{3\}\subseteq K$.
+\item Zapiš výčtem $P=\{x\in\mathbb Z\mid-1\le x<3\}$ a ověř $P\subseteq\mathbb N$.
+\item Vypiš všechny podmnožiny $\{-1,2\}$.
+\item Najdi dvě různé dvouprvkové množiny, z nichž žádná není podmnožinou druhé.
+\end{enumerate}
+\tcblower
+a) $K=L$, $M\subsetneq K$ a $M\subsetneq L$.
+b) Pravda (žádný odporující prvek), nepravda (prázdná množina nemá prvky),
+pravda ($3\in K$).
+c) $P=\{-1,0,1,2\}$; zahrnutí neplatí například kvůli $-1$.
+d) $\varnothing,\{-1\},\{2\},\{-1,2\}$.
+e) Například $\{1,2\}$ a $\{2,3\}$: rozhodují prvky $1$ a $3$.
+\end{zadaniReseniBox}
+\end{document}

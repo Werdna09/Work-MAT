@@ -1,0 +1,180 @@
+% Nová příprava: 2026-10-28; 1. ročník SPŠ, etapa 13–24.
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 23.
+% Původ: vlastní formulace výkladu a vlastní úlohy; metodická inspirace uvedenými zdroji.
+% Kontrola, obsahové porovnání zdrojů a časy: planovani/DOKONCENI_PRIPRAV_13_24.md.
+% Učebnice: ucebnice/03_Planimetrie/Planimetrie.tex, Trojúhelník a značení;
+% ucebnice/04_Goniometrie_a_trigonometrie/Goniometrické funkce.tex,
+% Tabulkové hodnoty (pouze ostré úhly) a praktické použití inverzních funkcí.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/01_Opakovani/010119_Podobnosti_trojuhelniku_goniometricke_funkce/010119_Lekce.pdf
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/01_Opakovani/010120_Pouziti_goniometrickych_funkci_ve_fyzice/010120_Lekce.pdf
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{patterns,calc,angles,quotes,babel}
+\nastavPripravu{1. ročník}{Goniometrie}{23}{Sinus, kosinus a tangens}
+\begin{document}
+\blok{Stejný úhel, stejný poměr}
+Zvětšíme-li pravoúhlý trojúhelník dvakrát, všechny jeho strany se zdvojnásobí,
+ale poměr dvou stran zůstane stejný. Dva pravoúhlé trojúhelníky se stejným
+ostrým úhlem jsou podobné podle uu: shodují se v tomto úhlu i v pravém úhlu.
+Poměry tedy závisejí na ostrém úhlu, ne na velikosti náčrtu.
+
+\begin{definiceBox}
+\textbf{Podobné trojúhelníky} mají stejné odpovídající úhly a poměry
+odpovídajících délek stran jsou shodné.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Protilehlá odvěsna k ostrému úhlu} leží proti jeho vrcholu.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Přilehlá odvěsna k ostrému úhlu} je odvěsna, která tvoří jedno jeho rameno.
+Přepona také tvoří rameno úhlu, ale přilehlou odvěsnou není.
+\end{definiceBox}
+\begin{center}
+\begin{tikzpicture}[scale=.7]
+\coordinate (A) at (0,0); \coordinate (B) at (4,3); \coordinate (C) at (4,0);
+\draw[thick] (A)--node[below]{$b$}(C)--node[right]{$a$}(B)--node[above,sloped]{$c$}(A);
+\node[below left] at (A) {$A$}; \node[above] at (B) {$B$}; \node[below right] at (C) {$C$};
+\pic[draw,angle radius=3mm]{right angle=B--C--A};
+\pic[draw,angle radius=9mm,"$\alpha$",angle eccentricity=1.5]{angle=C--A--B};
+\end{tikzpicture}
+\end{center}
+Zde $\gamma=90^\circ$: vzhledem k $\alpha$ je $a$ protilehlá odvěsna,
+$b$ přilehlá a $c$ přepona. Vzhledem k druhému ostrému úhlu se role odvěsen vymění.
+Otočení obrázku toto pravidlo nemění.
+
+\begin{definiceBox}
+Pro $0^\circ<\alpha<90^\circ$ je \textbf{sinus}
+$\displaystyle\sin\alpha=\frac{\text{protilehlá odvěsna}}{\text{přepona}}$.
+\end{definiceBox}
+\begin{definiceBox}
+Pro $0^\circ<\alpha<90^\circ$ je \textbf{kosinus}
+$\displaystyle\cos\alpha=\frac{\text{přilehlá odvěsna}}{\text{přepona}}$.
+\end{definiceBox}
+\begin{definiceBox}
+Pro $0^\circ<\alpha<90^\circ$ je \textbf{tangens}
+$\displaystyle\tan\alpha=\frac{\text{protilehlá odvěsna}}{\text{přilehlá odvěsna}}$.
+Setkáme se také se značkou $\operatorname{tg}$.
+\end{definiceBox}
+Všechny délky jsou kladné a ve stejných jednotkách, takže poměry nemají jednotku.
+Sinus i kosinus ostrého úhlu jsou mezi $0$ a $1$, tangens je kladný
+a může být větší než $1$. Podobnost z úvodu zaručuje, že definice nezávisí
+na zvoleném trojúhelníku.
+
+\begin{prikladReseniBox}[title={P1: přesné poměry},breakable=false]
+Pro $\gamma=90^\circ$, $a=5\,\mathrm{cm}$, $b=12\,\mathrm{cm}$,
+$c=13\,\mathrm{cm}$ urči sinus, kosinus a tangens obou ostrých úhlů.
+\tcblower
+$\sin\alpha=\frac5{13}$, $\cos\alpha=\frac{12}{13}$,
+$\tan\alpha=\frac5{12}$.
+Pro $\beta$ se role odvěsen vymění:
+$\sin\beta=\frac{12}{13}$, $\cos\beta=\frac5{13}$,
+$\tan\beta=\frac{12}5$. Přepona zůstává stejná.
+\end{prikladReseniBox}
+
+\blok{Z poměru ke konkrétní délce a úhlu}
+Na kalkulačce nastav stupně, obvykle \texttt{DEG}.
+Kontrolní hodnota je $\sin30^\circ=0{,}5$.
+Při hledání délky nejprve napiš poměr a vyjádři neznámou, až pak dosaď.
+Zaokrouhluj teprve konečné délky na setiny a úhly na desetiny stupně.
+
+\begin{prikladReseniBox}[title={P2: přepona a ostrý úhel},breakable=false]
+Pro $\gamma=90^\circ$, $c=18\,\mathrm{cm}$ a $\alpha=35^\circ$ urči $a,b,\beta$.
+\tcblower
+\[
+\frac ac=\sin\alpha\Rightarrow a=c\sin\alpha
+=18\sin35^\circ\approx10{,}32\,\mathrm{cm},
+\]
+\[
+\frac bc=\cos\alpha\Rightarrow b=c\cos\alpha
+=18\cos35^\circ\approx14{,}74\,\mathrm{cm}.
+\]
+$\beta=55^\circ$. Obě odvěsny jsou kratší než $18\,\mathrm{cm}$.
+Z nezaokrouhlených hodnot také $a^2+b^2=c^2$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P3: hledáme úhel z poměru},breakable=false]
+Pravoúhlý trojúhelník má vzhledem k $\alpha$ protilehlou odvěsnu
+$7\,\mathrm{cm}$ a přilehlou $11\,\mathrm{cm}$. Urči oba ostré úhly.
+\tcblower
+$\tan\alpha=\frac7{11}$. Pomocí inverzní funkce dostaneme
+$\alpha=\arctan\frac7{11}\approx32{,}5^\circ$ a druhý úhel přibližně $57{,}5^\circ$.
+Kontrola: menší odvěsna leží proti menšímu ostrému úhlu a součet je $90^\circ$.
+Tlačítka $\tan^{-1}$ či $\sin^{-1}$ označují hledání úhlu, nikoli převrácení
+hodnoty tangens nebo sinus. V tomto kroku hledáme pouze ostrý úhel.
+\end{prikladReseniBox}
+\poznamka{Jádro: názorná podobnost, definice, P1–P3 a S1 a), b), d), e),
+asi 38 min práce, organizace a závěr 7 min. S1 c) je další nabídka.
+Definice neopisuj třikrát z tabule celé: nech žáky ukázat příslušné strany
+a zapsat poměr. Jednotkovou kružnici, radiány ani obecné goniometrické rovnice nezavádíme.}
+
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}[title={S1: pojmenuj strany před dosazením},breakable=false]
+V a)–c) je $\gamma=90^\circ$.
+\begin{enumerate}[label=\alph*)]
+\item Pro $a=8$, $b=6$, $c=10\,\mathrm{cm}$ urči tři poměry pro $\alpha$ a $\beta$.
+\item Pro $c=9\,\mathrm{cm}$ a $\alpha=42^\circ$ urči obě odvěsny.
+\item Pro $b=12\,\mathrm{cm}$ a $\alpha=28^\circ$ urči $a$ a $c$.
+\item Urči ostrý úhel, je-li jeho sinus $0{,}4$. Změní se výsledek, je-li $0{,}4$ jeho kosinus?
+\item Může být sinus ostrého úhlu roven $1{,}2$? Vysvětli pomocí stran.
+\end{enumerate}
+\tcblower
+a) Pro $\alpha$: $\frac45,\frac35,\frac43$; pro $\beta$:
+$\frac35,\frac45,\frac34$, vždy v pořadí sinus, kosinus, tangens.
+b) $a=9\sin42^\circ\approx6{,}02\,\mathrm{cm}$,
+$b=9\cos42^\circ\approx6{,}69\,\mathrm{cm}$.
+c) $a=12\tan28^\circ\approx6{,}38\,\mathrm{cm}$,
+$c=\frac{12}{\cos28^\circ}\approx13{,}59\,\mathrm{cm}$.
+d) $\arcsin0{,}4\approx23{,}6^\circ$, kdežto $\arccos0{,}4\approx66{,}4^\circ$.
+Název funkce je součást údaje.
+e) Ne, protilehlá odvěsna je kratší než přepona, proto jejich poměr je menší než $1$.
+\end{zadaniReseniBox}
+
+\newpage
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={R1: odvození zvláštních hodnot, 12–18 minut},breakable=false]
+Odvoď hodnoty pro $45^\circ$ z rovnoramenného pravoúhlého trojúhelníku
+s odvěsnami $1$ a pro $30^\circ,60^\circ$ z poloviny rovnostranného trojúhelníku o straně $2$.
+\tcblower
+První přepona je $\sqrt2$. Ve druhém případě má polovina základny délku $1$,
+výška je $\sqrt{2^2-1^2}=\sqrt3$; proti úhlu $30^\circ$ leží kratší odvěsna.
+\[
+\begin{array}{c|ccc}
+\alpha&30^\circ&45^\circ&60^\circ\\\hline
+\sin\alpha&\frac12&\frac1{\sqrt2}&\frac{\sqrt3}{2}\\[1mm]
+\cos\alpha&\frac{\sqrt3}{2}&\frac1{\sqrt2}&\frac12\\[1mm]
+\tan\alpha&\frac1{\sqrt3}&1&\sqrt3
+\end{array}
+\]
+Podoby s odmocninou ve jmenovateli zde ponecháme; usměrňování budeme učit později.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={R2: pravý úhel u jiného vrcholu},breakable=false]
+Je-li $\alpha=90^\circ$, $\beta=40^\circ$ a $a=20\,\mathrm{cm}$, urči $b,c,\gamma$.
+\tcblower
+Přepona je $a$. Pro úhel $\beta$ je $b$ protilehlá a $c$ přilehlá odvěsna.
+$b=20\sin40^\circ\approx12{,}86\,\mathrm{cm}$,
+$c=20\cos40^\circ\approx15{,}32\,\mathrm{cm}$, $\gamma=50^\circ$.
+Nelze mechanicky použít $\sin\beta=b/c$, protože $c$ není přepona.
+\end{zadaniReseniBox}
+\poznamka{R2 je další rezerva na 5–7 min, nikoli povinné pokračování R1.}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={D1: 15–20 minut; kalkulačka ve stupních}]
+V a)–d) je $\gamma=90^\circ$.
+\begin{enumerate}[label=\alph*)]
+\item Pro $a=12$, $b=5$, $c=13\,\mathrm{cm}$ zapiš tři poměry pro $\alpha$.
+\item Pro $c=16\,\mathrm{cm}$ a $\alpha=25^\circ$ urči $a,b,\beta$.
+\item Pro $b=9\,\mathrm{cm}$ a $\alpha=38^\circ$ urči $a,c$.
+\item Pro $c=15\,\mathrm{cm}$ a $a=9\,\mathrm{cm}$ urči oba ostré úhly.
+\item Jak ověříš režim kalkulačky před výpočtem?
+\end{enumerate}
+\tcblower
+a) $\sin\alpha=\frac{12}{13}$, $\cos\alpha=\frac5{13}$, $\tan\alpha=\frac{12}5$.
+b) $a=16\sin25^\circ\approx6{,}76\,\mathrm{cm}$,
+$b=16\cos25^\circ\approx14{,}50\,\mathrm{cm}$, $\beta=65^\circ$.
+c) $a=9\tan38^\circ\approx7{,}03\,\mathrm{cm}$,
+$c=\frac9{\cos38^\circ}\approx11{,}42\,\mathrm{cm}$.
+d) $\alpha=\arcsin\frac9{15}\approx36{,}9^\circ$, $\beta\approx53{,}1^\circ$.
+e) Zkontroluji \texttt{DEG} a zkusím $\sin30^\circ=0{,}5$.
+\end{zadaniReseniBox}
+\end{document}

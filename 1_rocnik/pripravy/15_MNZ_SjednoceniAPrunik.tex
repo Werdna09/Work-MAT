@@ -1,0 +1,139 @@
+% Nová příprava: 2026-10-28; 1. ročník SPŠ, etapa 13–24.
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 15.
+% Původ: vlastní formulace výkladu a vlastní úlohy; metodická inspirace uvedenými zdroji.
+% Kontrola, obsahové porovnání zdrojů a časy: planovani/DOKONCENI_PRIPRAV_13_24.md.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
+% oddíly Rovnost množin, Podmnožiny, Množinové operace a Vennovy diagramy; dle tématu hodiny.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010303_Mnozinove_operace/010303_Lekce.pdf
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010304_Vennovy_diagramy/010304_Lekce.pdf
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{patterns,calc,angles,quotes}
+\nastavPripravu{1. ročník}{Množiny}{15}{Sjednocení a průnik}
+\begin{document}
+\blok{Dvě podmínky: současně, nebo alespoň jedna}
+V evidenci součástek $A$ označuje díly z hliníku a $B$ díly s otvorem.
+Výběr „z hliníku a s otvorem“ vyžaduje obě podmínky.
+Výběr „z hliníku nebo s otvorem“ zahrnuje i díly splňující obě podmínky.
+Navazujeme na spojky $\land$ a $\lor$ z logiky a na oblasti diagramu.
+
+\begin{definiceBox}
+\textbf{Průnik} $A\cap B$ tvoří právě společné prvky:
+$x\in A\cap B\Leftrightarrow (x\in A\land x\in B)$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Sjednocení} $A\cup B$ tvoří prvky alespoň jedné z obou množin:
+$x\in A\cup B\Leftrightarrow (x\in A\lor x\in B)$.
+\end{definiceBox}
+\begin{center}
+\begin{tikzpicture}[scale=.75]
+\begin{scope}
+\clip (-.8,0) circle(1.3); \clip (.8,0) circle(1.3);
+\fill[pattern=north east lines] (-2.2,-1.5) rectangle (2.2,1.5);
+\end{scope}
+\draw (-.8,0) circle(1.3); \draw (.8,0) circle(1.3);
+\node at (-1.3,1.5) {$A$}; \node at (1.3,1.5) {$B$};
+\node at (0,-1.75) {$A\cap B$: obě podmínky};
+\begin{scope}[xshift=6.5cm]
+\fill[black!15] (-.8,0) circle(1.3); \fill[black!15] (.8,0) circle(1.3);
+\draw (-.8,0) circle(1.3); \draw (.8,0) circle(1.3);
+\node at (-1.3,1.5) {$A$}; \node at (1.3,1.5) {$B$};
+\node at (0,-1.75) {$A\cup B$: alespoň jedna};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\begin{prikladReseniBox}[title={P1: výčet i kontrola diagramem},breakable=false]
+Pro $A=\{-2,0,2,4\}$ a $B=\{0,1,4,7\}$ urči $A\cap B$ a $A\cup B$.
+Která z hledaných množin obsahuje $0$?
+\tcblower
+$A\cap B=\{0,4\}$, $A\cup B=\{-2,0,1,2,4,7\}$.
+Nula patří do obou výsledků. Ve sjednocení společné prvky neopakujeme.
+V diagramu by jen v $A$ ležely $-2,2$, ve společné části $0,4$ a jen v $B$ $1,7$.
+\end{prikladReseniBox}
+
+\begin{definiceBox}
+Množiny jsou \textbf{disjunktní}, jestliže nemají společný prvek:
+$A\cap B=\varnothing$.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={P2: číselný obor je podstatný},breakable=false]
+V $\mathbb Z$ označ $S$ sudá a $L$ lichá čísla.
+Urči $S\cap L$, $S\cup L$ a $\mathbb N\cap\mathbb Z$.
+\tcblower
+$S\cap L=\varnothing$: celé číslo nemůže být sudé i liché.
+$S\cup L=\mathbb Z$, protože každé celé číslo patří právě do jedné skupiny.
+$\mathbb N\cap\mathbb Z=\mathbb N$, neboť $\mathbb N\subseteq\mathbb Z$.
+Nula patří do $S$, ale ne do naší $\mathbb N$.
+\end{prikladReseniBox}
+
+\blok{Co plyne přímo z významu operací}
+Platí $A\cap B\subseteq A\subseteq A\cup B$ a stejně pro $B$.
+Přidání požadavku může výběr zúžit, možnost volby jej může rozšířit;
+nemusí však jít o vlastní zahrnutí. Je-li $A\subseteq B$, pak
+$A\cap B=A$ a $A\cup B=B$. Obrácené pořadí v průniku i sjednocení dává stejný výsledek.
+
+\begin{prikladReseniBox}[title={P3: tři množiny a závorky},breakable=false]
+Nechť $A=\{1,2,3\}$, $B=\{3,4\}$, $C=\{2,4,5\}$.
+Porovnej $(A\cup B)\cap C$ a $A\cup(B\cap C)$.
+\tcblower
+Nejdříve $A\cup B=\{1,2,3,4\}$, tedy $(A\cup B)\cap C=\{2,4\}$.
+Dále $B\cap C=\{4\}$, takže $A\cup(B\cap C)=\{1,2,3,4\}$.
+Výsledky se liší například v prvku $1$. Závorky nelze svévolně přemístit.
+\end{prikladReseniBox}
+\poznamka{Jádro: definice, P1–P3 a S1 a)–c), přibližně 38 min práce;
+organizace, shrnutí a domácí zadání dohromady 7 min. S1 d) lze dokončit doma.
+K výpočtu vždy nejprve přečti zadání slovy; spodní části ukazuj až po pokusu žáků.}
+
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}[title={S1: od výčtu ke vztahu}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $A=\{-3,-1,2\}$, $B=\{-1,0,2,5\}$ vypiš průnik a sjednocení.
+\item Urči $A\cap\varnothing$, $A\cup\varnothing$, $A\cap A$, $A\cup A$ a vysvětli je slovně.
+\item Jsou $\{x\in\mathbb Z\mid x<0\}$ a $\{x\in\mathbb Z\mid x\ge0\}$
+disjunktní? Co je jejich sjednocení?
+\item Najdi dvě neprázdné různé množiny, pro které $A\cap B=A$.
+Zdůvodni obecnou podmínku.
+\end{enumerate}
+\tcblower
+a) $\{-1,2\}$ a $\{-3,-1,0,2,5\}$.
+b) $\varnothing,A,A,A$: žádný společný prvek s prázdnou množinou,
+žádný nový při jejím připojení, žádná změna při porovnání se sebou.
+c) Ano, průnik je prázdný a sjednocení $\mathbb Z$; nula patří do druhé množiny.
+d) Např. $A=\{1\}$ a $B=\{1,2\}$. Obecně právě $A\subseteq B$:
+každý prvek $A$ musí být také v $B$, aby jej průnik zachoval.
+\end{zadaniReseniBox}
+
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={R1: obě podmínky nemusí znamenat obě množiny stejné}]
+Pro $U=\{1,\ldots,9\}$, $A=\{1,3,5,7,9\}$, $B=\{3,6,9\}$ a $C=\{1,2,3\}$
+urči $A\cap B\cap C$, $(A\cup C)\cap B$ a $A\cup B\cup C$.
+Potom rozhodni, zda z $A\cap B=\varnothing$ plyne $A\cup B=\varnothing$.
+\tcblower
+Postupně $\{3\}$, $\{3,9\}$, $\{1,2,3,5,6,7,9\}$.
+Poslední obecné tvrzení neplatí: $A=\{1\}$ a $B=\{2\}$
+mají prázdný průnik, sjednocení $\{1,2\}$ však prázdné není.
+\end{zadaniReseniBox}
+\poznamka{Rezerva 8–10 minut. Při kontrole kombinovaných výrazů požaduj
+aspoň jeden mezivýsledek; nedoplňuj operace podle tvaru značky.}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={D1: 10–15 minut}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $K=\{0,2,4,6\}$ a $L=\{1,2,3,4\}$ urči $K\cap L$, $K\cup L$.
+\item Urči $\mathbb N\cup\mathbb Z$ a $\{0\}\cap\mathbb N$.
+\item Pro $A=\{a,b\}$, $B=\{b,c\}$, $C=\{c,d\}$ urči
+$(A\cup B)\cap C$ a $A\cap(B\cup C)$.
+\item Najdi neprázdné disjunktní podmnožiny $U=\{1,2,3,4\}$,
+jejichž sjednocení je celé $U$.
+\item Žák tvrdí: sjednocení má vždy více prvků než každá původní množina.
+Rozhodni a uveď příklad.
+\end{enumerate}
+\tcblower
+a) $\{2,4\}$ a $\{0,1,2,3,4,6\}$.
+b) $\mathbb Z$ a $\varnothing$.
+c) $\{c\}$ a $\{b\}$.
+d) Například $\{1,3\}$ a $\{2,4\}$; nemají společný prvek.
+e) Neplatí, např. pro $A=B=\{1\}$ zůstane sjednocení $\{1\}$.
+Obecně zaručujeme zahrnutí, nikoli větší počet.
+\end{zadaniReseniBox}
+\end{document}

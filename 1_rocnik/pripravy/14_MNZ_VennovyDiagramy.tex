@@ -1,0 +1,136 @@
+% Nová příprava: 2026-10-28; 1. ročník SPŠ, etapa 13–24.
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 14.
+% Původ: vlastní formulace výkladu a vlastní úlohy; metodická inspirace uvedenými zdroji.
+% Kontrola, obsahové porovnání zdrojů a časy: planovani/DOKONCENI_PRIPRAV_13_24.md.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
+% oddíly Rovnost množin, Podmnožiny, Množinové operace a Vennovy diagramy; dle tématu hodiny.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010304_Vennovy_diagramy/010304_Lekce.pdf
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{patterns,calc,angles,quotes}
+\nastavPripravu{1. ročník}{Množiny}{14}{Vennovy diagramy}
+\begin{document}
+\blok{Kam patří jeden konkrétní prvek?}
+Množinu jsme dosud určovali zápisem. Obrázek nám pomůže sledovat současně
+několik podmínek. Prvek se do diagramu zapisuje právě jednou; jeho poloha
+sděluje všechny příslušnosti najednou.
+\begin{definiceBox}
+\textbf{Základní množina} $U$ obsahuje všechny prvky, které v dané úloze uvažujeme.
+Zobrazované množiny jsou její podmnožiny.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Vennův diagram} znázorňuje všechny možné kombinace příslušnosti
+prvku k uvažovaným množinám. Pro dvě množiny rozlišíme čtyři oblasti,
+pro tři osm oblastí, včetně oblasti mimo všechny znázorněné množiny uvnitř $U$.
+\end{definiceBox}
+Kruhy představují množiny, obdélník $U$. Plocha oblasti neurčuje počet prvků.
+Oblast může být prázdná; překryv kruhů sám nezaručuje existenci společného prvku.
+
+\begin{prikladReseniBox}[title={P1: dvě množiny},breakable=false]
+Do diagramu umísti všechny prvky $U=\{1,2,3,4,5,6,7,8\}$,
+je-li $A=\{2,4,6,8\}$ a $B=\{1,2,3\}$.
+\tcblower
+Jen v $A$: $4,6,8$; v obou: $2$; jen v $B$: $1,3$; mimo obě: $5,7$.
+\begin{center}
+\begin{tikzpicture}[scale=.85]
+\draw (-2.5,-1.6) rectangle (2.7,1.8);
+\draw (-.8,0) circle (1.25); \draw (.8,0) circle (1.25);
+\node at (-1.25,1.45) {$A$}; \node at (1.25,1.45) {$B$};
+\node at (2.4,1.5) {$U$};
+\node at (-1.1,0) {$4,6,8$}; \node at (0,0) {$2$};
+\node at (1.1,0) {$1,3$}; \node at (2.1,-1.25) {$5,7$};
+\end{tikzpicture}
+\end{center}
+Kontrola: čtyři oblasti mají $3+1+2+2=8$ prvků. Dvojka není zapsána dvakrát.
+\end{prikladReseniBox}
+\poznamka{Před zobrazením řešení nech každého umístit alespoň tři čísla.
+Ptej se i na číslo mimo oba kruhy. V této hodině nepotřebujeme značky
+operací z hodin 15 a 16; postačí přesný slovní popis.}
+
+\begin{prikladReseniBox}[title={P2: tři podmínky najednou}]
+V $U=\{1,2,\ldots,12\}$ označ $A$ sudá čísla, $B$ násobky tří
+a $C$ čísla menší než $7$. Umísti všechny prvky do diagramu.
+\tcblower
+$A=\{2,4,6,8,10,12\}$, $B=\{3,6,9,12\}$, $C=\{1,2,3,4,5,6\}$.
+Nejprve umístíme $6$ do všech tří, pak prvky splňující právě dvě podmínky,
+potom jednu a nakonec žádnou.
+\begin{center}
+\begin{tikzpicture}[scale=.9]
+\draw (-2.4,-2.45) rectangle (2.5,2);
+\draw (-.75,.35) circle (1.35);
+\draw (.75,.35) circle (1.35);
+\draw (0,-.7) circle (1.35);
+\node at (-1.65,1.65) {$A$}; \node at (1.65,1.65) {$B$};
+\node at (0,-2.25) {$C$}; \node at (2.2,1.75) {$U$};
+\node at (-1.2,.65) {$8,10$}; \node at (1.2,.65) {$9$};
+\node at (0,1.0) {$12$}; \node at (-.75,-.85) {$2,4$};
+\node at (.75,-.85) {$3$}; \node at (0,-.1) {$6$};
+\node at (0,-1.65) {$1,5$}; \node at (2,-1.7) {$7,11$};
+\end{tikzpicture}
+\end{center}
+Součet počtů ve všech osmi oblastech je $2+1+1+2+1+1+2+2=12$.
+Například $12$ nepatří do $C$, přestože patří do $A$ i $B$.
+\end{prikladReseniBox}
+
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}[title={S1: čtení a vlastní konstrukce}]
+\begin{enumerate}[label=\alph*)]
+\item Z diagramu P2 vypiš čísla, která jsou v $A$ a v $C$, ale nejsou v $B$.
+\item Která čísla P2 patří právě do jedné množiny? Která nejvýše do jedné?
+\item V novém $U=\{a,b,c,d,e,f\}$ jsou $A=\{a,c,e\}$,
+$B=\{b,c\}$ a $C=\{c,d,e\}$. Nakresli diagram a umísti všechny prvky.
+\item Ve stejném diagramu urči všechny prázdné oblasti slovním popisem.
+\end{enumerate}
+\tcblower
+a) $\{2,4\}$.
+b) Právě do jedné $\{1,5,8,9,10\}$; nejvýše do jedné navíc $7,11$,
+tedy $\{1,5,7,8,9,10,11\}$.
+c) Jen $A$: $a$; jen $B$: $b$; jen $C$: $d$;
+$A$ a $C$ bez $B$: $e$; všechny tři: $c$; mimo všechny: $f$.
+d) Prázdné jsou oblast $A$ a $B$ bez $C$ a oblast $B$ a $C$ bez $A$.
+Prvek $c$ je společný všem třem, proto nepatří do těchto dvou oblastí.
+\end{zadaniReseniBox}
+\poznamka{Jádro: P1, P2 a S1, přibližně 38–39 min práce,
+3 min organizace a 3–4 min závěr. V S1 c) kreslí žáci vlastní diagram,
+řešení přečteme po oblastech; nezaměňuj výčet prvků s počtem.}
+
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={R1: oprava diagramu a význam prázdného pole}]
+\begin{enumerate}[label=\alph*)]
+\item Žák umístil v P2 šestku jednou do části jen v $A$ a podruhé do části
+jen v $B$. Vysvětli a oprav chybu.
+\item V P2 změň $C$ na množinu všech lichých čísel z $U$.
+Které oblasti pak musejí zůstat prázdné?
+\end{enumerate}
+\tcblower
+a) Šestka je jediný prvek a splňuje i podmínku $C$; patří pouze do společné části všech tří kruhů.
+b) Sudé číslo není liché. Prázdné jsou všechny oblasti uvnitř $A$ a současně $C$:
+část $A,C$ bez $B$ i společná část všech tří.
+Další oblasti mají zástupce: jen $A$ např. $2$, jen $B$ žádného
+(sudé násobky tří jsou v $A$, liché v $C$), jen $C$ např. $1$,
+$A,B$ bez $C$ např. $6$, $B,C$ bez $A$ např. $3$.
+Prázdná je tedy také část jen v $B$ a oblast mimo všechny
+(každé celé číslo z $U$ je sudé nebo liché).
+\end{zadaniReseniBox}
+\poznamka{Rezerva 8–12 min; u b) nespokoj se s jediným zřejmým prázdným polem.
+Nejde o potřebu kreslit kruhy menší, nýbrž nechat příslušné pole bez prvků.}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={D1: 12–18 minut; nakresli oba diagramy}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $U=\{0,1,2,3,4,5,6\}$, $A=\{0,2,4,6\}$ a $B=\{1,2,3\}$
+roztřiď prvky do čtyř oblastí.
+\item Pro $U=\{1,\ldots,8\}$, $A=\{1,2,3,4\}$,
+$B=\{3,4,5,6\}$ a $C=\{2,4,6,8\}$ roztřiď prvky do osmi oblastí.
+\item V b) vypiš prvky patřící právě do dvou množin a ověř úplnost diagramu.
+\end{enumerate}
+\tcblower
+a) Jen $A$: $\{0,4,6\}$; obě: $\{2\}$; jen $B$: $\{1,3\}$;
+mimo obě: $\{5\}$.
+b) Jen $A$: $\{1\}$; jen $B$: $\{5\}$; jen $C$: $\{8\}$;
+$A,B$ bez $C$: $\{3\}$; $A,C$ bez $B$: $\{2\}$;
+$B,C$ bez $A$: $\{6\}$; všechny: $\{4\}$; mimo všechny: $\{7\}$.
+c) $\{2,3,6\}$. Osm oblastí obsahuje každé číslo $1$ až $8$ právě jednou.
+\end{zadaniReseniBox}
+\end{document}

@@ -1,30 +1,89 @@
-# Pokyny pro AI agenta – matematické výukové materiály
+# Společná projektová pravidla – Work/MAT
 
 ## Účel projektu
 
 Repozitář slouží středoškolskému učiteli matematiky k tvorbě učebnice, příprav na vyučování, testů a pracovních listů. Výsledné výukové materiály vytvářej v českém jazyce a v LaTeXu, pokud uživatel výslovně nepožaduje jinak. Vždy respektuj požadovaný ročník, úroveň žáků, rozsah učiva a účel dokumentu. Neznámé důležité parametry si vyjasni; u drobností zvol přiměřený předpoklad a uveď jej.
 
+## Závaznost a rozdělení pravidel
+
+Tato pravidla platí pro **OpenAI Codex i Claude Code**. Před prací pročti celý soubor, nejen automaticky vložený výňatek. Výslovné zadání učitele má přednost před výchozími konvencemi, nemění však technická oprávnění nástroje. Již udělené schválení nevyžaduj znovu; rozpory konkrétně oznam.
+
+| Hlavní místo | Obsah |
+|---|---|
+| `AGENTS.md` | Společná pravidla a obecný postup spolupráce. |
+| [CLAUDE.md](CLAUDE.md), `.claude/` | Implementace Claude Code, recenzní režim a omezení nástrojů. |
+| `.agents/skills/` | Postupy [vytvor-pripravu](.agents/skills/vytvor-pripravu/SKILL.md), [vytvor-test](.agents/skills/vytvor-test/SKILL.md), [over-matematiku](.agents/skills/over-matematiku/SKILL.md). |
+| `sablony/`, [katalog vzorů](sablony/KATALOG_VZORU.md) | Sazební vzory, makra a rozcestník ukázek. |
+| [Recenzní protokol](planovani/recenze/README.md) | Identifikátory, stavy a struktura předání. |
+
+Použij odpovídající Skill; názvy a primární účel bez zadání neměň. Společná pravidla neduplikuj v dalších dokumentech, odkazuj na jejich hlavní místo. Funkční styl rozhoduje o příkazové syntaxi, nikoli o obsahových pravidlech či schvalování.
+
+## Výchozí spolupráce Codexu, Claude Code a učitele
+
+1. **Codex vytvoří materiál**, provede vlastní matematickou a technickou kontrolu a předá soubory, výsledky kontrol a omezení.
+2. **Claude Code provede nezávislou recenzi** a uloží nálezy do `planovani/recenze/`. Lze recenzovat i pracovní kopii s doloženým stavem a otisky souborů.
+3. **Učitel schválí nebo zamítne připomínky.** Schválení opravy neznamená schválení celého materiálu ani commitu.
+4. **Codex provede schválené opravy**, ověří dopady a u LaTeXu znovu sestaví dotčená PDF.
+5. **Claude podle potřeby a na pokyn učitele ověří opravené části** a jejich dopady; rozliší opravené, přetrvávající a nové vady.
+6. **Učitel rozhodne o finálním uložení do Gitu.** Předchozí kroky neopravňují ke commitu ani pushi.
+
+Role jsou výchozí: na výslovný pokyn může kterýkoliv nástroj tvořit, opravovat či recenzovat. Platí stejná pravidla včetně schvalování testových úloh. Vlastní kontrola autora nenahrazuje nezávislou recenzi druhého nástroje.
+
+Při recenzi se materiály ani PDF nemění, zapisují se protokoly. Nástroje současně neupravují stejné soubory; předávají práci přes učitele a protokol, druhý nástroj automaticky nespouštějí. Neprovedenou nebo nedostupnou nezávislou recenzi výslovně přiznej; vlastní kontrolu za ni nevydávej.
+
 ## Organizace projektu a tematické plány
 
-Projekt má dvě odlišné organizační osy: **centrální učebnici podle matematických oblastí** a **výukové materiály podle ročníků**. Nemíchej je.
+Rozlišuj **centrální učebnici podle matematických oblastí** a **výukové materiály podle ročníků**:
 
-- `ucebnice/` obsahuje společnou učebnici pro SPŠ i gymnázium, členěnou podle matematických oblastí, nikoli podle ročníků. Kapitoly zbytečně nekopíruj do adresářů ročníků. Respektuj existující podadresáře a názvy souborů.
-- `1_rocnik/` až `4_rocnik/` obsahují vždy `tematicke_plany/`, `testy/`, `pracovni_listy/` a `pripravy/`. Nové materiály ukládej do odpovídajícího ročníku. Testy a pracovní listy lze dále členit podle témat; přípravy se standardně ukládají přímo do `N_rocnik/pripravy/` a řadí se podle čísla hodiny. Tematické podsložky vytvářej jen tehdy, pokud si je učitel výslovně přeje.
-- `sablony/` obsahuje společné šablony pro `testy/`, `pracovni_listy/` a `pripravy/`. Vždy nejprve zkontroluj skutečný obsah šablon a jejich způsob použití.
-- `pravidla/` je vyhrazen pro pravidla související s výukou a hodnocením.
-- `import_testu/` může obsahovat pracovní kopie starších testů, opravných zkoušek a pracovních listů. Jde o **neověřený archiv**, nikoliv o schválenou banku správných úloh nebo závazné šablony.
-- `externi_zdroje/` obsahuje externí podklady (např. materiály Realisticky.cz). Jsou zdrojem inspirace a kontroly návaznosti, nikoli automatickým svolením k doslovnému přebírání nebo šíření.
+- `ucebnice/`: společná učebnice pro SPŠ i gymnázium; kapitoly nekopíruj do ročníků, zachovej členění a názvy.
+- `1_rocnik/` až `4_rocnik/`: vždy `tematicke_plany/`, `testy/`, `pracovni_listy/`, `pripravy/`. Testy a listy lze členit podle témat. Přípravy patří přímo do ročníkové složky `pripravy/`, tematické podsložky jen na přání učitele.
+- `sablony/`: společné šablony testů, listů a příprav; nejprve ověř skutečný obsah a použití.
+- `pravidla/`: pravidla výuky a hodnocení.
+- `import_testu/`: pracovní kopie starších testů, opravných zkoušek a listů; **neověřený archiv**, nikoli schválená banka nebo šablony.
+- `externi_zdroje/`: externí podklady pro inspiraci a porovnání, bez automatického oprávnění k převzetí či šíření. Pro `realisticky/` platí pravidla níže.
+- `planovani/`: rozpracovanost, přehledy kontrol a `recenze/`. Kontrolní zpráva není zdrojem zadání ani schválením učitele.
+- `scripts/`: technické kontroly a samostatný aktualizátor knihovny; kontrola materiálu nepovoluje aktualizaci zdrojů.
+- `.agents/skills/`, `CLAUDE.md`, `.claude/`: pracovní postupy a integrace nástrojů; při tvorbě materiálu konfiguraci neměň.
 
-V `tematicke_plany/` každého ročníku jsou plány `SPS.pdf` (společný pro strojírenské a informatické obory SPŠ) a `GYM.pdf` (gymnázium). Při práci s konkrétním ročníkem prostuduj relevantní plán, pokud je dostupný, a zohledni návaznost učiva a časovou dotaci. Názvy a pořadí témat neodvozuj automaticky z obecného kurikula; opírej se o skutečné plány. Rozdíly mezi plány nejsou nepřekročitelnou hranicí obtížnosti či obsahu, pokud učitel zadá něco jiného.
+Obsah a pořadí hodin určuje zadání učitele a schválený `N_rocnik/tematicke_plany/Rozpis_vyuky_MAT_N_rocnik.tex`. Ověř konkrétní řádek a okolí. Souhrnný rozpis v `sablony/pripravy/` ročníkový rozpis nenahrazuje.
 
-Učebnice, přípravy a pracovní listy mohou sloužit oběma typům školy; nerozděluj je automaticky podle SPŠ a GYM. Učitel rozhoduje o použití v konkrétní třídě. Původní repozitář `~/ucebnice/` je archiv a zdroj podkladů: bez výslovného pokynu jej neupravuj, nemaž ani z něj nic automaticky neimportuj.
+V ročníkových `tematicke_plany/` jsou také `SPS.pdf` (společný pro strojírenské a informatické obory) a `GYM.pdf`. Relevantní dostupný plán prostuduj, zohledni návaznost a časovou dotaci. Názvy a pořadí témat neodvozuj z obecného kurikula. Rozdíly plánů nejsou nepřekročitelnou hranicí, zadá-li učitel jinak.
+
+Učebnice, přípravy a listy mohou sloužit oběma školám; automaticky je nerozděluj podle SPŠ/GYM. O použití ve třídě rozhoduje učitel. Původní `~/ucebnice/` je archiv: bez výslovného pokynu jej neupravuj, nemaž ani nic neimportuj.
+
+## Společná pravidla názvů a umístění
+
+Cesty jsou relativní ke kořeni projektu, není-li uvedeno jinak. `N_rocnik`, `[NN]`, `<Tema>` apod. jsou vzory k dosazení, nikoli tvrzení o existenci souboru.
+
+| Typ | Konvence |
+|---|---|
+| Učebnice | Zachovat tematickou strukturu, názvy a vazby v `ucebnice/`. |
+| Příprava | `N_rocnik/pripravy/[NN]_[TTT]_[PopisnyNazev].tex`; číslo hodiny v ročníku. |
+| Test | `N_rocnik/testy/<Tematicky_celek>/[cislo]_test_[nazev]_[varianty].tex`; viz pravidla testů. |
+| Řešení testu | Vedle zadání, zpravidla stejný základ s `_reseni.tex`. |
+| Pracovní list | `N_rocnik/pracovni_listy/`, podle tématu a místní konvence; univerzální název není zaveden. |
+| PDF | Stejný základ jako hlavní `.tex`; u samostatného materiálu vedle něj. |
+| Recenze | `planovani/recenze/`, název a ID podle tamního `README.md`. |
+
+Nové názvy piš bez mezer, konzistentně s okolím. Testy bez diakritiky; u příprav respektuj zavedené zkratky a diakritiku. Kvůli sjednocení existující soubory nepřejmenovávej ani nepřesouvej. Číslo hodiny, pořadí testu v tématu a kód externí lekce nezaměňuj.
+
+## Lokální knihovna Realisticky.cz
+
+`externi_zdroje/realisticky/` je **lokální knihovna vyřazená ze sledování Gitem**. Codex i Claude Code ji mohou studovat a porovnávat s učivem; běžně je pouze ke čtení.
+
+- Lekce vyhledávej v místním [KATALOG.md](externi_zdroje/realisticky/KATALOG.md), je-li dostupný. Není to projektový katalog vzorů; cesty ověř, nevymýšlej je ze starých komentářů.
+- Čti skutečný obsah PDF, shodný název nestačí. Eviduj cestu, kód lekce a použité části či příklady; rozliš výklad, sbírku a nezkontrolovaný obsah. Externí číslování nemění náš rozpis.
+- Extrakce textu může ztratit zlomky, odmocniny či absolutní hodnoty. Sporný zápis ověř obrazově; artefakt převodu není chyba zdroje.
+- Bez příslušného oprávnění obsah **neredistribuuj**, nepřikládej k výstupům a nepřebírej rozsáhlé doslovné či téměř doslovné výklady nebo sady úloh. Existence PDF ani katalogový záznam nedokládají licenci k úpravám a šíření; podmínky nevymýšlej.
+- **Úpravy, stahování a aktualizace vyžadují samostatné zadání.** Ani `scripts/aktualizuj_realisticky.py --offline` není pouhé čtení: přepisuje katalog a stav knihovny. Chybějící zdroj zaznamenej jako omezení, automaticky jej nestahuj.
+- Zachovej vzor `/externi_zdroje/realisticky/` v `.gitignore`; neobcházej jej přes `git add -f`. Před přidáváním do Gitu ověř `git check-ignore -v externi_zdroje/realisticky/KATALOG.md` a prázdný výstup `git ls-files -- externi_zdroje/realisticky/`. Ignorování již sledované soubory neodstraní; rozpor oznam, index ani soubory automaticky hromadně neměň.
+- V jiném klonu nemusí knihovna existovat. Nepřítomnost neřeš přidáním do Gitu; uveď dopad na kontrolu.
 
 ## Existující podklady a šablony
 
-Než začneš tvořit nebo upravovat dokument, prohlédni související soubory, šablony, makra a vzorové materiály dostupné v repozitáři. Přednost mají skutečné soubory projektu před obecnými pravidly uvedenými zde. Nevydávej popsané zvyklosti za ověřené vlastnosti projektu, dokud nenajdeš odpovídající soubory. Pokud podklady chybějí, stručně upozorni, že pracuješ bez vzoru.
+Před tvorbou či úpravou prohlédni související soubory, šablony, makra a vhodné vzory z `sablony/KATALOG_VZORU.md`. Ověřené skutečné soubory určují makra, rozvržení a návaznosti; ukázkový obsah nepřebíjí obsahová pravidla ani schvalování. Chybějící vzor přiznej, nevydávej domněnku za vlastnost projektu.
 
-Zachovávej existující členění projektu, názvy souborů a funkční kompilovací postup. Nevytvářej duplicitní šablony, nadbytečné adresáře ani nová makra, jestliže stávající řešení stačí. Případné rozdíly mezi šablonami nepřepisuj plošně bez souhlasu. Pro nové testy používej aktuální šablony v `sablony/testy/`; pokud nejsou na disku dostupné, upozorni na to a nevydávej jejich předpokládanou podobu za skutečnost.
-
+Zachovej členění, názvy a funkční kompilaci. Nevytvářej duplicitní šablony, adresáře či makra, stačí-li existující řešení; rozdíly šablon bez souhlasu plošně nesjednocuj. Nové testy vycházejí z aktuálního `sablony/testy/`; nedostupnost oznam. `sablony/pracovni_listy/` obsahující jen `.gitkeep` není funkční šablona.
 
 ## Autorský styl a matematické značení
 
@@ -34,37 +93,21 @@ Používej konzistentní českou matematickou terminologii, správnou symboliku 
 
 ## Učebnice
 
-Centrální `ucebnice/` je rozdělená na tematické oblasti od `01_Zakladni_poznatky/` po `11_Diferencialni_a_integralni_pocet/`. Některé kapitoly tvoří samostatné `.tex` soubory, jiné mohou být propojené projekty. Konkrétně `ucebnice/07_Analyticka_geometrie/projekt/` obsahuje samostatný funkční LaTeXový projekt s `main.tex`, `preamble.tex` a navazujícími soubory načítanými přes `\input`. Bez zadání je nerozděluj a neměň vazby mezi nimi.
+Centrální `ucebnice/` má oblasti od `01_Zakladni_poznatky/` po `11_Diferencialni_a_integralni_pocet/`. Respektuj samostatné kapitoly i propojené projekty. `ucebnice/07_Analyticka_geometrie/projekt/` je funkční projekt s `main.tex`, `preamble.tex` a soubory přes `\input`; bez zadání jej nerozděluj ani neměň vazby.
 
-Při pokračování učebnice si přečti navazující části a ověř, jak jsou zavedeny pojmy a značení. Je-li v projektu soubor `ucebnice.sty` a prostředí jako `definition`, `example`, `solution` nebo příkaz `\historybox`, používej je v souladu se skutečnou definicí a existujícími příklady. Ne každý dokument však musí `ucebnice.sty` používat; respektuj vlastní preambuli existujících projektů. Nevkládej nové stylové balíčky ani nepřepisuj preambuli bez důvodu. Nevytvářej izolovanou kapitolu odlišnou stylem od zbytku učebnice.
+Přečti navazující části, zavedené pojmy a značení. Pokud dokument používá `ucebnice.sty`, prostředí `definition`, `example`, `solution` či `\historybox`, používej jejich skutečné definice a vzory. Ne každý dokument styl používá: respektuj vlastní preambuli, bez důvodu ji nepřepisuj a nepřidávej stylové balíčky. Nová kapitola nesmí být stylisticky izolovaná.
 
-Výklad má být odborně přesný, ale přístupný středoškolákům. Vysvětluj motivaci, podmínky platnosti a význam prováděných kroků; nepřeskakuj podstatné úvahy. Historické poznámky a citace používej jen s doložitelným zdrojem, nikdy je nevymýšlej.
+Výklad má být odborně přesný a přístupný středoškolákům: vysvětluj motivaci, podmínky a význam kroků, nepřeskakuj podstatné úvahy. Historické poznámky a citace musí mít doložitelný zdroj, nevymýšlej je.
 
 ### Zápis matematických výsledků v učebnici
 
-V souborech učebnice nikdy nepoužívej příkaz `\boxed{}` ani jeho
-obdoby k orámování matematických výsledků.
+V učebnici nepoužívej `\boxed{}` ani jiné rámečky pro konečné matematické výsledky. Rovnice, výrazy, výpočty a řešené příklady zapisuj běžně v `$...$`, `\[...\]`, `align` apod. podle okolí; výsledek lze uvést větou „Dostáváme …“, „Řešením je …“ či „Odtud vyplývá …“.
 
-Výsledky rovnic, výrazů, výpočtů a řešených příkladů zapisuj
-standardním matematickým zápisem v prostředích `$...$`, `\[...\]`,
-`align` apod., v souladu s okolním textem.
-
-Výsledek může být uveden běžnou větou, například „Dostáváme ...“,
-„Řešením je ...“ nebo „Odtud vyplývá ...“.
-
-Nezaváděj vlastní rámečky pro zvýrazňování konečných výsledků.
-
-Toto omezení se netýká existujících prostředí `definitionbox`,
-`examplebox`, `solutionbox`, `notebox` a dalších autorských
-prostředí používaných pro strukturování učebnice.
-
-Při úpravách starších kapitol nahrazuj `\boxed{}` běžným
-matematickým zápisem, pokud se nachází v právě upravované části.
-Neměň kvůli tomu nesouvisející kapitoly.
+Zákaz se netýká autorských prostředí `definitionbox`, `examplebox`, `solutionbox`, `notebox` aj. pro strukturu učebnice. Staré `\boxed{}` nahraď standardním zápisem v právě upravované části, nikoli v nesouvisejících kapitolách.
 
 ## Testy: umístění, pojmenování a šablony
 
-Nové testy ukládej do `N_rocnik/testy/<Tematicky_celek>/`, kde `N` je příslušný ročník. Název tematického celku odvoď podle skutečného učiva a existující struktury. **Nevytvářej automaticky samostatnou složku pro každý test**; varianty stejného testu ukládej vedle sebe do tematické složky. Další podadresář vytvoř jen tehdy, má-li konkrétní opodstatnění.
+Nové testy ukládej do `N_rocnik/testy/<Tematicky_celek>/` podle skutečného učiva a struktury. **Nezakládej automaticky složku pro každý test**: varianty patří vedle sebe do tematické složky. Další podadresář musí mít konkrétní důvod.
 
 Pro každý nový test je závazná konvence:
 
@@ -79,11 +122,11 @@ V `sablony/testy/` se používají dva výchozí typy šablon, **pokud jsou skut
 - `A5x2.tex`: A4 na šířku se dvěma testy velikosti přibližně A5 vedle sebe, obvykle jedna varianta v každé polovině. Vhodné pro kratší testy a desetiminutovky.
 - `A4.tex`: A4 na výšku, vhodná pro rozsáhlejší písemky; dvojice variant může zabírat samostatné stránky.
 
-Po schválení konkrétního výběru úloh podle části „Výběr úloh pro testy“ vyber vhodnou existující šablonu, **vytvoř z ní nový samostatný soubor** a zachovej její rozvržení, makra a hlavičku, pokud učitel nepožaduje změnu. Samotné šablony neupravuj při běžné tvorbě testu. Hlavička má obsahovat jméno a příjmení, třídu, datum a prázdná pole „Počet bodů“ a „Známka“. Tato prázdná pole nejsou bodováním zadání. Šablonu nikdy nepovažuj za matematicky ověřené zadání; výchozí ukázkové úlohy nahraď schválenými, matematicky ověřenými úlohami. Neopisuj mechanicky staré testy z `import_testu/`.
+Po schválení konkrétní skladby úloh **vytvoř nový samostatný soubor z vhodné existující šablony**. Zachovej rozvržení, makra a hlavičku, nezadá-li učitel změnu; originální šablonu neupravuj. Hlavička obsahuje jméno a příjmení, třídu, datum a prázdná pole „Počet bodů“ a „Známka“ (nejde o bodování zadání). Ukázkové úlohy nejsou matematicky ověřené: nahraď je schválenými a ověřenými. Staré testy z `import_testu/` mechanicky neopisuj.
 
 **V žákovském zadání nikdy automaticky neuváděj bodové hodnoty úloh ani podúloh, celkový maximální počet bodů, klasifikační stupnici ani procentní hranice známek. Jedinou výjimkou je výslovný pokyn učitele.** Zákaz platí pro všechny varianty A–L, všechny formáty A4/A5 a všechny typy běžných písemných testů, včetně textů a údajů převzatých ze šablony.
 
-Řešení a výsledky drž odděleně od zadání pro žáky. Ulož je jednoznačně vedle příslušného testu nebo podle dohodnuté struktury; nepřidávej je do tiskové žákovské verze bez pokynu. Pokud existují různé varianty, musí být zřejmé, ke které řešení patří. V samostatném dokumentu s řešením uveď orientační bodovací schéma **pouze na výslovný požadavek učitele**; jinak připrav jen matematické postupy a výsledky. Vyžádané bodování je nezávazným návrhem, který může učitel při opravování spolu s kritérii uznávání postupů upravit podle svého odborného posouzení.
+Řešení a výsledky ulož odděleně vedle testu nebo podle dohody, s jednoznačným přiřazením k variantám. Bez pokynu nepatří do tiskové žákovské verze. Samostatné řešení obsahuje postupy a výsledky; orientační bodovací schéma **jen na výslovnou žádost**. Vyžádané bodování je nezávazný návrh, učitel jej i kritéria uznávání postupů může při opravování odborně upravit.
 
 ## Testy: obtížnost a zadávání
 
@@ -142,80 +185,95 @@ Pracovní listy ukládej do `N_rocnik/pracovni_listy/` a dále podle tématu; po
 
 ## Přípravy na hodiny
 
-Toto je závazný standard pro soubory v `1_rocnik/pripravy/` až `4_rocnik/pripravy/`. Podrobná pravidla a ukázky jsou v **`sablony/pripravy/TUTORIAL_pripravy.md`**. Při tvorbě nebo úpravě přípravy:
+Závazný standard pro `1_rocnik/pripravy/` až `4_rocnik/pripravy/`; technické ukázky jsou v `sablony/pripravy/TUTORIAL_pripravy.md`.
 
-1. **Nejprve pročti** tento `AGENTS.md`, `sablony/pripravy/TUTORIAL_pripravy.md`, `sablony/pripravy/TEMPLATE_Priprava.tex`, `sablony/pripravy/priprava.sty` a nejbližší související přípravy. Jestliže některý soubor chybí, nezakládej jeho náhradu bez důvodu.
-2. **Dodrž pořadí výuky:** vycházej ze schváleného rozpisu hodin, zadání učitele, tematického plánu v `N_rocnik/tematicke_plany/` a návaznosti okolních lekcí. Cizí učebnice sama o sobě neurčuje číslování hodin. Rozpor podkladů oznam; samostatně nepřečíslovávej jiné hodiny.
-3. **Umístění a název:** jednotlivé přípravy standardně ukládej přímo do `N_rocnik/pripravy/` jako `[NN]_[TTT]_[PopisnyNazev].tex`, např. `02_VRL_CoJeVyrok.tex` nebo `01_ÚVD_ÚvodníHodina.tex`. `NN` je pořadí vyučovací hodiny v ročníku, `TTT` trojpísmenná zkratka tématu. U již existujících souborů zachovej jejich názvy.
-4. **Jednotný vzhled:** do nového `.tex` načti společný styl **`../../sablony/pripravy/priprava.sty`**, pokud je příprava přímo v `N_rocnik/pripravy/`, typicky `\input{../../sablony/pripravy/priprava.sty}`. Používej `\nastavPripravu{ročník}{globální téma}{číslo}{název}`. Cesta se počítá při kompilaci z adresáře `.tex` (např. pomocí `latexmk -cd`); při jiné hloubce podsložek ji přepočítej. Neduplikuj lokálně makra ani definice rámečků.
-5. **Záhlaví a struktura:** v záhlaví vlevo „ročník | globální téma“, vpravo „číslo: název hodiny“. Nepřidávej úvodní metadatovou hlavičku, zápatí, povinný seznam cílů ani minutový rozpis. Didaktický výklad může přirozeně obsahovat motivaci, definice, vysvětlení, příklady, samostatné procvičení a vhodné metodické poznámky; používej jen potřebné oddíly.
-6. **Definice a příklady:** každý samostatný matematický pojem definuj v **odděleném `definiceBox`**. Pro úlohu bez řešení použij `prikladBox` či `zadaniBox`. Pro zadání s řešením použij **`prikladReseniBox` nebo `zadaniReseniBox`** s právě jedním `\tcblower`: nahoře zadání, ve světle šedé spodní části řešení. Víceřádkové matematické výpočty saz do `align*` či obdobného prostředí **uvnitř spodní části**. Nepřipojuj samostatný druhý rámeček a pro nové dokumenty nepoužívej zastaralý příkaz `\reseni{}`.
-7. **Učitelské poznámky:** piš pomocí `\poznamka{...}` šedým písmem mimo rámečky. Volitelné mezititulky lze vložit přes `\blok{...}`. Přesná znění a podporovaná prostředí ověřuj přímo v `priprava.sty`.
-8. **Obsah:** zachovávej češtinu, matematickou přesnost, návaznost učiva a přiměřenou gradaci úloh. Rozlišuj povinný výklad a volitelné rozšíření; učitelskou přípravu nezaměňuj s pracovním listem pro žáky. Každé zadání i řešení matematicky ověř. Pokud je hodina obsahově přeplněná, upozorni na to.
-9. **Zdroje a Realisticky.cz:** používej související materiály z `ucebnice/`, vlastních pracovních listů a dostupných `externi_zdroje/` jako podklady; Realisticky.cz zejména jako metodickou inspiraci. Dodržuj autorská práva, neodvozuj přístup nebo licenci z pouhé existence PDF, nevymýšlej odkazy ani neprohlašuj nepřečtené lekce za ověřené. Použité zdroje eviduj v komentářích `.tex` či v interním přehledu, ne automaticky v zápatí PDF.
-10. **Kompilace a rozsah změn:** z kořene projektu použij např. `latexmk -cd -pdf -interaction=nonstopmode -halt-on-error 1_rocnik/pripravy/02_VRL_CoJeVyrok.tex` a zkontroluj log i výslednou sazbu. Při zadání jedné hodiny neupravuj jiné přípravy, osnovy, sdílený styl ani tento `AGENTS.md` bez výslovného pokynu.
+1. **Přečti podklady:** `AGENTS.md`, tutorial, `sablony/pripravy/TEMPLATE_Priprava.tex`, `sablony/pripravy/priprava.sty` a související okolní přípravy. Chybějící soubor bez důvodu nenahrazuj.
+2. **Pořadí výuky:** vycházej ze zadání učitele, schváleného rozpisu, ročníkového plánu a okolních hodin. Cizí učebnice neurčuje naše číslování. Rozpor oznam, jiné hodiny sám nepřečíslovávej.
+3. **Název:** přímo `N_rocnik/pripravy/[NN]_[TTT]_[PopisnyNazev].tex`, např. `02_VRL_CoJeVyrok.tex`, `01_ÚVD_ÚvodníHodina.tex`. `NN` je hodina v ročníku (1–9 s nulou, od 100 tři číslice), `TTT` trojpísmenná zkratka tématu. Existující názvy zachovej.
+4. **Styl:** `\input{../../sablony/pripravy/priprava.sty}` a `\nastavPripravu{ročník}{globální téma}{číslo}{název}`. Cesta platí z adresáře `.tex` při kompilaci přímo v ročníkovém `pripravy/` (např. `latexmk -cd`); při jiné hloubce ji přepočítej. Makra a rámečky neduplikuj lokálně.
+5. **Záhlaví a struktura:** vlevo „ročník | globální téma“, vpravo „číslo: název hodiny“. Nepřidávej úvodní metadatovou hlavičku, zápatí, povinné cíle ani minutový rozpis. Použij jen potřebné oddíly: motivaci, definice, výklad, příklady, procvičení, poznámky.
+6. **Boxy:** každý samostatný pojem definuj v odděleném `definiceBox`. Zadání bez řešení patří do `prikladBox` či `zadaniBox`; s řešením do `prikladReseniBox` či `zadaniReseniBox` s právě jedním `\tcblower`. Nahoře zadání, ve světle šedé spodní části řešení; víceřádkový výpočet v `align*` apod. uvnitř řešení. Nepřipojuj druhý rámeček a v nových dokumentech nepoužívej zastaralé `\reseni{}`.
+7. **Poznámky:** `\poznamka{...}` šedě mimo boxy; volitelné mezititulky `\blok{...}`. Příkazy ověř ve stylu. Při rozporu technických ukázek rozhoduje funkční `priprava.sty`; rozpor oznam, sdílené soubory svévolně nepřepisuj.
+8. **Obsah:** čeština, přesnost, návaznost, gradace a odlišený základ od rozšíření. Příprava není žákovský pracovní list. Ověř každé zadání i řešení; přeplněnou hodinu oznam.
+9. **Zdroje:** učebnice, vlastní listy a dostupné externí podklady podle části „Lokální knihovna Realisticky.cz“. Skutečně použité zdroje eviduj v komentářích `.tex` nebo interním přehledu, ne automaticky v zápatí. Nevymýšlej odkazy a nepřečtené lekce neoznačuj za ověřené.
+10. **Sestavení a rozsah:** použij postup v části „Kompilace a kontrola výstupu“, např. `./scripts/build_latex.sh 1_rocnik/pripravy/02_VRL_CoJeVyrok.tex`. Zadání jedné hodiny neopravňuje měnit jiné přípravy, osnovy, sdílený styl ani `AGENTS.md`.
 
-Pokud se praktické ukázky v tutorialu a ve stylu liší, řiď se pro konkrétní LaTeXové příkazy aktuálním funkčním `priprava.sty`; rozpor však oznam a nepřepisuj sdílené soubory svévolně.
+### Didaktická kvalita a čas přípravy
+
+Běžná příprava má při svižnějším tempu nabízet **40–50 minut základního výkladu a procvičování**, označenou volitelnou rezervu a **10–20 minut domácího procvičování s výsledky či řešením**, není-li zadáno jinak. Pro obvykle 45minutovou hodinu při přesahu označ příklady k výběru či dokončení doma. Rezerva není povinnou součástí součtu; mírný přesah nabídky není automatická vada. Nezvládnutelný povinný obsah oznam.
+
+Odhadni zvlášť výklad, pokus žáků, společnou kontrolu, rezervu a domácí práci. Počet stran, řádků či rychlost učitele nestačí; jde o odhad, nikoli měření. Minutový harmonogram nemusí být vytištěn. U testovacích a organizačních hodin zachovej odlišný účel.
+
+Dobré části nepřepisuj. Doplň konkrétní chybějící pojmy, podmínky, zdůvodnění, souvislosti a názorné modely; nepřidávej téměř stejné úlohy jen kvůli rozsahu. Graduj od porozumění po aplikaci, obtížné důkazy a zajímavosti odděl od základu. Vysvětli platnost úprav. U diagramů používej zavedené nástroje a rozliš konkrétní obrázek od obecného tvrzení.
 
 ### Evidence dokončených příprav
 
-Aktuální stav zpracování učitelských příprav je evidován v `planovani/STAV_PRIPRAV.md`.
-
-Při tvorbě nebo úpravě učitelských příprav respektuj tento přehled a odpovídající rozpis výuky.
-
-Po dokončení tematického celku zkontroluj úplnost všech jeho příprav a aktualizuj příslušný stav v `planovani/STAV_PRIPRAV.md`.
-
-Stav `HOTOVO` použij pouze tehdy, pokud jsou vytvořeny všechny přípravy příslušného celku včetně `.tex` a `.pdf`.
-
-Nevytvářej nové záznamy mimo tematické celky skutečně uvedené v tematických plánech.
+Respektuj `planovani/STAV_PRIPRAV.md` a rozpis výuky. Po dokončení tematického celku ověř jeho úplnost a aktualizuj stav. `HOTOVO` vyžaduje všechny přípravy celku včetně `.tex` a `.pdf`. Nevytvářej záznamy pro celky neuvedené v tematických plánech.
 
 ## Matematická kontrola
 
-Každé nově vytvořené zadání i řešení zkontroluj. Ověř definiční obory, předpoklady, ekvivalenci úprav, správnost výpočtů, jednotky, grafy a jednoznačnost otázky. Kde je to praktické, použij nezávislou metodu: zpětné dosazení, symbolický či numerický výpočet, kontrolu krajních případů nebo jiný postup. Pouhé opakované přečtení stejného řešení nepovažuj za nezávislé ověření. Pokud kontrolu nelze provést, výslovně to sděl; netvrď, že bylo ověřeno něco, co ověřeno nebylo.
+Ověř každé zadání i řešení: definiční obor, předpoklady, ekvivalenci úprav, výpočty, jednotky, grafy a jednoznačnost otázky. Kde je praktické, použij nezávislou metodu (dosazení, symbolický či numerický výpočet, krajní případy, jiný postup). Opakované přečtení stejného řešení není nezávislé ověření. Neprovedenou kontrolu výslovně přiznej.
 
-U testů navíc **zkontroluj každou variantu samostatně**: jednoznačnost zadání, existenci a podobu řešení, časovou náročnost a případné učitelem vyžádané bodování. Každou převzatou, novou i upravenou úlohu včetně jejího řešení nezávisle ověř; předchozí použití ve výuce není důkazem správnosti.
+Zahrň i rezervní a domácí úlohy a výsledkové položky. Vytištěný výsledek porovnej přímo s doslovným zadáním a vlastním výpočtem, ne jen s navazující kontrolou. Konečně mnoho souhlasných dosazení nedokazuje identitu; protipříklad musí patřit do původního oboru. „Bez zjištěné chyby v uvedeném rozsahu“ není záruka ani schválení učitelem.
+
+U testů **ověř každou variantu samostatně**, včetně existence a úplnosti řešení, času a vyžádaného bodování. Nezávislá kontrola platí pro převzaté, nové i upravené úlohy a řešení; předchozí výuka není důkaz správnosti.
 
 Před označením testu za hotový ověř:
 
-1. Všechny úlohy pocházejí ze schválených zdrojů nebo jejich tvorba byla výslovně povolena učitelem.
-2. Každou převzatou úlohu lze podle evidence zdrojů dohledat k původnímu zadání; u povolené vlastní tvorby je zaznamenán její původ a u obdobné úlohy také zdrojový vzor.
-3. Matematická zadání i přiřazení k variantám odpovídají výběru schválenému nebo přímo určenému učitelem.
-4. Žádná úloha nebyla svévolně pozměněna; případné změny odpovídají výslovnému pokynu učitele.
-5. Žákovský test neobsahuje bodové hodnoty úloh ani podúloh, maximální počet bodů, klasifikační stupnici ani procentní hranice známek, pokud je učitel výslovně nepožadoval. Jejich nepřítomnost výslovně zkontroluj také ve výsledném PDF, včetně textů převzatých ze šablony.
+1. Zdroje jsou schválené, případná vlastní tvorba výslovně povolená.
+2. Úlohy lze dohledat podle evidence; vlastní tvorba je označena, obdobné úlohy mají zdrojový vzor.
+3. Zadání i rozdělení variant odpovídají schválenému či přímo určenému výběru.
+4. Žádná úloha nebyla změněna mimo výslovné zadání.
+5. Žákovský test včetně výsledného PDF a textů šablony neobsahuje nevyžádané body úloh/podúloh, maximum bodů, stupnici ani procentní hranice známek. Jejich nepřítomnost výslovně zkontroluj; výjimkou je učitelův výslovný požadavek.
 6. Hlavička zachovává prázdná pole „Počet bodů“ a „Známka“.
-7. Varianty uvnitř každé dvojice jsou přibližně srovnatelné obtížností, časovou náročností a rozsahem, případně i vyžádaným bodovacím schématem.
-8. Všechna matematická zadání a řešení, včetně každé upravené varianty úlohy, byla nezávisle ověřena.
-9. PDF bylo úspěšně zkompilováno a vizuálně zkontrolováno podle části „Kompilace a kontrola výstupu“.
+7. Dvojice má přibližně srovnatelnou obtížnost, čas, rozsah a případné vyžádané bodování.
+8. Každé zadání a řešení včetně všech úprav bylo nezávisle ověřeno.
+9. PDF bylo zkompilováno a vizuálně zkontrolováno podle části „Kompilace a kontrola výstupu“.
 
 Pokud některou kontrolu nelze dokončit, uveď konkrétní omezení a test neoznačuj za hotový.
 
+## Nezávislá recenze a předávání nálezů
+
+Recenzent nejprve posoudí materiál sám; lze-li zadání bezpečně oddělit, řeší je bez autorských výsledků. Zprávy autora a jiných recenzentů čte až ke srovnání po vlastním závěru. Cílené ověření oprav smí vycházet z dřívějších nálezů, musí však být takto označeno.
+
+Každá recenze zaznamená:
+
+- soubory, varianty, úlohy, datum, větev, HEAD, Git stav a obsahové otisky kontrolovaných zdrojů, PDF a řešení;
+- skutečně provedené matematické, didaktické, časové, zdrojové a vizuální kontroly včetně nezávislé metody;
+- u nálezu ID, místo (soubor, úloha, řádek či strana), popis, důkaz nebo zdůvodnění, závažnost, minimální návrh opravy a stav;
+- odděleně prokázané chyby, nejednoznačnosti, doporučení a neověřené podněty; neshodu hlášení s aktuálním souborem ověří před zápisem;
+- omezení: nedostupné podklady, neprovedené kontroly, neprohlédnuté strany, nejistý čas. Čistý Git ani čas změny nejsou důkazem shody PDF se zdrojem.
+
+O nálezech rozhoduje učitel, recenzent je automaticky neopravuje. Výslovně zadaná konkrétní oprava již schvaluje její rozsah: nevyžaduj totéž podruhé. Opravu předej s ID, změněnými cestami a výsledky kontrol; změny nad schválený rozsah odděl k rozhodnutí.
+
+Zachovej historii nálezů a opravovanou verzi identifikuj otiskem pracovní kopie nebo existujícím commitem. Commit není podmínkou recenze, opravy ani ověření. ID, názvy a stavy určuje pouze [recenzní protokol](planovani/recenze/README.md), techniku Claude Code jeho vlastní dokumentace.
+
 ## Kompilace a kontrola výstupu
 
-Po vytvoření či změně LaTeXového dokumentu použij existující překladač a nastavení projektu (např. `latexmk`), pokud jsou dostupné. Respektuj nastavení VS Code/LaTeX Workshop a případnou potřebu vyhledávací cesty k `ucebnice.sty`; neměň kvůli tomu automaticky každý jednotlivý `.tex` soubor. Zkontroluj protokol, chyby a významná varování. Je-li možné prohlédnout výsledné PDF, zkontroluj též diakritiku, matematickou sazbu, přetékání obsahu, velikosti grafů, rozvržení stránek a čitelnost při tisku. U šablony `A5x2.tex` zvlášť ověř, že se obě varianty skutečně vejdou na jednu A4 a nezasahují do sebe. Pokud PDF vizuálně nezkontroluješ, nepředstírej opak. Sděl, které soubory vznikly a zda kompilace proběhla úspěšně.
-
-### Společné kontrolní skripty
-
-Pro samostatné LaTeXové dokumenty používej, pokud je v repozitáři dostupný a funkční, skript `scripts/build_latex.sh`:
+Po autorizované tvorbě či změně samostatné přípravy, testu nebo listu používej dostupný funkční skript z kořene projektu:
 
 ```bash
 ./scripts/build_latex.sh cesta/k/dokumentu.tex
 ```
 
-Skript provádí základní kontrolu struktury, kompilaci a ověření PDF. Výsledné PDF musí být uloženo vedle zdrojového `.tex`; pomocné soubory ponechávej mimo adresář materiálů. V případě neúspěchu zjisti příčinu. Nepovažuj chybnou nebo neprovedenou kompilaci za úspěch.
+Provádí základní kontrolu struktury, kompilaci a technické ověření PDF; **PDF musí být vedle zdrojového `.tex`**, pomocné soubory mimo materiály. Selhání vyšetři a oznam, nezakrývej je neohlášeným jiným postupem. Pokud skript chybí, použij zavedený překladač a nastavení, např. `latexmk -cd -pdf -interaction=nonstopmode -halt-on-error <cesta.tex>`.
 
-Tento postup je určen primárně pro samostatné přípravy, testy a pracovní listy. Nepoužívej jej automaticky na dílčí kapitoly učebnice načítané přes `\input` ani na projekty se zvláštním systémem sestavení. Pokud skript chybí, použij stávající funkční kompilaci projektu. Pokud skript existuje, ale selže, chybu nezakrývej neohlášeným přepnutím na jiný postup.
+Skript nepoužívej automaticky na dílčí kapitoly přes `\input` ani projekty se zvláštním sestavením. Respektuj VS Code/LaTeX Workshop a případnou cestu k `ucebnice.sty`; nepřepisuj kvůli ní jednotlivé preambule.
 
-Po automatické kontrole vždy proveď matematickou kontrolu a podle dostupných možností i vizuální kontrolu všech relevantních stránek PDF. Úspěch skriptu sám o sobě neprokazuje správnost matematiky, sazby ani rozložení testových variant.
+Zkontroluj log, chyby a významná varování. Vizuálně prověř všechny relevantní strany: diakritiku, matematickou sazbu, přetékání, grafy, rozvržení a tiskovou čitelnost. U `A5x2` ověř obě varianty na jedné A4 bez vzájemného zásahu. Neprovedenou vizuální kontrolu přiznej. Uveď vzniklé soubory a výsledek kompilace.
+
+Při recenzi pouze pro čtení sestavení nespouštěj: přepisuje PDF. Lze samostatně použít `scripts/check_structure.py`, `scripts/verify_pdf.py` a zobrazit existující PDF; pochybnosti o aktuálnosti zaznamenej. Vykreslení a diagnostiku ukládej mimo materiály, např. do dočasného adresáře. Automatické kontroly jsou heuristické: neprokazují matematiku, sazbu, srovnatelnost variant ani shodu PDF se zdrojem; nenahrazují jejich kontrolu.
 
 ## Bezpečnost, Git a rozsah změn
 
-Pracuj pouze v určeném projektu a podle nastavených oprávnění. Bez výslovného souhlasu nemaž ani hromadně nepřesouvej soubory, nepřepisuj sdílené šablony a nepřidávej závislosti nebo nástroje do systému. Neotevírej ani nezveřejňuj osobní údaje žáků, přístupové údaje či tajné klíče, pokud to není nezbytné pro výslovně zadanou bezpečnou operaci. Změny udržuj malé a přehledné; nepřeformátovávej nesouvisející části. Před rozsáhlými změnami předlož krátký plán. Po práci stručně shrň provedené úpravy, matematické ověření, výsledek kompilace a případná omezení. Git commity neprováděj bez zadání; před commitem ukaž, co se změnilo.
+Pracuj v určeném projektu a podle oprávnění. Bez výslovného souhlasu nemaž či hromadně nepřesouvej soubory, nepřepisuj sdílené šablony a nepřidávej systémové nástroje či závislosti. Osobní údaje žáků, přístupové údaje a klíče neotevírej ani nezveřejňuj mimo nezbytnou výslovně zadanou bezpečnou operaci.
 
+Před prací zkontroluj `git status` a relevantní diff. Zachovej existující i nesledované uživatelské změny. K čištění stromu automaticky nepoužívej `git reset`, `git restore`, `git clean`, přepis historie, mazání ani hromadné přesuny. Změny drž malé, nepřeformátovávej okolí; před rozsáhlou úpravou předlož krátký plán.
+
+**Commit ani push bez výslovného zadání neprováděj.** Před commitem ukaž změny, vyber jen dohodnuté soubory, ověř připravený diff a ignorování knihovny; nepřidávej neuváženě celý projekt. Souhlas s materiálem či opravou není souhlasem s Gitem; commit a push jsou samostatná rozhodnutí.
+
+Zachovej konfiguraci nástrojů, oprávnění a import `@AGENTS.md`, není-li jejich úprava výslovně zadána. Po práci shrň změny, matematické ověření, kompilaci, vizuální kontrolu a omezení; neprovedené kontroly označ.
 
 ## Referenční materiály
 
-Při tvorbě učitelských příprav, testů a pracovních listů prostuduj podle potřeby soubor `sablony/KATALOG_VZORU.md`.
-
-Katalog určuje doporučené vzory a jejich využití. Nenahrazuje závazné projektové šablony ani pravidla v tomto souboru.
-
-Rozlišuj schválené referenční materiály od dosud neověřených ukázek. Nepovažuj ukázkové soubory automaticky za bezchybné.
+Při tvorbě příprav, testů a listů použij podle potřeby `sablony/KATALOG_VZORU.md`: doporučuje vzory, nenahrazuje závazné šablony ani pravidla. Rozliš schválené reference od neověřených ukázek; ukázka není zárukou správnosti.

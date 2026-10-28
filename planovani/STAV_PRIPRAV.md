@@ -11,6 +11,18 @@
 | KVADRATICKÁ FUNKCE, KVADRATICKÁ ROVNICE A KVADRATICKÁ NEROVNICE | NEDOKONČENO |
 | OPAKOVÁNÍ | NEDOKONČENO |
 
+Etapa 13–24 byla dokončena 28. 10. 2026: všech 12 nových příprav má
+samostatný `.tex` a `.pdf`, matematickou i technickou kontrolu a vizuálně
+prohlédnuté všechny strany. Souvislá řada příprav 01–24 je nyní vytvořena.
+Podrobnosti, časy, zdroje a upozornění jsou v
+[přehledu etapy 13–24](DOKONCENI_PRIPRAV_13_24.md).
+
+První tematický celek zatím ponechává stav `NEDOKONČENO`: bod 1.4 plánu
+`1_rocnik/tematicke_plany/SPS.pdf` (vyjádření neznámé z technického vzorce)
+je v hodinovém rozpisu zařazen do 96–97 a tyto přípravy dosud chybějí.
+Hodina 21 je příprava k testu a rozboru; samostatné žákovské testové zadání
+není součástí této etapy. Nezávislá recenze Claude Code dosud neproběhla.
+
 ## 2. ročník
 
 | Tematický celek | Stav |

@@ -1,0 +1,111 @@
+% Nová příprava: 2026-10-28; 1. ročník SPŠ, etapa 13–24.
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 20.
+% Původ: vlastní formulace výkladu a vlastní úlohy; metodická inspirace uvedenými zdroji.
+% Kontrola, obsahové porovnání zdrojů a časy: planovani/DOKONCENI_PRIPRAV_13_24.md.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
+% oddíly Rovnost množin, Podmnožiny, Množinové operace a Vennovy diagramy; dle tématu hodiny.
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010304_Vennovy_diagramy/010304_Lekce.pdf
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010308_Intervaly/010308_Lekce.pdf
+% Realisticky.cz: externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010309_Mnoziny_shrnuti/010309_Lekce.pdf
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Množiny}{20}{Opakování množin}
+\begin{document}
+\blok{Nejdříve zvol význam, potom počítej}
+Nech žáky bez sešitu vysvětlit rozdíly mezi $\in$ a $\subseteq$,
+$\varnothing$ a $\{0\}$, $\cap$ a $\cup$, rozdílem a doplňkem.
+Podle odpovědí zvol krátké připomenutí; dnes nezavádíme nový povinný pojem.
+Shrnutí pravidel má pomoci řešit nový příklad, nikoli nahradit jeho rozbor.
+
+\begin{prikladReseniBox}[title={P1: tři modelové chyby},breakable=false]
+Oprav: a) $\{0\}=\varnothing$; b) $\{1,2\}\subseteq\{2,3\}$;
+c) $(-1;2)\cup(2;4)=(-1;4)$.
+\tcblower
+a) Nula je prvkem $\{0\}$, prázdná množina žádný prvek nemá.
+b) Vztah neplatí kvůli prvku $1$.
+c) Bod $2$ nepatří do žádného původního intervalu. Výsledek musí zůstat
+$(-1;2)\cup(2;4)$; krajní hodnoty samy nevystihnou chybějící bod.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P2: složitější výraz rozlož na kroky},breakable=false]
+V $U=\{-3,-2,-1,0,1,2,3,4\}$ je $A$ množina sudých čísel,
+$B=\{x\in U\mid |x|\le2\}$ a $C=\{x\in U\mid x>0\}$.
+Urči $(A\cup B)\setminus C$, $(A\setminus B)\cap C$ a $(B\cap C)'_U$.
+\tcblower
+$A=\{-2,0,2,4\}$, $B=\{-2,-1,0,1,2\}$, $C=\{1,2,3,4\}$.
+\begin{align*}
+(A\cup B)\setminus C
+ &=\{-2,-1,0,1,2,4\}\setminus\{1,2,3,4\}=\{-2,-1,0\},\\
+(A\setminus B)\cap C&=\{4\}\cap\{1,2,3,4\}=\{4\},\\
+(B\cap C)'_U&=\{1,2\}'_U=\{-3,-2,-1,0,3,4\}.
+\end{align*}
+Každý výsledek je podmnožinou $U$. Doplněk posledního mezivýsledku
+neznamená „opačná čísla“.
+\end{prikladReseniBox}
+\poznamka{Jádro: úvodní vybavení pojmů, P1, P2 a S1 a)–d),
+asi 38 min práce, organizace a závěr 7 min. S1 e) je navazující úloha
+pro rychlé, R1 další rezerva. U každého typu požaduj zdůvodnění,
+ne pouze značku nebo výsledek.}
+
+\blok{Samostatné procvičení napříč tématy}
+\begin{zadaniReseniBox}[title={S1: samostatný pokus a společná kontrola},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Vypiš $M=\{x\in\mathbb Z\mid-2\le x<2\}$.
+Platí $M\subseteq\langle-2;2)$ a platí obrácený vztah?
+\item V $U=\{1,2,3,4,5,6\}$ pro $A=\{1,2,3\}$, $B=\{3,4,5\}$
+urči $A\cap B$, $A\cup B$, $A\setminus B$, $(A\cup B)'_U$.
+Umísti prvky do čtyř oblastí diagramu.
+\item Pro $I=\langle-4;1)$ a $J=\langle-1;3\rangle$ urči $I\cap J$, $I\cup J$.
+\item Z 27 výrobků má vlastnost $A$ 14, vlastnost $B$ 12 a žádnou z nich 5 výrobků.
+Urči počet s oběma vlastnostmi a s právě jednou.
+\item V $U=\{1,2,3,4\}$, $A=\{1,2\}$, $B=\{2,3\}$ a $C=\{3,4\}$
+urči $A'\cap(B\cup C)$.
+\end{enumerate}
+\tcblower
+a) $M=\{-2,-1,0,1\}$, první zahrnutí ano, druhé ne (např. $\frac12$).
+b) $\{3\}$, $\{1,2,3,4,5\}$, $\{1,2\}$, $\{6\}$.
+Jen $A$: $1,2$; obě: $3$; jen $B$: $4,5$; mimo obě: $6$.
+c) $\langle-1;1)$ a $\langle-4;3\rangle$.
+d) Sjednocení $27-5=22$, obě $14+12-22=4$.
+Právě jedna $(14-4)+(12-4)=18$; kontrola $10+4+8+5=27$.
+e) $A'=\{3,4\}$, $B\cup C=\{2,3,4\}$, průnik $\{3,4\}$.
+\end{zadaniReseniBox}
+
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={R1: od příkladu k obecnému zdůvodnění},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Dokaž, že $A\cup B=A\cap B$ platí právě tehdy, když $A=B$.
+\item Urči doplněk $\langle-2;1)\cup(1;4\rangle$ v $\mathbb R$.
+\end{enumerate}
+\tcblower
+a) Je-li $A=B$, obě operace vrátí tutéž množinu.
+Platí-li rovnost operací, každý prvek $A$ je ve sjednocení, tedy také
+v průniku a tím v $B$; stejnou úvahou $B\subseteq A$.
+Obě zahrnutí dávají $A=B$.
+b) $(-\infty;-2)\cup\{1\}\cup(4;+\infty)$.
+Nezapomeň na vnitřní chybějící bod $1$; $-2$ a $4$ do původní množiny patří.
+\end{zadaniReseniBox}
+\poznamka{Rezerva 10–15 min. Závěrem ať každý žák uvede vlastní kontrolní otázku,
+např. „Ověřil jsem oba krajní body?“ a předvede ji na konkrétní úloze.
+Zjištěné potíže využij pro rozbor v hodině 21.}
+
+\blok{Domácí procvičení před průběžným testem}
+\begin{zadaniReseniBox}[title={D1: 12–18 minut}]
+\begin{enumerate}[label=\alph*)]
+\item Vypiš všechny podmnožiny $\{0,5\}$.
+\item V $U=\{0,1,2,3,4,5\}$ je $K=\{0,2,4\}$ a $L=\{2,3,5\}$.
+Urči $K\cap L$, $K\cup L$, $L\setminus K$ a $K'_U$.
+\item Pro $I=(-3;2\rangle$ a $J=(2;6)$ urči průnik, sjednocení a ověř bod $2$.
+\item Z 24 lidí používá nástroj $A$ 13, nástroj $B$ 10 a oba 4 lidé.
+Kolik nepoužívá ani jeden? Nakresli diagram s počty.
+\item Platí vždy $(A\cup B)'=A'\cup B'$? Uveď protipříklad se stejným $U$.
+\end{enumerate}
+\tcblower
+a) $\varnothing,\{0\},\{5\},\{0,5\}$.
+b) $\{2\}$, $\{0,2,3,4,5\}$, $\{3,5\}$, $\{1,3,5\}$.
+c) $\varnothing$, $(-3;6)$. Dvojka je ve sjednocení díky $I$, do průniku nepatří.
+d) Jen $A$: $9$, obě $4$, jen $B$: $6$, žádný $24-(13+10-4)=5$.
+e) Ne. Pro $U=\{1,2\}$, $A=\{1\}$, $B=\{2\}$ je vlevo
+$\varnothing$ a vpravo $U$. Správně je průnik doplňků.
+\end{zadaniReseniBox}
+\end{document}

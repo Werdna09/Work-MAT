@@ -1,8 +1,8 @@
 # Tvorba příprav na hodiny matematiky
 
-**Pracovní standard pro `~/Work/MAT` · verze 1.1 (23. 10. 2026)**
+**Pracovní standard pro `~/Work/MAT` · verze 1.2 (28. 10. 2026)**
 
-Tento dokument popisuje, jak vytvářet a dlouhodobě udržovat **učitelské přípravy** pro 1.–4. ročník. Slouží učiteli i Codexu. V případě rozporu s pokyny v nadřazeném `AGENTS.md` upozorni na konflikt a nevymýšlej si řešení.
+Tento dokument popisuje, jak vytvářet a dlouhodobě udržovat **učitelské přípravy** pro 1.–4. ročník. Slouží učiteli, Codexu i Claude Code. Společná pravidla kvality, časové náročnosti a spolupráce určuje [AGENTS.md](../../AGENTS.md); zde jsou technické postupy a ukázky. V případě rozporu upozorni na konflikt a nevymýšlej si řešení.
 
 ## 1. Kam jednotlivé soubory patří
 
@@ -10,7 +10,7 @@ Umístění odpovídá **skutečné struktuře** repozitáře `~/Work/MAT`:
 
 ```text
 ~/Work/MAT/
-├── AGENTS.md                    # existující soubor projektu (není součástí balíčku)
+├── AGENTS.md                    # společná projektová pravidla
 ├── 1_rocnik/
 │   ├── pripravy/
 │   │   ├── 01_ÚVD_ÚvodníHodina.tex
@@ -35,7 +35,7 @@ Styl, vzor i tutorial patří do `sablony/pripravy/`. Každá vlastní příprav
 
 `priprava.sty` je **jeden společný zdroj vzhledu**. Nekopíruj jej do každé hodiny. V každém ročníkovém `.tex` použij relativní cestu `../../sablony/pripravy/priprava.sty`.
 
-Kořenový `AGENTS.md` zatím **neměň**; později do něj doplníme odkaz na tento tutorial. V tomto balíčku není obsažen.
+Kořenový `AGENTS.md` na tento tutorial odkazuje. Při běžné tvorbě hodiny upravuj pouze zadaný materiál a potřebnou evidenci; společná pravidla a šablony mají vlastní rozsah změn podle zadání učitele.
 
 ## 2. Pojmenování příprav
 
@@ -134,7 +134,7 @@ Uprav výraz $3(x-2)+2x$.
 
 Po `\tcblower` nezačínej další `tcolorbox` a nepřidávej druhé samostatné řešení pod rámeček.
 
-## 5. Jak vytvořit novou hodinu (postup pro Codex)
+## 5. Jak vytvořit novou hodinu (při zadané tvorbě)
 
 1. **Zjisti skutečný stav repozitáře** (`AGENTS.md`, ročníková složka, podobné přípravy a šablona). Nic nepřepisuj naslepo.
 2. **Urči číslo, téma a rozsah** podle našeho schváleného rozpisu. Ověř návaznost předchozí a následující hodiny; pokud materiály nesouhlasí, upozorni, ale neupravuj jinou hodinu bez zadání.
@@ -154,6 +154,8 @@ Starší příprava mohla obsahovat celý design v preambuli. Při migraci zacho
 
 Realisticky.cz může sloužit pro **didaktickou inspiraci, pořadí výkladu a hledání typů úloh**. Neznamená to ale automaticky, že všechny jejich lekce musí být zařazeny do našeho plánu.
 
+Pro studium lokální knihovny, porovnání skutečných PDF, evidenci zdrojů a omezení aktualizací či šíření platí část [Lokální knihovna Realisticky.cz](../../AGENTS.md#lokální-knihovna-realistickycz). Následující poznámky ukazují použití zdroje v přípravě, nejsou další licencí ani pokynem ke stahování.
+
 - U každé hodiny si poznamenej **skutečně použitý** název a URL lekce, například v komentáři na začátku `.tex` (`% Inspirace: ...`). Kódy ani odkazy nevymýšlej.
 - Z webu **nekopíruj celé lekce, velké bloky textu či soubory příkladů** do vlastních materiálů bez odpovídajícího oprávnění. Připrav vlastní formulace a vlastní úlohy inspirované metodou, anebo pracuj s materiálem v mezích skutečně získané licence/oprávnění. Pouhý veřejný přístup není automaticky svolením k přepracování nebo dalšímu šíření.
 - Pokud zdroj není dostupný, napiš to a zpracuj originální přípravu podle tématu; **netvrď, že jsi konkrétní lekci ověřil**, pokud se to nestalo.
@@ -161,14 +163,20 @@ Realisticky.cz může sloužit pro **didaktickou inspiraci, pořadí výkladu a 
 
 ## 7. Kompilace a kontrola
 
-Z kořene `~/Work/MAT`:
+Při tvorbě nebo opravě použij z kořene `~/Work/MAT` přednostně společný postup podle `AGENTS.md`:
+
+```bash
+./scripts/build_latex.sh 1_rocnik/pripravy/02_VRL_CoJeVyrok.tex
+```
+
+Následující přímý příkaz slouží jako náhradní postup, pokud společný skript chybí; selhání existujícího skriptu nejprve vyšetři:
 
 ```bash
 latexmk -cd -pdf -interaction=nonstopmode -halt-on-error \
   1_rocnik/pripravy/02_VRL_CoJeVyrok.tex
 ```
 
-`-cd` je důležité, protože cesta `../../sablony/pripravy/priprava.sty` vychází z ročníkové složky. Při jiné struktuře adresářů uprav relativní cestu; při úpravě stylu kontroluj kompatibilitu již vytvořených hodin.
+`-cd` je důležité, protože cesta `../../sablony/pripravy/priprava.sty` vychází z ročníkové složky. Při jiné struktuře adresářů uprav relativní cestu; při úpravě stylu kontroluj kompatibilitu již vytvořených hodin. V režimu recenze pouze pro čtení nekompiluj; prohlédni existující PDF a neověřenou aktuálnost zaznamenej.
 
 Při kompilaci dej pozor na:
 
