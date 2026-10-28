@@ -1,3 +1,7 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010210_Absolutni_hodnota_I/010210_Lekce.pdf
 % Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 9;
 % SPS.pdf, oddíl 1.2. Návaznost: 05 (znaménka), 07 (osa), 08 (intervaly).
 % Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
@@ -15,7 +19,8 @@
 
 \poznamka{Orientačně: osa a motivace 4 min, definice s příklady 8 min,
 výpočty a vzdálenost dvou bodů 10 min, samostatná práce s rozborem
-11 min, shrnutí 2 min; základ asi 35 min. Rezerva 10–15 min k výběru,
+11 min, vlastnosti a tolerance 7–10 min, shrnutí 2 min;
+základ asi 42–45 min. Rezerva 10–15 min k výběru,
 domácí práce 15–20 min. Rovnice zde čteme geometricky, nezavádíme algoritmus
 rozštěpování obecného výrazu podle nulových bodů.}
 
@@ -72,6 +77,24 @@ je $d(a,b)=|a-b|$. Stejně dostaneme $d(a,b)=|b-a|$.
 Je-li $a\ge b$, je vzdálenost $a-b$; je-li $a<b$, je to $b-a$.
 Obě situace shrnuje absolutní hodnota rozdílu.
 
+\blok{Základní vlastnosti a jejich význam}
+Pro reálná $a,b$ platí
+\begin{align*}
+|a|&\ge0, & |a|=0&\ \Leftrightarrow\ a=0, &|-a|&=|a|,\\
+|ab|&=|a|\,|b|, & \left|\frac ab\right|&=\frac{|a|}{|b|}\quad(b\ne0).
+\end{align*}
+U součinu a podílu nejprve zjistíme jeho znaménko: absolutní hodnota
+odstraní znaménko výsledku a ponechá jeho velikost, stejně jako součin
+či podíl velikostí obou čísel. Například
+$|(-3)\cdot2|=6=|-3|\cdot|2|$.
+
+Pro součet platí \emph{trojúhelníková nerovnost}
+$|a+b|\le|a|+|b|$.
+Na ose ji čteme jako dva posuny: konečná vzdálenost od počátku
+nepřesáhne součet délek obou posunů. Při stejném směru se délky
+sčítají, při opačných směrech se část cesty vracíme.
+Například $|5+(-3)|=2<8=|5|+|-3|$; rovnost tedy nemusí platit.
+
 \begin{prikladReseniBox}[title={P3: rozdíl a délka úseku},breakable=false]
 Urči vzdálenost bodů $A=-3$ a $B=2$ i bodů $C=-4$ a $D=-1$.
 \tcblower
@@ -98,6 +121,18 @@ Na každé straně počátku je právě jeden.
 b) Nulovou vzdálenost od nuly má pouze $x=0$.
 c) Žádné reálné číslo nevyhovuje; vzdálenost není záporná.
 Dosazení $|-4|=|4|=4$ a $|0|=0$ potvrzuje nalezené možnosti.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P5: tolerance rozměru},breakable=false]
+Jmenovitá délka je $10$ mm a přípustná odchylka nejvýše $0{,}2$ mm.
+Vyjádři podmínku pomocí absolutní hodnoty a intervalem.
+Vyhovují délky $9{,}8$ mm a $10{,}3$ mm?
+\tcblower
+Vzdálenost skutečné hodnoty $d$ od $10$ musí být nejvýše $0{,}2$:
+$|d-10|\le0{,}2$, kde $d$ vyjadřujeme v milimetrech.
+Odtud $9{,}8\le d\le10{,}2$, tedy $d\in\langle9{,}8;10{,}2\rangle$.
+První délka vyhovuje, protože $|9{,}8-10|=0{,}2$;
+druhá nevyhovuje, protože $|10{,}3-10|=0{,}3>0{,}2$.
 \end{prikladReseniBox}
 
 \blok{Samostatná práce}

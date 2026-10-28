@@ -1,3 +1,9 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010205_Realna_cisla_I/010205_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010206_Realna_cisla_II/010206_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010207_Druha_odmocnina/010207_Lekce.pdf
 % Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 7;
 % SPS.pdf, oddíl 1.2. Návaznost: 06 (zlomky), 08 (intervaly), 12 (konvence oborů).
 % Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
@@ -53,6 +59,13 @@ racionální reálná. Iracionální číslo je reálné, ale není racionální
 \poznamka{Iracionalitu $\sqrt2$ a $\pi$ zde sděl jako známou vlastnost,
 ne jako závěr z displeje kalkulačky. Konečný výpis číslic nedokazuje
 neperiodičnost nekonečného rozvoje. Úplný důkaz nyní není cílem hodiny.}
+
+\poznamka{Volitelně lze iracionalitu $\sqrt2$ zdůvodnit sporem:
+předpokládej $\sqrt2=p/q$ v základním tvaru s kladnými celými $p,q$.
+Pak $p^2=2q^2$, tedy $p$ je sudé (druhá mocnina lichého čísla je lichá).
+Po dosazení $p=2k$ vyjde $q^2=2k^2$, takže i $q$ je sudé.
+To odporuje základnímu tvaru. Důkaz je pro zájemce; v základní části
+stačí geometrická motivace jednotkovým čtvercem.}
 
 \begin{definiceBox}
 \textbf{Číselná osa} je přímka se zvoleným počátkem $0$, jednotkou délky
@@ -211,6 +224,12 @@ ponechanou část neměníme; je-li alespoň $5$, přičteme jednotku posledníh
 ponechaného řádu. U záporného čísla stejně zaokrouhlíme jeho kladný
 protějšek a vrátíme znaménko. Používáme $\doteq$, pokud zaokrouhlení
 není přesná rovnost; příslušný řád vždy uvedeme.
+
+Zaokrouhlením na setiny se od přesné hodnoty odchýlíme nejvýše
+o $0{,}005$, tedy o polovinu kroku $0{,}01$ mezi sousedními setinami.
+Například zápis $\sqrt2\doteq1{,}41$ neoznačuje nové přesné vyjádření
+odmocniny. V mezivýpočtech proto ponecháváme přesný zlomek či odmocninu
+a zaokrouhlujeme až požadovaný výsledek.
 
 \begin{prikladReseniBox}[title={P2: devítky a záporné číslo},breakable=false]
 Zaokrouhli na setiny: $3{,}146$, $9{,}995$, $-2{,}345$ a $-2{,}341$.

@@ -1,3 +1,10 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010201_Ciselne_obory_prirozena_cisla/010201_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010205_Realna_cisla_I/010205_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/04_Formalni_logika_vyroky/010408_Kvantifikovane_vyroky/010408_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/04_Formalni_logika_vyroky/010409_Negace_kvantifikovanych_vyroku/010409_Lekce.pdf
 % Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 11;
 % SPS.pdf, oddíl 1.2. Opakuje 02–09; připravuje výčet a vlastnost množin v 12.
 % Učebnice: ucebnice/01_Zakladni_poznatky/Vyrokova_logika/Výroková logika.tex,
@@ -20,7 +27,8 @@
 
 \poznamka{Orientačně: skutečné chyby z testu 5 min, obor a kvantifikace
 8 min, řešené příklady 9 min, samostatná práce s rozborem 11 min,
-shrnutí 2 min; základ asi 35 min. Rezerva 10–15 min k výběru, domácí
+shrnutí 2 min; s návratem k diagramu základ asi 42–45 min.
+Rezerva 10–15 min k výběru, domácí
 práce 15–20 min. Modelové chyby použij jen tam, kde odpovídají potřebám
 třídy; netvrď, že se v písemkách opravdu vyskytly.}
 
@@ -29,6 +37,49 @@ Vrať dvě až tři skutečné chyby z předchozího testu jako krátké opravy
 postupu. Ptej se: \uv{Co je zadáno? Odkud číslo vybíráme? Chceme všechny,
 nebo stačí jedno?} Nemáme-li výsledky opravené, začni následujícím příkladem.
 Konvence zůstává $\mathbb N=\{1,2,3,\ldots\}$.
+
+\blok{Návrat k diagramu: kde leží svědek nebo protipříklad?}
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm,font=\small]
+\draw[rounded corners,fill=black!4] (0,0) rectangle (12,3.9);
+\node at (11.4,3.5) {$\mathbb R$};
+\draw[rounded corners,fill=white] (.3,.3) rectangle (8.5,3.5);
+\node at (7.8,3.1) {$\mathbb Q$};
+\draw[rounded corners,fill=black!8] (.6,.6) rectangle (5.6,3.1);
+\node at (4.9,2.7) {$\mathbb Z$};
+\draw[rounded corners,fill=white] (.9,.9) rectangle (3.2,2.7);
+\node at (2.1,2.3) {$\mathbb N$};
+\node at (2.1,1.5) {$1,2,3,\ldots$};
+\node at (4.4,1.5) {$0,-1$};
+\node at (7,1.5) {$\frac12,-\frac32$};
+\node[align=center] at (10.1,2.5) {$\mathbb R\setminus\mathbb Q$};
+\node at (10.1,1.5) {$\sqrt2,\pi$};
+\end{tikzpicture}
+\end{center}
+Nech žáky umístit $\frac12$ a $\sqrt2$ a vyjmenovat všechny obory,
+do nichž patří. Potom bez výpočtu přečtěte tabulku existence:
+\begin{center}
+\begin{tabular}{lcccc}
+\toprule
+Existuje $x$ v daném oboru s vlastností & $\mathbb N$ & $\mathbb Z$ & $\mathbb Q$ & $\mathbb R$\\
+\midrule
+$x=0$ & ne & ano & ano & ano\\
+$2x=1$ & ne & ne & ano & ano\\
+$x^2=2$ & ne & ne & ne & ano\\
+\bottomrule
+\end{tabular}
+\end{center}
+V posledním řádku v $\mathbb R$ stačí svědek $\sqrt2$; všechny
+možnosti jsou $\sqrt2$ a $-\sqrt2$, obě iracionální.
+Při rozšíření oboru se pravdivý existenční výrok se stejnou vlastností
+nemůže stát nepravdivým: původní svědek zůstává k dispozici.
+U obecného výroku je tomu opačně: další prvky mohou přinést
+protipříklad. Například $\forall x\in\mathbb N:x>0$ platí,
+ale v $\mathbb Z$ jej vyvrátí $0$.
+
+\poznamka{Práce s diagramem a tabulkou je návratem k hodině 07,
+asi na 7–10 minut. Nezavádí nové množinové operace.
+Zařaď ji před P1 a vynech část opakovaného slovního shrnování.}
 
 \begin{definiceBox}
 \textbf{Obor proměnné} určuje, která čísla smíme za proměnnou dosazovat.
@@ -66,7 +117,6 @@ Při důkazu obecného výroku o nekonečném oboru nestačí několik pokusů.
 Musíme zdůvodnit všechny možnosti. Naopak protipříklad hledáme jediný,
 ale musí pocházet ze zadaného oboru.
 
-\newpage
 \blok{Negace zachová obor a obrátí požadavek}
 Z hodiny 04 připomeň:
 \[
@@ -129,7 +179,6 @@ e) N: $x=1$ patří do oboru a nesplňuje ostrou nerovnost.
 Negace $\exists x\in\langle-1;1\rangle:\ x\ge1$ je P.
 \end{zadaniReseniBox}
 
-\newpage
 \begin{zadaniReseniBox}[title={S2: oprav modelové úvahy},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item \uv{Dosadil jsem $1,2,3$ a vždy vyšlo $x^2>x$. Platí to tedy pro všechna

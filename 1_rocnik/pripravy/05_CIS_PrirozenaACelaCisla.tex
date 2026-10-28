@@ -1,3 +1,8 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010201_Ciselne_obory_prirozena_cisla/010201_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010202_Cela_cisla/010202_Lekce.pdf
 % Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 5.
 % Plán: 1_rocnik/tematicke_plany/SPS.pdf, oddíl 1.2.
 % Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
@@ -42,19 +47,50 @@ $\mathbb N$. V naší učebnici nulu mezi přirozená čísla nezahrnujeme.
 například následníkem $4$ je $5$ a následníkem $5$ je $6$.
 \end{definiceBox}
 
-Přirozená čísla lze formálně vybudovat pomocí \emph{Peanových axiomů}.
-Intuitivně vyjdeme z počátečního čísla a opakujeme krok k následníku.
-Každé číslo má jediného následníka, různá čísla mají různé následníky
-a počáteční číslo není následníkem žádného čísla tohoto oboru.
-Součástí je i princip indukce: platí-li vlastnost pro počáteční číslo
-a přechází-li z každého čísla na jeho následníka, platí pro všechna přirozená čísla.
+\blok{Peanovy axiomy: volitelná zajímavost}
+Jak popsat nekonečně mnoho čísel, aniž bychom je všechna vypsali?
+Jednou možností jsou \emph{Peanovy axiomy}, tedy výchozí pravidla
+pro počáteční prvek a přiřazení následníka $S$. V naší konvenci začínáme
+jedničkou. Zápis $S(n)=n+1$ je známý model; při formálním budování
+aritmetiky se nejprve zavádí $S$ a sčítání až pomocí něj.
+\begin{enumerate}[label=\arabic*)]
+\item \textbf{Počáteční prvek:} $1\in\mathbb N$. Máme odkud začít.
+\item \textbf{Existence a jednoznačnost následníka:} každému
+$n\in\mathbb N$ odpovídá právě jedno $S(n)\in\mathbb N$.
+Řetěz může pokračovat a z jednoho čísla se nerozvětvuje do dvou následníků.
+\item \textbf{Různá čísla mají různé následníky:}
+jestliže $S(m)=S(n)$, pak $m=n$. Dvě různé větve se tedy nespojí.
+To je jiný požadavek než jednoznačnost v předchozím bodě.
+\item \textbf{Počáteční prvek není následníkem:}
+pro žádné $n\in\mathbb N$ neplatí $S(n)=1$.
+Nula není protipříklad, protože do našeho $\mathbb N$ nepatří.
+\item \textbf{Princip matematické indukce:} jestliže vlastnost $P$
+platí pro $1$ a pro každé $n\in\mathbb N$ platí
+$P(n)\Rightarrow P(S(n))$, pak $P$ platí pro všechna přirozená čísla.
+\end{enumerate}
+Indukci si představíme jako nekonečnou řadu domina: potřebujeme
+první padající kostku \emph{i} zaručený přechod od každé kostky k následující.
+Pouhé ověření prvních sta případů obecný přechod nenahradí.
+Formálně indukce také vylučuje další prvky mimo řetěz začínající jedničkou:
+množina obsahující $1$ a s každým svým prvkem i jeho následníka
+musí obsahovat celé $\mathbb N$.
 
-Často se začíná nulou, jindy jedničkou. V našem značení začínáme
-jedničkou: $1,2,3,\ldots$; nula tedy do $\mathbb N$ nepatří.
-Rozdíl v konvenci počátečního prvku nemění význam kroku \uv{o jednu více}.
+Například tvrzení \uv{$1+2+\cdots+n=\frac{n(n+1)}2$} má počáteční
+případ $1=\frac{1\cdot2}2$. Pokud platí pro některé $n$, pak
+\[
+1+2+\cdots+n+(n+1)
+=\frac{n(n+1)}2+(n+1)=\frac{(n+1)(n+2)}2.
+\]
+Tím jsme ukázali obecný přechod, ne pouze další jednotlivý výpočet.
+
+V jiné běžné konvenci je počátečním prvkem $0$ a indukce začíná nulou.
+Takový obor zde označujeme $\mathbb N_0=\{0,1,2,\ldots\}$.
+Při čtení jiného zdroje proto vždy ověříme jeho konvenci.
 
 \poznamka{Jde pouze o intuitivní představení jedné možnosti formálního
-základu, nikoli o výuku axiomatické teorie či důkazů indukcí.
+základu. Celý exkurz i ukázka indukce jsou nepovinné; nejsou požadavkem
+k testu. Při běžné hodině stačí obraz řetězu a dva nutné kroky indukce;
+podrobný rozbor může zůstat pro zájemce.
 Nech žáky určit následníka $99$ a vysvětlit, proč přirozená čísla nemají poslední prvek.}
 
 \begin{definiceBox}
@@ -160,6 +196,44 @@ Převrácený prvek vzhledem k násobení přijde v hodině 06.
 Názvy vlastností žáci vysvětlují na výpočtech; není nutné memorovat
 abstraktní seznam bez porozumění.}
 
+\begin{definiceBox}
+\textbf{Inverzní prvek} k prvku $a$ vzhledem k dané operaci
+je prvek téhož oboru, který s $a$ v obou pořadích dává neutrální prvek
+této operace. Pro sčítání v $\mathbb Z$ je to opačné číslo $-a$.
+\end{definiceBox}
+
+\blok{Přehled vlastností operací}
+V tabulce jsou $a,b,c$ libovolná čísla uvedeného oboru; zápisy
+se vztahují vždy k pojmenované operaci. U neutrálního a inverzního prvku
+musí hledaný prvek patřit do zvoleného oboru.
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{24mm}>{\raggedright\arraybackslash}p{37mm}>{\raggedright\arraybackslash}X>{\raggedright\arraybackslash}X@{}}
+\toprule
+Vlastnost & Matematický zápis & Slovní význam & Příklad/protipříklad\\
+\midrule
+Uzavřenost & $a+b\in\mathbb N$ pro $a,b\in\mathbb N$
+& Výsledek vždy zůstane v oboru.
+& $2+5=7\in\mathbb N$; odčítání: $2-5\notin\mathbb N$.\\[2mm]
+Komutativita & $a+b=b+a$
+& Lze zaměnit pořadí.
+& $2+5=5+2$; $2-5\ne5-2$.\\[2mm]
+Asociativita & $(a+b)+c$\newline ${}=a+(b+c)$
+& Lze změnit seskupení při stejném pořadí.
+& $(8-3)-2\ne8-(3-2)$.\\[2mm]
+Neutrální prvek & $a+0=0+a=a$\newline $a\cdot1=1\cdot a=a$
+& Hodnota partnera se nezmění.
+& Pro $+$ v $\mathbb Z$: $0$; v našem $\mathbb N$ neexistuje.\\[2mm]
+Inverzní prvek & $a+(-a)$\newline ${}=(-a)+a=0$
+& Spolu s původním prvkem dává neutrální prvek.
+& V $\mathbb Z$: $5+(-5)=0$; $-5\notin\mathbb N$.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Pro násobení platí také komutativita a asociativita. Inverzní prvek
+pro násobení by musel dávat součin $1$; například ke $2$ v $\mathbb Z$
+neexistuje. K tomu se vrátíme při rozšíření na zlomky.
+
 \begin{zadaniReseniBox}[title={V3: krátké procvičení vlastností},breakable=false]
 a) Zdůvodni, proč z $9-4=5$ neplyne uzavřenost odčítání v $\mathbb N$.
 b) Zjednoduš výpočet $(-17)+28+17+72$ a pojmenuj změny pořadí a seskupení.
@@ -186,7 +260,6 @@ Součet $(-3)+(-4)$ je záporný. Dělení nulou není definováno:
 $8:0$ nemá výsledek, protože $0\cdot c$ nikdy není $8$;
 u $0:0$ by vyhovovalo každé $c$, takže nevzniká jednoznačný podíl.}
 
-\newpage
 \blok{Závorky určují, co k sobě patří}
 Nejprve vypočítáme vnitřní závorky, potom známé mocniny,
 pak násobení a dělení, nakonec sčítání a odčítání.
@@ -250,7 +323,6 @@ c) Mocnina má přednost: $-(4\cdot4)=-16$.
 výsledek. Na závěr nech každého vysvětlit, proč $3-3$ není při naší konvenci
 přirozené číslo. Neúplnost oboru $\mathbb Z$ při dělení je mostem k hodině 06.}
 
-\newpage
 \blok{Rezerva pro svižnější práci}
 \begin{zadaniReseniBox}[title={R1: volitelně, přibližně 10–15 minut},breakable=false]
 \begin{enumerate}[label=\alph*)]

@@ -1,3 +1,9 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010802_Nasobeni_mnohoclenu/010802_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010810_Mnohocleny_shrnuti/010810_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010901_Kraceni_a_rozsirovani_lomenych_vyrazu/010901_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 58, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 58.
@@ -8,15 +14,15 @@
 
 % Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
 
-% Metodický zdroj: externi_zdroje/realisticky/Mocniny/04_KISS.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010604_KISS/010604_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/04%20KISS.pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/02_Nasobeni_mnohoclenu.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010802_Nasobeni_mnohoclenu/010802_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/02%20N%C3%A1soben%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/05_Deleni_mnohoclenu.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010805_Deleni_mnohoclenu/010805_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/05%20D%C4%9Blen%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
 
@@ -38,6 +44,25 @@ Dosazení je účinná kontrola: jediná neshoda vyvrátí tvrzenou obecnou rovn
 
 
 Nejprve napiš původní podmínky. Pro kontrolu zvol několik přípustných hodnot, mezi nimi nulu a záporné číslo, pokud jsou dovoleny. Nakonec ověř jednotlivé úpravy obecně. U dělení mnohočlenů kontroluj $A=BQ+R$, u rozkladu součin zpětně roznásob.
+
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}p{31mm}XX@{}}
+\toprule
+Postup & Co zjistí & Co z něj neplyne\\
+\midrule
+Kontrolní dosazení & Shodu či neshodu pro vybranou přípustnou hodnotu.
+& Souhlas pro několik hodnot sám nedokazuje identitu.\\[1mm]
+Protipříklad & Jednu přípustnou hodnotu, při níž se strany liší;
+tím obecné tvrzení vyvrátí.
+& Nedefinovaná hodnota mimo zadaný obor není protipříklad.\\[1mm]
+Důkaz identity & Rovnost pro všechny přípustné hodnoty pomocí obecných pravidel.
+& Nepovoluje dosazení mimo původní obor.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+V P1 stačí k vyvrácení jediná neshoda. V P2 potřebujeme pro důkaz
+rozklad a přípustné krácení; dvě souhlasná dosazení jsou jen kontrola.
 
 \blok{Řešené příklady}
 

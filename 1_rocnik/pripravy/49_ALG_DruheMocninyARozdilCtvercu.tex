@@ -1,3 +1,8 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010803_Pouziti_vzorcu_pri_uprave_mnohoclenu_I/010803_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010807_Rozklad_mnohoclenu_na_soucin_II_vzorce/010807_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 49, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 49.
@@ -8,7 +13,7 @@
 
 % Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/07_Rozklad_mnohoclenu_na_soucin_II_vzorce_.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010807_Rozklad_mnohoclenu_na_soucin_II_vzorce/010807_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/07%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20II%20(vzorce).pdf
 
@@ -36,6 +41,60 @@ Pro reálná $a,b$ platí
 a^2-b^2&=(a-b)(a+b).
 \end{align*}
 První vzorec odvoď roznásobením; ve druhém nahraď $b$ číslem $-b$. Třetí ověř dvěma prostředními součiny s opačnými znaménky. Všechny tři vztahy používáme oběma směry.
+
+\blok{Proč je ve vzorci prostřední člen?}
+Pro kladné délky $a,b$ rozdělíme čtverec o straně $a+b$
+na dva čtverce a dva obdélníky. Každý obdélník má obsah $ab$,
+proto se ve vzorci objeví $2ab$, nikoli jen $ab$.
+\begin{center}
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\begin{tikzpicture}[scale=.78,font=\small]
+\fill[black!8] (0,0) rectangle (2.6,2.6);
+\fill[black!20] (2.6,0) rectangle (4,2.6);
+\fill[black!20] (0,2.6) rectangle (2.6,4);
+\fill[black!35] (2.6,2.6) rectangle (4,4);
+\draw (0,0) rectangle (4,4);
+\draw (2.6,0)--(2.6,4);
+\draw (0,2.6)--(4,2.6);
+\node at (1.3,1.3) {$a^2$};
+\node at (3.3,1.3) {$ab$};
+\node at (1.3,3.3) {$ab$};
+\node at (3.3,3.3) {$b^2$};
+\node at (1.3,-.35) {$a$};
+\node at (3.3,-.35) {$b$};
+\node at (-.35,1.3) {$a$};
+\node at (-.35,3.3) {$b$};
+\end{tikzpicture}
+\par $(a+b)^2=a^2+2ab+b^2$
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}
+\centering
+\begin{tikzpicture}[scale=.78,font=\small]
+\fill[black!15] (2.6,0) rectangle (4,4);
+\fill[black!15] (0,2.6) rectangle (4,4);
+\fill[black!40] (2.6,2.6) rectangle (4,4);
+\draw (0,0) rectangle (4,4);
+\draw (2.6,0)--(2.6,4);
+\draw (0,2.6)--(4,2.6);
+\node at (1.3,1.3) {$(a-b)^2$};
+\node at (3.3,3.3) {$b^2$};
+\node at (1.3,-.35) {$a-b$};
+\node at (3.3,-.35) {$b$};
+\draw[<->] (-.35,0)--(-.35,4) node[midway,left] {$a$};
+\end{tikzpicture}
+\par $(a-b)^2=a^2-2ab+b^2$
+\end{minipage}
+\end{center}
+Na pravém obrázku předpokládáme $a>b>0$. Ze čtverce o obsahu $a^2$
+odečteme horní a pravý pruh, každý o obsahu $ab$.
+Jejich překryv $b^2$ jsme odečetli dvakrát, proto jej jednou vrátíme.
+Obrázky vysvětlují kladné délky; algebraické odvození před nimi
+dokazuje vzorce pro všechna reálná $a,b$.
+
+\poznamka{Nech žáky ukázat oba obdélníky i překryv, pak odvodit
+vzorec slovy. Na tuto souvislost vyhraď asi 5–7 minut;
+část číselných zkratek ponech v rezervě.}
 
 \blok{Řešené příklady}
 

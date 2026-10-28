@@ -1,3 +1,7 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/03_Mnoziny/010308_Intervaly/010308_Lekce.pdf
 % Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 8;
 % SPS.pdf, oddíl 1.2. Navazuje na číselnou osu 07; operace s intervaly až v 18.
 % Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
@@ -14,7 +18,7 @@
 
 \poznamka{Orientačně: motivace a osa 4 min, význam závorek 9 min,
 řešené převody 9 min, samostatná práce s kontrolou krajních bodů 11 min,
-shrnutí 2 min; základ asi 35 min. Rezerva 10–15 min k výběru,
+shrnutí 2 min; s přehledem a jeho čtením základ asi 42–45 min. Rezerva 10–15 min k výběru,
 domácí práce 15–20 min. Každý žák kreslí vlastní osy, nesleduje jen hotové obrázky.}
 
 \blok{Jak zapsat všechny přípustné hodnoty?}
@@ -79,6 +83,31 @@ Vždy uvažujeme reálná $x$.
 Symboly $-\infty,+\infty$ nejsou reálná čísla a neoznačují krajní body,
 které by šly zahrnout. U nekonečna je vždy kulatá závorka.
 Celé $\mathbb R$ zapíšeme $(-\infty;+\infty)$.
+
+\blok{Přehled: zápis, nerovnost a krajní body}
+Pro $a<b$ a $x\in\mathbb R$ platí následující přehled. Plný bod do
+intervalu patří, prázdný nepatří; šipka zvýrazněné části značí pokračování.
+\begin{center}
+\begin{tabular}{lll}
+\toprule
+Interval & Podmínka & Znázornění na ose\\
+\midrule
+$\langle a;b\rangle$ & $a\le x\le b$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[line width=1.3pt] (1,0)--(3,0); \draw[fill=black] (1,0) circle (2pt) node[below=3pt] {$a$}; \draw[fill=black] (3,0) circle (2pt) node[below=3pt] {$b$}; \end{tikzpicture}\\[4mm]
+$(a;b)$ & $a<x<b$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[line width=1.3pt] (1,0)--(3,0); \draw[fill=white] (1,0) circle (2pt) node[below=3pt] {$a$}; \draw[fill=white] (3,0) circle (2pt) node[below=3pt] {$b$}; \end{tikzpicture}\\[4mm]
+$\langle a;b)$ & $a\le x<b$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[line width=1.3pt] (1,0)--(3,0); \draw[fill=black] (1,0) circle (2pt) node[below=3pt] {$a$}; \draw[fill=white] (3,0) circle (2pt) node[below=3pt] {$b$}; \end{tikzpicture}\\[4mm]
+$(a;b\rangle$ & $a<x\le b$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[line width=1.3pt] (1,0)--(3,0); \draw[fill=white] (1,0) circle (2pt) node[below=3pt] {$a$}; \draw[fill=black] (3,0) circle (2pt) node[below=3pt] {$b$}; \end{tikzpicture}\\[4mm]
+$\langle a;+\infty)$ & $x\ge a$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[->,line width=1.3pt] (1,0)--(3.9,0); \draw[fill=black] (1,0) circle (2pt) node[below=3pt] {$a$}; \end{tikzpicture}\\[4mm]
+$(a;+\infty)$ & $x>a$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[->,line width=1.3pt] (1,0)--(3.9,0); \draw[fill=white] (1,0) circle (2pt) node[below=3pt] {$a$}; \end{tikzpicture}\\[4mm]
+$(-\infty;b\rangle$ & $x\le b$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[<-,line width=1.3pt] (0.1,0)--(3,0); \draw[fill=black] (3,0) circle (2pt) node[below=3pt] {$b$}; \end{tikzpicture}\\[4mm]
+$(-\infty;b)$ & $x<b$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[<-,line width=1.3pt] (0.1,0)--(3,0); \draw[fill=white] (3,0) circle (2pt) node[below=3pt] {$b$}; \end{tikzpicture}\\[4mm]
+$(-\infty;+\infty)$ & $x\in\mathbb R$ & \begin{tikzpicture}[x=1cm,y=0.6cm] \draw[->,thin] (0,0)--(4,0); \draw[<->,line width=1.3pt] (0.1,0)--(3.9,0); \end{tikzpicture}\\[4mm]
+\bottomrule
+\end{tabular}
+\end{center}
+\poznamka{Tabulka slouží ke společnému čtení a kontrole. Neopisuj ji
+celou místo samostatného kreslení; vyber vždy dva rozdílné typy a nech
+žáky zdůvodnit zahrnutí krajů. Tato práce přidává k původnímu základu
+asi 7–10 minut. Operace s intervaly patří až do hodiny 18.}
 
 \begin{prikladReseniBox}[title={P2: převod oběma směry},breakable=false]
 a) Zapiš $x\le-1$ intervalem a zakresli na osu.

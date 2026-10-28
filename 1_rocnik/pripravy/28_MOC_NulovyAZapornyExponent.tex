@@ -1,3 +1,8 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010605_Mocniny_s_celym_mocnitelem_I/010605_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010606_Mocniny_s_celym_mocnitelem_II/010606_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 28, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 28.
@@ -8,15 +13,15 @@
 
 % Původ úloh: P2 a procvičení a), b): učebnice, „Uprav výrazy“ a „Mocniny s nulovým exponentem“. Rezerva: přesný výraz z kostry učitele. Ostatní vlastní.
 
-% Metodický zdroj: externi_zdroje/realisticky/Mocniny/05_Mocniny_s_celym_mocnitelem_I.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010605_Mocniny_s_celym_mocnitelem_I/010605_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/05%20Mocniny%20s%20cel%C3%BDm%20mocnitelem%20I.pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Mocniny/06_Mocniny_s_celym_mocnitelem_II.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010606_Mocniny_s_celym_mocnitelem_II/010606_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/06%20Mocniny%20s%20cel%C3%BDm%20mocnitelem%20II.pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Mocniny/07_Mocniny_s_promennou_v_mocniteli.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010607_Mocniny_s_promennou_v_mocniteli/010607_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/07%20Mocniny%20s%20prom%C4%9Bnnou%20v%20mocniteli.pdf
 
@@ -41,6 +46,18 @@ Pro $a\ne0$ a $n\in\mathbb N$ definujeme \textbf{mocninu se záporným celočís
 
 
 Pravidla pro mocniny nyní platí také pro celé exponenty, jsou-li všechny výrazy definovány. Záporný exponent znamená převrácenou hodnotu, nikoli záporný výsledek. Každý základ se záporným nebo nulovým exponentem musí být nenulový.
+
+Na kladném základu $2$ vidíme souvislou řadu:
+\[
+\begin{array}{c|rrrrrr}
+k&3&2&1&0&-1&-2\\ \hline
+2^k&8&4&2&1&\frac12&\frac14
+\end{array}
+\]
+Snížení exponentu o jednu odpovídá dělení dvojkou.
+Je to názorná motivace definice, nikoli původní význam „počtu činitelů“
+pro záporné exponenty. Nulový základ takto prodlužovat nelze,
+protože by bylo nutné dělit nulou.
 
 \begin{zadaniReseniBox}[title={Mezikrok: převrácená hodnota a znaménko},breakable=false]
 \begin{enumerate}[label=\alph*)]

@@ -1,3 +1,10 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010806_Rozklad_mnohoclenu_na_soucin_I_vytykani/010806_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010807_Rozklad_mnohoclenu_na_soucin_II_vzorce/010807_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010808_Rozklad_mnohoclenu_na_soucin_III/010808_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010809_Rozklad_mnohoclenu_na_soucin_IV/010809_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 50, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 50.
@@ -8,15 +15,15 @@
 
 % Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/06_Rozklad_mnohoclenu_na_soucin_I_vytykani_.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010806_Rozklad_mnohoclenu_na_soucin_I_vytykani/010806_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/06%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20I%20(vyt%C3%BDk%C3%A1n%C3%AD).pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/07_Rozklad_mnohoclenu_na_soucin_II_vzorce_.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010807_Rozklad_mnohoclenu_na_soucin_II_vzorce/010807_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/07%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20II%20(vzorce).pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/08_Rozklad_mnohoclenu_na_soucin_III.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010808_Rozklad_mnohoclenu_na_soucin_III/010808_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/08%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20III.pdf
 
@@ -38,6 +45,18 @@ Rozklad obvykle nezačíná hledáním vzorce naslepo. Nejprve zkus vytknout spo
 
 
 Používej vytýkání, rozdíl čtverců a rozpoznání druhé mocniny dvojčlenu. V některých trojčlenech lze prostřední člen rozdělit a potom seskupovat. Tím neřešíme kvadratickou rovnici; jen kontrolujeme součin podle známého násobení závorek.
+
+Při volbě postupu pomůže stavba výrazu: společný činitel hledáme
+ve všech členech, dva čtverce oddělené minusem nabízejí rozdíl čtverců,
+u trojčlenu kontrolujeme i prostřední dvojnásobný součin.
+Čtyři členy lze zkusit seskupit tak, aby vznikla společná závorka.
+Počet členů je vodítko, ne důkaz použitelnosti vzorce.
+
+Pro rozklad $x^2+px+q$ na $(x+r)(x+s)$ musí platit
+$r+s=p$ a $rs=q$: plyne to z roznásobení
+$(x+r)(x+s)=x^2+(r+s)x+rs$.
+Tyto dvě podmínky vysvětlují volbu rozdělení prostředního členu v P2;
+nehledáme dvě čísla bez souvislosti s původním součinem.
 
 \blok{Řešené příklady}
 

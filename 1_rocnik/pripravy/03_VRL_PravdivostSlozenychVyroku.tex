@@ -1,4 +1,11 @@
-% Revize: prostudovány indexované pasáže Realisticky.cz, nikoli celé přímé PDF.
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/04_Formalni_logika_vyroky/010403_Konjunkce_a_disjunkce/010403_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/04_Formalni_logika_vyroky/010404_Implikace/010404_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/04_Formalni_logika_vyroky/010405_Ekvivalence/010405_Lekce.pdf
+% Starší revize 27. 10. 2026 pracovala s indexovanými pasážemi webu.
+% Revize 28. 10. 2026: nyní prostudována místní PDF uvedená níže.
 % 1.4.4: Př. 3-5, pořadí částí implikace
 % https://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/04%20Form%C3%A1ln%C3%AD%20logika%20%28v%C3%BDroky%29/04%20Implikace.pdf
 % 1.4.5: Př. 1-3, postupné sestavení a kontrola formule
@@ -82,6 +89,22 @@ $p$ & $q$ & $\neg p$ & $p\land q$ & $p\lor q$ & $p\Rightarrow q$ & $p\Leftrighta
 
 \poznamka{Největší zádrhel bývá implikace: při $p=0$ je $p\Rightarrow q$ pravdivá bez ohledu na hodnotu $q$. Nepleť logickou implikaci s příčinnou souvislostí.}
 
+Výrok $p$ je \emph{předpoklad}, $q$ je \emph{závěr}.
+Podmínku \uv{jestliže $p$, pak $q$} poruší právě situace, kdy $p$
+nastane a $q$ nenastane. Pokud $p$ neplatí, tato podmínka o $q$
+nic dalšího nepožaduje; neznamená to, že samotné $q$ musí být pravdivé.
+
+\begin{prikladReseniBox}[title={Implikace a její obrácení}]
+Pro celá čísla posuď tvrzení \uv{Je-li číslo dělitelné čtyřmi, je sudé}
+a jeho obrácení. Co by požadovala ekvivalence?
+\tcblower
+První tvrzení platí: číslo $4k$ lze zapsat jako $2\cdot(2k)$, kde
+$k$ je celé. Obrácené tvrzení \uv{Je-li číslo sudé, je dělitelné čtyřmi}
+neplatí; protipříklad je $6$. Ekvivalence by vyžadovala platnost
+obou směrů. Obrácení není negace: původní tvrzení by vyvrátilo
+číslo dělitelné čtyřmi, které by nebylo sudé.
+\end{prikladReseniBox}
+
 \begin{prikladReseniBox}
 Posuď pravdivost věty \uv{Jestliže je 12 liché číslo, pak je 12 dělitelné třemi.}
 \tcblower
@@ -90,7 +113,7 @@ Předpoklad $p$: \uv{12 je liché} má hodnotu $0$; závěr $q$: \uv{12 je děli
 
 \blok{4. Výpočet pravdivostní hodnoty formule}
 \begin{prikladReseniBox}
-Sestav pravdivostní tabulku výroku $A=(p\land\neg q)\lor q$.
+Sestav pravdivostní tabulku formule $A=(p\land\neg q)\lor q$.
 \tcblower
 Nejdříve spočítej $\neg q$, potom $p\land\neg q$ a nakonec disjunkci s $q$.
 \begin{center}
@@ -109,7 +132,7 @@ $p$ & $q$ & $\neg q$ & $p\land\neg q$ & $A$\\
 \poznamka{Nech postupně doplňovat jednotlivé sloupce. Je užitečné zvýraznit poslední sloupec jako výsledek celé formule.}
 
 \begin{zadaniReseniBox}
-Doplň pravdivostní tabulku výroku $B=(p\lor q)\Rightarrow p$. Rozepiš nejprve hodnoty $p\lor q$.
+Doplň pravdivostní tabulku formule $B=(p\lor q)\Rightarrow p$. Rozepiš nejprve hodnoty $p\lor q$.
 \tcblower
 \begin{center}
 \begin{tabular}{@{}cccc@{}}

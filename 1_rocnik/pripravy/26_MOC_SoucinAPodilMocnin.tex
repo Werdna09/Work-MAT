@@ -1,3 +1,7 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010602_Vzorce_pro_mocniny_I/010602_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 26, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 26.
@@ -8,7 +12,7 @@
 
 % Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
 
-% Metodický zdroj: externi_zdroje/realisticky/Mocniny/02_Vzorce_pro_mocniny_I.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010602_Vzorce_pro_mocniny_I/010602_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/02%20Vzorce%20pro%20mocniny%20I.pdf
 
@@ -30,6 +34,16 @@ Při násobení stejných základů počítáme celkový počet činitelů. Při
 
 
 Pro $m,n\in\mathbb N$ platí $a^m a^n=a^{m+n}$. Pro $a\ne0$ a $m>n$ platí $\frac{a^m}{a^n}=a^{m-n}$, protože zkrátíme $n$ činitelů. Pro $m=n$ je podíl roven $1$. Případ $m<n$ zatím zapíšeme jako převrácenou hodnotu kladné mocniny, nikoli záporným exponentem.
+
+Odvození součinu lze zapsat bez zkoušení konkrétních exponentů:
+\[
+a^m a^n=\underbrace{a\cdots a}_{m\text{ činitelů}}
+\underbrace{a\cdots a}_{n\text{ činitelů}}
+=\underbrace{a\cdots a}_{m+n\text{ činitelů}}=a^{m+n}.
+\]
+U podílu si nakresli $m$ činitelů nahoře a $n$ dole. Pro $m>n$
+zbude $m-n$ nahoře, pro $m<n$ jich zbude $n-m$ dole.
+Žádný krácený činitel nesmí být nula; odtud podmínka $a\ne0$.
 
 \blok{Řešené příklady}
 

@@ -1,3 +1,8 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010902_Scitani_a_odcitani_lomenych_vyrazu_I/010902_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010903_Scitani_a_odcitani_lomenych_vyrazu_II/010903_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 53, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 53.
@@ -8,7 +13,7 @@
 
 % Původ úloh: P1: učebnice, „Sčítání a odčítání lomených výrazů“, přesný výchozí součet. Ostatní vlastní.
 
-% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/03_Scitani_a_odcitani_lomenych_vyrazu_II.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010903_Scitani_a_odcitani_lomenych_vyrazu_II/010903_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/03%20S%C4%8D%C3%ADt%C3%A1n%C3%AD%20a%20od%C4%8D%C3%ADt%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF%20II.pdf
 
@@ -30,6 +35,22 @@ Lomené výrazy se sčítají stejně jako číselné zlomky: nejprve musí mít
 
 
 Pro $B,D\ne0$ platí $\frac AB\pm\frac CD=\frac{AD\pm CB}{BD}$. Je-li některý jmenovatel násobkem jiného, použij úspornější společný násobek. Podmínky jsou společné podmínky všech původních zlomků, nikoli pouze konečného výsledku.
+
+Pravidlo plyne z rozšíření prvního zlomku číslem $D/D$ a druhého
+číslem $B/B$: nyní sčítáme násobky téhož $1/(BD)$.
+Je to stejná distributivita jako u číselných zlomků v hodině 06.
+
+\begin{prikladReseniBox}[title={Společný činitel ve vyšší mocnině},breakable=false]
+Uprav $\frac1{x(x-1)}-\frac1{(x-1)^2}$ s co nejúspornějším jmenovatelem.
+\tcblower
+Původní podmínky jsou $x\ne0,1$. Oba jmenovatele obsahují $x-1$;
+ve společném jmenovateli stačí $x(x-1)^2$, nikoli $x(x-1)^3$.
+První zlomek rozšíříme $x-1$, druhý $x$:
+\[
+\frac{(x-1)-x}{x(x-1)^2}=-\frac1{x(x-1)^2},\qquad x\ne0,1.
+\]
+Před rozšířením zkontrolujeme jeho nenulovost na původním oboru.
+\end{prikladReseniBox}
 
 \blok{Řešené příklady}
 

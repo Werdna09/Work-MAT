@@ -1,3 +1,8 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010904_Nasobeni_a_deleni_lomenych_vyrazu/010904_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010905_Zjednodusovani_lomenych_vyrazu_I/010905_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 56, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 56.
@@ -8,11 +13,11 @@
 
 % Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
 
-% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/05_Zjednodusovani_lomenych_vyrazu_I.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010905_Zjednodusovani_lomenych_vyrazu_I/010905_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/05%20Zjednodu%C5%A1ov%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF%20I.pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Lomene_vyrazy/04_Nasobeni_a_deleni_lomenych_vyrazu.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010904_Nasobeni_a_deleni_lomenych_vyrazu/010904_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/04%20N%C3%A1soben%C3%AD%20a%20d%C4%9Blen%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF.pdf
 
@@ -37,6 +42,13 @@ Sčítance nelze krátit přes znaménka plus a minus. Součinové rozklady pom�
 Uprav $\left(\frac{x}{x-1}-\frac{x+1}{x}\right)(x^2-x)$.
 \tcblower
 Nejprve $x\ne0,1$. Rozdíl v závorce má čitatel $x^2-(x+1)(x-1)=1$ a jmenovatel $x(x-1)$. Násobení výrazem $x(x-1)$ dává $1$ pro $x\ne0,1$.
+Jiná cesta používá distributivitu hned na začátku:
+\[
+\frac{x}{x-1}\,x(x-1)-\frac{x+1}{x}\,x(x-1)
+=x^2-(x+1)(x-1)=1.
+\]
+Obě cesty jsou správné na stejném původním oboru; ve druhé je
+krácení kratší, protože vnější činitel již obsahuje oba jmenovatele.
 \end{prikladReseniBox}
 
 

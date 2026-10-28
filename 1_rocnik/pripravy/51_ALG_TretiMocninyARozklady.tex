@@ -1,3 +1,9 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010803_Pouziti_vzorcu_pri_uprave_mnohoclenu_I/010803_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010804_Pouziti_vzorcu_pri_uprave_mnohoclenu_II/010804_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010808_Rozklad_mnohoclenu_na_soucin_III/010808_Lekce.pdf
 % Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
 % Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
 % Hodina 51, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 51.
@@ -8,11 +14,11 @@
 
 % Původ úloh: Procvičení c): učebnice, „Rozklad mnohočlenů“, příklad x^5+x^3-x^2-1. Rezerva: přesný výraz z kostry učitele. Ostatní vlastní.
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/04_Pouziti_vzorcu_pri_uprave_mnohoclenu_II.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010804_Pouziti_vzorcu_pri_uprave_mnohoclenu_II/010804_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/04%20Pou%C5%BEit%C3%AD%20vzorc%C5%AF%20p%C5%99i%20%C3%BAprav%C4%9B%20mnoho%C4%8Dlen%C5%AF%20II.pdf
 
-% Metodický zdroj: externi_zdroje/realisticky/Mnohocleny/06_Rozklad_mnohoclenu_na_soucin_I_vytykani_.pdf
+% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010806_Rozklad_mnohoclenu_na_soucin_I_vytykani/010806_Lekce.pdf
 
 % URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/06%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20I%20(vyt%C3%BDk%C3%A1n%C3%AD).pdf
 
@@ -41,6 +47,16 @@ a^3+b^3&=(a+b)(a^2-ab+b^2),\\
 (a-b)^3&=a^3-3a^2b+3ab^2-b^3.
 \end{align*}
 První vztah ověř roznásobením a zrušením prostředních členů, druhý získej nahrazením $b$ číslem $-b$. Rozvoj krychle odvoď jako $(a+b)^2(a+b)$; u rozdílu opět nahraď $b$ číslem $-b$.
+
+Například při ověření prvního vzorce skutečně vzniká
+\[
+(a-b)(a^2+ab+b^2)
+=a^3+a^2b+ab^2-a^2b-ab^2-b^3=a^3-b^3.
+\]
+U třetí mocniny dvojčlenu se naopak smíšené členy nevyruší:
+člen $a^2b$ vzniká třemi volbami toho, ze které závorky vezmeme $b$,
+a stejně třikrát vznikne $ab^2$.
+Proto se rozvoj $(a+b)^3$ liší od dvoučlenného součtu $a^3+b^3$.
 
 \blok{Řešené příklady}
 

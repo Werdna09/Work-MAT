@@ -1,3 +1,8 @@
+% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
+% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
+% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010203_Racionalni_cisla_I/010203_Lekce.pdf
+% externi_zdroje/realisticky/01_Zakladni_poznatky/02_Ciselne_obory/010204_Racionalni_cisla_II/010204_Lekce.pdf
 % Rozpis a plán: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex,
 % hodina 6; SPS.pdf, oddíl 1.2. Návaznost: hodiny 05 a 07, konvence N jako v 12.
 % Učebnice: ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex,
@@ -184,6 +189,40 @@ vpravo $3+6=9$. Dělení každým sčítancem je jiná operace než dělení sou
 algebraické výrazy. Zachovej konkrétní zlomky, nech žáky porovnat oba
 postupy. Samotná shoda příkladů ilustruje obecné pravidlo, nedokazuje je.}
 
+\blok{Proč pravidla fungují i při úpravách zlomků}
+Společný jmenovatel znamená stejně velké díly. Například třetinu
+a polovinu stejného celku přepíšeme na šestiny:
+\[
+\frac13+\frac12=\frac26+\frac36=\frac{2+3}{6}=\frac56.
+\]
+Poslední krok je distributivita v opačném směru:
+$2\cdot\frac16+3\cdot\frac16=(2+3)\cdot\frac16$.
+Krácení zase používá násobení převrácenou hodnotou společného
+nenulového činitele, nikoli odstraňování sčítanců.
+Proto lze například
+$\frac{3\cdot2+3\cdot5}{3\cdot4}
+=\frac{3(2+5)}{3\cdot4}=\frac74$;
+nejprve vytkneme společný činitel z \emph{celého} čitatele.
+
+Pro celá $p,r,q,s$ s $q\ne0$, $s\ne0$ dostáváme obecně
+\begin{align*}
+\frac pq\mathbin{\pm}\frac rs&=\frac{ps\pm rq}{qs},
+&\frac pq\cdot\frac rs&=\frac{pr}{qs},\\
+\frac pq:\frac rs&=\frac pq\cdot\frac sr=\frac{ps}{qr}
+&&\text{navíc }r\ne0.
+\end{align*}
+Čitatelé i jmenovatelé výsledků jsou celí a uvedené jmenovatele
+jsou nenulové. Tím jsme zdůvodnili uzavřenost $\mathbb Q$ pro součet,
+rozdíl, součin a dělení nenulovým číslem, ne pouze ověřili několik příkladů.
+Převrácené číslo je také jediné: kdyby $ab=1$, pak násobením
+rovnosti číslem $1/a$ dostaneme $b=1/a$.
+
+\poznamka{Navazuje na Realisticky 010204, Př. 1–3: společné díly,
+odvození obecných pravidel a krácení před násobením.
+Ve třídě stačí odvodit součet a podíl; další zápisy slouží jako přehled.
+Tento rozbor nahrazuje část mechanických výpočtů V3 nebo S1,
+nepřidává se povinně k celé sadě.}
+
 \newpage
 \blok{Porovnávání bez odhadování}
 Při stejném kladném jmenovateli rozhoduje čitatel. Při různých kladných
@@ -278,8 +317,12 @@ Ověř výpočet nejprve sečtením v závorce.
 převrácenou hodnotu. Zdůvodni úplnost výčtu.
 \end{enumerate}
 \tcblower
-a) Opačné $\frac58$, převrácené $-\frac85$;
-$-\frac58+\frac58=0$, $(-\frac58)\cdot(-\frac85)=1$.
+a) Opačné číslo je $\frac{5}{8}$ a převrácené číslo je $-\frac{8}{5}$.
+Zkoušky:
+\[
+-\frac{5}{8}+\frac{5}{8}=0,\qquad
+\left(-\frac{5}{8}\right)\cdot\left(-\frac{8}{5}\right)=1.
+\]
 b) $-\frac32+1=-\frac12$; kontrola $-\frac23\cdot\frac34=-\frac12$.
 c) Právě $1$ a $-1$. Součin dvou celých čísel může být $1$ pouze jako
 $1\cdot1$ nebo $(-1)\cdot(-1)$; celočíselní dělitelé jedničky jsou jen $1$ a $-1$.
