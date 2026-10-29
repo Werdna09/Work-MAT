@@ -1,0 +1,208 @@
+% Učitelská příprava Work/MAT: 1. ročník, hodina 17 podle upraveného rozvržení bloku MNZ.
+% Nové pořadí: 12 množina, 13 podmnožiny a operace, 14 diagramy,
+% 15 vlastnosti + volitelná mohutnost, 16 intervaly, 17 slovní úlohy.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
+% (Mohutnost množiny, Množinové operace, Vennovy diagramy).
+% Vlastní projekt: původní 19_MNZ_SlovniUlohy.tex (obsahová návaznost),
+% původní 20_MNZ_OpakovaniMnozin.tex (diagnostika), nová hodina 14.
+% Realisticky.cz: 010306 Řešení slovních úloh pomocí Vennových diagramů I;
+% 010307 Řešení slovních úloh pomocí Vennových diagramů II.
+% Pozn.: přímé PDF lekcí nebylo dostupné (502); použity ověřené veřejné
+% výpisy témat a ukázkových zadání, konkrétní úlohy a řešení jsou nové.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{calc,patterns}
+\nastavPripravu{1. ročník}{Množiny}{17}{Slovní úlohy: dvě množiny}
+\begin{document}
+
+\blok{Od slovní úlohy k počtům v diagramu}
+Ve třídě se někteří žáci věnují programování, někteří robotice, někteří
+obojímu a další ani jedné činnosti. Jak poznáme, že jsme nikoho
+nezapočítali dvakrát? Vennův diagram už známe z minulé hodiny; nyní
+\emph{do jednotlivých oblastí nezapisujeme jména, ale počty lidí}.
+
+\poznamka{Základ hodiny: motivace a P1 12 min, odvození vzorce a význam slov 8 min,
+P2 8 min, S1 a)--b) s kontrolou 12 min, organizace a závěr 5 min.
+Úlohy S2, R1, R2 jsou rozšířením, nikoliv podmínkou zvládnutí hodiny.}
+\begin{definiceBox}
+\textbf{Mohutnost konečné množiny} $A$, značená $|A|$, je počet jejích
+různých prvků. Například $|\{1,2,2,3\}|=3$ a $|\varnothing|=0$.
+\end{definiceBox}
+
+V úlohách označuje $U$ všechny sledované osoby nebo předměty.
+Množiny $A,B\subseteq U$ označují dvě vlastnosti. Nezaměňuj $A\cap B$
+(množina) a $|A\cap B|$ (počet jejích prvků).
+
+\begin{prikladReseniBox}[title={P1: Dva školní kroužky}]
+V ročníku je $32$ studentů. Programování navštěvuje $18$ studentů,
+robotiku $15$ a oba kroužky $7$ studentů. Urči, kolik studentů navštěvuje:
+\textbf{a)} pouze programování; \textbf{b)} pouze robotiku;
+\textbf{c)} alespoň jeden kroužek; \textbf{d)} ani jeden.
+\tcblower
+Označme $A$ programování a $B$ robotiku. Začni společnou částí $7$:
+\[
+\begin{aligned}
+\text{pouze }A &:18-7=11, & \text{pouze }B &:15-7=8,\\
+\text{alespoň jeden} &:11+7+8=26, & \text{ani jeden} &:32-26=6.
+\end{aligned}
+\]
+\begin{center}
+\begin{tikzpicture}[scale=.88]
+\draw[thick] (-2.9,-1.7) rectangle (3,1.85);
+\draw[thick] (-.83,0) circle(1.27); \draw[thick] (.83,0) circle(1.27);
+\node at (-1.42,1.5) {$A$}; \node at (1.42,1.5) {$B$};
+\node[anchor=north east] at (2.88,1.74) {$U$};
+\node at (-1.15,0) {\Large $11$}; \node at (0,0) {\Large $7$};
+\node at (1.15,0) {\Large $8$}; \node at (2.42,-1.28) {\Large $6$};
+\node[font=\footnotesize] at (0,-2.05) {Čísla označují počty v navzájem disjunktních oblastech.};
+\end{tikzpicture}
+\end{center}
+\textbf{Kontrola:} $11+7+8+6=32$, dále $11+7=18$ a $7+8=15$.
+Nestačí ověřit jen celkový součet: ověř také počty v obou kroužcích.
+
+\textbf{Čtyřkrokový postup:} (1) vyznač základní množinu $U$,
+(2) doplň průnik, (3) dopočti oblasti \uv{jen}, (4) oblast mimo kruhy
+a zkontroluj všechny původní údaje.
+\end{prikladReseniBox}
+
+\poznamka{Před odhalením řešení požaduj čtyři oddělené oblasti.
+Typická chyba: zapsat do části \uv{jen $A$} rovnou $18$.
+Ptej se: \uv{Je student z průniku také studentem programování?}}
+
+\blok{Proč společnou část jednou odečítáme?}
+Sčítáme-li $|A|+|B|$, započítáme každý společný prvek dvakrát.
+Každý prvek ve sjednocení však máme započítat jen jednou.
+
+\begin{definiceBox}
+\textbf{Princip inkluze a exkluze pro dvě konečné množiny:}
+\[
+\boxed{|A\cup B|=|A|+|B|-|A\cap B|.}
+\]
+\end{definiceBox}
+
+Pro P1 dostáváme $18+15-7=26$. Nejde o další pravidlo, které se musí
+mechanicky naučit: vzorec plyne přímo z rozdělení na tři nepřekrývající
+se oblasti. Pokud $A\cap B=\varnothing$, nic neodečítáme.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Výraz v zadání & Jaké oblasti hledáme?\\ \midrule
+\emph{oba}, \emph{současně} & $A\cap B$\\
+\emph{alespoň jeden}, \emph{nebo} & $A\cup B$; společnou část zahrnujeme\\
+\emph{právě jeden}, \emph{pouze jeden} & jen $A$ a jen $B$; bez průniku\\
+\emph{ani jeden}, \emph{žádný} & $U\setminus(A\cup B)$\\
+\emph{nejvýše jeden} & žádný nebo právě jeden; vylučujeme průnik\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{prikladReseniBox}[title={P2: Kontrola výrobků -- neznámý překryv}]
+Kontrolor má $42$ součástek. Poškrábaný povrch má $25$ kusů,
+chybný rozměr $21$ kusů a \emph{ani jednu z těchto vad} nemá $8$ kusů.
+Urči počet se dvěma vadami, pouze s jednou vadou a právě s jednou vadou.
+\tcblower
+Alespoň jednu uvedenou vadu má $42-8=34$ součástek.
+Položme $A=$ poškrábané, $B=$ chybný rozměr. Ze vzorce:
+\[
+|A\cap B|=25+21-34=12.
+\]
+Jen povrch: $25-12=13$; jen rozměr: $21-12=9$.
+Právě jednu vadu má $13+9=22$ kusů. Obě vady má $12$ kusů.
+\textbf{Kontrola:} $13+12+9+8=42$.
+Údaj \uv{bez uvedených vad} nevylučuje jiné, v zadání nesledované vady.
+\end{prikladReseniBox}
+
+\poznamka{Nechej žáky označit všechna známá čísla ještě před počítáním.
+U P2 je první krok doplnění \uv{alespoň jedna} z údaje \uv{ani jedna}.
+Do povinného jádra patří P1, odvození vzorce a P2; náročnější úlohy jsou níže.}
+
+\blok{Samostatná práce: od údajů k odpovědím}
+\begin{zadaniReseniBox}[title={S1: dvě základní úlohy}]
+\begin{enumerate}[label=\alph*)]
+\item V $36$členné skupině používá CAD $22$ žáků, 3D tisk $19$ žáků a obojí $9$.
+Kolik používá pouze CAD, pouze 3D tisk, alespoň jedno a ani jedno?
+\item Z $54$ výrobků splňuje alespoň jednu ze dvou vlastností $45$ kusů.
+První vlastnost splňuje $28$ kusů a druhou $30$. Kolik má obě vlastnosti?
+Kolik nemá žádnou?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Jen CAD $22-9=13$, jen tisk $19-9=10$; alespoň jedno
+$13+9+10=32$, ani jedno $36-32=4$. Kontrola $13+9+10+4=36$.
+\item Obě $28+30-45=13$, žádnou $54-45=9$.
+Jen první $15$, jen druhou $17$; kontrola $15+13+17+9=54$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={S2: složitější význam slov \uv{právě} a \uv{možné}},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item V $48$členné skupině sportuje v oddílu $A$ celkem $30$ žáků,
+v oddílu $B$ celkem $26$ a \emph{právě jeden} oddíl navštěvuje $32$ žáků.
+Kolik navštěvuje oba oddíly a kolik ani jeden?
+\item Ve skupině $30$ lidí má vlastnost $A$ celkem $24$,
+vlastnost $B$ celkem $18$ a obě vlastnosti $7$. Jsou údaje možné?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Označme $x$ počet žáků v obou oddílech. Právě jeden:
+$(30-x)+(26-x)=32$, tedy $56-2x=32$ a $x=12$.
+Sjednocení má $30+26-12=44$ žáků, mimo oba jsou $48-44=4$.
+\item Sjednocení by mělo $24+18-7=35$ osob, což je více než $30$.
+Údaje jsou v rozporu; nelze je všechny splnit současně.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Pro základ vyber S1 a), b). S2 je rozšíření pro rychlejší třídu.
+Rozdíl mezi \uv{právě jeden} a \uv{alespoň jeden} není jen slovní;
+S2 b) navíc testuje smysluplnost výsledku.}
+
+
+\blok{Rozšiřující úlohy: dvě množiny a neznámé údaje}
+\poznamka{Příklady níže nejsou povinným jádrem. Mohou sloužit k diferenciaci
+nebo k dokončení doma. Úlohy se třemi množinami byly přesunuty do 18. hodiny.}
+\begin{zadaniReseniBox}[title={R1: když známe počet právě v jedné skupině}]
+Ve skupině $48$ osob je $30$ členů klubu $A$, $26$ členů klubu $B$
+a právě v jednom klubu je $32$ osob. Kolik je v obou klubech a kolik v žádném?
+\tcblower
+Označme společnou část $x$. Ve výlučných oblastech je $(30-x)$ a $(26-x)$:
+\[
+(30-x)+(26-x)=32\quad\Rightarrow\quad 56-2x=32\quad\Rightarrow\quad x=12.
+\]
+Alespoň jeden klub navštěvuje $30+26-12=44$ osob, žádný $48-44=4$.
+Kontrola oblastí: $18+12+14+4=48$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={R2: ne každé číslo v zadání je možné},breakable=false]
+Ve skupině $30$ osob má vlastnost $A$ celkem $24$,
+vlastnost $B$ celkem $18$ a obě vlastnosti má $7$ lidí.
+Mohou všechny údaje platit současně?
+\tcblower
+Nemohou. Sjednocení by obsahovalo $24+18-7=35$ osob,
+což převyšuje celkový počet $30$. Výsledek není možné vyznačit do diagramu.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení: pouze dvě množiny}
+\begin{zadaniReseniBox}[title={D1: tři situace, vždy čtyři oblasti}]
+\begin{enumerate}[label=\alph*)]
+\item Z $38$ žáků jezdí do školy na kole $21$, autobusem $18$,
+obojí využívá $8$. Urči pouze kolo, pouze autobus, alespoň jednu
+možnost a žádnou z uvedených možností.
+\item Ve skladu je $60$ výrobků; vadu $A$ má $32$, vadu $B$ má $25$,
+ani jednu nemá $15$. Kolik má obě vady a kolik právě jednu?
+\item Ve skupině $26$ osob má vlastnost $A$ $16$, vlastnost $B$ $14$
+a právě jednu z nich má $20$. Kolik osob má obě a kolik žádnou?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Jen kolo $13$, jen autobus $10$, alespoň jedna $31$, žádná $7$.
+Kontrola $13+8+10+7=38$.
+\item Alespoň jedna $60-15=45$, obě $32+25-45=12$.
+Jen $A$ $20$, jen $B$ $13$, právě jedna $33$.
+\item Pro průnik $x$ platí $(16-x)+(14-x)=20$, tedy $x=5$.
+Sjednocení $16+14-5=25$, žádná $26-25=1$.
+Jen $A$ $11$, jen $B$ $9$; kontrola $11+5+9+1=26$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\end{document}

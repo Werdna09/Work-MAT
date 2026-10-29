@@ -1,0 +1,128 @@
+% Work/MAT – nová 19. hodina: další procvičování slovních úloh.
+% Návaznost: 17 – dvě množiny; 18 – tři množiny; 20 – opakování celého bloku.
+% Zadání vlastní, podle metodiky Realisticky.cz 010306–010307 a učebnice Množiny.tex.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Množiny}{19}{Slovní úlohy: kombinované příklady}
+\begin{document}
+
+\blok{Bez vzorce to jde také: nejdřív přelož text}
+Dnes už nezavádíme nový matematický pojem. U každé úlohy si zapiš:
+\textbf{(1)} co je celá skupina $U$; \textbf{(2)} co označují
+$A,B,C$; \textbf{(3)} co znamená každá známá informace;
+\textbf{(4)} jaké počty hledáme. Nezvyklé slovní obraty převáděj na
+\emph{disjunktní oblasti} ve Vennově diagramu.
+
+\begin{zadaniReseniBox}[title={D0: rozcvička ve dvojicích},breakable=false]
+Vysvětli rozdíly mezi: \uv{oba} a \uv{alespoň jeden};
+\uv{právě dva} a \uv{alespoň dva}; \uv{nejvýše dva} a \uv{právě dva}.
+\tcblower
+U dvou množin \uv{oba} značí průnik; \uv{alespoň jeden} sjednocení.
+U tří množin \uv{právě dva} zahrnuje tři oblasti bez středu,
+\uv{alespoň dva} zahrnuje také střed. \uv{Nejvýše dva} znamená
+vše kromě středu, tedy i \emph{žádnou} nebo právě jednu vlastnost.
+\end{zadaniReseniBox}
+
+\blok{Úloha I: zadaný počet v právě jedné množině}
+\begin{prikladReseniBox}[title={P1: dvě skupiny, společná část není uvedena}]
+Ve skupině $30$ lidí se věnuje šachům $18$ a programování $17$.
+\emph{Právě jedné} z aktivit se věnuje $23$ lidí. Kolik se věnuje oběma,
+alespoň jedné a žádné?
+\tcblower
+Je-li $x$ ve společné části, jen šachy $18-x$ a jen programování $17-x$.
+\[
+(18-x)+(17-x)=23\;\Rightarrow\;35-2x=23\;\Rightarrow\;x=6.
+\]
+Jen šachy $12$, jen programování $11$; alespoň jedna $12+6+11=29$;
+žádná $30-29=1$. Kontrola $12+6=18$, $11+6=17$,
+$12+6+11+1=30$.
+\end{prikladReseniBox}
+\poznamka{Pozor na překlad \uv{právě jedné}: společný průnik do tohoto počtu
+nepatří. Nech studenty nejprve nezávisle zapsat výraz pro dvě výlučné oblasti.}
+
+\blok{Úloha II: tři množiny a neznámý střed}
+\begin{prikladReseniBox}[title={P2: dopočítání trojitého průniku}]
+Ve skupině $50$ zákazníků označují $A,B,C$ užívání tří služeb.
+Platí $|A|=27$, $|B|=25$, $|C|=22$,
+$|A\cap B|=12$, $|A\cap C|=11$, $|B\cap C|=10$.
+\emph{Žádnou} službu nevyužívá $7$ lidí. Kolik využívá všechny tři,
+právě dvě, právě jednu? Doplň diagram.
+\tcblower
+Ve sjednocení je $50-7=43$. Označme $x=|A\cap B\cap C|$.
+Z inkluze a exkluze:
+\[
+43=27+25+22-12-11-10+x=41+x\quad\Rightarrow\quad x=2.
+\]
+Právě dvě: $AB$ bez $C$: $10$, $AC$ bez $B$: $9$,
+$BC$ bez $A$: $8$ (součet $27$).
+Pouze $A$: $27-10-9-2=6$;
+pouze $B$: $25-10-8-2=5$;
+pouze $C$: $22-9-8-2=3$ (součet $14$).
+\begin{center}
+\begin{tikzpicture}[scale=.74]
+\draw[thick] (-3.05,-2.64) rectangle (3.08,2.06);
+\draw[thick] (-.85,.38) circle(1.43);\draw[thick] (.85,.38) circle(1.43);
+\draw[thick] (0,-.83) circle(1.43);
+\node at (-1.76,1.7) {$A$};\node at (1.76,1.7) {$B$};
+\node at (0,-2.4) {$C$};\node at (2.85,1.79) {$U$};
+\node at (-1.45,.59) {$6$};\node at (1.45,.59) {$5$};
+\node at (0,1.14) {$10$};\node at (-.82,-.77) {$9$};
+\node at (.82,-.77) {$8$};\node at (0,-.23) {$2$};
+\node at (0,-1.63) {$3$};\node at (2.53,-2.07) {$7$};
+\end{tikzpicture}
+\end{center}
+Kontrola: $14+27+2+7=50$;
+$6+10+9+2=27$ a obdobně pro $B,C$.
+\end{prikladReseniBox}
+
+\blok{Samostatné procvičení bez nápovědy}
+\begin{zadaniReseniBox}[title={S1: ověř všechna původní čísla}]
+\begin{enumerate}[label=\alph*)]
+\item Z $36$ studentů studuje angličtinu $24$, němčinu $18$.
+Právě jeden z jazyků studuje $20$. Kolik studuje oba, alespoň jeden a žádný?
+\item Ve třídě $32$ žáků sleduje $A$ $19$ žáků, $B$ $17$, $C$ $15$;
+$|A\cap B|=8$, $|A\cap C|=7$, $|B\cap C|=6$,
+$|A\cap B\cap C|=3$. Kolik nesleduje žádný z nich?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(24-x)+(18-x)=20$, takže $x=11$.
+Jen angličtina $13$, jen němčina $7$, alespoň jeden $31$, žádný $5$.
+Kontrola $13+11+7+5=36$.
+\item Ve sjednocení $19+17+15-8-7-6+3=33$; údaj je \textbf{nemožný},
+protože celek tvoří jen $32$ žáků. Žádný odpovídající diagram neexistuje.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Rozvržení 45 min: rozcvička 4 min; P1 10 min; P2 14 min;
+samostatná S1 a) 9 min; kontrola a případně S1 b) 6 min; závěr 2 min.
+U P2 nech rychlé řešit i diagram, u ostatních stačí přesné mezivýsledky.
+S1 b) je diagnostická úloha: výsledek může odhalit nesmyslné zadání.}
+
+\blok{Volitelná rezerva: zkontroluj uskutečnitelnost}
+\begin{zadaniReseniBox}[title={R1: co když je počet mimo záporný?},breakable=false]
+Ze $20$ lidí se zajímá o $A$ $15$, o $B$ $12$ a obě $4$.
+Může existovat popsaná skupina? Jak bys chybu vysvětlil zadavateli?
+\tcblower
+Ne. Sjednocení by mělo $15+12-4=23$ osob, a to je více než $20$.
+Počet mimo sjednocení by vyšel $20-23=-3$, což nelze vyložit jako počet lidí.
+\end{zadaniReseniBox}
+
+\blok{Domácí příprava na opakování}
+\begin{zadaniReseniBox}[title={D1: dvě a tři množiny}]
+\begin{enumerate}[label=\alph*)]
+\item Ve skupině $40$ lidí má vlastnost $A$ $22$, $B$ $20$ a právě jednu
+z těchto vlastností $24$. Urči průnik a počet bez obou.
+\item Pro tři množiny v univerzu $U$ o $40$ prvcích je
+$|A|=22$, $|B|=18$, $|C|=16$, $|A\cap B|=8$,
+$|A\cap C|=7$, $|B\cap C|=6$, $|A\cap B\cap C|=3$.
+Urči počet právě ve dvou a mimo všechny.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(22-x)+(20-x)=24$, takže $x=9$. Sjednocení $33$, mimo $7$.
+\item Právě dvě: $(8-3)+(7-3)+(6-3)=5+4+3=12$.
+Sjednocení $22+18+16-8-7-6+3=38$, mimo $40-38=2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

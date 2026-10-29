@@ -1,0 +1,292 @@
+% Work/MAT – učitelská příprava pro 1. ročník; přepracované pořadí bloku MNZ.
+% Hodina 20: Opakování množin a intervalů (přesun z původní 18). 45 minut povinného jádra;
+% všechno za oddílem "Volitelná rezerva" je nepovinné rozšíření / domácí práce.
+% Předchozí hodiny: 12 Množiny; 13 Podmnožiny a operace; 14 Vennovy diagramy;
+% 15 Vlastnosti a volitelně mohutnost; 16 Operace s intervaly;
+% 17 – dvě množiny; 18 – tři množiny; 19 – procvičení slovních úloh.
+% Vlastní zdroje: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex;
+% ucebnice/01_Zakladni_poznatky/Ciselne_obory/Číselné obory.tex
+% (oddíl Intervaly); původní příprava 20_MNZ_OpakovaniMnozin.tex
+% a přepracované přípravy 16 až 19.
+% Externí metodika: Realisticky.cz 010309 Množiny – shrnutí (doložený
+% veřejně indexovaný text: shrnout pojmy, typické chyby a užitečné postupy),
+% 010308 Intervaly; 010304 Vennovy diagramy; 010306 a 010307 slovní úlohy.
+% Konkrétní příklady a jejich řešení jsou vlastní tvorba, nikoli doslovný přepis.
+% Kontrola: úplnost výsledků, krajní body, součty v diagramech, průběh 45 minut.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\nastavPripravu{1. ročník}{Množiny}{20}{Opakování množin a intervalů}
+\begin{document}
+
+\blok{Dnes žádný nový pojem: umět poznat a opravit chybu}
+Navazujeme na množiny, Vennovy diagramy, množinové operace a intervaly.
+Cílem není znovu opsat definice, ale \textbf{samostatně zvolit postup,
+zdůvodnit výsledek a zkontrolovat jej}. Při řešení pracujeme v uvedené
+základní množině $U$; pokud není řečeno jinak, intervaly chápeme v $\mathbb R$.
+
+\poznamka{Časový rámec pro 45 minut:
+D0 (4 min), S1 (8 min), S2 (8 min), S3 (11 min), S4 (11 min),
+závěr (3 min). Součástí časů je společná kontrola. Při pomalejším tempu
+ponech S3 c) a S4 poslední otázku na domácí dokončení.
+Spodní části boxů s řešením odkrývej až po pokusu žáků.}
+
+\begin{zadaniReseniBox}[title={D0 -- Čtyři chyby na rozjezd},breakable=false]
+Rozhodni, zda jsou tvrzení správná. Chybné zápisy oprav a krátce vysvětli.
+\begin{enumerate}[label=\alph*)]
+\item $\{0\}=\varnothing$.
+\item $\{1,2\}\subseteq\{2,3\}$.
+\item $(-2;1)\cup(1;4)=(-2;4)$.
+\item $A\setminus B=B\setminus A$ pro libovolné množiny $A,B$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Ne. $\{0\}$ obsahuje jeden prvek, $\varnothing$ žádný.
+\item Ne. Číslo $1$ je v první množině, ale ne ve druhé.
+\item Ne. Bod $1$ není v žádném intervalu, proto jej nelze do sjednocení přidat.
+\item Ne. Např. pro $A=\{1,2\}$, $B=\{2\}$ je
+$A\setminus B=\{1\}$, ale $B\setminus A=\varnothing$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{1. Když se setkají výčet, vlastnost a podmnožina}
+\begin{zadaniReseniBox}[title={S1 -- Jedna úloha, několik základních pojmů}]
+Nechť $U=\{-3,-2,-1,0,1,2,3,4,5\}$,
+$A=\{x\in\mathbb Z\mid-2\le x<3\}$ a $B=\{-1,1,3\}$.
+\begin{enumerate}[label=\alph*)]
+\item Vypiš $A$. Je $B\subseteq A$? Své rozhodnutí zdůvodni.
+\item Urči $A\cap B$, $A\cup B$, $A\setminus B$ a $B\setminus A$.
+\item Urči doplněk $(A\cup B)'_U$ a počet prvků $|A\cup B|$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $A=\{-2,-1,0,1,2\}$; $B\nsubseteq A$, protože $3\in B$,
+ale $3\notin A$.
+\item $A\cap B=\{-1,1\}$; $A\cup B=\{-2,-1,0,1,2,3\}$; \\
+$A\setminus B=\{-2,0,2\}$; $B\setminus A=\{3\}$.
+\item $(A\cup B)'_U=\{-3,4,5\}$ a $|A\cup B|=6$.
+Také $|A|+|B|-|A\cap B|=5+3-2=6$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Diagnostika: odlišuj zápis $B\nsubseteq A$ od $3\notin A$.
+Pro doplněk vždy explicitně požaduj otázku \uv{Vzhledem k jakému $U$?}
+Svislé čáry v $|A|$ označují mohutnost, ne absolutní hodnotu.}
+
+\blok{Pět kontrolních otázek, které předcházejí chybám}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}lX@{}}
+\toprule
+Téma & Co zkontroluji ještě před odevzdáním?\\ \midrule
+Zadání množiny & Zvolil jsem správný číselný obor a krajní hodnoty?\\
+Podmnožina & Prověřil jsem \emph{každý} prvek, nebo mám protipříklad?\\
+Operace & Čtu správně \uv{a současně}, \uv{nebo}, \uv{ale ne}?\\
+Interval & Patří oba krajní body do výsledku? Nechybí jediný bod?\\
+Slovní úloha & Dávají součty nepřekrývajících se oblastí celý soubor?\\
+\bottomrule
+\end{tabularx}
+\end{center}
+\poznamka{Přehled je pomůcka k samostatné kontrole, nikoli další látka k opisování.}
+
+\blok{2. Z Vennova diagramu přečti každou oblast}
+\begin{zadaniReseniBox}[title={S2 -- Rozdělení prvků a složená operace},breakable=false]
+V $U=\{1,2,\ldots,10\}$ jsou $A$ sudá čísla a $B$ násobky tří.
+\begin{enumerate}[label=\alph*)]
+\item Zakresli $A$, $B$ do Vennova diagramu a vyplň všechny čtyři oblasti.
+\item Urči $(A\cup B)'_U$, $(A\setminus B)\cup(B\setminus A)$
+a počet prvků v $A\cap B$.
+\end{enumerate}
+\tcblower
+$A=\{2,4,6,8,10\}$, $B=\{3,6,9\}$.
+Jen $A$: $\{2,4,8,10\}$; obě: $\{6\}$; jen $B$: $\{3,9\}$;
+mimo obě: $\{1,5,7\}$.
+\begin{center}
+\begin{tikzpicture}[scale=.78]
+ \draw[thick] (-3.2,-1.72) rectangle (3.2,1.86);
+ \draw[thick] (-.82,0) circle(1.31);
+ \draw[thick] (.82,0) circle(1.31);
+ \node at (-1.43,1.52) {$A$}; \node at (1.43,1.52) {$B$};
+ \node[anchor=north east] at (3.03,1.7) {$U$};
+ \node[align=center] at (-1.30,0) {$2,4$\\$8,10$};
+ \node at (0,0) {$6$};
+ \node at (1.18,0) {$3,9$};
+ \node at (2.25,-1.26) {$1,5,7$};
+\end{tikzpicture}
+\end{center}
+$(A\cup B)'_U=\{1,5,7\}$;
+$(A\setminus B)\cup(B\setminus A)=\{2,3,4,8,9,10\}$;
+$|A\cap B|=1$.
+\textbf{Kontrola:} $4+1+2+3=10$; žádný prvek není dvakrát.
+\end{zadaniReseniBox}
+\poznamka{Sleduj, zda žáci nezapíšou společnou šestku do obou kruhů dvakrát.
+Požádej o slovní popis výrazu $(A\setminus B)\cup(B\setminus A)$:
+\uv{právě v jedné z obou množin}.}
+
+\blok{3. Intervaly: rozhodující jsou krajní body}
+\begin{prikladReseniBox}[title={S3a -- Překryv a odebrání části intervalu}]
+Pro $I=\langle-3;2)$ a $J=(0;5\rangle$ nakresli společnou
+číselnou osu a urči $I\cap J$, $I\cup J$, $I\setminus J$ a $J\setminus I$.
+\tcblower
+\begin{center}
+\begin{tikzpicture}[x=.84cm,y=.64cm]
+ \draw[->,thin] (-4.3,0)--(6.1,0) node[right] {$x$};
+ \foreach \x in {-3,0,2,5}{\draw (\x,.12)--(\x,-.12) node[below=3pt] {$\x$};}
+ \node[left] at (-4.25,1) {$I$};
+ \draw[line width=1.6pt] (-3,1)--(2,1);
+ \fill (-3,1) circle(2.65pt); \draw[fill=white] (2,1) circle(2.65pt);
+ \node[left] at (-4.25,2) {$J$};
+ \draw[line width=1.6pt] (0,2)--(5,2);
+ \draw[fill=white] (0,2) circle(2.65pt); \fill (5,2) circle(2.65pt);
+ \node[left] at (-4.25,3) {$I\cap J$};
+ \draw[line width=1.6pt] (0,3)--(2,3);
+ \draw[fill=white] (0,3) circle(2.65pt); \draw[fill=white] (2,3) circle(2.65pt);
+\end{tikzpicture}
+\end{center}
+\[
+\begin{aligned}
+I\cap J&=(0;2),& I\cup J&=\langle-3;5\rangle,\\
+I\setminus J&=\langle-3;0\rangle,&J\setminus I&=\langle2;5\rangle.
+\end{aligned}
+\]
+\textbf{Zkouška:} nula patří do $I$, nikoli do $J$, takže zůstává v $I\setminus J$.
+Dvojka patří do $J$, nikoli do $I$, proto je v $J\setminus I$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={S3b--c -- Dvě záludnosti bez kreslení hotového řešení}]
+\begin{enumerate}[label=\alph*),start=2]
+\item $K=(-2;1\rangle$, $L=(1;4)$. Urči $K\cap L$ a $K\cup L$.
+Vysvětli, proč může sjednocení tvořit jeden interval i při prázdném průniku.
+\item $M=(-2;1)$, $N=(1;4)$. Urči $M\cap N$, $M\cup N$.
+Které jediné číslo brání sloučení do jednoho intervalu?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),start=2]
+\item $K\cap L=\varnothing$ a $K\cup L=(-2;4)$.
+Bod $1$ leží v $K$; čísla větší než $1$ leží v $L$.
+Mezi $-2$ a $4$ proto ve sjednocení nic nechybí.
+\item $M\cap N=\varnothing$, ale $M\cup N=(-2;1)\cup(1;4)$.
+Číslo $1$ není v žádné množině; nelze je do výsledku doplnit.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{4. Slovní úloha: od textu k počtům}
+\begin{prikladReseniBox}[title={S4 -- Dva školní kroužky a neznámý průnik},breakable=false]
+Ve skupině $30$ studentů navštěvuje matematický seminář $17$,
+programátorský kroužek $15$ a \emph{ani jeden} z nich $6$ studentů.
+Urči: a) počet v obou skupinách; b) pouze v první; c) pouze ve druhé;
+d) počet navštěvujících \emph{právě jeden} a \emph{nejvýše jeden} kroužek.
+Sestav Vennův diagram s počty a ověř všechny údaje.
+\tcblower
+Označme $A$ seminář, $B$ programování.
+Alespoň jeden navštěvuje $30-6=24$ studentů.
+\[
+|A\cap B|=|A|+|B|-|A\cup B|=17+15-24=8.
+\]
+Pouze seminář $17-8=9$, pouze programování $15-8=7$.
+Právě jeden: $9+7=16$; nejvýše jeden: $9+7+6=22$.
+\begin{center}
+\begin{tikzpicture}[scale=.79]
+ \draw[thick] (-2.7,-1.52) rectangle (2.9,1.63);
+ \draw[thick] (-.8,0) circle(1.2); \draw[thick] (.8,0) circle(1.2);
+ \node at (-1.35,1.4) {$A$}; \node at (1.35,1.4) {$B$};
+ \node[anchor=north east] at (2.75,1.5) {$U$};
+ \node at (-1.1,0) {\Large $9$}; \node at (0,0) {\Large $8$};
+ \node at (1.12,0) {\Large $7$}; \node at (2.32,-1.13) {\Large $6$};
+\end{tikzpicture}
+\end{center}
+Kontrola: $9+8+7+6=30$, $9+8=17$, $8+7=15$.
+\end{prikladReseniBox}
+
+\textbf{Výstupní lístek (3 min):} Napiš jednu věc, kterou vždy
+kontroluješ u \emph{intervalů}, a jednu u \emph{slovních úloh na množiny}.
+Přidej vlastní krátký příklad rozdílu množin.
+
+\poznamka{Očekávej např. kontrolu zahrnutí krajních bodů a kontrolu
+součtu disjunktních oblastí s celkovým počtem. Výstupní lístek ukáže,
+co je třeba ještě procvičit. Tím končí povinné 45minutové jádro.}
+
+\blok{Volitelná rezerva: tři množiny a výraz se závorkami}
+Tato část \textbf{nepatří do 45minutového jádra}. Můžeš ji vybrat pro rychlejší
+žáky, dobrovolný domácí úkol nebo další procvičovací hodinu.
+
+\begin{prikladReseniBox}[title={R1 -- Osm oblastí tří množin}]
+Ve skupině $40$ lidí platí $|A|=22$, $|B|=18$, $|C|=16$,
+$|A\cap B|=8$, $|A\cap C|=7$, $|B\cap C|=6$ a
+$|A\cap B\cap C|=3$. Vypočti všech osm oblastí diagramu,
+počet v právě dvou skupinách a počet mimo všechny.
+\tcblower
+Nejprve společný střed: $3$.
+Přesně dvě skupiny: $AB$ bez $C$: $8-3=5$;
+$AC$ bez $B$: $7-3=4$; $BC$ bez $A$: $6-3=3$.
+Pouze $A$: $22-5-4-3=10$;
+pouze $B$: $18-5-3-3=7$;
+pouze $C$: $16-4-3-3=6$.
+\begin{center}
+\begin{tikzpicture}[scale=.84]
+ \draw[thick] (-2.95,-2.57) rectangle (3.02,2.05);
+ \draw[thick] (-.82,.37) circle(1.4);
+ \draw[thick] (.82,.37) circle(1.4);
+ \draw[thick] (0,-.79) circle(1.4);
+ \node at (-1.72,1.67) {$A$}; \node at (1.72,1.67) {$B$};
+ \node at (0,-2.39) {$C$}; \node[anchor=north east] at (2.9,1.95) {$U$};
+ \node at (-1.4,.64) {$10$}; \node at (1.4,.64) {$7$};
+ \node at (0,1.17) {$5$}; \node at (-.76,-.77) {$4$};
+ \node at (.76,-.77) {$3$}; \node at (0,-.17) {$3$};
+ \node at (0,-1.64) {$6$}; \node at (2.52,-2.03) {$2$};
+\end{tikzpicture}
+\end{center}
+Právě ve dvou: $5+4+3=12$.
+Ve sjednocení: $10+7+6+5+4+3+3=38$;
+mimo všechny $40-38=2$.
+\textbf{Kontrola:} $10+7+6+5+4+3+3+2=40$ a
+$|A\cap B|=5+3=8$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={R2 -- Intervaly kombinované se závorkami}]
+Pro $I=(-\infty;3\rangle$, $J=\langle-1;5)$,
+$K=(2;+\infty)$ urči $(I\cap J)\setminus K$ a $I\setminus(J\cup K)$.
+\tcblower
+$I\cap J=\langle-1;3\rangle$, proto
+$(I\cap J)\setminus K=\langle-1;2\rangle$.
+$J\cup K=\langle-1;+\infty)$, proto
+$I\setminus(J\cup K)=(-\infty;-1)$.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení před testem}
+\begin{zadaniReseniBox}[title={D1 -- Zopakuj různé typy příkladů}]
+\begin{enumerate}[label=\arabic*)]
+\item Pro $U=\{0,1,\ldots,10\}$, $A=\{0,2,4,6,8,10\}$,
+$B=\{3,6,9\}$ vypočti $A\cap B$, $A\setminus B$ a $(A\cup B)'_U$.
+\item Urči průnik, sjednocení a oba rozdíly pro
+$I=(-4;2\rangle$, $J=\langle2;6)$.
+\item Rozhodni, zda $(-2;1)\cup(1;4)$ je interval.
+Vysvětli, zda do něj patří $1$ a zda do něj patří $1{,}5$.
+\item Ze $36$ studentů hraje šachy $20$, volejbal $17$ a ani jednu
+z těchto aktivit nedělá $7$. Kolik se věnuje oběma aktivitám,
+právě jedné a nejvýše jedné? Nakresli diagram.
+\item Proč nelze bez určení základní množiny jednoznačně zapsat $A'$?
+Uveď dva různé doplňky téže množiny $A=\{1,2\}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\arabic*)]
+\item $A\cap B=\{6\}$;
+$A\setminus B=\{0,2,4,8,10\}$;
+$(A\cup B)'_U=\{1,5,7\}$.
+\item $I\cap J=\{2\}$;
+$I\cup J=(-4;6)$;
+$I\setminus J=(-4;2)$;
+$J\setminus I=(2;6)$.
+\item Není; číslo $1$ chybí, ačkoli $1{,}5$ do druhého intervalu patří.
+\item Alespoň jedna aktivita: $36-7=29$. Obě: $20+17-29=8$.
+Pouze šachy $12$, pouze volejbal $9$, právě jedna $21$,
+nejvýše jedna $21+7=28$. Kontrola $12+8+9+7=36$.
+\item Např. v $U_1=\{1,2\}$ je $A'_{U_1}=\varnothing$,
+v $U_2=\{1,2,3\}$ je $A'_{U_2}=\{3\}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Připomenutí pro další hodinu: Nejčastější chyby jsou
+zaměnění $\in$ a $\subseteq$, opomenutí základní množiny u doplňku,
+nesprávné závorky v krajních bodech a dvojí započtení průniku.
+Příští hodinu následuje dvacetiminutový test z množin a poté úvod do sinu a kosinu.}
+\end{document}

@@ -1,0 +1,138 @@
+% Work/MAT – přepracovaná 18. hodina. Pouze slovní úlohy se třemi množinami.
+% Návaznost na 17_MNZ_SlovniUlohyDveMnoziny a 14_MNZ_VennovyDiagramy.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex;
+% Realisticky.cz 010306 a 010307: didaktická inspirace (veřejné indexované ukázky).
+% Konkrétní zadání a číselné údaje jsou vlastní; lokální PDF lekcí neověřena.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Množiny}{18}{Slovní úlohy: tři množiny}
+\begin{document}
+
+\blok{Od čtyř oblastí k osmi}
+V minulé hodině jsme rozlišovali dvě vlastnosti. Se třetí vlastností
+má každý prvek jednu z \textbf{osmi možných kombinací} příslušnosti.
+Na rozdíl od výčtu prvků dnes do oblastí píšeme \emph{počty}.
+Nezačínej u součtů: \textbf{první doplň střed, potom právě dvě oblasti,
+právě jednu a nakonec žádnou.}
+
+\begin{definiceBox}
+Pro konečné množiny $A,B,C$ znamená $|A\cap B\cap C|$ počet prvků
+patřících \textbf{do všech tří}. Naproti tomu $|A\cap B|$ zahrnuje také
+prvky, které současně patří do $C$.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={P1: tři zájmové oblasti – úplný diagram}]
+Ve skupině $40$ lidí se zajímá o robotiku $23$, programování $21$
+a elektroniku $17$. O robotiku a programování se zajímá $10$,
+o robotiku a elektroniku $9$, o programování a elektroniku $8$.
+Všechny tři zájmy má $4$ lidí. Urči počty v \emph{osmi oblastech},
+počet s \emph{právě dvěma}, \emph{alespoň dvěma} a bez zájmu.
+\tcblower
+Označme uvedené zájmy $A,B,C$. Nejprve střed $4$.
+Právě dvě: $AB$ bez $C$: $10-4=6$;
+$AC$ bez $B$: $9-4=5$; $BC$ bez $A$: $8-4=4$.
+\[
+\begin{aligned}
+\text{jen }A&=23-6-5-4=8,\\
+\text{jen }B&=21-6-4-4=7,\\
+\text{jen }C&=17-5-4-4=4.
+\end{aligned}
+\]
+\begin{center}
+\begin{tikzpicture}[scale=.82]
+\draw[thick] (-3.06,-2.62) rectangle (3.1,2.04);
+\draw[thick] (-.85,.38) circle(1.43);
+\draw[thick] (.85,.38) circle(1.43);
+\draw[thick] (0,-.83) circle(1.43);
+\node at (-1.8,1.72) {$A$};\node at (1.8,1.72) {$B$};
+\node at (0,-2.4) {$C$};\node at (2.83,1.78) {$U$};
+\node at (-1.45,.59) {$8$};\node at (1.45,.59) {$7$};
+\node at (0,1.12) {$6$};\node at (-.82,-.79) {$5$};
+\node at (.82,-.79) {$4$};\node at (0,-.23) {$4$};
+\node at (0,-1.63) {$4$};\node at (2.55,-2.09) {$2$};
+\end{tikzpicture}
+\end{center}
+Právě dva zájmy: $6+5+4=15$; alespoň dva: $15+4=19$.
+Alespoň jeden: $8+7+4+6+5+4+4=38$; žádný $40-38=2$.
+\textbf{Kontrola:} $8+7+4+6+5+4+4+2=40$,
+$8+6+5+4=23$ pro skupinu $A$, analogicky pro $B,C$.
+\end{prikladReseniBox}
+
+\poznamka{P1 veď společně a na tabuli doplňuj oblasti po etapách.
+Žáci při každé etapě počítají sami, ne pouze opisují. Na P1 vyhraď
+asi 16–18 minut; kresbu lze předkreslit před začátkem hodiny.}
+
+\blok{Proč musíme společný střed zase přičíst?}
+\begin{definiceBox}
+\textbf{Inkluze a exkluze pro tři konečné množiny:}
+\[
+\begin{aligned}
+|A\cup B\cup C|={}&|A|+|B|+|C|\\
+&-|A\cap B|-|A\cap C|-|B\cap C|+|A\cap B\cap C|.
+\end{aligned}
+\]
+\end{definiceBox}
+Součtem $|A|+|B|+|C|$ je střed započten třikrát; odečtením
+párových průniků ho zase třikrát odebereme, proto ho jednou vracíme.
+V P1 tak $23+21+17-10-9-8+4=38$.
+\poznamka{Vzorec je zkratka a kontrola diagramu, nikoliv náhrada jeho vyplnění.
+Pro první seznámení stačí slovní odůvodnění a porovnání s P1.}
+
+\blok{Samostatné procvičení: další situace}
+\begin{zadaniReseniBox}[title={S1: tři druhy vad výrobků}]
+V sérii $45$ výrobků bylo zjištěno $24$ s vadou $A$, $22$ s vadou $B$
+a $19$ s vadou $C$. Vady $A$ i $B$ má $10$ výrobků,
+$A$ i $C$ má $9$, $B$ i $C$ má $8$; všechny tři vady mají $4$ výrobky.
+Urči všech osm oblastí, počet výrobků s právě dvěma vadami a počet
+bez těchto tří vad. Ověř výsledek druhým způsobem.
+\tcblower
+Střed $4$; právě dva typy vad: $AB$ pouze $6$, $AC$ pouze $5$,
+$BC$ pouze $4$. Pouze $A$: $24-6-5-4=9$;
+pouze $B$: $22-6-4-4=8$; pouze $C$: $19-5-4-4=6$.
+Sjednocení $9+8+6+6+5+4+4=42$; bez těchto vad $45-42=3$.
+Právě dvě vady $6+5+4=15$.
+Kontrola vzorcem: $24+22+19-10-9-8+4=42$.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={S2: od celku k jednotlivým oblastem},breakable=false]
+V $48$členné skupině platí $|A|=24$, $|B|=21$, $|C|=18$,
+$|A\cap B|=10$, $|A\cap C|=8$, $|B\cap C|=7$
+a $|A\cap B\cap C|=3$. Kolik lidí není v žádné skupině?
+Kolik je právě v jedné a právě ve dvou?
+\tcblower
+Jen $AB$ $7$, jen $AC$ $5$, jen $BC$ $4$; pouze $A$ $9$,
+pouze $B$ $7$, pouze $C$ $6$, střed $3$.
+Právě v jedné: $9+7+6=22$; právě ve dvou $7+5+4=16$.
+Ve sjednocení $22+16+3=41$, žádná $48-41=7$.
+\end{zadaniReseniBox}
+\poznamka{Jádro: 4 min návrat ke čtyřem oblastem, 17 min P1,
+6 min odvození vzorce, 13 min samostatná S1, 5 min kontrola a závěr.
+S2 je rezerva nebo domácí dokončení. Celkem 45 minut.}
+
+\blok{Volitelná rezerva: slovní významy}
+\begin{zadaniReseniBox}[title={R1: nejvýše dvě skupiny},breakable=false]
+Pro S1 vypočti, kolik výrobků má nejvýše dvě z uvedených vad
+a kolik alespoň jednu. Mohou dvě párové oblasti být stejné?
+\tcblower
+Nejvýše dvě vady: $45-4=41$; alespoň jednu $42$.
+Stejné počty v různých oblastech být mohou, i když jde o různé výrobky.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: diagram vždy od středu}]
+Ve skupině $36$ osob má vlastnost $A$ $20$ lidí, $B$ $18$, $C$ $16$;
+$|A\cap B|=9$, $|A\cap C|=8$, $|B\cap C|=7$ a
+$|A\cap B\cap C|=4$.
+\begin{enumerate}[label=\alph*)]
+\item Vyplň osm oblastí diagramu.
+\item Kolik lidí má právě dvě vlastnosti a kolik alespoň dvě?
+\item Kolik lidí nemá žádnou z vlastností? Ověř vzorcem.
+\end{enumerate}
+\tcblower
+Střed $4$, $AB$ bez $C$ $5$, $AC$ bez $B$ $4$, $BC$ bez $A$ $3$;
+pouze $A$ $7$, pouze $B$ $6$, pouze $C$ $5$, mimo všechny $2$.
+Právě dvě: $12$, alespoň dvě: $16$.
+Ve sjednocení $20+18+16-9-8-7+4=34$, mimo všechny $36-34=2$.
+\end{zadaniReseniBox}
+\end{document}

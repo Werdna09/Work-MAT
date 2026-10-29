@@ -1,0 +1,310 @@
+% Work/MAT -- přepracovaná hodina 16: Operace s intervaly.
+% Upravený plán bloku: 12 Množina, 13 Podmnožiny a operace,
+% 14 Vennovy diagramy, 15 Vlastnosti operací, 16 Operace s intervaly,
+% 17 Slovní úlohy. Původní rozpis má toto učivo v hodině 18;
+% před definitivním nasazením je třeba upravit ročníkový rozpis.
+% Hlavní zdroje: ucebnice/01_Zakladni_poznatky/
+% Ciselne_obory/Číselné obory.tex (Intervaly);
+% Mnoziny/Množiny.tex (Množinové operace).
+% Návaznost na 1_rocnik/pripravy/08_CIS_Intervaly.tex a
+% 18_MNZ_OperaceSIntervaly.tex (původní lekce).
+% Metodická inspirace: Realisticky.cz, 010308 Intervaly,
+% zejména hraniční případy dotýkajících se intervalů a práce na ose;
+% https://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/
+% 01%20Z%C3%A1kladn%C3%AD%20poznatky/03%20Mno%C5%BEiny/08%20Intervaly.pdf
+% Příklady a grafy nově sestavené; nejsou doslovnými přepisy sbírky.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta,calc}
+\nastavPripravu{1. ročník}{Množiny}{16}{Operace s intervaly}
+
+% Pomocné kreslicí prvky černobílých číselných os.
+\newcommand{\plny}[2]{\fill[black] (#1,#2) circle (2.65pt);}
+\newcommand{\prazdny}[2]{\draw[thick,fill=white] (#1,#2) circle (2.65pt);}
+\newcommand{\pruh}[3]{\draw[line width=1.55pt] (#1,#3)--(#2,#3);}
+\newcommand{\popisek}[2]{\node[anchor=east] at (#1,#2) {\small};}
+\newcommand{\osacisla}[2]{%
+  \draw[-{Latex[length=2mm]},thin] (#1-.36,0)--(#2+.45,0) node[right] {$x$};%
+  \foreach \t in {#1,...,#2}{\draw (\t,.075)--(\t,-.075) node[below=3pt,font=\scriptsize] {$\t$};}%
+}
+\begin{document}
+
+\blok{Zpátky na číselnou osu: co mají dvě podmínky společného?}
+Na 8. hodině jsme zavedli intervaly, na 13. hodině operace s množinami.
+Nyní obojí propojíme: \textbf{interval je množina reálných čísel}.
+Průnik proto znamená \uv{splň obě podmínky}, sjednocení \uv{splň alespoň jednu},
+rozdíl \uv{splň první, ale ne druhou}.
+
+\begin{definiceBox}
+Pro intervaly $A,B\subseteq\mathbb R$ platí stejné množinové definice:
+\[
+\begin{aligned}
+A\cap B&=\{x\in\mathbb R\mid x\in A\ \land\ x\in B\},\\[-1mm]
+A\cup B&=\{x\in\mathbb R\mid x\in A\ \lor\ x\in B\},\\[-1mm]
+A\setminus B&=\{x\in\mathbb R\mid x\in A\ \land\ x\notin B\}.
+\end{aligned}
+\]
+\end{definiceBox}
+\poznamka{Definice jsou připomenutím, nikoli novým výkladem z 13. hodiny.
+Na tabuli nejprve nech žáky odhadnout, zda výsledek bude jeden interval,
+jediný bod, prázdná množina, nebo sjednocení více intervalů.}
+
+\blok{Průnik a sjednocení překrývajících se intervalů}
+\begin{prikladReseniBox}[title={P1: jedna osa, čtyři řádky}]
+Nechť $A=\langle-3;2)$ a $B=(0;5\rangle$. Urči $A\cap B$ a $A\cup B$.
+Vyznač oba vstupní intervaly i výsledky na číselné ose.
+\tcblower
+\begin{center}
+\begin{tikzpicture}[x=.91cm,y=.66cm]
+  \osacisla{-4}{6}
+  \node[left] at (-4.45,3.65) {$A$}; \pruh{-3}{2}{3.65} \plny{-3}{3.65} \prazdny{2}{3.65}
+  \node[left] at (-4.45,2.60) {$B$}; \pruh{0}{5}{2.60} \prazdny{0}{2.60} \plny{5}{2.60}
+  \node[left] at (-4.45,1.55) {$A\cap B$}; \pruh{0}{2}{1.55} \prazdny{0}{1.55} \prazdny{2}{1.55}
+  \node[left] at (-4.45,.50) {$A\cup B$}; \pruh{-3}{5}{.50} \plny{-3}{.50} \plny{5}{.50}
+\end{tikzpicture}
+\end{center}
+\[
+\boxed{A\cap B=(0;2)},\qquad
+\boxed{A\cup B=\langle-3;5\rangle}.
+\]
+U průniku musí číslo ležet v \emph{obou} intervalech:
+$0$ je vyloučené z $B$ a $2$ z $A$.
+U sjednocení mezi $-3$ a $5$ žádný bod nechybí;
+oba vnější kraje patří alespoň do jedné množiny.
+\end{prikladReseniBox}
+
+\poznamka{Nech žáky před zobrazením řešení jednotlivě otestovat
+$-3$, $0$, $2$ a $5$. Pouhé porovnání čtyř krajních čísel nestačí:
+rozhodují i otevřené či uzavřené konce.}
+
+\begin{zadaniReseniBox}[title={Volitelná diagnostika P1: příslušnost konkrétních čísel},breakable=false]
+Předcházející výsledek ověř pro čísla $-3,0,1,2,5$.
+Rozhodni, zda leží v $A$, $B$, v jejich průniku a ve sjednocení.
+\tcblower
+\begin{center}
+\begin{tabular}{c|ccccc}
+\toprule
+$x$ & $-3$ & $0$ & $1$ & $2$ & $5$\\\midrule
+$x\in A$ & ano & ano & ano & ne & ne\\
+$x\in B$ & ne & ne & ano & ano & ano\\
+$x\in A\cap B$ & ne & ne & ano & ne & ne\\
+$x\in A\cup B$ & ano & ano & ano & ano & ano\\
+\bottomrule
+\end{tabular}
+\end{center}
+Průnik vyžaduje dvě odpovědi \uv{ano}, sjednocení alespoň jednu.
+\end{zadaniReseniBox}
+
+\blok{Tři typy dotyku: bod, díra, navazující interval}
+\begin{prikladReseniBox}[title={P2: jediná změna závorky změní výsledek},breakable=false]
+Porovnej následující tři dvojice. V každé urči průnik a sjednocení:
+\begin{enumerate}[label=\alph*)]
+\item $C=(-2;1\rangle$, $D=\langle1;4)$;
+\item $E=(-2;1)$, $F=(1;4)$;
+\item $G=(-2;1)$, $H=\langle1;4)$.
+\end{enumerate}
+\tcblower
+\begin{center}
+\begin{tikzpicture}[x=.94cm,y=.62cm]
+\osacisla{-3}{5}
+\node[left] at (-3.5,3.9) {a)};
+\pruh{-2}{1}{3.9} \prazdny{-2}{3.9} \plny{1}{3.9}
+\pruh{1}{4}{3.35} \plny{1}{3.35} \prazdny{4}{3.35}
+\node[left] at (-3.5,2.55) {b)};
+\pruh{-2}{1}{2.55} \prazdny{-2}{2.55} \prazdny{1}{2.55}
+\pruh{1}{4}{2.00} \prazdny{1}{2.00} \prazdny{4}{2.00}
+\node[left] at (-3.5,1.22) {c)};
+\pruh{-2}{1}{1.22} \prazdny{-2}{1.22} \prazdny{1}{1.22}
+\pruh{1}{4}{.67} \plny{1}{.67} \prazdny{4}{.67}
+\end{tikzpicture}
+\end{center}
+\begin{align*}
+\text{a)}\quad &C\cap D=\{1\}, & C\cup D&=(-2;4),\\
+\text{b)}\quad &E\cap F=\varnothing, & E\cup F&=(-2;1)\cup(1;4),\\
+\text{c)}\quad &G\cap H=\varnothing, & G\cup H&=(-2;4).
+\end{align*}
+\textbf{Pozor:} v c) je průnik prázdný, ale sjednocení tvoří jeden interval,
+protože bod $1$ obsahuje $H$. V b) bod $1$ chybí v obou intervalech.
+V a) je průnik jednoprvková množina $\{1\}$, nikoli samotné číslo $1$.
+\end{prikladReseniBox}
+
+\blok{Rozdíl: nezapomeň, že záleží na pořadí}
+\begin{prikladReseniBox}[title={P3: odebrání prostřední části}]
+Pro $A=\langle-2;4)$ a $B=(1;6\rangle$ vypočti oba rozdíly.
+\tcblower
+\begin{center}
+\begin{tikzpicture}[x=.91cm,y=.64cm]
+\osacisla{-3}{7}
+\node[left] at (-3.48,3.55) {$A$}; \pruh{-2}{4}{3.55} \plny{-2}{3.55} \prazdny{4}{3.55}
+\node[left] at (-3.48,2.60) {$B$}; \pruh{1}{6}{2.60} \prazdny{1}{2.60} \plny{6}{2.60}
+\node[left] at (-3.48,1.65) {$A\setminus B$}; \pruh{-2}{1}{1.65} \plny{-2}{1.65} \plny{1}{1.65}
+\node[left] at (-3.48,.70) {$B\setminus A$}; \pruh{4}{6}{.70} \plny{4}{.70} \plny{6}{.70}
+\end{tikzpicture}
+\end{center}
+\[
+\boxed{A\setminus B=\langle-2;1\rangle},\qquad
+\boxed{B\setminus A=\langle4;6\rangle}.
+\]
+Jednička zůstává v prvním rozdílu, protože není v $B$.
+Čtyřka patří do druhého rozdílu, protože není v $A$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={P3b: když odebereme vnitřní interval},breakable=false]
+Co zbude z $K=\langle-3;5\rangle$, odebereme-li $L=(0;2)$?
+\tcblower
+\[
+\boxed{K\setminus L=\langle-3;0\rangle\cup\langle2;5\rangle}.
+\]
+Odebrali jsme všechna čísla \emph{mezi} $0$ a $2$.
+Oba krajní body $0$ a $2$ však v $L$ nejsou, a proto zůstávají v $K$.
+Výsledkem rozdílu nemusí být jediný interval.
+\end{prikladReseniBox}
+\poznamka{P3b je volitelné doplnění k P3. Typická chyba: označení
+$0$ a $2$ za vymazané body, přestože odebíraná množina je otevřená.}
+
+\blok{Doplněk v $\mathbb R$: co na ose zůstalo mimo interval?}
+\begin{definiceBox}
+\textbf{Doplněk intervalu} $I$ vzhledem k $\mathbb R$
+je $I'_{\mathbb R}=\mathbb R\setminus I$.
+Obecně závisí doplněk na zvolené základní množině.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={P4: dvě neomezené části},breakable=false]
+Urči doplněk intervalu $I=(-1;3\rangle$ vzhledem k $\mathbb R$.
+\tcblower
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=.65cm]
+\osacisla{-5}{6}
+\node[left] at (-5.5,2.05) {$I$}; \pruh{-1}{3}{2.05} \prazdny{-1}{2.05} \plny{3}{2.05}
+\node[left] at (-5.5,.75) {$I'_{\mathbb R}$};
+\draw[-{Latex[length=2mm]},line width=1.55pt] (-1,.75)--(-5.05,.75);
+\plny{-1}{.75}
+\draw[-{Latex[length=2mm]},line width=1.55pt] (3,.75)--(5.95,.75);
+\prazdny{3}{.75}
+\end{tikzpicture}
+\end{center}
+\[
+\boxed{I'_{\mathbb R}=(-\infty;-1\rangle\cup(3;+\infty)}.
+\]
+Číslo $-1$ do $I$ nepatří, proto je v doplňku.
+Číslo $3$ v $I$ je, proto v doplňku není.
+\end{prikladReseniBox}
+\poznamka{V povinném jádru stačí P1, P2 (a, b, c stručně), P3 nebo P4
+podle tempa a tři samostatné položky S1. Nezkoušej během 45 minut
+vyčerpat celý dokument; ostatní příklady tvoří připravenou rezervu.}
+
+\blok{Samostatná práce: od obrázku ke správným závorkám}
+\begin{zadaniReseniBox}[title={S1: určuj $\cap$ a $\cup$, vždy nakresli osu}]
+\begin{enumerate}[label=\alph*)]
+\item $A=(-\infty;2\rangle$, $B=(-1;4)$.
+\item $A=\langle0;3\rangle$, $B=(3;7\rangle$.
+\item $A=(-3;0)$, $B=\langle1;4)$.
+\item $A=\langle-2;5)$, $B=\langle0;3\rangle$.
+\item $A=(-\infty;0)$, $B=\langle0;+\infty)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $A\cap B=(-1;2\rangle$, $A\cup B=(-\infty;4)$.
+\item $A\cap B=\varnothing$, $A\cup B=\langle0;7\rangle$.
+Bod $3$ ve sjednocení je, protože patří do $A$.
+\item $A\cap B=\varnothing$, $A\cup B=(-3;0)\cup\langle1;4)$.
+Mezi $0$ a $1$ je skutečná mezera.
+\item $A\cap B=\langle0;3\rangle$, $A\cup B=\langle-2;5)$.
+Celé $B$ leží v $A$.
+\item $A\cap B=\varnothing$, $A\cup B=\mathbb R$;
+$0$ obsahuje pouze $B$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={S2: rozdíl a doplněk}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $A=\langle-3;5\rangle$, $B=(0;2)$ vypočti $A\setminus B$.
+\item Urči doplněk $\langle2;6)$ v $\mathbb R$.
+\item Urči $(\langle-1;4\rangle\setminus\langle1;3))\cap(-\infty;2)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\langle-3;0\rangle\cup\langle2;5\rangle$:
+nula ani dvojka do $B$ nepatří, takže obě zůstávají.
+\item $(-\infty;2)\cup\langle6;+\infty)$.
+\item Nejprve $\langle-1;1)\cup\langle3;4\rangle$, potom průnik
+s $(-\infty;2)$ dává $\langle-1;1)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Volitelná rezerva: složitější případy a kontrola oboru}
+\begin{zadaniReseniBox}[title={R1: tři množiny a celá čísla}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $A=(-\infty;3)$, $B=\langle-1;5\rangle$, $C=(1;+\infty)$
+urči $(A\cap B)\cap C$ a $(A\cup B)\cap C$.
+\item Urči $\langle-2;3)\cap\mathbb Z$ a $\langle-2;3)\cap\mathbb N$.
+Je první výsledek reálný interval?
+\item Rozhodni, zda platí
+$\bigl((-\infty;2)\cup\langle2;+\infty)\bigr)=\mathbb R$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $A\cap B=\langle-1;3)$, tedy $(A\cap B)\cap C=(1;3)$.
+Dále $A\cup B=(-\infty;5\rangle$, tedy $(A\cup B)\cap C=(1;5\rangle$.
+\item $\{-2,-1,0,1,2\}$ a $\{1,2\}$ při $\mathbb N=\{1,2,\ldots\}$.
+Nejde o interval v $\mathbb R$, protože mezi vypsanými čísly chybí necelá čísla.
+\item Ano: číslo $2$ patří do pravého intervalu, menší čísla do levého,
+větší také do pravého.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={R2: vzdálenost na ose -- bonus},breakable=false]
+Čísla vzdálená od $2$ nejvýše o $3$ tvoří množinu $M$.
+Zapiš $M$ intervalem a spočti $M\setminus(0;3)$.
+\tcblower
+Jde o $|x-2|\le3$, tedy $M=\langle-1;5\rangle$.
+Po vyjmutí otevřeného intervalu $(0;3)$ zůstane
+$\langle-1;0\rangle\cup\langle3;5\rangle$.
+Bod $0$ i $3$ zůstávají, protože je nevyjímáme.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={D1: postupné ztížení, 15--20 minut}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $A=(-4;2\rangle$, $B=\langle-1;6)$ určuj $A\cap B$, $A\cup B$, $A\setminus B$.
+\item Urči průnik a sjednocení intervalů $(-\infty;-1)$ a $(-1;+\infty)$.
+\item Pro $A=\langle2;4\rangle$, $B=\langle4;7\rangle$ vypočti $A\cap B$ a $A\cup B$.
+\item Pro $I=(-2;3\rangle$ urči $I\cap\mathbb Z$ a $I'_{\mathbb R}$.
+\item Pro $A=\langle-2;2\rangle$, $B=(0;5)$ a $C=\langle1;3\rangle$
+vypočti $(A\cup B)\cap C$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\langle-1;2\rangle$, $(-4;6)$, $(-4;-1)$.
+\item $\varnothing$; $(-\infty;-1)\cup(-1;+\infty)=\mathbb R\setminus\{-1\}$.
+\item $\{4\}$; $\langle2;7\rangle$.
+\item $\{-1,0,1,2,3\}$;
+$(-\infty;-2\rangle\cup(3;+\infty)$.
+\item $A\cup B=\langle-2;5)$, po průniku s $C$ dostaneme $\langle1;3\rangle$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Doporučené 45minutové jádro včetně organizace:
+3 min aktivace znalostí, 9 min P1, 9 min P2, 8 min vybraný P3 nebo P4,
+12 min S1 (a--c) se společnou kontrolou, 4 min shrnutí a domácí práce.
+Samostatné S1 d), e), S2 i rezerva jsou volitelná nabídka.
+U každého chybného řešení se vrať ke konkrétnímu krajnímu bodu a ověř jeho příslušnost.}
+
+\blok{Volitelná příloha: prázdné osy pro tabuli a vlastní kontrolu}
+\poznamka{Předlohy lze promítat nebo využít pro rychlou kontrolu řešení.
+Nejde o další povinné zadání. Nech žáka zakreslit $A$, $B$ a výsledek
+ve třech řádcích a vysvětlit zahrnutí každého kritického bodu.}
+\begin{center}
+\begin{tikzpicture}[x=.99cm,y=.7cm]
+  \foreach \h/\lab in {2.4/A,1.2/B,0/{Výsledek}}{
+    \node[anchor=east] at (-4.45,\h) {$\lab$};
+    \draw[-{Latex[length=1.7mm]},thin] (-4.15,\h)--(6.25,\h);
+    \foreach \x in {-3,-2,-1,0,1,2,3,4,5}{
+      \draw (\x,\h-.07)--(\x,\h+.07);
+      \node[below=3pt,font=\tiny] at (\x,\h) {$\x$};
+    }
+  }
+\end{tikzpicture}
+\end{center}
+
+\end{document}

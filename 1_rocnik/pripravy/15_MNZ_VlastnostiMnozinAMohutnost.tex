@@ -1,0 +1,489 @@
+% Work/MAT — přepracovaná hodina 15: Vlastnosti množinových operací.
+% Pozor: nový hodinový rozvrh množin; původní hodina 15 se věnovala jen
+% sjednocení a průniku. Po schválení bloku je třeba opravit ročníkový rozpis.
+% Návaznost: 12 Co je množina, 13 Podmnožiny a operace,
+% 14 Vennovy diagramy; příště operace s intervaly.
+% Odborný zdroj: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex,
+% zejména Množinové operace, jejich vlastnosti a Vennovy diagramy.
+% Metodická inspirace: Realisticky.cz, místní archiv:
+% 010303_Mnozinove_operace/010303_Lekce.pdf — význam operací,
+% 010304_Vennovy_diagramy/010304_Lekce.pdf — ověřování oblastí.
+% Tyto externí podklady nejsou součástí dodaného artefaktu; příklady níže
+% jsou nově sestavené a nevydáváme je za doslovný přepis jejich zadání.
+% Všechny zákony pro doplněk se vztahují ke STEJNÉ základní množině U.
+% Záměr: 45minutové jádro + rozšíření pro rychlé žáky a domácí práce.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{calc,patterns}
+\newtcolorbox{vlastnostBox}[1][]{commonlesson,title={Vlastnost},#1}
+\nastavPripravu{1. ročník}{Množiny}{15}{Vlastnosti množinových operací}
+
+% Jednotné černobílé diagramy, stejné oblasti se značkují šedě.
+\newcommand{\vennDve}[1]{%
+\begin{tikzpicture}[scale=.68,baseline=(current bounding box.center)]
+  \path[use as bounding box] (-2.72,-1.83) rectangle (2.72,1.79);
+  #1
+  \draw[thick] (-2.57,-1.63) rectangle (2.57,1.65);
+  \draw[thick] (-.78,0) circle (1.25);
+  \draw[thick] (.78,0) circle (1.25);
+  \node at (-2.32,.15) {$A$}; \node at (2.32,.15) {$B$};
+  \node[anchor=north east] at (2.49,1.56) {$U$};
+\end{tikzpicture}}
+\newcommand{\vennTri}[1]{%
+\begin{tikzpicture}[scale=.68,baseline=(current bounding box.center)]
+  \path[use as bounding box] (-2.72,-2.45) rectangle (2.72,2.05);
+  #1
+  \draw[thick] (-2.6,-2.35) rectangle (2.6,1.94);
+  \draw[thick] (-.86,.37) circle (1.35);
+  \draw[thick] (.86,.37) circle (1.35);
+  \draw[thick] (0,-.76) circle (1.35);
+  \node at (-2.35,.19) {$A$}; \node at (2.35,.19) {$B$};
+  \node at (0,-2.24) {$C$};
+  \node[anchor=north east] at (2.5,1.84) {$U$};
+\end{tikzpicture}}
+\newcommand{\sedaPrunik}{%
+\begin{scope}\clip (-.78,0) circle (1.25);
+\fill[black!26] (.78,0) circle (1.25);\end{scope}}
+\newcommand{\sedaMimoSjednoceni}{%
+\fill[black!23] (-2.57,-1.63) rectangle (2.57,1.65);
+\fill[white] (-.78,0) circle (1.25);
+\fill[white] (.78,0) circle (1.25);}
+\newcommand{\sedaPrunikADvojice}{%
+\begin{scope}\clip (-.86,.37) circle (1.35);
+  \fill[black!24] (.86,.37) circle (1.35);
+  \fill[black!24] (0,-.76) circle (1.35);
+\end{scope}}
+\newcommand{\sedaDvaPruniky}{%
+\begin{scope}\clip (-.86,.37) circle (1.35);
+ \clip (.86,.37) circle (1.35);
+ \fill[black!24] (-2.6,-2.35) rectangle (2.6,1.94);\end{scope}
+\begin{scope}\clip (-.86,.37) circle (1.35);
+ \clip (0,-.76) circle (1.35);
+ \fill[black!24] (-2.6,-2.35) rectangle (2.6,1.94);\end{scope}}
+
+\begin{document}
+\blok{Proč se učíme pravidla, když už umíme počítat?}
+V hodině 13 jsme s množinami počítali, v hodině 14 jsme výsledky
+vyznačovali do diagramu. Nyní zjišťujeme, které postupy lze
+\textbf{bezpečně zaměnit, seskupit nebo zjednodušit}.
+Stejně jako u čísel se vyplatí rozumět pravidlu, nejen si je pamatovat.
+
+\poznamka{Jádro na 45 minut včetně organizace: 4 min motivace;
+9 min komutativita, asociativita a P1; 12 min distributivita a P2;
+10 min doplněk, De Morganovy zákony a P3; 7 min S1 a), b);
+3 min shrnutí a zadání domácí práce. Důkaz libovolným prvkem vysvětli
+u prvního distributivního zákona a u De Morganova zákona; další důkazy
+jsou rozšíření. Neopisujte celou tabulku ze závěru.}
+
+\blok{1. Na pořadí někdy záleží a někdy ne}
+\begin{vlastnostBox}
+\textbf{Komutativita} (záměna pořadí): pro libovolné množiny $A,B$ platí
+\[
+A\cup B=B\cup A,\qquad A\cap B=B\cap A.
+\]
+\textbf{Asociativita} (změna seskupení): pro libovolné $A,B,C$ platí
+\[
+(A\cup B)\cup C=A\cup(B\cup C),\quad
+(A\cap B)\cap C=A\cap(B\cap C).
+\]
+\end{vlastnostBox}
+
+\begin{prikladReseniBox}[title={P1 — jádro: co lze prohodit?}]
+Nechť $A=\{1,2,4\}$ a $B=\{2,3,4\}$.
+Vypočti $A\cup B$, $B\cup A$, $A\cap B$, $B\cap A$
+a oba rozdíly $A\setminus B$, $B\setminus A$.
+\tcblower
+\begin{align*}
+A\cup B&=B\cup A=\{1,2,3,4\},\\[-2pt]
+A\cap B&=B\cap A=\{2,4\},\\[-2pt]
+A\setminus B&=\{1\},\qquad B\setminus A=\{3\}.
+\end{align*}
+Sjednocení a průnik jsou komutativní, ale \textbf{rozdíl obecně není}.
+Tento výpočet ukazuje pravidla na jedné dvojici; sám o sobě nedokazuje,
+že platí pro všechny množiny.
+\end{prikladReseniBox}
+
+\poznamka{Přirovnání k logice: u výroku \uv{patří do $A$ nebo do $B$}
+nezáleží na pořadí podmínek, podobně u \uv{a zároveň}. Naopak
+\uv{je v $A$, ale není v $B$} se po prohození může změnit.
+Asociativitu stačí v jádru vysvětlit přeskupením tří podmínek;
+neslučuj ji s chybným přesunem závorek mezi různými operacemi.}
+
+\blok{2. Distributivita: jedna podmínka pro dvě možnosti}
+\begin{vlastnostBox}
+\textbf{Distributivita} propojuje sjednocení a průnik:
+\[
+\begin{aligned}
+A\cap(B\cup C)&=(A\cap B)\cup(A\cap C),\\
+A\cup(B\cap C)&=(A\cup B)\cap(A\cup C).
+\end{aligned}
+\]
+\end{vlastnostBox}
+
+\begin{prikladReseniBox}[title={P2 — jádro: obě strany vycházejí stejně}]
+Pro $A=\{1,2,4,6\}$, $B=\{2,3,6\}$ a $C=\{1,3,6\}$
+nezávisle spočti obě strany prvního distributivního zákona.
+\tcblower
+Levá strana: $B\cup C=\{1,2,3,6\}$, takže
+$A\cap(B\cup C)=\{1,2,6\}$.
+
+Pravá strana: $A\cap B=\{2,6\}$ a $A\cap C=\{1,6\}$,
+proto $(A\cap B)\cup(A\cap C)=\{1,2,6\}$.
+\end{prikladReseniBox}
+
+\blok{Důkaz: proč distributivita platí pro libovolné množiny?}
+U příkladu jsme ověřili jedinou trojici množin.
+Teď si vyberme \textbf{libovolný prvek} $x$:
+\[
+\begin{aligned}
+x\in A\cap(B\cup C)
+&\Longleftrightarrow x\in A\ \land\ (x\in B\ \lor\ x\in C)\\
+&\Longleftrightarrow (x\in A\ \land\ x\in B)\ \lor\
+                  (x\in A\ \land\ x\in C)\\
+&\Longleftrightarrow x\in(A\cap B)\cup(A\cap C).
+\end{aligned}
+\]
+Proto mají obě množiny právě stejné prvky — jde o \textbf{důkaz}.
+
+\textbf{Stejná oblast, dva postupy:}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\centering\vennTri{\sedaPrunikADvojice} &
+\centering\vennTri{\sedaDvaPruniky}\tabularnewline[-.2em]
+\centering\small $A\cap(B\cup C)$ &
+\centering\small $(A\cap B)\cup(A\cap C)$\tabularnewline
+\end{tabularx}
+\end{center}
+
+\poznamka{Ať žák nejprve slovně popíše levé vybarvení: \uv{leží v $A$
+a současně alespoň v jednom z $B,C$}. Teprve pak porovnej se dvěma
+překryvy napravo. Druhý distributivní zákon pouze ukaž; jeho důkaz
+je v rezervě.}\par
+
+\blok{3. Doplněk a De Morganovy zákony}
+Od této chvíle jsou všechny množiny podmnožinami \textbf{stejného}
+$U$ a $A'=U\setminus A$, $B'=U\setminus B$.
+
+\begin{vlastnostBox}
+\textbf{Doplněk:} $A\cup A'=U$, $A\cap A'=\varnothing$, $(A')'=A$.
+
+\textbf{De Morganovy zákony} (\uv{negace obrací operaci}):
+\[
+(A\cup B)'=A'\cap B',\qquad
+(A\cap B)'=A'\cup B'.
+\]
+\end{vlastnostBox}
+
+\textbf{Dva zápisy stejné šedé oblasti:}
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\centering\vennDve{\sedaMimoSjednoceni} &
+\centering\vennDve{\sedaMimoSjednoceni}\tabularnewline[-.3em]
+\centering\small $(A\cup B)'$ & \centering\small $A'\cap B'$\tabularnewline
+\end{tabularx}
+\end{center}
+
+\begin{prikladReseniBox}[title={P3 — jádro: doplněk sjednocení}]
+Nechť $U=\{1,2,\ldots,8\}$, $A=\{1,2,4,7\}$,
+$B=\{2,3,7,8\}$. Ověř oba De Morganovy zákony výčtem.
+\tcblower
+$A'=\{3,5,6,8\}$, $B'=\{1,4,5,6\}$.
+\begin{align*}
+A\cup B&=\{1,2,3,4,7,8\},\\
+(A\cup B)'&=\{5,6\}=A'\cap B'.
+\end{align*}
+Dále $A\cap B=\{2,7\}$, a tedy
+\[
+(A\cap B)'=\{1,3,4,5,6,8\}=A'\cup B'.
+\]
+Obecný důvod prvního zákona: aby prvek \textbf{nebyl ani v jedné}
+z množin $A,B$, musí být \textbf{mimo $A$ a zároveň mimo $B$}.
+Proto patří právě do $A'\cap B'$.
+\end{prikladReseniBox}
+
+\poznamka{Vezmi známé logické pravidlo \uv{není pravda, že $P$ nebo $Q$}
+znamená \uv{neplatí $P$ a neplatí $Q$}. De Morganovy zákony tedy
+navazují na výrokovou logiku. Upozorni na častý omyl:
+$(A\cup B)'\ne A'\cup B'$ obecně.}
+
+\blok{4. Samostatné procvičení — jádro}
+\begin{zadaniReseniBox}[title={S1 — rozhodni a vypočti}]
+\begin{enumerate}[label=\alph*)]
+\item Rozhodni, která tvrzení platí \emph{pro všechny} množiny
+$A,B\subseteq U$. Neplatné tvrzení oprav:
+\[
+A\cap U=A;\qquad A\cup\varnothing=\varnothing;\qquad
+(A\cup B)'=A'\cup B';\qquad (A')'=A.
+\]
+\item Pro $U=\{0,1,\ldots,6\}$, $A=\{0,1,2,5\}$,
+$B=\{1,3,5\}$, $C=\{0,3,5\}$ ověř výčtem
+$A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$.
+\item (Volitelně) Slovně vysvětli, proč je $A\cap\varnothing=\varnothing$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item První ano. Druhé ne, správně $A\cup\varnothing=A$.
+Třetí obecně ne, správně $(A\cup B)'=A'\cap B'$.
+Čtvrté ano, pokud oba doplňky bereme ve stejném $U$.
+\item $B\cup C=\{0,1,3,5\}$, takže levá strana je $\{0,1,5\}$.
+$A\cap B=\{1,5\}$ a $A\cap C=\{0,5\}$,
+jejich sjednocení je také $\{0,1,5\}$.
+\item Žádný prvek nemůže současně patřit do $A$ a do prázdné množiny.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{V povinném jádru stačí a), b); c) je rychlá kontrolní otázka.
+Nech žáka říci, zda zákon jen ověřil na datech, nebo zdůvodnil obecně.
+Neplatný obecný zákon vyvrátí i jediný protipříklad.}
+
+\blok{5. Rozšíření — užitečné vztahy a důkazy}
+\begin{vlastnostBox}
+\textbf{Idempotence:} $A\cup A=A$, $A\cap A=A$.
+\textbf{Absorpce:} $A\cup(A\cap B)=A$, $A\cap(A\cup B)=A$.
+\textbf{Prázdná a základní množina:}
+\[
+A\cup\varnothing=A,\quad A\cap\varnothing=\varnothing,\quad
+A\cup U=U,\quad A\cap U=A.
+\]
+\end{vlastnostBox}
+
+\begin{prikladReseniBox}[title={R1 — dokážeme absorpci, ne jen vyzkoušíme}]
+Vysvětli, proč $A\cup(A\cap B)=A$ pro \emph{libovolné} množiny.
+Ukaž jeden protipříklad k tvrzení
+$A\setminus(B\cup C)=(A\setminus B)\cup(A\setminus C)$.
+\tcblower
+Každý prvek $A\cap B$ již patří do $A$. Jeho přidáním do $A$
+nevznikne žádný nový prvek; sjednocení proto zůstane $A$.
+
+Protipříklad: $A=\{1\}$, $B=\{1\}$, $C=\varnothing$.
+Vlevo $A\setminus(B\cup C)=\varnothing$,
+vpravo $(A\setminus B)\cup(A\setminus C)=\{1\}$.
+Správný vztah má vpravo \textbf{průnik}:
+$A\setminus(B\cup C)=(A\setminus B)\cap(A\setminus C)$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={R2 — druhý De Morganův zákon a distributivita}]
+Pomocí podmínek příslušnosti libovolného prvku $x$ zdůvodni
+$(A\cap B)'=A'\cup B'$. Potom analogicky zdůvodni
+$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$.
+\tcblower
+$x\notin A\cap B$ právě tehdy, když $x\notin A$ \textbf{nebo}
+$x\notin B$; to je příslušnost k $A'\cup B'$.
+
+U druhé rovnosti: pokud $x\in A$, patří do obou stran.
+Jinak je na levé straně právě tehdy, když $x\in B\cap C$;
+totéž pak vyžadují obě části pravého průniku.
+\end{prikladReseniBox}
+
+\blok{6. Domácí procvičení}
+\begin{zadaniReseniBox}[title={D1 — pravidlo, výpočet a zdůvodnění}]
+Pro a) až c) je $U=\{1,2,\ldots,10\}$,
+$A=\{2,4,6,8,10\}$, $B=\{1,2,3,4\}$, $C=\{3,6,9\}$.
+\begin{enumerate}[label=\alph*)]
+\item Vypočti obě strany $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$.
+\item Vypočti $(A\cup B)'$ a ověř výsledek jako $A'\cap B'$.
+\item Vypočti $(A\cap B)'$ a ověř výsledek jako $A'\cup B'$.
+\item Rozhodni, zda platí $A\setminus B=B\setminus A$ pro každé $A,B$.
+Uveď protipříklad.
+\item Zjednoduš $M\cap(M\cup N)$ a výsledek zdůvodni slovně.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $B\cup C=\{1,2,3,4,6,9\}$ a
+$A\cap(B\cup C)=\{2,4,6\}$.
+$A\cap B=\{2,4\}$, $A\cap C=\{6\}$,
+jejich sjednocení je $\{2,4,6\}$.
+\item $A\cup B=\{1,2,3,4,6,8,10\}$, proto
+$(A\cup B)'=\{5,7,9\}$.
+$A'=\{1,3,5,7,9\}$, $B'=\{5,6,7,8,9,10\}$,
+$A'\cap B'=\{5,7,9\}$.
+\item $A\cap B=\{2,4\}$ a
+$(A\cap B)'=\{1,3,5,6,7,8,9,10\}$.
+Stejnou množinu dostaneme jako $A'\cup B'$.
+\item Ne, například pro $A=\{1,2\}$, $B=\{2\}$ je
+$A\setminus B=\{1\}$, zatímco $B\setminus A=\varnothing$.
+\item $M$: protože $M\subseteq M\cup N$, průnik s větší množinou
+neodebere žádný prvek $M$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Rychlý přehled pro učitele (volitelná závěrečná tabulka)}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\bfseries}p{25mm}X@{}}
+\toprule
+Název & Vztahy, které si mají žáci odnést \\ \midrule
+Záměna & $A\cup B=B\cup A$; $A\cap B=B\cap A$ \\
+Seskupení & $(A\cup B)\cup C=A\cup(B\cup C)$ a obdobně pro $\cap$ \\
+Roznásobení & $A\cap(B\cup C)=(A\cap B)\cup(A\cap C)$;\newline
+$A\cup(B\cap C)=(A\cup B)\cap(A\cup C)$ \\
+De Morgan & $(A\cup B)'=A'\cap B'$; $(A\cap B)'=A'\cup B'$ \\
+Doplněk & $A\cup A'=U$, $A\cap A'=\varnothing$, $(A')'=A$ \\
+\bottomrule
+\end{tabularx}
+\normalsize
+
+\poznamka{Závěrečná otázka: Proč platnost dvou stran zákona pro jedny
+konkrétní množiny ještě není důkaz? Protože obecná rovnost tvrdí
+shodu pro \emph{všechny} přípustné množiny. K vyvrácení stačí jeden
+protipříklad. Na další hodině tyto operace použijeme na intervaly.}
+
+\blok{K rychlému vyznačení při promítání (volitelné)}
+Vyšrafuj vlevo $(A\cap B)'$ a vpravo $A\cap(B\cup C)$.
+Pak řekni, které jiné zápisy popisují stejné oblasti.
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}XX@{}}
+\centering\vennDve{} & \centering\vennTri{}\tabularnewline
+\end{tabularx}
+\end{center}
+
+% -----------------------------------------------------------------------------
+% VOLITELNE ROZSIRENI: mimo 45minutove jadro. Vychazi z oddilu Mohutnost mnoziny
+% a Nekonecne mnoziny v projektove ucebnici; matematicka zpracovani jsou vlastni.
+% -----------------------------------------------------------------------------
+\clearpage
+\blok{7. BONUS: Mohutnost množiny -- kolik má prvků?}
+\poznamka{\textbf{Rozšíření mimo povinných 45 minut.} První dva příklady lze
+použít jako krátkou pětiminutovou vsuvku, celý výklad nekonečen spíše jako
+matematickou zajímavost, dobrovolný seminář nebo nadstavbu pro zvídavé žáky.
+Není určen k opisování ani k běžnému zkoušení.}
+
+\begin{definiceBox}
+\textbf{Mohutnost (kardinalita) konečné množiny} $A$ je počet jejích
+\emph{různých} prvků; značíme ji $|A|$. Zejména $|\varnothing|=0$.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={B1 -- počet prvků není délka zápisu}]
+Urči mohutnosti množin
+$A=\{1,2,2,3,1\}$, $B=\{0,2,4,6\}$,
+$C=\varnothing$ a $D=\{\varnothing\}$.
+\tcblower
+$A=\{1,2,3\}$, tedy $|A|=3$; $|B|=4$ a $|C|=0$.
+Množina $D$ obsahuje \emph{jeden prvek}, kterým je prázdná množina,
+proto $|D|=1$. Opakované zapsání prvku jeho počet nezvyšuje.
+\end{prikladReseniBox}
+
+\blok{8. Jak porovnat dvě nekonečné množiny?}
+U konečných množin prvky spočítáme. U nekonečných to nejde dokončit.
+Přesto můžeme porovnat jejich \emph{velikost} jinak: každému prvku jedné
+množiny přiřadíme právě jeden prvek druhé a na žádný nezapomeneme.
+
+\begin{definiceBox}
+Množiny $A$ a $B$ mají \textbf{stejnou mohutnost}, jestliže mezi nimi
+existuje \textbf{bijekce}: vzájemně jednoznačné přiřazení, v němž má každý
+prvek $A$ právě jednoho partnera v $B$ a každý prvek $B$ právě jednoho
+partnera v $A$.
+\end{definiceBox}
+
+\textbf{Rozcvička:} Přirozená a sudá kladná čísla můžeme spárovat jako
+$1\leftrightarrow2$, $2\leftrightarrow4$, $3\leftrightarrow6$, $\ldots$,
+obecně $n\leftrightarrow2n$. Žádné sudé kladné číslo nezůstane bez partnera!
+
+\begin{prikladReseniBox}[title={B2 -- překvapení: $|\mathbb N|=|\mathbb Z|$}]
+Má množina všech celých čísel více prvků než množina přirozených čísel?
+Používáme $\mathbb N=\{1,2,3,\ldots\}$.
+\tcblower
+Celá čísla můžeme seřadit takto:
+\[
+\boxed{0,\ 1,\ -1,\ 2,\ -2,\ 3,\ -3,\ 4,\ -4,\ \ldots}
+\]
+A pak každému přirozenému číslu přiřadit jeho položku v tomto seznamu:
+\begin{center}
+\begin{tikzpicture}[x=1.56cm,y=.82cm,>=stealth,
+  every node/.style={font=\normalsize}]
+  \node[anchor=east] at (-.4,0) {$\mathbb N:$};
+  \node[anchor=east] at (-.4,-1.7) {$\mathbb Z:$};
+  \foreach \i/\a/\b in {0/1/0,1/2/1,2/3/-1,3/4/2,4/5/-2,5/6/3,6/7/-3}{
+    \node (n\i) at (\i,0) {$\a$};
+    \node (z\i) at (\i,-1.7) {$\b$};
+    \draw[->,thin] (n\i.south) -- (z\i.north);
+  }
+  \node at (7.15,-.85) {$\cdots$};
+\end{tikzpicture}
+\end{center}
+\textbf{Proč se to nikdy nezasekne?} Po nule postupně střídáme
+kladná a záporná celá čísla se stále větší absolutní hodnotou.
+Každé celé číslo se jednou objeví a žádné se neopakuje.
+
+Dokonce máme přesný předpis (pro $k=0,1,2,\ldots$):
+\[
+f(2k+1)=-k,\qquad f(2k)=k\quad (k\ge1).
+\]
+Každé přirozené číslo tedy označí právě jedno celé číslo a
+každé celé číslo získá právě jedno pořadové číslo.
+Proto \textbf{$|\mathbb N|=|\mathbb Z|$}, přestože $\mathbb N\subsetneq\mathbb Z$.
+\end{prikladReseniBox}
+
+\poznamka{U nekonečných množin může mít vlastní podmnožina stejnou
+mohutnost. Konečný obrázek se šipkami je ilustrace; rozhoduje
+bijekce určená obecným pravidlem.}
+
+\blok{9. BONUS: Jsou všechna nekonečna stejně velká?}
+\begin{definiceBox}
+\textbf{Spočetně nekonečná množina} má stejnou mohutnost jako
+$\mathbb N$. Její mohutnost zapisujeme $\aleph_0$ (čteme
+\uv{alef nula}). \textbf{Nespočetná množina} nemůže být takto očíslována
+přirozenými čísly.
+\end{definiceBox}
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{35mm}X@{}}
+\toprule
+Množina & Mohutnost a proč \\ \midrule
+$\mathbb N$ & $\aleph_0$: základní nekonečný seznam $1,2,3,\ldots$ \\
+$\mathbb Z$ & $\aleph_0$: explicitní párování v příkladu B2 \\
+$\mathbb Q$ & $\aleph_0$: zlomky $p/q$ lze systematicky procházet po skupinách
+(vynecháváme opakované zápisy téhož čísla) \\
+$\mathbb R$ & $\mathfrak c=2^{\aleph_0}$: \emph{kontinuum}, nespočetná mohutnost \\
+$(0;1)$, $\mathbb R\setminus\mathbb Q$ & rovněž $\mathfrak c$, ačkoli jde o vlastní podmnožiny $\mathbb R$ \\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{prikladReseniBox}[title={B3 -- proč se mezi zlomky dá postupovat systematicky?}]
+Racionální čísla vznikají ze zlomků $p/q$, kde $p\in\mathbb Z$
+a $q\in\mathbb N$. Proč je můžeme postupně všechny vyjmenovat,
+i když jich je mezi dvěma různými čísly nekonečně mnoho?
+\tcblower
+Procházíme dvojice $(p,q)$ podle rostoucí hodnoty $|p|+q$.
+Pro každou pevnou hodnotu součtu existuje jen konečně mnoho takových
+dvojic. Proto se po konečně mnoha krocích dostaneme ke každému
+konkrétnímu zlomku. Pokud už jsme stejnou hodnotu získali jiným
+zlomkem, podruhé ji nezařadíme. Tak lze $\mathbb Q$ očíslovat a
+$|\mathbb Q|=\aleph_0$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={B4 -- Cantorův diagonální argument, intuitivně}]
+Představme si, že někdo tvrdí, že sepsal \emph{všechna} reálná čísla
+z intervalu $(0;1)$ do nekonečného seznamu $r_1,r_2,r_3,\ldots$.
+Jak ukázat, že v něm nějaké číslo určitě chybí?
+\tcblower
+U každého čísla zapiš desetinný rozvoj (zvolíme zápis, který
+nekončí nekonečnou řadou devítek). Vezmi první desetinnou číslici
+prvního čísla, druhou druhého, třetí třetího atd.
+
+Sestroj nové číslo $s=0,s_1s_2s_3\ldots$ tak, že $s_n=2$, pokud
+má $r_n$ na $n$-tém desetinném místě číslici $1$;
+ve všech ostatních případech polož $s_n=1$.
+
+Nové číslo se \textbf{od $r_n$ liší na $n$-tém místě}, a tedy
+\emph{není rovno žádnému} číslu ze seznamu. Přitom leží v $(0;1)$.
+Údajně úplný seznam tedy nemohl existovat.
+Proto $|\mathbb R|>\aleph_0$.
+\end{prikladReseniBox}
+
+\poznamka{Pro zvědavé: $\aleph_1$ označuje \emph{nejmenší nespočetnou
+kardinální mohutnost}; platí $\aleph_0<\aleph_1\le\mathfrak c$.
+\emph{Hypotéza kontinua} tvrdí $\mathfrak c=\aleph_1$.
+V běžné axiomatické teorii množin ZFC ji nelze dokázat ani vyvrátit
+(pokud je ZFC bezesporná). Proto \textbf{nepiš automaticky}
+$|\mathbb R|=\aleph_1$. Tato poslední poznámka je pouze pro zájemce.}
+
+\textbf{Dvě otázky pro zájemce.} Proč má $\{\varnothing\}$ jeden prvek,
+i když je $\varnothing$ prázdná? A které přirozené číslo při párování
+z B2 odpovídá celému číslu $-4$?
+\poznamka{Řešení: jediným prvkem $\{\varnothing\}$ je právě prázdná
+množina, takže $|\{\varnothing\}|=1$. Číslo $-4$ je devátou položkou
+seznamu ($f(9)=-4$). Mohutnost neměníme pouhým přeuspořádáním prvků.
+Pro hodinu 16 není tato nadstavba předpokladem.}
+\end{document}
