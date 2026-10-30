@@ -1,0 +1,202 @@
+% Hodina 25 – revize podle komentářů k úvodu, přehledové tabulce a S1.
+% Příprava k hodině 25 – přepracovaná po hodinách 21–24.
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 25 (TP 2.1–2.4).
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex,
+%           oddíl „Mocniny s přirozeným mocnitelem“ a navazující důkazy pravidel.
+% Realisticky.cz: 010601 Mocniny s přirozeným mocnitelem, 010602 Vzorce pro mocniny I;
+%           inspirace gradací, samostatnou prací a odvozováním pravidel z definice.
+% Nové příklady jsou autorské, nikoli převzaté z Realisticky.cz.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{25}{Mocnina s přirozeným exponentem}
+\begin{document}
+
+\poznamka{Jádro 45 minut: motivace a geometrie 5 min, definice a obrázek 7 min,
+tabulka a zdůvodnění znamének 7 min, P1 7 min, P2 6 min,
+S1 a společná kontrola 10 min, výstupní otázka 3 min. P3, S2 a R1 jsou rozšíření, nikoli povinný přídavek.}
+
+\blok{Od geometrie k mocnině}
+V hodině 22 jsme u Pythagorovy věty počítali obsahy čtverců.
+Čtverec o straně $3\,\mathrm{cm}$ má obsah $3\cdot3=3^2=9\,\mathrm{cm}^2$.
+Krychle o hraně $2\,\mathrm{cm}$ má objem $2\cdot2\cdot2=2^3=8\,\mathrm{cm}^3$.
+Stejně jako \(4+4+4=3\cdot4\) zapisujeme opakované sčítání jako násobení,
+\textbf{opakované násobení zkracujeme mocninou}: \(4\cdot4\cdot4=4^3\).
+\textbf{Pořadí čísla a počtu opakování se liší:} v součinu \(3\cdot4\)
+jsou tři sčítané čtyřky, zatímco v mocnině \(4^3\) jsou tři násobené čtyřky.
+
+\begin{center}
+\begin{tikzpicture}[x=.56cm,y=.56cm]
+\draw[very thick] (0,0) rectangle (3,3);
+\foreach \i in {1,2}{\draw[thin] (\i,0)--(\i,3);\draw[thin] (0,\i)--(3,\i);}
+\draw[<->] (0,-.35)--node[below]{$3\,\mathrm{cm}$}(3,-.35);
+\draw[<->] (-.35,0)--node[left]{$3\,\mathrm{cm}$}(-.35,3);
+\node[right] at (4.0,1.5) {$S=3^2=9\,\mathrm{cm}^2$};
+\end{tikzpicture}
+\end{center}
+\textbf{Pozor:} Mocnina není opakované sčítání. Zápis $3^4$ znamená
+$3\cdot3\cdot3\cdot3=81$, nikoli $3\cdot4=12$.
+
+\begin{definiceBox}
+Nechť $a\in\mathbb R$ a $n\in\mathbb N=\{1,2,3,\ldots\}$.
+\textbf{Mocnina s přirozeným exponentem} je součin $n$ stejných činitelů:
+\[
+ a^n=\underbrace{a\cdot a\cdot\ldots\cdot a}_{n\ \text{činitelů}}.
+\]
+Číslo $a$ nazýváme \textbf{základ mocniny (mocněnec)}, číslo $n$
+\textbf{exponent (mocnitel)}; výraz $a^n$ je \textbf{mocnina}.
+\end{definiceBox}
+
+\begin{center}
+\begin{tikzpicture}[>=latex,baseline=(current bounding box.center)]
+\node[font=\Large] (mocnenec) at (0,0) {$a$};
+\node[font=\normalsize] (mocnitel) at (.33,.43) {$n$};
+\node[anchor=east,font=\small] (z) at (-1.5,-.48) {základ (mocněnec)};
+\node[anchor=west,font=\small] (e) at (1.34,.68) {exponent (mocnitel)};
+\draw[->,thick] (z.east)--(mocnenec.south west);
+\draw[->,thick] (e.west)--(mocnitel.east);
+\end{tikzpicture}
+\end{center}
+\poznamka{V obrázku oba názvy jen ukazujeme; nejde o dvě nové definice.
+Zdůrazni, že exponent udává \emph{počet činitelů}, nikoli násobitele základního čísla.}
+
+\blok{Pravidla pro mocniny — postupně doplňovaná tabulka}
+Při sudém počtu záporných činitelů se minusy spárují, při lichém
+jedno zbude. Dnes jen $n\ge1$; \textbf{tabulku postupně rozšíříme}
+i o další exponenty.
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{23mm}>{\raggedright\arraybackslash}p{55mm}X@{}}
+\toprule
+\textbf{Pravidlo} & \textbf{Zápis} & \textbf{Podmínky / význam} \\
+\midrule
+První mocnina & $a^1=a$ & $a\in\mathbb R$ \\
+Nula & $0^n=0$ & $n\in\mathbb N$ \\
+Jednička & $1^n=1$ & $n\in\mathbb N$ \\
+Kladný základ & $a^n>0$ & $a>0$, $n\in\mathbb N$ \\
+Záporný základ & $a^n>0$ & $a<0$, $n\in\mathbb N$ sudé \\
+Záporný základ & $a^n<0$ & $a<0$, $n\in\mathbb N$ liché \\
+Základ $-1$ & $(-1)^n=\begin{cases}1&n\text{ sudé},\\[-1mm]-1&n\text{ liché}.\end{cases}$ & $n\in\mathbb N$ \\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
+\begin{prikladReseniBox}[title={P1 — Stejná čísla, jiné závorky},breakable=false]
+Porovnej $(-3)^2$, $-3^2$, $(-3)^3$ a $-(-3)^2$.
+U každého výrazu nejprve nahlas urči, co je základem mocniny.
+\tcblower
+\begin{align*}
+ (-3)^2&=(-3)\cdot(-3)=9, & -3^2&=-(3\cdot3)=-9,\\
+ (-3)^3&=(-3)\cdot(-3)\cdot(-3)=-27,& -(-3)^2&=-9.
+\end{align*}
+Bez závorek se u $-3^2$ umocní pouze číslo $3$, vnější minus
+zůstává. Zápisy $(-3)^2$ a $-3^2$ \emph{nejsou stejné}.
+\end{prikladReseniBox}
+\poznamka{Nechej porovnat také $(-1)^{100}$ a $(-1)^{101}$.
+Student má zdůvodnit výsledek párováním záporných činitelů,
+ne pouze pravidlem naučeným zpaměti.}
+
+\blok{Umocňujeme i zlomky a celé výrazy v závorkách}
+\begin{prikladReseniBox}[title={P2 — Co je celým základem?},breakable=false]
+Vypočti $\left(-\frac23\right)^3$, $\left(\frac12\right)^4$
+a $(-2+5)^3$. Výsledky nech ve zlomcích, pokud je to možné.
+\tcblower
+\begin{align*}
+ \left(-\frac23\right)^3
+ &=\left(-\frac23\right)\left(-\frac23\right)\left(-\frac23\right)
+ =-\frac8{27},\\
+ \left(\frac12\right)^4
+ &=\frac12\cdot\frac12\cdot\frac12\cdot\frac12=\frac1{16},\\
+ (-2+5)^3&=3^3=27.
+\end{align*}
+Závorku nejprve vyhodnotíme. Například $(-2+5)^3$ \emph{není}
+$(-2)^3+5^3$; na konkrétních číslech dostaneme $27\ne117$.
+\end{prikladReseniBox}
+
+\blok{Samostatná práce — povinné jádro}
+\begin{zadaniReseniBox}[title={S1 — Spočti mocniny},breakable=false]
+\textbf{Spočti mocniny.} Všímej si závorek a toho, co přesně umocňuješ.
+\begin{center}
+\renewcommand{\arraystretch}{1.85}
+\begin{tabularx}{\linewidth}{@{}XXXXX@{}}
+a) $6^1$ & b) $(-2)^4$ & c) $-2^2$ & d) $(-2)^5$ & e) $-(-3^2)$ \\
+f) $\left(\frac1{10}\right)^3$ & g) $0^{1415}$ & h) $1^{2011}$ & i) $-1^{1918}$ & j) $(-1)^{1620}$ \\
+\end{tabularx}
+\end{center}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=.5pt]
+\item $6^1=6$.
+\item $(-2)^4=16$ (sudý exponent).
+\item $-2^2=-(2^2)=-4$ (minus je před mocninou).
+\item $(-2)^5=-32$ (lichý exponent).
+\item $-(-3^2)=-(-9)=9$ (vnější minus změní znaménko).
+\item $\left(\frac1{10}\right)^3=\frac1{1000}$.
+\item $0^{1415}=0$.
+\item $1^{2011}=1$.
+\item $-1^{1918}=-(1^{1918})=-1$ (bez závorky kolem $-1$).
+\item $(-1)^{1620}=1$ (sudý exponent záporného základu).
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Při opravě vyber dvě chybná řešení bez jmen a polož otázku
+„Co je základ?“ Nikdy neopravuj jen znaménko bez vysvětlení závorek.}
+
+\blok{Výstupní otázka na závěr}
+\begin{zadaniReseniBox}[title={E1 — Bez kalkulačky, 2 minuty},breakable=false]
+Rozhodni a zdůvodni: $(-5)^6=5^6$ a $(-5)^7=5^7$.
+Které tvrzení platí a proč?
+\tcblower
+První platí (sudý počet záporných činitelů), druhé ne:
+$(-5)^7=-5^7<0$, zatímco $5^7>0$.
+\end{zadaniReseniBox}
+
+\blok{Dobrovolné rozšíření a rezerva}
+\begin{zadaniReseniBox}[title={R1 — Odhad, závorky a protipříklad},breakable=false]
+\begin{enumerate}[label=\alph*)]
+ \item Co je větší: $2^{10}$, nebo $10^2$? Vysvětli, proč neplatí obecné pravidlo
+ $a^n=an$.
+ \item Porovnej $\left(\frac13\right)^2$ a $\left(\frac13\right)^3$.
+ Proč při další kladné mocnině zlomku menšího než $1$ hodnota klesá?
+ \item Rozhodni, zda vždy platí $(a+b)^2=a^2+b^2$.
+ Jestli ne, najdi protipříklad.
+ \item Zapiš \emph{pouze pomocí násobení} číslo $(-2)^3\cdot(-2)^2$.
+ Kolik záporných činitelů celkem dostaneš? Vzorec pro součin mocnin zatím nepoužívej.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+ \item $2^{10}=1024>100=10^2$. Mocnina opakuje násobení, nikoli běžný
+     součin základu a exponentu.
+ \item $\frac19>\frac1{27}$. Násobení kladným číslem menším než $1$ hodnotu zmenší.
+ \item Ne: pro $a=b=1$ je vlevo $(1+1)^2=4$, vpravo $1^2+1^2=2$.
+ \item Pět záporných činitelů:
+     $(-2)(-2)(-2)\cdot(-2)(-2)$; součin je záporný, $-32$.
+     Zápis připravuje myšlenku hodiny 26.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Rezerva 10–15 minut pro rychlou skupinu. U čtvrté úlohy
+neprozrazuj následující vzorec; nech studenty, aby jej sami objevili.}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={D1 — Přibližně 15 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+ \item Vypočti $(-5)^2$, $-5^2$ a $-(-5)^3$.
+ \item Vypočti $\left(-\frac23\right)^3$ a $\left(\frac14\right)^2$.
+ \item Urči $0^{15}$, $1^{25}$ a $(-1)^{25}$.
+ \item Vypočti $3^2-2\cdot(-2)^3$.
+ \item Porovnej $(-4)^3$ a $-4^3$; $\left(\frac13\right)^2$
+    a $\left(\frac13\right)^3$.
+ \item Najdi chybu: $(-2+3)^2=(-2)^2+3^2$. Spočti obě strany.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+ \item $25$, $-25$, $125$.
+ \item $-\frac8{27}$ a $\frac1{16}$.
+ \item $0$, $1$, $-1$.
+ \item $9-2\cdot(-8)=25$.
+ \item První dvojice je rovna ($-64=-64$); ve druhé $\frac19>\frac1{27}$.
+ \item Levá strana $1$, pravá $4+9=13$; mocnina součtu není
+     obecně součtem mocnin sčítanců.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\end{document}
