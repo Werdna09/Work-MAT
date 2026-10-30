@@ -1,0 +1,166 @@
+% Work/MAT -- hodina 28, nove zpracovani dle zadani ucitele (30. 10. 2026).
+% Navazuje na 25: definice, 26: pravidla, 27: KISS; 29 odmocniny.
+% Ucebnice: 01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex.
+% Realisticky.cz: 010605 a 010606 Mocniny s celym mocnitelem I a II.
+% Priklady a reseni nově formulovane. Podminky jsou soucasti vyuky.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{28}{Celočíselný exponent}
+\begin{document}
+\poznamka{\textbf{Povinných 45 minut:} 4 min opakování KISS;
+8 min proč nultá a záporná mocnina + definice;
+6 min tabulka a Příklad 1; 8 min Příklad 2 a Samostatná práce 1 a)--d);
+9 min Příklad 3 a Samostatná práce 2 a)--d); 7 min Příklad 4
++ Samostatná práce 3 a)--c); 3 min závěr. Další položky a rozšiřující příklady
+jsou rezerva. \textbf{Výsledek přednostně bez záporných exponentů.}}
+
+\blok{Proč musíme rozšířit význam mocniny?}
+V hodině 26 jsme pro $a\ne0$ a $r>s$ počítali
+$\frac{a^r}{a^s}=a^{r-s}$. Zkusme nyní \emph{stejný postup} pro
+$\frac{2^3}{2^3}$ a $\frac{2^2}{2^5}$:
+\[
+\frac{2^3}{2^3}=1=2^{3-3}=2^0,\qquad
+\frac{2^2}{2^5}=\frac1{2^3}=2^{2-5}=2^{-3}.
+\]
+Aby pravidlo pro podíl fungovalo i tehdy, když je exponent v čitateli
+menší nebo stejný, \textbf{definujeme} další dvě mocniny.
+
+\begin{definiceBox}[title={Definice: nultá mocnina}]
+Pro každé $a\in\mathbb R\setminus\{0\}$ definujeme
+$\boxed{a^0=1}$. Výraz $0^0$ v této výuce \textbf{nedefinujeme}.
+\end{definiceBox}
+\begin{definiceBox}[title={Definice: záporný celočíselný exponent}]
+Pro každé $a\in\mathbb R\setminus\{0\}$ a $n\in\mathbb N=\{1,2,\ldots\}$
+definujeme $\boxed{a^{-n}=\dfrac1{a^n}}$.
+Záporný exponent znamená \textbf{převrácenou hodnotu}, ne záporné znaménko výsledku.
+\end{definiceBox}
+
+\poznamka{Zeptej se: \uv{Proč nesmí být $a=0$?} Protože bychom dělili nulou.
+Změnu $a^2:a^5$ na $a^{-3}$ nedokazujeme starou definicí, ale \emph{motivujeme}
+novou definici tak, aby se zachovala známá pravidla.}
+
+\blok{Tabulka pravidel pro mocniny: přidáváme další dva řádky}
+\begin{center}\scriptsize
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{33mm}>{\raggedright\arraybackslash}p{49mm}X@{}}
+\toprule
+\textbf{Pravidlo} & \textbf{Zápis} & \textbf{Podmínky}\\\midrule
+První mocnina & $a^1=a$ & $a\in\mathbb R$\\
+Nula a jednička & $0^n=0$, $1^n=1$ & $n\in\mathbb N$\\
+Znaménka & $a^n>0$ pro $a>0$; pro $a<0$ kladné / záporné & $n$ sudé / liché\\
+Základ $-1$ & $(-1)^n=1$ / $-1$ & $n$ sudé / liché\\
+Součin stejného základu & $a^r a^s=a^{r+s}$ & $r,s\in\mathbb N$\\
+Podíl stejného základu & $a^r/a^s=a^{r-s}$ & $a\ne0$, dosud $r>s\ge1$\\
+Stejné exponenty & $a^r/a^r=1$ & $a\ne0$\\
+Mocnina mocniny & $(a^r)^s=a^{rs}$ & $r,s\in\mathbb N$\\
+Mocnina součinu & $(ab)^r=a^rb^r$ & $r\in\mathbb N$\\
+Mocnina podílu & $(a/b)^r=a^r/b^r$ & $b\ne0$, $r\in\mathbb N$\\\midrule
+\textbf{NOVĚ: nultá mocnina} & $\boldsymbol{a^0=1}$ & $\boldsymbol{a\ne0}$\\
+\textbf{NOVĚ: záporný exponent} & $\boldsymbol{a^{-n}=1/a^n}$ & $\boldsymbol{a\ne0,\ n\in\mathbb N}$\\\bottomrule
+\end{tabularx}\normalsize\end{center}
+Odteď platí vzorce pro součin, podíl, mocninu mocniny, součinu a podílu
+i pro \textbf{celé exponenty}, pokud jsou všechny výrazy definované.
+\textbf{Obecně tedy} $a^r/a^s=a^{r-s}$ pro $a\ne0$ a $r,s\in\mathbb Z$.
+
+\begin{prikladReseniBox}[title={Příklad 1: co udělá záporný exponent?}]
+Vypočti $2^{-3}$, $(-3)^{-2}$, $-3^{-2}$,
+$\left(\frac25\right)^{-2}$ a $5^0$.
+\tcblower
+$2^{-3}=\frac18$; $(-3)^{-2}=\frac1{(-3)^2}=\frac19$;
+$-3^{-2}=-\frac19$;
+$\left(\frac25\right)^{-2}=\left(\frac52\right)^2=\frac{25}{4}$;
+$5^0=1$. Vždy rozlišuj \emph{základ v závorkách} a mínus před mocninou.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1: rychlé výpočty},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $10^{-3}$; \item $(-2)^{-5}$; \item $(-4)^{-2}$;
+\item $-2^{-4}$; \item $\left(-\frac12\right)^{-3}$;
+\item $0^5$ a $0^0$; \item $\left(-\frac35\right)^{-2}$;
+\item $(-1)^{-2027}$.
+\end{enumerate}
+\tcblower
+ a) $\frac1{1000}$; b) $-\frac1{32}$; c) $\frac1{16}$;
+ d) $-\frac1{16}$; e) $-8$; f) $0$, druhý výraz není definován;
+ g) $\frac{25}{9}$; h) $-1$.
+\end{zadaniReseniBox}
+
+\blok{KISS: počítáme s celými exponenty}
+\begin{prikladReseniBox}[title={Příklad 2: záporný exponent v součinu a podílu}]
+Uprav $a^{-3}a^7$ a $\dfrac{x^{-2}}{x^3}$. Uveď podmínky.
+\tcblower
+Pro $a\ne0$: $a^{-3+7}=a^4$. Pro $x\ne0$:
+$x^{-2-3}=x^{-5}=\frac1{x^5}$. Podmínky nezmizí ani po úpravě.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2: přepiš bez záporných exponentů}]
+\begin{enumerate}[label=\alph*)]
+\item $x^{-2}x^6$; \item $\frac{y^4}{y^7}$;
+\item $a^{-3}b^2$; \item $\frac{p^{-2}}{p^{-5}}$;
+\item $\frac{x^{-4}y^3}{x^2y^{-2}}$;
+\item $\frac{m^3n^{-2}}{m^{-1}n^4}$.
+\end{enumerate}
+\tcblower
+ a) $x^4$ ($x\ne0$); b) $1/y^3$ ($y\ne0$);
+ c) $b^2/a^3$ ($a\ne0$); d) $p^3$ ($p\ne0$);
+ e) $y^5/x^6$ ($x,y\ne0$); f) $m^4/n^6$ ($m,n\ne0$).
+\end{zadaniReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3: záporný exponent celé závorky}]
+Uprav $(2a^{-1}b^2)^{-2}$, předem uveď podmínky.
+\tcblower
+$a,b\ne0$. Použijeme mocninu součinu a mocninu mocniny:
+$(2a^{-1}b^2)^{-2}=2^{-2}a^2b^{-4}=\boxed{\frac{a^2}{4b^4}}$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 3: mocnina mocniny},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $(3^{-2})^3$; \item $(x^{-3})^{-2}$;
+\item $(a^2b^{-1})^{-2}$; \item $\left(\frac{2x}{y^2}\right)^{-2}$;
+\item $(2x)^0$ a $2x^0$ pro $x\ne0$.
+\end{enumerate}
+\tcblower
+ a) $3^{-6}=1/729$; b) $x^6$ ($x\ne0$);
+ c) $b^2/a^4$ ($a,b\ne0$);
+ d) $y^4/(4x^2)$ ($x,y\ne0$);
+ e) $1$ a $2$, obojí při $x\ne0$.
+\end{zadaniReseniBox}
+\poznamka{Pozor: $x^{-3}$ není záporné číslo automaticky; záleží na základu.
+V posledním příkladu rozliš celý základ $(2x)^0$ a samostatnou mocninu $x^0$.
+Pro $x=0$ je $2x^0$ nedefinováno, nikoli $2$.}
+
+\blok{Rozšíření a rezerva}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: znaménka a podmínky}]
+\begin{enumerate}[label=\alph*)]
+\item Uprav $\dfrac{(2a^{-2}b)^3}{4a^{-1}b^{-2}}$.
+\item Jakou hodnotu má $(x-1)^0$ a kdy neexistuje?
+\item Uprav $\dfrac{2^{3n+1}4^{2n-2}}{8^{n-1}}$ pro $n\in\mathbb Z$.
+\end{enumerate}
+\tcblower
+ a) $2b^5/a^5$ pro $a,b\ne0$; b) $1$ pro $x\ne1$,
+ pro $x=1$ vznikne $0^0$; c) $2^{4n}$, neboť všechny základy jsou mocniny dvojky.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 2: najdi a oprav chybu}]
+\begin{enumerate}[label=\alph*)]
+\item Žák píše $(-2)^{-4}=-\frac1{16}$. Proč je to špatně?
+\item Žák píše $(ab)^{-2}=a^{-2}+b^{-2}$. Oprav.
+\item Je $\dfrac{x^2}{x^2}=1$ i pro $x=0$?
+\end{enumerate}
+\tcblower
+ a) Sudá mocnina záporného základu je kladná: $1/16$.
+ b) Správně $a^{-2}b^{-2}=1/(a^2b^2)$ při $a,b\ne0$.
+ c) Ne, původní výraz není pro $x=0$ definován.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol 1: záporné exponenty}]
+\begin{enumerate}[label=\alph*)]
+\item Vypočti $(-3)^{-3}$ a $\left(\frac25\right)^{-2}$.
+\item Uprav $x^{-4}x^7$ a $\dfrac{y^2}{y^{-3}}$.
+\item Uprav $(3a^{-2}b)^ {-2}$.
+\item Uprav $\dfrac{6x^{-2}y^3}{3x^4y^{-2}}$.
+\item Urči podmínky a hodnotu $(t+2)^0$.
+\end{enumerate}
+\tcblower
+ a) $-1/27$, $25/4$; b) $x^3$ ($x\ne0$), $y^5$ ($y\ne0$);
+ c) $a^4/(9b^2)$ ($a,b\ne0$);
+ d) $2y^5/x^6$ ($x,y\ne0$);
+ e) $1$ pro $t\ne-2$, jinak nedefinováno.
+\end{zadaniReseniBox}
+\end{document}

@@ -1,0 +1,165 @@
+% Work/MAT -- hodina 29; druha a treti odmocnina BEZ racionalnich exponentu.
+% Podklady: ucebnice Mocniny a Odmocniny.tex, oddil Odmocniny;
+% Realisticky.cz 010207 Druha odmocnina, 010208 Treti odmocnina.
+% Presne hodnoty, geometricka motivace, podminky, omyly, vsechna reseni vlastni.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{29}{Druhá a třetí odmocnina}
+\begin{document}
+\poznamka{\textbf{45 minut:} 5 min motivace obsah/objem;
+9 min definice druhé odmocniny + Příklad 1;
+7 min Samostatná práce 1;
+8 min definice třetí odmocniny + Příklad 2;
+8 min Samostatná práce 2; 5 min nejčastější omyly a Příklad 3;
+3 min shrnutí. Zbývající úlohy jsou rezerva.
+\textbf{Dnes nepoužívej zápis mocnin se zlomkovým exponentem}; spojení až v hodině 30.}
+
+\blok{Opačná otázka k umocňování: jaká byla délka strany?}
+Čtverec se stranou $5\,\mathrm{cm}$ má obsah $25\,\mathrm{cm}^2$.
+Když naopak známe \emph{obsah} $25\,\mathrm{cm}^2$, jak zjistíme délku strany?
+U krychle podobně: objem $27\,\mathrm{cm}^3$ znamená hranu délky $3\,\mathrm{cm}$.
+\begin{center}
+\begin{tikzpicture}[scale=.72,line join=round]
+\draw[thick] (0,0) rectangle (2.1,2.1);
+\node at (1.05,1.1) {$S=25$};
+\node[below] at (1.05,0) {$a=?$};
+\begin{scope}[shift={(6.0,.25)}]
+  \draw[thick] (0,0)--(2.0,0)--(2.0,1.75)--(0,1.75)--cycle;
+  \draw[thick] (0,1.75)--(.75,2.4)--(2.75,2.4)--(2.0,1.75);
+  \draw[thick] (2,0)--(2.75,.65)--(2.75,2.4);
+  \node at (1,1) {$V=27$};
+  \node[below] at (1,0) {$a=?$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\poznamka{Jednotky u obrázků: první obsah je v $\mathrm{cm}^2$, druhý objem v $\mathrm{cm}^3$.
+Žáci mohou odhadnout výsledné délky i před zavedením značky odmocniny.}
+
+\blok{Druhá odmocnina: vždy volíme nezáporný výsledek}
+\begin{definiceBox}[title={Definice: druhá odmocnina}]
+Pro reálné $a\ge0$ je \textbf{druhá odmocnina} $\sqrt a$ jediné
+\textbf{nezáporné} číslo $b$, pro které $b^2=a$.
+\[
+\boxed{\sqrt a=b\quad\Longleftrightarrow\quad b\ge0\ \text{a}\ b^2=a.}
+\]
+V oboru reálných čísel nemá $\sqrt a$ smysl pro $a<0$.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 1: co je pod odmocnítkem?}]
+Urči $\sqrt{81}$, $\sqrt{0}$, $\sqrt{\frac{49}{100}}$,
+$\sqrt{(-6)^2}$ a $-\sqrt{36}$.
+\tcblower
+$9$, $0$, $\frac7{10}$, $6$, $-6$.
+Ve čtvrtém případě je $(-6)^2=36$, ale \textbf{druhá odmocnina z 36 je $+6$}.
+V posledním příkladu je minus \emph{až před} odmocninou.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1: druhé odmocniny}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{144}$; \item $\sqrt{0{,}04}$;
+\item $\sqrt{\frac9{25}}$; \item $\sqrt{(-8)^2}$;
+\item $\sqrt{-16}$ v $\mathbb R$; \item $\sqrt{2^6}$;
+\item $\sqrt{49+32}$; \item $\sqrt{36}+\sqrt{64}$.
+\end{enumerate}
+\tcblower
+ a) $12$; b) $0{,}2$; c) $3/5$; d) $8$;
+ e) není definována v $\mathbb R$; f) $8$;
+ g) $\sqrt{81}=9$; h) $6+8=14$.
+\end{zadaniReseniBox}
+
+\blok{Třetí odmocnina: záporná čísla jsou povolena}
+\begin{definiceBox}[title={Definice: třetí odmocnina}]
+Pro libovolné $a\in\mathbb R$ je \textbf{třetí odmocnina} $\sqrt[3]{a}$
+jediné reálné číslo $b$, pro které $b^3=a$:
+\[
+\boxed{\sqrt[3]{a}=b\quad\Longleftrightarrow\quad b^3=a.}
+\]
+Výsledek může být záporný: $\sqrt[3]{-8}=-2$, protože $(-2)^3=-8$.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 2: i záporný základ má svou třetí odmocninu}]
+Vypočti $\sqrt[3]{64}$, $\sqrt[3]{-125}$,
+$\sqrt[3]{-\frac8{27}}$ a $\sqrt[3]{(-4)^3}$.
+\tcblower
+$4$, $-5$, $-\frac23$, $-4$.
+Znaménko se u liché mocniny zachová, proto třetí odmocnina existuje
+i pro záporná reálná čísla.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2: třetí odmocniny a rozlišování}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt[3]{216}$; \item $\sqrt[3]{-216}$;
+\item $\sqrt[3]{0{,}001}$; \item $\sqrt[3]{-\frac1{64}}$;
+\item $\sqrt[3]{(-7)^3}$; \item $\sqrt{(-7)^2}$;
+\item $\sqrt[3]{-8}+\sqrt{16}$;
+\item $\sqrt[3]{8+19}$.
+\end{enumerate}
+\tcblower
+ a) $6$; b) $-6$; c) $0{,}1$; d) $-1/4$;
+ e) $-7$; f) $7$; g) $-2+4=2$; h) $3$.
+\end{zadaniReseniBox}
+
+\blok{Pozor: tři typické chyby}
+\begin{prikladReseniBox}[title={Příklad 3: odmocnina není totéž co řešení rovnice}]
+Rozhodni, kolik výsledků má každý zápis:
+$\sqrt{25}$; $x^2=25$; $\sqrt[3]{-27}$.
+\tcblower
+$\sqrt{25}=5$ má \textbf{jedinou} hodnotu.
+Rovnice $x^2=25$ má \textbf{dvě} řešení $x=5$ a $x=-5$.
+$\sqrt[3]{-27}=-3$ má jedinou reálnou hodnotu.
+U odmocniny vždy pracujeme s její \emph{definovanou} hodnotou, ne s dvojicí řešení rovnice.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 3: oprav nesprávný postup}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{16}=\pm4$.
+\item $\sqrt{9+16}=\sqrt9+\sqrt{16}$.
+\item $\sqrt{a^2}=a$ pro všechna $a\in\mathbb R$.
+\item $\sqrt[3]{-8}$ neexistuje, protože je číslo pod odmocnítkem záporné.
+\end{enumerate}
+\tcblower
+ a) Správně $\sqrt{16}=4$; znak $\pm$ se objeví při řešení $x^2=16$.
+ b) Vlevo $\sqrt{25}=5$, vpravo $3+4=7$: odmocnina se přes součet \emph{nerozděluje}.
+ c) Správně $\sqrt{a^2}=|a|$, třeba pro $a=-3$ vychází $3$, ne $-3$.
+ d) $\sqrt[3]{-8}=-2$; třetí odmocnina ze záporného čísla existuje.
+\end{zadaniReseniBox}
+\poznamka{Větu $\sqrt{a^2}=|a|$ zdůvodni nezáporností druhé odmocniny.
+Nevysvětluj ji chybným mechanickým \uv{rušením} dvou operací.
+Pravidla pro součin a podíl odmocnin, částečné odmocňování a usměrňování
+nech na navazující hodiny 33--36.}
+
+\blok{Rozšiřující příklady: odhad a práce s proměnnými}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: mezi kterými celými čísly?}]
+\begin{enumerate}[label=\alph*)]
+\item Odhadni bez kalkulačky $\sqrt{20}$ mezi dvě po sobě jdoucí celá čísla.
+\item Odhadni $\sqrt[3]{30}$ a $\sqrt[3]{-30}$ mezi dvě celá čísla.
+\item Pro která reálná $t$ má výraz $\sqrt{t-5}$ smysl?
+\end{enumerate}
+\tcblower
+ a) $4<\sqrt{20}<5$, protože $16<20<25$.
+ b) $3<\sqrt[3]{30}<4$ a $-4<\sqrt[3]{-30}<-3$.
+ c) $t\ge5$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 2: opatrně s rovnicí}]
+\begin{enumerate}[label=\alph*)]
+\item Vyřeš $x^2=49$ a porovnej s $\sqrt{49}$.
+\item Urči $\sqrt{(x-2)^2}$ pro $x=0$ a $x=5$.
+\item Vyřeš $x^3=-64$.
+\end{enumerate}
+\tcblower
+ a) $x=\pm7$, ale $\sqrt{49}=7$;
+ b) $|x-2|$: pro $x=0$ je $2$, pro $x=5$ je $3$;
+ c) $x=-4$.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol 1: druhé a třetí odmocniny}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{225}$ a $\sqrt{\frac{121}{169}}$.
+\item $\sqrt[3]{-343}$ a $\sqrt[3]{0{,}008}$.
+\item $\sqrt{(-11)^2}$ a $\sqrt[3]{(-11)^3}$.
+\item Je $\sqrt{-25}$ reálné číslo? A $\sqrt[3]{-125}$?
+\item Vysvětli, proč $\sqrt{4+9}\ne\sqrt4+\sqrt9$.
+\end{enumerate}
+\tcblower
+ a) $15$, $11/13$; b) $-7$, $0{,}2$;
+ c) $11$, $-11$; d) první ne, druhý je $-5$;
+ e) vlevo $\sqrt{13}$, vpravo $5$; protože $\sqrt{13}\ne5$.
+\end{zadaniReseniBox}
+\end{document}

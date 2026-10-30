@@ -1,0 +1,312 @@
+% Work/MAT – 1. rocnik, hodina 27: KISS a procvicovani mocnin.
+% Navazuje na lekce 25 a 26; podklady: pet screenshotu od uzivatele.
+% Rozsireni: jedno nove pravidlo pro mocninu podilu odvozene ze zlomku.
+% Povinna cast je vyber, ostatni je rozsahly zasobnik procvicovani.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{27}{KISS: procvičování mocnin}
+\begin{document}
+\poznamka{\textbf{Jádro pro 45 minut:} 4 min tabulka a KISS;
+6 min Příklad 1 + Samostatná práce 1 a)--c);
+7 min Příklad 2 + Samostatná práce 2 a)--c);
+9 min Příklad 3 a) + Samostatná práce 3 a)--c);
+7 min Příklad 4, řecká písmena a práce 4 a)--b);
+8 min Příklad 5 + práce 5 a)--b); 4 min shrnutí a zadání domácí práce.
+\textbf{Všechny rozšiřující příklady a zbývající podúlohy jsou zásoba, nikoli závazná náplň.}
+Řešení ve spodních šedých částech boxů slouží učiteli.}
+
+\blok{Tabulka pravidel pro mocniny — z hodin 25 a 26}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{38mm}>{\raggedright\arraybackslash}p{51mm}X@{}}
+\toprule
+\textbf{Pravidlo} & \textbf{Zápis} & \textbf{Podmínky} \\\midrule
+První mocnina & $a^1=a$ & $a\in\mathbb R$ \\
+Nula a jednička & $0^n=0$, $1^n=1$ & $n\in\mathbb N=\{1,2,\ldots\}$ \\
+Kladný základ & $a^n>0$ & $a>0$, $n\in\mathbb N$ \\
+Záporný základ & $a^n>0$ / $a^n<0$ & $a<0$, $n$ sudé / liché \\
+Základ $-1$ & $(-1)^n=1$ / $-1$ & $n$ sudé / liché \\
+Součin & $a^r\cdot a^s=a^{r+s}$ & $r,s\in\mathbb N$ \\
+Podíl & $\dfrac{a^r}{a^s}=a^{r-s}$ & $a\ne0$, $r>s\ge1$ \\
+Stejné mocniny & $\dfrac{a^r}{a^r}=1$ & $a\ne0$ \\
+Mocnina mocniny & $(a^r)^s=a^{rs}$ & $r,s\in\mathbb N$ \\
+Mocnina součinu & $(ab)^r=a^rb^r$ & $r\in\mathbb N$ \\
+Mocnina podílu & $\bigl(\frac ab\bigr)^r=\frac{a^r}{b^r}$ & $b\ne0$, $r\in\mathbb N$ \\\bottomrule
+\end{tabularx}\normalsize\end{center}
+\poznamka{\textbf{Nový je jen poslední řádek, potřebný pro úlohy ze screenshotu.}
+Odvoď ho pro $r=2$: $(a/b)^2=(a/b)(a/b)=a^2/b^2$.
+Při $r<s$ zatím píšeme $a^r/a^s=1/a^{s-r}$ pro $a\ne0$;
+záporný exponent přijde až v hodině 28.}
+
+\blok{KISS — Keep It Simple, Stupid}
+\textbf{Zásada:} Nejdříve zjednodušuj, teprve potom násob nebo umocňuj.
+Nesmí se míchat různé věci dohromady; snaž se o přehledný zápis, snižuj
+počet činitelů, postupuj po jedné úpravě. Původní výraz i všechny mezikroky
+musí mít stejnou hodnotu a stejné podmínky pro dosazení.
+
+\blok{Kolo 1 — se stejnými základy}
+\begin{prikladReseniBox}[title={Příklad 1 — zahřívací úpravy},breakable=false]
+Zjednoduš bez kalkulačky:
+$2^4\cdot2^5$; $\frac{7^{10}}{7^6}$; $\frac{(-3)^8}{(-3)^3}$;
+$\frac{x^9y^5}{x^3y^2}$.
+\tcblower
+$2^9$; $7^4$; $(-3)^5$; $x^6y^3$ při $x,y\ne0$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1 — dvanáct rychlých úloh}]
+\begin{enumerate}[label=\alph*)]
+\item $5^3\cdot5^7$; \item $\frac{6^{12}}{6^8}$;
+\item $\frac{(-2)^{11}}{(-2)^7}$; \item $\frac{a^8}{a^5}$;
+\item $\frac{m^7n^6}{m^2n^4}$; \item $\frac{p^3p^5}{p^6}$;
+\item $\frac{8^2\cdot8^4}{8^3}$; \item $\frac{x^5y^2\cdot x^2y^4}{x^3y^3}$;
+\item $\frac{(-b)^9}{(-b)^5}$; \item $\frac{q^4}{q^7}$;
+\item $\frac{a^3}{a^3}$; \item $2^3+2^4$.
+\end{enumerate}
+\tcblower
+ a) $5^{10}$; b) $6^4$; c) $(-2)^4=16$; d) $a^3$ ($a\ne0$);
+ e) $m^5n^2$ ($m,n\ne0$); f) $p^2$ ($p\ne0$);
+ g) $8^3$; h) $x^4y^3$ ($x,y\ne0$); i) $b^4$ ($b\ne0$);
+ j) $1/q^3$ ($q\ne0$); k) $1$ ($a\ne0$);
+ l) $8+16=24$ (nikoliv $2^7$).
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1 — najdi chybu},breakable=false]
+Vysvětli, proč $a^4+a^2\ne a^6$ obecně.
+Jak zapíšeš $a^6/a^9$ bez záporného exponentu?
+\tcblower
+Pro $a=2$ je $16+4=20\ne64$. Podíl je $1/a^3$ při $a\ne0$.
+\end{zadaniReseniBox}
+
+\blok{Kolo 2 — mocniny součinu a podílu}
+\begin{prikladReseniBox}[title={Příklad 2 — tři úlohy z předlohy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\left(\frac{a^2}{b^3}\right)^2$;
+\item $\left(-\frac{2}{3^2}\right)^3$;
+\item $\left(\frac{-2}{3^2}\right)^4$.
+\end{enumerate}
+\tcblower
+ a) $a^4/b^6$, $b\ne0$;
+ b) $-2^3/3^6$; c) $2^4/3^8$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2 — osm úprav}]
+\begin{enumerate}[label=\alph*)]
+\item $(3^4)^3$; \item $(a^5)^2$; \item $(-2x)^4$;
+\item $(-3a^2b)^3$; \item $\left(\frac{2a^3}{b^2}\right)^2$;
+\item $\left(-\frac{x^2}{2y}\right)^3$;
+\item $\left(\frac{(-m)^3}{n^2}\right)^2$;
+\item $(a^2b^3)^2\cdot(a^3b)^2$.
+\end{enumerate}
+\tcblower
+ a) $3^{12}$; b) $a^{10}$; c) $16x^4$;
+ d) $-27a^6b^3$; e) $4a^6/b^4$ ($b\ne0$);
+ f) $-x^6/(8y^3)$ ($y\ne0$);
+ g) $m^6/n^4$ ($n\ne0$); h) $a^{10}b^8$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 2 — složené zlomky z předlohy}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{2(a^2b)^3}{b^2}\cdot\left(\frac ba\right)^2$;
+\item $\left[\frac{a^2b^7}{b^2(-a)^4}\cdot\frac{(-a)^3}{b^3}\right]^2$.
+\end{enumerate}
+\tcblower
+ a) $2a^6b^3\cdot b^2/(a^2b^2)=\boxed{2a^4b^3}$;
+ b) v závorce vyjde $-ab^2$, po umocnění $\boxed{a^2b^4}$.
+Původně $a,b\ne0$.
+\end{zadaniReseniBox}
+
+\blok{Kolo 3 — strategie před výpočtem}
+\begin{prikladReseniBox}[title={Příklad 3 — dva těžší příklady KISS z předlohy}]
+Před řešením napiš, kterou závorku zjednodušíš jako první.
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac{3(a^3b^2)^3}{(2a^2b)^2}\cdot
+\left(\dfrac{2a^4b^3}{a^3b}\right)^3$;
+\item $\left(\dfrac{2a^5b^4}{3a^3b}\right)^3:
+\dfrac{(2a^3b^2)^3}{9(2a^2b)^2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Nejprve $\bigl(2a^4b^3/(a^3b)\bigr)^3=(2ab^2)^3=8a^3b^6$.
+První zlomek je $3a^9b^6/(4a^4b^2)=\frac34a^5b^4$;
+celkem $\boxed{6a^8b^{10}}$.
+\item První část je $\frac8{27}a^6b^9$, druhá je $\frac29a^5b^4$.
+Po vydělení: $\boxed{\frac43ab^5}$.
+\end{enumerate}
+Oba původní výrazy vyžadují $a,b\ne0$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 3 — postup po jednom kroku}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{(a^3b)^2}{a^4b}$;
+\item $\frac{(2x^2y)^3}{4x^3y^2}$;
+\item $\left(\frac{3p^2}{q}\right)^2\cdot\frac{q^2}{9p}$;
+\item $\frac{(3m^2n)^2}{(3mn)^2}$;
+\item $\frac{(2a^2b)^3}{(2ab^2)^2}$;
+\item $\frac{(3x^2y)^2(2xy)^3}{(6xy)^2}$;
+\item $\left(\frac{2u^3}{v}\right)^2:\frac{4u^4}{v^2}$;
+\item $\frac{(ab^2)^4}{(a^2b)^2}$.
+\end{enumerate}
+\tcblower
+ a) $a^2b$; b) $2x^3y$; c) $p^3$; d) $m^2$;
+ e) $2a^4/b$; f) $2x^5y^3$; g) $u^2$; h) $b^6$.
+Vždy platí podmínky původního jmenovatele (dané proměnné musejí být nenulové).
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 3 — dvě cesty},breakable=false]
+Uprav $\displaystyle\frac{(2a^3b^2)^4(3ab)^2}{(6a^2b^2)^2}$.
+Jednou nejprve umocni závorky, podruhé zjednodušuj po činitelích.
+\tcblower
+$\frac{16a^{12}b^8\cdot9a^2b^2}{36a^4b^4}=\boxed{4a^{10}b^6}$
+při $a,b\ne0$.
+\end{zadaniReseniBox}
+
+\blok{Kolo 4 — řecká písmena jsou také proměnné}
+\begin{prikladReseniBox}[title={Příklad 4 — alfa, beta, lambda, ró}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{\alpha^8\beta^4}{\alpha^3\beta}\left(\frac{\beta^2}{\alpha}\right)^2$;
+\item $\frac{(-\lambda)^5(\lambda^2)^3}{(-\lambda)^3\lambda^4}$;
+\item $\left(\frac{\pi^2\rho}{2\pi}\right)^3$.
+\end{enumerate}
+\tcblower
+ a) $\boxed{\alpha^3\beta^7}$;
+ b) $\boxed{\lambda^4}$;
+ c) $\boxed{\pi^3\rho^3/8}$.
+Dělíme pouze nenulovými jmenovateli.
+\end{prikladReseniBox}
+\textbf{Zkrácená tabulka řeckých písmen s českými názvy:}
+Samostatný tahák pro studenty obsahuje také velká písmena a příklady použití.
+\begin{center}\footnotesize
+\begin{tabularx}{\linewidth}{@{}c l c l c X@{}}
+\toprule Písmeno & Název & Písmeno & Název & Písmeno & Název \\\midrule
+$\alpha$ & alfa & $\iota$ & ióta & $\rho$ & ró \\
+$\beta$ & beta & $\kappa$ & kappa & $\sigma$ & sigma \\
+$\gamma$ & gama & $\lambda$ & lambda & $\tau$ & tau \\
+$\delta$ & delta & $\mu$ & mí & $\upsilon$ & ypsilon \\
+$\epsilon$ & epsilon & $\nu$ & ný & $\varphi$ & fí \\
+$\zeta$ & zéta & $\xi$ & ksí & $\chi$ & chí \\
+$\eta$ & éta & $o$ & omikron & $\psi$ & psí \\
+$\theta$ & théta & $\pi$ & pí & $\omega$ & omega \\\bottomrule
+\end{tabularx}\end{center}
+\poznamka{Ve stručné tabulce tiskneme omikron jako $o$; vzhled se shoduje
+s latinským písmenem. Používáme české školní názvy, ne současnou výslovnost řečtiny.
+Písmeno $\pi$ je obvykle matematická konstanta, zatímco $\alpha,\beta$ zde jsou proměnné.}
+\begin{zadaniReseniBox}[title={Samostatná práce 4 — osm řeckých příkladů}]
+\begin{enumerate}[label=\alph*)]
+\item $\alpha^3\alpha^6$; \item $\frac{\beta^9}{\beta^4}$;
+\item $(\lambda^2\mu^3)^2$;
+\item $\frac{\theta^7\varphi^5}{\theta^3\varphi^2}$;
+\item $\left(\frac{\gamma^3}{\delta^2}\right)^3$;
+\item $\frac{(-\omega)^8}{(-\omega)^3}$;
+\item $\frac{(2\alpha\beta^2)^3}{4\alpha^2\beta^3}$;
+\item $\frac{(\sigma^3\tau)^2}{\sigma^4\tau^2}$.
+\end{enumerate}
+\tcblower
+ a) $\alpha^9$; b) $\beta^5$; c) $\lambda^4\mu^6$;
+ d) $\theta^4\varphi^3$; e) $\gamma^9/\delta^6$;
+ f) $(-\omega)^5=-\omega^5$; g) $2\alpha\beta^3$;
+ h) $\sigma^2$. Zachovej podmínky nenulovosti původních jmenovatelů.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 4 — protipříklad},breakable=false]
+Lze $\alpha^3+\beta^3$ upravit na $(\alpha+\beta)^3$?
+Dosaď $\alpha=1$, $\beta=2$. A co $\alpha^3\beta^3$?
+\tcblower
+$1^3+2^3=9$, ale $(1+2)^3=27$; první vztah není obecný.
+Platí však $\alpha^3\beta^3=(\alpha\beta)^3$.
+\end{zadaniReseniBox}
+
+\blok{Kolo 5 — rozklad na mocniny prvočísel}
+\begin{prikladReseniBox}[title={Příklad 5 — číselný příklad z předlohy},breakable=false]
+Vyjádři jako součin mocnin prvočísel:
+$\displaystyle\frac{8^2\cdot6^3}{4^3\cdot12}$.
+\tcblower
+$\displaystyle\frac{(2^3)^2(2\cdot3)^3}{(2^2)^3(2^2\cdot3)}
+=2^{6+3-6-2}3^{3-1}=\boxed{2\cdot3^2}$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 5 — šest rozkladů}]
+Vyjádři jako součin mocnin prvočísel (nevyčísluj velká čísla):
+\begin{enumerate}[label=\alph*)]
+\item $\frac{12^2}{6^2}$; \item $\frac{18^3}{6^3}$;
+\item $\frac{20^2\cdot3^2}{6^2}$;
+\item $\frac{45^2}{15^2}$;
+\item $\frac{24^2}{6^2}$;
+\item $\frac{15^3\cdot4^2}{10^2\cdot3^2}$.
+\end{enumerate}
+\tcblower
+ a) $2^2$; b) $3^3$; c) $2^2\cdot5^2$;
+ d) $3^2$; e) $2^4$; f) $2^2\cdot3\cdot5$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 5 — velký příklad s výsledkem 25}]
+Podle předlohy vyjádři jako součin mocnin prvočísel:
+\[
+\frac{5(15^2\cdot48)^2}{(15\cdot12)^3\cdot8^2}\cdot
+\left(\frac{(12\cdot5)^6\cdot16^2}{(25\cdot18)^3\cdot32^3}\right)^2.
+\]
+\tcblower
+Samostatně zjednodušíme oba faktory:
+\[
+\underbrace{\frac{5(15^2\cdot48)^2}{(15\cdot12)^3\cdot8^2}}_{=5^2/2^4}
+\cdot\underbrace{\left(\frac{(12\cdot5)^6\cdot16^2}{(25\cdot18)^3\cdot32^3}\right)^2}_{=(2^2)^2=2^4}
+=\boxed{5^2=25}.
+\]
+Kontrola bez obřích čísel: v prvním faktoru zůstane $5^2/2^4$,
+v obsahu závorky jen $2^2$.
+\end{zadaniReseniBox}
+
+\blok{Kolo 6 — závěrečné kombinované příklady}
+\begin{prikladReseniBox}[title={Příklad 6 — zjednoduš celý výraz},breakable=false]
+$\displaystyle\frac{(3a^2b)^3\cdot(2ab^2)^2}{(6ab)^2}$.
+\tcblower
+$\displaystyle\frac{27a^6b^3\cdot4a^2b^4}{36a^2b^2}
+=\boxed{3a^6b^5}$ při $a,b\ne0$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 6 — šest závěrečných úloh}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{(2a^2b)^2}{(2ab)^2}$;
+\item $\left(\frac{3x^2}{y}\right)^2\frac{y^2}{9x}$;
+\item $\frac{(3\alpha\beta^2)^2}{9\alpha^2\beta}$;
+\item $\frac{(-2m)^4}{2^2m^2}$;
+\item $\frac{(a^2b)^3}{a^2b^2}$;
+\item $\frac{(6^2\cdot10)^2}{(2^2\cdot3)^2}$.
+\end{enumerate}
+\tcblower
+ a) $a^2$; b) $x^3$; c) $\beta^3$;
+ d) $4m^2$; e) $a^4b$;
+ f) $\left(\frac{360}{12}\right)^2=30^2=3^2\cdot10^2$.
+Původní jmenovatele musí být nenulové.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 6 — můstek k hodině 28},breakable=false]
+Vyjádři pomocí kladných exponentů a prvočísel
+$\displaystyle\frac{12^6\cdot4^3\cdot15^{-4}}{50^2\cdot16^4\cdot9^4}$.
+\tcblower
+Připravované pravidlo $15^{-4}=1/15^4$ (podrobně až příště).
+Po rozkladu základů: $\boxed{\frac{1}{3^6\cdot5^8}}$.
+Tato úloha není součástí povinného jádra: poprvé obsahuje záporný exponent.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[title={Domácí úkol 1 — deset úloh}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{3^8\cdot3^2}{3^6}$;
+\item $\left(\frac{2a^3}{b}\right)^2$;
+\item $\frac{(3x^2y)^2}{9xy}$;
+\item $(\alpha^3\beta^2)^3$;
+\item $\frac{(-m)^7}{(-m)^4}$;
+\item $\frac{(2p^2q)^3}{(2pq)^2}$;
+\item $\frac{(a^3b^2)^2a}{a^4b}$;
+\item $\frac{18^2}{6^2}$;
+\item $\left(\frac{-2}{5^2}\right)^2$;
+\item Platí $x^2+x^3=x^5$ pro každé $x$?
+\end{enumerate}
+\tcblower
+ a) $3^4$; b) $4a^6/b^2$; c) $x^3y$;
+ d) $\alpha^9\beta^6$; e) $(-m)^3=-m^3$;
+ f) $2p^4q$; g) $a^3b^3$; h) $3^2$; i) $4/5^4$;
+ j) ne, pro $x=2$ je $4+8=12\ne32$.
+U všech zlomků zůstávají podmínky původního jmenovatele.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Domácí úkol 2 — volitelný, tři náročnější příklady},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{(2a^3b^2)^3}{(4ab)^2}$;
+\item $\frac{(12^2\cdot5)^2}{(2^3\cdot3\cdot5)^2}$;
+\item $\frac{(\lambda^2\mu^3)^2}{(\lambda\mu^2)^2}$.
+\end{enumerate}
+\tcblower
+ a) $\frac12a^7b^4$; b) $6^2$; c) $\lambda^2\mu^2$.
+\end{zadaniReseniBox}
+\poznamka{\textbf{Závěrečná otázka:} Která úprava učinila složitý výraz jednodušším?
+V hodině 28 zavedeme $a^0$ a $a^{-n}$; do té doby negativní exponent
+není součástí povinných výsledků.}
+\end{document}

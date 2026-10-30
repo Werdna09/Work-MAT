@@ -1,0 +1,186 @@
+% Work/MAT -- hodina 30, racionalni exponent a zaverecna tabulka mocnin.
+% Ucebnice Mocniny a Odmocniny.tex, cast Mocniny s racionalnim exponentem.
+% Realisticky.cz 020715 Mocniny s racionalnim mocnitelem, metodika: odvozeni zachovanim pravidel.
+% V teto hodine pro racionalni exponent POUZE kladne zaklady; bez rizikoveho
+% nekonzistentniho pocitani se zapornym zakladem. Puvodni hodina 31 byla presunuta na 30.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{30}{Racionální exponent}
+\begin{document}
+\poznamka{\textbf{45minutové jádro:} 4 min připomenutí odmocnin;
+8 min motivace $a^{1/n}$ a definice; 7 min Příklad 1 + Samostatná práce 1 a)--d);
+6 min kompletní tabulka; 7 min Příklad 2 + Samostatná práce 2 a)--c);
+8 min Příklad 3 a Samostatná práce 3 a)--c); 5 min shrnutí a zadání domácí práce.
+Zbylé příklady a plná domácí dvanáctka se řeší doma či v rezervě.
+\textbf{Při racionálním exponentu zatím požaduj kladný základ.}}
+
+\blok{Propojení: jak se odmocnina schová do exponentu?}
+Už umíme $\sqrt{16}=4$ a $\sqrt[3]{27}=3$. Chceme se stejným číslem
+počítat pomocí pravidel pro mocniny. Pro kladné $a$ hledáme takové číslo
+$a^p$, aby $(a^p)^2=a$. Podle známého vzorce pro mocninu mocniny
+musí být $2p=1$, tedy $p=\tfrac12$. Stejně pro třetí odmocninu:
+$3p=1$, tedy $p=\tfrac13$.
+\[
+\sqrt a=a^{\frac12},\qquad \sqrt[3]a=a^{\frac13}\qquad (a>0).
+\]
+\poznamka{Toto je \emph{motivační odvození} a ukázka požadované návaznosti,
+ne samostatný důkaz obecné definice. Pro nultý a záporný základ rozlišuj obory.}
+
+\begin{definiceBox}[title={Definice: mocnina s racionálním exponentem}]
+Pro $a>0$, celé číslo $m\in\mathbb Z$ a přirozené $n\ge2$ definujeme
+\[
+\boxed{\displaystyle a^{\frac mn}=(\sqrt[n]{a})^m=\sqrt[n]{a^m}.}
+\]
+Zlomek $\frac mn$ je \emph{jediný exponent}: jmenovatel říká, kterou
+odmocninu vezmeme, čitatel říká, na kolikátou umocníme.
+Pro celočíselné exponenty platí naše dřívější definice.
+\end{definiceBox}
+\textbf{Proč $a>0$?} Zároveň chceme zachovat všechna pravidla a dovolit
+krácení zlomku v exponentu. Například u záporného základu by zápisy
+$(-8)^{1/3}$ a $(-8)^{2/6}$ mohly při naivním odmocňování vést k různým
+výsledkům nebo k nedefinovanému výrazu. S kladným základem tato potíž není.
+\textbf{Pozor:} Třetí odmocnina $\sqrt[3]{-8}=-2$ z minulé hodiny
+samozřejmě nadále existuje; v této hodině ji pouze nepřepisujeme
+na mocninu se zlomkovým exponentem.
+
+\begin{prikladReseniBox}[title={Příklad 1: nejprve odmocni, pak umocni}]
+Vypočti $8^{2/3}$, $16^{3/4}$, $27^{-2/3}$ a $81^{1/4}$.
+\tcblower
+\[
+8^{2/3}=(\sqrt[3]8)^2=2^2=4,\quad
+16^{3/4}=(\sqrt[4]{16})^3=2^3=8,
+\]
+\[
+27^{-2/3}=\frac1{(\sqrt[3]{27})^2}=\frac19,\qquad
+81^{1/4}=\sqrt[4]{81}=3.
+\]
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1: převody a výpočty}]
+\begin{enumerate}[label=\alph*)]
+\item $64^{1/3}$; \item $32^{2/5}$; \item $81^{-1/2}$;
+\item $16^{-3/4}$;
+\item Přepiš $\sqrt[5]{a^3}$ jako mocninu, $a>0$.
+\item Přepiš $a^{-2/3}$ pomocí odmocniny, $a>0$.
+\item Vypočti $100^{3/2}$; \item $125^{-1/3}$.
+\end{enumerate}
+\tcblower
+ a) $4$; b) $4$; c) $1/9$; d) $1/8$;
+ e) $a^{3/5}$; f) $1/(\sqrt[3]a)^2$;
+ g) $1000$; h) $1/5$.
+\end{zadaniReseniBox}
+
+\blok{Naše hotová tabulka pravidel pro mocniny}
+\textbf{Dnes ji uzavíráme} rozšířením o racionální exponent.
+Pravidla od hodin 25--28 už známe, \textbf{nové jsou poslední řádky}.
+\begin{center}\scriptsize
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{34mm}>{\raggedright\arraybackslash}p{53mm}X@{}}
+\toprule
+\textbf{Pravidlo} & \textbf{Zápis} & \textbf{Podmínky}\\\midrule
+První mocnina & $a^1=a$ & $a\in\mathbb R$\\
+Mocniny 0 a 1 & $0^n=0$, $1^n=1$ & $n\in\mathbb N$\\
+Znaménka & $a^n>0$ pro $a>0$; pro $a<0$ kladné/záporné & $n$ sudé/liché\\
+Základ $-1$ & $(-1)^n=1$ / $-1$ & $n$ sudé/liché\\
+Nultý exponent & $a^0=1$ & $a\ne0$\\
+Záporný exponent & $a^{-n}=1/a^n$ & $a\ne0$, $n\in\mathbb N$\\
+Součin stejných základů & $a^r a^s=a^{r+s}$ & $r,s\in\mathbb Z$, při $r\le0$ nebo $s\le0$ také $a\ne0$\\
+Podíl stejných základů & $a^r/a^s=a^{r-s}$ & $a\ne0$, $r,s\in\mathbb Z$\\
+Mocnina mocniny & $(a^r)^s=a^{rs}$ & $r,s\in\mathbb Z$, výrazy definovány\\
+Mocnina součinu & $(ab)^r=a^rb^r$ & $r\in\mathbb Z$, pro $r\le0$ $ab\ne0$\\
+Mocnina podílu & $(a/b)^r=a^r/b^r$ & $b\ne0$; při $r\le0$ také $a\ne0$\\\midrule
+\textbf{NOVĚ: racionální exponent} & $\boldsymbol{a^{m/n}=\sqrt[n]{a^m}}$ & $\boldsymbol{a>0,\ m\in\mathbb Z,\ n\ge2}$\\
+\textbf{NOVĚ: převody} & $\boldsymbol{a^{1/n}=\sqrt[n]a}$; $\boldsymbol{a^{-m/n}=1/a^{m/n}}$ & $\boldsymbol{a>0,\ m,n\in\mathbb N,\ n\ge2}$\\\bottomrule
+\end{tabularx}\normalsize\end{center}
+\poznamka{U řádků se součinem a mocninou platí \emph{obecné pravidlo vždy,
+jsou-li všechny členy definované}. Pro libovolné racionální exponenty
+předpokládej $a>0$ (u dvou základů $a,b>0$). Tabulku budeme používat
+jako pomůcku. \textbf{Pro kladné základy} platí pravidla pro součin, podíl,
+mocninu mocniny, součinu a podílu také pro racionální exponenty;
+\textbf{nové vzorce pro součiny odmocnin se učí až v hodině 33}.}
+
+\begin{prikladReseniBox}[title={Příklad 2: stejná pravidla, nové exponenty}]
+Pro $a,b>0$ uprav $a^{3/2}a^{-1/2}$ a
+$\dfrac{(a^{2/3}b^{-1/2})^3}{a^{1/2}b^{-1}}$.
+\tcblower
+První výraz $a^{3/2-1/2}=a$.
+Ve druhém $a^{2-1/2}b^{-3/2+1}=a^{3/2}b^{-1/2}
+=\dfrac{a^{3/2}}{\sqrt b}$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2: mocniny se zlomkovým exponentem}]
+Pro všechna písmena platí, že jejich hodnoty jsou kladné.
+\begin{enumerate}[label=\alph*)]
+\item $x^{1/2}x^{3/2}$; \item $\dfrac{a^{7/4}}{a^{3/4}}$;
+\item $(b^{2/3})^3$;
+\item $\dfrac{y^{5/6}}{y^{1/3}}$;
+\item $(m^{1/2}n^{-1/3})^6$.
+\end{enumerate}
+\tcblower
+ a) $x^2$; b) $a$; c) $b^2$; d) $y^{1/2}=\sqrt y$;
+ e) $m^3/n^2$. Podmínky kladnosti zachováváme.
+\end{zadaniReseniBox}
+
+\blok{Shrnutí a opatrnost u odmocnin}
+\begin{prikladReseniBox}[title={Příklad 3: poznáš rozdíl mezi odmocninou a rovnicí?}]
+Urči $\sqrt{(-7)^2}$, $\sqrt[3]{(-7)^3}$, $16^{1/2}$
+a všechna řešení $z^2=16$.
+\tcblower
+$\sqrt{(-7)^2}=7$ (\emph{nezáporná} druhá odmocnina);
+$\sqrt[3]{(-7)^3}=-7$; $16^{1/2}=4$;
+rovnice má dvě řešení $z=\pm4$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 3: oprav chybná tvrzení}]
+\begin{enumerate}[label=\alph*)]
+\item $27^{2/3}=27^2:3$.
+\item $a^{-1/2}=-\sqrt a$ pro $a>0$.
+\item $\sqrt{t^2}=t$ pro každé reálné $t$.
+\item $9^{1/2}$ má dvě hodnoty $+3$ a $-3$.
+\end{enumerate}
+\tcblower
+ a) Správně $(\sqrt[3]{27})^2=9$;
+ b) správně $1/\sqrt a>0$;
+ c) správně $|t|$;
+ d) pouze $+3$; rovnici $z^2=9$ řeší $\pm3$.
+\end{zadaniReseniBox}
+
+\blok{Rozšíření}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: zlomky v exponentu}]
+\begin{enumerate}[label=\alph*)]
+\item $32^{6/10}$ a $32^{3/5}$: proč jsou stejné?
+\item Pro $a,b>0$ uprav $\dfrac{(a^{1/2}b^{-1/3})^6}{a^2b^{-1}}$.
+\item Proč v této hodině nezařazujeme $(-16)^{1/4}$ mezi reálné mocniny?
+\end{enumerate}
+\tcblower
+ a) Po zkrácení $6/10=3/5$ obě hodnoty vyjdou $2^3=8$;
+ b) $a^3b^{-2}/(a^2b^{-1})=a/b$;
+ c) čtvrtá odmocnina záporného čísla v $\mathbb R$ neexistuje.
+\end{zadaniReseniBox}
+
+\blok{Domácí úkol: po dvou z každé probírané oblasti}
+\poznamka{Dvanáct podúloh je \textbf{domácí souhrn}, nikoli práce do konce hodiny.
+U příkladů s proměnnými napiš také podmínky; u posledních dvou počítej
+s kladnými základy. Jde o dva příklady z každé hodiny 25--30.}
+\begin{zadaniReseniBox}[title={Domácí úkol 1: mix mocnin a odmocnin (12 úloh)}]
+\begin{enumerate}[label=\alph*)]
+\item \textbf{Hodina 25:} $(-3)^4-3^4$;
+\item $-(-2)^3+(-2)^4$;
+\item \textbf{Hodina 26:} $\dfrac{3^8\cdot3^2}{3^5}$;
+\item $(2a^2b)^3$;
+\item \textbf{Hodina 27 (KISS):} $\dfrac{(2a^2b)^2}{4ab}$;
+\item $\dfrac{12^2\cdot18}{6^3}$;
+\item \textbf{Hodina 28:} $\left(-\frac23\right)^{-2}$;
+\item $\dfrac{x^{-3}y^2}{x^2y^{-1}}$;
+\item \textbf{Hodina 29:} $\sqrt{(-12)^2}$;
+\item $\sqrt[3]{-\frac{125}{216}}$;
+\item \textbf{Hodina 30:} $64^{2/3}$;
+\item $\dfrac{a^{5/4}}{a^{-3/4}}$.
+\end{enumerate}
+\tcblower
+ a) $0$; b) $8+16=24$;
+ c) $3^5=243$; d) $8a^6b^3$;
+ e) $a^3b$, $a,b\ne0$;
+ f) $12$;
+ g) $9/4$;
+ h) $y^3/x^5$, $x,y\ne0$;
+ i) $12$; j) $-5/6$;
+ k) $16$; l) $a^2$ pro $a>0$.
+\end{zadaniReseniBox}
+\end{document}
