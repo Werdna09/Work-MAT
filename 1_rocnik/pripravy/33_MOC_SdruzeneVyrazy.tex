@@ -1,0 +1,185 @@
+% Work/MAT | 1. rocnik | nova hodina 33: Sdruzene vyrazy.
+% Navaznost: 31 castecnne odmocnovani, 32 jednoduche usmernovani.
+% Puvodni obsah hodiny 36 se presouva sem; hodina 34 je na slozene vyrazy.
+% Ucebnice: Mocniny a Odmocniny.tex, Usmernovani zlomku: sdruzeny vyraz.
+% Realisticky.cz 020714 Pocitani s odmocninami III: usmernovani dvojclenu,
+% prakticke usporadani postupu. Priklady jsou nove sestaveny.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{33}{Sdružené výrazy}
+\begin{document}
+\poznamka{\textbf{45minutové jádro:} 5 min zopakování usměrňování;
+8 min rozdíl čtverců a Příklad 1; 8 min Samostatná práce 1 a)--d);
+8 min Příklad 2 a Samostatná práce 2 a)--c);
+8 min Příklad 3 a práce se znaménkem; 5 min samostatná kontrola;
+3 min shrnutí a domácí práce. Proměnné a dvoustupňové úlohy jsou \textbf{rezerva}.
+Dnes jde o jediný nový trik: \emph{dva sdružené dvojčleny vytvoří rozdíl čtverců}.}
+
+\blok{Proč nestačí násobit stejnou odmocninou?}
+V hodině 32 jsme usměrnili $1/\sqrt2$ násobením $\sqrt2/\sqrt2$.
+Co ale se zlomkem $1/(2+\sqrt3)$?
+\[
+\frac1{2+\sqrt3}\cdot\frac{\sqrt3}{\sqrt3}
+=\frac{\sqrt3}{2\sqrt3+3},
+\]
+takže odmocnina stále zůstává. Potřebujeme v čitateli a jmenovateli
+přidat takový násobek, který \emph{odmocninový člen zruší}.
+
+\begin{definiceBox}[title={Definice: sdružené výrazy}]
+\textbf{Sdružené výrazy} jsou dvojčleny $u+v$ a $u-v$,
+které se liší pouze znaménkem mezi členy.
+Jejich součin je rozdíl čtverců:
+\[
+\boxed{(u+v)(u-v)=u^2-v^2.}
+\]
+Toto pravidlo platí pro všechna reálná $u,v$.
+\end{definiceBox}
+\textbf{Proč?} Po roznásobení $u^2-uv+uv-v^2$ se prostřední členy
+odečtou. Je-li ve jmenovateli $u+\sqrt a$, násobíme vhodným
+$u-\sqrt a$ (a naopak), pokud je tento násobek nenulový.
+
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: první dvojčlen ve jmenovateli}]
+Usměrni $\dfrac1{2+\sqrt3}$ a $\dfrac3{\sqrt5+2}$.
+\tcblower
+\[
+\frac1{2+\sqrt3}\cdot\frac{2-\sqrt3}{2-\sqrt3}
+=\frac{2-\sqrt3}{4-3}=\boxed{2-\sqrt3}.
+\]
+\[
+\frac3{\sqrt5+2}\cdot\frac{\sqrt5-2}{\sqrt5-2}
+=\frac{3(\sqrt5-2)}{5-4}=\boxed{3\sqrt5-6}.
+\]
+Ve druhém příkladu je činitel $\sqrt5-2\ne0$ a původní jmenovatel také není nula.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1: jeden sdružený výraz stačí}]
+Usměrni:
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac1{\sqrt3+1}$;
+\item $\dfrac2{3-\sqrt7}$;
+\item $\dfrac4{\sqrt6-\sqrt2}$;
+\item $\dfrac5{\sqrt7+\sqrt2}$;
+\item $\dfrac3{2+\sqrt2}$;
+\item $\dfrac{\sqrt5}{\sqrt5-1}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac{\sqrt3-1}{3-1}=\dfrac{\sqrt3-1}2$;
+\item $\dfrac{2(3+\sqrt7)}{9-7}=3+\sqrt7$;
+\item $\dfrac{4(\sqrt6+\sqrt2)}{6-2}=\sqrt6+\sqrt2$;
+\item $\dfrac{5(\sqrt7-\sqrt2)}{7-2}=\sqrt7-\sqrt2$;
+\item $\dfrac{3(2-\sqrt2)}{4-2}=\dfrac{3(2-\sqrt2)}2$;
+\item $\dfrac{\sqrt5(\sqrt5+1)}{5-1}=\dfrac{5+\sqrt5}{4}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{V čitateli je také odmocnina: nejprve udrž přehled}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: usměrňování s dvojčlenem v čitateli}]
+Usměrni $\dfrac{\sqrt3+\sqrt2}{\sqrt3-\sqrt2}$.
+\tcblower
+\[
+\frac{\sqrt3+\sqrt2}{\sqrt3-\sqrt2}
+\cdot\frac{\sqrt3+\sqrt2}{\sqrt3+\sqrt2}
+=\frac{(\sqrt3+\sqrt2)^2}{3-2}
+=\boxed{5+2\sqrt6}.
+\]
+\textbf{Pozor:} $(u+v)^2=u^2+2uv+v^2$, nikoliv pouze $u^2+v^2$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 2: promysli nejprve strategii}]
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac{\sqrt2+1}{\sqrt2-1}$;
+\item $\dfrac{\sqrt7-\sqrt3}{\sqrt7+\sqrt3}$;
+\item $\dfrac2{\sqrt7-\sqrt3}$;
+\item $\dfrac{\sqrt5-1}{\sqrt5+1}$;
+\item $\dfrac{\sqrt6+\sqrt2}{\sqrt6-\sqrt2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(\sqrt2+1)^2/(2-1)=3+2\sqrt2$;
+\item $(\sqrt7-\sqrt3)^2/(7-3)=(10-2\sqrt{21})/4=(5-\sqrt{21})/2$;
+\item $2(\sqrt7+\sqrt3)/(7-3)=(\sqrt7+\sqrt3)/2$;
+\item $(\sqrt5-1)^2/(5-1)=(6-2\sqrt5)/4=(3-\sqrt5)/2$;
+\item $(\sqrt6+\sqrt2)^2/(6-2)=(8+4\sqrt3)/4=2+\sqrt3$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Časté chyby: výběr znaménka, hranice použití}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: najdi a oprav chybu}]
+Žák napíše $\dfrac1{3-\sqrt5}\cdot\dfrac{3-\sqrt5}{3-\sqrt5}
+=\dfrac{3-\sqrt5}{9-5}$. Kde je chyba?
+\tcblower
+Použil \emph{stejný}, nikoliv \emph{sdružený} výraz;
+$(3-\sqrt5)^2\ne9-5$.
+Správně:
+\[
+\frac1{3-\sqrt5}\cdot\frac{3+\sqrt5}{3+\sqrt5}
+=\boxed{\frac{3+\sqrt5}{4}}.
+\]
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 3: tři otázky ke kontrole}]
+\begin{enumerate}[label=\alph*)]
+\item Jaký je sdružený výraz k $5-\sqrt2$?
+\item Je pravda $(\sqrt6-\sqrt2)(\sqrt6+\sqrt2)=8$?
+\item Usměrni $\dfrac{1}{\sqrt7-2}$.
+\item Proč není vhodné rozšiřovat $\dfrac1{\sqrt3+\sqrt2}$ zlomkem
+$\dfrac{\sqrt3+\sqrt2}{\sqrt3+\sqrt2}$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $5+\sqrt2$;
+\item Ne, výsledek je $6-2=4$;
+\item $(\sqrt7+2)/(7-4)=(\sqrt7+2)/3$;
+\item Ve jmenovateli vznikne druhá mocnina dvojčlenu a odmocnina nezmizí.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Rozšíření: při proměnné vždy kontroluj podmínky}
+\begin{prikladReseniBox}[breakable=false,title={Rozšiřující příklad 1: přípustné hodnoty proměnné}]
+Usměrni $\dfrac1{\sqrt{x}-2}$ a najdi definiční obor původního výrazu.
+\tcblower
+Potřebujeme $x\ge0$ a $\sqrt x-2\ne0$, tedy $x\ne4$.
+Pak je $\sqrt x+2>0$ a můžeme násobit:
+\[
+\frac1{\sqrt x-2}\cdot\frac{\sqrt x+2}{\sqrt x+2}
+=\boxed{\frac{\sqrt x+2}{x-4}},
+\qquad x\in\langle0;4)\cup(4;+\infty).
+\]
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšiřující příklad 2: past s nulovým sdruženým výrazem}]
+Pro $x\ge0$ se pokus usměrnit $\dfrac1{\sqrt x+1}$.
+Co se stane pro $x=1$?
+\tcblower
+Pro $x\ne1$ lze použít
+$\dfrac{\sqrt x-1}{x-1}$. V bodě $x=1$ by však
+\emph{sdružený násobek} byl nula, tedy bychom násobili $0/0$.
+Původní výraz je přesto v bodě $x=1$ definovaný a rovná se $1/2$.
+\textbf{Ověření definičního oboru před úpravou je nezbytné.}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol 1: sdružené výrazy}]
+Usměrni a uprav:
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac1{\sqrt5+1}$;
+\item $\dfrac4{\sqrt7-\sqrt3}$;
+\item $\dfrac3{4-\sqrt{13}}$;
+\item $\dfrac{\sqrt3+1}{\sqrt3-1}$;
+\item $\dfrac{2\sqrt2}{\sqrt6+\sqrt2}$;
+\item $\dfrac{\sqrt5-\sqrt2}{\sqrt5+\sqrt2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(\sqrt5-1)/4$;
+\item $\sqrt7+\sqrt3$;
+\item $4+\sqrt{13}$;
+\item $2+\sqrt3$;
+\item $\sqrt3-1$;
+\item $(7-2\sqrt{10})/3$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{\textbf{Shrnutí:} Nejde o kouzlo: vynásobíme výrazem rovným jedné,
+rozdíl čtverců odstraní odmocniny ze jmenovatele. Hodina 34 propojí
+částečné odmocňování, usměrňování, mocniny a úpravy výrazů v delších úlohách.}
+\end{document}

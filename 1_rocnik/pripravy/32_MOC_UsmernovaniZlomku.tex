@@ -1,0 +1,185 @@
+% Work/MAT | 1. rocnik | nova hodina 32: Usmernovani zlomku.
+% Dosavadni tabulka mocnin je uzavrena v hodine 30; nepotrebujeme novou.
+% 31 castecnne odmocnovani; 32 jednoduche jmenovatele;
+% 33 sdruzene vyrazy; ctvrtletni test z puvodni 32. hodiny se musi preplanovat.
+% Ucebnice: Mocniny a Odmocniny.tex, oddil Usmernovani zlomku.
+% Realisticky.cz 010209 Usmernovani zlomku: nasobeni jednickou a volba
+% jednodussiho postupu. Ulohy vlastni, ne doslovny prepis.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{32}{Usměrňování zlomků}
+\begin{document}
+\poznamka{\textbf{45minutové jádro:} 4 min motivace; 8 min definice a Příklad 1;
+8 min Samostatná práce 1 a)--d); 8 min strategie a Příklad 2;
+8 min Samostatná práce 2 a)--d); 6 min proměnná a podmínky;
+3 min závěr. Volitelné pokračování: třetí odmocnina, složitější proměnné a domácí práce.
+\textbf{Dnes jmenovatel vždy obsahuje jen jeden odmocninový člen.}
+Sdružené výrazy přijdou až v hodině 33.}
+
+\blok{Proč se chceme zbavit odmocniny ve jmenovateli?}
+Zlomky $1/\sqrt2$ a $\sqrt2/2$ mají stejnou hodnotu, ale ve druhém
+je jmenovatel racionální. \textbf{Nesmíme změnit hodnotu zlomku}: násobíme
+proto čitatele a jmenovatele stejným \emph{nenulovým} výrazem.
+\[
+\frac1{\sqrt2}\cdot\frac{\sqrt2}{\sqrt2}
+=\frac{\sqrt2}{(\sqrt2)^2}=\boxed{\frac{\sqrt2}{2}}.
+\]
+\begin{definiceBox}[title={Definice: usměrňování zlomků}]
+\textbf{Usměrňování zlomku} je úprava, při níž odstraníme odmocninu
+ze jmenovatele, aniž změníme hodnotu výrazu.
+Pro $a>0$ a libovolné reálné $k$ platí
+\[
+\boxed{\frac{k}{\sqrt a}=\frac{k\sqrt a}{a}}.
+\]
+Využíváme rozšíření zlomku výrazem $\sqrt a/\sqrt a=1$.
+\end{definiceBox}
+\poznamka{Nejde o nové pravidlo pro mocniny; jde o rozšíření zlomku.
+Zeptej se, proč musí být $a>0$: pro $a=0$ by původní jmenovatel
+byl nula; pro $a<0$ není druhá odmocnina reálná.}
+
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: jednoduché odmocniny ve jmenovateli}]
+Usměrni $\dfrac{5}{\sqrt3}$ a $\dfrac{3}{2\sqrt5}$.
+\tcblower
+\[
+\frac5{\sqrt3}=\frac{5\sqrt3}{3},\qquad
+\frac3{2\sqrt5}\cdot\frac{\sqrt5}{\sqrt5}
+=\frac{3\sqrt5}{10}.
+\]
+Při druhém příkladu není nutné násobit čitatele a jmenovatele číslem $2$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1: nejprve zautomatizuj postup}]
+Usměrni, výsledek zkrať, lze-li:
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac1{\sqrt5}$;
+\item $\dfrac4{\sqrt7}$;
+\item $\dfrac7{3\sqrt2}$;
+\item $\dfrac6{5\sqrt3}$;
+\item $\dfrac{2\sqrt3}{\sqrt5}$;
+\item $\dfrac{3}{\sqrt{11}}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac{\sqrt5}{5}$;
+\item $\dfrac{4\sqrt7}{7}$;
+\item $\dfrac{7\sqrt2}{6}$;
+\item $\dfrac{6\sqrt3}{15}=\dfrac{2\sqrt3}{5}$;
+\item $\dfrac{2\sqrt{15}}5$;
+\item $\dfrac{3\sqrt{11}}{11}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{KISS: nejprve zjednoduš, teprve potom usměrni}
+Po 27. hodině víme, že \textbf{správná strategie často zkrátí výpočet}.
+Nejprve částečně odmocni nebo zjednoduš celý zlomek; až potom
+rozhodni, zda je vůbec usměrňování potřeba.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: dva postupy, stejná hodnota}]
+Usměrni $\dfrac4{\sqrt{12}}$ a uprav $\dfrac{\sqrt{45}}{\sqrt5}$.
+\tcblower
+\[
+\frac4{\sqrt{12}}=\frac4{2\sqrt3}=\frac2{\sqrt3}
+=\boxed{\frac{2\sqrt3}{3}}.
+\]
+\[
+\frac{\sqrt{45}}{\sqrt5}=\sqrt{\frac{45}{5}}=\sqrt9=\boxed3.
+\]
+Ve druhém příkladu žádný iracionální jmenovatel \emph{po zjednodušení nezbyl}.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 2: vyber nejkratší postup}]
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac2{\sqrt8}$; \item $\dfrac9{\sqrt{27}}$;
+\item $\dfrac{\sqrt{18}}{\sqrt2}$;
+\item $\dfrac{\sqrt6}{\sqrt3}$;
+\item $\dfrac{3\sqrt6}{2\sqrt3}$;
+\item $\dfrac{12}{\sqrt{48}}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac1{\sqrt2}=\dfrac{\sqrt2}{2}$;
+\item $\dfrac3{\sqrt3}=\sqrt3$;
+\item $3$; \item $\sqrt2$;
+\item $\dfrac{3\sqrt2}2$;
+\item $\dfrac3{\sqrt3}=\sqrt3$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Proměnné a podmínky nezmizí úpravou}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: usměrňování s proměnnou}]
+Pro $x>0$ uprav $\dfrac3{\sqrt x}$ a $\dfrac{\sqrt{2x}}{\sqrt x}$.
+\tcblower
+\[
+\frac3{\sqrt x}=\boxed{\frac{3\sqrt x}{x}},\qquad
+\frac{\sqrt{2x}}{\sqrt x}=\sqrt{\frac{2x}{x}}=\boxed{\sqrt2}.
+\]
+Původní podmínka $x>0$ \textbf{platí i po zjednodušení}.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 3: určuj i definiční obor}]
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac{2}{\sqrt a}$;
+\item $\dfrac{\sqrt b}{3\sqrt b}$;
+\item $\dfrac5{\sqrt{3x}}$;
+\item $\dfrac{\sqrt{12t}}{\sqrt{3t}}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2\sqrt a/a$, $a>0$;
+\item $1/3$, $b>0$ (původní jmenovatel nesmí být nulový);
+\item $5\sqrt{3x}/(3x)$, $x>0$;
+\item $2$, $t>0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Rozšíření: usměrnění třetí odmocniny}
+\poznamka{Následující pravidlo je mimo povinné jádro; nevytváří
+předpoklad pro hodinu 33. Už známe třetí odmocninu z hodiny 29.}
+\begin{prikladReseniBox}[breakable=false,title={Rozšiřující příklad 1: doplň do třetí mocniny}]
+Usměrni $\dfrac1{\sqrt[3]4}$ a $\dfrac2{\sqrt[3]9}$.
+\tcblower
+Aby se $\sqrt[3]4=\sqrt[3]{2^2}$ změnila v celé číslo,
+doplníme ještě jednu dvojku:
+\[
+\frac1{\sqrt[3]4}\cdot\frac{\sqrt[3]2}{\sqrt[3]2}
+=\frac{\sqrt[3]2}{2}.
+\]
+U $\sqrt[3]9=\sqrt[3]{3^2}$ doplníme trojku:
+$\dfrac2{\sqrt[3]9}=\dfrac{2\sqrt[3]3}{3}$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Rozšiřující příklad 2: rozhodni, co násobit}]
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac3{\sqrt[3]2}$;
+\item $\dfrac1{\sqrt[3]{25}}$;
+\item Proč postup $\dfrac1{\sqrt2+1}\cdot\dfrac{\sqrt2}{\sqrt2}$
+\emph{neodstraní} odmocninu ze jmenovatele?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac{3\sqrt[3]4}{2}$;
+\item $\dfrac{\sqrt[3]5}{5}$;
+\item Vznikne jmenovatel $2+\sqrt2$, v němž odmocnina zůstane.
+Na dvojčleny použijeme v \textbf{hodině 33} jiný postup.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol 1: usměrni a kontroluj podmínky}]
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac7{\sqrt{14}}$; \item $\dfrac5{2\sqrt3}$;
+\item $\dfrac8{\sqrt{32}}$; \item $\dfrac{\sqrt{75}}{\sqrt3}$;
+\item $\dfrac{\sqrt{50}}{\sqrt8}$;
+\item $\dfrac{4}{\sqrt y}$ pro proměnnou $y$ (uveď podmínku).
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{14}/2$;
+\item $5\sqrt3/6$;
+\item $\sqrt2$;
+\item $5$;
+\item $5/2$;
+\item $4\sqrt y/y$, $y>0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Závěrečná otázka: kdy lze rozšířit zlomek výrazem
+$\sqrt a/\sqrt a$? Jen pro $a>0$, aby šlo o číslo 1.
+Příště využijeme rozdíl čtverců při usměrňování jmenovatele s \emph{dvěma} členy.}
+\end{document}

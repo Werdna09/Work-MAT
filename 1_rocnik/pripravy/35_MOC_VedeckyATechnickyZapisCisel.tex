@@ -1,0 +1,289 @@
+% Work/MAT | 1. rocnik | 35: Vedecky a technicky zapis cisel
+% Puvodni rozpis mel vedecky zapis ve 29. hodine, novy plan ho presunul sem.
+% Terminologie: vedecky (normalizovany) tvar 1<=|a|<10, n cele;
+% technicky / inzenyrsky tvar 1<=|a|<1000, exponent nasobkem tri.
+% Zdroje: ucebnice Mocniny a Odmocniny.tex (Mocniny desitky a vedecky
+% zapis cisla); Realisticky.cz 010608 Exponencialni tvar cisla,
+% 010609 Vypocty s mocninami. Texty a priklady jsou originalni.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{multicol}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{35}{Vědecký a technický zápis čísel}
+\begin{document}
+\poznamka{\textbf{45minutové jádro:} 4 min motivace a řády;
+8 min definice a Příklad 1; 8 min Samostatná práce 1 a)--f);
+7 min Příklad 2 a Samostatná práce 2 a)--d);
+8 min Příklad 3 (operace) a Samostatná práce 3 a)--c);
+7 min Příklad 4, vybrané předpony jednotek; 3 min shrnutí a domácí práce.
+Technický zápis s násobky tří lze projít stručně; rozšiřující příklady,
+informatické jednotky jsou nadstavba.
+Nenech se svést k předčasnému zavádění exponenciální funkce.}
+
+\blok{Proč psát mocniny desítky?}
+Porovnej zápisy $4\,700\,000\,000$ a $4{,}7\cdot10^9$.
+Také $0{,}0000047=4{,}7\cdot10^{-6}$. Mocnina desítky
+ukazuje \textbf{řád čísla} a usnadňuje srovnávání velmi velkých
+i velmi malých hodnot. Záporný exponent nepředstavuje záporné číslo:
+$10^{-3}=0{,}001>0$.
+
+\begin{center}\small
+\begin{tabular}{@{}c|rrrrrrr@{}}
+\toprule
+Exponent $n$ & $3$ & $2$ & $1$ & $0$ & $-1$ & $-2$ & $-3$\\\midrule
+$10^n$ & $1000$ & $100$ & $10$ & $1$ & $0{,}1$ & $0{,}01$ & $0{,}001$\\
+\bottomrule
+\end{tabular}
+\end{center}
+\poznamka{Nech žáky bez kalkulačky říct, jak se mění hodnota,
+když exponent zvýšíme či snížíme o jedna. Každý krok doprava v tabulce
+dělí hodnotu deseti.}
+
+\blok{1. Vědecký zápis čísla}
+\begin{definiceBox}[title={Definice: vědecký (normalizovaný exponenciální) zápis}]
+Každé \textbf{nenulové reálné číslo} $x$ lze jednoznačně zapsat ve tvaru
+\[
+\boxed{x=a\cdot10^n,\qquad 1\le |a|<10,\quad n\in\mathbb Z.}
+\]
+Číslo $a$ je \textbf{koeficient} (znaménko zůstává u něho),
+$n$ je \textbf{řádový exponent}. Číslo $0$ zapisujeme jednoduše jako $0$.
+\end{definiceBox}
+\textbf{Postup:} desetinnou čárku posuň tak, aby před ní byla právě
+jedna nenulová číslice. Posuneš-li ji \emph{doleva} o $k$ míst,
+exponent je $+k$; posuneš-li ji \emph{doprava}, exponent je $-k$.
+
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: z desetinného zápisu do vědeckého a zpět}]
+Převeď na vědecký zápis $5\,280\,000$,
+$0{,}000072$ a $-430\,000$.
+Na běžný desetinný zápis převeď $6{,}2\cdot10^{-4}$.
+\tcblower
+\[
+5\,280\,000=\boxed{5{,}28\cdot10^6},\qquad
+0{,}000072=\boxed{7{,}2\cdot10^{-5}},
+\]
+\[
+-430\,000=\boxed{-4{,}3\cdot10^5},\qquad
+6{,}2\cdot10^{-4}=\boxed{0{,}00062}.
+\]
+Všimni si, že znaménko čísla a znaménko exponentu vyjadřují různé věci.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1: tam a zpět}]
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $7\,300\,000$;
+\item $0{,}0000049$;
+\item $-0{,}0082$;
+\item $91\,500$;
+\item $3{,}7\cdot10^{-3}$;
+\item $-8{,}04\cdot10^5$;
+\item $0{,}000000031$;
+\item $4{,}2\cdot10^7$.
+\end{enumerate}
+\end{multicols}
+U a)--d), g) zapiš vědecký tvar; u e), f), h) běžné číslo.
+\tcblower
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $7{,}3\cdot10^6$;
+\item $4{,}9\cdot10^{-6}$;
+\item $-8{,}2\cdot10^{-3}$;
+\item $9{,}15\cdot10^4$;
+\item $0{,}0037$;
+\item $-804\,000$;
+\item $3{,}1\cdot10^{-8}$;
+\item $42\,000\,000$.
+\end{enumerate}
+\end{multicols}
+\end{zadaniReseniBox}
+
+\blok{2. Zápis na kalkulačce a kontrola řádu}
+Kalkulačka může ukázat \texttt{2.5E-4} nebo \texttt{2.5e-4}.
+To znamená $2{,}5\cdot10^{-4}$, \textbf{nikoli} násobení Eulerovým číslem $e$.
+Tlačítko \texttt{EXP} či \texttt{EE} vkládá \emph{řád desítky}; jeho přesný název
+závisí na kalkulačce. Například \texttt{6.2 EXP 7} značí $6{,}2\cdot10^7$.
+
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: co je a není správně normalizované?}]
+Posuď zápisy $45\cdot10^4$, $4{,}5\cdot10^5$,
+$0{,}45\cdot10^6$ a $-4{,}5\cdot10^5$.
+\tcblower
+První tři zápisy vyjadřují stejnou \emph{kladnou} hodnotu
+$450\,000$, ale v normalizovaném vědeckém tvaru je pouze
+$\boxed{4{,}5\cdot10^5}$: právě zde $1\le|a|<10$.
+Poslední zápis je správný vědecký tvar čísla $-450\,000$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 2: oprav nenormalizovaný zápis}]
+Přepiš do vědeckého tvaru:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $36\cdot10^5$;
+\item $0{,}005\cdot10^3$;
+\item $-250\cdot10^{-4}$;
+\item $0{,}72\cdot10^{-7}$;
+\item $100\cdot10^0$;
+\item $-0{,}003\cdot10^{-2}$.
+\end{enumerate}
+\end{multicols}
+\tcblower
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $3{,}6\cdot10^6$;
+\item $5\cdot10^0=5$;
+\item $-2{,}5\cdot10^{-2}$;
+\item $7{,}2\cdot10^{-8}$;
+\item $1\cdot10^2$;
+\item $-3\cdot10^{-5}$.
+\end{enumerate}
+\end{multicols}
+\end{zadaniReseniBox}
+
+\blok{3. Počítání s čísly ve vědeckém tvaru}
+Při násobení a dělení použij známá pravidla pro mocniny. Při
+\textbf{sčítání a odčítání} však musíš nejdřív sjednotit exponenty;
+koeficienty nemůžeš prostě sečíst a exponenty také.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: násobení a dělení bez velkých čísel}]
+Vypočti a napiš výsledek ve vědeckém tvaru:
+\[
+(3{,}2\cdot10^{-4})(1{,}5\cdot10^6),\qquad
+\frac{6\cdot10^8}{2\cdot10^3}.
+\]
+\tcblower
+\[
+(3{,}2\cdot1{,}5)10^{-4+6}=4{,}8\cdot10^2,\qquad
+\frac62\cdot10^{8-3}=3\cdot10^5.
+\]
+\textbf{Kontrola:} $4{,}8\cdot10^2=480$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 3: výpočty a řád výsledku}]
+Vypočti ve vědeckém tvaru:
+\begin{enumerate}[label=\alph*)]
+\item $(2\cdot10^5)(4\cdot10^{-3})$;
+\item $\displaystyle\frac{8{,}4\cdot10^{-3}}{2{,}1\cdot10^{-5}}$;
+\item $(7{,}2\cdot10^4)(5\cdot10^{-3})$;
+\item $6\cdot10^4+3\cdot10^3$;
+\item $9\cdot10^{-2}-4\cdot10^{-3}$;
+\item $\displaystyle\frac{3\cdot10^6}{6\cdot10^{-2}}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $8\cdot10^2$;
+\item $(8{,}4/2{,}1)10^{-3+5}=4\cdot10^2$;
+\item $36\cdot10^1=3{,}6\cdot10^2$;
+\item $(6+0{,}3)10^4=6{,}3\cdot10^4$;
+\item $(9-0{,}4)10^{-2}=8{,}6\cdot10^{-2}$;
+\item $(3/6)10^8=5\cdot10^7$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Do jádra stačí a)--c). U d), e) ověř, zda studenti chápou,
+proč nelze u sčítání použít exponent $m+n$.}
+
+\blok{4. Technický (inženýrský) zápis a předpony jednotek}
+\begin{definiceBox}[title={Definice: technický zápis}]
+V \textbf{technickém (inženýrském) zápisu} má nenulové číslo tvar
+\[
+\boxed{x=b\cdot10^{3k},\qquad1\le|b|<1000,\quad k\in\mathbb Z.}
+\]
+Exponent je \textbf{násobkem tří}. To se hodí k předponám
+jednotek, které postupují po tisícinách a tisícinásobcích.
+\end{definiceBox}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{19mm}>{\raggedright\arraybackslash}p{18mm}>{\raggedright\arraybackslash}p{23mm}X@{}}
+\toprule
+Mocnina & Předpona & Značka & Příklad\\\midrule
+$10^9$ & giga & G & $3{,}2\,\mathrm{GHz}=3{,}2\cdot10^9\,\mathrm{Hz}$\\
+$10^6$ & mega & M & $2\,\mathrm{MW}=2\cdot10^6\,\mathrm W$\\
+$10^3$ & kilo & k & $5\,\mathrm{km}=5\cdot10^3\,\mathrm m$\\
+$10^{-3}$ & mili & m & $4\,\mathrm{mm}=4\cdot10^{-3}\,\mathrm m$\\
+$10^{-6}$ & mikro & $\mu$ & $7\,\mathrm{\mu s}=7\cdot10^{-6}\,\mathrm s$\\
+$10^{-9}$ & nano & n & $9\,\mathrm{nm}=9\cdot10^{-9}\,\mathrm m$\\
+\bottomrule
+\end{tabularx}
+\end{center}
+
+\begin{prikladReseniBox}[breakable=false,title={Příklad 4: jedna hodnota, dva užitečné zápisy}]
+Zapiš $0{,}00047\,\mathrm m$ vědecky, technicky a pomocí vhodné předpony.
+\tcblower
+Vědecky $4{,}7\cdot10^{-4}\,\mathrm m$,
+technicky $470\cdot10^{-6}\,\mathrm m$,
+tedy $\boxed{470\,\mathrm{\mu m}}$.
+Obě podoby vyjadřují tutéž délku; měníme pouze způsob zápisu.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 4: technické veličiny}]
+\begin{enumerate}[label=\alph*)]
+\item $3\,700\,000\,\mathrm{Hz}$ vyjádři v MHz;
+\item $0{,}00000082\,\mathrm m$ vyjádři v nm;
+\item $0{,}0000000042\,\mathrm s$ vyjádři v ns;
+\item $4\,500\,000\,\mathrm W$ vyjádři v MW.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3{,}7\,\mathrm{MHz}$;
+\item $820\,\mathrm{nm}$;
+\item $4{,}2\,\mathrm{ns}$;
+\item $4{,}5\,\mathrm{MW}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Rozšíření pro technicky zaměřené žáky}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšiřující příklad 1: kontrola jednotek a řádu}]
+\begin{enumerate}[label=\alph*)]
+\item Čtvercová destička má stranu $4\cdot10^{-3}\,\mathrm m$. Urči obsah v $\mathrm{m^2}$.
+\item Kostka má hranu $2\cdot10^{-3}\,\mathrm m$. Urči objem v $\mathrm{m^3}$.
+\item Rozliš: proč je $1\,\mathrm{kB}=1000\,\mathrm B$, ale $1\,\mathrm{KiB}=1024\,\mathrm B$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(4\cdot10^{-3})^2=16\cdot10^{-6}=\boxed{1{,}6\cdot10^{-5}\,\mathrm{m^2}}$;
+\item $(2\cdot10^{-3})^3=8\cdot10^{-9}\,\mathrm{m^3}$;
+\item Předpona k (kilo) vychází z desítkové soustavy, Ki (kibi) ze dvojkové.
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšiřující příklad 2: časté omyly}]
+Rozhodni, zda tvrzení platí; chybu oprav:
+\begin{enumerate}[label=\alph*)]
+\item $5{,}2\cdot10^{-7}$ je záporné číslo;
+\item $3{,}4\cdot10^7+2\cdot10^6=5{,}4\cdot10^{13}$;
+\item $12\cdot10^3$ je normalizovaný vědecký zápis.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Ne; hodnota je kladná;
+\item Ne; $3{,}4\cdot10^7+0{,}2\cdot10^7=3{,}6\cdot10^7$;
+\item Ne; vědecky $1{,}2\cdot10^4$ (technicky je $12\cdot10^3$ správně).
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol 1: vědecký a technický zápis}]
+\begin{enumerate}[label=\alph*)]
+\item Zapiš vědecky $89\,000\,000$;
+\item zapiš vědecky $0{,}00000056$;
+\item napiš desetinně $-7{,}3\cdot10^{-4}$;
+\item uprav $(2{,}5\cdot10^6)(4\cdot10^{-8})$;
+\item uprav $\dfrac{9\cdot10^{-5}}{3\cdot10^2}$;
+\item vypočítej $4\cdot10^5+7\cdot10^4$;
+\item přepiš $6{,}4\cdot10^{-5}$ do technického tvaru;
+\item vyjádři $0{,}000009\,\mathrm m$ v $\mathrm{\mu m}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $8{,}9\cdot10^7$;
+\item $5{,}6\cdot10^{-7}$;
+\item $-0{,}00073$;
+\item $10\cdot10^{-2}=1\cdot10^{-1}$;
+\item $3\cdot10^{-7}$;
+\item $4{,}7\cdot10^5$;
+\item $64\cdot10^{-6}$;
+\item $9\,\mathrm{\mu m}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{\textbf{Výstupní otázka:} Jaký je rozdíl mezi vědeckým tvarem
+$1{,}8\cdot10^4$ a technickým tvarem $18\cdot10^3$?
+Číslo je stejné, ale technický exponent je násobkem tří.
+\textbf{Organizace rozpisu:} hodiny 34 a 35 jsou teď pracovními hodinami;
+původní termín čtvrtletní písemné práce na 32. hodině byl posunut a je
+nutné mu určit nové místo v celkovém časovém plánu.}
+\end{document}

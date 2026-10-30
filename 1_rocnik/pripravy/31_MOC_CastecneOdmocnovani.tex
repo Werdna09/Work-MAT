@@ -1,0 +1,167 @@
+% Work/MAT | 1. rocnik | nova hodina 31: Castecne odmocnovani.
+% Nova posloupnost: 29 druha/treti odmocnina, 30 racionalni exponent,
+% 31 castecnne odmocnovani, 32 usmernovani jednoclenneho jmenovatele,
+% 33 usmernovani sdruzenym vyrazem, 34 slozene vyrazy, 35 vedecky zapis.
+% Ucebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+% (Odmocniny, Castecne odmocnovani, Caste chyby a omyly).
+% Metodika: Realisticky.cz 010207 Druha odmocnina, 020712 Pocitani s odmocninami I.
+% Vsechna zadani nove sestavena, z nejsou doslovne prepisy zdroju.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{31}{Částečné odmocňování}
+\begin{document}
+\poznamka{\textbf{45minutové jádro:} 4 min opakování; 8 min odvození a Příklad 1;
+9 min Samostatná práce 1 a)--f); 7 min Příklad 2 a Samostatná práce 2 a)--d);
+8 min sčítání podobných odmocnin a Příklad 3; 6 min Samostatná práce 3 a)--c);
+3 min shrnutí a zadání domácí práce. Příklad 4, rozšíření, další položky a delší domácí úlohy
+jsou zásobník. Tabulka pravidel z 30. hodiny se zde \textbf{nemění}: používáme ji.}
+
+\blok{Proč vůbec odmocňujeme jen částečně?}
+Z hodiny 29 známe $\sqrt{36}=6$, ale $\sqrt{72}$ není celé číslo.
+Hledáme proto uvnitř \emph{co největší vhodný čtverec} a rozložíme radikand:
+\[
+\sqrt{72}=\sqrt{36\cdot2}=\sqrt{36}\sqrt2=\boxed{6\sqrt2}.
+\]
+\textbf{Výhoda:} přesná hodnota zůstane zachována bez zbytečného zaokrouhlování.
+U třetí odmocniny hledáme místo čtverců \emph{třetí mocniny}.
+
+\begin{definiceBox}[title={Pravidlo: odmocnina ze součinu}]
+Pro $a,b\ge0$ platí $\sqrt{ab}=\sqrt a\,\sqrt b$.
+Pro libovolná $a,b\in\mathbb R$ platí
+$\sqrt[3]{ab}=\sqrt[3]a\,\sqrt[3]b$.
+\textbf{Částečně odmocnit} znamená vhodný čtverec nebo třetí mocninu
+vyjmout před odmocnítko; u druhé odmocniny musí být vyjmutá hodnota nezáporná.
+\end{definiceBox}
+\textbf{Odvození pro druhou odmocninu:}
+Pro $a,b\ge0$ je $\sqrt a\sqrt b\ge0$ a
+$(\sqrt a\sqrt b)^2=ab$. Podle definice druhé odmocniny tedy
+$\sqrt a\sqrt b=\sqrt{ab}$.
+\poznamka{U třetí odmocniny funguje stejná úvaha s třetí mocninou;
+na rozdíl od druhé není nutná nezápornost radikandu. Žáci mají vyslovit,
+\emph{jaký násobek dokonalého čtverce / krychle hledají}.}
+
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: vyjmutí čtverce}]
+Částečně odmocni $\sqrt{48}$, $\sqrt{108}$, $\sqrt{245}$.
+\tcblower
+\[
+\sqrt{48}=\sqrt{16\cdot3}=4\sqrt3,\quad
+\sqrt{108}=\sqrt{36\cdot3}=6\sqrt3,\quad
+\sqrt{245}=\sqrt{49\cdot5}=7\sqrt5.
+\]
+Pokud by pod odmocnítkem zůstal další čtvercový činitel, lze pokračovat.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1: druhé odmocniny}]
+Částečně odmocni; nepoužívej kalkulačku.
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{12}$; \item $\sqrt{18}$; \item $\sqrt{50}$; \item $\sqrt{75}$;
+\item $\sqrt{128}$; \item $\sqrt{300}$; \item $\sqrt{800}$; \item $\sqrt{0{,}72}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2\sqrt3$; \item $3\sqrt2$; \item $5\sqrt2$; \item $5\sqrt3$;
+\item $8\sqrt2$; \item $10\sqrt3$; \item $20\sqrt2$;
+\item $\sqrt{0{,}36\cdot2}=0{,}6\sqrt2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Třetí odmocnina: hledáme dokonalou krychli}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: vyjmutí třetí mocniny}]
+Částečně odmocni $\sqrt[3]{54}$, $\sqrt[3]{-128}$ a $\sqrt[3]{250}$.
+\tcblower
+\[
+\begin{aligned}
+\sqrt[3]{54}&=\sqrt[3]{27\cdot2}=3\sqrt[3]2,\\
+\sqrt[3]{-128}&=\sqrt[3]{(-64)\cdot2}=-4\sqrt[3]2,\\
+\sqrt[3]{250}&=\sqrt[3]{125\cdot2}=5\sqrt[3]2.
+\end{aligned}
+\]
+U záporného čísla třetí odmocnina existuje, protože jde o \emph{lichou} odmocninu.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 2: třetí odmocniny}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt[3]{16}$; \item $\sqrt[3]{81}$;
+\item $\sqrt[3]{-54}$; \item $\sqrt[3]{375}$;
+\item $\sqrt[3]{-500}$; \item $\sqrt[3]{432}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2\sqrt[3]2$; \item $3\sqrt[3]3$;
+\item $-3\sqrt[3]2$; \item $5\sqrt[3]3$;
+\item $-5\sqrt[3]4$; \item $6\sqrt[3]2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Sčítání podobných odmocnin}
+$3\sqrt2+5\sqrt2=8\sqrt2$ funguje podobně jako $3x+5x=8x$.
+\textbf{Sčítat koeficienty smíme až tehdy}, když mají odmocniny stejný index i radikand.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: nejprve odmocni částečně, pak slučuj}]
+Uprav $\sqrt{72}-\sqrt{18}+2\sqrt8$.
+\tcblower
+$\sqrt{72}=6\sqrt2$, $\sqrt{18}=3\sqrt2$, $2\sqrt8=4\sqrt2$.
+Proto $(6-3+4)\sqrt2=\boxed{7\sqrt2}$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 3: slučuj pouze stejné odmocniny}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{27}+\sqrt{12}$;
+\item $2\sqrt{50}-3\sqrt8$;
+\item $\sqrt{75}-\sqrt{48}+\sqrt3$;
+\item $\sqrt[3]{16}+\sqrt[3]{54}-\sqrt[3]2$;
+\item $\sqrt2+\sqrt3$ (lze sloučit?).
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3\sqrt3+2\sqrt3=5\sqrt3$;
+\item $10\sqrt2-6\sqrt2=4\sqrt2$;
+\item $5\sqrt3-4\sqrt3+\sqrt3=2\sqrt3$;
+\item $2\sqrt[3]2+3\sqrt[3]2-\sqrt[3]2=4\sqrt[3]2$;
+\item Ne, jde o různé radikandy. Zejména $\sqrt2+\sqrt3\ne\sqrt5$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Když je pod odmocninou proměnná}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 4: rozdíl mezi druhou a třetí odmocninou}]
+Pro reálné $x$ uprav $\sqrt{18x^2}$ a $\sqrt[3]{-54x^3}$.
+\tcblower
+$\sqrt{18x^2}=3\sqrt2\,\sqrt{x^2}=\boxed{3|x|\sqrt2}$.
+Dále $\sqrt[3]{-54x^3}=-3x\sqrt[3]2$.
+U druhé odmocniny \emph{nelze obecně} místo $|x|$ napsat $x$.
+\end{prikladReseniBox}
+\poznamka{Příklad 4 je \textbf{rezerva pro rychlejší žáky}. Ověřte třeba $x=-2$.
+Připomeň $\sqrt{x^2}=|x|$. Jde o metodicky zásadní pravidlo, ne o formalitu.}
+
+\begin{zadaniReseniBox}[breakable=false,title={Rozšiřující příklad 1: součiny a proměnné}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{72a^2}$ pro $a\in\mathbb R$;
+\item $\sqrt{27x^4y^2}$ pro $x,y\in\mathbb R$;
+\item $\sqrt[3]{-250t^6}$ pro $t\in\mathbb R$;
+\item $\sqrt{2}\sqrt{8}+\sqrt{3}\sqrt{12}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $6|a|\sqrt2$;
+\item $3x^2|y|\sqrt3$;
+\item $-5t^2\sqrt[3]2$;
+\item $4+6=10$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol 1: částečné odmocňování}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{200}$; \item $\sqrt{147}$; \item $\sqrt[3]{-192}$;
+\item $\sqrt[3]{135}$; \item $3\sqrt{12}-\sqrt{75}$;
+\item $2\sqrt{45}+\sqrt{20}-\sqrt5$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $10\sqrt2$; \item $7\sqrt3$; \item $-4\sqrt[3]3$;
+\item $3\sqrt[3]5$; \item $6\sqrt3-5\sqrt3=\sqrt3$;
+\item $6\sqrt5+2\sqrt5-\sqrt5=7\sqrt5$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{\textbf{Kontrola na konci:} Proč je $\sqrt{50}=5\sqrt2$ a ne $25\sqrt2$?
+Proč $\sqrt{a^2}=|a|$? V následující hodině využijeme částečné
+odmocňování před usměrňováním zlomků.}
+\end{document}

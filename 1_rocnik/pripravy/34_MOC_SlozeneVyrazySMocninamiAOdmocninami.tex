@@ -1,0 +1,230 @@
+% Work/MAT | 1. rocnik | 34: Slozene vyrazy s mocninami a odmocninami
+% Navaznost: 25--30 mocniny, 31 castecne odmocnovani,
+% 32 usmernovani jednoduchych zlomku, 33 sdruzene vyrazy.
+% Zdroje: ucebnice Mocniny a Odmocniny.tex (Caste chyby, Odmocniny,
+% Usmernovani zlomku); Realisticky.cz 020712--020714 Pocitani s odmocninami.
+% Zcela nove formulovane priklady. Dokument je priprava pro ucitele,
+% 45minutove jadro + vyslovne oznacene volitelne cviceni.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{multicol}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{34}{Složené výrazy}
+\begin{document}
+
+\poznamka{\textbf{45minutové jádro:} 4 min návrat k pravidlům;
+8 min Příklad 1 a strategie; 8 min Samostatná práce 1 a)--d);
+8 min Příklad 2 a Samostatná práce 2 a)--c);
+9 min Příklad 3 a Samostatná práce 3 a)--c);
+5 min společný rozbor chyb; 3 min výstupní otázka a domácí úkol.
+\textbf{Nadstavba:} další položky, Příklad 4, rozšiřující příklady.
+Nejde o závod o počet příkladů, ale o správně zvolený postup.}
+
+\blok{KISS v praxi: nejprve plán, potom výpočet}
+V minulých hodinách jsme zvládli pravidla pro mocniny, částečné
+odmocňování, usměrňování jmenovatele i sdružené výrazy.
+Dnes \textbf{nepřidáváme nový vzorec}: učíme se rozhodnout, co použít
+\emph{nejdříve}, aby byl výpočet co nejkratší.
+
+\begin{definiceBox}[title={Doporučená strategie pro složený výraz}]
+\begin{enumerate}[label=\arabic*.]
+\item \textbf{Podmínky:} označ jmenovatele a sudé odmocniny; žádný jmenovatel nesmí být nula.
+\item \textbf{Zjednoduš:} částečně odmocni, sjednoť stejné základy a sluč podobné odmocniny.
+\item \textbf{Až potom} násob, umocňuj dvojčlen či případně usměrňuj.
+\item \textbf{Zkontroluj:} znaménka, podmínky a zachování hodnoty výrazu.
+\end{enumerate}
+\end{definiceBox}
+\poznamka{Body strategie nejsou čtyři povinné početní operace; pokud
+po prvním kroku zlomky zmizí, dále neusměrňujeme. Zeptej se:
+\uv{Kterou úpravu bys v tomto příkladu provedl jako první a proč?}}
+
+\blok{1. Když odmocniny nejprve zjednodušíme, vyjde vše samo}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: co půjde zkrátit bez násobení?}]
+Uprav $\displaystyle\frac{\sqrt{72}-\sqrt{18}}{\sqrt2}$ a
+$\displaystyle\frac{\sqrt{48}+\sqrt{27}}{\sqrt3}$.
+\tcblower
+\[
+\frac{6\sqrt2-3\sqrt2}{\sqrt2}=\boxed{3},\qquad
+\frac{4\sqrt3+3\sqrt3}{\sqrt3}=\boxed{7}.
+\]
+\textbf{Strategie:} nejprve vytkneme vhodný čtverec pod odmocninou,
+potom sečteme koeficienty. Jmenovatele není nutné usměrňovat.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1: odmocni, slučuj, zjednoduš}]
+Uprav přesně, bez desetinného přiblížení:
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{50}+\sqrt8-\sqrt{18}$;
+\item $\displaystyle\frac{\sqrt{48}-\sqrt{12}}{\sqrt3}$;
+\item $\displaystyle\frac{\sqrt{45}+\sqrt{20}}{\sqrt5}$;
+\item $\displaystyle\frac{\sqrt[3]{54}-\sqrt[3]{16}}{\sqrt[3]2}$;
+\item $\displaystyle\frac{(\sqrt6)^2+\sqrt{81}}{\sqrt3}$;
+\item $\displaystyle\frac{\sqrt{98}-2\sqrt8}{\sqrt2}$.
+\end{enumerate}
+\end{multicols}
+\tcblower
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $(5+2-3)\sqrt2=\boxed{4\sqrt2}$;
+\item $(4\sqrt3-2\sqrt3)/\sqrt3=\boxed2$;
+\item $(3\sqrt5+2\sqrt5)/\sqrt5=\boxed5$;
+\item $(3\sqrt[3]2-2\sqrt[3]2)/\sqrt[3]2=\boxed1$;
+\item $15/\sqrt3=\boxed{5\sqrt3}$;
+\item $(7\sqrt2-4\sqrt2)/\sqrt2=\boxed3$.
+\end{enumerate}
+\end{multicols}
+\end{zadaniReseniBox}
+\poznamka{První čtyři položky tvoří povinné jádro, poslední dvě
+slouží k diferenciaci. U d) zdůrazni rozdíl mezi druhou a třetí odmocninou.}
+
+\blok{2. Sdružený výraz použij až tehdy, když opravdu pomůže}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: rozdíl dvou zlomků}]
+Uprav $\displaystyle\frac2{\sqrt3-1}-\frac2{\sqrt3+1}$.
+\tcblower
+Usměrníme každý jmenovatel až po rozpoznání sdružených výrazů:
+\[
+\frac{2(\sqrt3+1)}{3-1}-\frac{2(\sqrt3-1)}{3-1}
+=(\sqrt3+1)-(\sqrt3-1)=\boxed2.
+\]
+\textbf{Kontrola:} žádný původní jmenovatel není nula.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 2: vyber vhodné pravidlo}]
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac1{\sqrt5-2}-\frac1{\sqrt5+2}$;
+\item $\displaystyle\frac2{\sqrt3+1}$;
+\item $(\sqrt7+\sqrt3)(\sqrt7-\sqrt3)$;
+\item $(\sqrt3-1)^2$;
+\item $\displaystyle\frac{\sqrt2}{\sqrt3-\sqrt2}$;
+\item $\displaystyle\frac1{\sqrt3+\sqrt2}$.
+\end{enumerate}
+\end{multicols}
+\tcblower
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $(\sqrt5+2)-(\sqrt5-2)=\boxed4$;
+\item $2(\sqrt3-1)/(3-1)=\boxed{\sqrt3-1}$;
+\item $7-3=\boxed4$;
+\item $3-2\sqrt3+1=\boxed{4-2\sqrt3}$;
+\item $\sqrt2(\sqrt3+\sqrt2)/(3-2)=\boxed{\sqrt6+2}$;
+\item $(\sqrt3-\sqrt2)/(3-2)=\boxed{\sqrt3-\sqrt2}$.
+\end{enumerate}
+\end{multicols}
+\end{zadaniReseniBox}
+
+\blok{3. Mocniny, odmocniny a podmínky v jednom výrazu}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: správné pořadí úprav}]
+Uprav $\displaystyle\frac{(\sqrt{12}+\sqrt{27})^2}{3}$
+a při $a>0$ výraz $\displaystyle\frac{a^{3/2}a^{-1/2}}{\sqrt{a^2}}$.
+\tcblower
+\[
+\frac{(2\sqrt3+3\sqrt3)^2}{3}
+=\frac{(5\sqrt3)^2}{3}=\boxed{25}.
+\]
+Pro $a>0$ je $\sqrt{a^2}=a$, proto
+\[
+\frac{a^{3/2-1/2}}{\sqrt{a^2}}=\frac aa=\boxed1.
+\]
+Bez podmínky $a>0$ bychom museli pracovat s $|a|$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 3: smíšené úpravy}]
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{\sqrt{27}-\sqrt{12}}{\sqrt3}$;
+\item $\displaystyle\frac{27^{2/3}}{\sqrt9}$;
+\item $\displaystyle\frac{(\sqrt8+\sqrt{18})^2}{2}$;
+\item $\displaystyle\frac{\sqrt{x^2}}x$, $x\ne0$;
+\item $\displaystyle\frac{(\sqrt a\,b)^2}{ab}$, $a,b>0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(3\sqrt3-2\sqrt3)/\sqrt3=\boxed1$;
+\item $9/3=\boxed3$;
+\item $(2\sqrt2+3\sqrt2)^2/2=50/2=\boxed{25}$;
+\item $\displaystyle\frac{|x|}x=\begin{cases}1,&x>0,\\-1,&x<0;\end{cases}$
+\quad(nelze obecně napsat $1$);
+\item $(ab^2)/(ab)=\boxed b$, při daných $a,b>0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{V povinném jádru stačí Samostatná práce 3 a)--c).
+Další dvě úlohy jsou pro rychlé a testují zachování podmínek.}
+
+\blok{4. Rozšiřující úlohy a práce s chybou}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 4: kdy se vyplatí jeden velký krok?}]
+Uprav $\displaystyle
+\frac{\sqrt{75}-\sqrt{12}}{\sqrt3+1}$.
+\tcblower
+Nejprve částečně odmocníme: $\sqrt{75}-\sqrt{12}=3\sqrt3$.
+Teprve potom usměrníme:
+\[
+\frac{3\sqrt3}{\sqrt3+1}\cdot\frac{\sqrt3-1}{\sqrt3-1}
+=\boxed{\frac{9-3\sqrt3}{2}}.
+\]
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Rozšiřující příklad 1: porovnej strategie}]
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{\sqrt{32}+\sqrt{18}}{\sqrt2}
+\cdot\frac1{\sqrt5-2}$;
+\item $\displaystyle\frac{(\sqrt3+\sqrt2)^2-(\sqrt3-\sqrt2)^2}{\sqrt6}$;
+\item Pro $a,b>0$ uprav $\displaystyle\frac{(a^{1/2}b^{-1})^2}{a^{-1}b^{-3}}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $7/(\sqrt5-2)=\boxed{7(\sqrt5+2)}$;
+\item Po odečtení čtverců vznikne $4\sqrt6/\sqrt6=\boxed4$;
+\item $a^{1+1}b^{-2+3}=\boxed{a^2b}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[breakable=false,title={Rozšiřující příklad 2: co je špatně?}]
+Žák tvrdí:
+\begin{enumerate}[label=\alph*)]
+\item $(\sqrt5+\sqrt3)^2=5+3$;
+\item $\sqrt{x^2}=x$ pro každé $x\in\mathbb R$;
+\item $\sqrt{a+b}=\sqrt a+\sqrt b$ pro $a,b\ge0$.
+\end{enumerate}
+Oprav všechna tvrzení a uveď vhodný protipříklad.
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Chybí člen $2\sqrt{15}$; správně $8+2\sqrt{15}$;
+\item správně $|x|$, například pro $x=-2$ je $\sqrt4=2$;
+\item obecně neplatí, například $a=9$, $b=16$ dává $5\ne7$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičování}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol 1: směs probraných operací}]
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{\sqrt{32}+\sqrt{18}}{\sqrt2}$;
+\item $\sqrt{75}-2\sqrt{12}+\sqrt{27}$;
+\item $\displaystyle\frac1{\sqrt5-1}$;
+\item $\displaystyle\frac{2\sqrt3}{\sqrt3+1}$;
+\item $\displaystyle\frac{(\sqrt{20}-\sqrt5)^2}{5}$;
+\item $\displaystyle\frac{\sqrt[3]{128}-\sqrt[3]{16}}{\sqrt[3]2}$;
+\item $16^{3/4}-81^{1/2}$;
+\item $\displaystyle\frac{\sqrt{x^2}}x$, $x<0$.
+\end{enumerate}
+\end{multicols}
+\tcblower
+\begin{multicols}{2}
+\begin{enumerate}[label=\alph*)]
+\item $\boxed7$;
+\item $(5-4+3)\sqrt3=\boxed{4\sqrt3}$;
+\item $\boxed{(\sqrt5+1)/4}$;
+\item $\boxed{3-\sqrt3}$;
+\item $(2\sqrt5-\sqrt5)^2/5=\boxed1$;
+\item $(4\sqrt[3]2-2\sqrt[3]2)/\sqrt[3]2=\boxed2$;
+\item $8-9=\boxed{-1}$;
+\item $|x|/x=\boxed{-1}$ pro $x<0$.
+\end{enumerate}
+\end{multicols}
+\end{zadaniReseniBox}
+
+\poznamka{\textbf{Rychlá výstupní otázka:} Proč je často výhodnější
+nejprve částečně odmocnit a teprve potom usměrnit? Žák má odpovědět,
+že se mohou zkrátit činitelé nebo sloučit členy a usměrňování již nemusí
+být potřeba. V hodině 35 navážeme praktickou stránkou mocnin desítky.}
+\end{document}
