@@ -1,0 +1,267 @@
+% Work/MAT -- 1. rocnik -- hodina 38 -- finalni revize 2026-10-30.
+% Priklady z uzivatelem dodanych obrazku upraveny a doplneny vlastnimi ulohami.
+% Vysledky a podminky kontrolovany nezavisle; zapis vysledku nepredpoklada
+% kladnost promennych tam, kde to neni stanoveno.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{38}{KISS II: velké opakování}
+\begin{document}
+
+\poznamka{\textbf{Záměr:} nejdříve nahlas pojmenuj vhodnou strategii,
+teprve potom počítej. Povinná část na 45 minut: 5 min připomenutí KISS,
+9 min Příklad 1 + vybrané položky Samostatné práce 1,
+10 min Příklad 2 + Samostatná práce 2 a), b),
+10 min Příklad 3 + Samostatná práce 3 a), c),
+8 min Příklad 4 a Samostatná práce 4 a), b),
+3 min závěr a zadání domácí práce. Zbytek je cíleně \textbf{zásobník náročných úloh},
+nikoli očekávání, že všichni vyřeší celý dokument.}
+
+\blok{Připomenutí strategie: KISS = Keep It Simple, Stupid}
+Ve složeném výrazu není vítězem ten, kdo nejrychleji počítá obrovská čísla,
+ale ten, kdo \textbf{najde nejjednodušší správný postup}.
+\begin{definiceBox}[title={Strategie zjednodušování}]
+\begin{enumerate}[label=\arabic*)]
+\item \textbf{Zkontroluj podmínky} původního výrazu (jmenovatel, záporné mocniny, sudá odmocnina).
+\item \textbf{Sjednoť zápis}: stejný základ, vhodná mocnina prvočísla nebo podobné odmocniny.
+\item \textbf{Zmenšuj výraz}: nejprve upravuj \emph{uvnitř}, potom vnější mocniny a velké součiny.
+\item \textbf{Každý řádek dělej jednu věc}. Znaménko mínus a závorky neignoruj.
+\item \textbf{Výsledek zkontroluj}: znaménko, exponenty, velikost, původní podmínky.
+\end{enumerate}
+\end{definiceBox}
+\poznamka{Zkratku KISS představ jako neformální programátorskou zásadu jednoduchého řešení;
+v matematice musí každá úprava současně zachovat hodnotu na původním definičním oboru.}
+
+\blok{1. Algebraické mocniny: podíl zlomků, znaménka a podmínky}
+\begin{prikladReseniBox}[title={Příklad 1: nejprve dělení zlomků},breakable=false]
+Zjednoduš a uveď podmínky:
+\[
+\text{a) }\frac{a^2b}{c^3}:\frac{ab^2}{c^2},\qquad
+\text{b) }\frac{a^2}{c^3}:\left(\frac a{c^2}\right)^{-2}.
+\]
+\tcblower
+Pro všechna uvedená $a,b,c\ne0$ (v b) pouze $a,c\ne0$) platí
+\[
+\text{a) }\frac{a^2b}{c^3}\cdot\frac{c^2}{ab^2}=\boxed{\frac a{bc}},
+\qquad
+\text{b) }\frac{a^2}{c^3}\cdot\left(\frac a{c^2}\right)^2
+=\boxed{\frac{a^4}{c^7}}.
+\]
+Záporný exponent převrací \emph{celý} základ, ne pouze část zlomku.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1: výrazy z vyšší úrovně},breakable=false]
+Uprav (kde se vyskytuje podíl, urči jeho původní podmínky).
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{a^{-3}b^2}{c^{-3}}:\left(\frac{b^3c}{a^2}\right)^2$.
+\item $\displaystyle\left(\frac{9a^{-2}c^3}{8b^{-2}}\right)^{-3}$.
+\item $\displaystyle\frac{(-2)^5(-2)^{-3}}{4^{-2}}$.
+\item $\displaystyle\left(\frac{a^2b^3}{a^3b^2}\right)^3:\left(\frac ba\right)^2$.
+\item $(x-y)^3(y-x)^4$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\boxed{ac/b^4}$; $a,b,c\ne0$.
+\item $\boxed{512a^6/(729b^6c^9)}$; $a,b,c\ne0$.
+\item $(-2)^{5-3}\cdot4^2=4\cdot16=\boxed{64}$.
+\item $\boxed{b/a}$; $a,b\ne0$.
+\item $\boxed{(x-y)^7}$ (protože $(y-x)^4=(x-y)^4$); bez omezení.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: rozpoznáš nejkratší strategii?},breakable=false]
+\[
+\text{a) }\frac{3(a^3b^2)^3}{(2a^2b)^2}
+\cdot\left(\frac{2a^4b^3}{a^3b}\right)^3,
+\qquad
+\text{b) }\left(\frac{2a^5b^4}{3a^3b}\right)^3:
+\frac{(2a^3b^2)^3}{9(2a^2b)^2}.
+\]
+\tcblower
+Pro $a,b\ne0$:
+\[
+\text{a) }\frac{3a^9b^6}{4a^4b^2}\cdot(2ab^2)^3
+=\boxed{6a^8b^{10}},\qquad
+\text{b) }\frac{8a^6b^9}{27}\cdot\frac{9}{2a^5b^4}
+=\boxed{\frac{4ab^5}{3}}.
+\]
+\end{zadaniReseniBox}
+
+\blok{2. Číselné mocniny: rozklad na prvočísla místo velkých čísel}
+\begin{prikladReseniBox}[title={Příklad 2: zjednodušuj na prvočíslech},breakable=false]
+Vyjádři součin mocnin prvočísel a pak číslo:
+\[
+\frac{8^2\cdot6^3}{4^3\cdot12}.
+\]
+\tcblower
+\[
+\frac{2^6\cdot2^3\cdot3^3}{2^6\cdot2^2\cdot3}
+=2^{9-8}3^{3-1}=2\cdot3^2=\boxed{18}.
+\]
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2: bez vyčíslování obrovských mocnin},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{125^2\cdot2^{10}}{16^2\cdot50}\cdot\frac{25}{5^3}$.
+\item $\displaystyle\frac{3^7\cdot9^{-2}}{27^{-1}}$.
+\item $\displaystyle\left(\frac{2^2}{5}\right)^5\left(-\frac{5^2}{2^3}\right)^3$.
+\item $\displaystyle\frac{(72\cdot25)^3\cdot2^4}{5\cdot15^4\cdot32^2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2^{10-8-1}\cdot5^{6-2+2-3}=2\cdot5^3=\boxed{250}$.
+\item $3^{7-4+3}=\boxed{3^6}$.
+\item $-2^{10-9}\cdot5^{6-5}=\boxed{-10}$.
+\item $2^{13-10}3^{6-4}5^{6-5}=2^3\cdot3^2\cdot5=\boxed{360}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 2: dlouhý výraz, krátký výsledek},breakable=false]
+Bez zlomkové čáry ve výsledku, pouze pomocí \emph{celočíselných mocnin prvočísel},
+uprav
+\[
+\left(\frac{8\cdot10^2\cdot9^{-3}}{15^4\cdot12^{-3}}\right)^{-3}
+:\left(\frac{24^{-1}\cdot6^3}{20^2\cdot5^{-4}}\right)^2.
+\]
+\tcblower
+První závorka $=2^{11}3^{-7}5^{-2}$, druhá $=2^{-4}3^25^2$.
+Po umocnění a dělení:
+\[
+\frac{2^{-33}3^{21}5^6}{2^{-8}3^45^4}
+=\boxed{2^{-25}\cdot3^{17}\cdot5^2}.
+\]
+\end{zadaniReseniBox}
+
+\blok{3. Odmocniny, usměrňování a kontrola znamének}
+\begin{prikladReseniBox}[title={Příklad 3: nejprve vyjmi čtverce},breakable=false]
+Zjednoduš:
+\[
+\text{a) }\frac{(\sqrt{72}-\sqrt{18})^2}{(\sqrt2)^2},\qquad
+\text{b) }\frac1{3-2\sqrt2}.
+\]
+\tcblower
+\[
+\text{a) }\frac{(6\sqrt2-3\sqrt2)^2}{2}=\boxed9,
+\qquad
+\text{b) }\frac{3+2\sqrt2}{9-8}=\boxed{3+2\sqrt2}.
+\]
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3: špatná strategie přidá práci},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $(\sqrt{75}-\sqrt{12})(\sqrt3+1)$.
+\item $\displaystyle\frac{\sqrt{48}+\sqrt{27}}{\sqrt3}$.
+\item $\displaystyle\frac1{\sqrt7+\sqrt6}+\frac1{\sqrt7-\sqrt6}$.
+\item $\displaystyle\sqrt[3]{-432}:\sqrt[3]{2}$.
+\item Pro $t\in\mathbb R$ uprav $\sqrt{(t-4)^2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3\sqrt3(\sqrt3+1)=\boxed{9+3\sqrt3}$.
+\item $(4\sqrt3+3\sqrt3)/\sqrt3=\boxed7$.
+\item $(\sqrt7-\sqrt6)+(\sqrt7+\sqrt6)=\boxed{2\sqrt7}$.
+\item $\sqrt[3]{-216}=\boxed{-6}$.
+\item $\boxed{|t-4|}$, protože sudá odmocnina není záporná.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{4. Kombinace s technickým zápisem a jednotkami}
+\begin{prikladReseniBox}[title={Příklad 4: odhad řádu před výpočtem},breakable=false]
+Závod vyrobí $2{,}4\cdot10^5$ součástek za den.
+Kolik jich vyrobí za $25$ dnů? Výsledek uveď vědeckým zápisem.
+\tcblower
+$2{,}4\cdot25\cdot10^5=60\cdot10^5=\boxed{6\cdot10^6}$ součástek.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 4: exponentská a technická rutina},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{8{,}4\cdot10^{-5}}{2{,}1\cdot10^{-6}}$.
+\item $\displaystyle(6\cdot10^7)(1{,}5\cdot10^{-4})$.
+\item Snímač uloží šest souborů po $256\,\mathrm{KiB}$. Kolik je to $\mathrm{MiB}$?
+\item Čtvercová deska má obsah $288\,\mathrm{cm}^2$. Urči délku strany přesně.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\boxed{40}$.
+\item $\boxed{9\cdot10^3}$.
+\item $6\cdot256/1024=\boxed{1{,}5\,\mathrm{MiB}}$.
+\item $a=\sqrt{288}=\boxed{12\sqrt2\,\mathrm{cm}}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí úkol: dvacet příkladů ve čtyřech úrovních}
+\poznamka{Záměrně velká nabídka: zadání lze rozdělit na povinných 10 položek
+a 10 dobrovolných výzev. Požaduj celý postup a podmínky tam, kde jsou
+proměnné ve jmenovateli nebo záporném exponentu.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol 1: mocniny a znaménka (1--5)},breakable=false]
+\begin{enumerate}[label=\arabic*)]
+\item $\displaystyle\frac{2^{-4}\cdot8^3}{4^2}$.
+\item $\displaystyle\frac{((-3)^2)^3}{3^4}$.
+\item $(-2)^5-(-2)^4$.
+\item $\displaystyle\left(\frac35\right)^{-2}$.
+\item $27^{2/3}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\arabic*)]
+\item $2^{-4+9-4}=\boxed2$.
+\item $3^{6-4}=\boxed9$.
+\item $-32-16=\boxed{-48}$.
+\item $\boxed{25/9}$.
+\item $\boxed9$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Domácí úkol 2: proměnné a podmínky (6--10)},breakable=false]
+\begin{enumerate}[label=\arabic*),start=6]
+\item $81^{-3/4}$.
+\item $\displaystyle\frac{a^7b^{-2}}{a^{-3}b^4}$.
+\item $\displaystyle\left(\frac{2a^{-1}b^2}{3c^{-2}}\right)^{-2}$.
+\item $\displaystyle\left(\frac{a^3b^2}{ab^{-1}}\right)^2$.
+\item $(x-y)^2(y-x)^3$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\arabic*),start=6]
+\item $\boxed{1/27}$.
+\item $\boxed{a^{10}/b^6}$; $a,b\ne0$.
+\item $\boxed{9a^2/(4b^4c^4)}$; $a,b,c\ne0$.
+\item $\boxed{a^4b^6}$; $a,b\ne0$.
+\item $\boxed{-(x-y)^5}$; bez omezení.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Domácí úkol 3: odmocniny a zlomky (11--15)},breakable=false]
+\begin{enumerate}[label=\arabic*),start=11]
+\item $\sqrt{200}-2\sqrt{18}+\sqrt8$.
+\item $3\sqrt{75}-\sqrt{12}$.
+\item $\sqrt[3]{-250}+2\sqrt[3]{16}$.
+\item Pro $t\in\mathbb R$ uprav $\sqrt{(t-3)^2}$.
+\item $\displaystyle\frac1{\sqrt5-2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\arabic*),start=11]
+\item $\boxed{6\sqrt2}$.
+\item $\boxed{13\sqrt3}$.
+\item $\boxed{-\sqrt[3]2}$.
+\item $\boxed{|t-3|}$.
+\item $\boxed{\sqrt5+2}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Domácí úkol 4: kombinace a technika (16--20)},breakable=false]
+\begin{enumerate}[label=\arabic*),start=16]
+\item $\displaystyle\frac2{\sqrt7+\sqrt3}$.
+\item $\displaystyle\frac{\sqrt{18}-\sqrt8}{\sqrt2}$.
+\item $\displaystyle\frac{9\cdot10^5}{3\cdot10^{-2}}$.
+\item $0{,}0000048\,\mathrm m$ převeď na $\mathrm{\mu m}$.
+\item $\displaystyle\frac{125^2\cdot2^{10}}{16^2\cdot50}\cdot\frac{25}{5^3}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\arabic*),start=16]
+\item $\boxed{(\sqrt7-\sqrt3)/2}$.
+\item $\boxed1$.
+\item $\boxed{3\cdot10^7}$.
+\item $\boxed{4{,}8\,\mathrm{\mu m}}$.
+\item $\boxed{250}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

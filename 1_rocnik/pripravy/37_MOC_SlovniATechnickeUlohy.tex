@@ -1,0 +1,183 @@
+% Work/MAT -- nova hodina 37: slovni a technicke ulohy na mocniny a odmocniny.
+% Po reorganizaci: 30 pravidla odmocnin, 31 racionalni exponent,
+% 32 castecne odmocnovani, 33 usmernovani, 34 sdruzene vyrazy,
+% 35 slozene vyrazy, 36 vedecky a technicky zapis, 37 aplikace.
+% Ucebnice: Mocniny a Odmocniny.tex (prakticke motivace, vedecky zapis).
+% Inspirace: Realisticky.cz 010608-010610, 020712-020715.
+% Zadani jsou puvodni didakticke modely, ne realna mereni nebo citace.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{37}{Slovní a technické úlohy}
+\begin{document}
+\poznamka{\textbf{45minutové jádro:} 4 min převod textu na schéma;
+9 min Příklad 1; 8 min Samostatná práce 1 a), b);
+8 min Příklad 2; 9 min Samostatná práce 2 a), b);
+4 min Příklad 3 (vědecký zápis a jednotky); 3 min shrnutí.
+Ostatní úlohy, příklady z informatiky a slovní domácí úkoly tvoří zásobník.
+\textbf{Důležité:} číselné údaje jsou modelové, nikoliv naměřené nebo aktuální ceny.}
+
+\blok{Dnes se neptáme, který vzorec je napsaný nad příkladem}
+Úkolem je z textu rozpoznat potřebnou matematiku a \textbf{zvolit správný postup}.
+Výsledek bez jednotky nebo bez kontroly smyslu není hotová odpověď.
+
+\begin{definiceBox}[title={Postup technické úlohy -- praktická strategie}]
+\begin{enumerate}[label=\arabic*.]
+\item \textbf{Rozuměj situaci:} načrtni obrázek, vypiš známé údaje.
+\item \textbf{Sjednoť jednotky:} například $1\,\mathrm{m}=100\,\mathrm{cm}$,
+$1\,\mathrm{m}^3=1000\,\mathrm{l}$.
+\item \textbf{Vytvoř model:} mocnina, odmocnina, Pythagorova věta nebo vědecký zápis.
+\item \textbf{Vypočítej a zkontroluj:} přesný výsledek před zaokrouhlením, správná jednotka.
+\end{enumerate}
+\end{definiceBox}
+
+\blok{Geometrie: odmocnina umí vypočítat rozměr}
+\begin{prikladReseniBox}[title={Příklad 1: úhlopříčka ochranného panelu}]
+Na dílně se úhlopříčně vyztužuje obdélníkový rám o šířce
+$2{,}4\,\mathrm m$ a výšce $1{,}8\,\mathrm m$. Jak dlouhá je samotná
+výztuha? Při výrobě se počítá s \emph{desetiprocentní rezervou délky}.
+Jak dlouhý kus materiálu máme připravit?
+\tcblower
+\begin{center}
+\begin{tikzpicture}[x=1cm,y=1cm,scale=.8]
+\draw[thick] (0,0) rectangle (5,3);
+\draw[very thick] (0,0)--(5,3);
+\node[below] at (2.5,0) {$2{,}4\,\mathrm m$};
+\node[right] at (5,1.5) {$1{,}8\,\mathrm m$};
+\node[above,rotate=31] at (2.7,1.6) {$d$};
+\end{tikzpicture}
+\end{center}
+Pythagorova věta dává
+\[
+d=\sqrt{2{,}4^2+1{,}8^2}=\sqrt{5{,}76+3{,}24}=\sqrt9=3\,\mathrm m.
+\]
+S rezervou potřebujeme $3\cdot1{,}10=\boxed{3{,}3\,\mathrm m}$ materiálu.
+Odhad: úhlopříčka musí být delší než obě strany, což $3\,\mathrm m$ splňuje.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1: rozměry a jednotky}]
+\begin{enumerate}[label=\alph*)]
+\item Čtvercový plech má obsah $242\,\mathrm{cm}^2$. Urči přesně délku
+strany a obvod; délku strany pak přibližně na desetiny centimetru.
+\item Krychlová nádoba má objem $27\,\mathrm{dm}^3$.
+Urči délku hrany v decimetrech a centimetrech.
+\item (Navíc) Příčná vzpěra spojuje dva body vzdálené vodorovně $12\,\mathrm{dm}$
+a svisle $5\,\mathrm{dm}$. Jak dlouhá je přímá vzpěra?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a=\sqrt{242}=11\sqrt2\,\mathrm{cm}\doteq15{,}6\,\mathrm{cm}$;
+$o=44\sqrt2\,\mathrm{cm}\doteq62{,}2\,\mathrm{cm}$.
+\item $a=\sqrt[3]{27}=3\,\mathrm{dm}=30\,\mathrm{cm}$.
+\item $d=\sqrt{12^2+5^2}=\sqrt{169}=13\,\mathrm{dm}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Technika: měřítko a řád velikosti}
+\begin{prikladReseniBox}[title={Příklad 2: tenký drát a násobky tisíciny}]
+Jmenovitý průměr drátku je $0{,}00035\,\mathrm m$.
+Zapiš jej ve vědeckém i technickém tvaru a v milimetrech a mikrometrech.
+\tcblower
+\[
+0{,}00035\,\mathrm m=3{,}5\cdot10^{-4}\,\mathrm m
+=350\cdot10^{-6}\,\mathrm m
+=0{,}35\,\mathrm{mm}=350\,\mathrm{\mu m}.
+\]
+Vědecký tvar má koeficient s absolutní hodnotou mezi $1$ a $10$;
+v technickém tvaru je exponent násobkem tří.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2: rychlý odhad a výkon}]
+\begin{enumerate}[label=\alph*)]
+\item Elektromagnetický signál se šíří ve vakuu rychlostí přibližně
+$3\cdot10^8\,\mathrm{m/s}$. Jakou vzdálenost urazí za $2{,}5\,\mathrm{ms}$?
+Převeď na kilometry.
+\item Topný rezistor má odpor $6\,\Omega$ a je na něm napětí $12\,\mathrm V$.
+Při použití vztahu $P=U^2/R$ vypočti příkon ve wattech.
+Kolik energie spotřebuje za dvě hodiny v \(\mathrm{kWh}\)?
+\item (Navíc) Zaokrouhli $0{,}0000789\,\mathrm m$ na dvě platné číslice;
+zapiš výsledek pomocí vhodné předpony jednotky.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $t=2{,}5\cdot10^{-3}\,\mathrm s$,
+$s=3\cdot10^8\cdot2{,}5\cdot10^{-3}=7{,}5\cdot10^5\,\mathrm m=750\,\mathrm{km}$.
+\item $P=12^2/6=24\,\mathrm W$;
+$E=24\cdot2=48\,\mathrm{Wh}=0{,}048\,\mathrm{kWh}$.
+\item $0{,}000079\,\mathrm m=79\,\mathrm{\mu m}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Vzorec $P=U^2/R$ i přibližná rychlost světla jsou v zadání;
+nejde o předpoklad znalosti celé fyziky. Požaduj kontrolu jednotek
+ve výpočtu a sdělení, zda je výsledná hodnota realistická.}
+
+\blok{Informatika: mocniny dvojky}
+\begin{prikladReseniBox}[title={Příklad 3: záznamy ze senzorů},breakable=false]
+Systém uloží data ze $128$ senzorů. Každý senzor vytvoří soubor o velikosti
+$64\,\mathrm{KiB}$. Kolik je to dohromady bajtů a mebibajtů ($\mathrm{MiB}$)?
+Uvažuj $1\,\mathrm{KiB}=2^{10}\,\mathrm B$ a $1\,\mathrm{MiB}=2^{20}\,\mathrm B$.
+\tcblower
+$128=2^7$, $64=2^6$; celkem
+\[
+2^7\cdot2^6\cdot2^{10}=2^{23}=8\,388\,608\,\mathrm B
+=\boxed{8\,\mathrm{MiB}}.
+\]
+Nezaměňuj $\mathrm{MB}=10^6\,\mathrm B$ a $\mathrm{MiB}=2^{20}\,\mathrm B$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3: smíšené technické úlohy (rezerva)}]
+\begin{enumerate}[label=\alph*)]
+\item Obrázek má $1920\times1080$ pixelů; na jeden pixel jsou použity
+$3$ bajty. Kolik bajtů potřebuje nekomprimovaný obraz bez hlavičky?
+Zaokrouhli velikost na dvě desetinná místa v MB.
+\item Nádrž ve tvaru kvádru měří $1{,}2\,\mathrm m\times0{,}5\,\mathrm m\times0{,}8\,\mathrm m$.
+Kolik litrů vody se do ní teoreticky vejde, jestliže ji naplníme po okraj?
+\item Čtvercová podložka má obsah $50\,\mathrm{cm}^2$. Napiš její
+stranu přesně pomocí odmocniny a obvod ve stejném tvaru.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $1920\cdot1080\cdot3=6\,220\,800\,\mathrm B\doteq6{,}22\,\mathrm{MB}$.
+\item $V=1{,}2\cdot0{,}5\cdot0{,}8=0{,}48\,\mathrm{m}^3=480\,\mathrm l$.
+\item $a=\sqrt{50}=5\sqrt2\,\mathrm{cm}$,
+$o=4a=20\sqrt2\,\mathrm{cm}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Rozšiřující příklad 1: závislost na druhé mocnině}
+\begin{prikladReseniBox}[title={Rozšiřující příklad 1: intenzita při změně vzdálenosti},breakable=false]
+V idealizovaném modelu bodového zdroje je intenzita záření nepřímo
+úměrná druhé mocnině vzdálenosti: $I=k/r^2$, kde $k>0$.
+Kolikrát se změní intenzita, jestliže vzdálenost zvětšíme ze
+$2\,\mathrm m$ na $6\,\mathrm m$?
+\tcblower
+$\dfrac{I(6)}{I(2)}=\dfrac{k/6^2}{k/2^2}=
+\dfrac{2^2}{6^2}=\dfrac19$.
+Intenzita je \textbf{devětkrát menší}, nikoli třikrát.
+Model nepopisuje všechny skutečné zdroje nebo prostředí.
+\end{prikladReseniBox}
+
+\blok{Domácí úkol 1: tři různé situace}
+\begin{zadaniReseniBox}[title={Domácí úkol 1: nezapomeň na jednotky},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Krychlová nádrž má objem $216\,\mathrm l$. Jaká je délka hrany v centimetrech?
+\item Čtvercový pozemek má obsah $72\,\mathrm{m}^2$. Vypočti délku strany a
+obvod přesně pomocí odmocniny.
+\item Procesor provede $2{,}4\cdot10^9$ operací za sekundu.
+Kolik operací podle tohoto zjednodušeného modelu vykoná za $5\,\mathrm{ms}$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $216\,\mathrm l=216\,\mathrm{dm}^3$, tedy $a=\sqrt[3]{216}=6\,\mathrm{dm}=60\,\mathrm{cm}$.
+\item $a=\sqrt{72}=6\sqrt2\,\mathrm m$;
+$o=24\sqrt2\,\mathrm m$.
+\item $2{,}4\cdot10^9\cdot5\cdot10^{-3}=12\cdot10^6=1{,}2\cdot10^7$ operací.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Závěrečná otázka: Kdy je vhodnější nechat výsledek jako
+$6\sqrt2\,\mathrm m$ a kdy jej zaokrouhlit na centimetry?
+Důležité je rozlišovat přesný matematický výsledek a technický údaj
+s danou přesností měření. Příští hodina může být opakování před testem.}
+\end{document}

@@ -1,0 +1,163 @@
+% Work/MAT -- 1. rocnik -- hodina 39 -- finalni revize 2026-10-30.
+% Priklady z uzivatelem dodanych obrazku upraveny a doplneny vlastnimi ulohami.
+% Vysledky a podminky kontrolovany nezavisle; zapis vysledku nepredpoklada
+% kladnost promennych tam, kde to neni stanoveno.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{39}{Příprava na test a chyby}
+\begin{document}
+
+\poznamka{\textbf{Jádro na 45 minut:} 4 min diagnostika znamének a podmínek,
+9 min Příklad 1, 12 min Samostatná práce 1 (4 položky),
+8 min společná kontrola prvního chybného kroku,
+9 min Příklad 2 + Samostatná práce 2 (vyber dvě položky),
+3 min shrnutí. Tisknutelný pracovní list je \textbf{samostatný soubor},
+ne test s klasifikací. Složitější příklady a domácí úkol jsou nadstavba.}
+
+\blok{Nechybí vzorec; chybu často způsobí špatná strategie}
+Před písemkou musejí žáci pracovat samostatně a kontrolovat
+\textbf{znaménka, definiční obor, závorky a vhodnost pořadí operací}.
+Když výsledek nevychází, požaduj \emph{první nesprávný řádek}, nikoli
+pouhou opravu výsledného čísla.
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1: čtyři výroky na úvod},breakable=false]
+Urči, zda jsou tvrzení pravdivá pro všechna přípustná čísla; nepravdivá vyvrať.
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{a^3}{a^{-2}}=a^5$ pro $a\ne0$.
+\item $\sqrt{(x-2)^2}=x-2$ pro všechna reálná $x$.
+\item $\sqrt{18}+\sqrt8=5\sqrt2$.
+\item $(a+b)^2=a^2+b^2$ pro všechna reálná $a,b$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Ano, rozdíl exponentů $3-(-2)=5$.
+\item Ne; např. $x=0$ dává vlevo $2$, vpravo $-2$; správně $|x-2|$.
+\item Ano: $3\sqrt2+2\sqrt2=5\sqrt2$.
+\item Ne; pro $a=b=1$ je $4\ne2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{1. Najdi první chybu, pak zvol vlastní cestu}
+\begin{prikladReseniBox}[title={Příklad 1: tři zavádějící výpočty},breakable=false]
+Najdi první chybný krok a uprav výraz správně:
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{(a^{-2})^3a^8}{a^2}=a^{-6+8-2}=a^0=0$.
+\item $\displaystyle\frac1{\sqrt7+2}=\frac{\sqrt7+2}{7+4}$.
+\item $\sqrt{x^2y^4}=xy^2$ pro všechna reálná $x,y$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a^0=\boxed1$, nikoliv $0$; původně $a\ne0$.
+\item Vynásob \emph{sdruženým} výrazem:
+$\frac{\sqrt7-2}{7-4}=\boxed{(\sqrt7-2)/3}$.
+\item $\sqrt{x^2y^4}=\sqrt{(xy^2)^2}=\boxed{|x|y^2}$;
+$y^2\ge0$, ale $x$ může být záporné.
+\end{enumerate}
+\end{prikladReseniBox}
+
+\blok{2. Obtížnější samostatná práce: mocniny a mnoho proměnných}
+\begin{zadaniReseniBox}[title={Samostatná práce 2: kombinované algebraické úpravy},breakable=false]
+Uprav, nevyčísluj zbytečně velké mocniny. Připiš podmínky.
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{a^{-3}b^2}{c^{-3}}:
+\left(\frac{b^3c}{a^2}\right)^2$.
+\item $\displaystyle\left(\frac{9a^{-2}c^3}{8b^{-2}}\right)^{-3}$.
+\item $\displaystyle\frac{3(a^3b^2)^3}{(2a^2b)^2}\cdot
+\left(\frac{2a^4b^3}{a^3b}\right)^3$.
+\item $\displaystyle\frac{(x+y)^3(x+y)^4}{(x+y)^5}:(x+y)^2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\boxed{ac/b^4}$, $a,b,c\ne0$.
+\item $\boxed{512a^6/(729b^6c^9)}$, $a,b,c\ne0$.
+\item $\boxed{6a^8b^{10}}$, $a,b\ne0$.
+\item $\boxed1$, $x+y\ne0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{V povinné části stačí dvě položky Samostatné práce 2.
+Další jsou diferenciace; žáci s rychlým řešením ať místo kalkulačky
+provedou zpětnou kontrolu dosazením například $a=2,b=3,c=5$.}
+
+\blok{3. Odmocniny, sdružené výrazy a kontrola}
+\begin{prikladReseniBox}[title={Příklad 2: proč zvolit tento pořad úprav?},breakable=false]
+Bez kalkulačky zjednoduš
+\[
+\frac{\sqrt{75}-\sqrt{12}}{\sqrt3},
+\qquad
+\frac1{2-\sqrt3}-\frac1{2+\sqrt3}.
+\]
+\tcblower
+První výraz nejprve částečně odmocni:
+$\frac{5\sqrt3-2\sqrt3}{\sqrt3}=\boxed3$.
+U druhého usměrni oba zlomky (oba jmenovatele mají součin $1$):
+$(2+\sqrt3)-(2-\sqrt3)=\boxed{2\sqrt3}$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3: pět úloh bez nápovědy},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{200}-2\sqrt{18}+\sqrt8$.
+\item $\sqrt[3]{-250}+2\sqrt[3]{16}$.
+\item $\displaystyle\frac3{\sqrt6+\sqrt3}$.
+\item $81^{-3/4}\cdot27^{2/3}$.
+\item Pro která $x\in\mathbb R$ je definován výraz
+$\displaystyle\frac1{\sqrt{x-4}}$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\boxed{6\sqrt2}$.
+\item $\boxed{-\sqrt[3]2}$.
+\item $\boxed{\sqrt6-\sqrt3}$, protože
+$(\sqrt6+\sqrt3)(\sqrt6-\sqrt3)=3$.
+\item $\boxed{1/3}$.
+\item $\boxed{x>4}$; argument odmocniny musí být \emph{kladný},
+protože je celé odmocnítko ve jmenovateli.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{4. Složitější rezerva: matematika bez chytrého kalkulování}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: rozklad na prvočísla},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{125^2\cdot2^{10}}{16^2\cdot50}\cdot\frac{25}{5^3}$.
+\item $\displaystyle\left(\frac{2^2}{5}\right)^5
+\left(-\frac{5^2}{2^3}\right)^3$.
+\item $\displaystyle\frac{8^2\cdot6^3}{4^3\cdot12}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\boxed{250}$.
+\item $\boxed{-10}$.
+\item $\boxed{18}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí úkol: samostatná kontrola před dvacetiminutovým testem}
+\begin{zadaniReseniBox}[title={Domácí úkol 1: osmička na závěrečné procvičení},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{(-3)^6(-3)^{-2}}{9}$.
+\item $\displaystyle\frac{a^{-4}b^5}{a^2b^{-3}}$.
+\item $\displaystyle\frac{(2a^3b^2)^3}{4a^4b}$.
+\item $\sqrt{288}-2\sqrt{32}+\sqrt{18}$.
+\item $\displaystyle\frac1{\sqrt5-\sqrt3}$.
+\item $\sqrt[3]{-1024}+\sqrt[3]{128}$.
+\item $0{,}000000084\,\mathrm m$ zapiš vědecky a v nanometrech.
+\item Soubor má $3{,}5\,\mathrm{MiB}$. Kolik je to $\mathrm{KiB}$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(-3)^4/9=81/9=\boxed9$.
+\item $\boxed{b^8/a^6}$, $a,b\ne0$.
+\item $\boxed{2a^5b^5}$, $a,b\ne0$ (původní jmenovatel vyžaduje oba nenulové).
+\item $(12-8+3)\sqrt2=\boxed{7\sqrt2}$.
+\item $\boxed{(\sqrt5+\sqrt3)/2}$.
+\item $-8\sqrt[3]2+4\sqrt[3]2=\boxed{-4\sqrt[3]2}$.
+\item $\boxed{8{,}4\cdot10^{-8}\,\mathrm m=84\,\mathrm{nm}}$.
+\item $3{,}5\cdot1024=\boxed{3584\,\mathrm{KiB}}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Samostatně tisknutelný list \texttt{39\_MOC\_PracovniList\_Procvicovani.pdf}
+obsahuje další úlohy a \textbf{výsledky až za příkazem \texttt{\\newpage}}.
+Žákům tedy vytiskni pouze stránky před oddílem Výsledky; celý soubor
+si nech jako učitelský klíč.}
+\end{document}

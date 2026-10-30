@@ -1,0 +1,151 @@
+% Work/MAT — revidovana hodina 30: pravidla pro odmocniny, bez racionalnich exponentu.
+% Navaznost: 29 definice druhe a treti odmocniny; 31 racionalni exponent.
+% Ucebnice: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/Mocniny a Odmocniny.tex
+% (Odmocniny, Caste chyby), Realisticky.cz 020712--020713 Pocitani s odmocninami.
+% Zadani a reseni jsou nova; soucin/podil vzdy s presnymi podminkami.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{30}{Pravidla pro odmocniny}
+\begin{document}
+\poznamka{\textbf{45minutové jádro:} 4 min připomenutí druhé a třetí odmocniny;
+9 min součin, podíl a Příklad 1; 8 min Samostatná práce 1 (a--d);
+8 min vytýkání a vnášení činitele, Příklad 2; 7 min Samostatná práce 2 (a--d);
+6 min sčítání podobných odmocnin a Příklad 3; 3 min shrnutí.
+Další položky a všechny úlohy s proměnnou patří do rezervy.
+\textbf{V této hodině nepoužívej zápis s racionálním exponentem.}}
+
+\blok{Od významu odmocniny k pravidlům pro počítání}
+V hodině 29 jsme určili $\sqrt{36}=6$ a $\sqrt[3]{-8}=-2$.
+Dnes budeme odmocniny \emph{upravovat přesně}, bez desetinných aproximací.
+Základem je skutečnost, že druhá odmocnina je \textbf{nezáporná},
+kdežto třetí odmocnina smí být i záporná.
+
+\blok{Společná tabulka pravidel pro odmocniny}
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{35mm}>{\raggedright\arraybackslash}p{58mm}X@{}}
+\toprule
+\textbf{Pravidlo} & \textbf{Zápis} & \textbf{Podmínky} \\ \midrule
+Součin pod odmocninou & $\sqrt[n]{ab}=\sqrt[n]a\,\sqrt[n]b$ & $n\ge2$: pro sudé $n$ máme $a,b\ge0$; pro liché $n$ libovolná reálná $a,b$ \\
+Podíl pod odmocninou & $\sqrt[n]{\dfrac ab}=\dfrac{\sqrt[n]a}{\sqrt[n]b}$ & pro sudé $n$: $a\ge0$, $b>0$; pro liché $n$: $a\in\mathbb R$, $b\ne0$ \\
+Vyjmutí činitele & $\sqrt[n]{b^n a}=b\sqrt[n]a$ & pro sudé $n$: $b\ge0$, $a\ge0$; pro liché $n$: $a,b\in\mathbb R$ \\
+Vnesení činitele & $b\sqrt[n]a=\sqrt[n]{b^n a}$ & stejné podmínky; u sudého $n$ a záporného $b$ viz poznámka níže \\
+Podobné odmocniny & $m\sqrt a+k\sqrt a=(m+k)\sqrt a$ & $a\ge0$, $m,k\in\mathbb R$ \\
+Mocnina odmocniny & $(\sqrt[n]a)^n=a$ & pro sudé $n$ jen $a\ge0$; pro liché $n$ libovolné $a$ \\
+Odmocnina mocniny & $\sqrt[n]{b^n}=|b|$ pro sudé $n$, $=b$ pro liché $n$ & $b\in\mathbb R$, $n\ge2$ \\
+\bottomrule
+\end{tabularx}\normalsize\end{center}
+\poznamka{Pro záporný činitel $b$ a sudé $n$ platí
+$b\sqrt[n]a=-\sqrt[n]{b^n a}$, nikoliv pravidlo bez mínusu.
+Příkladem je $-2\sqrt3=-\sqrt{12}$, zatímco $\sqrt{12}>0$.
+\textbf{Nevytvářej z toho nové pravidlo:} rozhodující je nezápornost sudé odmocniny.}
+
+\blok{Proč funguje součin a podíl?}
+Pro $a,b\ge0$ je číslo $\sqrt a\,\sqrt b$ nezáporné a jeho druhá mocnina je
+$(\sqrt a\,\sqrt b)^2=ab$. Musí tedy být rovno $\sqrt{ab}$.
+Obdobně pro $b>0$ má $\sqrt a/\sqrt b$ druhou mocninu $a/b$.
+U třetí odmocniny použijeme třetí mocninu; znaménko nás neomezuje.
+\textbf{Neplatí však obecně} $\sqrt{a+b}=\sqrt a+\sqrt b$.
+
+\begin{prikladReseniBox}[title={Příklad 1: součin a podíl odmocnin},breakable=false]
+Uprav $\sqrt{9\cdot 16}$, $\sqrt{\dfrac{49}{81}}$, $\sqrt[3]{-8\cdot27}$ a
+$\sqrt[3]{\dfrac{-125}{8}}$.
+\tcblower
+\[
+\sqrt{9\cdot16}=3\cdot4=12,\quad
+\sqrt{\frac{49}{81}}=\frac79,\quad
+\sqrt[3]{-216}=-6,\quad \sqrt[3]{-125/8}=-\frac52.
+\]
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1: vhodný rozklad},breakable=false]
+Uprav bez kalkulačky:
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{4\cdot 25}$; \item $\sqrt{\frac{36}{121}}$;
+\item $\sqrt[3]{-27\cdot8}$; \item $\sqrt[3]{\frac{64}{-125}}$;
+\item $\sqrt{12}\,\sqrt3$; \item $\frac{\sqrt{72}}{\sqrt2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $10$; \item $6/11$; \item $-6$; \item $-4/5$;
+\item $\sqrt{36}=6$; \item $\sqrt{36}=6$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Vynášení a vnášení činitele pod odmocnítko}
+Pro nezáporné $b$ a $a$ lze zápis převádět oběma směry:
+$\sqrt{b^2a}=b\sqrt a$ a $b\sqrt a=\sqrt{b^2a}$.
+U třetí odmocniny může být $b$ i záporné.
+
+\begin{prikladReseniBox}[title={Příklad 2: oba směry},breakable=false]
+Uprav $\sqrt{75}$, $\sqrt[3]{-54}$, $4\sqrt3$ a $-2\sqrt3$.
+\tcblower
+$\sqrt{75}=\sqrt{25\cdot3}=5\sqrt3$; 
+$\sqrt[3]{-54}=\sqrt[3]{-27\cdot2}=-3\sqrt[3]2$;
+$4\sqrt3=\sqrt{16\cdot3}=\sqrt{48}$;
+$-2\sqrt3=-\sqrt{4\cdot3}=-\sqrt{12}$.
+\end{prikladReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2: vyjmi nebo vnes činitele},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{98}$; \item $\sqrt[3]{-128}$;
+\item $3\sqrt5$; \item $-4\sqrt2$;
+\item $2\sqrt[3]{-7}$; \item $\sqrt{288}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $7\sqrt2$; \item $-4\sqrt[3]2$; \item $\sqrt{45}$;
+\item $-\sqrt{32}$; \item $\sqrt[3]{-56}$; \item $12\sqrt2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Sčítání podobných odmocnin}
+Stejně jako $3x+5x=8x$ můžeme sečíst shodné odmocninové členy.
+\begin{prikladReseniBox}[title={Příklad 3: nejprve uprav, potom sečti},breakable=false]
+Zjednoduš $2\sqrt3+5\sqrt3-\sqrt3$ a $\sqrt{12}+\sqrt{27}$.
+\tcblower
+$2\sqrt3+5\sqrt3-\sqrt3=(2+5-1)\sqrt3=6\sqrt3$.
+Dále $\sqrt{12}+\sqrt{27}=2\sqrt3+3\sqrt3=5\sqrt3$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 3: co lze a nelze sloučit?},breakable=false]
+Zjednoduš:
+\begin{enumerate}[label=\alph*)]
+\item $3\sqrt2-7\sqrt2$; \item $2\sqrt{18}+\sqrt8$;
+\item $4\sqrt5+\sqrt3$; \item $\sqrt{45}-\sqrt{20}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-4\sqrt2$; \item $6\sqrt2+2\sqrt2=8\sqrt2$;
+\item nelze sloučit; \item $3\sqrt5-2\sqrt5=\sqrt5$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Rozšiřující příklad 1: proměnná není automaticky kladná}
+\begin{prikladReseniBox}[title={Rozšiřující příklad 1: absolutní hodnota},breakable=false]
+Pro reálná $x,y$ uprav $\sqrt{36x^2}$, $\sqrt{(-5y)^2}$,
+$\sqrt[3]{-8x^3}$ a vysvětli, kdy lze vynechat absolutní hodnotu.
+\tcblower
+$6|x|$, $5|y|$, $-2x$. U sudé odmocniny nezápornost vyžaduje
+absolutní hodnotu; pokud předem víme $x\ge0$, pak $|x|=x$.
+\end{prikladReseniBox}
+
+\blok{Domácí úkol 1}
+\begin{zadaniReseniBox}[title={Domácí úkol 1: smíšené odmocniny},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{\frac{144}{25}}$; \item $\sqrt[3]{-250}$;
+\item $\sqrt{200}$; \item $-3\sqrt7$ (vnes činitel);
+\item $\sqrt{48}+\sqrt{75}$;
+\item $5\sqrt2-\sqrt8+2\sqrt{18}$;
+\item Rozhodni, zda $\sqrt{9+16}=\sqrt9+\sqrt{16}$; zdůvodni.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $12/5$; \item $-5\sqrt[3]2$; \item $10\sqrt2$;
+\item $-\sqrt{63}$; \item $4\sqrt3+5\sqrt3=9\sqrt3$;
+\item $5\sqrt2-2\sqrt2+6\sqrt2=9\sqrt2$;
+\item ne: vlevo $5$, vpravo $7$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Na hodině 31 se teprve objeví zlomkový exponent.
+Předcházející pravidla jsou o skutečné hodnotě odmocniny a musí
+respektovat obor reálných čísel.}
+\end{document}
