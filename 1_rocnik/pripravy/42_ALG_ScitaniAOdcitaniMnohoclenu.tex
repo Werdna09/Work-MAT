@@ -1,134 +1,76 @@
-% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
-% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
-% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
-% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010801_Scitani_a_odcitani_mnohoclenu/010801_Lekce.pdf
-% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
-% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
-% Hodina 42, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 42.
-
-% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
-
-% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
-
-% Původ úloh: P1 a P2: učebnice, „Sčítání a odčítání mnohočlenů“, příklad A a B. Ostatní vlastní.
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010801_Scitani_a_odcitani_mnohoclenu/010801_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/01%20S%C4%8D%C3%ADt%C3%A1n%C3%AD%20a%20od%C4%8D%C3%ADt%C3%A1n%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
-
 \documentclass[11pt,a4paper]{article}
-
 \input{../../sablony/pripravy/priprava.sty}
-
-\nastavPripravu{1. ročník}{Algebraické výrazy}{42}{Sčítání a odčítání mnohočlenů}
-
+\nastavPripravu{1. ročník}{Algebraické výrazy}{42}{Sčítání a odčítání}
 \begin{document}
-
-\blok{Výklad a souvislosti}
-
-Při sčítání členů se nemění jejich proměnná část: tři kusy $x^2$ a dva kusy $x^2$ tvoří pět kusů $x^2$. Výrazy $x^2$ a $x$ však neslučujeme. Odečítání celého mnohočlenu znamená změnu znaménka každého jeho členu.
-
-\begin{definiceBox}[title={Definice},breakable=false]
-\textbf{Stejnorodé členy} mají shodnou proměnnou část se stejnými exponenty; liší se nanejvýš koeficientem.
+\poznamka{45 minut: 5 min opakování členů; 8 min výklad a první vzor; 8 min rozdíl; 12 min samostatná práce; 8 min společná kontrola; 4 min rezerva. U více proměnných kontroluj shodné exponenty všech písmen.}
+\blok{Které členy můžeme sečíst?}
+Ze zkušenosti se známými jednotkami víme, že $3\,\mathrm m+2\,\mathrm m=5\,\mathrm m$, ale $3\,\mathrm m+2\,\mathrm{m}^2$ nelze sloučit v jedinou veličinu. Obdobně $3x^2+2x^2=5x^2$, zatímco $3x^2+2x$ neslučujeme.
+\begin{definiceBox}[title={Definice: podobné členy}]
+\textbf{Podobné (stejnorodé) členy} mají stejnou proměnnou část, včetně všech exponentů. Sčítáme a odčítáme pouze jejich \textbf{koeficienty}: $ax^ky^\ell+bx^ky^\ell=(a+b)x^ky^\ell$.
 \end{definiceBox}
-
-
-\begin{definiceBox}[title={Definice},breakable=false]
-\textbf{Opačný mnohočlen} k $P$ je mnohočlen $-P$, který vznikne změnou znaménka všech koeficientů. Platí $P+(-P)=0$.
+\begin{definiceBox}[title={Definice: opačný mnohočlen}]
+Opačný mnohočlen k $P$ je $-P=(-1)P$. Mění se znaménko \textbf{každého} členu a platí $P+(-P)=0$.
 \end{definiceBox}
-
-
-Pro stejnou proměnnou část $M$ používáme $uM+vM=(u+v)M$. Závorku po znaménku plus lze vypustit, před závorkou se znaménkem minus se změní všechna znaménka. Zatím nenásobíme dvě mnohočlenné závorky.
-
-Změna znamének je důsledkem distributivity:
-$-(A+B)=(-1)(A+B)=-A-B$. Například
-$-(2x-3)=-2x+3$, protože druhý člen je sám záporný.
-Slučování také používá distributivitu, tentokrát v opačném směru.
-
+\poznamka{Zdůvodni $-(A+B)=(-1)(A+B)=-A-B$ distributivitou. Plus před závorkou členy nemění; mínus násobí celou závorku $-1$.}
 \blok{Řešené příklady}
-
-\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
-Pro $A=3x^3+3$, $B=x^3+2x^2-6x-1$ urči $A+B$.
+\begin{prikladReseniBox}[title={Příklad 1: součet tří mnohočlenů}]
+Sečti $A=3x^2+1$, $B=2x^2+xy-3$ a $C=x+y$.
 \tcblower
-$A+B=3x^3+3+x^3+2x^2-6x-1=4x^3+2x^2-6x+2$.
+$A+B+C=3x^2+1+2x^2+xy-3+x+y=\boxed{5x^2+xy+x+y-2}$.
 \end{prikladReseniBox}
-
-
-\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
-Pro stejné mnohočleny urči $A-B$.
+\begin{prikladReseniBox}[title={Příklad 2: rozdíl a změna znamének}]
+Uprav $(4x^3-2x^2+x-5)-(x^3+3x^2-2x-7)$.
 \tcblower
-$A-B=3x^3+3-x^3-2x^2+6x+1=2x^3-2x^2+6x+4$. Minus změní i znaménko posledního členu $-1$.
+$4x^3-2x^2+x-5-x^3-3x^2+2x+7=\boxed{3x^3-5x^2+3x+2}$.
 \end{prikladReseniBox}
-
-
-\blok{Samostatné procvičení}
-
-\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 3: proč se součet opačných rovná nule?}]
+Je-li $F(x)=4x^4+7x^3-2x-2$, uprav $F(x)+[-F(x)]$.
+\tcblower
+$F+(-F)=4x^4+7x^3-2x-2-4x^4-7x^3+2x+2=\boxed0$.
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1: základní úpravy}]
 \begin{enumerate}[label=\alph*)]
-\item Uprav $(2x^2-3x+1)+(x^2+x-4)$.
-\item Uprav $(4a^2-2a+5)-(a^2+3a-1)$.
-\item Uprav $2xy-3x^2+5xy+x^2$.
+\item $(2x^2-3x+1)+(x^2+x-4)$.
+\item $(4a^2-2a+5)-(a^2+3a-1)$.
+\item $3xy-2x^2+5xy+x^2$.
+\item $(3xy-2x^2+y^2)-(xy+x^2-4y^2)$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $3x^2-2x-3$; slučujeme jen stejné mocniny.
-\item $4a^2-2a+5-a^2-3a+1=3a^2-5a+6$.
-\item $7xy-2x^2$. Členy $xy$ a $x^2$ mají jinou proměnnou část.
-\end{enumerate}
-\end{zadaniReseniBox}
-
-
-\poznamka{Častou chybu v odčítání odhalí dosazení $x=0$: zkontroluje konstantní člen. Potom vysvětli obecný důvod změny všech znamének. Číselná zkouška může chybu vyvrátit, ale rovnost pro všechna $x$ prokazují použité úpravy.}
-
-
-\blok{Navazující procvičování ve třídě}
-
-\begin{zadaniReseniBox}[title={Základ: znaménka, zlomky a více proměnných},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Uprav $-\left(2x^2-3x+1\right)+\left(5x^2-x-4\right)$.
-\item Uprav $\left(\frac12a^2-\frac34a\right)+\left(\frac13a^2+\frac14a-2\right)$.
-\item Uprav $(3xy-2x^2+y^2)-(xy+x^2-4y^2)$.
-\end{enumerate}
-\tcblower
-\begin{enumerate}[label=\alph*)]
-\item $-2x^2+3x-1+5x^2-x-4=3x^2+2x-5$.
-\item $\frac56a^2-\frac12a-2$.
+\item $3x^2-2x-3$.
+\item $3a^2-5a+6$.
+\item $8xy-x^2$.
 \item $2xy-3x^2+5y^2$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
-\begin{zadaniReseniBox}[title={Rezerva: vnořené závorky},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 2: vnořené závorky}]
 \begin{enumerate}[label=\alph*)]
-\item Uprav $4x^2-[2x^2-(3x-1)]+(x^2-2x)$.
-\item Uprav $(x^3-2x+1)-[(x^3+x-4)-(2x-3)]$.
+\item $4x^2-[2x^2-(3x-1)]+(x^2-2x)$.
+\item $(x^3-2x+1)-[(x^3+x-4)-(2x-3)]$.
+\item $2x-[3x-(x-4)]$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $4x^2-2x^2+3x-1+x^2-2x=3x^2+x-1$.
-\item Vnitřní hranatá závorka je $x^3-x-1$, celkem $-x+2$.
+\item $3x^2+x-1$.
+\item $-x+2$.
+\item $-4$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
-\blok{Volitelná rezerva}
-
-\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
-Uprav $2x-[3x-(x-4)]$.
+\poznamka{Nech žáky ověřit výsledky dosazením například $x=0$ a $x=1$. Zkouška umí odhalit chybu, není však sama o sobě důkazem identity.}
+\blok{Rezerva a domácí práce}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: zlomkové koeficienty}]
+Uprav $\left(\frac12a^2-\frac34a+1\right)+\left(\frac13a^2+\frac14a-2\right)-\frac16a^2$.
 \tcblower
-Nejprve $3x-(x-4)=2x+4$. Potom $2x-(2x+4)=-4$.
-\end{prikladReseniBox}
-
-
-
-\poznamka{Základ: původní součet a rozdíl, poté první nová skupina samostatně. Vnořené závorky jsou rezerva. U každé chyby nech označit konkrétní změněné znaménko; koeficienty se zlomky nevyžadují nový algebraický postup. Domácí čtveřici kontrolujeme po odstranění závorek, ne jen podle výsledku.}
-
-\blok{Domácí procvičení}
-
-\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+$\left(\frac12+\frac13-\frac16\right)a^2+\left(-\frac34+\frac14\right)a-1=\boxed{\frac23a^2-\frac12a-1}$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Domácí úkol 1}]
 \begin{enumerate}[label=\alph*)]
-\item Uprav $(3x^2-2x+4)-(x^2+5x-1)$.
-\item Uprav $-(2a^2-a+3)+(a^2-4a+2)$.
-\item Uprav $2ab-3a^2-(5ab-a^2)$.
-\item Uprav $3x-[2x-(x+5)]$.
+\item $(3x^2-2x+4)-(x^2+5x-1)$.
+\item $-(2a^2-a+3)+(a^2-4a+2)$.
+\item $2ab-3a^2-(5ab-a^2)$.
+\item $3x-[2x-(x+5)]$.
+\item $(2x^2-3xy+y^2)-(x^2+xy-2y^2)$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
@@ -136,7 +78,7 @@ Nejprve $3x-(x-4)=2x+4$. Potom $2x-(2x+4)=-4$.
 \item $-a^2-3a-1$.
 \item $-3ab-2a^2$.
 \item $2x+5$.
+\item $x^2-4xy+3y^2$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
 \end{document}

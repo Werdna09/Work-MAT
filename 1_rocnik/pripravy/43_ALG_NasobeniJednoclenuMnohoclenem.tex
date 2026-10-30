@@ -1,0 +1,86 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Algebraické výrazy}{43}{Násobení jednočlenem}
+\begin{document}
+\poznamka{45 minut: 5 min aktivace distributivity, 10 min násobení s důkazem, 10 min společné příklady, 12 min samostatně, 5 min kontrola, 3 min zadání domácí práce. Součin dvou víceročlenných závorek systematicky řeší až hodina 44.}
+\blok{Od číselné distributivity k mnohočlenům}
+$3(4+5)=3\cdot4+3\cdot5$. Toto pravidlo platí i pro výrazy: každý člen v závorce vynásobíme činitelem před závorkou.
+\begin{definiceBox}[title={Pravidlo: násobení jednočlenu mnohočlenem}]
+Pro libovolné výrazy $a,u,v,w$ platí \textbf{distributivní zákon} $a(u+v+w)=au+av+aw$. Pro jednočleny zároveň násobíme koeficienty a sčítáme exponenty stejných proměnných: $(ax^m)(bx^n)=abx^{m+n}$.
+\end{definiceBox}
+\poznamka{Zdůrazni, že násobení \uv{přechází} ke každému členu; nepoužij pravidlo $a(u+v)=au+v$. Pracujeme pouze s nezápornými celočíselnými exponenty proměnných.}
+\blok{Řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1: kladný jednočlen}]
+Roznásob $3x(2x^2-4x+5)$.
+\tcblower
+$3x\cdot2x^2+3x\cdot(-4x)+3x\cdot5=\boxed{6x^3-12x^2+15x}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2: záporný jednočlen}]
+Uprav $-2a^2(3a^3-4a+7)$.
+\tcblower
+$-6a^5+8a^3-14a^2$. Znaménko minus musí být součástí násobení každého členu.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3: více proměnných}]
+Uprav $-3xy(2x^2y-4xy^2+5)$.
+\tcblower
+$\boxed{-6x^3y^2+12x^2y^3-15xy}$. Při násobení $xy\cdot x^2y$ se exponenty obou proměnných sčítají zvlášť.
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1: od jednoduchého ke složitějšímu}]
+\begin{enumerate}[label=\alph*)]
+\item $4x(x^2-3x+2)$.
+\item $-5a(2a^2-a-1)$.
+\item $3x^2y(2xy-y^2+4)$.
+\item $-\frac12 x(6x^2-4x+8)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $4x^3-12x^2+8x$.
+\item $-10a^3+5a^2+5a$.
+\item $6x^3y^2-3x^2y^3+12x^2y$.
+\item $-3x^3+2x^2-4x$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2: násobení a slučování}]
+\begin{enumerate}[label=\alph*)]
+\item $2x(x^2+3x-1)-x(x^2-x+2)$.
+\item $-2a(3a-4)+3a(a+1)$.
+\item $3x(2x-1)-(x^2+4x-5)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x^3+7x^2-4x$.
+\item $-3a^2+11a$.
+\item $5x^2-7x+5$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Kde se to používá?}
+\begin{prikladReseniBox}[title={Příklad 4: obsah obdélníku}]
+Obdélník má délky stran $3x$ a $(2x+5)$ centimetrů, $x>0$. Zapiš obsah mnohočlenem a urči jej pro $x=2$.
+\tcblower
+$S=3x(2x+5)=6x^2+15x\,\mathrm{cm}^2$; po dosazení $S(2)=24+30=\boxed{54\,\mathrm{cm}^2}$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: zpětné určení výrazu}]
+Najdi mnohočlen $P(x)$ takový, aby $-3xP(x)=12x^4-6x^3+9x^2$ pro všechna $x$.
+\tcblower
+$P(x)=\boxed{-4x^3+2x^2-3x}$. Kontrola roznásobením. Závěr plyne z rovnosti koeficientů mnohočlenů.
+\end{zadaniReseniBox}
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol 1}]
+\begin{enumerate}[label=\alph*)]
+\item $7x(2x^2-x+3)$.
+\item $-2ab(3a^2-2ab+5b^2)$.
+\item $\frac13 x^2(9x^3-6x+12)$.
+\item $4a(a^2-3a+2)-2a(a^2+a-1)$.
+\item Vypočti obsah obdélníku se stranami $5t$ a $t+4$ pro $t=3$, $t>0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $14x^3-7x^2+21x$.
+\item $-6a^3b+4a^2b^2-10ab^3$.
+\item $3x^5-2x^3+4x^2$.
+\item $2a^3-14a^2+10a$.
+\item $S=5t^2+20t$, $S(3)=45+60=105$ (plošných jednotek).
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}
