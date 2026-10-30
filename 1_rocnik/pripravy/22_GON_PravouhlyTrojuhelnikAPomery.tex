@@ -1,0 +1,135 @@
+% Work/MAT | 1. rocnik | 22. hodina
+% Nove navazuje na diskusni hodinu 21. Definice Pythagorovy vety v obsahove forme.
+% Zdroje: ucebnice 03 Planimetrie, 04 Goniometricke funkce,
+% Realisticky.cz 030205 a 040201. Texty a TikZ kresby nove sestaveny.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\nastavPripravu{1. ročník}{Goniometrie}{22}{Trojúhelník, Pythagoras, poměry}
+\begin{document}
+\blok{Od debaty k pravoúhlému trojúhelníku (0.--7. minuta)}
+Připomeň včerejší dvě rampy: stejný \emph{sklon} může mít různě velký obrázek.
+V geometrii nás bude zajímat úhel a poměr správně vybraných stran.
+\begin{definiceBox}
+\textbf{Pravoúhlý trojúhelník} je trojúhelník s jedním vnitřním úhlem
+$90^\circ$. Zbývající dva úhly jsou ostré a jejich součet je $90^\circ$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Přepona} je strana proti pravému úhlu. \textbf{Odvěsny} jsou
+zbývající dvě strany, které pravý úhel svírají.
+\end{definiceBox}
+\begin{center}
+\begin{tikzpicture}[scale=.78]
+\coordinate (A) at (0,0); \coordinate (C) at (5.2,0); \coordinate (B) at (5.2,3.15);
+\draw[very thick] (A)--node[below]{$b$}(C)
+ --node[right]{$a$}(B)
+ --node[above,sloped]{$c$}(A);
+\draw (4.88,0)--(4.88,.32)--(5.2,.32);
+\draw (.84,0) arc[start angle=0,end angle=31.2,radius=.84];
+\node at (1.15,.28) {$\alpha$};
+\node[below left] at (A){$A$};\node[below right] at (C){$C$};\node[above right] at (B){$B$};
+\node at (5.65,.2){$90^\circ$};
+\end{tikzpicture}
+\end{center}
+Pro úhel $\alpha$ je odvěsna $a$ \emph{protilehlá}, $b$ \emph{přilehlá} a $c$ přepona.
+\poznamka{V obrázku je $\gamma=90^\circ$, tedy přeponou je $c$; ostatní
+popisky stran odpovídají obvyklému značení stran proti vrcholům.
+V jiném trojúhelníku může být přeponou $a$ nebo $b$.
+Nedovol žákům rozhodovat podle toho, která čára je šikmá.}
+
+\blok{Pythagorova věta vyjadřuje rovnost obsahů (7.--15. minuta)}
+\begin{definiceBox}
+\textbf{Pythagorova věta:} \emph{Obsah čtverce nad přeponou
+pravoúhlého trojúhelníku je roven součtu obsahů čtverců nad oběma
+odvěsnami.} Jsou-li odvěsny $a,b$ a přepona $c$, platí
+\[
+\boxed{a^2+b^2=c^2}.
+\]
+Zápis $c^2=a^2+b^2$ používáme jen tehdy, je-li $c$ skutečně přepona.
+\end{definiceBox}
+\begin{center}
+\begin{tikzpicture}[scale=.53]
+\draw[thick] (0,0) rectangle (5,5);
+\fill[black!12] (3,0)--(5,3)--(2,5)--(0,2)--cycle;
+\draw[very thick] (3,0)--(5,3)--(2,5)--(0,2)--cycle;
+\node at (2.5,2.5) {$c^2$};
+\node[below] at (1.5,0) {$a$}; \node[below] at (4,0) {$b$};
+\node[left] at (0,2.5) {$a+b$};
+\end{tikzpicture}
+\end{center}
+Srovnej obsah velkého čtverce: lze jej rozdělit na čtverce
+$a^2$, $b^2$ a dva obdélníky $ab$, nebo na čtyři trojúhelníky
+o obsahu $\frac{ab}{2}$ a prostřední čtverec $c^2$.
+Proto $a^2+2ab+b^2=2ab+c^2$, tedy $a^2+b^2=c^2$.
+\poznamka{Důkaz je názorný. Vnitřní čtyřúhelník je čtverec,
+protože dva sousední ostré úhly dohromady tvoří $90^\circ$.}
+\poznamka{Časový rámec: strany 7, Pythagoras 8,
+čtyři poměry a podobnost 13, P1--P2 a S1 14, závěr 3 minut.
+Domácí po této hodině: u trojúhelníku $8$--$15$--$17$ napiš
+čtyři poměry pro úhel proti osmičce. Výsledky
+$8/17$, $15/17$, $8/15$, $15/8$.
+Speciální hodnoty pro konkrétní úhly až příště.}
+
+\blok{Poměr závisí na úhlu, ne na velikosti obrázku (15.--28. minuta)}
+Dva pravoúhlé trojúhelníky se stejným ostrým úhlem jsou podobné
+(podle věty \emph{uu}); při zvětšení se všechny délky násobí stejným
+číslem. \textbf{Poměr odpovídajících délek se nezmění.}
+Vzhledem ke zvolenému ostrému úhlu $\alpha$ určujeme \emph{protilehlou}
+a \emph{přilehlou odvěsnu}; přepona je vždy tatáž strana.
+\begin{definiceBox}
+\textbf{Sinus} ostrého úhlu je poměr protilehlé odvěsny a přepony:
+$\displaystyle \sin\alpha=\frac{\text{protilehlá odvěsna}}{\text{přepona}}$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Kosinus} ostrého úhlu je poměr přilehlé odvěsny a přepony:
+$\displaystyle \cos\alpha=\frac{\text{přilehlá odvěsna}}{\text{přepona}}$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Tangens} ostrého úhlu je poměr protilehlé a přilehlé odvěsny:
+$\displaystyle \tan\alpha=\frac{\text{protilehlá odvěsna}}{\text{přilehlá odvěsna}}$.
+Značí se také $\operatorname{tg}\alpha$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Kotangens} ostrého úhlu je poměr přilehlé a protilehlé odvěsny:
+$\displaystyle \cot\alpha=\frac{\text{přilehlá odvěsna}}{\text{protilehlá odvěsna}}$.
+Značí se také $\operatorname{cotg}\alpha$.
+\end{definiceBox}
+\textbf{V tomto modelu} definujeme poměry pouze pro ostré úhly,
+$0^\circ<\alpha<90^\circ$. Hodnotám na krajích se budeme věnovat zítra.
+
+\begin{prikladReseniBox}[title={P1: trojúhelník $3$--$4$--$5$},breakable=false]
+Pravoúhlý trojúhelník má vzhledem k úhlu $\alpha$ protilehlou odvěsnu $3\,\mathrm{cm}$,
+přilehlou $4\,\mathrm{cm}$ a přeponu $5\,\mathrm{cm}$.
+Vyjádři čtyři goniometrické poměry. Co se změní pro druhý ostrý úhel $\beta$?
+\tcblower
+$\sin\alpha=\frac35$, $\cos\alpha=\frac45$, $\tan\alpha=\frac34$,
+$\cot\alpha=\frac43$. Pro $\beta$ si odvěsny prohodí role:
+$\sin\beta=\frac45$, $\cos\beta=\frac35$, $\tan\beta=\frac43$,
+$\cot\beta=\frac34$. V každém případě jsou poměry bez jednotek.
+\end{prikladReseniBox}
+
+\blok{Zkus určit přeponu a poměry (28.--42. minuta)}
+\begin{prikladReseniBox}[title={P2: nejprve Pythagorova věta},breakable=false]
+Odvěsny jsou $5\,\mathrm{cm}$ a $12\,\mathrm{cm}$. Urči přeponu.
+Pak zapiš všechny čtyři poměry pro úhel proti kratší odvěsně.
+\tcblower
+$c=\sqrt{5^2+12^2}=\sqrt{169}=13\,\mathrm{cm}$.
+$\sin\alpha=\frac5{13}$, $\cos\alpha=\frac{12}{13}$,
+$\tan\alpha=\frac5{12}$, $\cot\alpha=\frac{12}5$.
+Kontrola: přepona je nejdelší a $5^2+12^2=13^2$.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={S1: samostatně (jádro a)--c))},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Odvěsny měří $6\,\mathrm{cm}$ a $8\,\mathrm{cm}$. Urči přeponu.
+\item Pro odvěsny z a) zapiš $\sin,\cos,\tan,\cot$ úhlu proti odvěsně $6\,\mathrm{cm}$.
+\item Je-li pravý úhel $\beta=90^\circ$, která ze stran $a,b,c$ je přeponou?
+\item (Navíc) Vysvětli, proč se hodnoty poměrů nezmění, když všechny strany zdvojnásobíme.
+\end{enumerate}
+\tcblower
+a) $\sqrt{36+64}=10\,\mathrm{cm}$.
+b) $\frac35,\frac45,\frac34,\frac43$.
+c) Strana $b$, protože leží proti pravému úhlu.
+d) Každý poměr má v čitateli i jmenovateli stejný násobek $2$, který se zkrátí.
+\end{zadaniReseniBox}
+\end{document}

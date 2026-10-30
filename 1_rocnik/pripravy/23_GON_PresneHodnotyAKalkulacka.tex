@@ -1,0 +1,185 @@
+% Work/MAT | 1. rocnik | 23. hodina
+% Presne hodnoty sin/cos z geometrie; tg/cotg ze vztahu sin/cos, cos/sin.
+% Zdroj: ucebnice Goniometricke funkce.tex, sekce Tabulkove hodnoty;
+% Realisticky.cz 040315 a 010121; ilustrace a ulohy vlastni.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\nastavPripravu{1. ročník}{Goniometrie}{23}{Přesné hodnoty a kalkulačka}
+\begin{document}
+\blok{Dnes hodnoty odvodíme, ne jen zapamatujeme (0.--3. minuta)}
+V minulé hodině jsme zavedli čtyři poměry pro ostrý úhel. Dnes zjistíme,
+\emph{proč} vycházejí známé hodnoty pro $30^\circ$, $45^\circ$, $60^\circ$.
+Využijeme dva trojúhelníky, které můžeme přesně sestrojit.
+
+\blok{Z poloviny čtverce získáme $45^\circ$ (3.--12. minuta)}
+\begin{prikladReseniBox}[title={P1: rovnoramenný pravoúhlý trojúhelník}]
+Dvě odvěsny mají délku $1$. Vypočti přeponu a z toho
+$\sin45^\circ$ a $\cos45^\circ$.
+\tcblower
+Přepona je úhlopříčkou čtverce o straně $1$. Oba ostré úhly
+jsou stejné, proto každý měří $45^\circ$.
+\begin{center}
+\begin{tikzpicture}[scale=.70, every node/.style={font=\small}]
+\coordinate (A) at (0,0); \coordinate (C) at (4,0);
+\coordinate (B) at (4,4); \coordinate (D) at (0,4);
+\draw[densely dashed,draw=black!55] (A)--(D)--(B);
+\draw[very thick] (A)--node[below]{$1$}(C)--node[right]{$1$}(B)
+  --node[above,sloped]{$\sqrt2$}(A);
+\draw (3.65,0)--(3.65,.35)--(4,.35);
+\draw (.8,0) arc[start angle=0,end angle=45,radius=.8];
+\draw (4,3.2) arc[start angle=-90,end angle=-135,radius=.8];
+\node at (1.22,.33){$45^\circ$}; \node at (2.97,3.05){$45^\circ$};
+\node[below left] at (A){$A$}; \node[below right] at (C){$C$};
+\node[above right] at (B){$B$};
+\end{tikzpicture}
+\end{center}
+$1^2+1^2=c^2$, takže $c=\sqrt2$ a
+\[
+\boxed{\sin45^\circ=\cos45^\circ=\frac1{\sqrt2}=\frac{\sqrt2}{2}}.
+\]
+\end{prikladReseniBox}
+
+\blok{Výška rovnostranného trojúhelníku: $30^\circ$ a $60^\circ$ (12.--23. minuta)}
+\begin{prikladReseniBox}[title={P2: rozděl trojúhelník výškou}]
+Rovnostranný trojúhelník má stranu délky $2$. Sestroj výšku.
+Odvoď délky odvěsen a hodnoty $\sin$ a $\cos$ pro $30^\circ$ a $60^\circ$.
+\tcblower
+Výška je zároveň těžnicí a půlí vrcholový úhel.
+Dostaneme dva trojúhelníky $30^\circ$--$60^\circ$--$90^\circ$.
+\begin{center}
+\begin{tikzpicture}[scale=.91,every node/.style={font=\small}]
+  \coordinate (A) at (0,0);\coordinate (B) at (3.6,0);\coordinate (C) at (1.8,3.1177);
+  \draw[very thick] (A)--node[below]{$2$}(B)
+    --node[right,sloped]{$2$}(C)--node[left,sloped]{$2$}(A);
+  \node[below left] at (A){$A$}; \node[below right] at (B){$B$};
+  \node[above] at (C){$C$};
+  \node at (1.8,-.98){\emph{rovnostranný}};
+  \node at (4.55,1.45){$\Longrightarrow$};
+  \begin{scope}[xshift=5.5cm]
+  \coordinate (P) at (0,0);\coordinate (Q) at (3.6,0);
+  \coordinate (R) at (1.8,3.1177);\coordinate (S) at (1.8,0);
+  \fill[black!9] (P)--(S)--(R)--cycle;
+  \draw[very thick] (P)--(Q)--(R)--cycle;
+  \draw[dashed,thick] (R)--(S);
+  \draw (1.53,0)--(1.53,.27)--(1.8,.27);
+  \node[below] at (.82,-.08){$1$};\node[below] at (2.75,-.08){$1$};
+  \node[left] at (.8,1.50){$2$};
+  \node[right] at (2.15,1.75){$v=\sqrt3$};
+  \draw (.65,0) arc[start angle=0,end angle=60,radius=.65];
+  \node at (.95,.40){$60^\circ$};
+  \draw (1.8,2.5) arc[start angle=-90,end angle=-120,radius=.62];
+  \node at (1.32,2.38){$30^\circ$};
+  \node[below left] at (P){$A$};\node[below right] at (Q){$B$};
+  \node[above] at (R){$C$};\node[above left] at (S){$D$};
+  \node at (1.8,-.98){\emph{rozdělení výškou}};
+  \end{scope}
+\end{tikzpicture}
+\end{center}
+Z Pythagorovy věty: $v^2+1^2=2^2$, tedy $v=\sqrt3$.
+Proti $30^\circ$ leží odvěsna $1$, proti $60^\circ$ výška $\sqrt3$:
+\[
+\boxed{\sin30^\circ=\tfrac12,\quad\cos30^\circ=\tfrac{\sqrt3}{2}},
+\qquad
+\boxed{\sin60^\circ=\tfrac{\sqrt3}{2},\quad\cos60^\circ=\tfrac12}.
+\]
+\end{prikladReseniBox}
+
+\newpage
+\blok{Hodnoty $0^\circ$, $90^\circ$ a tangens s kotangensem (23.--30. minuta)}
+\textbf{Krajní úhly:} v opravdovém pravoúhlém trojúhelníku nemůže být
+jiný ostrý úhel roven $0^\circ$ nebo $90^\circ$. Pro tyto dvě hodnoty
+použijeme stručně \emph{jednotkovou kružnici}: bod pro $0^\circ$ má
+souřadnice $(1,0)$ a pro $90^\circ$ souřadnice $(0,1)$.
+Kosinus je vodorovná a sinus svislá souřadnice.
+\begin{center}
+\begin{tikzpicture}[scale=.74]
+\draw[->] (-2,0)--(2,0) node[right]{$x$};
+\draw[->] (0,-1.9)--(0,2) node[above]{$y$};
+\draw[thick] (0,0) circle(1.45);
+\fill (1.45,0) circle(2pt) node[below right]{$0^\circ\ (1;0)$};
+\fill (0,1.45) circle(2pt) node[above right]{$90^\circ\ (0;1)$};
+\node[below left] at (0,0){$O$};
+\end{tikzpicture}
+\end{center}
+Z definic z 22. hodiny pro \emph{ostré} úhly a z tohoto geometrického
+rozšíření platí (vždy, když jmenovatel není nula):
+\[
+\tan\alpha=\frac{\sin\alpha}{\cos\alpha},\qquad
+\cot\alpha=\frac{\cos\alpha}{\sin\alpha}.
+\]
+\textbf{Odvození pro učitele (na tabuli stačí jeden sloupec):}
+\[
+\begin{aligned}
+\tan30^\circ&=\frac{1/2}{\sqrt3/2}=\frac{\sqrt3}{3}, &
+\cot30^\circ&=\frac{\sqrt3/2}{1/2}=\sqrt3,\\
+\tan45^\circ&=\frac{\sqrt2/2}{\sqrt2/2}=1, &
+\cot45^\circ&=1,\\
+\tan60^\circ&=\frac{\sqrt3/2}{1/2}=\sqrt3, &
+\cot60^\circ&=\frac{1/2}{\sqrt3/2}=\frac{\sqrt3}{3}.
+\end{aligned}
+\]
+Na krajích: $\tan0^\circ=0/1=0$, $\cot0^\circ$ není definován;
+$\tan90^\circ$ není definován, $\cot90^\circ=0/1=0$.
+\begin{center}
+\renewcommand{\arraystretch}{1.35}
+\begin{tabular}{@{}lccccc@{}}\toprule
+$\alpha$ & $0^\circ$ & $30^\circ$ & $45^\circ$ & $60^\circ$ & $90^\circ$ \\ \midrule
+$\sin\alpha$ & $0$ & $\frac12$ & $\frac{\sqrt2}{2}$ & $\frac{\sqrt3}{2}$ & $1$ \\
+$\cos\alpha$ & $1$ & $\frac{\sqrt3}{2}$ & $\frac{\sqrt2}{2}$ & $\frac12$ & $0$ \\
+$\tan\alpha$ & $0$ & $\frac{\sqrt3}{3}$ & $1$ & $\sqrt3$ & nedef. \\
+$\cot\alpha$ & nedef. & $\sqrt3$ & $1$ & $\frac{\sqrt3}{3}$ & $0$ \\ \bottomrule
+\end{tabular}
+\end{center}
+\poznamka{Trojúhelník vysvětluje přesné hodnoty pro ostré úhly.
+Kraje vysvětluje kružnice; netvrď, že jde o přípustné ostré úhly.
+Tabulku nenuť celou memorovat hned. Tangens a kotangens ukaž
+podílem již vypočtených hodnot.}
+
+\newpage
+\blok{Kalkulačka: správný režim, hodnoty a opačná úloha (30.--41. minuta)}
+\textbf{Postup:} přepni kalkulačku na \texttt{DEG} (stupně), nikoli
+\texttt{RAD}. Kontrola: $\sin30^\circ=0{,}5$.
+Pro výpočet hodnoty stiskni např. \texttt{sin}, zadej $37$ a potvrď;
+některé kalkulačky vyžadují nejprve číslo.
+Chceme-li \emph{určit ostrý úhel} ze známé hodnoty, použijeme
+\texttt{SHIFT} + \texttt{sin} (zobrazí \texttt{sin\ensuremath{^{-1}}}),
+popř. \texttt{arcsin}; analogicky \texttt{arccos}, \texttt{arctan}.
+Nejde o převrácenou hodnotu čísla!
+\begin{prikladReseniBox}[title={P3: hodnoty z kalkulačky},breakable=false]
+Spočítej $\sin37^\circ$, $\cos53^\circ$. Proč jsou výsledky stejné?
+\tcblower
+$\sin37^\circ\doteq0{,}6018$, $\cos53^\circ\doteq0{,}6018$.
+Úhly se doplňují do $90^\circ$: platí
+$\sin\alpha=\cos(90^\circ-\alpha)$ pro ostrý $\alpha$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={P4: opačná úloha s kalkulačkou},breakable=false]
+Urči ostrý úhel $\alpha$, pro který je $\cos\alpha=0{,}6$.
+\tcblower
+$\alpha=\arccos(0{,}6)\doteq53{,}13^\circ$.
+Pro kontrolu $\cos53{,}13^\circ\doteq0{,}6$ (se zaokrouhlením).
+Úlohu řešíme v oboru ostrých úhlů.
+\end{prikladReseniBox}
+\blok{Výstup a domácí práce (41.--45. minuta)}
+\begin{zadaniReseniBox}[title={S1: krátká kontrola},breakable=false]
+\textbf{a)} Bez kalkulačky $\tan45^\circ+\cot60^\circ$.
+\quad \textbf{b)} Jak poznáš na kalkulačce omylem zapnuté radiány?
+\tcblower
+a) $1+\frac{\sqrt3}{3}$. b) Test $\sin30^\circ$ nedá $0{,}5$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={D1: doma, 10 minut},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item Z geometrie odvoď znovu $\sin45^\circ$.
+\item Z tabulky vypočti $2\sin30^\circ+\cos60^\circ$.
+\item Na kalkulačce vypočti $\tan25^\circ$ a $\arcsin(0{,}6)$.
+\end{enumerate}
+\tcblower
+a) $1/\sqrt2=\sqrt2/2$.
+b) $2\cdot\frac12+\frac12=\frac32$.
+c) $\tan25^\circ\doteq0{,}4663$, $\arcsin(0{,}6)\doteq36{,}87^\circ$.
+\end{zadaniReseniBox}
+\poznamka{Rozpis: 3+9+11+7+11+4=45 minut.
+Při pomalejší třídě nechej výpočet $\cot$ v tabulce jako hotový výsledek,
+ale odvození ponech v přípravě pro vlastní použití.}
+\end{document}

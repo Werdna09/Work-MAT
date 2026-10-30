@@ -22,7 +22,7 @@ Konkrétní výběr a přiřazení k variantám schválil učitel.
 \begin{tabular}{c|ll}
 Úloha testu & Varianta A: zdroj & Varianta B: zdroj\\ \hline
 1 & Úloha 1.1 l), řádek 992 & Úloha 1.1 o), řádek 995\\
-2 & Úloha 1.3 a), řádek 1048 & Úloha 1.3 f), řádek 1054\\
+2 & Úloha 1.3 a), řádek 1048 & Úloha 1.3 b), řádek 1049\\
 3 & Úloha 1.4 w), řádek 1096 & Úloha 1.4 x), řádek 1097\\
 4 & Úloha 1.6 a), řádek 1133 & Úloha 1.6 d), řádek 1136
 \end{tabular}
@@ -100,14 +100,18 @@ Převedeme obě strany na základ $2$:
 Množina kořenů je $K=\{\frac13\}$.
 Zkouška: $8^{1/3}=\sqrt[3]{8}=2$.
 
-\item $5^{x} \cdot 2^{x} = 100^{x-1}$.
-Spojíme mocniny na levé straně a využijeme $100=10^2$:
+\item $\sqrt[4]{4^x} \cdot \sqrt[3]{2^{x-3}} = \sqrt[6]{16}$.
+Všechny odmocňované výrazy jsou kladné. Převedeme je na mocniny základu $2$:
 \[
-10^x=10^{2x-2} \iff x=2x-2 \iff x=2.
+2^{x/2}\cdot 2^{(x-3)/3}=2^{2/3}
+\iff \frac{x}{2}+\frac{x-3}{3}=\frac23
+\iff 3x+2x-6=4 \iff x=2.
 \]
 Proto $K=\{2\}$.
-Zkouška v původní rovnici: $L(2)=5^2\cdot2^2=25\cdot4=100$,
-$P(2)=100^1=100$.
+Zkouška v původní rovnici:
+$L(2)=\sqrt[4]{16}\cdot\sqrt[3]{2^{-1}}
+=2\cdot2^{-1/3}=2^{2/3}$,
+$P(2)=\sqrt[6]{16}=2^{2/3}$.
 
 \item $2^{2x} \cdot 5^{x} - 2^{2x-1} \cdot 5^{x+1} = -600$.
 První součin je $4^x\cdot5^x=20^x$; ve druhém součinu
@@ -147,8 +151,8 @@ výpočtem po dosazení do původních osmi rovnic.
 
 Obě varianty postupují od převodu na společný základ přes úpravy mocnin
 a vytýkání ke kvadratické substituci se dvěma kladnými pomocnými kořeny.
-Obtížnost a rozsah jsou přibližně srovnatelné; druhá úloha A má o jednu
-úpravu mocnin více, třetí úloha B pracuje s méně obvyklým základem $20$.
+Obtížnost a rozsah jsou přibližně srovnatelné; druhá úloha B vyžaduje
+převod odmocnin na mocniny, třetí úloha B pracuje s méně obvyklým základem $20$.
 Orientační časy odpovídajících úloh jsou v obou variantách
 1--2, 2--3, 3--5 a 4--5 minut, celkem přibližně 15--20 minut včetně kontroly.
 Odhad nebyl ověřen ve třídě.

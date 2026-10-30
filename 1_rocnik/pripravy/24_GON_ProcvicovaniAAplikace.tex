@@ -1,0 +1,130 @@
+% Work/MAT | 1. rocnik | 24. hodina
+% Upevneni trojuhelniku, presnych hodnot, kalkulacky a technickych uloh.
+% Zdroj: ucebnice Goniometricke funkce.tex a Planimetrie.tex;
+% Realisticky.cz 040202, 010120; konkretni zadani a vysledky jsou vlastni.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Goniometrie}{24}{Procvičení a aplikace}
+\begin{document}
+\blok{Dnes vše spojíme a téma uzavřeme (0.--5. minuta)}
+Nezavádíme nové goniometrické funkce ani novou teorii. Opakujeme:
+\emph{přepona, protilehlá a přilehlá odvěsna, Pythagorova věta,
+poměry sin/cos/tan/cot, přesné hodnoty a kalkulačka ve stupních}.
+\begin{zadaniBox}[title={Postup, který musí zaznít před výpočtem}]
+\textbf{1.} Načrtni situaci, vyznač pravý a známý úhel.
+\textbf{2.} Urči přeponu a vztah hledané strany ke známému úhlu.
+\textbf{3.} Vyber Pythagorovu větu nebo odpovídající goniometrický poměr.
+\textbf{4.} Vyjádři neznámou; teprve potom dosaď a spočítej.
+\textbf{5.} Ověř jednotky, režim \texttt{DEG} a smysluplnost výsledku.
+\end{zadaniBox}
+
+\blok{Výpočet v trojúhelníku (5.--14. minuta)}
+\begin{prikladReseniBox}[title={P1: může přepona vyjít menší než odvěsna?},breakable=false]
+Odvěsny pravoúhlého trojúhelníku jsou $9\,\mathrm{cm}$ a $12\,\mathrm{cm}$.
+Urči přeponu a čtyři goniometrické poměry pro úhel proti kratší odvěsně.
+\tcblower
+$c=\sqrt{9^2+12^2}=15\,\mathrm{cm}$.
+$\sin\alpha=9/15=3/5$, $\cos\alpha=12/15=4/5$,
+$\tan\alpha=9/12=3/4$ a $\cot\alpha=12/9=4/3$.
+Přepona je nejdelší; poměry nemají jednotku.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={P2: úhel a délka},breakable=false]
+Trojúhelník má $\gamma=90^\circ$, přeponu $c=10\,\mathrm{cm}$
+a ostrý úhel $\alpha=30^\circ$. Urči odvěsny bez kalkulačky.
+\tcblower
+$a=c\sin30^\circ=10\cdot\frac12=5\,\mathrm{cm}$,
+$b=c\cos30^\circ=10\cdot\frac{\sqrt3}{2}=5\sqrt3\,\mathrm{cm}$.
+Ověření: $5^2+(5\sqrt3)^2=25+75=100=10^2$.
+\end{prikladReseniBox}
+
+\blok{Slovní úloha: změř výšku bez výstupu na střechu (14.--24. minuta)}
+\begin{prikladReseniBox}[title={P3: výškový úhel a výška očí}]
+Pozorovatel stojí na vodorovné rovině $24\,\mathrm m$ od paty svislé budovy.
+Oči má ve výšce $1{,}60\,\mathrm m$. Vrchol vidí pod úhlem $32^\circ$
+nad vodorovnou rovinou. Urči výšku budovy $H$ na setiny metru.
+\tcblower
+\begin{center}
+\begin{tikzpicture}[scale=.68]
+\draw[thick] (-.5,0)--(7.7,0);
+\draw[very thick] (6,0)--(6,4.23);
+\draw[thick] (0,0)--(0,.48);
+\fill (0,.48) circle(2pt);
+\draw[dashed] (0,.48)--(6,.48);
+\draw[thick] (0,.48)--(6,4.23);
+\draw (5.7,.48)--(5.7,.78)--(6,.78);
+\draw (.85,.48) arc[start angle=0,end angle=32,radius=.85];
+\node at (1.34,.74){$32^\circ$};
+\node[below] at (3,0){$24\,\mathrm m$};
+\node[left] at (0,.25){\scriptsize $1{,}60\,\mathrm m$};
+\node[right] at (6.03,2.4){$H$};
+\end{tikzpicture}
+\end{center}
+Od výšky budovy odečteme úroveň očí:
+$\tan32^\circ=\frac{H-1{,}60}{24}$.
+Proto $H=1{,}60+24\tan32^\circ\doteq16{,}60\,\mathrm m$.
+Přičíst $1{,}60\,\mathrm m$ je nezbytné; jinak by vyšla jen výška nad očima.
+\end{prikladReseniBox}
+
+\newpage
+\blok{Samostatné procvičení a společná kontrola (24.--41. minuta)}
+\begin{zadaniReseniBox}[title={S1: vyber postup sám; a)--c) je jádro}]
+\begin{enumerate}[label=\alph*)]
+\item Žebřík délky $6\,\mathrm m$ svírá s vodorovnou zemí úhel $70^\circ$.
+Jak vysoko dosahuje a jak daleko je jeho pata od stěny?
+\item V pravoúhlém trojúhelníku má protilehlá odvěsna k úhlu $\alpha$
+délku $1{,}2\,\mathrm m$ a přilehlá $8\,\mathrm m$. Urči $\alpha$.
+\item Pomocí přesných hodnot urči $\sin60^\circ\cos30^\circ+
+\cos60^\circ\sin30^\circ$. Je výsledek větší než $1$?
+\item (Navíc) Je-li $\beta=90^\circ$, $b=20\,\mathrm{cm}$ a $\alpha=40^\circ$,
+urči strany $a,c$.
+\end{enumerate}
+\tcblower
+a) Výška $h=6\sin70^\circ\doteq5{,}64\,\mathrm m$,
+vodorovná vzdálenost $d=6\cos70^\circ\doteq2{,}05\,\mathrm m$.
+b) $\alpha=\arctan\frac{1{,}2}{8}\doteq8{,}53^\circ$.
+c) $(\frac{\sqrt3}2)^2+(\frac12)^2=\frac34+\frac14=1$.
+d) Přepona je $b$; $a=20\sin40^\circ\doteq12{,}86\,\mathrm{cm}$,
+$c=20\cos40^\circ\doteq15{,}32\,\mathrm{cm}$.
+\end{zadaniReseniBox}
+\poznamka{Základní čas: 5 min opakování, 9 min P1--P2, 10 min P3,
+17 min samostatné úlohy a kontrola, 4 min závěrečné ověření.
+Úloha S1 d) je dobrovolná a nesmí vytlačit povinnou kontrolu.}
+
+\blok{Závěrečné ověření a vyhlídka na další téma (41.--45. minuta)}
+\begin{zadaniBox}[title={Výstupní lístek (bez známky)}]
+\textbf{a)} Kdy raději použiji tangens než sinus?
+\quad \textbf{b)} Proč musí být u $\arcsin(0{,}5)$ řečeno, jaký úhel hledáme?
+\quad \textbf{c)} Co zkontroluji na kalkulačce?
+\end{zadaniBox}
+\reseni{a) Když znám nebo hledám obě odvěsny vzhledem k úhlu;
+b) v této kapitole hledáme ostrý úhel, zatímco goniometrické funkce
+mají mimo tuto oblast další řešení; c) režim DEG.}
+Přechod k mocninám: druhé mocniny a odmocniny už využíváme v Pythagorově větě;
+v příštím bloku jejich význam a početní pravidla prozkoumáme podrobněji.
+
+\blok{Rezerva pro rychlé a domácí práce}
+\begin{zadaniReseniBox}[title={R1: technické pokračování},breakable=false]
+Při stejné vodorovné vzdálenosti $50\,\mathrm m$ pozorujeme vrchol pod úhlem
+$40^\circ$. Oči jsou ve výšce $1{,}50\,\mathrm m$. Urči výšku objektu.
+Pak vysvětli, proč není pravda, že \emph{sklon $10\,\%$ znamená úhel $10^\circ$}.
+\tcblower
+$H=1{,}50+50\tan40^\circ\doteq43{,}45\,\mathrm m$.
+Sklon $10\,\%$ znamená poměr převýšení a vodorovné délky $0{,}1$,
+tedy $\alpha=\arctan(0{,}1)\doteq5{,}71^\circ$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={D1: domácí (12--18 minut)}]
+\begin{enumerate}[label=\alph*)]
+\item Přepona $13\,\mathrm{cm}$, odvěsna $5\,\mathrm{cm}$: dopočti druhou odvěsnu.
+\item Pro ostrý úhel $\alpha=45^\circ$ a přeponu $8\,\mathrm{cm}$ urči obě odvěsny přesně.
+\item Ve vzdálenosti $15\,\mathrm m$ od paty stožáru naměříme výškový úhel $35^\circ$.
+Výšku očí zanedbej a urči výšku stožáru.
+\item Který ostrý úhel má $\sin\alpha=0{,}8$? Použij kalkulačku.
+\end{enumerate}
+\tcblower
+a) $\sqrt{13^2-5^2}=12\,\mathrm{cm}$.
+b) Obě $8\frac{\sqrt2}{2}=4\sqrt2\,\mathrm{cm}$.
+c) $15\tan35^\circ\doteq10{,}50\,\mathrm m$.
+d) $\arcsin(0{,}8)\doteq53{,}13^\circ$.
+\end{zadaniReseniBox}
+\end{document}
