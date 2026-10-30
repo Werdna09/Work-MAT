@@ -1,35 +1,62 @@
+% Work-MAT / 1. rocnik / 42
+% Zdroje: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex,
+% kapitola Operace s mnohocleny; Realisticky.cz 010801 Scitani a odcitani mnohoclenu.
+% Ukazkovy soucet A+B+C a F+(-F) vychazeji z uzivatelem dodane fotografie.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
-\nastavPripravu{1. ročník}{Algebraické výrazy}{42}{Sčítání a odčítání}
+\nastavPripravu{1. ročník}{Algebraické výrazy}{42}{Sčítání a odčítání mnohočlenů}
 \begin{document}
-\poznamka{45 minut: 5 min opakování členů; 8 min výklad a první vzor; 8 min rozdíl; 12 min samostatná práce; 8 min společná kontrola; 4 min rezerva. U více proměnných kontroluj shodné exponenty všech písmen.}
-\blok{Které členy můžeme sečíst?}
-Ze zkušenosti se známými jednotkami víme, že $3\,\mathrm m+2\,\mathrm m=5\,\mathrm m$, ale $3\,\mathrm m+2\,\mathrm{m}^2$ nelze sloučit v jedinou veličinu. Obdobně $3x^2+2x^2=5x^2$, zatímco $3x^2+2x$ neslučujeme.
-\begin{definiceBox}[title={Definice: podobné členy}]
-\textbf{Podobné (stejnorodé) členy} mají stejnou proměnnou část, včetně všech exponentů. Sčítáme a odčítáme pouze jejich \textbf{koeficienty}: $ax^ky^\ell+bx^ky^\ell=(a+b)x^ky^\ell$.
+\blok{Návaznost na 41. hodinu}
+Mnohočlen je součet jednočlenů. Při jeho úpravách rozlišujeme \emph{koeficient} a \emph{proměnnou část} každého členu. Například $3x^2$, $-2x^2$ a $\frac12x^2$ mají stejnou proměnnou část, ale $3x^2$ a $3x$ nikoliv.
+\begin{definiceBox}[title={Definice: stejnorodé členy}]
+Dva jednočleny jsou \textbf{stejnorodé}, mají-li po úpravě na součin koeficientu a mocnin \textbf{stejnou proměnnou část}, tj. stejné proměnné se stejnými exponenty.
 \end{definiceBox}
-\begin{definiceBox}[title={Definice: opačný mnohočlen}]
-Opačný mnohočlen k $P$ je $-P=(-1)P$. Mění se znaménko \textbf{každého} členu a platí $P+(-P)=0$.
-\end{definiceBox}
-\poznamka{Zdůvodni $-(A+B)=(-1)(A+B)=-A-B$ distributivitou. Plus před závorkou členy nemění; mínus násobí celou závorku $-1$.}
-\blok{Řešené příklady}
-\begin{prikladReseniBox}[title={Příklad 1: součet tří mnohočlenů}]
-Sečti $A=3x^2+1$, $B=2x^2+xy-3$ a $C=x+y$.
+\begin{prikladReseniBox}[title={Motivační příklad}]
+Rozhodni, které členy lze sloučit: $4x^2$, $-3xy$, $7x^2$, $2xy$, $-x$.
 \tcblower
-$A+B+C=3x^2+1+2x^2+xy-3+x+y=\boxed{5x^2+xy+x+y-2}$.
+Dvojice $4x^2$ a $7x^2$; dvojice $-3xy$ a $2xy$. Člen $-x$ nemá v seznamu stejnorodý protějšek.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2: rozdíl a změna znamének}]
+\blok{Sčítání mnohočlenů}
+\begin{definiceBox}[title={Pravidlo: slučování stejnorodých členů}]
+U stejnorodých členů sečteme koeficienty a proměnnou část zachováme. Pro $a,b\in\mathbb R$ a jednočlenovou proměnnou část $M$ platí
+\[aM+bM=(a+b)M.\]
+Jde o distributivní zákon použitý zprava doleva.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 1: součet tří mnohočlenů (podle fotografie)}]
+Sečti $A(x)=3x^2+1$, $B(x,y)=2x^2+xy-3$ a $C(x,y)=x+y$.
+\tcblower
+\begin{align*}
+A+B+C&=3x^2+1+2x^2+xy-3+x+y\\
+&=5x^2+xy+x+y-2.
+\end{align*}
+\end{prikladReseniBox}
+\blok{Odčítání mnohočlenů}
+\begin{definiceBox}[title={Definice: opačný mnohočlen}]
+K mnohočlenu $P$ nazveme \textbf{opačným mnohočlenem} mnohočlen $-P=(-1)P$. Platí
+\[P+(-P)=0.\]
+Každý koeficient opačného mnohočlenu má opačné znaménko.
+\end{definiceBox}
+\begin{definiceBox}[title={Pravidlo: odečítání mnohočlenů}]
+Rozdíl mnohočlenů převádíme na součet opačného mnohočlenu:
+\[A-B=A+(-B).\]
+Znaménko minus před závorkou proto mění znaménko \emph{každého} členu závorky.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 2: rozdíl}]
 Uprav $(4x^3-2x^2+x-5)-(x^3+3x^2-2x-7)$.
 \tcblower
-$4x^3-2x^2+x-5-x^3-3x^2+2x+7=\boxed{3x^3-5x^2+3x+2}$.
+\begin{align*}
+&4x^3-2x^2+x-5-x^3-3x^2+2x+7\\
+&=3x^3-5x^2+3x+2.
+\end{align*}
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 3: proč se součet opačných rovná nule?}]
-Je-li $F(x)=4x^4+7x^3-2x-2$, uprav $F(x)+[-F(x)]$.
+\begin{prikladReseniBox}[title={Příklad 3: nulový mnohočlen (podle učebnice)}]
+Sečti $F(x)=4x^4+7x^3-2x-2$ a jeho opačný mnohočlen.
 \tcblower
-$F+(-F)=4x^4+7x^3-2x-2-4x^4-7x^3+2x+2=\boxed0$.
+\[F(x)+[-F(x)]=(4x^4+7x^3-2x-2)+(-4x^4-7x^3+2x+2)=0.\]
 \end{prikladReseniBox}
-\blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Samostatná práce 1: základní úpravy}]
+\poznamka{U rozdílu vysvětli $-(a+b)=(-1)(a+b)=-a-b$. Kontroluj hlavně znaménko posledního členu; zde $-(-7)=+7$. Soustavné násobení závorek ponech následující hodině.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}[title={Základ: součet, rozdíl a více proměnných}]
 \begin{enumerate}[label=\alph*)]
 \item $(2x^2-3x+1)+(x^2+x-4)$.
 \item $(4a^2-2a+5)-(a^2+3a-1)$.
@@ -44,32 +71,29 @@ $F+(-F)=4x^4+7x^3-2x-2-4x^4-7x^3+2x+2=\boxed0$.
 \item $2xy-3x^2+5y^2$.
 \end{enumerate}
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Samostatná práce 2: vnořené závorky}]
+\begin{zadaniReseniBox}[title={Navazující úlohy: vnořené závorky}]
 \begin{enumerate}[label=\alph*)]
 \item $4x^2-[2x^2-(3x-1)]+(x^2-2x)$.
 \item $(x^3-2x+1)-[(x^3+x-4)-(2x-3)]$.
-\item $2x-[3x-(x-4)]$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $3x^2+x-1$.
-\item $-x+2$.
-\item $-4$.
+\item $4x^2-2x^2+3x-1+x^2-2x=3x^2+x-1$.
+\item Uvnitř $x^3-x-1$, tedy výsledkem je $-x+2$.
 \end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Nech žáky ověřit výsledky dosazením například $x=0$ a $x=1$. Zkouška umí odhalit chybu, není však sama o sobě důkazem identity.}
-\blok{Rezerva a domácí práce}
-\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: zlomkové koeficienty}]
+\blok{Volitelná rezerva}
+\begin{prikladReseniBox}[title={Zlomkové koeficienty}]
 Uprav $\left(\frac12a^2-\frac34a+1\right)+\left(\frac13a^2+\frac14a-2\right)-\frac16a^2$.
 \tcblower
-$\left(\frac12+\frac13-\frac16\right)a^2+\left(-\frac34+\frac14\right)a-1=\boxed{\frac23a^2-\frac12a-1}$.
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Domácí úkol 1}]
+$\left(\frac12+\frac13-\frac16\right)a^2+\left(-\frac34+\frac14\right)a-1=\frac23a^2-\frac12a-1$.
+\end{prikladReseniBox}
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úlohy}]
 \begin{enumerate}[label=\alph*)]
 \item $(3x^2-2x+4)-(x^2+5x-1)$.
 \item $-(2a^2-a+3)+(a^2-4a+2)$.
 \item $2ab-3a^2-(5ab-a^2)$.
-\item $3x-[2x-(x+5)]$.
 \item $(2x^2-3xy+y^2)-(x^2+xy-2y^2)$.
 \end{enumerate}
 \tcblower
@@ -77,8 +101,8 @@ $\left(\frac12+\frac13-\frac16\right)a^2+\left(-\frac34+\frac14\right)a-1=\boxed
 \item $2x^2-7x+5$.
 \item $-a^2-3a-1$.
 \item $-3ab-2a^2$.
-\item $2x+5$.
 \item $x^2-4xy+3y^2$.
 \end{enumerate}
 \end{zadaniReseniBox}
+\poznamka{Časově: základní příklady a samostatná první sada přibližně 40--45 minut; vnořené závorky podle tempa, zlomky jako rezerva. Kontrola číselným dosazením může odhalit chybu, sama však nedokazuje rovnost mnohočlenů.}
 \end{document}

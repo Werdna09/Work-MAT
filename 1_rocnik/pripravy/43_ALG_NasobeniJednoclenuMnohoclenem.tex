@@ -1,86 +1,114 @@
+% Work-MAT / 1. rocnik / 43
+% Zdroje: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex,
+% kapitola Nasobeni polynomu; Realisticky.cz 010802 Nasobeni mnohoclenu.
+% Navaznost na hodinu 42; bez algebraickych vzorcu (vyuka az hodina 44 dle zadani).
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
-\nastavPripravu{1. ročník}{Algebraické výrazy}{43}{Násobení jednočlenem}
+\nastavPripravu{1. ročník}{Algebraické výrazy}{43}{Násobení mnohočlenů}
 \begin{document}
-\poznamka{45 minut: 5 min aktivace distributivity, 10 min násobení s důkazem, 10 min společné příklady, 12 min samostatně, 5 min kontrola, 3 min zadání domácí práce. Součin dvou víceročlenných závorek systematicky řeší až hodina 44.}
-\blok{Od číselné distributivity k mnohočlenům}
-$3(4+5)=3\cdot4+3\cdot5$. Toto pravidlo platí i pro výrazy: každý člen v závorce vynásobíme činitelem před závorkou.
-\begin{definiceBox}[title={Pravidlo: násobení jednočlenu mnohočlenem}]
-Pro libovolné výrazy $a,u,v,w$ platí \textbf{distributivní zákon} $a(u+v+w)=au+av+aw$. Pro jednočleny zároveň násobíme koeficienty a sčítáme exponenty stejných proměnných: $(ax^m)(bx^n)=abx^{m+n}$.
+\blok{Připomenutí: součin jednočlenů}
+Z 41. hodiny víme, že jednočlen je součin koeficientu a mocnin proměnných. Při násobení jednočlenů vynásobíme koeficienty a exponenty stejných proměnných \emph{sečteme}.
+\begin{definiceBox}[title={Pravidlo: součin jednočlenů}]
+Pro $a,b\in\mathbb R$ a $m,n\in\mathbb N_0$ platí
+\[(ax^m)(bx^n)=abx^{m+n}.\]
+Stejné pravidlo se použije zvlášť pro každou další proměnnou.
 \end{definiceBox}
-\poznamka{Zdůrazni, že násobení \uv{přechází} ke každému členu; nepoužij pravidlo $a(u+v)=au+v$. Pracujeme pouze s nezápornými celočíselnými exponenty proměnných.}
-\blok{Řešené příklady}
-\begin{prikladReseniBox}[title={Příklad 1: kladný jednočlen}]
-Roznásob $3x(2x^2-4x+5)$.
+\begin{prikladReseniBox}[title={Rozcvička: dva jednočleny}]
+Vynásob $(-2x^2y)(3xy^3)$.
 \tcblower
-$3x\cdot2x^2+3x\cdot(-4x)+3x\cdot5=\boxed{6x^3-12x^2+15x}$.
+$(-2)\cdot3\cdot x^{2+1}y^{1+3}=-6x^3y^4$.
+\end{prikladReseniBox}
+\blok{Násobení jednočlenu a mnohočlenu}
+Z čísel známe $3(4+5)=3\cdot4+3\cdot5$. Stejný \textbf{distributivní zákon} platí i pro algebraické výrazy.
+\begin{definiceBox}[title={Pravidlo: jednočlen krát mnohočlen}]
+Pro jednočlen $M$ a mnohočlen $P=A_1+\dots+A_k$ platí
+\[M\cdot P=M A_1+\dots+M A_k.\]
+Každý člen mnohočlenu násobíme \textbf{celým} jednočlenem včetně znaménka.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 1: kladný jednočlen}]
+Vynásob $3x(2x^2-4x+5)$.
+\tcblower
+\begin{align*}
+3x(2x^2-4x+5)&=3x\cdot2x^2+3x\cdot(-4x)+3x\cdot5\\
+&=6x^3-12x^2+15x.
+\end{align*}
 \end{prikladReseniBox}
 \begin{prikladReseniBox}[title={Příklad 2: záporný jednočlen}]
-Uprav $-2a^2(3a^3-4a+7)$.
+Vynásob $-2a^2(3a^3-4a+7)$.
 \tcblower
-$-6a^5+8a^3-14a^2$. Znaménko minus musí být součástí násobení každého členu.
+$-6a^5+8a^3-14a^2$.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 3: více proměnných}]
-Uprav $-3xy(2x^2y-4xy^2+5)$.
+\blok{Násobení dvou mnohočlenů}
+Nejprve rozepíšeme první závorku po členech; \emph{každým} z nich vynásobíme celou druhou závorku. Nakonec sloučíme stejnorodé členy (42. hodina).
+\begin{definiceBox}[title={Pravidlo: mnohočlen krát mnohočlen}]
+Na součinu dvou dvojčlenů je vidět dvojí použití distributivity:
+\[(a+b)(c+d)=ac+ad+bc+bd.\]
+Obecně \textbf{každý člen první závorky násobíme každým členem druhé}.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 3: dvojčlen krát dvojčlen}]
+Vynásob $(2x+3)(x-4)$.
 \tcblower
-$\boxed{-6x^3y^2+12x^2y^3-15xy}$. Při násobení $xy\cdot x^2y$ se exponenty obou proměnných sčítají zvlášť.
+\begin{align*}
+(2x+3)(x-4)&=2x\cdot x+2x\cdot(-4)+3\cdot x+3\cdot(-4)\\
+&=2x^2-8x+3x-12=2x^2-5x-12.
+\end{align*}
 \end{prikladReseniBox}
-\blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Samostatná práce 1: od jednoduchého ke složitějšímu}]
+\begin{prikladReseniBox}[title={Příklad 4: trojčlen krát dvojčlen (podle učebnice)}]
+Vynásob $(5x^3+6x-1)(x+2)$.
+\tcblower
+\begin{align*}
+&5x^3(x+2)+6x(x+2)-1(x+2)\\
+&=5x^4+10x^3+6x^2+12x-x-2\\
+&=5x^4+10x^3+6x^2+11x-2.
+\end{align*}
+\end{prikladReseniBox}
+\poznamka{Pro součin dvojčlenu a trojčlenu očekáváme před slučováním šest dílčích součinů. Upozorni na člen $-1$, kterým násobíme oba členy druhé závorky. Algebraické vzorce $ (a+b)^2$ apod. nepoužívej jako hotová pravidla; patří až do 44. hodiny.}
+\blok{Samostatné procvičení}
+\begin{zadaniReseniBox}[title={Základ: jednočlen a dvě závorky}]
 \begin{enumerate}[label=\alph*)]
 \item $4x(x^2-3x+2)$.
 \item $-5a(2a^2-a-1)$.
-\item $3x^2y(2xy-y^2+4)$.
-\item $-\frac12 x(6x^2-4x+8)$.
+\item $(x+1)(x-4)$.
+\item $(3x-2)(2x+5)$.
+\item $(2x+y)(x-2y)$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
 \item $4x^3-12x^2+8x$.
 \item $-10a^3+5a^2+5a$.
-\item $6x^3y^2-3x^2y^3+12x^2y$.
-\item $-3x^3+2x^2-4x$.
+\item $x^2-3x-4$.
+\item $6x^2+11x-10$.
+\item $2x^2-3xy-2y^2$.
 \end{enumerate}
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Samostatná práce 2: násobení a slučování}]
-\begin{enumerate}[label=\alph*)]
-\item $2x(x^2+3x-1)-x(x^2-x+2)$.
-\item $-2a(3a-4)+3a(a+1)$.
-\item $3x(2x-1)-(x^2+4x-5)$.
-\end{enumerate}
+\begin{zadaniReseniBox}[title={Návaznost: násobení a odčítání}]
+Uprav $(x+2)(x-3)-(x-1)(x+4)$.
 \tcblower
-\begin{enumerate}[label=\alph*)]
-\item $x^3+7x^2-4x$.
-\item $-3a^2+11a$.
-\item $5x^2-7x+5$.
-\end{enumerate}
+$(x^2-x-6)-(x^2+3x-4)=-4x-2$.
 \end{zadaniReseniBox}
-\blok{Kde se to používá?}
-\begin{prikladReseniBox}[title={Příklad 4: obsah obdélníku}]
-Obdélník má délky stran $3x$ a $(2x+5)$ centimetrů, $x>0$. Zapiš obsah mnohočlenem a urči jej pro $x=2$.
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Trojčlen krát trojčlen}]
+Roznásob $(x^2+x+1)(x^2-x+1)$.
 \tcblower
-$S=3x(2x+5)=6x^2+15x\,\mathrm{cm}^2$; po dosazení $S(2)=24+30=\boxed{54\,\mathrm{cm}^2}$.
-\end{prikladReseniBox}
-\begin{zadaniReseniBox}[title={Rozšiřující příklad 1: zpětné určení výrazu}]
-Najdi mnohočlen $P(x)$ takový, aby $-3xP(x)=12x^4-6x^3+9x^2$ pro všechna $x$.
-\tcblower
-$P(x)=\boxed{-4x^3+2x^2-3x}$. Kontrola roznásobením. Závěr plyne z rovnosti koeficientů mnohočlenů.
+Po vynásobení všech devíti dvojic členů a sloučení: $x^4+x^2+1$.
 \end{zadaniReseniBox}
 \blok{Domácí procvičení}
-\begin{zadaniReseniBox}[title={Domácí úkol 1}]
+\begin{zadaniReseniBox}[title={Domácí úlohy}]
 \begin{enumerate}[label=\alph*)]
 \item $7x(2x^2-x+3)$.
+\item $(2x+1)(x-3)$.
+\item $(a-2)(a^2-3a+4)$.
+\item $(x+2y)(3x-y)$.
 \item $-2ab(3a^2-2ab+5b^2)$.
-\item $\frac13 x^2(9x^3-6x+12)$.
-\item $4a(a^2-3a+2)-2a(a^2+a-1)$.
-\item Vypočti obsah obdélníku se stranami $5t$ a $t+4$ pro $t=3$, $t>0$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
 \item $14x^3-7x^2+21x$.
+\item $2x^2-5x-3$.
+\item $a^3-5a^2+10a-8$.
+\item $3x^2+5xy-2y^2$.
 \item $-6a^3b+4a^2b^2-10ab^3$.
-\item $3x^5-2x^3+4x^2$.
-\item $2a^3-14a^2+10a$.
-\item $S=5t^2+20t$, $S(3)=45+60=105$ (plošných jednotek).
 \end{enumerate}
 \end{zadaniReseniBox}
+\poznamka{Časově: jedna společná úloha na jednočleny, dvě na roznásobení a základní procvičení vystačí na 45 minut. Příklad 4 nebo závěrečný rozdíl podle tempa. Rezervní trojčlen krát trojčlen není povinný.}
 \end{document}
