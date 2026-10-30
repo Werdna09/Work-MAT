@@ -1,0 +1,123 @@
+% Work/MAT – 1. ročník – hodina 51. Navazuje na 49–50.
+% Primární metodický zdroj: Realisticky.cz, 010809 Rozklad mnohočlenů na součin IV,
+% uživatelem dodaný dokument „09 Rozklad mnohočlenů na součin IV.pdf“, zejména Př. 1–5.
+% Výběr a zápis příkladů včetně řešení autorsky přepracován; nejde o opis lekce.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Algebraické výrazy}{51}{Rozklady rozdělením a seskupením členů}
+\begin{document}
+\poznamka{45minutové jádro: 5 min opakování vytýkání a trojčlenů, 10 min odvození principu (P1), 10 min samostatně S1 a kontrola, 8 min složitější seskupování (P2), 9 min S2 a kontrola, 3 min shrnutí. S2 d), R1 a R2 jsou rezervy. Domácí úlohy 15–20 minut. Vysvětli, že jeden člen lze rozdělit více způsoby, ale hledáme takový, který vytvoří společnou závorku.}
+\blok{Když nestačí vytýkat: vytvořme vhodné skupiny}
+V hodině 49 jsme vytýkali ze čtyř členů. Nyní máme často pouze tři členy. Jeden z nich proto můžeme \emph{rozdělit} na dva sčítance a získané čtyři členy vhodně seskupit. Nejde o nový vzorec: všechny kroky vycházejí z distributivity.
+\begin{prikladReseniBox}[title={Příklad 1: jeden člen nahradíme součtem dvou}]
+Rozlož $2x^2+7x+3$ na součin seskupováním.
+\tcblower
+Hledáme rozdělení prostředního členu $7x=6x+x$:
+\begin{align*}
+2x^2+7x+3&=2x^2+6x+x+3\\
+&=2x(x+3)+(x+3)\\
+&=(2x+1)(x+3).
+\end{align*}
+Zkouška: $(2x+1)(x+3)=2x^2+7x+3$.
+\end{prikladReseniBox}
+\poznamka{Rozdělení $7x=6x+x$ není nová definice ani zvláštní pravidlo.
+Je to vhodná úprava zápisu podle distributivity. Ptej se, proč právě tato dvojice
+umožní získat dvakrát stejnou závorku.}
+\poznamka{Nejde o automatický algoritmus pro každý trojčlen. U $ax^2+bx+c$ s celočíselnými koeficienty často pomůže najít dvě čísla se součtem $b$ a součinem $ac$; pak rozdělíme člen $bx$. Tento tip zaváděj až po P1, ne jako náhradu za zdůvodnění.}
+\begin{prikladReseniBox}[title={Příklad 2: střídání znamének}]
+Rozlož $3x^2-5x-2$.
+\tcblower
+Rozdělíme $-5x=-6x+x$:
+\begin{align*}
+3x^2-5x-2&=3x^2-6x+x-2\\
+&=3x(x-2)+(x-2)\\
+&=(3x+1)(x-2).
+\end{align*}
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce: rozděl prostřední člen}]
+\begin{enumerate}[label=\alph*)]
+\item $2x^2+5x+2$;
+\item $3x^2+10x+3$;
+\item $2x^2-x-3$;
+\item $4x^2-4x-3$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2x^2+4x+x+2=(2x+1)(x+2)$;
+\item $3x^2+9x+x+3=(3x+1)(x+3)$;
+\item $2x^2-3x+2x-3=(2x-3)(x+1)$;
+\item $4x^2-6x+2x-3=(2x+1)(2x-3)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Více metod v jediném rozkladu}
+Některé výrazy nejprve upravíme známým vzorcem nebo vytýkáním a teprve potom seskupujeme. \textbf{Každý získaný činitel ještě zkontrolujeme}, zda jde rozložit dále.
+\begin{prikladReseniBox}[title={Příklad 3: seskupování bez dalšího vzorce}]
+Rozlož $x^3-4x^2+x-4$.
+\tcblower
+\begin{align*}
+x^3-4x^2+x-4&=x^2(x-4)+(x-4)\\
+&=(x^2+1)(x-4).
+\end{align*}
+Mnohočlen $x^2+1$ už nad reálnými čísly na lineární činitele nerozložíme.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4: poznej hotový vzorec v části výrazu}]
+Rozlož $a^2+2ab+b^2-9$.
+\tcblower
+\begin{align*}
+a^2+2ab+b^2-9&=(a+b)^2-3^2\\
+&=(a+b-3)(a+b+3).
+\end{align*}
+Nejdříve rozpoznáme druhou mocninu, poté rozdíl čtverců.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce: vyber pořadí metod}]
+\begin{enumerate}[label=\alph*)]
+\item $x^3+2x^2-4x-8$;
+\item $2a^2+4ab+2b^2-18$;
+\item $x^4-5x^2+4$ (nápověda: $t=x^2$);
+\item $x^5+x^3-x^2-1$ (rezerva).
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x^2(x+2)-4(x+2)=(x+2)(x-2)(x+2)=(x-2)(x+2)^2$;
+\item $2[(a+b)^2-9]=2(a+b-3)(a+b+3)$;
+\item $(x^2-1)(x^2-4)=(x-1)(x+1)(x-2)(x+2)$;
+\item $x^3(x^2+1)-(x^2+1)=(x^2+1)(x^3-1)=(x^2+1)(x-1)(x^2+x+1)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva: zkoušej i jiná seskupení}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad: složitější seskupování}]
+Rozlož $x^3-3x+2$. Najdi rozdělení prostředního členu, které umožní seskupit.
+\tcblower
+Rozdělíme $-3x=-x-2x$:
+\begin{align*}
+x^3-3x+2&=x^3-x-2x+2\\
+&=x(x^2-1)-2(x-1)\\
+&=(x-1)[x(x+1)-2]\\
+&=(x-1)(x^2+x-2)=(x-1)^2(x+2).
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol: od rozdělení členu ke kombinaci metod}]
+\begin{enumerate}[label=\alph*)]
+\item $2x^2+9x+4$;
+\item $3x^2+7x+2$;
+\item $2x^2-7x+3$;
+\item $6x^2+x-2$;
+\item $x^3+5x^2-4x-20$;
+\item $a^2-2ab+b^2-16$;
+\item $x^4-10x^2+9$;
+\item $x^3-2x^2-9x+18$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(2x+1)(x+4)$;
+\item $(3x+1)(x+2)$;
+\item $(2x-1)(x-3)$;
+\item $(3x+2)(2x-1)$;
+\item $x^2(x+5)-4(x+5)=(x+5)(x-2)(x+2)$;
+\item $(a-b)^2-4^2=(a-b-4)(a-b+4)$;
+\item $(x^2-1)(x^2-9)=(x-1)(x+1)(x-3)(x+3)$;
+\item $x^2(x-2)-9(x-2)=(x-2)(x-3)(x+3)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

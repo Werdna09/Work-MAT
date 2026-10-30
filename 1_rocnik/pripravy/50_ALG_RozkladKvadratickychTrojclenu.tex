@@ -1,0 +1,102 @@
+% Work/MAT – 1. ročník – hodina 50. Navazuje na 49 (vytýkání a seskupování).
+% Primární metodický zdroj: Realisticky.cz, 010808 Rozklad mnohočlenů na součin III,
+% uživatelem dodaný dokument „08 Rozklad mnohočlenů na součin III.pdf“, zejména Př. 2–8.
+% Doplňující zdroj: Work-MAT/ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex.
+% Úlohy jsou nově formulované a výběrově upravené podle témat a postupů zdroje.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Algebraické výrazy}{50}{Rozklad kvadratických trojčlenů}
+\begin{document}
+\poznamka{45minutové jádro: 5 min opakování vytýkání a algebraických vzorců,
+10 min odvození postupu pro trojčlen, 10 min první dva řešené příklady,
+15 min samostatná práce a její kontrola, 5 min shrnutí.
+Záporné koeficienty a kombinaci s vytýkáním zařaď podle tempa.
+Rezerva slouží k vysvětlení, proč nelze každý trojčlen rozložit na reálné lineární činitele.
+Domácí práce přibližně 15--20 minut. Součet a rozdíl krychlí byly již zavedeny v hodině 46,
+zde je znovu nevykládáme.}
+\blok{Od roznásobení k rozkladu}
+V minulých hodinách jsme mnohočleny rozkládali vytýkáním a pomocí algebraických
+vzorců. Dnes budeme hledat součin dvou lineárních dvojčlenů i tam, kde na první
+pohled není společný činitel ani známý vzorec. O výsledku rozhoduje kontrola
+zpětným roznásobením.
+\begin{prikladReseniBox}[title={Úvodní příklad: čti roznásobení obráceně}]
+Roznásob $(x+2)(x+3)$. Která dvě čísla určují koeficienty u $x$ a konstantního členu?
+\tcblower
+\[(x+2)(x+3)=x^2+3x+2x+6=x^2+5x+6.\]
+Čísla $2$ a $3$ mají součet $5$ a součin $6$. Proto můžeme také psát
+$x^2+5x+6=(x+2)(x+3)$.
+\end{prikladReseniBox}
+\blok{Trojčlen $x^2+px+q$: hledáme součet a součin}
+\begin{prikladReseniBox}[title={Příklad 1: odkud se bere postup?}]
+Roznásob $(x+r)(x+s)$ a urči, kdy se tento součin rovná $x^2+px+q$.
+\tcblower
+\[(x+r)(x+s)=x^2+(r+s)x+rs.\]
+Aby se koeficienty shodovaly, musí současně platit
+\[r+s=p,\qquad rs=q.\]
+\end{prikladReseniBox}
+\begin{definiceBox}
+\textbf{Podmínka pro rozklad kvadratického trojčlenu:}
+\[x^2+px+q=(x+r)(x+s),\]
+právě když $r+s=p$ a $rs=q$ (pro zvolené reálné koeficienty).
+\end{definiceBox}
+\poznamka{Jde o hledání čísel, ne o dosud neprobranou metodu řešení kvadratických rovnic. V prvních úlohách volíme celá $r,s$. Nelze-li najít celá čísla, \emph{neznamená to obecně}, že rozklad nad reálnými čísly není možný.}
+\begin{prikladReseniBox}[title={Příklad 2: znaménka rozhodují}]
+Rozlož $x^2+7x+10$ a $x^2-2x-3$.
+\tcblower
+První: součet $7$ a součin $10$ mají čísla $5$ a $2$:
+\[x^2+7x+10=(x+5)(x+2).\]
+Druhý: součet $-2$ a součin $-3$ mají čísla $-3$ a $1$:
+\[x^2-2x-3=(x-3)(x+1).\]
+Oba výsledky ověříme roznásobením.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce: hledáme dvě čísla}]
+Rozlož, pokud to lze pomocí celých čísel $r,s$:
+\begin{enumerate}[label=\alph*)]
+\item $x^2+9x+20$;
+\item $x^2-x-6$;
+\item $x^2+3x-18$;
+\item $x^2-8x+12$;
+\item $x^2+x+4$ (rezerva: zdůvodni, proč zde neexistuje ani reálný lineární rozklad).
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(x+4)(x+5)$, $4+5=9$, $4\cdot5=20$;
+\item $(x-3)(x+2)$, $-3+2=-1$, $-3\cdot2=-6$;
+\item $(x+6)(x-3)$, $6-3=3$, $6\cdot(-3)=-18$;
+\item $(x-6)(x-2)$, $-6-2=-8$, $(-6)(-2)=12$;
+\item Žádná reálná $r,s$ s $r+s=1$, $rs=4$ neexistují: $(r-s)^2=(r+s)^2-4rs=1-16=-15$, spor.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad: nejdřív vytkni}]
+Rozlož $2x^3+10x^2+12x$.
+\tcblower
+$2x(x^2+5x+6)=2x(x+2)(x+3)$; součet $2+3=5$, součin $2\cdot3=6$.
+\end{zadaniReseniBox}
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol: rozklad trojčlenů}]
+Rozlož na součin, pokud možno pomocí celých koeficientů. Výsledek ověř roznásobením.
+\begin{enumerate}[label=\alph*)]
+\item $x^2+8x+15$;
+\item $x^2-5x+6$;
+\item $x^2+2x-15$;
+\item $x^2-10x+25$;
+\item $x^2-4x-12$;
+\item $x^2+3x-28$;
+\item $2x^3+10x^2+12x$ (nejdříve vytkni);
+\item $x^2+2x+2$ (rozhodni, zda lze rozložit na reálné lineární činitele).
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(x+3)(x+5)$;
+\item $(x-2)(x-3)$;
+\item $(x+5)(x-3)$;
+\item $(x-5)^2$;
+\item $(x-6)(x+2)$;
+\item $(x+7)(x-4)$;
+\item $2x(x+2)(x+3)$;
+\item Nelze nad $\mathbb R$ rozložit na součin dvou lineárních činitelů:
+$x^2+2x+2=(x+1)^2+1>0$ pro všechna $x\in\mathbb R$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}
