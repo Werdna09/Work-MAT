@@ -1,0 +1,227 @@
+% Work/MAT — 1. ročník, hodina 61.
+% Návaznost: 59 Co je funkce; 60 Definiční obor a obor hodnot.
+% Zdroje: ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex,
+% části Monotónnost, Sudá a lichá funkce, Prostá funkce.
+% Metodicky: Realisticky.cz, zejména 020113 (rostoucí a klesající funkce).
+% Příklady a grafy jsou vlastní. Průsečíky necháváme konkrétním funkcím.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{1. ročník}{Funkce}{61}{Monotónnost a funkce prostá, lichá a sudá}
+\begin{document}
+\poznamka{Základ 45 minut: připomenutí grafu a monotónnosti 4 min,
+čtení intervalů 7 min, tři definice monotónnosti 7 min,
+sudost a lichost 8 min, prostota 7 min, periodicita s příkladem 4 min,
+samostatná práce 6 min, organizace 2 min.
+Formální důkazy a náročnější úlohy jsou rezerva.
+Souřadnice bodů zapisujeme $[x;y]$ a intervaly českým způsobem.}
+
+\blok{Monotónnost: jak se funkce mění?}
+U funkce už známe její definiční obor a obor hodnot.
+Teď sledujeme, \emph{co se děje s funkční hodnotou, když argument roste}.
+Graf čteme zleva doprava; zatím nemusí být přímkou.
+
+\begin{center}
+\begin{tikzpicture}[x=.78cm,y=.58cm,>=Latex]
+\draw[step=1,gray!22,very thin] (-5,-3) grid (5,3);
+\draw[->] (-5.15,0)--(5.3,0) node[right] {$x$};
+\draw[->] (0,-3.12)--(0,3.27) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}{\draw (\x,.07)--(\x,-.07) node[below=2pt,font=\scriptsize] {$\x$};}
+\foreach \y in {-2,-1,1,2}{\draw (.07,\y)--(-.07,\y) node[left=2pt,font=\scriptsize] {$\y$};}
+\draw[very thick] (-4,0)--(-2,2)--(-1,2)--(1,-2)--(2,-2)--(4,0);
+\fill (-4,0) circle (2.7pt);\draw[very thick,fill=white] (4,0) circle (2.8pt);
+\end{tikzpicture}
+\end{center}
+
+Graf funkce $f$ má $D(f)=\langle-4;4)$. Například
+$f(-3)=1$, $f(0)=0$ a $f(2)=-2$; hodnota $f(4)$ neexistuje.
+
+\begin{definiceBox}
+Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{rostoucí}, jestliže
+pro každá $x_1,x_2\in I$ platí
+\[
+x_1<x_2\ \Longrightarrow\ f(x_1)<f(x_2).
+\]
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{klesající}, jestliže
+pro každá $x_1,x_2\in I$ platí
+\[
+x_1<x_2\ \Longrightarrow\ f(x_1)>f(x_2).
+\]
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{konstantní}, jestliže
+pro všechna $x_1,x_2\in I$ platí $f(x_1)=f(x_2)$.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={Příklad 1: čtení monotónnosti z grafu}]
+Urči z úvodního grafu intervaly růstu, poklesu a konstantnosti.
+Je funkce rostoucí na celém $D(f)$?
+\tcblower
+Roste na $\langle-4;-2\rangle$ a $\langle2;4)$;
+klesá na $\langle-1;1\rangle$;
+konstantní je na $\langle-2;-1\rangle$ a $\langle1;2\rangle$.
+Na celém oboru neroste, protože například $-1<1$,
+ale $f(-1)=2>f(1)=-2$.
+\end{prikladReseniBox}
+
+\poznamka{Rozlišuj „rostoucí“ od „kladná“: na úseku
+$\langle2;4)$ funkce roste, ačkoliv její hodnoty jsou záporné.
+Jde o přísnou monotónnost; konstantní úsek proto není rostoucí.
+Pojmy neklesající a nerostoucí případně přidej jen jako rezervu.}
+
+\blok{Sudá a lichá funkce: souměrnost grafu}
+Nestačí porovnat jen dvě vybrané hodnoty. Nejdřív musí platit,
+že s každým přípustným $x$ leží v definičním oboru i $-x$.
+
+\begin{definiceBox}
+Funkce $f$ je \textbf{sudá}, jestliže je její definiční obor
+souměrný vzhledem k nule a pro každé $x\in D(f)$ platí
+\[
+f(-x)=f(x).
+\]
+Graf sudé funkce je souměrný podle osy $y$.
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ je \textbf{lichá}, jestliže je její definiční obor
+souměrný vzhledem k nule a pro každé $x\in D(f)$ platí
+\[
+f(-x)=-f(x).
+\]
+Graf liché funkce je středově souměrný podle počátku.
+\end{definiceBox}
+
+\begin{center}
+\begin{minipage}{.43\linewidth}\centering
+\begin{tikzpicture}[x=.64cm,y=.38cm,>=Latex]
+\draw[->] (-2.4,0)--(2.4,0) node[right] {$x$};
+\draw[->] (0,-.3)--(0,4.5) node[above] {$y$};
+\draw[very thick,domain=-2:2,samples=60] plot (\x,{\x*\x});
+\fill (-1,1) circle (2.5pt);\fill (1,1) circle (2.5pt);
+\end{tikzpicture}
+\par\small $f(x)=x^2$ — sudá
+\end{minipage}\hfill
+\begin{minipage}{.43\linewidth}\centering
+\begin{tikzpicture}[x=.7cm,y=.48cm,>=Latex]
+\draw[->] (-2.3,0)--(2.3,0) node[right] {$x$};
+\draw[->] (0,-2.2)--(0,2.2) node[above] {$y$};
+\draw[very thick,domain=-1.25:1.25,samples=60] plot (\x,{\x*\x*\x});
+\fill (-1,-1) circle (2.5pt);\fill (1,1) circle (2.5pt);
+\end{tikzpicture}
+\par\small $g(x)=x^3$ — lichá
+\end{minipage}
+\end{center}
+
+\begin{prikladReseniBox}[title={Příklad 2: rozhodnutí z předpisu}]
+Rozhodni, zda jsou funkce $u(x)=x^2+2$ a $v(x)=x^3-x$
+na $\mathbb R$ sudé, liché, nebo ani jedno.
+\tcblower
+$u(-x)=(-x)^2+2=x^2+2=u(x)$: funkce $u$ je sudá.
+$v(-x)=(-x)^3-(-x)=-x^3+x=-v(x)$: funkce $v$ je lichá.
+U obou je $D=\mathbb R$, tedy obor je souměrný vůči nule.
+\end{prikladReseniBox}
+
+\poznamka{Na omezeném oboru nestačí sudý tvar předpisu:
+$x^2$ na $\langle0;2\rangle$ není sudá funkce,
+protože její definiční obor není souměrný vzhledem k nule.}
+
+\blok{Prostá funkce: různé vstupy, různé výstupy}
+Sudost a lichost se ptají na vztah $f(-x)$ a $f(x)$.
+\textbf{Prostota} je jiná vlastnost: zda mohou dva různé
+argumenty dávat stejnou funkční hodnotu.
+
+\begin{definiceBox}
+Funkce $f$ je \textbf{prostá}, jestliže pro všechna
+$x_1,x_2\in D(f)$ platí
+\[
+f(x_1)=f(x_2)\ \Longrightarrow\ x_1=x_2.
+\]
+Ekvivalentně: dvěma různým argumentům odpovídají dvě různé hodnoty.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={Příklad 3: prostá, nebo neprostá?}]
+Rozhodni o prostotě $a(x)=2x+1$ a $b(x)=x^2$ na $\mathbb R$.
+Co se stane s $b$, omezíme-li její obor na $\langle0;+\infty)$?
+\tcblower
+$a$ je prostá: z $2x_1+1=2x_2+1$ plyne $x_1=x_2$.
+$b$ na $\mathbb R$ není prostá, protože $b(-2)=b(2)=4$,
+ačkoliv $-2\ne2$.
+Na $\langle0;+\infty)$ už $b$ prostá je:
+dvě různá nezáporná čísla mají různé druhé mocniny.
+\end{prikladReseniBox}
+
+\poznamka{Grafické pravidlo: prostou funkci každá vodorovná přímka
+protne nejvýše jednou. Nezaměňovat se svislicovým testem,
+kterým rozhodujeme, zda je křivka vůbec grafem funkce.}
+
+\blok{Periodická funkce: opakování hodnot}
+Periodická funkce opakuje své hodnoty po stále stejném posunutí argumentu.
+
+\begin{definiceBox}
+Funkce $f$ je \textbf{periodická}, jestliže existuje číslo $T>0$
+takové, že pro každé $x\in D(f)$ platí $x-T,x+T\in D(f)$ a
+\[
+f(x+T)=f(x).
+\]
+Číslo $T$ nazýváme \textbf{periodou funkce}.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={Příklad 4: periodická funkce}]
+Ukaž, že funkce $f(x)=\sin x$ na $\mathbb R$ je periodická.
+\tcblower
+Pro každé $x\in\mathbb R$ platí $\sin(x+2\pi)=\sin x$.
+Periodou je tedy $T=2\pi$; například
+$f(0)=f(2\pi)=0$ a $f(\frac\pi2)=f(\frac{5\pi}2)=1$.
+\end{prikladReseniBox}
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={Procvičování}]
+\begin{enumerate}[label=\alph*)]
+\item Rozhodni, zda $p(x)=-3x+1$ roste, nebo klesá na $\mathbb R$.
+\item Rozhodni o sudosti či lichosti $q(x)=x^4-2x^2$
+    a $r(x)=x^3+2x$ na $\mathbb R$.
+\item Je funkce $s(x)=|x|$ prostá na $\mathbb R$?
+\item Je $t(x)=x^2$ sudá na oboru $\langle-2;2\rangle$?
+    A na oboru $\langle0;2\rangle$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Klesá: $p(x_2)-p(x_1)=-3(x_2-x_1)<0$ pro $x_1<x_2$.
+\item $q(-x)=q(x)$, takže $q$ je sudá;
+    $r(-x)=-r(x)$, takže $r$ je lichá.
+\item Není: $s(-1)=s(1)=1$, ale $-1\ne1$.
+\item Na $\langle-2;2\rangle$ je sudá; na $\langle0;2\rangle$
+    není sudá ani lichá, protože obor není souměrný vůči nule.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Z úvodního grafu vypiš intervaly růstu, poklesu
+    a konstantnosti.
+\item Urči monotonii $f(x)=4-2x$ na $\mathbb R$.
+\item Rozhodni o sudosti/lichosti $g(x)=x^5-3x$
+    a $h(x)=x^2+x$ na $\mathbb R$.
+\item Rozhodni o prostotě funkcí $p(x)=x^3$ a $q(x)=x^2$
+    na $\mathbb R$.
+\item Je $u(x)=x^2$ na $D(u)=\{-2,-1,1,2\}$ sudá
+    a je prostá?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Roste na $\langle-4;-2\rangle$ a $\langle2;4)$,
+    klesá na $\langle-1;1\rangle$,
+    konstantní na $\langle-2;-1\rangle$ a $\langle1;2\rangle$.
+\item Klesá, protože $f(x_2)-f(x_1)=-2(x_2-x_1)<0$ při $x_1<x_2$.
+\item $g(-x)=-g(x)$, tedy lichá; $h(-x)=x^2-x$ není
+    obecně $h(x)$ ani $-h(x)$, tedy ani sudá, ani lichá.
+\item $p$ je prostá (třetí mocnina je přísně rostoucí),
+    $q$ není prostá, protože $q(-1)=q(1)$.
+\item Je sudá, protože obor je souměrný a $u(-x)=u(x)$;
+    prostá není, např. $u(-2)=u(2)=4$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

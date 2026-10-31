@@ -1,0 +1,212 @@
+% Work/MAT — 1. ročník, hodina 62.
+% Návaznost: 60 Definiční obor a obor hodnot; 61 Monotónnost, prostota,
+% sudost, lichost. Příští hodina: Lineární funkce.
+% Zdroj: ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex,
+% oddíly Omezenost funkce, Maximum a minimum.
+% Grafy a úlohy vlastní; znaménko funkce není předmětem této hodiny.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{1. ročník}{Funkce}{62}{Omezenost a extrémy funkce}
+\begin{document}
+\poznamka{Jádro 45 minut: připomenutí oboru hodnot 5 min;
+omezenost shora a zdola 10 min; tři porovnávací příklady 12 min;
+maximum a minimum 9 min; samostatná práce a kontrola 7 min;
+organizace 2 min. Náročnější případy a většina propojeného
+procvičování jsou domácí úkol nebo rezerva.}
+
+\blok{Kterých nejvyšších a nejnižších hodnot může funkce nabýt?}
+V předchozích hodinách jsme se naučili číst $D(f)$ a $H(f)$
+a posuzovat růst, pokles, sudost, lichost a prostotu.
+Teď se zajímáme o to, \emph{zda jsou hodnoty nějak shora
+či zdola ohraničené} a zda funkce dosahuje skutečně největší
+nebo nejmenší hodnoty.
+
+\begin{definiceBox}
+Funkce $f$ je \textbf{shora omezená}, jestliže existuje
+číslo $M\in\mathbb R$ takové, že pro každé $x\in D(f)$ platí
+\[
+f(x)\le M.
+\]
+Číslo $M$ nazýváme \textbf{horní mezí} funkce.
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ je \textbf{zdola omezená}, jestliže existuje
+číslo $m\in\mathbb R$ takové, že pro každé $x\in D(f)$ platí
+\[
+f(x)\ge m.
+\]
+Číslo $m$ nazýváme \textbf{dolní mezí} funkce.
+\end{definiceBox}
+\begin{definiceBox}
+Funkce je \textbf{omezená}, jestliže je omezená současně
+shora i zdola, tedy existují $m,M\in\mathbb R$ tak, že
+\[
+\forall x\in D(f):\qquad m\le f(x)\le M.
+\]
+\end{definiceBox}
+
+\blok{Tři příklady omezenosti}
+\begin{prikladReseniBox}[title={Příklad 1: pouze zdola omezená funkce}]
+Urči omezenost funkce $f(x)=x^2$ na $\mathbb R$.
+\tcblower
+Pro každé $x\in\mathbb R$ je $x^2\ge0$; číslo $0$ je
+proto dolní mezí. Funkce \textbf{je omezená zdola},
+ale \textbf{není omezená shora}, protože pro dostatečně velké
+$|x|$ překročí $x^2$ libovolné předem zvolené číslo $M$.
+Obor hodnot je $H(f)=\langle0;+\infty)$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 2: pouze shora omezená funkce}]
+Urči omezenost funkce $g(x)=-x^2$ na $\mathbb R$.
+\tcblower
+Protože $-x^2\le0$, číslo $0$ je horní mezí;
+$g$ \textbf{je omezená shora}. Zdola omezená není,
+neboť s rostoucí velikostí $|x|$ nabývá libovolně malých
+(záporných) hodnot. $H(g)=(-\infty;0\rangle$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 3: omezená shora i zdola}]
+Je dána $h(x)=x^2$ na $D(h)=\langle-2;1\rangle$.
+Urči její omezenost a obor hodnot.
+\tcblower
+Na zadaném oboru je $0\le x^2\le4$:
+nejmenší hodnotu $0$ dostaneme pro $x=0$, největší $4$
+pro $x=-2$. Je tedy \textbf{omezená shora i zdola},
+$H(h)=\langle0;4\rangle$. Samotný předpis je stejný
+jako v příkladu 1, rozhodující je změna definičního oboru.
+\end{prikladReseniBox}
+
+\begin{center}
+\begin{minipage}{.31\linewidth}\centering
+\begin{tikzpicture}[x=.58cm,y=.43cm,>=Latex]
+\draw[->] (-2.2,0)--(2.2,0) node[right] {$x$};
+\draw[->] (0,-.5)--(0,4.5) node[above] {$y$};
+\draw[thick,domain=-2:2,samples=65] plot (\x,{\x*\x});
+\end{tikzpicture}\par\footnotesize $x^2$ na $\mathbb R$\\pouze zdola
+\end{minipage}\hfill
+\begin{minipage}{.31\linewidth}\centering
+\begin{tikzpicture}[x=.58cm,y=.43cm,>=Latex]
+\draw[->] (-2.2,0)--(2.2,0) node[right] {$x$};
+\draw[->] (0,-4.5)--(0,.65) node[above] {$y$};
+\draw[thick,domain=-2:2,samples=65] plot (\x,{-\x*\x});
+\end{tikzpicture}\par\footnotesize $-x^2$ na $\mathbb R$\\pouze shora
+\end{minipage}\hfill
+\begin{minipage}{.31\linewidth}\centering
+\begin{tikzpicture}[x=.58cm,y=.43cm,>=Latex]
+\draw[->] (-2.2,0)--(2.2,0) node[right] {$x$};
+\draw[->] (0,-.5)--(0,4.5) node[above] {$y$};
+\draw[very thick,domain=-2:1,samples=65] plot (\x,{\x*\x});
+\fill (-2,4) circle (2.8pt);\fill (1,1) circle (2.8pt);
+\end{tikzpicture}\par\footnotesize $x^2$ na $\langle-2;1\rangle$\\oběma směry
+\end{minipage}
+\end{center}
+\poznamka{Grafy jsou ilustrativní výřezy: první dvě funkce
+pokračují mimo obrázek. Rozhodnutí o neomezenosti proto
+nevyvozujeme jen z nakreslené části.}
+
+\blok{Maximum a minimum: mez nemusí být dosažena}
+\begin{definiceBox}
+Funkce $f$ má \textbf{maximum}, existuje-li $x_0\in D(f)$ takové, že
+\[
+\forall x\in D(f):\qquad f(x)\le f(x_0).
+\]
+Číslo $f(x_0)$ je její největší funkční hodnota.
+\end{definiceBox}
+\begin{definiceBox}
+Funkce $f$ má \textbf{minimum}, existuje-li $x_0\in D(f)$ takové, že
+\[
+\forall x\in D(f):\qquad f(x)\ge f(x_0).
+\]
+Číslo $f(x_0)$ je její nejmenší funkční hodnota.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={Příklad 4: omezenost není totéž co maximum/minimum}]
+Funkce $u(x)=x$ je zadána na $D(u)=(0;1)$.
+Je omezená? Má maximum a minimum?
+\tcblower
+Platí $0<u(x)<1$, takže $u$ je omezená
+shora i zdola. Nemá ale maximum ani minimum:
+kdykoliv zvolíme $x\in(0;1)$, existují v tomto intervalu
+jak větší, tak menší argumenty. Hodnoty $0$ a $1$
+jsou mezemi, ale funkce jich nenabývá.
+\end{prikladReseniBox}
+
+\poznamka{Rozlišuj hodnotu extrému (např. maximum $4$)
+a argument, kde nastává (např. $x=-2$).
+Maximum se může dosahovat ve více bodech.}
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={Procvičování}]
+\begin{enumerate}[label=\alph*)]
+\item Je $p(x)=|x|$ na $\mathbb R$ omezená shora,
+    zdola, nebo obojí? Má maximum či minimum?
+\item Pro $q(x)=3-x$ na $\langle0;4\rangle$ urči
+    $D(q)$, $H(q)$, maximum a minimum.
+\item Funkce $r(x)=x$ na $(0;2\rangle$ je omezená?
+    Má maximum nebo minimum?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Pouze zdola: $|x|\ge0$; minimum $0$ při $x=0$,
+    shora neomezená, maximum nemá.
+\item $D(q)=\langle0;4\rangle$, $H(q)=\langle-1;3\rangle$;
+    maximum $3$ při $x=0$ a minimum $-1$ při $x=4$.
+\item $0<r(x)\le2$, tedy omezená shora i zdola.
+    Maximum $2$ nastává při $x=2$, minimum neexistuje.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení — souhrn hodin 59--62}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Funkce $f(x)=x^2$ je zadána na $\langle-2;1\rangle$.
+    Urči $D(f)$, $H(f)$, intervaly růstu a poklesu,
+    prostotu, sudost/lichost, maximum a minimum.
+\item Pro $g(x)=x^3$ na $\mathbb R$ rozhodni:
+    roste či klesá, je prostá, sudá či lichá,
+    je shora nebo zdola omezená? Urči $D(g)$ a $H(g)$.
+\item Pro $h(x)=-x^2$ na $\mathbb R$ určuj
+    sudost/lichost, prostotu, omezenost a případné extrémy.
+\item Funkce $p(x)=2x+1$ je definována na $\langle-1;2\rangle$.
+    Urči $D(p)$, $H(p)$, monotonii, prostotu a extrémy.
+    Je sudá nebo lichá?
+\item Funkce $u(x)=x$ na $(0;1)$ je omezená shora i zdola.
+    Vysvětli, proč přesto nemá maximum ani minimum.
+\item Funkce $v$ je zadána tabulkou
+    $v(-2)=4$, $v(-1)=1$, $v(1)=1$, $v(2)=4$
+    na $D(v)=\{-2,-1,1,2\}$.
+    Urči $H(v)$, sudost/lichost, prostotu a omezenost.
+\item Z předpisu $w(x)=\dfrac{\sqrt{x-1}}{x-3}$
+    urči přirozený definiční obor.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $D(f)=\langle-2;1\rangle$, $H(f)=\langle0;4\rangle$.
+    Klesá na $\langle-2;0\rangle$, roste na $\langle0;1\rangle$.
+    Není prostá ($f(-1)=f(1)$), ani sudá, ani lichá
+    (nesouměrný obor). Maximum $4$ v $x=-2$,
+    minimum $0$ v $x=0$.
+\item $D(g)=H(g)=\mathbb R$. $g$ roste na $\mathbb R$,
+    je prostá a lichá, nikoli sudá.
+    Není omezená shora ani zdola a nemá maximum ani minimum.
+\item $h$ je sudá, není prostá, je shora omezená číslem $0$,
+    zdola omezená není. Má maximum $0$ při $x=0$,
+    minimum nemá.
+\item $D(p)=\langle-1;2\rangle$,
+    $H(p)=\langle-1;5\rangle$; roste, je prostá,
+    maximum $5$ má v $x=2$, minimum $-1$ v $x=-1$.
+    Sudá ani lichá není, protože obor není souměrný vůči nule.
+\item Pro každé $x\in(0;1)$ najdeme větší i menší
+    přípustné číslo, takže $x$ nemůže být bodem
+    maxima ani minima. Přesto $0<u(x)<1$.
+\item $H(v)=\{1,4\}$; funkce je sudá
+    ($v(-x)=v(x)$), není prostá
+    ($v(-2)=v(2)$), je omezená shora i zdola
+    (např. $1\le v(x)\le4$). Maximum $4$ a minimum $1$.
+\item Pro odmocninu $x-1\ge0$ a pro jmenovatel $x\ne3$.
+    Proto $D(w)=\langle1;3)\cup(3;+\infty)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}
