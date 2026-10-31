@@ -1,78 +1,35 @@
-% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
-% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
-% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
-% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010810_Mnohocleny_shrnuti/010810_Lekce.pdf
-% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010901_Kraceni_a_rozsirovani_lomenych_vyrazu/010901_Lekce.pdf
-% Hodina 57, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 57.
-
-% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
-
-% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
-
-% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010808_Rozklad_mnohoclenu_na_soucin_III/010808_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/08%20Rozklad%20mnoho%C4%8Dlen%C5%AF%20na%20sou%C4%8Din%20III.pdf
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010901_Kraceni_a_rozsirovani_lomenych_vyrazu/010901_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/01%20Kr%C3%A1cen%C3%AD%20a%20roz%C5%A1i%C5%99ov%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF.pdf
-
+% Work-MAT, hodina 57; priprava pro ucitele, nikoli samostatny zadavaci test.
+% Navazuje na pripravy 41--56 a hodinovy rozpis prvniho rocniku.
 \documentclass[11pt,a4paper]{article}
-
 \input{../../sablony/pripravy/priprava.sty}
-
-\nastavPripravu{1. ročník}{Algebraické výrazy}{57}{Průběžný test a rozbor}
-
+\nastavPripravu{1. ročník}{Algebraické výrazy}{57}{Průběžný test a rozbor typických chyb}
 \begin{document}
-
-\blok{Výklad a souvislosti}
-
-Podle rozpisu trvá písemná část 15–20 minut a ověřuje algebraické výrazy a rozklady. Zbytek hodiny patří rozboru a navazujícímu procvičení. Tato příprava obsahuje metodiku a úlohy k nápravě; žákovský test a jeho konkrétní skladbu připravujeme zvlášť podle skillu \texttt{vytvor-test}.
-
-\begin{definiceBox}[title={Připomenutí definice},breakable=false]
-\textbf{Rozklad na součin} je zápis mnohočlenu jako součinu se stejnou hodnotou pro každé dosazení. Správnost rozkladu ověřujeme zpětným roznásobením.
-\end{definiceBox}
-
-
-Před hodinou připrav schválené zadání a stanov organizační pravidla. Nepovoluj automaticky kalkulačku či tabulky. Ve skutečném výběru úloh rozlišuj násobení a odčítání mnohočlenů, vhodnou volbu rozkladu a práci s podmínkami lomených výrazů; nepřidávej úlohy do testu bez schválení učitelem.
-
-Po odevzdání nech žáky pojmenovat rozhodující první krok. Sleduj chybná znaménka před závorkami, neúplné rozklady, krácení sčítanců a ztracené podmínky. Následující příklady jsou určeny jen následné nápravě, ne použití během psaní.
-
-\blok{Řešené příklady}
-
-\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
-Při rozboru rozlož $6x^2-24$.
+\poznamka{45 minut: 3 min organizace, přibližně 20 min průběžný test podle samostatného schváleného zadání, 3 min odevzdání, 14 min cílená diagnostika a oprava postupů, 5 min závěr. Nezavádíme další učivo. Testové zadání, bodování a klasifikační pravidla nejsou v této přípravě obsaženy.}
+\blok{0.--23. minuta: průběžný test}
+\begin{zadaniBox}[title={Organizace pro učitele}]
+Použij předem připravené a schválené zadání odpovídající skutečně probranému učivu: operace s mnohočleny, algebraické vzorce, dělení, rozklady a lomené výrazy. Před zahájením sděl povolené pomůcky, požadovaný zápis podmínek a způsob odevzdání. Po vymezeném čase všechny práce vyber.
+\end{zadaniBox}
+\poznamka{Příprava sama \emph{nenahrazuje} žákovský test ani nevytváří další testové varianty. Zadání a bodování spravuj odděleně; pokud by výklad 52--56 ještě nebyl hotov, uprav rozsah testu dle skutečného průběhu výuky.}
+\blok{23.--40. minuta: diagnostika bez předjímání výsledků testu}
+Bezprostředně po odevzdání lze na tabuli vybrat jednu či dvě z následujících úloh, podle toho, jaké obtíže se projevovaly \emph{při výuce}. Nejde o vyhlášení výsledků právě napsané písemky.
+\begin{zadaniReseniBox}[breakable=false,title={Práce s chybou: znaménka a distributivita}]
+Žák napsal $-2x(x-3)=-2x^2-6x$. Najdi chybu a vysvětli opravu.
 \tcblower
-Vytkneme $6$ a použijeme rozdíl čtverců: $6(x^2-4)=6(x-2)(x+2)$. Zkouška násobením vrací $6x^2-24$.
-\end{prikladReseniBox}
-
-
-\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
-Při následném procvičení uprav $\frac1{x-1}-\frac1{x+1}$.
-\tcblower
-Pro $x\ne\pm1$ je čitatel $(x+1)-(x-1)=2$, výsledek je $2/(x^2-1)$.
-\end{prikladReseniBox}
-
-
-\blok{Samostatné procvičení}
-
-\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Pro nápravu znamének uprav $-2x(x-3)$.
-\item Po odevzdání testu rozlož $x^2-6x+9$.
-\item Pro nápravu podmínek uprav $\frac{x^2-9}{x-3}$.
-\end{enumerate}
-\tcblower
-\begin{enumerate}[label=\alph*)]
-\item $-2x^2+6x$, protože dva záporné činitele dávají kladný součin.
-\item $(x-3)^2$; prostřední člen je $-2\cdot x\cdot3$.
-\item $x+3$ při $x\ne3$. U původního zlomku nelze zákaz odstranit.
-\end{enumerate}
+Správně $-2x(x-3)=-2x^2+6x$. Druhý dílčí součin je $(-2x)(-3)=+6x$.
 \end{zadaniReseniBox}
-
-
-\poznamka{Vyber pouze položky odpovídající zjištěným chybám; zbytek je rezerva pro individuální práci. Hodnocení konkrétního testu a uznávání postupů stanoví učitel. Tato příprava nezavádí body ani klasifikační hranice.}
-
+\begin{zadaniReseniBox}[breakable=false,title={Práce s chybou: algebraický vzorec}]
+Proč není správně $(x-3)^2=x^2-9$? Zapiš správný rozvoj.
+\tcblower
+Z distributivity dostaneme $x^2-3x-3x+9=x^2-6x+9$. V chybném zápisu chybí prostřední člen a znaménko konstanty.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[breakable=false,title={Práce s chybou: zkrácení a původní obor}]
+Žák napsal $\frac{x^2-9}{x-3}=x+3$ \uv{pro všechna reálná $x$}. Co je potřeba doplnit?
+\tcblower
+Rozklad $x^2-9=(x-3)(x+3)$ dovoluje krácení jen pro $x\ne3$. Rovnost výrazů platí na původním definičním oboru, nikoliv pro $x=3$.
+\end{zadaniReseniBox}
+\blok{40.--45. minuta: závěr a příprava na opakování}
+\begin{zadaniBox}[title={Krátké sebehodnocení}]
+Žáci zformulují jeden postup, který zvládají bezpečně, a jeden typ příkladů, který potřebují procvičit. Připomeň, že příští hodina se soustředí na ověřování správnosti úprav a rozlišení důkazu od zkoušky dosazením.
+\end{zadaniBox}
+\poznamka{Samostatný domácí úkol po testu není nutný. Pokud je vhodný, zadej dokončení jedné konkrétní chyby z hodiny se zdůvodněním opravy, nikoliv další náhodnou sadu příkladů.}
 \end{document}

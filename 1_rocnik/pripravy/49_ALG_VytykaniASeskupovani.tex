@@ -6,7 +6,7 @@
 \input{../../sablony/pripravy/priprava.sty}
 \nastavPripravu{1. ročník}{Algebraické výrazy}{49}{Vytýkání a seskupování}
 \begin{document}
-\poznamka{Jádro přibližně 45 minut: 5 min motivace a obrácení distributivity, 9 min vytýkání v P1--P2, 10 min S1 a kontrola, 8 min seskupování v P3, 10 min S2 a kontrola, 3 min shrnutí. Náročnější seskupování a kombinované rozklady jsou rezerva; domácí úlohy 15--20 minut.}
+\poznamka{Jádro přibližně 45 minut: 5 min motivace a obrácení distributivity, 9 min vytýkání v P1--P2, 10 min samostatná práce a kontrola, 8 min seskupování v P3, 10 min druhá samostatná práce a kontrola, 3 min shrnutí. Náročnější seskupování a kombinované rozklady jsou rezerva; domácí úlohy 15--20 minut.}
 \blok{Od roznásobování k rozkladu}
 Dosud jsme uměli násobit a odstraňovat závorky:
 \[3x(x+4)=3x^2+12x.\]
@@ -16,22 +16,22 @@ Obě podoby mají pro všechna $x\in\mathbb R$ stejnou hodnotu.
 \begin{definiceBox}
 \textbf{Rozklad mnohočlenu na součin} je úprava, při které mnohočlen vyjádříme jako součin jednodušších mnohočlenů se stejnou hodnotou pro všechna dosazení.
 \end{definiceBox}
-\begin{definiceBox}
+\begin{zadaniBox}[title={Pravidlo vytýkání}]
 \textbf{Vytýkání před závorku} je použití distributivního zákona zprava doleva:
 \[AB+AC=A(B+C),\qquad AB-AC=A(B-C).\]
 Společný činitel $A$ může být číslo, jednočlen i mnohočlen.
-\end{definiceBox}
+\end{zadaniBox}
 \poznamka{Rozklad není dělení výrazů. V zápisu $6x^2+9x=3x(2x+3)$ neztrácíme hodnotu $x=0$; rovnici ani zlomek zatím nevytváříme. Vždy ověř zpětným roznásobením.}
 \blok{Vytýkání: najdi společný činitel všech členů}
 U čísel hledáme společný faktor koeficientů. U proměnných vytýkáme jejich nejnižší společnou mocninu; znaménka zůstávají součástí členů.
-\begin{prikladReseniBox}[title={Příklad 1: koeficient a mocnina}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: koeficient a mocnina}]
 Rozlož $12x^4-18x^3+6x^2$ na součin.
 \tcblower
 Společný číselný faktor je $6$, nejnižší mocnina proměnné je $x^2$:
 \[12x^4-18x^3+6x^2=6x^2(2x^2-3x+1).\]
 Kontrola: $6x^2\cdot 2x^2-6x^2\cdot3x+6x^2=12x^4-18x^3+6x^2$.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2: více proměnných a mínus}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: více proměnných a mínus}]
 Rozlož $-8a^3b^2+12a^2b-4ab$ na součin.
 \tcblower
 Všemi členy lze dělit $-4ab$, proto
@@ -39,7 +39,7 @@ Všemi členy lze dělit $-4ab$, proto
 Zpětným roznásobením ověříme všechny tři členy i znaménka.
 \end{prikladReseniBox}
 \newpage
-\begin{zadaniReseniBox}[title={S1: vytkni největší společný jednočlen}]
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce: vytkni největší společný jednočlen}]
 \begin{enumerate}[label=\alph*)]
 \item $6x^3+9x^2$;
 \item $15a^2b-10ab^2+5ab$;
@@ -56,7 +56,7 @@ Zpětným roznásobením ověříme všechny tři členy i znaménka.
 \end{zadaniReseniBox}
 \blok{Seskupování: společný činitel není na první pohled}
 U čtyř členů někdy můžeme vytvořit dvě dvojice tak, aby po vytknutí vznikla \emph{stejná závorka}. Na způsobu seskupení záleží.
-\begin{prikladReseniBox}[title={Příklad 3: dva kroky vytýkání}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: dva kroky vytýkání}]
 Rozlož $ax+ay+bx+by$ na součin.
 \tcblower
 \begin{align*}
@@ -66,7 +66,7 @@ ax+ay+bx+by&=(ax+ay)+(bx+by)\\
 \end{align*}
 Zkouška: $(a+b)(x+y)=ax+ay+bx+by$.
 \end{prikladReseniBox}
-\begin{zadaniReseniBox}[title={S2: seskup a vytkni společnou závorku}]
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce: seskup a vytkni společnou závorku}]
 \begin{enumerate}[label=\alph*)]
 \item $x^2+3x+2x+6$;
 \item $2ax-6a+bx-3b$;
@@ -81,15 +81,15 @@ Zkouška: $(a+b)(x+y)=ax+ay+bx+by$.
 \item $x^2(x+2)-(x+2)=(x^2-1)(x+2)$; další rozklad pomocí rozdílu čtverců patří do kombinování metod.
 \end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{U S2 d) zatím postačí $(x^2-1)(x+2)$; rychlí žáci mohou použít vzorec z 46. hodiny a dopsat $(x-1)(x+1)(x+2)$. Není nutné pro všechny postupy vždy dojít ke stejnému počtu činitelů.}
+\poznamka{U samostatné práce d) zatím postačí $(x^2-1)(x+2)$; rychlí žáci mohou použít vzorec z 46. hodiny a dopsat $(x-1)(x+1)(x+2)$. Není nutné pro všechny postupy vždy dojít ke stejnému počtu činitelů.}
 \blok{Volitelná rezerva: poznáš chybu?}
-\begin{zadaniReseniBox}[title={R1: zdůvodni správnost}]
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření: zdůvodni správnost}]
 Žák napsal $6x^2-9x=3x(2x-9)$. Je rozklad správný? Oprav jej a ověř.
 \tcblower
 Ne: zpětné roznásobení dává $6x^2-27x$. Správně $6x^2-9x=3x(2x-3)$.
 \end{zadaniReseniBox}
 \blok{Domácí procvičení}
-\begin{zadaniReseniBox}[title={D1: rozlož na součin}]
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol: rozlož na součin}]
 \begin{enumerate}[label=\alph*)]
 \item $8x^3-12x^2$;
 \item $9a^3b-6a^2b^2+3ab$;

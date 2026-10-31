@@ -1,123 +1,82 @@
-% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
-% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
-% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
-% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010901_Kraceni_a_rozsirovani_lomenych_vyrazu/010901_Lekce.pdf
-% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
-% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
-% Hodina 52, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 52.
-
-% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
-
-% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
-
-% Původ úloh: P1: učebnice, „Úpravy lomených výrazů“, příklad x^2-4 a x^2-2x. P2: stejný výraz z příkladu „Definiční obor“, doplněna vlastní úprava. Ostatní vlastní.
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010901_Kraceni_a_rozsirovani_lomenych_vyrazu/010901_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/01%20Kr%C3%A1cen%C3%AD%20a%20roz%C5%A1i%C5%99ov%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF.pdf
-
+% Work-MAT, 1. rocnik, hodina 52. Navaznost: 47--48 deleni, 49--51 rozklady.
+% Primarni podklad: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex,
+% oddil Lomene vyrazy; metodicka inspirace Realisticky.cz 010901 Kraceni a rozsirovani lomenych vyrazu.
+% Prepracovano se zachovanim typu uloh puvodni pripravy 52; reseni vlastni.
 \documentclass[11pt,a4paper]{article}
-
 \input{../../sablony/pripravy/priprava.sty}
-
 \nastavPripravu{1. ročník}{Algebraické výrazy}{52}{Lomené výrazy: podmínky a krácení}
-
 \begin{document}
-
-\blok{Výklad a souvislosti}
-
-Zlomek s proměnnou ve jmenovateli může být pro některá dosazení nedefinovaný. Podmínky proto stanovíme dříve, než výraz rozložíme a zkrátíme. Rozklad na součin slouží k nalezení celých společných činitelů.
-
-\begin{definiceBox}[title={Definice},breakable=false]
-\textbf{Racionální lomený výraz} je podíl mnohočlenů $A(x)/B(x)$, kde $B$ není nulový mnohočlen. Jeho hodnoty jsou definovány právě pro $B(x)\ne0$.
+\poznamka{Jádro 45 minut: 5 min motivace, 8 min definice a podmínky, 12 min řešené příklady, 15 min samostatná práce s kontrolou, 5 min shrnutí. Poslední příklad a rezerva volitelné. Domácí práce asi 15--20 minut.}
+\blok{Proč nestačí jen rozložit a krátit?}
+Z hodin 49--51 umíme rozložit čitatel i jmenovatel na součin. Ve zlomku však nejdříve zjistíme, kdy vůbec existuje: \emph{jmenovatel nesmí být nulový}. Například výraz $\frac{x^2-x}{x}$ má smysl jen pro $x\ne0$, i když po krácení dostaneme $x-1$.
+\begin{definiceBox}
+\textbf{Racionální lomený výraz} je podíl dvou mnohočlenů
+\[V(x)=\frac{A(x)}{B(x)},\qquad B\not\equiv0.\]
+Jeho definiční obor nad $\mathbb R$ tvoří právě ta $x$, pro která $B(x)\ne0$.
 \end{definiceBox}
-
-
-\begin{definiceBox}[title={Definice},breakable=false]
-\textbf{Krácení lomeného výrazu} je odstranění společného nenulového činitele čitatele a jmenovatele: $AC/(BC)=A/B$ při $B\ne0$, $C\ne0$.
-\end{definiceBox}
-
-
-Krátíme činitele, nikoli jednotlivé sčítance. Rozšiřování je opačný postup: násobíme čitatele i jmenovatele stejným nenulovým výrazem. Po krácení ponecháme původní podmínky, i když z výsledného jmenovatele už některý zákaz nevyplývá.
-
-
-\begin{zadaniReseniBox}[title={Mezikrok: od číselných zlomků k proměnné},breakable=false]
-Porovnej $\frac{3\cdot5}{2\cdot5}$ a $\frac{3+5}{2+5}$. Potom uprav $\frac{3(x-1)}{2(x-1)}$.
+\begin{zadaniBox}[title={Pravidlo krácení a rozšiřování}]
+Pro nenulové $B(x)$ a $C(x)$ platí
+\[\frac{A(x)C(x)}{B(x)C(x)}=\frac{A(x)}{B(x)}.\]
+Krátíme \textbf{celé činitele}, nikoli jednotlivé sčítance. Podmínky odvozujeme vždy z \textbf{původního} zápisu.
+\end{zadaniBox}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: po krácení zůstává zákaz}]
+Zkrať $\displaystyle\frac{x^2-4}{x^2-2x}$ a určete definiční obor.
 \tcblower
-První zlomek je $3/2$, druhý $8/7$, protože krátit lze činitele, nikoli sčítance. Proměnný zlomek se rovná $3/2$ pouze pro $x\ne1$; podmínka zajišťuje nenulový krácený činitel.
-\end{zadaniReseniBox}
-
-\blok{Řešené příklady}
-
-\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
-Zkrať $\frac{x^2-4}{x^2-2x}$ a urči podmínky.
-\tcblower
-Jmenovatel je $x(x-2)$, proto $x\ne0,2$. Na tomto oboru $\frac{(x-2)(x+2)}{x(x-2)}=\frac{x+2}{x}$. Hodnota $x=2$ zůstává zakázána.
+Z původního jmenovatele: $x(x-2)\ne0$, tedy $x\ne0,2$.
+\[\frac{x^2-4}{x^2-2x}=\frac{(x-2)(x+2)}{x(x-2)}=\frac{x+2}{x},\qquad x\ne0,2.\]
+Zakázaná hodnota $x=2$ zůstává, i když už ve výsledném jmenovateli není.
 \end{prikladReseniBox}
-
-
-\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
-Uprav $\frac{x^2-9}{x^2-5x+6}$ a určuj obor před krácením.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: kvadratický trojčlen ve jmenovateli}]
+Uprav $\displaystyle\frac{x^2-9}{x^2-5x+6}$.
 \tcblower
-Rozklady jsou $(x-3)(x+3)$ a $(x-2)(x-3)$. Proto $x\ne2,3$ a výsledek je $\frac{x+3}{x-2}$ při obou původních zákazech.
+$x^2-5x+6=(x-2)(x-3)$, takže $x\ne2,3$. Dále
+\[\frac{(x-3)(x+3)}{(x-2)(x-3)}=\frac{x+3}{x-2},\qquad x\ne2,3.\]
 \end{prikladReseniBox}
-
-
-\blok{Samostatné procvičení}
-
-\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[breakable=false,title={Procvičení: určuj podmínky před krácením}]
 \begin{enumerate}[label=\alph*)]
-\item Zkrať $\frac{x^2-1}{x^2+x}$.
-\item Zkrať $\frac{2x+2}{x+1}$.
-\item Vysvětli, proč nelze „vykrátit $x$“ ve výrazu $\frac{x+2}{x+3}$.
+\item $\displaystyle\frac{x^2-1}{x^2+x}$;
+\item $\displaystyle\frac{2x+2}{x+1}$;
+\item $\displaystyle\frac{3x^2-6x}{6x}$;
+\item $\displaystyle\frac{(x-2)^2}{x^2-4}$;
+\item Proč není správné $\frac{x+2}{x+3}=\frac23$?
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $\frac{(x-1)(x+1)}{x(x+1)}=\frac{x-1}{x}$ při $x\ne0,-1$.
-\item $2$ při $x\ne-1$; společným činitelem je celá závorka $x+1$.
-\item $x$ není společným činitelem celých součtů. Chybné odstranění $x$ by dalo $2/3$, ale například při $x=1$ je původní hodnota $3/4$. Původní obor vyžaduje $x\ne-3$.
+\item $\frac{x-1}{x}$, $x\ne0,-1$.
+\item $2$, $x\ne-1$.
+\item $\frac{x-2}{2}$, $x\ne0$.
+\item $\frac{x-2}{x+2}$, $x\ne-2,2$.
+\item Sčítance nelze krátit. Při $x=1$ je vlevo $3/4$, nikoli $2/3$; původní obor $x\ne-3$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
-
-\poznamka{Ke každému výrazu piš podmínky na stejný řádek jako výsledek. Nepřeváděj je jen na podmínky zjednodušeného tvaru. V dalším procvičování vrať vždy alespoň jednu zakázanou hodnotu, která po krácení zmizela ze jmenovatele.}
-
-
-\blok{Navazující procvičování ve třídě}
-
-\begin{zadaniReseniBox}[title={Základ a navázání: rozklad před krácením},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Uprav $\frac{3x^2-6x}{6x}$ a $\frac{(x-2)^2}{x^2-4}$.
-\item Rezerva: uprav $\frac{1-x^2}{x^2+2x+1}$ a zachovej původní zákazy.
-\item Rezerva: rozhodni, zda $\frac{x^2-x}{x}=x-1$ dovoluje dosadit $x=0$.
-\end{enumerate}
+\poznamka{U každého zadání vyžaduj pořadí: podmínky -- rozklad -- krácení -- výsledek. Krátit lze např. $(x-2)$; samotné $x$ v součtu $x+2$ zkrátit nelze.}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření: změna znaménka}]
+Uprav $\displaystyle\frac{1-x^2}{(x+1)^2}$ a určete, která hodnota je zakázaná.
 \tcblower
-\begin{enumerate}[label=\alph*)]
-\item $\frac{x-2}{2}$ při $x\ne0$; $\frac{x-2}{x+2}$ při $x\ne\pm2$.
-\item $\frac{-(x-1)(x+1)}{(x+1)^2}=\frac{1-x}{x+1}$ při $x\ne-1$.
-\item Ne. Rovnost platí pouze pro $x\ne0$. Upravený výraz může existovat i tam, kde původní zlomek neexistuje.
-\end{enumerate}
+$1-x^2=-(x-1)(x+1)$, takže $\frac{1-x}{x+1}$, $x\ne-1$. Znaménko minus patří k celému činiteli.
 \end{zadaniReseniBox}
-
-
-\poznamka{Základ: číselný mezikrok, oba původní příklady a nová první položka. Zbývající nové otázky jsou rezerva pro upevnění znamének a oboru. Domácí čtveřice má výsledky s úplnými podmínkami. V každém rozkladu označ celý společný činitel; nikdy nepřeškrtávej izolované sčítance.}
-
 \blok{Domácí procvičení}
-
-\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol: krácení a definiční obor}]
 \begin{enumerate}[label=\alph*)]
-\item Uprav $\frac{x^2-16}{x^2+4x}$.
-\item Uprav $\frac{2x^2-8}{x-2}$.
-\item Uprav $\frac{x^2+6x+9}{x^2-9}$.
-\item Je $\frac{x+1}{x+2}$ rovno $1/2$ pro všechna přípustná $x$? Uveď protipříklad.
+\item $\frac{x^2-16}{x^2+4x}$;
+\item $\frac{2x^2-8}{x-2}$;
+\item $\frac{x^2+6x+9}{x^2-9}$;
+\item $\frac{x^2-x}{x}$;
+\item $\frac{x^2-4x+4}{x^2-4}$;
+\item $\frac{6a^2b-9ab^2}{3ab}$;
+\item $\frac{x^2+5x+6}{x^2+3x+2}$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
 \item $\frac{x-4}{x}$, $x\ne0,-4$.
 \item $2(x+2)$, $x\ne2$.
-\item $\frac{x+3}{x-3}$, $x\ne\pm3$.
-\item Ne; pro $x=1$ je hodnota $2/3\ne1/2$. Původní podmínka $x\ne-2$.
+\item $\frac{x+3}{x-3}$, $x\ne-3,3$.
+\item $x-1$, $x\ne0$.
+\item $\frac{x-2}{x+2}$, $x\ne-2,2$.
+\item $2a-3b$, $a\ne0$, $b\ne0$.
+\item $\frac{x+3}{x+1}$, $x\ne-1,-2$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
 \end{document}

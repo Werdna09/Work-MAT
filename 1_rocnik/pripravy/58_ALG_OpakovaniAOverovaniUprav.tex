@@ -1,138 +1,75 @@
-% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
-% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
-% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
-% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010802_Nasobeni_mnohoclenu/010802_Lekce.pdf
-% externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010810_Mnohocleny_shrnuti/010810_Lekce.pdf
-% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010901_Kraceni_a_rozsirovani_lomenych_vyrazu/010901_Lekce.pdf
-% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
-% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
-% Hodina 58, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 58.
-
-% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
-
-% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
-
-% Původ úloh: Vlastní zadání a vlastní formulace výkladu; metodická inspirace zdroji.
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/06_Mocniny/010604_KISS/010604_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/06%20Mocniny/04%20KISS.pdf
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010802_Nasobeni_mnohoclenu/010802_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/02%20N%C3%A1soben%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/08_Mnohocleny/010805_Deleni_mnohoclenu/010805_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/08%20Mnoho%C4%8Dleny/05%20D%C4%9Blen%C3%AD%20mnoho%C4%8Dlen%C5%AF.pdf
-
+% Work-MAT, hodina 58. Zaverecne opakovani celeho bloku algebraickych vyrazu 41--57.
+% Podklady: ucebnice Algebraické výrazy, metodicka inspirace realisticky.cz a
+% puvodni priprava 58 v repozitari. Nezavadi se nove ucivo.
 \documentclass[11pt,a4paper]{article}
-
 \input{../../sablony/pripravy/priprava.sty}
-
-\nastavPripravu{1. ročník}{Algebraické výrazy}{58}{Opakování a ověřování úprav}
-
+\nastavPripravu{1. ročník}{Algebraické výrazy}{58}{Opakování a ověřování správnosti úprav}
 \begin{document}
-
-\blok{Výklad a souvislosti}
-
-Dosazení je účinná kontrola: jediná neshoda vyvrátí tvrzenou obecnou rovnost. Souhlas pro jednu nebo několik hodnot však sám o sobě nezaručuje, že úprava platí všude. Obecnou správnost doložíme pravidly úprav nebo roznásobením.
-
-\begin{definiceBox}[title={Definice},breakable=false]
-\textbf{Mnohočlenná identita} je rovnost mnohočlenů platná pro každé dosazení jejich proměnných. U lomených výrazů rovnost vždy vztahujeme k uvedenému definičnímu oboru.
-\end{definiceBox}
-
-
-Nejprve napiš původní podmínky. Pro kontrolu zvol několik přípustných hodnot, mezi nimi nulu a záporné číslo, pokud jsou dovoleny. Nakonec ověř jednotlivé úpravy obecně. U dělení mnohočlenů kontroluj $A=BQ+R$, u rozkladu součin zpětně roznásob.
-
-\begin{center}
-\small
-\begin{tabularx}{\linewidth}{@{}p{31mm}XX@{}}
-\toprule
-Postup & Co zjistí & Co z něj neplyne\\
-\midrule
-Kontrolní dosazení & Shodu či neshodu pro vybranou přípustnou hodnotu.
-& Souhlas pro několik hodnot sám nedokazuje identitu.\\[1mm]
-Protipříklad & Jednu přípustnou hodnotu, při níž se strany liší;
-tím obecné tvrzení vyvrátí.
-& Nedefinovaná hodnota mimo zadaný obor není protipříklad.\\[1mm]
-Důkaz identity & Rovnost pro všechny přípustné hodnoty pomocí obecných pravidel.
-& Nepovoluje dosazení mimo původní obor.\\
-\bottomrule
-\end{tabularx}
-\end{center}
-V P1 stačí k vyvrácení jediná neshoda. V P2 potřebujeme pro důkaz
-rozklad a přípustné krácení; dvě souhlasná dosazení jsou jen kontrola.
-
-\blok{Řešené příklady}
-
-\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
-Je dosazení $x=0$ důkazem rovnosti $(x+1)^2=x^2+1$?
+\poznamka{45 minut: 5 min strategie kontroly, 10 min společná práce s identitou, 15 min samostatná práce a kontrola, 10 min práce s chybným výpočtem, 5 min shrnutí. Rozšíření jen pro rychlé, domácí úlohy 15--20 minut. Navazuje na diagnostiku hodiny 57.}
+\blok{Kdy máme jistotu, že jsme výraz upravili správně?}
+Dosazení několika čísel je \emph{kontrolou}; neshoda v jediném přípustném dosazení rovnost vyvrací. K obecné platnosti potřebujeme zdůvodněné algebraické úpravy, platné na původním definičním oboru.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: důkaz roznásobením}]
+Ověř pro všechna reálná $x$, že $(x-2)(x^2+2x+4)=x^3-8$.
 \tcblower
-Pro $x=0$ obě strany dávají $1$, ale například pro $x=1$ dává levá strana $4$ a pravá $2$. Obecná rovnost neplatí; chybí smíšený člen $2x$.
+\[(x-2)(x^2+2x+4)=x^3+2x^2+4x-2x^2-4x-8=x^3-8.\]
+Rovnost platí pro každé reálné $x$, protože jsme použili identické úpravy.
 \end{prikladReseniBox}
-
-
-\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
-Ověř $\frac{x^2-1}{x-1}=x+1$ v přípustných bodech a potom obecně.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: pravdivá úprava, ale jiné obory}]
+Uprav $\frac{x^2-4}{x-2}$ a posuď, zda lze dosadit $x=2$.
 \tcblower
-Původní obor je $x\ne1$. Pro $x=2$ obě strany dávají $3$, pro $x=-1$ dávají $0$. Obecný důvod: $x^2-1=(x-1)(x+1)$ a na původním oboru smíme krátit nenulové $x-1$.
+Čitatel $(x-2)(x+2)$ lze krátit \emph{jen při} $x\ne2$. Výsledný zápis $x+2$ je definovaný i pro $x=2$, ale \textbf{původní zlomek ne}. Obecně tedy rovnost platí pouze na $\mathbb R\setminus\{2\}$.
 \end{prikladReseniBox}
-
-
-\blok{Samostatné procvičení}
-
-\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: kontrola podílu a zbytku}]
+Ověř dělení $x^3+1=(x-1)(x^2+x+1)+2$.
+\tcblower
+\[(x-1)(x^2+x+1)+2=x^3-1+2=x^3+1.\]
+Toto je polynomická identita pro všechna reálná $x$. Podíl číselných hodnot $(x^3+1)/(x-1)$ je však definován jen pro $x\ne1$.
+\end{prikladReseniBox}
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[breakable=false,title={Procvičení: rozhodni a zdůvodni}]
 \begin{enumerate}[label=\alph*)]
-\item Obecně ověř $(x-2)(x^2+2x+4)=x^3-8$.
-\item Zkontroluj $\frac{x^2-4}{x-2}=x+2$ a jeho obor; použij i $x=0$.
-\item Ověř výsledek dělení z hodiny 47: $p^3+2p^2-2p-1=(p+1)(p^2+p-3)+2$.
+\item Ověř $(x+2)(x^2-2x+4)=x^3+8$.
+\item Rozlož a zpětně ověř $2x^3-18x$.
+\item Uprav $\frac{x^2-9}{x-3}$ včetně podmínek.
+\item Najdi protipříklad k $(x-1)^2=x^2-1$.
+\item Vyděl $(x^2+1):(x+1)$, určete podíl a zbytek.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item Roznásobením vznikne $x^3+2x^2+4x-2x^2-4x-8=x^3-8$. Platí pro všechna reálná $x$.
-\item Původní výraz vyžaduje $x\ne2$. Pro $x=0$ dává $2$ na obou stranách. Obecně krátíme $x-2$ v rozkladu $(x-2)(x+2)$.
-\item Pravá strana po roznásobení je $p^3+2p^2-2p-3+2$, tedy levá strana. Identita platí pro všechna reálná $p$, i pro $p=-1$; tehdy obě strany dávají $2$. Původní podíl hodnot však pro $p=-1$ definován není.
+\item Roznásobením $x^3+8$, pro všechna $x\in\mathbb R$.
+\item $2x(x-3)(x+3)$, protože $2x[(x-3)(x+3)]=2x(x^2-9)$.
+\item $x+3$, původní podmínka $x\ne3$.
+\item Pro $x=0$ je vlevo $1$, vpravo $-1$. Správný rozvoj je $x^2-2x+1$.
+\item $Q(x)=x-1$, $R(x)=2$, neboť $(x+1)(x-1)+2=x^2+1$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
-
-\poznamka{Formulace rozpisu „důkaz správnosti dosazením“ zde znamená kontrolní dosazení doplněné obecným zdůvodněním. Neuč, že konečný počet souhlasných pokusů automaticky dokazuje rovnost výrazů. Při pomalejším tempu zvol jedno rozložení a jednu lomenou úpravu a nech zdůvodnit každý krok.}
-
-
-\blok{Navazující procvičování ve třídě}
-
-\begin{zadaniReseniBox}[title={Rezerva: odhal chybu, potom dokaž správnou verzi},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Žák tvrdí $\frac{x^2+1}{x+1}=x$. Zvol přípustnou hodnotu, která chybu odhalí, a vyděl se zbytkem.
-\item Ověř rozklad $x^3+3x^2-4=x^2(x+3)-4$. Je to už rozklad na součin? Najdi součin pomocí dělení výrazem $x-1$.
-\end{enumerate}
+\poznamka{Po testu vybírej příklady podle zjištěných slabin třídy. Nezaměň obecný důkaz s úspěšným dosazením dvou hodnot. Cílem není další objem látky, ale správná argumentace.}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření: rozpoznání správného mezikroku}]
+Žák uvedl $x^3+3x^2-4=x^2(x+3)-4$ a tvrdí, že je hotov rozklad na součin. Je to pravda? Dokonči rozklad.
 \tcblower
-\begin{enumerate}[label=\alph*)]
-\item Pro $x=0$ je vlevo $1$, vpravo $0$. Dělení dává $x-1+\frac2{x+1}$ pro $x\ne-1$, protože $(x+1)(x-1)+2=x^2+1$.
-\item Uvedená rovnost je pravdivá, ale pravá strana je stále rozdíl. Dělením dostaneme $x^3+3x^2-4=(x-1)(x^2+4x+4)=(x-1)(x+2)^2$. Roznásobení dokazuje identitu pro všechna reálná $x$.
-\end{enumerate}
+Rovnost je správná, ale vpravo zůstává \emph{rozdíl}. Platí
+\[x^3+3x^2-4=(x-1)(x^2+4x+4)=(x-1)(x+2)^2.\]
+Zkouška roznásobením potvrzuje původní mnohočlen.
 \end{zadaniReseniBox}
-
-
-\poznamka{Základ: původní ověřování rozkladu, lomeného výrazu a dělení. Nová dvojice je diagnostická rezerva podle chyb z hodiny 57; nevyžaduj její řešení každým žákem. Domácí čtveřice odlišuje protipříklad od obecného důkazu a zachovává opakovací charakter. Nepřidáváme nové učivo ani další test.}
-
 \blok{Domácí procvičení}
-
-\begin{zadaniReseniBox}[title={Domácí ověření},breakable=false]
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol: ověřování úprav a podmínek}]
 \begin{enumerate}[label=\alph*)]
-\item Najdi protipříklad k $(x-1)^2=x^2-1$ a napiš správný rozvoj.
-\item Obecně ověř $\frac{x^2-9}{x-3}=x+3$ a určuj původní obor.
-\item Ověř dělení $x^3+1=(x-1)(x^2+x+1)+2$.
-\item Ověř $\frac1{x-1}+\frac1{x+1}=\frac{2x}{x^2-1}$ na původním oboru.
+\item Ověř $(x-1)(x^2+x+1)=x^3-1$.
+\item Rozlož $x^2-6x+9$ a ověř roznásobením.
+\item Ověř $\frac1{x-1}+\frac1{x+1}=\frac{2x}{x^2-1}$ a uveď podmínky.
+\item Ověř $x^3+2x^2-2x-1=(x+1)(x^2+x-3)+2$.
+\item Najdi protipříklad k rovnosti $\frac{x^2+1}{x+1}=x$.
+\item Uprav $\frac{x^2-1}{x-1}$ a vysvětli význam zakázané hodnoty.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item Pro $x=0$ je $1\ne-1$. Správně $x^2-2x+1$.
-\item $x\ne3$; čitatel $(x-3)(x+3)$ dovoluje krátit nenulový činitel. Například při $x=0$ obě strany dávají $3$.
-\item Roznásobením pravé strany dostaneme $x^3-1+2=x^3+1$. Zbytek $2$ má stupeň $0<1$. Identita platí i pro $x=1$; podíl hodnot by tam definován nebyl.
-\item $x\ne\pm1$; čitatel po rozšíření je $(x+1)+(x-1)=2x$. Kontrolní dosazení třeba $x=0$ dává $0$ na obou stranách, obecný důkaz je úprava.
+\item Po roznásobení $x^3-1$; identita pro všechna $x$.
+\item $(x-3)^2=x^2-6x+9$.
+\item Společný jmenovatel je $(x-1)(x+1)$; v čitateli $(x+1)+(x-1)=2x$. Podmínky $x\ne-1,1$.
+\item Roznásobením vznikne $x^3+2x^2-2x-3+2$, tedy levá strana. Identita pro každé $x$.
+\item Např. $x=0$: původní zlomek má hodnotu $1$, pravá strana $0$. Původní obor $x\ne-1$.
+\item $x+1$, $x\ne1$; upravený výraz existuje také pro $x=1$, původní zlomek nikoli.
 \end{enumerate}
 \end{zadaniReseniBox}
-
 \end{document}

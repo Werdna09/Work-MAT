@@ -1,128 +1,74 @@
-% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
-% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
-% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
-% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010905_Zjednodusovani_lomenych_vyrazu_I/010905_Lekce.pdf
-% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
-% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
-% Hodina 55, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 55.
-
-% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
-
-% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
-
-% Původ úloh: P1: učebnice, „Umocňování a úpravy složených lomených výrazů“, přesný složený zlomek. Ostatní vlastní.
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010905_Zjednodusovani_lomenych_vyrazu_I/010905_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/05%20Zjednodu%C5%A1ov%C3%A1n%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF%20I.pdf
-
+% Work-MAT, hodina 55. Podklad: ucebnice Algebraické výrazy, oddil Slozene lomene vyrazy;
+% metodicka inspirace Realisticky.cz 010905; obsahove vychazi z pripravy 55 v repozitari.
 \documentclass[11pt,a4paper]{article}
-
 \input{../../sablony/pripravy/priprava.sty}
-
 \nastavPripravu{1. ročník}{Algebraické výrazy}{55}{Složené lomené výrazy}
-
 \begin{document}
-
-\blok{Výklad a souvislosti}
-
-Hlavní zlomková čára znamená dělení celého horního výrazu celým dolním. Podmínky proto pocházejí jak z vnitřních jmenovatelů, tak z požadavku, aby celý dolní výraz nebyl nulový.
-
-\begin{definiceBox}[title={Definice},breakable=false]
-\textbf{Složený zlomek} je zlomek, v jehož čitateli nebo jmenovateli vystupují další zlomky. Jeho úprava musí zachovat přípustnost všech vnitřních operací.
+\poznamka{Jádro 45 min: 5 min rozlišení hlavní zlomkové čáry, 10 min podmínky, 10 min P1--P2, 15 min samostatná práce s kontrolou, 5 min shrnutí. Další složité příklady jen jako rezerva.}
+\blok{Která zlomková čára je hlavní?}
+Zápis $\dfrac{\frac{1}{x}+1}{\frac{1}{x}-1}$ je podíl \emph{dvou celých výrazů}. Nestačí vynásobit horní zlomek obráceným prvním zlomkem, který uvidíme: dělitelem je celý jmenovatel složeného zlomku.
+\begin{definiceBox}
+\textbf{Složený lomený výraz} je zlomek, jehož čitatel nebo jmenovatel sám obsahuje zlomkový výraz.
 \end{definiceBox}
-
-
-Buď nejprve uprav horní a dolní část a potom děl násobením převrácenou hodnotou, nebo rozšiř celý složený zlomek společným nenulovým násobkem vnitřních jmenovatelů. V obou postupech zachovej původní podmínky.
-
-\blok{Řešené příklady}
-
-\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
-Uprav $\dfrac{\dfrac{x}{y}}{\dfrac{2x}{3y}}$.
+Při určování definičního oboru potřebujeme: (1) existenci všech vnitřních zlomků, (2) nenulovost \textbf{celé dolní části} hlavního zlomku.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: stejné vnitřní jmenovatele}]
+Uprav $\displaystyle\frac{\frac2x}{\frac3x}$.
 \tcblower
-Vnitřní zlomky vyžadují $y\ne0$, celý dělitel navíc $x\ne0$. Potom $\frac{x}{y}\cdot\frac{3y}{2x}=\frac32$ při $x,y\ne0$.
+$x\ne0$; dolní část $3/x$ je na tomto oboru nenulová. Dělení dá $\frac2x\cdot\frac x3=\frac23$. Původní zákaz $x=0$ zůstává.
 \end{prikladReseniBox}
-
-
-\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
-Uprav $\dfrac{\dfrac{x+1}{x-1}-1}{\dfrac{x+1}{x-1}+1}$.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: nejdřív stanov podmínky}]
+Uprav $\displaystyle\frac{1+\frac1x}{1-\frac1x}$.
 \tcblower
-Nejprve $x\ne1$ kvůli vnitřním jmenovatelům. Každou část upravíme zvlášť:
-\begin{align*}
-\frac{x+1}{x-1}-1&=\frac{(x+1)-(x-1)}{x-1}=\frac2{x-1},\\
-\frac{x+1}{x-1}+1&=\frac{(x+1)+(x-1)}{x-1}=\frac{2x}{x-1}.
-\end{align*}
-Celá dolní část musí být nenulová, proto navíc $x\ne0$. Teprve pak dělíme:
-\[
-\frac{2/(x-1)}{2x/(x-1)}=\frac2{x-1}\cdot\frac{x-1}{2x}=\frac1x,
-\qquad x\ne0,1.
-\]
-Krátíme součin, nikoli sčítance; oba původní zákazy ponecháme.
+Vnitřní zlomky vyžadují $x\ne0$. Dolní část je $(x-1)/x$, a tedy nesmí být nula: $x\ne1$. Po rozšíření celého složeného zlomku nenulovým $x$:
+\[\frac{x+1}{x-1},\qquad x\ne0,1.\]
 \end{prikladReseniBox}
-
-
-\blok{Samostatné procvičení}
-
-\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Uprav $\dfrac{1/a}{2/a}$.
-\item Uprav $\dfrac{1/x+1/(x+1)}{1/[x(x+1)]}$.
-\item Uprav $\dfrac{(x^2-1)/(x-1)}{(x+1)/(x+2)}$.
-\end{enumerate}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: součet v čitateli}]
+Uprav $\displaystyle\frac{\frac1x+\frac1{x+1}}{\frac1{x(x+1)}}$.
 \tcblower
-\begin{enumerate}[label=\alph*)]
-\item $1/2$ při $a\ne0$; obě vnitřní části existují a dolní není nulová.
-\item Pro $x\ne0,-1$ je dolní část nenulová. Rozšířením celého zlomku výrazem $x(x+1)$ dostaneme $2x+1$.
-\item Původní zápis vyžaduje $x\ne1,-2$ a nenulový dolní zlomek navíc $x\ne-1$. Po krácení je výsledek $x+2$ při všech třech zákazech.
-\end{enumerate}
-\end{zadaniReseniBox}
-
-
-\poznamka{Nech žáka nahlas označit hlavní zlomkovou čáru a celý dělitel. Podmínky dolní části nestačí pouze opsat z jejích jmenovatelů: musí být i nenulová. Rezervu se dvěma proměnnými lze dokončit doma.}
-
-
-\blok{Navazující procvičování ve třídě}
-
-\begin{zadaniReseniBox}[title={Rezerva: dvě cesty k témuž výsledku},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Uprav $\dfrac{1+1/x}{1-1/x}$ dvěma způsoby: úpravou každé části a rozšířením celého zlomku.
-\item Uprav $\dfrac{1/(x-1)-1/(x+1)}{1/(x-1)+1/(x+1)}$.
-\end{enumerate}
-\tcblower
-\begin{enumerate}[label=\alph*)]
-\item $x\ne0$ kvůli vnitřním zlomkům, $x\ne1$ kvůli dolní části. První cesta: $\frac{(x+1)/x}{(x-1)/x}=\frac{x+1}{x-1}$. Druhá: rozšířit celý zlomek nenulovým $x$, což dá tentýž tvar s oběma zákazy.
-\item $x\ne\pm1$; horní část $2/(x^2-1)$, dolní $2x/(x^2-1)$, proto navíc $x\ne0$. Výsledek $1/x$ při $x\ne-1,0,1$.
-\end{enumerate}
-\end{zadaniReseniBox}
-
-\blok{Volitelná rezerva}
-
-\begin{prikladReseniBox}[title={Rozšíření procvičení},breakable=false]
-Uprav $\dfrac{1/x+1/y}{1/x-1/y}$.
-\tcblower
-Nejprve $x,y\ne0$. Dolní část je $(y-x)/(xy)$, proto navíc $y\ne x$. Rozšířením výrazem $xy$ dostaneme $(x+y)/(y-x)$ na tomto oboru.
+$x\ne0,-1$ a dolní část je na tomto oboru nenulová. Po rozšíření celé hlavní zlomkové čáry výrazem $x(x+1)$ získáme $x+1+x=2x+1$.
 \end{prikladReseniBox}
-
-
-
-\poznamka{Základ: původní P1 a P2 s doplněnými mezikroky, pak původní samostatné úlohy. Nová dvojice i původní dvě proměnné jsou rezervy, z nichž vybírej podle tempa. Domácí a) až c) jsou pro všechny, d) dobrovolně. U každého složeného zlomku žák musí ukázat, která čára je hlavní, a vypsat tři zdroje podmínek: vnitřní jmenovatele nahoře, dole a nenulovost celé dolní části.}
-
-\blok{Domácí procvičení}
-
-\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[breakable=false,title={Procvičení: vyznač hlavní zlomek a určuj podmínky}]
 \begin{enumerate}[label=\alph*)]
-\item Uprav $\dfrac{2/x}{3/x}$.
-\item Uprav $\dfrac{1/x+1}{1/x-1}$.
-\item Uprav $\dfrac{1/(x-2)}{1/(x+2)}$.
-\item Rezerva: uprav $\dfrac{x/y-y/x}{1/y}$.
+\item $\dfrac{\frac1a}{\frac2a}$;
+\item $\dfrac{\frac1x+1}{\frac1x-1}$;
+\item $\dfrac{\frac{x^2-1}{x-1}}{\frac{x+1}{x+2}}$;
+\item $\dfrac{\frac1{x-1}-\frac1{x+1}}{\frac1{x-1}+\frac1{x+1}}$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $2/3$, $x\ne0$.
+\item $\frac12$, $a\ne0$.
 \item $\frac{x+1}{1-x}$, $x\ne0,1$.
-\item $\frac{x+2}{x-2}$, $x\ne\pm2$.
-\item $\frac{x^2-y^2}{x}$, $x,y\ne0$. Dolní část $1/y$ je na tomto oboru nenulová.
+\item $x+2$, $x\ne1,-2,-1$ (poslední zákaz je nenulovost dělitele).
+\item $\frac1x$, $x\ne-1,0,1$; dolní součet je $2x/(x^2-1)$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
+\poznamka{Po zjednodušení se může podmínka vytratit ze zápisu. Nech každého žáka vyjmenovat podmínky dolní části ještě před krácením.}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření: dvě proměnné}]
+Uprav $\displaystyle\frac{\frac xy-\frac yx}{\frac1y}$.
+\tcblower
+Pro $x\ne0$, $y\ne0$ je dolní část nenulová. Výraz se rovná
+\[\left(\frac{x^2-y^2}{xy}\right)\cdot y=\frac{x^2-y^2}{x}.\]
+\end{zadaniReseniBox}
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol: složené zlomky}]
+\begin{enumerate}[label=\alph*)]
+\item $\dfrac{\frac3x}{\frac5x}$;
+\item $\dfrac{\frac1x+1}{\frac1x-1}$;
+\item $\dfrac{\frac1{x-2}}{\frac1{x+2}}$;
+\item $\dfrac{\frac1x+\frac1{x-1}}{\frac1{x(x-1)}}$;
+\item $\dfrac{\frac{x^2-4}{x-2}}{\frac{x+2}{x+1}}$;
+\item $\dfrac{\frac1x-\frac1{x+1}}{\frac1x+\frac1{x+1}}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac35$, $x\ne0$.
+\item $\frac{x+1}{1-x}$, $x\ne0,1$.
+\item $\frac{x+2}{x-2}$, $x\ne-2,2$.
+\item $2x-1$, $x\ne0,1$.
+\item $x+1$, $x\ne2,-1,-2$.
+\item $\frac1{2x+1}$, $x\ne0,-1,-\frac12$.
+\end{enumerate}
+\end{zadaniReseniBox}
 \end{document}

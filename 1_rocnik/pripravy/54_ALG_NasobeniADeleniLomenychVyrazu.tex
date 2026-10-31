@@ -1,116 +1,79 @@
-% Revize 2026-10-28: obsah, matematika a návaznost; podrobnosti a časy
-% viz planovani/REVIZE_PRIPRAV_1_ROCNIK.md.
-% Aktuální porovnání se skutečným obsahem místních PDF Realisticky.cz:
-% externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010904_Nasobeni_a_deleni_lomenych_vyrazu/010904_Lekce.pdf
-% Revize 2026-10-27: cílené doplnění; nové úlohy a řešení jsou vlastní tvorba.
-% Metodický vzor: 4_rocnik/pripravy/Uvod_do_kombinatoriky.pdf (samostatný dokument).
-% Hodina 54, 1. ročník SPŠ. Rozsah: Rozpis_vyuky_MAT_1_rocnik.tex, řádek 54.
-
-% Plán: 1_rocnik/tematicke_plany/SPS.pdf; společná projektová šablona.
-
-% Učebnice: ucebnice/01_Zakladni_poznatky/Algebraicke_vyrazy/Algebraické výrazy.tex
-
-% Původ úloh: P1: učebnice, „Násobení a dělení lomených výrazů“, přesný součin. Ostatní vlastní; obecné podmínky jsou doplněny správně.
-
-% Metodický zdroj: externi_zdroje/realisticky/01_Zakladni_poznatky/09_Lomene_vyrazy/010904_Nasobeni_a_deleni_lomenych_vyrazu/010904_Lekce.pdf
-
-% URL: http://www.realisticky.cz/ucebnice/01%20Matematika%20S%C5%A0/01%20Z%C3%A1kladn%C3%AD%20poznatky/09%20Lomen%C3%A9%20v%C3%BDrazy/04%20N%C3%A1soben%C3%AD%20a%20d%C4%9Blen%C3%AD%20lomen%C3%BDch%20v%C3%BDraz%C5%AF.pdf
-
+% Work-MAT, hodina 54. Podklad: ucebnice Algebraické výrazy, Nasobeni a deleni;
+% metodicka inspirace Realisticky.cz 010904; navaznost na 52 a 53.
 \documentclass[11pt,a4paper]{article}
-
 \input{../../sablony/pripravy/priprava.sty}
-
 \nastavPripravu{1. ročník}{Algebraické výrazy}{54}{Násobení a dělení lomených výrazů}
-
 \begin{document}
-
-\blok{Výklad a souvislosti}
-
-Před násobením rozlož čitatele a jmenovatele, aby bylo možné krátit celé činitele. Při dělení nejprve stanov, kdy je dělitel definovaný a kdy je nenulový. Teprve potom převrať druhý zlomek.
-
-\begin{definiceBox}[title={Definice},breakable=false]
-\textbf{Převrácený výraz} k nenulovému $C/D$ je $D/C$. Jeho použití při dělení původním zlomkem vyžaduje $D\ne0$ i $C\ne0$.
-\end{definiceBox}
-
-
-Pro násobení platí $\frac AB\frac CD=\frac{AC}{BD}$ při $B,D\ne0$. Pro dělení je $\frac AB:\frac CD=\frac AB\frac DC=\frac{AD}{BC}$ při $B,C,D\ne0$. Zákaz $D=0$ zůstává i po převrácení, ačkoli $D$ pak stojí v čitateli.
-
-Převrácení je důsledkem vztahu
-$(C/D)(D/C)=1$: součin výsledku $(A/B)(D/C)$ a původního dělitele
-$C/D$ vrátí $A/B$. To zároveň poskytuje zkoušku dělení.
-Čitatel $A$ může být nula; předpoklad nenulovosti se vztahuje k děliteli.
-
-\blok{Řešené příklady}
-
-\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
-Uprav $\frac{x-1}{2x}\cdot\frac{4x}{x^2-1}$.
+\poznamka{45 min: 5 min opakování krácení, 8 min násobení, 12 min dělení a podmínky, 15 min samostatná práce a kontrola, 5 min shrnutí. Rozšíření je volitelné. Nepředpokládej, že nenulovost dělitele automaticky plyne jen z jeho jmenovatele.}
+\blok{Násobení: krátíme činitele celých součinů}
+Nejdříve zapíšeme podmínky \emph{obou původních zlomků}, potom rozložíme a zkrátíme společné nenulové činitele.
+\begin{zadaniBox}[title={Pravidla pro násobení a dělení}]
+\[\frac AB\cdot\frac CD=\frac{AC}{BD},\qquad B\ne0,\ D\ne0.\]
+\[\frac AB:\frac CD=\frac AB\cdot\frac DC=\frac{AD}{BC},\qquad B\ne0,\ D\ne0,\ C\ne0.\]
+Podmínka $C\ne0$ při dělení zaručuje, že \textbf{celý druhý zlomek je nenulový}.
+\end{zadaniBox}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1: součin s krácením}]
+Uprav $\displaystyle\frac{x^2-4}{x}\cdot\frac{3x}{x+2}$.
 \tcblower
-Původní jmenovatele vyžadují $x\ne0,\pm1$. Po rozkladu $x^2-1=(x-1)(x+1)$ a krácení je výsledek $2/(x+1)$ při všech původních zákazech.
+Podmínky $x\ne0,-2$. Po rozkladu
+\[\frac{(x-2)(x+2)}x\cdot\frac{3x}{x+2}=3(x-2).\]
 \end{prikladReseniBox}
-
-
-\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
-Uprav $\frac{x^2-4}{x^2-x}:\frac{x+2}{x-1}$.
+\blok{Dělení: dělitel nesmí být nula}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2: zkontroluj tři podmínky}]
+Uprav $\displaystyle\frac{x^2-1}{x+2}:\frac{x-1}{x+2}$.
 \tcblower
-Jmenovatele vyžadují $x\ne0,1$, nenulový dělitel navíc $x\ne-2$. Potom $\frac{(x-2)(x+2)}{x(x-1)}\frac{x-1}{x+2}=\frac{x-2}{x}$. Hodnota $x=2$ je přípustná a dává nulu.
+První i druhý zlomek vyžadují $x\ne-2$. Druhý zlomek nesmí být $0$, tedy $x\ne1$.
+\[\frac{(x-1)(x+1)}{x+2}\cdot\frac{x+2}{x-1}=x+1,\quad x\ne-2,1.\]
 \end{prikladReseniBox}
-
-
-\blok{Samostatné procvičení}
-
-\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3: nulový čitatel dělitele}]
+Uprav $\displaystyle\frac{x}{x-3}:\frac{2x}{x+1}$.
+\tcblower
+Z jmenovatelů $x\ne3,-1$ a z nenulovosti druhého zlomku navíc $x\ne0$. Pak
+\[\frac{x}{x-3}\cdot\frac{x+1}{2x}=\frac{x+1}{2(x-3)}.\]
+\end{prikladReseniBox}
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[breakable=false,title={Procvičení: podmínky před každou operací}]
 \begin{enumerate}[label=\alph*)]
-\item Uprav $\frac{3a}{a-1}\cdot\frac{(a-1)^2}{6a}$.
-\item Uprav $\frac{x^2-1}{x+2}:\frac{x-1}{x+2}$.
-\item Uprav $\frac{x}{x-3}:\frac{2x}{x+1}$.
+\item $\frac{3a}{a-1}\cdot\frac{(a-1)^2}{6a}$;
+\item $\frac{x^2-4}{x+1}\cdot\frac{x+1}{2-x}$;
+\item $\frac{x^2-1}{x}:\frac{x-1}{2x}$;
+\item $\frac{x^2-9}{x^2-x}:\frac{x+3}{x}$;
+\item $\frac{a+1}{a-2}:\frac{(a+1)^2}{a-2}$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $\frac{a-1}{2}$ při $a\ne0,1$.
-\item $x+1$ při $x\ne-2,1$. První zákaz zajišťuje existenci obou zlomků, druhý nenulovost dělitele.
-\item $\frac{x+1}{2(x-3)}$ při $x\ne3,-1,0$. Hodnota $x=0$ je zakázána kvůli nulovému děliteli.
-\end{enumerate}
-\end{zadaniReseniBox}
-
-
-\poznamka{V učebnici jsou v obecném vzorci pro dělení vypsány jen dvě ze tří podmínek. V této přípravě trváme také na existenci původního dělitele. Učebnici neupravujeme. Chybu žáka odhalí zkouška hodnoty, která po převrácení zmizela z jmenovatele.}
-
-
-\blok{Navazující procvičování ve třídě}
-
-\begin{zadaniReseniBox}[title={Navázání: nulový čitatel a nulový dělitel},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Uprav $\frac{x^2-9}{x^2-x}:\frac{x+3}{x}$ a urči, zda lze dosadit $x=3$.
-\item Rezerva: uprav $\frac{x^2-4}{x+1}\cdot\frac{x+1}{2-x}$.
-\item Rezerva: porovnej podmínky součinu a podílu: $\frac{x}{x-1}\cdot\frac{x+2}{x+3}$ a $\frac{x}{x-1}:\frac{x+2}{x+3}$.
-\end{enumerate}
-\tcblower
-\begin{enumerate}[label=\alph*)]
-\item $x\ne0,1,-3$; výsledek $\frac{x-3}{x-1}$. Hodnota $x=3$ je přípustná a dává nulu, protože dělitel tehdy nulový není.
-\item Podmínky $x\ne-1,2$; z $2-x=-(x-2)$ dostaneme $-(x+2)$.
-\item U součinu $x\ne1,-3$; $x=-2$ je povoleno. U podílu navíc $x\ne-2$, protože druhý zlomek nesmí být nulový. Nulový první čitatel je v obou případech přípustný.
-\end{enumerate}
-\end{zadaniReseniBox}
-
-
-\poznamka{Základ: původní příklady a nová první položka s rozhodnutím o nule. Nová druhá a třetí položka jsou rezerva, která oddělí existenci zlomku od nenulovosti dělitele. Domácí čtveřici kontroluj zpětným vynásobením původním dělitelem na původním oboru; zakázané hodnoty se nesmějí vrátit.}
-
-\blok{Domácí procvičení}
-
-\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
-\begin{enumerate}[label=\alph*)]
-\item Uprav $\frac{x^2-4}{x}\cdot\frac{3x}{x+2}$.
-\item Uprav $\frac{x^2-1}{x}:\frac{x-1}{2x}$.
-\item Uprav $\frac{a+1}{a-2}:\frac{(a+1)^2}{a-2}$.
-\item Uprav $\frac{x}{x-2}:\frac{x+1}{x-2}$.
-\end{enumerate}
-\tcblower
-\begin{enumerate}[label=\alph*)]
-\item $3(x-2)$, $x\ne0,-2$.
+\item $\frac{a-1}{2}$, $a\ne0,1$.
+\item $-(x+2)$, $x\ne-1,2$.
 \item $2(x+1)$, $x\ne0,1$.
+\item $\frac{x-3}{x-1}$, $x\ne0,1,-3$.
 \item $\frac1{a+1}$, $a\ne2,-1$.
-\item $\frac{x}{x+1}$, $x\ne2,-1$.
 \end{enumerate}
 \end{zadaniReseniBox}
-
+\poznamka{Nech vyznačit rozdíl mezi nulovým prvním čitatelem (při jinak splněných podmínkách nevadí) a nulovým druhým zlomkem při dělení (zakázáno).}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření: srovnej podmínky}]
+Pro které hodnoty existuje $\frac{x}{x-1}\cdot\frac{x+2}{x+3}$ a pro které $\frac{x}{x-1}:\frac{x+2}{x+3}$?
+\tcblower
+Součin: $x\ne1,-3$. Podíl: $x\ne1,-3,-2$, protože při $x=-2$ by byl druhý zlomek nulový.
+\end{zadaniReseniBox}
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol: násobení, dělení, podmínky}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{x^2-1}{x+3}\cdot\frac{x+3}{x-1}$;
+\item $\frac{x}{x-2}:\frac{x+1}{x-2}$;
+\item $\frac{a^2-4}{a}\cdot\frac{2a}{a+2}$;
+\item $\frac{x^2-9}{x^2-3x}:\frac{x+3}{x}$;
+\item $\frac{a+2}{a-1}:\frac{(a+2)^2}{a-1}$;
+\item $\frac{x^2-4}{x^2-1}\cdot\frac{x+1}{x+2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x+1$, $x\ne-3,1$.
+\item $\frac{x}{x+1}$, $x\ne2,-1$.
+\item $2(a-2)$, $a\ne0,-2$.
+\item $1$, $x\ne0,3,-3$; tři zákazy zůstávají i po krácení.
+\item $\frac1{a+2}$, $a\ne1,-2$.
+\item $\frac{x-2}{x-1}$, $x\ne-2,-1,1$.
+\end{enumerate}
+\end{zadaniReseniBox}
 \end{document}
