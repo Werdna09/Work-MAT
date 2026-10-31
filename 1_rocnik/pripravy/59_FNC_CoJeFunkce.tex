@@ -1,0 +1,252 @@
+% Work/MAT — 1. ročník — hodina 59: Co je funkce?
+% Návaznost: 58_ALG_OpakovaniAOverovaniUprav; 60_FNC_DefinicniOborAOborHodnot.
+% Autorova učebnice: ucebnice/02_Funkce_a_rovnice/Zaklady_funkci/Funkce.tex,
+%   zejména „Co je funkce“ a „Způsoby zadání funkce“.
+% Metodické zdroje: Realisticky.cz 020103 Zobrazení,
+%   020104 Funkce, definiční obor, 020105 Graf funkce I.
+% Formulace, diagramy, graf a úlohy jsou vlastní; externí lekce nejsou opisovány.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{1. ročník}{Funkce}{59}{Co je funkce?}
+\begin{document}
+
+\poznamka{\textbf{Jádro na 45 minut:} motivace 4 min, přiřazovací diagramy
+7 min, základní definice 6 min, značení 5 min, způsoby zadání 8 min,
+samostatné procvičení 10 min a kontrola 5 min. Množinové vyjádření přes
+kartézský součin je \textbf{doplňující pohled} pro žáky, nikoli další
+povinný výklad v této hodině. Nejde o úvod do lineárních funkcí;
+podrobněji budeme obory určovat v hodině 60 a grafy číst v hodině 61.}
+
+\blok{Kdy jedna veličina závisí na druhé?}
+Čtverec má stranu délky $a$ a obsah $S=a^2$. Pro stranu délky $2\,\mathrm{cm}$
+je obsah $4\,\mathrm{cm}^2$; pro stranu délky $3\,\mathrm{cm}$ je obsah
+$9\,\mathrm{cm}^2$. \textbf{Každé přípustné délce strany odpovídá právě jeden
+obsah.} Délka strany je \emph{vstup}, obsah je \emph{výstup}.
+
+Podobné přiřazení vzniká při výpočtu ceny podle počtu kusů nebo při určování
+vzdálenosti od nuly pomocí absolutní hodnoty. Není přitom důležité, zda
+výstupy rostou rovnoměrně, zda se některé opakují či zda pravidlo popisuje
+přímku. Rozhodující je \emph{jednoznačnost přiřazení}.
+
+\blok{Co smíme nazvat funkcí?}
+Podívej se na dva způsoby přiřazení. V levém diagramu má každý vstup právě
+jednu šipku; v pravém má jeden vstup dva různé výstupy.
+\begin{center}
+\begin{minipage}[t]{0.48\linewidth}\centering
+\begin{tikzpicture}[>=Latex,scale=.88,every node/.style={font=\small}]
+\draw (0,0) ellipse (.65 and 1.05);
+\draw (3.25,0) ellipse (.65 and 1.05);
+\node at (0,1.35) {$A$};\node at (3.25,1.35) {$B$};
+\foreach \yy/\lab in {.65/-1,0/0,-.65/1} {\fill (0,\yy) circle (2pt);\node[left=5pt] at (0,\yy) {$\lab$};}
+\foreach \yy/\lab in {.65/0,-.10/1,-.75/2} {\fill (3.25,\yy) circle (2pt);\node[right=5pt] at (3.25,\yy) {$\lab$};}
+\draw[->] (.11,.65)--(3.08,-.10);
+\draw[->] (.11,0)--(3.08,.65);
+\draw[->] (.11,-.65)--(3.08,-.10);
+\end{tikzpicture}
+
+\small\textbf{Funkce.} Různé vstupy mohou mít stejný výstup.
+\end{minipage}\hfill
+\begin{minipage}[t]{0.48\linewidth}\centering
+\begin{tikzpicture}[>=Latex,scale=.88,every node/.style={font=\small}]
+\draw (0,0) ellipse (.65 and 1.05);
+\draw (3.25,0) ellipse (.65 and 1.05);
+\node at (0,1.35) {$A$};\node at (3.25,1.35) {$B$};
+\foreach \yy/\lab in {.5/1,-.55/2} {\fill (0,\yy) circle (2pt);\node[left=5pt] at (0,\yy) {$\lab$};}
+\foreach \yy/\lab in {.65/a,0/b,-.65/c} {\fill (3.25,\yy) circle (2pt);\node[right=5pt] at (3.25,\yy) {$\lab$};}
+\draw[->] (.11,.5)--(3.08,0);
+\draw[->] (.11,.5) to[bend left=16] (3.08,.65);
+\draw[->] (.11,-.55)--(3.08,-.65);
+\end{tikzpicture}
+
+\small\textbf{Není funkce.} Vstup $1$ má dva různé výstupy.
+\end{minipage}
+\end{center}
+
+\begin{definiceBox}
+\textbf{Funkce} $f\colon A\to B$ je přiřazení, které \textbf{každému}
+prvku $x\in A$ přiřazuje \textbf{právě jeden} prvek $y\in B$.
+Tento prvek zapisujeme $y=f(x)$. Množina $A$ se nazývá
+\textbf{definiční obor} funkce a značí se $D(f)$.
+\end{definiceBox}
+
+Zápis $f(x)$ čteme \uv{funkční hodnota v bodě $x$}: $f$ označuje celou
+funkci, $x$ její \textbf{argument} (vstup) a $f(x)$ odpovídající výstup.
+\textbf{Nejde o součin $f\cdot x$.} Výstupy se mohou opakovat, ale jednomu
+vstupu nesmějí odpovídat dvě různé hodnoty. Podrobné určování $D(f)$ a
+oboru hodnot přijde až v příští hodině.
+
+\blok{Značení funkce}
+\begin{center}
+\small
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\linewidth}{@{}p{28mm}X@{}}
+\toprule
+\textbf{Zápis} & \textbf{Význam}\\
+\midrule
+$f$ & Funkce jako celek (celé přiřazení).\\
+$f(x)$ & Funkční hodnota v argumentu $x$; nejde o součin $f\cdot x$.\\
+$y=f(x)$ & Přiřazení argumentu $x$ odpovídající hodnotě $y$.\\
+$f(x)=2x+3$ & Předpis pro výpočet funkční hodnoty.\\
+$y=2x+3$ & Tentýž předpis zapsaný pomocí proměnných $x,y$.\\
+$f\colon x\mapsto 2x+3$ & Zápis přiřazovacího pravidla.\\
+$f\colon A\to B$ & Funkce přiřazuje prvkům množiny $A$ hodnoty z $B$.\\
+\bottomrule
+\end{tabularx}
+\end{center}
+Rozlišuj \textbf{funkci} $f$, její \textbf{argument} $x$ a
+\textbf{funkční hodnotu} $f(x)$. Samotný vzorec ještě nemusí určit
+všechny přípustné argumenty; to budeme řešit v následující hodině.
+
+
+\blok{Jiný matematický pohled na funkci}
+\poznamka{Následující dvě definice ukazují, že funkci lze popsat také jako
+množinu uspořádaných dvojic. V běžné 45minutové hodině je stačí stručně
+představit; podrobný formální zápis je rozšířením pro zájemce.}
+
+\begin{definiceBox}[title={Definice: kartézský součin}]
+\textbf{Kartézský součin} množin $A$ a $B$ je množina všech uspořádaných
+dvojic, jejichž první složka patří do $A$ a druhá do $B$:
+\[
+A\times B=\{(x,y)\mid x\in A,\ y\in B\}.
+\]
+Na pořadí složek záleží: obecně $(x,y)\neq(y,x)$.
+\end{definiceBox}
+
+\begin{definiceBox}[title={Definice: funkce jako množina dvojic}]
+\textbf{Funkci} $f$ z množiny $A$ do množiny $B$ lze chápat jako takovou
+podmnožinu $A\times B$, pro kterou platí
+\[
+\forall x\in A\;\exists! y\in B:\ (x,y)\in f.
+\]
+Každý prvek $A$ tedy vystupuje jako první složka právě jedné dvojice.
+Zápis $\exists!$ čteme \uv{existuje právě jeden}. Jde o tutéž
+jednoznačnost jako v předchozí definici, jen vyjádřenou formálně.
+\end{definiceBox}
+
+Například pro $A=\{1,2\}$ a $B=\{a,b,c\}$ dostaneme
+\[
+A\times B=\{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)\}.
+\]
+Množina $f=\{(1,a),(2,c)\}$ popisuje funkci $A\to B$.
+Množina $\{(1,a),(1,b),(2,c)\}$ funkci nepopisuje: prvnímu vstupu
+přiřazuje dvě různé hodnoty.
+
+\begin{prikladReseniBox}[title={Příklad 1: jedna funkce, několik argumentů}]
+Je dána funkce $f(x)=x^2$ pro $x\in\mathbb R$. Vypočti $f(-3)$,
+$f(0)$ a $f(2)$. Mohou mít dva různé argumenty stejnou hodnotu?
+\tcblower
+$ f(-3)=(-3)^2=9$, $f(0)=0^2=0$, $f(2)=2^2=4$.
+Ano: $f(-2)=4=f(2)$. Tím není porušena definice funkce, protože
+\emph{každý jednotlivý} argument má stále jen jednu hodnotu.
+\end{prikladReseniBox}
+
+\blok{Čtyři způsoby zadání funkce}
+Jednu a tutéž funkci můžeme zadat několika způsoby.
+Uvažujme $f\colon\mathbb R\to\mathbb R$, kde $f(x)=x^2$.
+
+\begin{enumerate}[label=\textbf{\arabic*.},leftmargin=2em,itemsep=1.5pt]
+\item \textbf{Tabulkou:} uvedeme argumenty a odpovídající hodnoty.
+U funkce na celém $\mathbb R$ zachycuje konečná tabulka jen vybrané body.
+\item \textbf{Předpisem:} $f(x)=x^2$ pro všechna $x\in\mathbb R$.
+\item \textbf{Grafem:} znázorníme množinu bodů $(x,f(x))$ v rovině.
+\item \textbf{Vlastností:} dvojice $(x,y)$ patří k funkci právě tehdy,
+když $x\in\mathbb R$ a $y$ je druhá mocnina čísla $x$; množinově
+$f=\{(x,y)\in\mathbb R^2\mid y=x^2\}$.
+\end{enumerate}
+
+\begin{center}
+\begin{minipage}{.42\linewidth}\centering
+\small
+\begin{tabular}{@{}c|rrrrr@{}}
+$x$ & $-2$ & $-1$ & $0$ & $1$ & $2$\\\midrule
+$f(x)$ & $4$ & $1$ & $0$ & $1$ & $4$
+\end{tabular}
+
+\vspace{2mm}
+\footnotesize Tabulka ukazuje \emph{vybrané} hodnoty,
+nikoli všechny reálné argumenty.
+\end{minipage}\hfill
+\begin{minipage}{.54\linewidth}\centering
+\begin{tikzpicture}[x=.78cm,y=.53cm,>=Latex]
+\draw[step=1,gray!20,very thin] (-2.5,-.45) grid (2.5,4.5);
+\draw[->] (-2.65,0)--(2.75,0) node[right] {\small $x$};
+\draw[->] (0,-.5)--(0,4.85) node[above] {\small $y$};
+\foreach \i in {-2,-1,1,2} \node[below=2pt,font=\scriptsize] at (\i,0) {$\i$};
+\foreach \i in {1,2,3,4} \node[left=2pt,font=\scriptsize] at (0,\i) {$\i$};
+\draw[very thick,domain=-2.12:2.12,samples=80] plot (\x,{\x*\x});
+\fill (-2,4) circle (2pt);\fill (0,0) circle (2pt);\fill (2,4) circle (2pt);
+\node[font=\scriptsize] at (1.9,2.9) {$y=x^2$};
+\end{tikzpicture}
+\end{minipage}
+\end{center}
+
+\poznamka{V této hodině po žácích ještě nechtěj sestrojování paraboly.
+Graf je jen jeden ze způsobů zápisu závislosti. V hodině 61
+budou podrobně číst souřadnice a rozhodovat, zda obrazec může být grafem funkce.}
+
+\begin{prikladReseniBox}[title={Příklad 2: funkce není vždy druhá mocnina}]
+Pro $g(x)=|x|$ a $h(x)=2x+1$ vypočti $g(-3)$ a $h(-3)$.
+Rozhodni, zda obě funkce přiřazují argumentu $-3$ stejný výstup.
+\tcblower
+$g(-3)=|-3|=3$, zatímco $h(-3)=2(-3)+1=-5$.
+Obě pravidla jsou funkcemi, ale jsou to \emph{různé funkce}.
+Z definice nevyplývá, že různá pravidla musí mít stejné hodnoty.
+\end{prikladReseniBox}
+
+\blok{Samostatné procvičení — základ}
+\begin{zadaniReseniBox}[title={Samostatná práce}]
+\begin{enumerate}[label=\alph*)]
+\item Funkce $p$ je na $A=\{1,2,3\}$ zadána dvojicemi
+$\{(1;4),(2;4),(3;9)\}$. Je to funkce? Proč?
+\item Je přiřazení $\{(1;2),(1;3),(2;4)\}$ funkcí
+z $A=\{1,2\}$? Vysvětli.
+\item Pro $q(x)=x^2+1$ urči $q(-2)$ a $q(3)$.
+\item Pro $r(x)=|x-2|$ urči $r(0)$ a $r(5)$.
+\item U funkce $f(x)=x^2$ najdi dva různé argumenty se stejnou hodnotou $9$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Ano. Každý vstup má právě jeden výstup; opakování hodnoty $4$ nevadí.
+\item Ne. Vstupu $1$ odpovídají dvě různé hodnoty, $2$ a $3$.
+\item $q(-2)=(-2)^2+1=5$, $q(3)=3^2+1=10$.
+\item $r(0)=|0-2|=2$, $r(5)=|5-2|=3$.
+\item Například $x=-3$ a $x=3$, protože $(-3)^2=3^2=9$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Volitelná otázka pro rychlé: tabulka s hodnotami $2,1,2$ při
+argumentech $-1,0,1$ plně určuje funkci na $\{-1,0,1\}$, ale nikoli na
+celém $\mathbb R$. Připravuje to příští hodinu.}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $f(x)=x^2-2$ vypočti $f(-3)$, $f(0)$ a $f(3)$.
+\item Pro $g(x)=|x+1|$ urči $g(-4)$, $g(-1)$ a $g(2)$.
+\item Je $S=\{(-1;1),(0;0),(1;1),(1;2)\}$ grafem funkce na
+$\{-1,0,1\}$? Zdůvodni.
+\item Funkce $h$ je na $\{0,1,2,3\}$ zadána hodnotami
+$h(0)=2$, $h(1)=3$, $h(2)=2$, $h(3)=5$.
+Vypiš všechny uspořádané dvojice a najdi argumenty, pro které je $h(x)=2$.
+\item Čtverec má stranu $a>0$ v centimetrech a obsah $S(a)=a^2$
+v $\mathrm{cm}^2$. Urči $S(5)$ a vysvětli, proč hodnoty $a=-5$ do tohoto modelu nepatří.
+\item Pro $u(x)=x^2$, $x\in\mathbb R$, najdi všechny argumenty, kterým
+funkce přiřadí hodnotu $16$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $f(-3)=9-2=7$, $f(0)=-2$, $f(3)=9-2=7$.
+\item $g(-4)=|-3|=3$, $g(-1)=0$, $g(2)=|3|=3$.
+\item Ne: vstupu $1$ přísluší dvě různé hodnoty, $1$ a $2$.
+\item $\{(0;2),(1;3),(2;2),(3;5)\}$; hodnotu $2$ mají argumenty $0$ a $2$.
+\item $S(5)=25\,\mathrm{cm}^2$. Délka strany nemůže být záporná;
+$a=-5$ není přípustný argument \emph{tohoto modelu}, i když $(-5)^2$ existuje.
+\item $x=-4$ nebo $x=4$, protože obě čísla mají druhou mocninu $16$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+% Závěrečná kontrola: vysvětlit jednoznačnost, rozlišit f od f(x),
+% vyvrátit mylné tvrzení, že různé vstupy musejí mít různé výstupy.
+\end{document}
