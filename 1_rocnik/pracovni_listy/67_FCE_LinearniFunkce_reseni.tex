@@ -1,0 +1,108 @@
+% Samostatný klíč pro učitele k 67_SB_LinearniFunkce.tex.
+\documentclass[10pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage[czech]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,geometry,enumitem,booktabs,longtable,array}
+\geometry{top=14mm,bottom=16mm,left=19mm,right=19mm}
+\pagestyle{plain}\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\setlist[enumerate]{leftmargin=1.4em,itemsep=2pt,topsep=2pt}
+\newcommand{\key}[1]{\subsection*{Úloha #1}}
+\begin{document}
+{\Large\bfseries Lineární funkce --- výsledky a řešení}\hfill 67. hodina\par
+\smallskip
+\textit{Učitelský klíč: průběžné výpočty jsou uvedeny tam, kde je potřeba rozhodnout o metodě, znaménku, kraji oboru nebo o počtu grafů.}
+\key{1: Rychlé náčrty}
+Následující dvojice bodů vždy určují příslušnou přímku. Konstantní grafy jsou vodorovné.
+\begin{center}\small
+\begin{tabular}{@{}cclll@{}}\toprule
+& Předpis & První bod & Druhý bod & Průběh\\\midrule
+ a) & $y=1{,}5$ & $[0;1{,}5]$ & $[2;1{,}5]$ & konstantní\\
+ b) & $y=3$ & $[0;3]$ & $[1;3]$ & konstantní\\
+ c) & $y=-\pi$ & $[0;-\pi]$ & $[1;-\pi]$ & konstantní\\
+ d) & $y=2x$ & $[0;0]$ & $[1;2]$ & rostoucí\\
+ e) & $y=3x$ & $[0;0]$ & $[1;3]$ & rostoucí\\
+ f) & $y=-0{,}5x$ & $[0;0]$ & $[2;-1]$ & klesající\\
+ g) & $y=x+2$ & $[0;2]$ & $[1;3]$ & rostoucí\\
+ h) & $y=-2x+4$ & $[0;4]$ & $[1;2]$ & klesající\\
+ i) & $y=0{,}5x-1$ & $[0;-1]$ & $[2;0]$ & rostoucí\\
+ j) & $y=x-3$ & $[0;-3]$ & $[3;0]$ & rostoucí\\
+ k) & $y=\frac32x-1$ & $[0;-1]$ & $[2;2]$ & rostoucí\\
+ l) & $y=-\frac32x+1$ & $[0;1]$ & $[2;-2]$ & klesající\\\bottomrule
+\end{tabular}\end{center}
+\key{2: Předpis z hodnot}
+\begin{enumerate}[label=\alph*)]
+\item Z $h(3)=-5$ a $h(-1)=4$ plyne
+$a=\frac{-5-4}{3-(-1)}=-\frac94$. Z $-5=3(-\frac94)+b$ dostáváme
+$b=\frac74$, tedy $\displaystyle h(x)=-\frac94x+\frac74$. Zkouška: $h(-1)=4$.
+\item $f(0)=b=1$. Z $f(2)=5$ plyne $2a+1=5$, tedy $a=2$ a $f(x)=2x+1$.
+\item Pro $g(x)=ax+b$ je $g(x+1)-g(x)=a=2$ a $g(0)=b=3$; tedy $g(x)=2x+3$.
+\end{enumerate}
+\key{3: Dva body dvěma postupy}
+Ze soustavy $a+b=1$, $3a+b=-2$ po odečtení dostaneme $2a=-3$, tj. $a=-\frac32$, $b=\frac52$.\par
+Pomocí směrnice: $a=\frac{-2-1}{3-1}=-\frac32$ a $b=1-a=\frac52$.
+Oběma postupy je $\displaystyle f(x)=-\frac32x+\frac52$.
+\key{4: Směrnice z hodnoty}
+$5=2a-3$, tedy $a=4$ a $f(x)=4x-3$. Funkce je rostoucí, protože $a>0$; body $[0;-3]$ a $[2;5]$.
+\key{5: Předpis ze dvou hodnot}
+$\displaystyle a=\frac{1{,}5-(-9)}{1-(-2)}=\frac{10{,}5}{3}=3{,}5=\frac72$.
+Z $1{,}5=\frac72+b$ dostaneme $b=-2$,
+$\displaystyle f(x)=\frac72x-2$. Funkce roste.
+\key{6: Stejná směrnice}
+Všech pět přímek má $a=0{,}7$; liší se jen $b$. Konkrétní předpisy:
+$y=0{,}7x-3$, $y=0{,}7x-1{,}5$, $y=0{,}7x$,
+$y=0{,}7x+1{,}5$, $y=0{,}7x+2$.
+Jde o pět rovnoběžných grafů (každý protíná osu $y$ v jiném bodě).
+\key{7: Stejná hodnota v nule}
+Předpisy: $y=3$, $y=-3x+3$, $y=-4x+3$, $y=1{,}4x+3$ a $y=5x+3$.
+Všechny grafy procházejí bodem $[0;3]$. První je konstantní,
+druhá a třetí klesají, čtvrtá a pátá rostou.
+\key{8: Funkce po částech}
+Jedno správné řešení s přímými úseky:
+\[
+f(x)=\begin{cases}
+x+5,&-5\le x\le 0,\\
+5-\frac52x,&0<x\le4,\\
+-5,&x>4.
+\end{cases}
+\]
+Graf spojuje $[-5;0]$ s $[0;5]$, potom $[0;5]$ s $[4;-5]$ a pokračuje vodorovně na hladině $y=-5$ pro $x>4$.
+$D(f)=\langle-5;+\infty)$, $H(f)=\langle-5;5\rangle$,
+maximum $5$ při $x=0$, minimum $-5$ při všech $x\ge4$.\par
+\textit{Pozor:} Samotný požadavek růstu a poklesu neznamená jednoznačný předpis, pokud nevyžadujeme po částech lineární graf.
+\key{9: Dva grafy po částech}
+$f_1(x)=|x|$, $D(f_1)=\mathbb R$, $H(f_1)=\langle0;+\infty)$; graf tvaru písmene V s vrcholem $[0;0]$.\par
+$f_2$ má pro $x<2$ přímku $y=2x+1$ s prázdným bodem $[2;5]$; pro $x\ge2$ vodorovnou polopřímku $y=1$ s plným bodem $[2;1]$.
+$D(f_2)=\mathbb R$, $H(f_2)=(-\infty;5)$; v $x=2$ graf skokově přejde na hodnotu $1$.
+\newpage
+\section*{Doplňující úlohy 10--17}
+\key{10: Předpis z grafu}
+Plná $p(x)=-x+1$ (body $[0;1]$, $[1;0]$); čárkovaná
+$q(x)=\frac12x+2$ (body $[0;2]$, $[2;3]$);
+tečkovaná $r(x)=-2$ (body $[0;-2]$, $[2;-2]$).
+Směrnice po řadě $-1$, $\frac12$, $0$; průsečíky s osou $y$ jsou $[0;1]$, $[0;2]$, $[0;-2]$.
+\key{11: Parametr z intervalu}
+Krajní přímky jsou $y=2x-2$ a $y=2x+1$.
+Pro každé $b\in\langle-2;1\rangle$ je směrnice $2$ a průsečík s osou $y$ je $[0;b]$. Celá rodina má nekonečně mnoho přímek (různá $b$); např. mezi krajními jsou $b=-1$, $0$, $\frac12$.
+\key{12: Omezený obor}
+$D(g)=\langle0;3)$, graf má plný bod $[0;4]$ a prázdný $[3;-2]$;
+$H(g)=(-2;4\rangle$. Z $-2x+4=0$ plyne nulový bod $x=2$ a průsečík $[2;0]$;
+průsečík s osou $y$ je $[0;4]$.
+\key{13: Rovnoběžka bodem}
+Stejná směrnice $a=\frac32$. Dosazením bodu $[2;-1]$:
+$-1=3+b$, tedy $b=-4$ a $f(x)=\frac32x-4$.
+Průsečíky $[0;-4]$ a $[\frac83;0]$.
+\key{14: Porovnání tarifů}
+$A(m)=180+3m$, $B(m)=60+5m$, $m\in\mathbb N_0$.
+Z $180+3m=60+5m$ plyne $m=60$ a společná cena $360$ Kč.
+Pro $m<60$ je výhodnější B, pro $m>60$ A. Na grafu jde o průsečík $[60;360]$.
+\key{15: Vlastnosti podle koeficientu}
+$a=-2$: $f(x)=-2x+2$ klesající, prostá, $H=\mathbb R$.
+$a=0$: $f(x)=2$ konstantní, na $\mathbb R$ neprostá, $H=\{2\}$.
+$a=3$: $f(x)=3x+2$ rostoucí, prostá, $H=\mathbb R$.
+\key{16: Daný nulový bod}
+$0=2\cdot3+b$, takže $b=-6$.
+Funkce $f(x)=2x-6$ prochází $[0;-6]$ a $[3;0]$, je rostoucí.
+\key{17: Vynechaný bod}
+$D(u)=\mathbb R\setminus\{2\}$. Pro $x\ne2$ platí
+$u(x)=\frac{(x-2)(x+2)}{x-2}=x+2$, ale v $x=2$ původní funkce definována není.
+Od přímky $y=x+2$ se graf liší chybějícím bodem $[2;4]$.
+\end{document}

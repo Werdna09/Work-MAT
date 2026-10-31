@@ -1,0 +1,57 @@
+% Učitelský klíč k pracovnímu listu 64 (nikoli žákovská verze).
+\documentclass[11pt,a4paper]{article}
+\input{../../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Funkce — řešení PL}{64}{Lineární funkce}
+\begin{document}
+\blok{Úloha 1 — grafy z předpisů}
+Pro konstrukci stačí dva body:
+\[
+\begin{array}{c|cc|cc}
+ & a & b & [x_1;y_1] & [x_2;y_2]\\\hline
+f(x)=x-2 & 1 & -2 & [0;-2] & [2;0]\\
+g(x)=-2x+1 & -2 & 1 & [0;1] & [1;-1]\\
+h(x)=\frac12x+2 & \frac12 & 2 & [0;2] & [2;3]
+\end{array}
+\]
+Všechny tři grafy jsou při definičním oboru $\mathbb R$ přímky.
+\blok{Úloha 2 — parametry a monotonie}
+$f$ roste, $g$ klesá, $h$ roste. Průsečíky s osou $y$ jsou
+$[0;-2]$, $[0;1]$ a $[0;2]$.
+\blok{Úloha 3 — předpisy ze dvou bodů}
+\begin{enumerate}[label=\alph*)]
+\item $A[0;2]$, $B[2;6]$: $a=\frac{6-2}{2-0}=2$, $b=2$,
+      tedy $f(x)=2x+2$. Zkouška $f(2)=6$.
+\item $C[-2;0]$, $D[2;-2]$: $a=\frac{-2-0}{2-(-2)}=-\frac12$.
+      Rovnice $0=(-\frac12)(-2)+b$ dává $b=-1$;
+      tedy $g(x)=-\frac12x-1$. Zkouška $g(2)=-2$.
+\end{enumerate}
+\blok{Úloha 4 — předpisy z grafu}
+\begin{itemize}
+\item Plná $p$: body $[0;-1]$ a $[1;1]$, tedy $a=2$, $b=-1$ a $p(x)=2x-1$.
+\item Čárkovaná $q$: body $[0;3]$ a $[1;2]$, tedy $a=-1$, $b=3$ a $q(x)=-x+3$.
+\item Tečkovaná $r$: body $[0;1]$ a $[2;2]$, tedy $a=\frac12$, $b=1$ a $r(x)=\frac12x+1$.
+\end{itemize}
+\blok{Úloha 5 — posun}
+Grafy $y=x$, $y=x+2$ a $y=x-1$ jsou navzájem rovnoběžné, všechny mají směrnici $1$.
+Absolutní člen $b$ způsobí svislý posun o $b$ vzhledem k přímce $y=x$.
+\blok{Úloha 6 — konečná množina parametru}
+Pro $a\in\{-2;0;1\}$ vznikají právě tři předpisy:
+\[
+ y=-2x+1,\qquad y=1,\qquad y=x+1.
+\]
+Všechny přímky procházejí bodem $[0;1]$; mají odlišné směrnice.
+\blok{Úloha 7 — parametr z intervalu}
+Krajní přímky jsou $y=x-1$ a $y=x+2$. Pro libovolné reálné
+$b\in\langle-1;2\rangle$ je to jiná přímka se směrnicí $1$.
+Je jich nekonečně mnoho a tvoří rodinu funkcí, nikoli jedinou funkci.
+\blok{Úloha 8 — omezený definiční obor}
+$D(f)=\langle-2;1)$, neboť tak zní zadání. Koncové body grafu jsou
+$[-2;4]$ (plný) a $[1;1]$ (prázdný). Funkce klesá, takže
+$H(f)=(1;4\rangle$.
+\blok{Úloha 9 — bonus}
+$a=(7-3)/(3-1)=2$, z $3=2+b$ plyne $b=1$, proto $y=2x+1$.
+Graf je rovnoběžný s $y=2x-1$ a leží o dvě jednotky výše.
+\poznamka{U uznání grafů trvej na zřejmém měřítku, správně zakreslených bodech
+ a jednoznačném přiřazení předpisu. U úlohy 7 lze místo jednotlivých přímek názorně vyznačit
+ pás, ale vysvětli, že pás není grafem jedné funkce.}
+\end{document}

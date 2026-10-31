@@ -1,0 +1,96 @@
+% Work/MAT — 1. ročník, hodina 64.
+% Navazuje na 63_Lineární funkce a její parametry, využívá samostatný žákovský pracovní list.
+% Zdrojová inspirace: vlastní učebnice Lineární funkce.tex; Realisticky.cz 020110 a 020111.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Funkce}{64}{Samostatné procvičování lineárních funkcí}
+\begin{document}
+\blok{Organizace hodiny}
+Tato hodina nezavádí nový matematický pojem. Navazuje na předchozí výklad lineárních funkcí,
+koeficientů $a,b$ a práce s jejich grafy. Cílem je \textbf{samostatně} přecházet mezi předpisem,
+grafem, tabulkou a dvěma zadanými body; vysvětlit posuny a rozlišit konečnou a nekonečnou rodinu grafů.
+
+\begin{center}
+\begin{tabularx}{\linewidth}{@{}p{23mm}X@{}}\toprule
+Čas & Činnost\\\midrule
+0–5 min & Krátké zopakování $f(x)=ax+b$, $a=\Delta y/\Delta x$, $b=f(0)$; jak správně popsat graf.\\
+5–18 min & Pracovní list: základní úlohy 1–3; učitel obchází třídu, neopravuje vše hromadně.\\
+18–31 min & Úlohy 4–6: předpis z grafu, posuny, parametr z konečné množiny.\\
+31–40 min & Úlohy 7–8 podle tempa: parametr z intervalu a omezený definiční obor.\\
+40–45 min & Společné shrnutí dvou častých chyb, označení domácího dokončení.\\\bottomrule
+\end{tabularx}
+\end{center}
+\poznamka{Povinné minimum pro všechny: úlohy 1–5, z úlohy 6 alespoň dva grafy.
+Úlohy 7–8 jsou rozšíření pro svižnější třídu nebo domácí dokončení.
+Úloha 9 je dobrovolná náročnější rezerva. Pořadí i rozsah uprav podle skutečného tempa.}
+
+\blok{Pracovní list a očekávané postupy}
+\begin{zadaniReseniBox}[title={Úlohy 1–2: předpis, graf a koeficienty}]
+V úloze 1 sestroj do jedné soustavy grafy $f(x)=x-2$,
+$g(x)=-2x+1$ a $h(x)=\frac12x+2$. V úloze 2 doplň koeficienty a rozhodni o monotonii.
+\tcblower
+$f$ má body $[0;-2]$, $[2;0]$; $g$ body $[0;1]$, $[1;-1]$;
+$h$ body $[0;2]$, $[2;3]$.\par
+V úloze 2: $f$: $(a,b)=(1,-2)$, rostoucí;
+$g$: $(-2,1)$, klesající;
+$h$: $(\frac12,2)$, rostoucí.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Úlohy 3–4: předpis z dvojice bodů a z obrázku}]
+Urči předpis přímek přes $A[0;2]$, $B[2;6]$ a přes $C[-2;0]$, $D[2;-2]$.
+Na dalším obrázku pracovního listu odečti předpisy tří vyznačených přímek.
+\tcblower
+První $a=(6-2)/2=2$, $b=2$, tedy $y=2x+2$.
+Druhá $a=(-2-0)/(2-(-2))=-\frac12$,
+$0=(-\frac12)(-2)+b$, proto $b=-1$ a $y=-\frac12x-1$.\par
+Z obrázku: $p(x)=2x-1$ (plná čára), $q(x)=-x+3$ (čárkovaná),
+$r(x)=\frac12x+1$ (tečkovaná). V každém případě je třeba odečíst dva body
+nebo bod na ose $y$ a změnu $\Delta y$ na zvoleném $\Delta x$.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Úlohy 5–6: posuny a několik hodnot parametru}]
+V jedné soustavě načrtni $y=x$, $y=x+2$, $y=x-1$.
+Potom pro $a\in\{-2;0;1\}$ sestroj všechny grafy předpisu $y=ax+1$.
+\tcblower
+První tři přímky mají směrnici $1$, jsou rovnoběžné; oproti $y=x$ jsou
+posunuty o $2$ vzhůru a o $1$ dolů.\par
+Druhá trojice: $y=-2x+1$, $y=1$ a $y=x+1$.
+Všechny procházejí bodem $[0;1]$, ale mají různý sklon.
+Jde právě o tři grafy, protože množina parametru má tři prvky.
+\end{zadaniReseniBox}
+
+\newpage
+\begin{zadaniReseniBox}[title={Úlohy 7–8: interval parametru a omezený obor}]
+Pro $b\in\langle-1;2\rangle$ načrtni rodinu $y=x+b$.
+Zvlášť zakresli $y=-x+2$ s definičním oborem $\langle-2;1)$ a urči její obor hodnot.
+\tcblower
+Všechny přímky první rodiny mají směrnici $1$ a procházejí body
+$[0;b]$, kde $b\in\langle-1;2\rangle$. Krajní přímky jsou $y=x-1$ a $y=x+2$;
+mezi nimi leží \emph{nekonečně mnoho} dalších rovnoběžných přímek.
+Nejde o jednu novou funkci, ale o rodinu funkcí.\par
+Druhá funkce má krajní body $[-2;4]$ (plný) a $[1;1]$ (prázdný).
+$D=\langle-2;1)$ a $H=(1;4\rangle$.
+\end{zadaniReseniBox}
+
+\blok{Co žáci typicky pletou}
+\begin{itemize}
+\item Koeficient $b$ není změna výstupu, ale hodnota v nule; směrnice je $a$.
+\item Při výpočtu $a$ ze dvou bodů musí zůstat stejné pořadí indexů v čitateli i jmenovateli.
+\item Souřadnice bodu zapisujeme $[x;y]$; \emph{interval} zapisujeme s českými intervalovými závorkami.
+\item Množina $\{-2;0;1\}$ znamená tři grafy, zatímco interval $\langle-1;2\rangle$ nekonečnou rodinu.
+\item Při $x\in\langle-2;1)$ není graf nekonečná přímka, ale odpovídající úsečka bez pravého koncového bodu.
+\end{itemize}
+
+\blok{Domácí úkol}
+Dokončit nevyřešené úlohy 1–8 z pracovního listu. Jako samostatnou bonusovou úlohu 9
+určit předpis přímky procházející body $[1;3]$ a $[3;7]$ a porovnat jej s přímkou $y=2x-1$.
+
+\begin{zadaniReseniBox}[title={Rezerva: úloha 9}]
+Urči předpis podle bodů a vysvětli geometrický vztah ke grafu $y=2x-1$.
+\tcblower
+$a=(7-3)/(3-1)=2$, $3=2\cdot1+b$, takže $b=1$;
+$y=2x+1$. Přímka je s $y=2x-1$ rovnoběžná, leží o $2$ jednotky výše.
+\end{zadaniReseniBox}
+\poznamka{Žákovský pracovní list i samostatný klíč jsou přiloženy ve složce
+pracovních listů k funkcím. Žákovský soubor neobsahuje výsledky ani bodové hodnoty.}
+\end{document}

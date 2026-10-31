@@ -1,0 +1,61 @@
+% Hodina 67, výuka 1. ročníku. Sbírka obsahuje úlohy z fotografií dodaných učitelem a vlastní doplnění.
+% Příprava navazuje na aktualizované hodiny 63–66. K dispozici samostatné zadání, řešení a souřadnicové sítě.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Funkce}{67}{Souhrnné procvičování lineárních funkcí}
+\begin{document}
+\blok{Smysl a organizace hodiny}
+Hodina \textbf{nezavádí novou teorii}. Žáci samostatně volí a řeší úlohy ze sbírky,
+vracejí se k předpisu $y=ax+b$, grafu, směrnici, konstantní funkci, množinám parametrů,
+omezenému definičnímu oboru i grafům po částech. Na všechno ze sbírky 45 minut nestačí:
+žáci mají zvládnout vhodný výběr a umět zdůvodnit řešení. Učitel sleduje \emph{postup},
+nikoliv počet načrtnutých přímek.
+\begin{center}\small
+\begin{tabularx}{\linewidth}{@{}p{20mm}X@{}}\toprule
+Čas & Činnost\\\midrule
+0--5 min & Připomenout $a$, $b$, konstrukci přímky ze dvou bodů a úlohu s konstantní funkcí.\\
+5--17 min & Každý řeší základ: z úlohy 1 aspoň čtyři různorodé grafy, z úlohy 2 alespoň jednu část.\\
+17--32 min & Výběr: úlohy 3--7, zejména určení předpisu ze dvou bodů a rodiny přímek.\\
+32--41 min & Rychlejší žáci: úlohy 8--9 či vlastní náročnější úlohy 10--17. Ostatní dokončují zvolenou cestu.\\
+41--45 min & Společné porovnání metod, oprava jedné typické chyby; zadání domácího výběru.\\\bottomrule
+\end{tabularx}\end{center}
+\poznamka{Doporučené minimum není povinnost absolvovat všechny podúlohy. Aby se výuka opravdu vešla do 45 minut, při samostatné práci zvol nejprve úlohu 1: d), g), h), k) a úlohu 2: b). Následně si žák vybere alespoň jednu z úloh 3--5. Zbývající úlohy jsou zásoba a diferenciace; 8 a 9 jsou výrazně náročnější.}
+\blok{Metody, které mají žáci umět volit}
+\begin{zadaniReseniBox}[title={Předpis ze dvou bodů --- ukázková kontrola}]
+Určete přímku procházející body $A[1;1]$ a $B[3;-2]$ (sbírka, úloha 3).
+\tcblower
+$a=\dfrac{-2-1}{3-1}=-\dfrac32$. Dosadíme $1=-\frac32\cdot1+b$, tedy $b=\frac52$.
+Proto $f(x)=-\frac32x+\frac52$. Zkouška: $f(3)=-2$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Parametr jako konečná množina}]
+Co znamená $y=0{,}7x+b$ pro $b\in\{-3;-1{,}5;0;1{,}5;2\}$ (sbírka, úloha 6)?
+\tcblower
+Vznikne \emph{pět} grafů se společnou směrnicí $0{,}7$ a různými hodnotami $b$.
+Jsou rovnoběžné; procházejí jednotlivými body $[0;b]$. Nejde o jedinou přímku.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Různé úseky jednoho grafu}]
+Sbírka, úloha 8: ze zadání sestavte předpis po částech.
+\tcblower
+Vhodný model spojuje body $[-5;0]$, $[0;5]$, $[4;-5]$
+a od $x=4$ pokračuje vodorovně. Jeden možný předpis je
+\[
+ f(x)=\begin{cases}
+ x+5,&-5\le x\le0,\\
+ 5-\tfrac52x,&0<x\le4,\\
+ -5,&x>4.
+ \end{cases}
+\]
+$D(f)=\langle-5;+\infty)$, $H(f)=\langle-5;5\rangle$ a maximum je $5$ v $x=0$.
+Tento graf je \emph{jedním} řešením při výkladu po částech lineární funkce.
+\end{zadaniReseniBox}
+\blok{Diferenciace a opravy chyb}
+\begin{itemize}
+\item \textbf{Základ:} konstantní, rostoucí a klesající grafy; předpis z dvojice snadných hodnot.
+\item \textbf{Střední úroveň:} obecná dvojice bodů, přímky se společným $a$ či $b$, průsečíky s osami.
+\item \textbf{Rozšíření:} interval parametru (nekonečně mnoho grafů), otevřené krajní body, sestavení funkcí po částech a práce s nespojitým grafem.
+\item \textbf{Časté chyby:} záměna směrnice a hodnoty v nule; prohození souřadnic, nepopsané grafy, spojení bodů přes mezeru; výrok, že interval parametru určuje jedinou přímku.
+\end{itemize}
+\blok{Domácí procvičení a další využití sbírky}
+\textbf{Domácí úkol:} dokončit alespoň pět dalších podúloh z úlohy 1 a zvolit \textbf{dvě} různé úlohy z 2--7; rychlejší žáci si místo druhé úlohy mohou vybrat 8, 9 nebo některou z úloh 10--17. Všechny grafy musí mít popis a alespoň dva doložené body (není-li funkce zadána po částech).
+\poznamka{Podrobná samostatná řešení všech sedmnácti úloh a samostatný list se souřadnicovými sítěmi jsou uloženy ve složce \texttt{pracovni\_listy/Funkce}. Úlohy 1--9 jsou založeny na fotografiích předaných učitelem; 10--17 jsou vlastní doplňky. Sbírka slouží i pro pozdější opakování a diferenciaci. Při řešení používáme český zápis $[x;y]$, výsledky bez rámečků.}
+\end{document}

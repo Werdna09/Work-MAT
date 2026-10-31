@@ -1,0 +1,108 @@
+% 67. hodina: Sbírka úloh. Úlohy 1–11 z fotografií uživatele, vlastní úlohy 12–17.
+% Autorský přepis: české souřadnice [x;y], intervaly s českými závorkami.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage[czech]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,geometry,enumitem,tabularx,booktabs,tikz,multicol}
+\usetikzlibrary{arrows.meta}
+\geometry{top=16mm,bottom=17mm,left=18mm,right=18mm}
+\pagestyle{plain}\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\setlist[enumerate]{leftmargin=1.55em,topsep=2pt,itemsep=3pt}
+\newcommand{\uloha}[2]{\par\needspace{4\baselineskip}\subsection*{#1\enspace #2}}
+\usepackage{needspace}
+\begin{document}
+{\Large\bfseries Lineární funkce --- souhrnné procvičování}\hfill\textbf{67. hodina}
+\par\vspace{1mm}Jméno a příjmení: \rule{62mm}{.4pt}\hfill Třída: \rule{19mm}{.4pt}
+\smallskip
+\textit{Sbírka není test a není nutné vyřešit všechny úlohy. Začni základními úlohami, poté si vyber obtížnější. Ke grafu vždy připiš předpis; bod zapisuj $[x;y]$. Můžeš využít přiložené souřadnicové sítě.}
+\section*{A. Základní úlohy --- grafy a předpisy}
+\uloha{1.}{Rychlé náčrty grafů lineárních funkcí}
+Načrtněte grafy uvedených funkcí. Je-li graf přímkou, zvolte dva vhodné body. Uvažujte definiční obor $\mathbb R$.
+\[
+\begin{array}{r@{\quad}l@{\qquad\qquad}r@{\quad}l@{\qquad\qquad}r@{\quad}l}
+\mathrm{a)}&y=1{,}5&\mathrm{b)}&y=3&\mathrm{c)}&y=-\pi\\[3pt]
+\mathrm{d)}&y=2x&\mathrm{e)}&y=3x&\mathrm{f)}&y=-0{,}5x\\[3pt]
+\mathrm{g)}&y=x+2&\mathrm{h)}&y=-2x+4&\mathrm{i)}&y=0{,}5x-1\\[3pt]
+\mathrm{j)}&y=x-3&\mathrm{k)}&y=\frac32x-1&\mathrm{l)}&y=-\frac32x+1
+\end{array}
+\]
+\textit{Navíc:} Rozhodněte, které grafy jsou vodorovné, které jsou rostoucí a které klesající.
+\uloha{2.}{Předpis funkce z daných hodnot}
+\begin{enumerate}[label=\alph*)]
+\item Pro lineární funkci $h$ platí $h(3)=-5$ a $h(-1)=4$. Určete předpis $y=ax+b$ a načrtněte graf.
+\item Je dáno $f(0)=1$ a $f(2)=5$. Najděte lineární funkci $f(x)=ax+b$ a načrtněte graf.
+\item Lineární funkce $g$ splňuje $g(x+1)-g(x)=2$ pro každé $x\in\mathbb R$ a $g(0)=3$. Najděte předpis a načrtněte graf.
+\end{enumerate}
+\uloha{3.}{Předpis z bodů dvěma způsoby}
+Lineární funkce prochází body $A[1;1]$ a $B[3;-2]$. Určete její předpis a sestrojte graf
+\begin{enumerate}[label=\alph*)]
+\item pomocí soustavy rovnic pro neznámé koeficienty $a,b$,
+\item pomocí směrnice $a=\frac{\Delta y}{\Delta x}$ a absolutního členu $b$.
+\end{enumerate}
+\section*{B. Středně obtížné úlohy --- parametry a rodiny grafů}
+\uloha{4.}{Směrnice z funkční hodnoty}
+Pro $y=ax+b$ platí $b=-3$ a $f(2)=5$. Určete $a$, rozhodněte o monotonii a sestrojte graf.
+\uloha{5.}{Předpis ze dvou funkčních hodnot}
+O lineární funkci $f$ víme, že $f(1)=1{,}5$ a $f(-2)=-9$. Určete předpis $y=ax+b$ a rozhodněte, zda je rostoucí, či klesající.
+\uloha{6.}{Rodina přímek se stejnou směrnicí}
+Do jedné soustavy souřadnic zakreslete grafy
+\[ y=0{,}7x+b,\qquad b\in\{-3;\,-1{,}5;\,0;\,1{,}5;\,2\}. \]
+Co mají přímky společné a co se mění?
+\uloha{7.}{Rodina přímek se stejným průsečíkem s osou $y$}
+Do jedné soustavy souřadnic zakreslete grafy
+\[ y=ax+3,\qquad a\in\{0;\,-3;\,-4;\,1{,}4;\,5\}. \]
+Co mají grafy společné? Který je konstantní, které rostou a které klesají?
+\section*{C. Náročné grafické úlohy --- po částech}
+\uloha{8.}{Po částech lineární funkce z vlastností}
+Nakreslete graf funkce $f$ se zadáním
+\[
+\begin{gathered}
+D(f)=\langle-5;+\infty),\quad f(-5)=0,\quad f(0)=5,\quad f(4)=-5,\\
+\text{$f$ na $\langle-5;0\rangle$ roste, na $\langle0;4\rangle$ klesá a na $(4;+\infty)$ je konstantní.}
+\end{gathered}
+\]
+Graf vytvořte z úseček a vodorovné polopřímky. Zapište odpovídající předpis po částech a určete obor hodnot a maximum.
+\uloha{9.}{Náčrty grafů po částech}
+Načrtněte grafy a vyznačte správně krajní body jednotlivých částí:
+\[
+ f_1(x)=\begin{cases}x,&x\ge0,\\-x,&x<0,\end{cases}
+\qquad
+ f_2(x)=\begin{cases}1,&x\ge2,\\2x+1,&x<2.\end{cases}
+\]
+U obou určete $D(f)$ a $H(f)$. U $f_2$ rozhodněte, co se děje v $x=2$.
+\section*{D. Další úlohy k výběru (vlastní doplnění)}
+\uloha{10.}{Předpis z vyznačených grafů}
+Na obrázku jsou tři přímky: plná $p$, čárkovaná $q$ a tečkovaná $r$. Určete jejich předpisy, směrnice a průsečíky s osou $y$.
+\begin{center}
+\begin{tikzpicture}[x=.74cm,y=.70cm,>=Latex]
+\draw[step=1,gray!23,very thin] (-5,-4) grid (5,5);
+\draw[->] (-5.35,0)--(5.45,0) node[right] {$x$};
+\draw[->] (0,-4.35)--(0,5.45) node[above] {$y$};
+\foreach \v in {-4,-3,-2,-1,1,2,3,4,5}{\draw (\v,.07)--(\v,-.07) node[below,font=\scriptsize] {$\v$};\draw (.07,\v)--(-.07,\v) node[left,font=\scriptsize] {$\v$};}
+\begin{scope}\clip (-5,-4) rectangle (5,5);
+\draw[very thick] (-5,6)--(5,-4);
+\draw[very thick,dashed] (-5,-.5)--(5,4.5);
+\draw[very thick,densely dotted] (-5,-2)--(5,-2);
+\end{scope}
+\node[fill=white,inner sep=1pt] at (3.5,-2.9) {$p$};
+\node[fill=white,inner sep=1pt] at (2.1,3.5) {$q$};
+\node[fill=white,inner sep=1pt] at (-3.7,-1.65) {$r$};
+\end{tikzpicture}
+\end{center}
+\uloha{11.}{Parametr z intervalu}
+Uvažujte rodinu funkcí $f_b(x)=2x+b$, kde $b\in\langle-2;1\rangle$.
+Nakreslete obě krajní přímky, přidejte alespoň tři další a určete, kolik různých funkcí rodina obsahuje. Jak se mění průsečík s osou $y$?
+\uloha{12.}{Omezený definiční obor}
+Je dána funkce $g(x)=-2x+4$ pro $x\in\langle0;3)$. Sestrojte graf, označte krajní body a určete definiční obor, obor hodnot, nulový bod a průsečík s osou $y$.
+\uloha{13.}{Sklon a rovnoběžnost}
+Najděte předpis lineární funkce procházející bodem $[2;-1]$, jejíž graf je rovnoběžný s grafem $y=\frac32x+4$. Určete průsečíky s oběma osami.
+\uloha{14.}{Dva tarify}
+Tarif A má měsíční paušál 180 Kč a cenu 3 Kč za minutu. Tarif B má paušál 60 Kč a cenu 5 Kč za minutu. Pro počet minut $m\in\mathbb N_0$ sestavte funkce cen, porovnejte je graficky i početně a zjistěte, při jakém počtu minut stojí stejně.
+\uloha{15.}{Vztah předpisu a jeho vlastností}
+Pro $f(x)=ax+2$, $a\in\{-2;0;3\}$, napište všechny předpisy a u každého rozhodněte o monotonii, prostotě a oboru hodnot na $\mathbb R$.
+\uloha{16.}{Nulový bod jako parametr}
+Najděte všechna $b\in\mathbb R$, pro která má funkce $f_b(x)=2x+b$ nulový bod $x=3$. Popište graf této funkce.
+\uloha{17.}{Je to vůbec lineární funkce na $\mathbb R$?}
+Rozhodněte, zda funkce $u(x)=\frac{x^2-4}{x-2}$ je lineární na celém $\mathbb R$ a jak se její graf liší od přímky $y=x+2$.
+\par\vspace{4mm}\hrule\vspace{2mm}
+\textit{Při dokončení si ověř:} Jsou body správně ve tvaru $[x;y]$? Používám vhodné měřítko? Přímka je celá pouze tehdy, když to dovoluje definiční obor? Má více grafů v jedné soustavě jednoznačné popisky?
+\end{document}
