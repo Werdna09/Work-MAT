@@ -1,0 +1,86 @@
+% Revize 2026-11-01: vsechny vyrazy prevzaty z drivejsich hodin 73 a 74,
+% presunuty dle obtiznosti. Inspirace Realisticky.cz 020203--020204,
+% konkretni vyzvy prevzaty z ucitelem dodanych fotografii (c. 1a,1b).
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{74}{Lineární rovnice: složené závorky}
+\begin{document}
+\blok{Návaznost: jedna závorka nestačí}
+V hodině 73 žáci řešili rovnice s jednoduchými závorkami a rozlišovali jeden kořen, žádné řešení a nekonečně mnoho řešení. Nyní přidáme \emph{více úrovní závorek}. Algebraická pravidla už znají z úprav výrazů: nejdříve upravíme nejvnitřnější závorku, teprve potom postupujeme ven. Ekvivalentní úpravy rovnic zůstávají stejné.
+\blok{Společný postup}
+\begin{enumerate}[label=\arabic*.]
+\item Přesně vyznačit pořadí závorek $(\cdots)$, $[\cdots]$, $\{\cdots\}$.
+\item Roznásobovat od nejvnitřnější závorky; kontrolovat záporné znaménko před závorkou.
+\item Vzniklou lineární rovnici vyřešit a provést zkoušku v původním zadání.
+\end{enumerate}
+\begin{prikladReseniBox}[title={Příklad 1 – hranatá závorka uvnitř složené}]
+Vyřešte $4\{2x-[3-(x-2)]\}=12$.
+\tcblower
+\begin{align*}
+4\{2x-[3-x+2]\}&=12\\
+4\{2x-(5-x)\}&=12\\
+4(3x-5)&=12\\
+12x-20&=12\\
+12x&=32\\
+x&=\frac83.
+\end{align*}
+Zkouška je nejpřehlednější v ekvivalentním tvaru: $12\cdot\frac83-20=12$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2 – závorky ve třech úrovních}]
+Vyřešte $2\{3[x-2(1-x)]+1\}=26$.
+\tcblower
+\begin{align*}
+2\{3[x-2+2x]+1\}&=26\\
+2\{3(3x-2)+1\}&=26\\
+2(9x-5)&=26\\
+18x-10&=26\\
+18x&=36\\
+x&=2.
+\end{align*}
+Zkouška v původním zadání: $2\{3[2-2(1-2)]+1\}=2(12+1)=26$.
+\end{prikladReseniBox}
+\poznamka{Nezvyšuj současně počet závorek a náročnost aritmetiky. V prvních dvou příkladech průběžně kontroluj distribuci znamének; v navazujících úlohách už nech prostor pro samostatný postup.}
+\blok{Samostatné procvičování – výběr podle tempa}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item $4[2x-(x-3)]=20$.
+\item $4[3-(2x-5)]=20$.
+\item $3\{2[3x-(x+1)]-4\}=12$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\begin{aligned}4(x+3)&=20\\x+3&=5\\x&=2.\end{aligned}$
+\item $\begin{aligned}4(8-2x)&=20\\32-8x&=20\\-8x&=-12\\x&=\tfrac32.\end{aligned}$
+\item $\begin{aligned}3\{2(2x-1)-4\}&=12\\3(4x-6)&=12\\12x-18&=12\\x&=\tfrac52.\end{aligned}$
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva – náročný příklad ze sbírky}
+\begin{prikladReseniBox}[title={Náročná úloha ze sbírky}]
+Vyřešte $5\{5[5(5x-4)-4]-4\}=5$.
+\tcblower
+\begin{align*}
+5\{5[25x-20-4]-4\}&=5\\
+5\{5(25x-24)-4\}&=5\\
+5(125x-124)&=5\\
+625x-620&=5\\
+625x&=625\\
+x&=1.
+\end{align*}
+Přímá kontrola: $5\{5[5(5-4)-4]-4\}=5\{5(1)-4\}=5$.
+\end{prikladReseniBox}
+\blok{Domácí práce – náročnější složené závorky}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item $5\{2[x-(3-x)]+1\}=35$.
+\item $3[2(3x-6)-2(4x-5)+1]-3=6[3-8(x-3)]$ (úloha č. 1b z fotografie).
+\item $7\{x-2[5+x-8(x+3)-1]+2\}=3$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\begin{aligned}5(4x-5)&=35\\4x-5&=7\\x&=3.\end{aligned}$
+\item $\begin{aligned}3[-2x-1]-3&=6[27-8x]\\-6x-6&=162-48x\\42x&=168\\x&=4.\end{aligned}$
+\item $\begin{aligned}7\{x-2[-20-7x]+2\}&=3\\7(15x+42)&=3\\105x+294&=3\\105x&=-291\\x&=-\tfrac{97}{35}.\end{aligned}$
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{45 minut: návaznost a technika 5 min, příklad 1 9 min, příklad 2 10 min, samostatně 15 min, rozbor častých chyb 4 min, organizace 2 min. Náročný příklad ze sbírky je volitelný; hlavně nesmí vytlačit samostatnou práci. V 75. hodině se přidají zlomky a kombinované úpravy.}
+\end{document}

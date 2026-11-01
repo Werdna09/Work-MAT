@@ -1,0 +1,82 @@
+% Revize 2026-11-01: hodinove poradi 73--75 podle gradace obtiznosti.
+% Zadani jsou beze zmen prevzata z predchozich hodin 74, 75; zadne nebylo ztraceno.
+% Metodicka navaznost: hodina 72 (ekvivalentni upravy), Realisticky.cz 020203.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{73}{Lineární rovnice I: základy}
+\begin{document}
+\blok{Návaznost: od ekvivalentních úprav k řešení}
+V hodině 72 jsme zavedli rovnici, její kořen a ekvivalentní úpravy. Dnes pravidla použijeme na jednoduchých rovnicích. U každé úpravy má žák vysvětlit, \emph{co provádí s oběma stranami}; fráze „převedu na druhou stranu a změním znaménko“ není sama o sobě odůvodněním.
+\begin{definiceBox}
+\textbf{Lineární rovnice o jedné neznámé} je rovnice, kterou lze ekvivalentními úpravami převést na tvar $ax+b=0$, kde $a,b\in\mathbb R$. Při $a\ne0$ má právě jeden kořen; pro $a=0$, $b\ne0$ nemá žádný; pro $a=b=0$ vyhovuje každé číslo z přípustného oboru.
+\end{definiceBox}
+\blok{Tři možné výsledky}
+Z tvaru $ax+b=0$ plyne: je-li $a\ne0$, řešením je $x=-b/a$; rovnost $0=5$ je spor; rovnost $0=0$ je pravdivá pro všechna přípustná $x$. Tento rozbor se objeví i u složitějších rovnic, nevyplatí se jej vynechat.
+\begin{prikladReseniBox}[title={Příklad 1 – jeden kořen}]
+Vyřešte $3x+7=22$.
+\tcblower
+\begin{align*}
+3x+7&=22 &&\big|\,-7\\
+3x&=15 &&\big|\,:3\\
+x&=5.
+\end{align*}
+Zkouška: $3\cdot5+7=22$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2 – závorka a neznámá na obou stranách}]
+Vyřešte $4-2(x-1)=3x+1$.
+\tcblower
+\begin{align*}
+4-2x+2&=3x+1\\
+6-2x&=3x+1\\
+5&=5x\\
+x&=1.
+\end{align*}
+Zkouška: $4-2(1-1)=4=3\cdot1+1$. Záporný násobitel mění znaménko \emph{obou} členů v závorce.
+\end{prikladReseniBox}
+\poznamka{První příklad vyřeš krátce; většinu společné práce věnuj druhému a otázce, proč jsou úpravy ekvivalentní. Závorky jsou zde jen v jedné úrovni; složené závorky až v hodině 74.}
+\blok{Samostatné procvičování – stupňované úlohy}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item $2x-5=-9$.
+\item $3(x+2)=2x+9$.
+\item $5x+1=5x-2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\begin{aligned}2x-5&=-9\\2x&=-4\\x&=-2,\quad K=\{-2\}.\end{aligned}$
+\item $\begin{aligned}3x+6&=2x+9\\x+6&=9\\x&=3,\quad K=\{3\}.\end{aligned}$
+\item $\begin{aligned}5x+1&=5x-2\\1&=-2\\K&=\varnothing.\end{aligned}$
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva – rovnice jako identita}
+\begin{zadaniReseniBox}
+Pro jaké $x$ platí $2(x-1)+3=2x+1$?
+\tcblower
+\begin{align*}
+2x-2+3&=2x+1\\
+2x+1&=2x+1\\
+0&=0\\
+K&=\mathbb R.
+\end{align*}
+Na rozdíl od sporu je poslední rovnost pravdivá vždy.
+\end{zadaniReseniBox}
+\blok{Domácí práce – základní rovnice a počet řešení}
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item $7x-4=3x+8$.
+\item $3(x-2)=2x+5$.
+\item $5-2(3x-4)=3(x-2)$.
+\item $4x+2=4x+2$.
+\item $2(x-3)-3(x+1)=5-x$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\begin{aligned}7x-4&=3x+8\\4x&=12\\x&=3.\end{aligned}$
+\item $\begin{aligned}3x-6&=2x+5\\x&=11.\end{aligned}$
+\item $\begin{aligned}13-6x&=3x-6\\19&=9x\\x&=\tfrac{19}{9}.\end{aligned}$
+\item $\begin{aligned}4x+2&=4x+2\\0&=0\\K&=\mathbb R.\end{aligned}$
+\item $\begin{aligned}2x-6-3x-3&=5-x\\-x-9&=5-x\\-9&=5\\K&=\varnothing.\end{aligned}$
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{45 minut: úvod a rozbor $ax+b=0$ 8 min, dva řešené příklady 13 min, samostatně 15 min, diskuse o sporu a zkoušce 6 min, zadání domácí práce 3 min. Rezerva je navíc. Následuje hodina 74: postupné odstraňování vnořených závorek.}
+\end{document}
