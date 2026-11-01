@@ -32,6 +32,36 @@ Vyřešte $2x-3\ge1$, $x+2<7$.
 \end{align*}
 \end{prikladReseniBox}
 \poznamka{Zpočátku vykresli dvě různá šrafování; barevné odlišování není nutné. Doporučuji první samostatnou úlohu zkontrolovat ještě před přechodem ke třetí.}
+\blok{Grafický význam průniku na číselné ose}
+Na \textbf{první} ose vyšrafujeme řešení první nerovnice, na \textbf{druhé} řešení druhé. \textbf{Společnou} část pak zakreslíme na třetí osu. Dvě podmínky současně znamenají \emph{průnik} množin; sjednocení odpovídá podmínce \uv{alespoň jedna}.
+\begin{center}
+\begin{tikzpicture}[x=.7cm,y=.66cm,>=stealth]
+\foreach \yy/\lbl in {2/{$x>1$},1/{$x\le4$},0/{$x\in(1;4\rangle$}}{
+  \draw[->] (-4,\yy)--(6,\yy);
+  \node[left] at (-4.1,\yy) {\small \lbl};
+  \draw (1,\yy+.10)--(1,\yy-.10);
+  \draw (4,\yy+.10)--(4,\yy-.10);
+}
+\draw[line width=2pt] (1,2)--(5.65,2);
+\draw[fill=white,thick] (1,2) circle (2.3pt);
+\draw[line width=2pt] (-3.8,1)--(4,1);
+\fill (4,1) circle (2.3pt);
+\draw[line width=2pt] (1,0)--(4,0);
+\draw[fill=white,thick] (1,0) circle (2.3pt);
+\fill (4,0) circle (2.3pt);
+\foreach \yy in {0,1,2}{\node[below] at (1,\yy-.12) {\tiny $1$};\node[below] at (4,\yy-.12) {\tiny $4$};}
+\end{tikzpicture}
+\end{center}
+\begin{zadaniReseniBox}[title={Kdy je průnik jen jediný bod?}]
+Soustava $x\ge2$, $x\le2$.
+\tcblower
+\begin{align*}
+K_1&=\langle2;+\infty),\\
+K_2&=(-\infty;2\rangle,\\
+K_1\cap K_2&=\{2\}.
+\end{align*}
+\end{zadaniReseniBox}
+
 \blok{Samostatné procvičování}
 \begin{zadaniReseniBox}[title={Úloha 1}]
 Soustava $x\ge-2$, $x<3$, $x>0$.

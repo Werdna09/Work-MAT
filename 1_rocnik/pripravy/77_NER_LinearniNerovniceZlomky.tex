@@ -34,6 +34,27 @@ Vyřešte $3-2(x-1)\le\frac{x+4}{2}$.
 Zápis $K=\langle\frac65;+\infty)$; rovnost v krajním bodě je povolena.
 \end{prikladReseniBox}
 \poznamka{Věnuj čas výběru správných závorek u koncových bodů; odkazuj na práci s intervaly z 1. ročníku.}
+\blok{Pozor: proměnná ve jmenovateli není běžná lineární nerovnice}
+\begin{prikladReseniBox}[title={Ukázka rozdílu – nerovnice v podílovém tvaru}]
+Vyřešte $\dfrac{x-2}{x+1}>0$. Proč nesmíme prostě vynásobit obě strany výrazem $x+1$?
+\tcblower
+Nejprve $x\ne-1$. Násobitel $x+1$ je záporný pro $x<-1$ a kladný pro $x>-1$; směr nerovnosti by se proto v jednotlivých oblastech lišil. Místo násobení určíme znaménka čitatele a jmenovatele:
+\[
+\begin{array}{c|ccc}
+ x & (-\infty;-1)&(-1;2)&(2;+\infty)\\\hline
+ x-2&-&-&+\\
+ x+1&-&+&+\\\hline
+ \dfrac{x-2}{x+1}&+&-&+
+\end{array}
+\]
+\begin{align*}
+\frac{x-2}{x+1}>0&\iff x<-1\ \text{nebo}\ x>2,\\
+K&=(-\infty;-1)\cup(2;+\infty).
+\end{align*}
+Bod $-1$ je zakázaný, v bodě $2$ vychází nula, která nevyhovuje ostré nerovnosti.
+\end{prikladReseniBox}
+\poznamka{Toto je pouze upozornění a krátká ukázka podílové nerovnice, nikoli úplný výklad lomených nerovnic. Násobení výrazem se \emph{známým kladným znaménkem} by bezpečné bylo; při neznámém znaménku rozhodujeme podle intervalů.}
+
 \blok{Samostatné procvičování}
 \begin{zadaniReseniBox}[title={Úloha 1}]
 $2(x-1)\le3x+4$.
@@ -53,26 +74,31 @@ x+3&>2x-2 \\
  K&=(-\infty;5)
 \end{align*}
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-$5x-7<5x+1$.
+
+\begin{zadaniReseniBox}[title={Nerovnice ze sbírky č. 1g – náročnější zlomky}]
+Vyřešte $\dfrac{4x-7}{2}-\dfrac{x-4}{6}\ge2x-3$.
 \tcblower
 \begin{align*}
--7&<1 \\
- K&=\mathbb R
+3(4x-7)-(x-4)&\ge12x-18,\\
+12x-21-x+4&\ge12x-18,\\
+-x-17&\ge-18,\\
+-x&\ge-1,\\
+x&\le1.
 \end{align*}
+$K=(-\infty;1\rangle$. Vynásobili jsme pouze kladnou konstantou $6$.
 \end{zadaniReseniBox}
 \blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Rozhodněte, zda řešení $-3x+2>8$ leží vlevo, nebo vpravo od $-2$.
-\tcblower
-\begin{align*}
--3x&>6 \\
- x&<-2 \\
- K&=(-\infty;-2)
-\end{align*}
 
-První kontrolní číslo $-3$ vyhovuje, číslo $0$ nikoliv.
+\begin{zadaniReseniBox}[title={Volitelný problém – bez násobení neznámým výrazem}]
+Rozhodněte, kdy platí $\dfrac{x+1}{x-3}\le0$.
+\tcblower
+Kritické body jsou $-1$ (nulový čitatel) a $3$ (zakázaný jmenovatel). Podíl je nekladný mezi nimi a v $-1$ je nulový:
+\begin{align*}
+ x&\ne3,\\
+ K&=\langle-1;3).
+\end{align*}
 \end{zadaniReseniBox}
+
 \blok{Domácí úkol}
 \begin{zadaniReseniBox}[title={Úloha 1}]
 $\frac{3x+1}{2}\ge x+2$.
@@ -101,5 +127,4 @@ $4(x-2)\ge4x-7$.
  K&=\varnothing
 \end{align*}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
 \end{document}

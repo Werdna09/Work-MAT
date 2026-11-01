@@ -1,105 +1,93 @@
-% Autorska priprava k Realisticky.cz 020312; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize hodiny 83 podle zadani: 2 priklady 3x2 a prechod 3x3.
+% Realisticky.cz 020312 -> 020313; dalsi 3x3 ze snimku ucitelem dodane sbirky.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
-\usepackage{tikz}
-\nastavPripravu{1. ročník}{Rovnice a nerovnice}{83}{Soustavy tří rovnic o dvou neznámých}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{83}{Soustavy: od tří podmínek ke třem neznámým}
 \begin{document}
-\blok{Návaznost a motivace}
-Zatím jsme měli dvě neznámé a dvě rovnice. Co se stane, když přidáme třetí podmínku? Nemusí vzniknout „více řešení“; třetí rovnice může dosavadní řešení potvrdit, nebo je vyloučit.
-\blok{Princip a odvození}
-Nejdřív vyřešíme dvojici vhodných rovnic a nalezenou uspořádanou dvojici ověříme ve všech zbývajících rovnicích. Jsou-li dvě původní rovnice totožné, může být řešení stále nekonečně mnoho. Rozlišujeme počet rovnic a počet nezávislých podmínek.
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
-Vyřešte $\begin{cases}x+y=5,\\2x-y=4,\\3x=9.\end{cases}$
+\blok{Návaznost}
+Dvě neznámé určujeme dvěma \emph{nezávislými} rovnicemi. Co změní třetí rovnice? Může potvrdit nalezenou dvojici, nebo ji vyloučit. Pak začneme soustavu \emph{tří rovnic o třech neznámých}: dvě neznámé postupně eliminujeme, zbylou dopočteme a vrátíme se zpět.
+\blok{Tři rovnice, dvě neznámé: ověř všechny podmínky}
+\begin{prikladReseniBox}[title={Příklad 1 – třetí rovnice řešení potvrzuje}]
+Vyřešte $\begin{cases}2x+y=7,\\x-y=2,\\3x+2y=11.\end{cases}$
 \tcblower
 \begin{align*}
-3x&=9\Rightarrow x=3 \\
- y&=5-3=2 \\
- 2x-y&=6-2=4
+(2x+y)+(x-y)&=7+2,\\
+3x&=9,\\
+x&=3,\\
+y&=7-2\cdot3=1,\\
+3x+2y&=9+2=11.
 \end{align*}
-
-Trojice rovnic má jediné společné řešení $K=\{[3;2]\}$. Třetí rovnice jej potvrzuje.
+Výsledek $K=\{[3;1]\}$. Třetí rovnici jsme nezapomněli ověřit.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
-Vyřešte $\begin{cases}x+y=5,\\x-y=1,\\x+y=6.\end{cases}$
+\begin{prikladReseniBox}[title={Příklad 2 – třetí podmínka vyloučí kandidáta}]
+Vyřešte $\begin{cases}x+y=5,\\2x-y=4,\\3x+y=12.\end{cases}$
 \tcblower
 \begin{align*}
-2x&=6\Rightarrow x=3 \\
- y&=2 \\
- x+y&=5\ne6
+3x&=9,\\
+x&=3,\\
+y&=5-3=2,\\
+3x+y&=11\ne12,\\
+K&=\varnothing.
 \end{align*}
-
-Dvojice $[3;2]$ vyřeší první dvě rovnice, ale třetí odmítne. Proto $K=\varnothing$.
+Samotné první dvě rovnice nestačí: řešení soustavy musí vyhovět \emph{všem třem}.
 \end{prikladReseniBox}
-\poznamka{Třetí rovnici nezanedbávej ani při zdánlivě hotovém výpočtu. Zdůrazni rozdíl mezi nezávislými a opakovanými podmínkami.}
+\blok{Nový krok: soustava tří rovnic o třech neznámých}
+\begin{prikladReseniBox}[title={Příklad 3 – postupná eliminace}]
+Vyřešte $\begin{cases}x+y+z=6,\\2x-y+z=3,\\x+2y-z=2.\end{cases}$
+\tcblower
+Od druhé i třetí rovnice vhodně odečteme první:
+\begin{align*}
+(\mathrm{II})-(\mathrm{I})&:\quad x-2y=-3,\\
+(\mathrm{III})-(\mathrm{I})&:\quad y-2z=-4.
+\end{align*}
+První dílčí rovnice dává $x=2y-3$, druhá $y=2z-4$. Dosadíme do první původní rovnice:
+\begin{align*}
+x+y+z&=6,\\
+(2y-3)+y+z&=6,\\
+3y+z&=9,\\
+3(2z-4)+z&=9,\\
+7z&=21,\\
+z&=3,\\
+y&=2,\qquad x=1.
+\end{align*}
+Zkouška: $1+2+3=6$, $2-2+3=3$, $1+4-3=2$. $K=\{[1;2;3]\}$.
+\end{prikladReseniBox}
+\poznamka{Na tabuli výrazně označuj první, druhou a třetí rovnici. Smyslem je z $3\times3$ vytvořit $2\times2$ a pak $1\times1$; studenti již znají obě potřebné operace.}
 \blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-$\begin{cases}x+y=7,\\x-y=1,\\2x=8.\end{cases}$
+\begin{zadaniReseniBox}
+\begin{enumerate}[label=\alph*)]
+\item $\begin{cases}x+y=7,\\x-y=1,\\2x=8.\end{cases}$
+\item $\begin{cases}x+y+z=9,\\x+y=4,\\y+z=8.\end{cases}$
+\end{enumerate}
 \tcblower
-\begin{align*}
-2x&=8\Rightarrow x=4 \\
- y&=3 \\
- x-y&=1
-\end{align*}
-
-Všechny tři podmínky platí: $K=\{[4;3]\}$.
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-$\begin{cases}x+y=4,\\2x+2y=8,\\y=1.\end{cases}$
-\tcblower
-\begin{align*}
-y&=1 \\
- x+1&=4\Rightarrow x=3 \\
- 2x+2y&=6+2=8
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-$\begin{cases}x+y=4,\\2x+2y=10,\\x-y=1.\end{cases}$
-\tcblower
-\begin{align*}
-2(x+y)&=8\ne10 \\
- 8&=10\;\text{-- spor} \\
- K&=\varnothing
-\end{align*}
-\end{zadaniReseniBox}
-\blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Může mít soustava $x+y=5$, $x-y=1$ a $x=4$ společné řešení?
-\tcblower
-\begin{align*}
-x+y&=5,\quad x-y=1\Rightarrow x=3,\ y=2 \\
- x&=4\;\text{-- nesplněno} \\
- K&=\varnothing
-\end{align*}
+\begin{enumerate}[label=\alph*)]
+\item \(\begin{aligned}2x&=8\\x&=4,\ y=3\\x-y&=1\quad\checkmark.\end{aligned}\) $K=\{[4;3]\}$.
+\item \(\begin{aligned}z&=9-4=5\\y&=8-5=3\\x&=4-3=1.\end{aligned}\) $K=\{[1;3;5]\}$.
+\end{enumerate}
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-$\begin{cases}x+y=6,\\x-y=2,\\3x=12.\end{cases}$
+\begin{zadaniReseniBox}[title={Úloha ze sbírky č. 31a – tři rovnice, tři neznámé}]
+Řešte $\begin{cases}x+y+2z=-1,\\2x-y+2z=-4,\\4x+y+4z=-2.\end{cases}$
 \tcblower
 \begin{align*}
-2x&=8\Rightarrow x=4 \\
- y&=2 \\
- 3x&=12
+(\mathrm{II})-2(\mathrm I)&:\ -3y-2z=-2,\\
+(\mathrm{III})-4(\mathrm I)&:\ -3y-4z=2,\\
+\text{rozdíl posledních rovnic:}\quad2z&=-4,\\
+z&=-2,\\
+3y+2z&=2\ \Rightarrow\ y=2,\\
+x+y+2z&=-1\ \Rightarrow\ x=1.
 \end{align*}
+$K=\{[1;2;-2]\}$; všechny tři původní rovnice jsou splněny.
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-$\begin{cases}2x+y=11,\\x-y=1,\\x+y=7.\end{cases}$
+\begin{zadaniReseniBox}[title={Druhý úkol – soustava se sporem}]
+$\begin{cases}2x+y=8,\\x-y=1,\\3x=12.\end{cases}$
 \tcblower
 \begin{align*}
-2x&=8\Rightarrow x=4 \\
- y&=3 \\
- 2x+y&=11
+3x&=9\ \Rightarrow\ x=3,\\
+y&=2,\\
+3x&=9\ne12,\\
+K&=\varnothing.
 \end{align*}
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-$\begin{cases}x+y=5,\\2x+2y=10,\\3x+3y=15.\end{cases}$
-\tcblower
-\begin{align*}
-2(x+y)&=10 \\
- 3(x+y)&=15 \\
- K&=\{[t;5-t]\mid t\in\mathbb R\}
-\end{align*}
-\end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\poznamka{Čas: opakování 4 min; 3 rovnice / 2 neznámé 13 min; přechod k 3 neznámým 17 min; samostatně 8 min; závěr 3 min. Úloha 31a je náročnější domácí příklad.}
 \end{document}

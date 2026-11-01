@@ -70,45 +70,60 @@ z&=7-4=3 \\
  x&=4-2=2
 \end{align*}
 \end{zadaniReseniBox}
-\blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Mohou mít tři rovnice se třemi neznámými nulový počet řešení?
+\blok{Volitelná rezerva – skutečný přechod na čtyři neznámé}
+\begin{zadaniReseniBox}[title={Jak rozběhnout eliminaci v soustavě $4\times4$?}]
+Soustava je $\begin{cases}x-y+z+u=0,\\x+y-z-u=2,\\2x-y+u=3,\\3x+z-u=0.\end{cases}$
 \tcblower
+Po odečtení první rovnice od druhé, dvojnásobku první od třetí a trojnásobku první od čtvrté vzniknou tři rovnice o $y,z,u$. Následná eliminace dá \emph{trojúhelníkový systém}:
 \begin{align*}
-x+y+z&=5 \\
- x+y+z&=6 \\
- 5&=6
+ x-y+z+u&=0,\\
+ 2y-2z-2u&=2,\\
+ -2z&=4,\\
+ 4u&=4.
 \end{align*}
-
-Ano. Dvě podmínky si odporují a třetí rovnice to neodstraní.
+Zpětné dosazení:
+\begin{align*}
+u&=1,\\ z&=-2,\\ 2y-2(-2)-2&=2\Rightarrow y=0,\\ x-0-2+1&=0\Rightarrow x=1.
+\end{align*}
+Tedy $K=\{[1;0;-2;1]\}$. Jde o soustavu ze sbírky, příklad 32b.
 \end{zadaniReseniBox}
-\blok{Domácí úkol}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-$\begin{cases}x+y+z=8,\\x+y=5,\\y+z=4.\end{cases}$
+\blok{Domácí úkol – volitelný náročnější výběr}
+\begin{zadaniReseniBox}[title={Úloha 1 – samostatná eliminace $3\times3$}]
+$\begin{cases}2x-y+3z=9,\\4x+3y-z=7,\\x+2y+2z=11.\end{cases}$
 \tcblower
+Zvolíme třetí rovnici pro eliminaci $x$:
 \begin{align*}
-z&=8-5=3 \\
- y&=4-3=1 \\
- x&=5-1=4
+(\mathrm I)-2(\mathrm{III})&:\ -5y-z=-13,\\
+(\mathrm{II})-4(\mathrm{III})&:\ -5y-9z=-37,\\
+8z&=24,\\
+z&=3,\quad y=2,\quad x=1.
 \end{align*}
+$K=\{[1;2;3]\}$. Každou rovnici ověřte dosazením.
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-$\begin{cases}x+y+z=6,\\x+y=3,\\y+z=4.\end{cases}$
+\begin{zadaniReseniBox}[title={Úloha 2 – čtyři rovnice, čtyři neznámé, sbírka č. 32a}]
+$\begin{cases}2x-3y+z+2u=0,\\3x+y-2z-u=6,\\4x-2y-3z-4u=-6,\\x+2y+3z-2u=-7.\end{cases}$
 \tcblower
+Zvolíme \emph{poslední} původní rovnici, protože u $x$ má koeficient $1$. Jejím vhodným násobkem odstraníme $x$ z ostatních řádků:
 \begin{align*}
-z&=6-3=3 \\
- y&=4-3=1 \\
- x&=3-1=2
+-7y-5z+6u&=14,\\
+-5y-11z+5u&=27,\\
+-10y-15z+4u&=22.
 \end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-$\begin{cases}x+y+z=5,\\x+y=2,\\y+z=3.\end{cases}$
-\tcblower
+Další eliminací $y$ dostaneme dvě rovnice o $z,u$:
 \begin{align*}
-z&=5-2=3 \\
- y&=3-3=0 \\
- x&=2-0=2
+52z-5u&=-119,\\
+-7z+6u&=32,\\
+6(52z-5u)+5(-7z+6u)&=6(-119)+5\cdot32,\\
+277z&=-554,\\
+z&=-2,\qquad u=3.
 \end{align*}
+Zpětné dosazení:
+\begin{align*}
+-7y-5(-2)+6\cdot3&=14\Rightarrow y=2,\\
+x+2\cdot2+3(-2)-2\cdot3&=-7\Rightarrow x=1.
+\end{align*}
+$K=\{[1;2;-2;3]\}$. Zkouška např. v první rovnici: $2-6-2+6=0$; doporučeno zkontrolovat všechny.
 \end{zadaniReseniBox}
+\poznamka{Hodina je hlavně o principu. Samostatné vyřešení soustavy $4\times4$ je \emph{dobrovolná výzva}, nikoli očekávaný standard pro všechny. Vyžaduj srozumitelnou argumentaci, proč se eliminuje daná neznámá.}
 \poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
 \end{document}
