@@ -1,0 +1,105 @@
+% Autorska priprava k Realisticky.cz 020312; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{83}{Soustavy tří rovnic o dvou neznámých}
+\begin{document}
+\blok{Návaznost a motivace}
+Zatím jsme měli dvě neznámé a dvě rovnice. Co se stane, když přidáme třetí podmínku? Nemusí vzniknout „více řešení“; třetí rovnice může dosavadní řešení potvrdit, nebo je vyloučit.
+\blok{Princip a odvození}
+Nejdřív vyřešíme dvojici vhodných rovnic a nalezenou uspořádanou dvojici ověříme ve všech zbývajících rovnicích. Jsou-li dvě původní rovnice totožné, může být řešení stále nekonečně mnoho. Rozlišujeme počet rovnic a počet nezávislých podmínek.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřešte $\begin{cases}x+y=5,\\2x-y=4,\\3x=9.\end{cases}$
+\tcblower
+\begin{align*}
+3x&=9\Rightarrow x=3 \\
+ y&=5-3=2 \\
+ 2x-y&=6-2=4
+\end{align*}
+
+Trojice rovnic má jediné společné řešení $K=\{[3;2]\}$. Třetí rovnice jej potvrzuje.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřešte $\begin{cases}x+y=5,\\x-y=1,\\x+y=6.\end{cases}$
+\tcblower
+\begin{align*}
+2x&=6\Rightarrow x=3 \\
+ y&=2 \\
+ x+y&=5\ne6
+\end{align*}
+
+Dvojice $[3;2]$ vyřeší první dvě rovnice, ale třetí odmítne. Proto $K=\varnothing$.
+\end{prikladReseniBox}
+\poznamka{Třetí rovnici nezanedbávej ani při zdánlivě hotovém výpočtu. Zdůrazni rozdíl mezi nezávislými a opakovanými podmínkami.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}x+y=7,\\x-y=1,\\2x=8.\end{cases}$
+\tcblower
+\begin{align*}
+2x&=8\Rightarrow x=4 \\
+ y&=3 \\
+ x-y&=1
+\end{align*}
+
+Všechny tři podmínky platí: $K=\{[4;3]\}$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}x+y=4,\\2x+2y=8,\\y=1.\end{cases}$
+\tcblower
+\begin{align*}
+y&=1 \\
+ x+1&=4\Rightarrow x=3 \\
+ 2x+2y&=6+2=8
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}x+y=4,\\2x+2y=10,\\x-y=1.\end{cases}$
+\tcblower
+\begin{align*}
+2(x+y)&=8\ne10 \\
+ 8&=10\;\text{-- spor} \\
+ K&=\varnothing
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Může mít soustava $x+y=5$, $x-y=1$ a $x=4$ společné řešení?
+\tcblower
+\begin{align*}
+x+y&=5,\quad x-y=1\Rightarrow x=3,\ y=2 \\
+ x&=4\;\text{-- nesplněno} \\
+ K&=\varnothing
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}x+y=6,\\x-y=2,\\3x=12.\end{cases}$
+\tcblower
+\begin{align*}
+2x&=8\Rightarrow x=4 \\
+ y&=2 \\
+ 3x&=12
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}2x+y=11,\\x-y=1,\\x+y=7.\end{cases}$
+\tcblower
+\begin{align*}
+2x&=8\Rightarrow x=4 \\
+ y&=3 \\
+ 2x+y&=11
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}x+y=5,\\2x+2y=10,\\3x+3y=15.\end{cases}$
+\tcblower
+\begin{align*}
+2(x+y)&=10 \\
+ 3(x+y)&=15 \\
+ K&=\{[t;5-t]\mid t\in\mathbb R\}
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

@@ -1,0 +1,107 @@
+% Autorska priprava k Realisticky.cz 020310–020311; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{80}{Soustavy: sčítací metoda}
+\begin{document}
+\blok{Návaznost a motivace}
+Dosazování umíme. Nyní získáme rovnici o jedné neznámé jinak: sečteme nebo odečteme rovnice tak, aby jeden člen vypadl.
+\blok{Princip a odvození}
+\textbf{Sčítací metoda:} Rovnice můžeme násobit nenulovými čísly, potom je sečíst nebo odečíst. Cílem je odstranit jednu neznámou. Po určení jedné hodnoty dopočítáme druhou a provedeme zkoušku.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřešte $\begin{cases}x+y=7,\\x-y=1.\end{cases}$
+\tcblower
+\begin{align*}
+2x&=8 &&\text{(součet rovnic)} \\
+ x&=4 \\
+ 4+y&=7 \\
+ y&=3
+\end{align*}
+
+Řešení $[4;3]$ vyhoví oběma rovnicím.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřešte $\begin{cases}2x+3y=12,\\3x-2y=5.\end{cases}$
+\tcblower
+\begin{align*}
+2(2x+3y)&=24 \\
+ 3(3x-2y)&=15 \\
+ 13x&=39 \\
+ x&=3,\quad y=2
+\end{align*}
+
+Druhá upravená rovnice je $9x-6y=15$; po součtu s $4x+6y=24$ vypadne $y$.
+\end{prikladReseniBox}
+\poznamka{Při násobení rovnice smí násobek změnit všechna tři čísla v řádku; typická chyba je násobit pouze člen s neznámou.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}x+y=9,\\x-y=3.\end{cases}$
+\tcblower
+\begin{align*}
+2x&=12 \\
+ x&=6 \\
+ y&=3
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}2x+y=8,\\2x-y=0.\end{cases}$
+\tcblower
+\begin{align*}
+4x&=8 \\
+ x&=2 \\
+ y&=4
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}3x+2y=16,\\x-y=2.\end{cases}$
+\tcblower
+\begin{align*}
+3x+2y&=16 \\
+ 2x-2y&=4 \\
+ 5x&=20\Rightarrow x=4,\ y=2
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Vyřešte sčítáním $\begin{cases}2x+5y=19,\\3x-5y=6.\end{cases}$
+\tcblower
+\begin{align*}
+5x&=25 \\
+ x&=5 \\
+ 10+5y&=19\Rightarrow y=\frac95
+\end{align*}
+
+Zkouška v druhé rovnici: $15-9=6$.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}2x+y=10,\\x-y=2.\end{cases}$
+\tcblower
+\begin{align*}
+3x&=12 \\
+ x&=4 \\
+ y&=2
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}3x+2y=11,\\3x-2y=7.\end{cases}$
+\tcblower
+\begin{align*}
+6x&=18 \\
+ x&=3 \\
+ y&=1
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}x+2y=10,\\2x-y=5.\end{cases}$
+\tcblower
+\begin{align*}
+x+2y&=10 \\
+ 4x-2y&=10 \\
+ 5x&=20\Rightarrow x=4,\ y=3
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

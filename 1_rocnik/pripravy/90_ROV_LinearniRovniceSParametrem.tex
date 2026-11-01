@@ -1,0 +1,99 @@
+% Autorska priprava k Realisticky.cz 020801–020802; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{90}{Lineární rovnice s parametrem}
+\begin{document}
+\blok{Návaznost a motivace}
+Od běžné rovnice se parametrická liší tím, že v ní vystupuje neznámá $x$ a zároveň číslo $a$, jehož hodnotu neurčujeme. Řešením je diskuse o tom, kdy existuje jeden kořen, žádný nebo nekonečně mnoho.
+\begin{definiceBox}
+\textbf{Parametr v rovnici}. Pevně zvolené číslo, na němž závisí koeficienty nebo pravá strana rovnice. Při řešení hledáme neznámou $x$, nikoli hodnotu parametru.
+\end{definiceBox}
+\blok{Princip a odvození}
+Nejprve uprav rovnici na $A(a)x=B(a)$. Než vydělíš výrazem $A(a)$, zvlášť prověř hodnoty parametru, pro které $A(a)=0$. V těchto případech se rovnice může změnit na pravdivou nebo nepravdivou konstantní rovnost.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřešte $(a-2)x=a+1$ pro všechna $a\in\mathbb R$.
+\tcblower
+\begin{align*}
+a&\ne2:\quad x=\frac{a+1}{a-2} \\
+ a&=2:\quad 0\cdot x=3\;\text{-- spor}
+\end{align*}
+
+Pro $a\ne2$ jediný kořen $x=(a+1)/(a-2)$; pro $a=2$ žádný.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřešte $(a-1)x=a-1$.
+\tcblower
+\begin{align*}
+a&\ne1:\quad x=\frac{a-1}{a-1}=1 \\
+ a&=1:\quad 0\cdot x=0
+\end{align*}
+
+Pro $a=1$ jsou řešením všechna reálná $x$.
+\end{prikladReseniBox}
+\poznamka{Jde o jedinou základní hodinu parametrických rovnic. Obtížnější víceparametrové úlohy nezařazuj jako povinné.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$(p+1)x=3$.
+\tcblower
+\begin{align*}
+p&\ne-1:\quad x=\frac{3}{p+1} \\
+ p&=-1:\quad 0\cdot x=3\;\text{-- spor}
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$(p-2)x=p-2$.
+\tcblower
+\begin{align*}
+p&\ne2:\quad x=1 \\
+ p&=2:\quad 0\cdot x=0\Rightarrow x\in\mathbb R
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$(p+3)x=0$.
+\tcblower
+\begin{align*}
+p&\ne-3:\quad x=0 \\
+ p&=-3:\quad 0\cdot x=0\Rightarrow x\in\mathbb R
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Proč nelze z $ax=a$ automaticky napsat $x=1$?
+\tcblower
+\begin{align*}
+a&\ne0:\quad x=1 \\
+ a&=0:\quad 0=0\Rightarrow x\in\mathbb R
+\end{align*}
+
+Při $a=0$ má rovnice nekonečně mnoho řešení.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$(m-4)x=5$.
+\tcblower
+\begin{align*}
+m&\ne4:\quad x=\frac5{m-4} \\
+ m&=4:\quad 0=5\;\text{-- spor}
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$(m+2)x=m+2$.
+\tcblower
+\begin{align*}
+m&\ne-2:\quad x=1 \\
+ m&=-2:\quad 0=0\Rightarrow x\in\mathbb R
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$mx=m+1$.
+\tcblower
+\begin{align*}
+m&\ne0:\quad x=\frac{m+1}{m} \\
+ m&=0:\quad 0=1\;\text{-- spor}
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

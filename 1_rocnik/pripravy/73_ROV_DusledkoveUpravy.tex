@@ -1,0 +1,114 @@
+% Autorska priprava k Realisticky.cz 020202; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{73}{Důsledkové úpravy rovnic}
+\begin{document}
+\blok{Návaznost a motivace}
+Ne každá úprava, která vytvoří pravdivou rovnost, se dá také obrátit. Už při práci s odmocninami jsme viděli, že umocnění může přidat řešení. Nyní tuto zkušenost přesně pojmenujeme.
+\begin{definiceBox}
+\textbf{Důsledková úprava}. Úprava $R_1\Rightarrow R_2$, při níž každý kořen původní rovnice zůstane řešením nové rovnice, avšak nová rovnice může mít i další kořeny.
+\end{definiceBox}
+\blok{Princip a odvození}
+Umocnění obou stran může přidat kořeny. Dělení výrazem obsahujícím neznámou může některé kořeny ztratit, a proto nemusí být ani důsledkovým krokem v uvedeném směru. Při neekvivalentních krocích jsou nutné podmínky a zkouška v \emph{původní} rovnici.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Porovnejte rovnice $x=2$ a $x^2=4$.
+\tcblower
+\begin{align*}
+x &=2 \\
+ x^2 &=4 \\
+ x &\in\{-2,2\}
+\end{align*}
+
+Rovnice $x^2=4$ má navíc kořen $-2$. Zápis je $x=2\Rightarrow x^2=4$, nikoli ekvivalence.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřešte $\sqrt{x+2}=x$.
+\tcblower
+\begin{align*}
+\sqrt{x+2} &=x \\
+ x+2 &=x^2 \\
+ (x-2)(x+1)&=0 \\
+ x&\in\{-1,2\}
+\end{align*}
+
+Zkouška: pro $x=-1$ vyjde $1\ne-1$; pro $x=2$ vyjde $2=2$. Proto $K=\{2\}$.
+\end{prikladReseniBox}
+\poznamka{Ve výkladu rozlišuj přidaný kořen (umocnění) a ztracený kořen (dělení neznámou).}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Jaká řešení má $x^2=9$?
+\tcblower
+\begin{align*}
+x^2&=9 \\
+ x&=\pm3 \\
+ K&=\{-3,3\}
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+Řešte $x(x+2)=0$. Co ztratíte dělením $x$?
+\tcblower
+\begin{align*}
+x(x+2)&=0 \\
+ x&=0\quad\text{nebo}\quad x+2=0 \\
+ K&=\{-2,0\}
+\end{align*}
+
+Při dělení $x$ bez zvláštního prověření hodnoty $x=0$ se jeden kořen ztratí.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+Porovnejte $x-1=2$ a $(x-1)^2=4$.
+\tcblower
+\begin{align*}
+x-1&=2\Rightarrow x=3 \\
+ (x-1)^2&=4\Rightarrow x\in\{-1,3\}
+\end{align*}
+
+Po umocnění vznikl navíc kořen $-1$.
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Je umocnění obou stran rovnice $x+1=0$ ekvivalentní?
+\tcblower
+\begin{align*}
+x+1&=0\Rightarrow x=-1 \\
+ (x+1)^2&=0\Rightarrow x=-1
+\end{align*}
+
+Zde se kořeny shodují, ale z této jedné situace neplyne obecná ekvivalentnost umocňování.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Vyřešte $\sqrt{x+6}=x$.
+\tcblower
+\begin{align*}
+x+6&=x^2 \\
+ (x-3)(x+2)&=0 \\
+ x&\in\{-2,3\}
+\end{align*}
+
+Zkouška připouští jen $x=3$, protože $\sqrt4=2\ne-2$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+Vyřešte $x(x-5)=0$.
+\tcblower
+\begin{align*}
+x(x-5)&=0 \\
+ x&=0\quad\text{nebo}\quad x=5 \\
+ K&=\{0,5\}
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+Kolik kořenů má $x^2=16$ a kolik $x=4$?
+\tcblower
+\begin{align*}
+x^2&=16\Rightarrow x=\pm4 \\
+ x&=4\Rightarrow K=\{4\}
+\end{align*}
+
+Umocněná rovnice obsahuje i $-4$, který nevyhoví původní.
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

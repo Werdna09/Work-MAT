@@ -1,0 +1,106 @@
+% Autorska priprava k Realisticky.cz 020205; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{76}{Nerovnice a jejich úpravy}
+\begin{document}
+\blok{Návaznost a motivace}
+Rovnice hledá argumenty s rovností hodnot; nerovnice hledá argumenty, u nichž jedna hodnota převyšuje druhou. Žáci použijí intervaly z hodin prvního ročníku.
+\begin{definiceBox}
+\textbf{Řešení nerovnice}. Každé přípustné číslo, po jehož dosazení získáme pravdivou nerovnost. Množina řešení se běžně zapisuje intervalem či sjednocením intervalů.
+\end{definiceBox}
+\blok{Princip a odvození}
+Přičítání stejného výrazu zachovává směr nerovnosti. Násobení kladným číslem jej zachovává, násobení záporným číslem jej \emph{obrací}. Násobit neznámým výrazem bez znalosti jeho znaménka nelze bez rozboru případů.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřešte $3x-5>7$.
+\tcblower
+\begin{align*}
+3x-5&>7 \\
+ 3x&>12 \\
+ x&>4
+\end{align*}
+
+$K=(4;+\infty)$; číslo $4$ není řešením.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřešte $-2(x-3)\le4x+6$.
+\tcblower
+\begin{align*}
+-2x+6&\le4x+6 \\
+ -6x&\le0 \\
+ x&\ge0
+\end{align*}
+
+Při dělení $-6$ se nerovnost obrací: $K=\langle0;+\infty)$.
+\end{prikladReseniBox}
+\poznamka{Po každé úpravě záporným číslem nahlas požaduj zdůvodnění obrácení znaménka.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$x+3<1$.
+\tcblower
+\begin{align*}
+x&<1-3 \\
+ x&<-2 \\
+ K&=(-\infty;-2)
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$5-3x\ge2$.
+\tcblower
+\begin{align*}
+-3x&\ge-3 \\
+ x&\le1 \\
+ K&=(-\infty;1\rangle
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$4(x-1)>2x+6$.
+\tcblower
+\begin{align*}
+4x-4&>2x+6 \\
+ 2x&>10 \\
+ x&>5
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Proč není bezpečné vynásobit $x>1$ neznámým výrazem $x-3$?
+\tcblower
+\begin{align*}
+x&>1\quad\text{a}\quad x-3\lessgtr0
+\end{align*}
+
+Činitel $x-3$ mění znaménko v $x=3$. Bez rozboru nelze stanovit směr nové nerovnosti.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$7-2x<1$.
+\tcblower
+\begin{align*}
+-2x&<-6 \\
+ x&>3 \\
+ K&=(3;+\infty)
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$-(x+4)\ge3$.
+\tcblower
+\begin{align*}
+-x-4&\ge3 \\
+ -x&\ge7 \\
+ x&\le-7
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\frac{x-1}{2}\le3$.
+\tcblower
+\begin{align*}
+x-1&\le6 \\
+ x&\le7 \\
+ K&=(-\infty;7\rangle
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

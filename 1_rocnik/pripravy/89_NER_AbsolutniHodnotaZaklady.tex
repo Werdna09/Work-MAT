@@ -1,0 +1,98 @@
+% Autorska priprava k Realisticky.cz 020411; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{89}{Jednoduché nerovnice s absolutní hodnotou}
+\begin{document}
+\blok{Návaznost a motivace}
+Absolutní hodnotu chápeme jako vzdálenost. Výrok $|x-a|<r$ znamená, že $x$ leží blíže než $r$ k číslu $a$; opačná nerovnost znamená vnější část číselné osy.
+\blok{Princip a odvození}
+Pro $r>0$: $|A(x)|<r$ právě tehdy, když $-r<A(x)<r$ (průnik podmínek), kdežto $|A(x)|>r$ vede na $A(x)<-r$ \emph{nebo} $A(x)>r$ (sjednocení). Podobně pro neostré nerovnosti. Ukázky zde necháváme jednoduché, bez dvou modulů.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřešte $|x-2|<3$.
+\tcblower
+\begin{align*}
+-3&<x-2<3 \\
+ -1&<x<5 \\
+ K&=(-1;5)
+\end{align*}
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřešte $|2x+1|\ge5$.
+\tcblower
+\begin{align*}
+2x+1&\le-5\quad\text{nebo}\quad 2x+1\ge5 \\
+ x&\le-3\quad\text{nebo}\quad x\ge2 \\
+ K&=(-\infty;-3\rangle\cup\langle2;+\infty)
+\end{align*}
+\end{prikladReseniBox}
+\poznamka{Použij číselnou osu a význam vzdálenosti. Složitější nerovnice se dvěma moduly jsou jen nadstavba, nikoliv cíl této hodiny.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$|x|<4$.
+\tcblower
+\begin{align*}
+-4&<x<4 \\
+ K&=(-4;4)
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$|x-1|\ge2$.
+\tcblower
+\begin{align*}
+x-1&\le-2\quad\text{nebo}\quad x-1\ge2 \\
+ x&\le-1\quad\text{nebo}\quad x\ge3
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$|x+4|\le1$.
+\tcblower
+\begin{align*}
+-1&\le x+4\le1 \\
+ -5&\le x\le-3 \\
+ K&=\langle-5;-3\rangle
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Vyřešte $|x+2|\le0$.
+\tcblower
+\begin{align*}
+|x+2|&\ge0 \\
+ x+2&=0 \\
+ K&=\{-2\}
+\end{align*}
+
+Při ostré nerovnosti $|x+2|<0$ by naopak bylo $K=\varnothing$.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$|3x|<6$.
+\tcblower
+\begin{align*}
+-6&<3x<6 \\
+ -2&<x<2 \\
+ K&=(-2;2)
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$|x-2|>4$.
+\tcblower
+\begin{align*}
+x-2&<-4\quad\text{nebo}\quad x-2>4 \\
+ x&<-2\quad\text{nebo}\quad x>6
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$|x+3|\le3$.
+\tcblower
+\begin{align*}
+-3&\le x+3\le3 \\
+ -6&\le x\le0 \\
+ K&=\langle-6;0\rangle
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

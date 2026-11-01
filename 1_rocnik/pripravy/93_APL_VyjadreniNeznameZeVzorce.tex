@@ -1,0 +1,100 @@
+% Autorska priprava k Realisticky.cz 020210–020213; TP 4.11; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{93}{Vyjádření neznámé z technického vzorce}
+\begin{document}
+\blok{Návaznost a motivace}
+Na SPŠ se často potřebujeme dostat k jiné veličině než té, která je původně vyjádřena. Využijeme ekvivalentní úpravy známé z lineárních rovnic, ale ohlídáme nenulové dělitele a fyzikální jednotky.
+\blok{Princip a odvození}
+Považuj ostatní písmena za známé parametry. Při dělení symbolem napiš podmínku, že není nulový. Po vyjádření veličiny udělej rozměrovou kontrolu, pokud jednotky dávají smysl.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Ze vztahu $s=vt$ vyjádřete $t$ a $v$.
+\tcblower
+\begin{align*}
+s&=vt \\
+ t&=\frac{s}{v}\quad(v\ne0) \\
+ v&=\frac{s}{t}\quad(t\ne0)
+\end{align*}
+
+Podmínky patří k jednotlivým úpravám; nulová rychlost mění charakter modelu.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Z Ohmova zákona $U=RI$ vyjádřete $I$ a $R$.
+\tcblower
+\begin{align*}
+U&=RI \\
+ I&=\frac UR\quad(R\ne0) \\
+ R&=\frac UI\quad(I\ne0)
+\end{align*}
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Z $P=2(a+b)$ vyjádřete $a$.
+\tcblower
+\begin{align*}
+P&=2a+2b \\
+ 2a&=P-2b \\
+ a&=\frac P2-b
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+Z $A=\frac{(a+b)h}{2}$ vyjádřete $b$.
+\tcblower
+\begin{align*}
+2A&=(a+b)h \\
+ \frac{2A}{h}&=a+b\quad(h\ne0) \\
+ b&=\frac{2A}{h}-a
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+Z $F=ma$ vyjádřete $m$.
+\tcblower
+\begin{align*}
+F&=ma \\
+ m&=\frac Fa\quad(a\ne0)
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Z $C=\frac{m_1c_1+m_2c_2}{m_1+m_2}$ vyjádřete $c_2$.
+\tcblower
+\begin{align*}
+C(m_1+m_2)&=m_1c_1+m_2c_2 \\
+ m_2c_2&=C(m_1+m_2)-m_1c_1 \\
+ c_2&=\frac{C(m_1+m_2)-m_1c_1}{m_2}
+\end{align*}
+
+Podmínky: $m_1+m_2\ne0$ a $m_2\ne0$.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Ze vztahu $E=Pt$ vyjádřete $t$.
+\tcblower
+\begin{align*}
+E&=Pt \\
+ t&=\frac EP\quad(P\ne0)
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+Z $V=abc$ vyjádřete $c$.
+\tcblower
+\begin{align*}
+V&=abc \\
+ c&=\frac V{ab}\quad(ab\ne0)
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+Ze vzorce $c=\frac{m}{V}$ vyjádřete $V$.
+\tcblower
+\begin{align*}
+cV&=m \\
+ V&=\frac mc\quad(c\ne0)
+\end{align*}
+
+Původní předpis předpokládá také $V\ne0$.
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

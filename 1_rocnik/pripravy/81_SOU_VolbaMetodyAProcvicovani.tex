@@ -1,0 +1,102 @@
+% Autorska priprava k Realisticky.cz 020310–020311; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{81}{Soustavy: volba metody a procvičení}
+\begin{document}
+\blok{Návaznost a motivace}
+Obě metody jsou známé. Žáci budou rozhodovat, kdy je výhodnější dosazovat a kdy sčítat. Cílem není nový pojem, ale jistota v samostatném postupu.
+\blok{Princip a odvození}
+Nejdřív rychle posuď koeficienty: obsahuje-li některá rovnice samostatnou neznámou s koeficientem $1$ nebo $-1$, bývá výhodné dosazování. Mají-li členy stejné či opačné koeficienty, bývá rychlejší sčítání. Vždy ověř obě rovnice.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Zvolte metodu a vyřešte $\begin{cases}4x+y=17,\\x-y=3.\end{cases}$
+\tcblower
+\begin{align*}
+5x&=20 \\
+ x&=4 \\
+ y&=1
+\end{align*}
+
+Sčítání je velmi krátké. Oba členy s $y$ se okamžitě vyruší.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Zvolte metodu a vyřešte $\begin{cases}2x+3y=13,\\x+y=5.\end{cases}$
+\tcblower
+\begin{align*}
+x&=5-y \\
+ 2(5-y)+3y&=13 \\
+ y&=3,\quad x=2
+\end{align*}
+
+Zde se dobře dosazuje z druhé rovnice.
+\end{prikladReseniBox}
+\poznamka{Procvičení je vhodné zadat s volbou metody: ke každé vyřešené úloze má žák napsat jednou větou, proč metodu zvolil.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}x+y=9,\\2x-y=3.\end{cases}$
+\tcblower
+\begin{align*}
+3x&=12 \\
+ x&=4,\quad y=5
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}4x-y=9,\\x+y=6.\end{cases}$
+\tcblower
+\begin{align*}
+5x&=15 \\
+ x&=3,\quad y=3
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}2x+2y=8,\\x+y=5.\end{cases}$
+\tcblower
+\begin{align*}
+2(x+y)&=8\Rightarrow x+y=4 \\
+ x+y&=5 \\
+ K&=\varnothing
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Jsou $\begin{cases}3x-2y=5,\\6x-4y=10\end{cases}$ dvě nezávislé podmínky?
+\tcblower
+\begin{align*}
+6x-4y&=2(3x-2y) \\
+ 0&=0 \\
+ y&=\frac{3x-5}{2}
+\end{align*}
+
+Ne, druhá rovnice nepřidává novou podmínku. Je nekonečně mnoho řešení.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}3x+y=10,\\x-y=2.\end{cases}$
+\tcblower
+\begin{align*}
+4x&=12 \\
+ x&=3,\quad y=1
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}2x-y=4,\\x+2y=7.\end{cases}$
+\tcblower
+\begin{align*}
+y&=2x-4 \\
+ 5x&=15 \\
+ x&=3,\quad y=2
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}4x+2y=12,\\2x+y=6.\end{cases}$
+\tcblower
+\begin{align*}
+2(2x+y)&=12 \\
+ 0&=0 \\
+ K&=\{[3-\frac t2;t]\mid t\in\mathbb R\}
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

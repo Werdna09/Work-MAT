@@ -1,0 +1,106 @@
+% Autorska priprava k Realisticky.cz 020311–020314; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{84}{Náročnější soustavy: zlomky a úpravy}
+\begin{document}
+\blok{Návaznost a motivace}
+Po běžných dvojicích přicházejí soustavy, kde nejdřív musíme upravit závorky nebo odstranit zlomky. Není nutná žádná nová metoda; vyžaduje se ale pečlivější zápis.
+\blok{Princip a odvození}
+Před výběrem dosazování či sčítání uveď každou rovnici do přehledného tvaru $ax+by=c$. Zlomkové koeficienty lze odstranit kladným společným násobkem. Po dokončení proveď obě zkoušky.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Řešte $\begin{cases}3x+2y=19,\\2x-y=1.\end{cases}$
+\tcblower
+\begin{align*}
+y&=2x-1 \\
+ 3x+2(2x-1)&=19 \\
+ 7x&=21 \\
+ x&=3,\quad y=5
+\end{align*}
+
+Kontrola: $9+10=19$ a $6-5=1$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Řešte $\begin{cases}\frac{x}{2}+\frac y3=\frac83,\\x-y=2.\end{cases}$
+\tcblower
+\begin{align*}
+3x+2y&=16 \\
+ y&=x-2 \\
+ 3x+2(x-2)&=16 \\
+ 5x&=20 \\
+ x&=4,\quad y=2
+\end{align*}
+\end{prikladReseniBox}
+\poznamka{V posledním domácím příkladu vyjdou zlomky; ověř je ručně. Tato úloha slouží jako rezerva pro rychlejší žáky.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}2x+3y=12,\\x-y=1.\end{cases}$
+\tcblower
+\begin{align*}
+x&=y+1 \\
+ 2(y+1)+3y&=12 \\
+ y&=2,\quad x=3
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}x+2y=8,\\3x-2y=4.\end{cases}$
+\tcblower
+\begin{align*}
+4x&=12 \\
+ x&=3,\quad y=\frac52
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}2(x+y)=10,\\x-y=1.\end{cases}$
+\tcblower
+\begin{align*}
+x+y&=5 \\
+ x-y&=1 \\
+ x&=3,\quad y=2
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Řešte $\begin{cases}2x+5y=21,\\x+y=6.\end{cases}$
+\tcblower
+\begin{align*}
+x&=6-y \\
+ 2(6-y)+5y&=21 \\
+ y&=3,\quad x=3
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}\frac x2+y=4,\\x-y=2.\end{cases}$
+\tcblower
+\begin{align*}
+x+2y&=8 \\
+ x-y&=2 \\
+ 3y&=6 \\
+ y&=2,\quad x=4
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\begin{cases}4x-2y=12,\\x+y=6.\end{cases}$
+\tcblower
+\begin{align*}
+y&=6-x \\
+ 4x-2(6-x)&=12 \\
+ 6x&=24 \\
+ x&=4,\quad y=2
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}3x+y=13,\\2x-3y=-1.\end{cases}$
+\tcblower
+\begin{align*}
+y&=13-3x \\
+ 2x-3(13-3x)&=-1 \\
+ 11x&=38 \\
+ x&=\frac{38}{11},\quad y=\frac{29}{11}
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}

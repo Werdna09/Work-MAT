@@ -1,0 +1,85 @@
+% Autorska priprava k Realisticky.cz 020409–020411, 020801; ulohy jsou autorske a obmenene.
+% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{94}{Průběžný test II: soustavy, moduly, parametr}
+\begin{document}
+\blok{Návaznost a motivace}
+Druhý krátký test uzavře blok absolutních hodnot a základních parametrických rovnic. U každého příkladu se hodnotí jak výsledek, tak zdůvodnění postupu a podmínky.
+\blok{Princip a odvození}
+Navržená organizace: 3 min pokyny, 20 min individuální ověření, 17 min samostatná opravná či rozšiřující práce, 5 min závěr. U testu z parametrů posuzuj zejména správné rozdělení na případy.
+\blok{Řešené příklady: od jednoduchého ke složitějšímu}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Testová úloha: vyřešte $|2x-4|=6$.
+\tcblower
+\begin{align*}
+2x-4&=\pm6 \\
+ x&=5\quad\text{nebo}\quad x=-1 \\
+ K&=\{-1,5\}
+\end{align*}
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Testová úloha: diskutujte $(p-1)x=p-1$.
+\tcblower
+\begin{align*}
+p&\ne1:\quad x=1 \\
+ p&=1:\quad 0=0\Rightarrow x\in\mathbb R
+\end{align*}
+\end{prikladReseniBox}
+\poznamka{Zadání testu je také jako zvláštní žákovský soubor. Hodnocení a pravidla pomůcek přizpůsob skutečnému školnímu řádu.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Testová úloha: $\begin{cases}x+y=12,\\3x+2y=30.\end{cases}$
+\tcblower
+\begin{align*}
+y&=12-x \\
+ 3x+2(12-x)&=30 \\
+ x&=6,\quad y=6
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+Testová úloha: z $s=vt$ vyjádřete $t$.
+\tcblower
+\begin{align*}
+s&=vt \\
+ t&=\frac sv\quad(v\ne0)
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+Diagnostická nerovnice $|x-1|<2$.
+\tcblower
+\begin{align*}
+-2&<x-1<2 \\
+ -1&<x<3 \\
+ K&=(-1;3)
+\end{align*}
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Opravte chybu: $(a-3)x=0$ má prý vždy jen $x=0$.
+\tcblower
+\begin{align*}
+a&\ne3:\quad x=0 \\
+ a&=3:\quad0=0\Rightarrow x\in\mathbb R
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$|x+1|=3$.
+\tcblower
+\begin{align*}
+x+1&=\pm3 \\
+ x&=2\;\text{nebo}\;-4 \\
+ K&=\{-4,2\}
+\end{align*}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 3}]
+$\begin{cases}x+y=5,\\x-y=1.\end{cases}$
+\tcblower
+\begin{align*}
+2x&=6 \\
+ x&=3,\quad y=2
+\end{align*}
+\end{zadaniReseniBox}
+\poznamka{Orientační časové rozvržení: 3 + 20 + 17 + 5 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\end{document}
