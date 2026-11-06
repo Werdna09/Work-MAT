@@ -1,101 +1,143 @@
-% Autorska priprava k Realisticky.cz 020210–020213; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 91. hodina.
+% Zdroje: Realisticky.cz 020210–020213; rozšiřující úlohy vlastní
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
 \usepackage{tikz}
-\nastavPripravu{1. ročník}{Rovnice a nerovnice}{91}{Slovní úlohy vedoucí na lineární rovnice}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{91}{Slovní úlohy na lineární rovnice}
 \begin{document}
-\blok{Návaznost a motivace}
-Po výpočtech s neznámou je důležité vytvořit rovnici ze situace. Volíme úlohy na polohu, cenu a výrobu, aby žáci procvičili zápis jednotek a věcnou kontrolu.
-\blok{Princip a odvození}
-Vždy uveď, co znamená neznámá a v jakých jednotkách se měří. Po získání čísla vrať řešení do původní situace: může vyjít záporný čas, necelý počet kusů nebo nepřiměřená cena, což vyžaduje věcnou kontrolu.
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
-Kurýr je na 35. kilometru trasy a jede rychlostí $55\,\mathrm{km/h}$. Kdy dorazí ke skladu na 255. kilometru?
+\blok{Sestavení rovnice ze situace}
+Nestačí dosazovat do stále stejného vzorce „počáteční stav + sazba $\cdot$ čas“. Dnes rozlišujeme \textbf{jednu měnící se veličinu, porovnání dvou nabídek a setkání dvou pohybujících se objektů}. Vše lze vyřešit jednou lineární rovnicí.
+\blok{Jak postupovat}
+\begin{enumerate}[label=\arabic*)]
+\item Označ neznámou a její jednotku; urči přípustné hodnoty.
+\item Z každé věty sestav výraz popisující tutéž veličinu na obou stranách rovnosti.
+\item Vyřeš rovnici a vrať kořen k původnímu významu; proveď věcnou zkoušku.
+\end{enumerate}
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}
+Taxi účtuje nástupní cenu 50 Kč a 18 Kč za kilometr. Kolik kilometrů ujelo při ceně 230 Kč?
 \tcblower
-\begin{align*}
-35+55t&=255 \\
- 55t&=220 \\
- t&=4\,\mathrm{h}
-\end{align*}
-
-Graficky jde o průsečík rostoucí lineární funkce s konstantní funkcí $255$.
-\end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
-Výroba má na skladě 150 kusů a vyrábí 12 za hodinu. Za jak dlouho bude 390 kusů?
-\tcblower
-\begin{align*}
-150+12t&=390 \\
- 12t&=240 \\
- t&=20\,\mathrm{h}
-\end{align*}
-\end{prikladReseniBox}
-\poznamka{Nevytvářej uměle předpis s konstantní funkcí ve všech úlohách; modeluj jen veličiny, které opravdu dávají smysl.}
-\blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Taxi má nástupní sazbu 50 Kč a 18 Kč za kilometr. Po kolika kilometrech stojí cesta 230 Kč?
-\tcblower
-\begin{align*}
+\[\begin{aligned}
 50+18k&=230 \\
- 18k&=180 \\
- k&=10\,\mathrm{km}
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-Pronájem nářadí stojí 200 Kč a 45 Kč za hodinu. Kolik hodin odpovídá 650 Kč?
+18k&=180 \\
+k&=10\,\mathrm{km}
+\end{aligned}\]
+Při $k=10$ vychází $50+18\cdot10=230$ Kč.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Dva telefonní tarify: A stojí 120 Kč měsíčně a 4 Kč/min, B stojí 300 Kč a 2 Kč/min. Při kolika minutách stojí stejně? Který je levnější před tímto okamžikem?
 \tcblower
-\begin{align*}
+\[\begin{aligned}
+120+4m&=300+2m \\
+2m&=180 \\
+m&=90\,\mathrm{min}
+\end{aligned}\]
+Zkouška: oba stojí 480 Kč. Při $m=0$ je levnější A, proto A je levnější pro $m<90$, B pro $m>90$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Dva cyklisté vyjíždějí současně proti sobě z míst vzdálených 63 km. Jejich rychlosti jsou 18 a 24 km/h. Za jak dlouho se setkají?
+\tcblower
+\[\begin{aligned}
+18t+24t&=63 \\
+42t&=63 \\
+t&=1{,}5\,\mathrm{h}
+\end{aligned}\]
+Zkouška: $27+36=63$ km. Každý příspěvek představuje ujetou vzdálenost.
+\end{prikladReseniBox}
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}
+Pronájem nářadí stojí 200 Kč plus 45 Kč za hodinu. Za kolik hodin zaplatíme 650 Kč?
+\tcblower
+\[\begin{aligned}
 200+45h&=650 \\
- 45h&=450 \\
- h&=10
-\end{align*}
+45h&=450 \\
+h&=10\,\mathrm h
+\end{aligned}\]
+Zkouška: $200+45\cdot10=650$ Kč.
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-Tarif stojí 180 Kč a 3 Kč/min. Kolik minut odpovídá faktuře 300 Kč?
+\begin{zadaniReseniBox}
+Dvě firmy vyrábějí stejnou součástku. První má hotovo 80 kusů a vyrábí 12 kusů/h, druhá má 140 kusů a vyrábí 8 kusů/h. Za kolik hodin budou mít stejně kusů?
 \tcblower
-\begin{align*}
-180+3m&=300 \\
- 3m&=120 \\
- m&=40\,\mathrm{min}
-\end{align*}
+\[\begin{aligned}
+80+12t&=140+8t \\
+4t&=60 \\
+t&=15\,\mathrm h
+\end{aligned}\]
+Obě mají po 15 h $260$ kusů.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}
+Obvod obdélníku je 54 cm, délka je o 5 cm větší než šířka. Určete oba rozměry.
+\tcblower
+\[\begin{aligned}
+2x+2(x+5)&=54 \\
+4x+10&=54 \\
+x&=11\,\mathrm{cm} \\
+x+5&=16\,\mathrm{cm}
+\end{aligned}\]
+Zkouška: $2\cdot(11+16)=54$ cm.
 \end{zadaniReseniBox}
 \blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Stroj má počátečních 60 kusů a vyrábí 15 kusů za hodinu. Kdy dosáhne 255 kusů?
+\begin{zadaniReseniBox}
+Vlak vyráží v 8:00 rychlostí 70 km/h. Auto vyráží po stejné trase v 9:00 rychlostí 105 km/h. Kdy dojede vlak?
 \tcblower
-\begin{align*}
-60+15t&=255 \\
- 15t&=195 \\
- t&=13\,\mathrm{h}
-\end{align*}
+\[\begin{aligned}
+105t&=70(t+1) \\
+35t&=70 \\
+t&=2\,\mathrm h
+\end{aligned}\]
+Čas $t$ měříme od 9:00. Auto vlak dojede v 11:00.
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-V nádrži je 12 litrů a spotřeba je $0{,}7\,\mathrm{l/h}$. Za jak dlouho bude zbývat 5 litrů?
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item V nádrži je 12 l kapaliny, která ubývá rychlostí $0{,}7\,\mathrm{l/h}$. Za jak dlouho zbude 5 l?
+\item Pronájem stojí 350 Kč plus 25 Kč za hodinu. Kdy je účet 900 Kč?
+\item Zisk při výrobě $q$ kusů je $100q-1500$ Kč. Kolik kusů je nutné pro zisk 2500 Kč?
+\item Tarif A stojí $150+4m$ Kč, tarif B $250+2m$ Kč. Při jakém počtu minut $m$ jsou ceny stejné?
+\item Vozidlo A jede rychlostí 45 km/h; vozidlo B vyjede po stejné trase o 30 minut později rychlostí 60 km/h. Za kolik hodin od startu B dojede vozidlo A?
+\item Obvod obdélníku je 66 cm. Délka je o 3 cm větší než šířka. Určete rozměry.
+\end{enumerate}
 \tcblower
-\begin{align*}
+\begin{enumerate}[label=\alph*),itemsep=1pt]
+\item
+\[\begin{aligned}
 12-0{,}7t&=5 \\
- 0{,}7t&=7 \\
- t&=10\,\mathrm{h}
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-Pronájem stojí 350 Kč plus 25 Kč za hodinu. Kdy je účet 900 Kč?
-\tcblower
-\begin{align*}
-350+25h&=900 \\
- 25h&=550 \\
- h&=22
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-Zisk z výroby je $100q-1500$ Kč. Kolik kusů je nutné pro zisk 2500 Kč?
-\tcblower
-\begin{align*}
+0{,}7t&=7 \\
+t&=10\,\mathrm h
+\end{aligned}\]\par Zkouška: za 10 hodin ubyde 7 l.
+\item
+\[\begin{aligned}
+350+25t&=900 \\
+25t&=550 \\
+t&=22\,\mathrm h
+\end{aligned}\]
+\item
+\[\begin{aligned}
 100q-1500&=2500 \\
- 100q&=4000 \\
- q&=40
-\end{align*}
+100q&=4000 \\
+q&=40\ \text{kusů}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+150+4m&=250+2m \\
+2m&=100 \\
+m&=50\,\mathrm{min}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+60t&=45(t+0{,}5) \\
+15t&=22{,}5 \\
+t&=1{,}5\,\mathrm h
+\end{aligned}\]\par Od startu A uplynou 2 hodiny.
+\item
+\[\begin{aligned}
+2x+2(x+3)&=66 \\
+4x+6&=66 \\
+x&=15\,\mathrm{cm} \\
+x+3&=18\,\mathrm{cm}
+\end{aligned}\]\par Obvod $2(15+18)=66$ cm.
+\end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\poznamka{45 minut: úvodní model 6, tři společné typy 21, samostatné procvičování 14, shrnutí 4. Rezerva je nad rámec; vyžaduj jednotky a zkoušku v příběhu.}
 \end{document}

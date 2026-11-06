@@ -1,85 +1,82 @@
-% Autorska priprava k Realisticky.cz 020409–020411, 020801; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 94. hodina.
+% Zdroje: Realisticky.cz 020409–020411, 020801–020802; původní test A/B koncepčně rozšířen
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
 \usepackage{tikz}
-\nastavPripravu{1. ročník}{Rovnice a nerovnice}{94}{Průběžný test II: soustavy, moduly, parametr}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{94}{Průběžný test II}
 \begin{document}
-\blok{Návaznost a motivace}
-Druhý krátký test uzavře blok absolutních hodnot a základních parametrických rovnic. U každého příkladu se hodnotí jak výsledek, tak zdůvodnění postupu a podmínky.
-\blok{Princip a odvození}
-Navržená organizace: 3 min pokyny, 20 min individuální ověření, 17 min samostatná opravná či rozšiřující práce, 5 min závěr. U testu z parametrů posuzuj zejména správné rozdělení na případy.
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
-Testová úloha: vyřešte $|2x-4|=6$.
+\blok{Průběžný test II – absolutní hodnota, parametr a soustavy}
+Uzavíráme hodiny 87--93. Zadání je v samostatných variantách A/B bez řešení; tato příprava slouží výhradně učiteli.
+\blok{Organizace a bodování}
+\begin{itemize}
+\item 3 min zadání pokynů; 25 min samostatná práce; 12 min práce na opravách bez komentování aktuálního testu; 5 min sběr a závěr.
+\item Pět úloh: dvě absolutní hodnoty (4 body), nerovnice s absolutní hodnotou (3 body), parametr (3 body), soustava (3 body), vyjádření veličiny (2 body). Celkem \textbf{15 bodů}.
+\item Žáci musí uvést množinu $K$, správné intervaly, podmínku u parametru a u technického vzorce. Hodnoť i zvolenou metodu.
+\end{itemize}
+\blok{Ukázky typických chyb pro následný rozbor}
+\begin{prikladReseniBox}
+Rovnice $|x-2|+|x+2|=6$: proč nelze obě absolutní hodnoty jednoduše „zrušit“ zároveň?
 \tcblower
-\begin{align*}
-2x-4&=\pm6 \\
- x&=5\quad\text{nebo}\quad x=-1 \\
- K&=\{-1,5\}
-\end{align*}
+\[\begin{aligned}
+x<-2&:\quad -2x=6\Rightarrow x=-3 \\
+-2\le x\le2&:\quad 4\ne6 \\
+x>2&:\quad 2x=6\Rightarrow x=3 \\
+K&=\{-3;3\}
+\end{aligned}\]
+Na prostředním intervalu jsou absolutní hodnoty vyjádřeny různými lineárními předpisy.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
-Testová úloha: diskutujte $(p-1)x=p-1$.
+\begin{zadaniReseniBox}
+Diskutujte $(p-1)x=p-1$ bez dělení nulou.
 \tcblower
-\begin{align*}
-p&\ne1:\quad x=1 \\
- p&=1:\quad 0=0\Rightarrow x\in\mathbb R
-\end{align*}
-\end{prikladReseniBox}
-\poznamka{Zadání testu je také jako zvláštní žákovský soubor. Hodnocení a pravidla pomůcek přizpůsob skutečnému školnímu řádu.}
-\blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Testová úloha: $\begin{cases}x+y=12,\\3x+2y=30.\end{cases}$
-\tcblower
-\begin{align*}
-y&=12-x \\
- 3x+2(12-x)&=30 \\
- x&=6,\quad y=6
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-Testová úloha: z $s=vt$ vyjádřete $t$.
-\tcblower
-\begin{align*}
-s&=vt \\
- t&=\frac sv\quad(v\ne0)
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-Diagnostická nerovnice $|x-1|<2$.
-\tcblower
-\begin{align*}
--2&<x-1<2 \\
- -1&<x<3 \\
- K&=(-1;3)
-\end{align*}
+\[\begin{aligned}
+p\ne1&:\quad x=1 \\
+p=1&:\quad0=0 \\
+K_p&=\begin{cases}\{1\},&p\ne1,\\\mathbb R,&p=1.\end{cases}
+\end{aligned}\]
+
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Opravte chybu: $(a-3)x=0$ má prý vždy jen $x=0$.
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item Vyřešte $|x+1|=3$.
+\item Vyřešte $|x-1|\le2$.
+\item Opravte tvrzení: $(a-3)x=0$ má pro každé $a$ pouze kořen $x=0$.
+\item Vyřešte $\begin{cases}x+y=5,\\x-y=1.\end{cases}$
+\item Ze vztahu $P=UI$ vyjádřete $I$ pro $U\ne0$.
+\end{enumerate}
 \tcblower
-\begin{align*}
-a&\ne3:\quad x=0 \\
- a&=3:\quad0=0\Rightarrow x\in\mathbb R
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-$|x+1|=3$.
-\tcblower
-\begin{align*}
+\begin{enumerate}[label=\alph*),itemsep=1pt]
+\item
+\[\begin{aligned}
 x+1&=\pm3 \\
- x&=2\;\text{nebo}\;-4 \\
- K&=\{-4,2\}
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-$\begin{cases}x+y=5,\\x-y=1.\end{cases}$
-\tcblower
-\begin{align*}
+x&=-4\ \text{nebo}\ x=2 \\
+K&=\{-4;2\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+-2&\le x-1\le2 \\
+-1&\le x\le3 \\
+K&=\langle-1;3\rangle
+\end{aligned}\]
+\item
+\[\begin{aligned}
+a\ne3&:\quad x=0 \\
+a=3&:\quad 0=0 \\
+K_a&=\begin{cases}\{0\},&a\ne3,\\\mathbb R,&a=3.\end{cases}
+\end{aligned}\]
+\item
+\[\begin{aligned}
 2x&=6 \\
- x&=3,\quad y=2
-\end{align*}
+x&=3,\quad y=2 \\
+K&=\{[3;2]\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+P&=UI \\
+I&=\frac PU\quad(U\ne0)
+\end{aligned}\]
+\end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 3 + 20 + 17 + 5 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\poznamka{Zadání ani klíč nesmí žák dostat společně. Při opravě oceň i částečné odvození po intervalech a diskusi při nulovém koeficientu. Přílohy A/B mají rozdílná čísla, ale shodné bodové váhy.}
 \end{document}

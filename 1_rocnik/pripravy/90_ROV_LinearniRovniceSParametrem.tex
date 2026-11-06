@@ -1,121 +1,130 @@
-% Autorska priprava k Realisticky.cz 020801–020802; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 90. hodina.
+% Zdroje: Realisticky.cz 020801–020802
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
 \usepackage{tikz}
 \nastavPripravu{1. ročník}{Rovnice a nerovnice}{90}{Lineární rovnice s parametrem}
 \begin{document}
-\blok{Návaznost a motivace}
-Od běžné rovnice se parametrická liší tím, že v ní vystupuje neznámá $x$ a zároveň číslo $a$, jehož hodnotu neurčujeme. Řešením je diskuse o tom, kdy existuje jeden kořen, žádný nebo nekonečně mnoho.
+\blok{Od běžné rovnice k parametru}
+V rovnici $(a-2)x=a+1$ hledáme $x$; $a$ je libovolné \emph{pevně zvolené} číslo. Řešení zapisujeme jako množinu $K_a$ závislou na hodnotě $a$.
 \begin{definiceBox}
-\textbf{Parametr v rovnici}. Pevně zvolené číslo, na němž závisí koeficienty nebo pravá strana rovnice. Při řešení hledáme neznámou $x$, nikoli hodnotu parametru.
+\textbf{Parametr} je symbol označující pevně zvolenou hodnotu, při níž řešíme rovnici vůči neznámé. Výsledek může záviset na hodnotě parametru.
 \end{definiceBox}
-\blok{Princip a odvození}
-Nejprve uprav rovnici na $A(a)x=B(a)$. Než vydělíš výrazem $A(a)$, zvlášť prověř hodnoty parametru, pro které $A(a)=0$. V těchto případech se rovnice může změnit na pravdivou nebo nepravdivou konstantní rovnost.
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
+\blok{Metodický postup}
+Každou rovnici uprav na $A(a)x=B(a)$. Pro $A(a)\ne0$ má jediný kořen $x=B(a)/A(a)$. Pokud je $A(a)=0$, rozliš $B(a)=0$ (řeší všechna $x$) a $B(a)\ne0$ (žádné řešení). \textbf{Nikdy nedělíme výrazem, který může být nulový, bez rozboru.}
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}
 Vyřešte $(a-2)x=a+1$ pro všechna $a\in\mathbb R$.
 \tcblower
-\begin{align*}
-a&\ne2:\quad x=\frac{a+1}{a-2} \\
- a&=2:\quad 0\cdot x=3\;\text{-- spor}
-\end{align*}
+\[\begin{aligned}
+a\ne2&:\quad x=\frac{a+1}{a-2} \\
+a=2&:\quad 0\cdot x=3\quad\text{-- spor} \\
+K_a&=\begin{cases}\left\{\frac{a+1}{a-2}\right\},&a\ne2,\\\varnothing,&a=2.\end{cases}
+\end{aligned}\]
 
-Pro $a\ne2$ jediný kořen $x=(a+1)/(a-2)$; pro $a=2$ žádný.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
+\begin{prikladReseniBox}
 Vyřešte $(a-1)x=a-1$.
 \tcblower
-\begin{align*}
-a&\ne1:\quad x=\frac{a-1}{a-1}=1 \\
- a&=1:\quad 0\cdot x=0
-\end{align*}
+\[\begin{aligned}
+a\ne1&:\quad x=\frac{a-1}{a-1}=1 \\
+a=1&:\quad 0\cdot x=0 \\
+K_a&=\begin{cases}\{1\},&a\ne1,\\\mathbb R,&a=1.\end{cases}
+\end{aligned}\]
 
-Pro $a=1$ jsou řešením všechna reálná $x$.
 \end{prikladReseniBox}
-\poznamka{Jde o jedinou základní hodinu parametrických rovnic. Obtížnější víceparametrové úlohy nezařazuj jako povinné.}
 \blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
+\begin{zadaniReseniBox}
 $(p+1)x=3$.
 \tcblower
-\begin{align*}
-p&\ne-1:\quad x=\frac{3}{p+1} \\
- p&=-1:\quad 0\cdot x=3\;\text{-- spor}
-\end{align*}
+\[\begin{aligned}
+p\ne-1&:\quad x=\frac3{p+1} \\
+p=-1&:\quad 0=3\quad\text{-- spor} \\
+K_p&=\begin{cases}\left\{\frac3{p+1}\right\},&p\ne-1,\\\varnothing,&p=-1.\end{cases}
+\end{aligned}\]
+
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
+\begin{zadaniReseniBox}
 $(p-2)x=p-2$.
 \tcblower
-\begin{align*}
-p&\ne2:\quad x=1 \\
- p&=2:\quad 0\cdot x=0\Rightarrow x\in\mathbb R
-\end{align*}
+\[\begin{aligned}
+p\ne2&:\quad x=1 \\
+p=2&:\quad0=0 \\
+K_p&=\begin{cases}\{1\},&p\ne2,\\\mathbb R,&p=2.\end{cases}
+\end{aligned}\]
+
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
+\begin{zadaniReseniBox}
 $(p+3)x=0$.
 \tcblower
-\begin{align*}
-p&\ne-3:\quad x=0 \\
- p&=-3:\quad 0\cdot x=0\Rightarrow x\in\mathbb R
-\end{align*}
+\[\begin{aligned}
+p\ne-3&:\quad x=0 \\
+p=-3&:\quad0=0 \\
+K_p&=\begin{cases}\{0\},&p\ne-3,\\\mathbb R,&p=-3.\end{cases}
+\end{aligned}\]
+
 \end{zadaniReseniBox}
 \blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Proč nelze z $ax=a$ automaticky napsat $x=1$?
+\begin{zadaniReseniBox}
+Proč z $ax=a$ neplyne bez podmínky $x=1$?
 \tcblower
-\begin{align*}
-a&\ne0:\quad x=1 \\
- a&=0:\quad 0=0\Rightarrow x\in\mathbb R
-\end{align*}
+\[\begin{aligned}
+a\ne0&:\quad x=1 \\
+a=0&:\quad 0=0 \\
+K_a&=\begin{cases}\{1\},&a\ne0,\\\mathbb R,&a=0.\end{cases}
+\end{aligned}\]
 
-Při $a=0$ má rovnice nekonečně mnoho řešení.
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
 \begin{zadaniReseniBox}[title={Domácí příprava}]
-\begin{enumerate}[label=\alph*)]
-\item
-$(m-4)x=5$.
-\item
-$(m+2)x=m+2$.
-\item
-$mx=m+1$.
-\item
-$(a-3)x=2a-6$.
-\item
-$(a+1)x=a-2$.
-\item
-$(a-2)x=a+4$.
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $(m-4)x=5$.
+\item $(m+2)x=m+2$.
+\item $mx=m+1$.
+\item $(a-3)x=2a-6$.
+\item $(a+1)x=a-2$.
+\item $(a-2)x=a+4$.
 \end{enumerate}
 \tcblower
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\alph*),itemsep=1pt]
 \item
-\begin{align*}
-m&\ne4:\quad x=\frac5{m-4} \\
- m&=4:\quad 0=5\;\text{-- spor}
-\end{align*}
+\[\begin{aligned}
+m\ne4&:\quad x=\frac5{m-4} \\
+m=4&:\quad0=5\ \text{-- spor} \\
+K_m&=\begin{cases}\left\{\frac5{m-4}\right\},&m\ne4,\\\varnothing,&m=4.\end{cases}
+\end{aligned}\]
 \item
-\begin{align*}
-m&\ne-2:\quad x=1 \\
- m&=-2:\quad 0=0\Rightarrow x\in\mathbb R
-\end{align*}
+\[\begin{aligned}
+m\ne-2&:\quad x=1 \\
+m=-2&:\quad0=0 \\
+K_m&=\begin{cases}\{1\},&m\ne-2,\\\mathbb R,&m=-2.\end{cases}
+\end{aligned}\]
 \item
-\begin{align*}
-m&\ne0:\quad x=\frac{m+1}{m} \\
- m&=0:\quad 0=1\;\text{-- spor}
-\end{align*}
+\[\begin{aligned}
+m\ne0&:\quad x=\frac{m+1}{m} \\
+m=0&:\quad0=1\ \text{-- spor} \\
+K_m&=\begin{cases}\left\{\frac{m+1}{m}\right\},&m\ne0,\\\varnothing,&m=0.\end{cases}
+\end{aligned}\]
 \item
-$\begin{aligned}
-a\ne3&:\quad x=\frac{2(a-3)}{a-3}=2\\a=3&:\quad 0=0,\ \ K=\mathbb R
-\end{aligned}$
+\[\begin{aligned}
+a\ne3&:\quad x=\frac{2(a-3)}{a-3}=2 \\
+a=3&:\quad0=0 \\
+K_a&=\begin{cases}\{2\},&a\ne3,\\\mathbb R,&a=3.\end{cases}
+\end{aligned}\]
 \item
-$\begin{aligned}
-a\ne-1&:\quad x=\frac{a-2}{a+1}\\a=-1&:\quad 0=-3,\ \ K=\varnothing
-\end{aligned}$
+\[\begin{aligned}
+a\ne-1&:\quad x=\frac{a-2}{a+1} \\
+a=-1&:\quad0=-3\ \text{-- spor} \\
+K_a&=\begin{cases}\left\{\frac{a-2}{a+1}\right\},&a\ne-1,\\\varnothing,&a=-1.\end{cases}
+\end{aligned}\]
 \item
-$\begin{aligned}
-a\ne2&:\quad x=\frac{a+4}{a-2}\\a=2&:\quad 0=6,\ \ K=\varnothing
-\end{aligned}$
+\[\begin{aligned}
+a\ne2&:\quad x=\frac{a+4}{a-2} \\
+a=2&:\quad0=6\ \text{-- spor} \\
+K_a&=\begin{cases}\left\{\frac{a+4}{a-2}\right\},&a\ne2,\\\varnothing,&a=2.\end{cases}
+\end{aligned}\]
 \end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\poznamka{45 minut: význam parametru a nulového dělitele 9, dva vzory 15, samostatná práce 16, kontrola 5. Jedna hodina je věnována základním případům; složitější parametrické rovnice nejsou povinné.}
 \end{document}

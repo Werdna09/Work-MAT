@@ -1,100 +1,148 @@
-% Autorska priprava k Realisticky.cz 020210–020213; TP 4.11; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 93. hodina.
+% Zdroje: původní hodina 93, TP 4.11, souvislost s lineárními rovnicemi s parametrem
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
 \usepackage{tikz}
-\nastavPripravu{1. ročník}{Rovnice a nerovnice}{93}{Vyjádření neznámé z technického vzorce}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{93}{Vyjádření neznámé ze vzorce}
 \begin{document}
-\blok{Návaznost a motivace}
-Na SPŠ se často potřebujeme dostat k jiné veličině než té, která je původně vyjádřena. Využijeme ekvivalentní úpravy známé z lineárních rovnic, ale ohlídáme nenulové dělitele a fyzikální jednotky.
-\blok{Princip a odvození}
-Považuj ostatní písmena za známé parametry. Při dělení symbolem napiš podmínku, že není nulový. Po vyjádření veličiny udělej rozměrovou kontrolu, pokud jednotky dávají smysl.
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
-Ze vztahu $s=vt$ vyjádřete $t$ a $v$.
+\blok{Vyjadřování veličin z technických vzorců}
+Při vyjádření neznámé se k ostatním písmenům chováme jako k parametrům. \textbf{Dělení symbolem} vyžaduje podmínku, že dělitel není nulový. Nejde jen o algebru: původní vzorec může mít vlastní definiční podmínky.
+\blok{Základní postup}
+Z původního vzorce nejprve napiš jeho definiční podmínky. Poté izoluj požadovanou proměnnou, vyjádři ji a zkoušej dosazením. V technických aplikacích dodržuj jednotky a případná fyzikální omezení, například $V>0$.
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}
+Ze vztahu $s=vt$ vyjádřete $t$ (pro $v\ne0$) a $v$ (pro $t\ne0$).
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 s&=vt \\
- t&=\frac{s}{v}\quad(v\ne0) \\
- v&=\frac{s}{t}\quad(t\ne0)
-\end{align*}
-
-Podmínky patří k jednotlivým úpravám; nulová rychlost mění charakter modelu.
+t&=\frac{s}{v}\quad(v\ne0) \\
+v&=\frac{s}{t}\quad(t\ne0)
+\end{aligned}\]
+Jednotková kontrola: $\mathrm{km}/(\mathrm{km/h})=\mathrm h$.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
-Z Ohmova zákona $U=RI$ vyjádřete $I$ a $R$.
+\begin{prikladReseniBox}
+Z Ohmova zákona $U=RI$ vyjádřete elektrický proud $I$ a odpor $R$.
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 U&=RI \\
- I&=\frac UR\quad(R\ne0) \\
- R&=\frac UI\quad(I\ne0)
-\end{align*}
+I&=\frac UR\quad(R\ne0) \\
+R&=\frac UI\quad(I\ne0)
+\end{aligned}\]
+V kontextu obvodu může být třeba doplnit i fyzikální omezení, která samotná algebra neurčuje.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Ze vztahu $A=\frac{(a+b)h}{2}$ vyjádřete $b$.
+\tcblower
+\[\begin{aligned}
+2A&=(a+b)h \\
+\frac{2A}{h}&=a+b\quad(h\ne0) \\
+b&=\frac{2A}{h}-a
+\end{aligned}\]
+Je-li $h=0$, vztah platí pouze pro $A=0$; při tom však $b$ z rovnice jednoznačně neurčíme.
+\end{prikladReseniBox}
+\blok{Zvláštní případ: proměnná ve jmenovateli}
+V rovnici $c=\frac mV$ již před úpravou platí $V\ne0$. Pokud $c\ne0$ a $m\ne0$, pak $V=m/c$. Co ale v případě $c=0$? Nesmíme mechanicky dělit nulou ani ztratit původní podmínku.
+\begin{prikladReseniBox}
+Vyjádřete množinu možných hodnot $V$ v závislosti na reálných parametrech $c,m$ z rovnice $c=\frac mV$.
+\tcblower
+\[\begin{aligned}
+V&\ne0\quad\text{(definiční obor)} \\
+cV&=m \\
+K_{c,m}&=\begin{cases}\left\{\frac mc\right\},&c\ne0,\ m\ne0,\\\mathbb R\setminus\{0\},&c=0,\ m=0,\\\varnothing,&\text{jinak}.\end{cases}
+\end{aligned}\]
+Fyzikální interpretace objemu ještě přidává $V>0$; zde jsme nejprve vyřešili čistě algebraickou rovnici nad reálnými čísly.
 \end{prikladReseniBox}
 \blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
+\begin{zadaniReseniBox}
 Z $P=2(a+b)$ vyjádřete $a$.
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 P&=2a+2b \\
- 2a&=P-2b \\
- a&=\frac P2-b
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-Z $A=\frac{(a+b)h}{2}$ vyjádřete $b$.
-\tcblower
-\begin{align*}
-2A&=(a+b)h \\
- \frac{2A}{h}&=a+b\quad(h\ne0) \\
- b&=\frac{2A}{h}-a
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-Z $F=ma$ vyjádřete $m$.
-\tcblower
-\begin{align*}
-F&=ma \\
- m&=\frac Fa\quad(a\ne0)
-\end{align*}
-\end{zadaniReseniBox}
-\blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Z $C=\frac{m_1c_1+m_2c_2}{m_1+m_2}$ vyjádřete $c_2$.
-\tcblower
-\begin{align*}
-C(m_1+m_2)&=m_1c_1+m_2c_2 \\
- m_2c_2&=C(m_1+m_2)-m_1c_1 \\
- c_2&=\frac{C(m_1+m_2)-m_1c_1}{m_2}
-\end{align*}
+2a&=P-2b \\
+a&=\frac P2-b
+\end{aligned}\]
 
-Podmínky: $m_1+m_2\ne0$ a $m_2\ne0$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}
+Z $F=ma$ vyjádřete $m$ a určete podmínku.
+\tcblower
+\[\begin{aligned}
+F&=ma \\
+m&=\frac Fa\quad(a\ne0)
+\end{aligned}\]
+Při $a=0$ je nutné zvlášť posoudit $F=0$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}
+Ze vztahu $Q=cm(T_2-T_1)$ vyjádřete $T_2$ pro $cm\ne0$.
+\tcblower
+\[\begin{aligned}
+Q&=cm(T_2-T_1) \\
+\frac Q{cm}&=T_2-T_1 \\
+T_2&=T_1+\frac Q{cm}
+\end{aligned}\]
+
+\end{zadaniReseniBox}
+\needspace{15\baselineskip}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}
+Z váženého průměru $C=\frac{m_1c_1+m_2c_2}{m_1+m_2}$ vyjádřete $c_2$.
+\tcblower
+\[\begin{aligned}
+C(m_1+m_2)&=m_1c_1+m_2c_2 \\
+m_2c_2&=C(m_1+m_2)-m_1c_1 \\
+c_2&=\frac{C(m_1+m_2)-m_1c_1}{m_2}
+\end{aligned}\]
+Podmínky: $m_1+m_2\ne0$, $m_2\ne0$.
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Ze vztahu $E=Pt$ vyjádřete $t$.
+\begingroup\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}\setlength{\jot}{1pt}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=0pt,topsep=0pt]
+\item Ze vztahu $E=Pt$ vyjádřete $t$ pro $P\ne0$.
+\item Z $V=abc$ vyjádřete $c$ pro $ab\ne0$.
+\item Ze vztahu $c=\frac mV$ vyjádřete $V$ pro $c\ne0$, $m\ne0$. Uveďte původní podmínku.
+\item Z $P=2(a+b)$ vyjádřete $b$.
+\item Z $Q=cm(T_2-T_1)$ vyjádřete $T_1$ při $cm\ne0$.
+\item Ze vztahu $E=\frac{mv^2}{2}$ vyjádřete $m$ pro $v\ne0$.
+\end{enumerate}
 \tcblower
-\begin{align*}
+\begin{enumerate}[label=\alph*),itemsep=0pt,topsep=0pt]
+\item
+\[\begin{aligned}
 E&=Pt \\
- t&=\frac EP\quad(P\ne0)
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-Z $V=abc$ vyjádřete $c$.
-\tcblower
-\begin{align*}
+t&=\frac EP\quad(P\ne0)
+\end{aligned}\]
+\item
+\[\begin{aligned}
 V&=abc \\
- c&=\frac V{ab}\quad(ab\ne0)
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-Ze vzorce $c=\frac{m}{V}$ vyjádřete $V$.
-\tcblower
-\begin{align*}
+c&=\frac V{ab}\quad(ab\ne0)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+V&\ne0 \\
 cV&=m \\
- V&=\frac mc\quad(c\ne0)
-\end{align*}
-
-Původní předpis předpokládá také $V\ne0$.
+V&=\frac mc\quad(c\ne0,\ m\ne0)
+\end{aligned}\]\par Případy s nulovými parametry jsou vysvětlené ve výkladu.
+\item
+\[\begin{aligned}
+P&=2a+2b \\
+2b&=P-2a \\
+b&=\frac P2-a
+\end{aligned}\]
+\item
+\[\begin{aligned}
+Q&=cm(T_2-T_1) \\
+\frac Q{cm}&=T_2-T_1 \\
+T_1&=T_2-\frac Q{cm}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+2E&=mv^2 \\
+m&=\frac{2E}{v^2}\quad(v\ne0)
+\end{aligned}\]
+\end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\endgroup
+\poznamka{Čas: 12 + 12 + 8 + 10 + 3 = 45 min. Rozbor nulových parametrů přizpůsob tempu třídy.}
 \end{document}

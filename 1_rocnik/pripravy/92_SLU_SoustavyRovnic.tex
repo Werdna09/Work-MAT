@@ -1,114 +1,139 @@
-% Autorska priprava k Realisticky.cz 020318–020319; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 92. hodina.
+% Zdroje: Realisticky.cz 020318–020319; aplikační úlohy doplněné autorsky
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
 \usepackage{tikz}
 \nastavPripravu{1. ročník}{Rovnice a nerovnice}{92}{Slovní úlohy vedoucí na soustavy}
 \begin{document}
-\blok{Návaznost a motivace}
-Na soustavy navážeme úlohami z výroby, dopravy a směsí. Zásadní je propojit každou podmínku s jednou rovnicí a správně vyložit souřadnice dvojice řešení.
-\blok{Princip a odvození}
-Zaveď dvě neznámé, sestav dvě nezávislé rovnice, zvol metodu a vrať se k jednotkám. U směsí nezaměň hmotnost roztoku s hmotností složky.
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
-Dvě dílny pracovaly dohromady 15 hodin a vyrobily 82 kusů. První vyrábí 6, druhá 4 kusy za hodinu. Jak dlouho pracovala každá?
+\blok{Od textu ke dvěma rovnicím}
+Slovní úlohy na soustavy mají dvě neznámé a alespoň dvě nezávislé podmínky. Zapište, \emph{co jednotlivé proměnné měří}, vždy včetně jednotky. Každá rovnice musí mít konkrétní význam. U počtů kusů pracujeme v $\mathbb N_0$; u směsí navíc hlídáme nezáporné hmotnosti.
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}
+Dvě dílny pracovaly celkem 15 hodin a vyrobily 82 kusů. První vyrábí 6 kusů/h, druhá 4 kusy/h. Jak dlouho pracovala každá?
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 x+y&=15 \\
- 6x+4y&=82 \\
- 6x+4(15-x)&=82 \\
- 2x&=22 \\
- x&=11,\quad y=4
-\end{align*}
-
-Kontrola $11\cdot6+4\cdot4=82$.
+6x+4y&=82 \\
+6x+4(15-x)&=82 \\
+2x&=22 \\
+x&=11\,\mathrm h,\quad y=4\,\mathrm h
+\end{aligned}\]
+Neznámé $x,y\ge0$ jsou časy práce první a druhé dílny. Kontrola: $11+4=15$ h a $66+16=82$ kusů.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
-Připravíme 10 kg směsi z 5% a 20% látky. Potřebujeme 1,1 kg účinné složky. Kolik kg které suroviny?
+\begin{prikladReseniBox}
+Máme připravit 10 kg směsi z 5% a 20% suroviny s obsahem 1,1 kg účinné složky. Kolik kg každé suroviny použijeme?
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 x+y&=10 \\
- 0{,}05x+0{,}20y&=1{,}1 \\
- 0{,}05(10-y)+0{,}20y&=1{,}1 \\
- 0{,}15y&=0{,}6 \\
- y&=4,\quad x=6
-\end{align*}
-
-Skontroluj hmotnost účinné látky: $0{,}3+0{,}8=1{,}1$ kg.
+0{,}05x+0{,}20y&=1{,}1 \\
+0{,}05(10-y)+0{,}20y&=1{,}1 \\
+0{,}15y&=0{,}6 \\
+y&=4\,\mathrm{kg},\quad x=6\,\mathrm{kg}
+\end{aligned}\]
+$x,y$ značí hmotnosti 5% a 20% suroviny. Kontrola: $6+4=10$ kg; $0{,}30+0{,}80=1{,}10$ kg složky.
 \end{prikladReseniBox}
-\poznamka{Zahrň kontrolu smyslu: u počtu autobusů nelze přijmout necelou hodnotu, i kdyby splňovala algebraický model.}
 \blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-50 krabic má dohromady 90 dílů; typ A obsahuje 3 a typ B 1 díl. Kolik kterých?
+\begin{zadaniReseniBox}
+Padesát krabic obsahuje 90 dílů. Krabice A obsahuje 3 díly, B jeden. Kolik je kterých krabic?
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 x+y&=50 \\
- 3x+y&=90 \\
- 2x&=40 \\
- x&=20,\quad y=30
-\end{align*}
+3x+y&=90 \\
+2x&=40 \\
+x&=20,\quad y=30 \\
+K&=\{[20;30]\}
+\end{aligned}\]
+$x,y$ jsou počty krabic A a B; obě hodnoty jsou celá nezáporná čísla a $3\cdot20+30=90$.
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-Pět autobusů má celkem 170 sedadel. Menší má 30 a větší 40. Kolik je kterých?
+\begin{zadaniReseniBox}
+Pět autobusů má dohromady 170 sedadel. Menší má 30, větší 40 sedadel. Kolik je kterých?
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 x+y&=5 \\
- 30x+40y&=170 \\
- 150+10y&=170 \\
- y&=2,\quad x=3
-\end{align*}
+30x+40y&=170 \\
+150+10y&=170 \\
+y&=2,\quad x=3 \\
+K&=\{[3;2]\}
+\end{aligned}\]
+$x,y\in\mathbb N_0$ značí menší a větší autobusy. Zkouška: $3\cdot30+2\cdot40=170$.
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-Dvě suroviny stojí 60 a 100 Kč/kg. Potřebujeme 20 kg za 1600 Kč. Kolik které?
+\begin{zadaniReseniBox}
+Dva materiály stojí 60 Kč/kg a 100 Kč/kg. Potřebujeme 20 kg materiálu za 1600 Kč. Jaké hmotnosti koupíme?
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 x+y&=20 \\
- 60x+100y&=1600 \\
- 1200+40y&=1600 \\
- y&=10,\quad x=10
-\end{align*}
+60x+100y&=1600 \\
+1200+40y&=1600 \\
+y&=10,\quad x=10
+\end{aligned}\]
+$x,y$ jsou hmotnosti v kg. Kontrola: $600+1000=1600$ Kč.
 \end{zadaniReseniBox}
-\blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Jaký počet 20Kč a 50Kč mincí dá dohromady 10 kusů a 350 Kč?
+\blok{Volitelné rozšíření}
+\begin{zadaniReseniBox}
+Tři kilogramy materiálu A a dva kilogramy B stojí 370 Kč; dva kilogramy A a tři kilogramy B stojí 380 Kč. Určete cenu každého kilogramu.
 \tcblower
-\begin{align*}
-x+y&=10 \\
- 20x+50y&=350 \\
- 200+30y&=350 \\
- y&=5,\quad x=5
-\end{align*}
+\[\begin{aligned}
+3x+2y&=370 \\
+2x+3y&=380 \\
+9x+6y&=1110 \\
+4x+6y&=760 \\
+5x&=350 \\
+x&=70,\quad y=80
+\end{aligned}\]
+Ceny jsou 70 a 80 Kč/kg; obě cenové rovnice vycházejí.
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Dvě dílny vyrábí rychlostí 8 a 5 kg/h; pracují dohromady 12 hodin a vyrobí 81 kg. Doby?
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item Dvě dílny vyrábějí 8 a 5 kg/h. Dohromady pracovaly 12 h a vyrobily 81 kg. Určete doby práce.
+\item Pět strojů typu A a B vyrobí dohromady 26 kusů/h. A vyrábí 6, B 4 kusy/h. Kolik je kterých?
+\item Součet věků dvou lidí je 53 let a první je o 7 let starší. Určete jejich věky.
+\item Prodalo se 12 vstupenek: dospělá stojí 150 Kč, dětská 90 Kč. Celkem se vybralo 1500 Kč. Kolik bylo kterých?
+\item Z 10% a 30% suroviny připravíme 8 kg směsi s 20% účinné látky. Kolik kg které suroviny použijeme?
+\end{enumerate}
 \tcblower
-\begin{align*}
+\begin{enumerate}[label=\alph*),itemsep=1pt]
+\item
+\[\begin{aligned}
 x+y&=12 \\
- 8x+5y&=81 \\
- 8x+5(12-x)&=81 \\
- x&=7,\quad y=5
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-Pět strojů typu A a B má dohromady výkon 26 kusů za hodinu. A má 6 a B 4 kusy za hodinu. Počty?
-\tcblower
-\begin{align*}
+8x+5y&=81 \\
+8x+5(12-x)&=81 \\
+3x&=21 \\
+x&=7\,\mathrm h,\quad y=5\,\mathrm h
+\end{aligned}\]\par Kontrola: $56+25=81$ kg.
+\item
+\[\begin{aligned}
 x+y&=5 \\
- 6x+4y&=26 \\
- 20+2x&=26 \\
- x&=3,\quad y=2
-\end{align*}
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-Součet dvou věků je 53 let a rozdíl 7 let. Určete je.
-\tcblower
-\begin{align*}
+6x+4y&=26 \\
+20+2x&=26 \\
+x&=3,\quad y=2 \\
+K&=\{[3;2]\}
+\end{aligned}\]\par Počty strojů jsou přirozené.
+\item
+\[\begin{aligned}
 x+y&=53 \\
- x-y&=7 \\
- 2x&=60 \\
- x&=30,\quad y=23
-\end{align*}
+x-y&=7 \\
+2x&=60 \\
+x&=30\,\mathrm{let},\quad y=23\,\mathrm{let}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x+y&=12 \\
+150x+90y&=1500 \\
+150x+90(12-x)&=1500 \\
+60x&=420 \\
+x&=7,\quad y=5 \\
+K&=\{[7;5]\}
+\end{aligned}\]\par Zkouška: $7\cdot150+5\cdot90=1500$ Kč.
+\item
+\[\begin{aligned}
+x+y&=8 \\
+0{,}10x+0{,}30y&=0{,}20\cdot8 \\
+0{,}8+0{,}2y&=1{,}6 \\
+y&=4\,\mathrm{kg},\quad x=4\,\mathrm{kg}
+\end{aligned}\]\par Kontrola: $0{,}4+1{,}2=1{,}6$ kg účinné složky.
+\end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\poznamka{45 minut: 5 min dvě neznámé a jednotky, 2 společné vzory po 10, 3 samostatné po 5, 5 min kontrola. U výrobních kusů a vozidel požaduj celá nezáporná řešení.}
 \end{document}

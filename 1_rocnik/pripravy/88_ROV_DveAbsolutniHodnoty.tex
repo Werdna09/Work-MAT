@@ -1,15 +1,21 @@
-% Autorska priprava k Realisticky.cz 020410; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 88. hodina.
+% Zdroje: Realisticky.cz 020410; grafické dělení definičního oboru z hodin 70–71
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
 \usepackage{tikz}
 \nastavPripravu{1. ročník}{Rovnice a nerovnice}{88}{Rovnice se dvěma absolutními hodnotami}
 \begin{document}
-\blok{Návaznost a motivace}
-Při řešení grafu $|x-4|+|x+4|$ už třída umí vyznačit kritické body $-4$ a $4$. Nyní z téhož předpisu vytvoříme rovnici a rozhodneme, ve kterých intervalech skutečně vzniká kořen.
-\blok{Princip a odvození}
-Algoritmus: (1) urč nulové body všech výrazů pod moduly; (2) rozděl osu na disjunktní intervaly; (3) v každé části moduly odstraň; (4) vyřeš lineární rovnici a ověř příslušnost kandidáta do části; (5) sjednoť přijatá řešení.
-
+\blok{Návaznost a algoritmus}
+Při grafu $y=|x-4|+|x+4|$ jsme již určili kritické body $-4$ a $4$. U rovnice postupujeme stejně: seřadíme nulové body vnitřních výrazů, rozdělíme osu, odstraníme moduly a každého kandidáta zkontrolujeme v příslušném intervalu.
+\blok{Dvě možné metody}
+\begin{zadaniBox}[title={Vlastnost absolutní hodnoty}]
+\textbf{Rovnost dvou absolutních hodnot.} Pro reálné výrazy $A,B$ platí
+\[
+|A|=|B|\quad\Longleftrightarrow\quad A=B\ \text{nebo}\ A=-B.
+\]
+\end{zadaniBox}
+Pro součet $|A(x)|+|B(x)|=c$ obvykle volíme \textbf{metodu kritických bodů}; zkratku z definice nelze přenést na součet absolutních hodnot.
 \begin{center}\small
 \begin{tabular}{@{}lccc@{}}\toprule
 Oblast & $x<-4$ & $-4\le x\le4$ & $x>4$\\\midrule
@@ -18,122 +24,136 @@ $|x+4|$ & $-x-4$ & $x+4$ & $x+4$\\\midrule
 Součet & $-2x$ & $8$ & $2x$\\\bottomrule
 \end{tabular}
 \end{center}
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}
 Vyřešte $|x-4|+|x+4|=10$.
 \tcblower
-\begin{align*}
-x&<-4:\ -2x=10\Rightarrow x=-5 \\
- -4&\le x\le4:\ 8=10\;\text{-- spor} \\
- x&>4:\ 2x=10\Rightarrow x=5 \\
- K&=\{-5,5\}
-\end{align*}
-
-Kontrola: pro $x=-5$ dostaneme $9+1=10$ a pro $5$ dostaneme $1+9=10$.
+\[\begin{aligned}
+x<-4&:\quad -2x=10\ \Rightarrow\ x=-5 \\
+-4\le x\le4&:\quad 8\ne10 \\
+x>4&:\quad 2x=10\ \Rightarrow\ x=5 \\
+K&=\{-5;5\}
+\end{aligned}\]
+Zkouška: pro $x=-5$ i $x=5$ vyjde $10$.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
-Vyřešte $|x-1|=|2x+1|$.
+\begin{prikladReseniBox}
+Vyřešte $|x-1|=|2x+1|$ úspornější metodou.
 \tcblower
-\begin{align*}
-x-1&=2x+1\Rightarrow x=-2 \\
- x-1&=-(2x+1)\Rightarrow x=0 \\
- K&=\{-2,0\}
-\end{align*}
-
-Dvě možnosti získáme z rovnosti absolutních hodnot; zkouška v původní rovnici obě potvrzuje.
+\[\begin{aligned}
+x-1&=2x+1\ \Rightarrow\ x=-2 \\
+x-1&=-(2x+1)\ \Rightarrow\ 3x=0\ \Rightarrow\ x=0 \\
+K&=\{-2;0\}
+\end{aligned}\]
+Oba kořeny ověř dosazením; nevytváříme tři intervaly, když stačí dvě rovnice.
 \end{prikladReseniBox}
-\poznamka{Nepřeháněj počet různých metod. Pro tento ročník stačí jeden spolehlivý algoritmus a grafická kontrola.}
-\blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
+\begin{prikladReseniBox}
+Pro jaká $x$ platí $|x-1|+|x+1|=2$?
+\tcblower
+\[\begin{aligned}
+x<-1&:\quad -2x=2\ \Rightarrow\ x=-1\ \not<-1 \\
+-1\le x\le1&:\quad 2=2 \\
+x>1&:\quad 2x=2\ \Rightarrow\ x=1\ \not>1 \\
+K&=\langle-1;1\rangle
+\end{aligned}\]
+Výsledkem je celý interval, ne pouze dvě krajní hodnoty.
+\end{prikladReseniBox}
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}
 $|x-3|+|x+1|=6$.
 \tcblower
-\begin{align*}
-x&<-1:\ 2-2x=6\Rightarrow x=-2 \\
- -1&\le x\le3:\ 4=6\;\text{-- spor} \\
- x&>3:\ 2x-2=6\Rightarrow x=4 \\
- K&=\{-2,4\}
-\end{align*}
+\[\begin{aligned}
+x<-1&:\quad -2x+2=6\Rightarrow x=-2 \\
+-1\le x\le3&:\quad 4\ne6 \\
+x>3&:\quad 2x-2=6\Rightarrow x=4 \\
+K&=\{-2;4\}
+\end{aligned}\]
+
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
-$|x-2|=x+4$.
+\begin{zadaniReseniBox}
+$|x-5|=|x+3|$.
 \tcblower
-\begin{align*}
-x&<2:\ 2-x=x+4\Rightarrow x=-1 \\
- x&\ge2:\ x-2=x+4\;\text{-- spor} \\
- K&=\{-1\}
-\end{align*}
+\[\begin{aligned}
+x-5&=-(x+3) \\
+2x&=2 \\
+K&=\{1\}
+\end{aligned}\]
+
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
-$|x+2|=4$.
+\begin{zadaniReseniBox}
+$|x+2|+|x-2|=4$.
 \tcblower
-\begin{align*}
-x+2&=\pm4 \\
- x&=2\;\text{nebo}\;-6 \\
- K&=\{-6,2\}
-\end{align*}
+\[\begin{aligned}
+-2\le x\le2&:\quad 4=4 \\
+x<-2&:\quad -2x=4\Rightarrow x=-2\not<-2 \\
+x>2&:\quad 2x=4\Rightarrow x=2\not>2 \\
+K&=\langle-2;2\rangle
+\end{aligned}\]
+
 \end{zadaniReseniBox}
 \blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Vyřešte $|x-1|+|x+1|=2$.
+\begin{zadaniReseniBox}
+Najděte řešení $|2x-1|+|x+2|=6$ (kritické body $-2$ a $\frac12$).
 \tcblower
-\begin{align*}
-x&<-1:\ -2x=2\Rightarrow x=-1\not<-1 \\
- -1&\le x\le1:\ 2=2 \\
- x&>1:\ 2x=2\Rightarrow x=1\not>1
-\end{align*}
+\[\begin{aligned}
+x<-2&:\quad (-2x+1)+(-x-2)=6\Rightarrow x=-\frac73 \\
+-2\le x<\frac12&:\quad (-2x+1)+(x+2)=6\Rightarrow x=-3\notin\langle-2;\frac12) \\
+x\ge\frac12&:\quad (2x-1)+(x+2)=6\Rightarrow x=\frac53 \\
+K&=\left\{-\frac73;\frac53\right\}
+\end{aligned}\]
 
-Řešením je celý interval $K=\langle-1;1\rangle$, nikoli jen jeho krajní body.
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
 \begin{zadaniReseniBox}[title={Domácí příprava}]
-\begin{enumerate}[label=\alph*)]
-\item
-$|x-2|+|x+2|=8$.
-\item
-$|x+1|=|x-5|$.
-\item
-$|2x-1|=5$.
-\item
-$|x-3|+|x+1|=6$.
-\item
-$|x-4|=|x+2|$.
-\item
-$|x-2|+|x+2|=4$.
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $|x-2|+|x+2|=8$.
+\item $|x+1|=|x-5|$.
+\item $|2x-1|=5$.
+\item $|x-5|+|x+1|=10$.
+\item $|x-4|=|x+2|$.
+\item $|x-2|+|x+2|=4$.
 \end{enumerate}
 \tcblower
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\alph*),itemsep=1pt]
 \item
-\begin{align*}
-x&<-2:\ -2x=8\Rightarrow x=-4 \\
- -2&\le x\le2:\ 4=8\;\text{-- spor} \\
- x&>2:\ 2x=8\Rightarrow x=4 \\
- K&=\{-4,4\}
-\end{align*}
+\[\begin{aligned}
+x<-2&:\quad -2x=8\Rightarrow x=-4 \\
+-2\le x\le2&:\quad4\ne8 \\
+x>2&:\quad2x=8\Rightarrow x=4 \\
+K&=\{-4;4\}
+\end{aligned}\]
 \item
-\begin{align*}
+\[\begin{aligned}
 x+1&=-(x-5) \\
- 2x&=4 \\
- x&=2
-\end{align*}
+2x&=4 \\
+K&=\{2\}
+\end{aligned}\]
 \item
-\begin{align*}
+\[\begin{aligned}
 2x-1&=\pm5 \\
- x&=3\quad\text{nebo}\quad x=-2 \\
- K&=\{-2,3\}
-\end{align*}
+x&=-2\ \text{nebo}\ x=3 \\
+K&=\{-2;3\}
+\end{aligned}\]
 \item
-$\begin{aligned}
-x<-1&:\quad -2x+2=6\Rightarrow x=-2\\-1\le x\le3&:\quad 4\ne6\\x>3&:\quad 2x-2=6\Rightarrow x=4\\K&=\{-2;4\}
-\end{aligned}$
+\[\begin{aligned}
+x<-1&:\quad -2x+4=10\Rightarrow x=-3 \\
+-1\le x\le5&:\quad6\ne10 \\
+x>5&:\quad2x-4=10\Rightarrow x=7 \\
+K&=\{-3;7\}
+\end{aligned}\]
 \item
-$\begin{aligned}
-x-4&=-(x+2)\\2x&=2\\x&=1\\K&=\{1\}
-\end{aligned}$
+\[\begin{aligned}
+x-4&=-(x+2) \\
+2x&=2 \\
+K&=\{1\}
+\end{aligned}\]
 \item
-$\begin{aligned}
-x<-2&:\quad -2x=4\Rightarrow x=-2\not<-2\\-2\le x\le2&:\quad 4=4\\x>2&:\quad 2x=4\Rightarrow x=2\not>2\\K&=\langle-2;2\rangle
-\end{aligned}$
+\[\begin{aligned}
+x<-2&:\quad -2x=4\Rightarrow x=-2\not<-2 \\
+-2\le x\le2&:\quad4=4 \\
+x>2&:\quad2x=4\Rightarrow x=2\not>2 \\
+K&=\langle-2;2\rangle
+\end{aligned}\]
 \end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\poznamka{45 minut: kritické body 6, první vzor 12, rovnost dvou modulů 7, interval řešení 6, samostatná práce 10, reflexe 4. Náročná rezerva a poslední DÚ jsou dobrovolné.}
 \end{document}

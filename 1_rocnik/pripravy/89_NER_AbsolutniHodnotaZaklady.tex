@@ -1,120 +1,147 @@
-% Autorska priprava k Realisticky.cz 020411; ulohy jsou autorske a obmenene.
-% Zamerne nenahrazuje vyklad presnymi kopiemi cizich textu/prikladu.
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 89. hodina.
+% Zdroje: Realisticky.cz 020411; geometrie vzdálenosti a jednoduché intervaly
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
 \usepackage{tikz}
-\nastavPripravu{1. ročník}{Rovnice a nerovnice}{89}{Jednoduché nerovnice s absolutní hodnotou}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{89}{Nerovnice s absolutní hodnotou}
 \begin{document}
-\blok{Návaznost a motivace}
-Absolutní hodnotu chápeme jako vzdálenost. Výrok $|x-a|<r$ znamená, že $x$ leží blíže než $r$ k číslu $a$; opačná nerovnost znamená vnější část číselné osy.
-\blok{Princip a odvození}
-Pro $r>0$: $|A(x)|<r$ právě tehdy, když $-r<A(x)<r$ (průnik podmínek), kdežto $|A(x)|>r$ vede na $A(x)<-r$ \emph{nebo} $A(x)>r$ (sjednocení). Podobně pro neostré nerovnosti. Ukázky zde necháváme jednoduché, bez dvou modulů.
-\blok{Řešené příklady: od jednoduchého ke složitějšímu}
-\begin{prikladReseniBox}[title={Příklad 1}]
-Vyřešte $|x-2|<3$.
+\blok{Vzdálenost na číselné ose}
+Absolutní hodnota $|x-a|$ znamená vzdálenost bodu $x$ od čísla $a$. Pro $r>0$ platí: $|x-a|<r$ -- \textbf{vnitřek} mezi $a-r$ a $a+r$; $|x-a|>r$ -- \textbf{vnější dvě části} osy. U $\le$ a $\ge$ krajní body patří do řešení.
+\begin{center}
+\begin{tikzpicture}[x=.73cm,y=.72cm]
+\draw[->] (-5,0)--(7.3,0) node[right] {$x$};
+\foreach \x in {-4,-1,0,2,5,7} \draw (\x,.09)--(\x,-.09) node[below] {\scriptsize $\x$};
+\draw[line width=1.5pt] (-1,0)--(5,0);
+\draw[fill=white,thick] (-1,0) circle (.11); \draw[fill=white,thick] (5,0) circle (.11);
+\node[above] at (2,.18) {\small $|x-2|<3$};
+\begin{scope}[shift={(0,-2)}]
+\draw[->] (-5,0)--(7.3,0) node[right] {$x$};
+\foreach \x in {-4,-1,0,2,5,7} \draw (\x,.09)--(\x,-.09) node[below] {\scriptsize $\x$};
+\draw[line width=1.5pt] (-5,0)--(-1,0);\draw[line width=1.5pt] (5,0)--(7,0);
+\draw[fill=white,thick] (-1,0) circle (.11);\draw[fill=white,thick] (5,0) circle (.11);
+\node[above] at (2,.2) {\small $|x-2|>3$};
+\end{scope}
+\end{tikzpicture}
+\end{center}
+\blok{Pravidla při odstraňování modulu}
+Pro $r>0$:
+\[
+\begin{aligned}
+|A(x)|<r&\iff-r<A(x)<r,\\
+|A(x)|>r&\iff A(x)<-r\ \text{nebo}\ A(x)>r.
+\end{aligned}
+\]
+Nerovnice s $r=0$ posuzujeme zvlášť; absolutní hodnota nemůže být záporná.
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}
+Vyřešte $|x-2|<3$ a řešení zakreslete na osu.
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 -3&<x-2<3 \\
- -1&<x<5 \\
- K&=(-1;5)
-\end{align*}
+-1&<x<5 \\
+K&=(-1;5)
+\end{aligned}\]
+
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Příklad 2}]
+\begin{prikladReseniBox}
 Vyřešte $|2x+1|\ge5$.
 \tcblower
-\begin{align*}
-2x+1&\le-5\quad\text{nebo}\quad 2x+1\ge5 \\
- x&\le-3\quad\text{nebo}\quad x\ge2 \\
- K&=(-\infty;-3\rangle\cup\langle2;+\infty)
-\end{align*}
+\[\begin{aligned}
+2x+1&\le-5\quad\text{nebo}\quad2x+1\ge5 \\
+x&\le-3\quad\text{nebo}\quad x\ge2 \\
+K&=(-\infty;-3\rangle\cup\langle2;+\infty)
+\end{aligned}\]
+
 \end{prikladReseniBox}
-\poznamka{Použij číselnou osu a význam vzdálenosti. Složitější nerovnice se dvěma moduly jsou jen nadstavba, nikoliv cíl této hodiny.}
+\begin{prikladReseniBox}
+Co se změní, když je na pravé straně nula: $|x+2|\le0$?
+\tcblower
+\[\begin{aligned}
+|x+2|&\ge0\quad\text{pro každé }x \\
+x+2&=0 \\
+K&=\{-2\}
+\end{aligned}\]
+Kdyby místo $\le$ stálo $<$, řešení by neexistovalo.
+\end{prikladReseniBox}
 \blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1}]
+\begin{zadaniReseniBox}
 $|x|<4$.
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 -4&<x<4 \\
- K&=(-4;4)
-\end{align*}
+K&=(-4;4)
+\end{aligned}\]
+
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2}]
+\begin{zadaniReseniBox}
 $|x-1|\ge2$.
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 x-1&\le-2\quad\text{nebo}\quad x-1\ge2 \\
- x&\le-1\quad\text{nebo}\quad x\ge3
-\end{align*}
+x&\le-1\quad\text{nebo}\quad x\ge3 \\
+K&=(-\infty;-1\rangle\cup\langle3;+\infty)
+\end{aligned}\]
+
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 3}]
+\begin{zadaniReseniBox}
 $|x+4|\le1$.
 \tcblower
-\begin{align*}
+\[\begin{aligned}
 -1&\le x+4\le1 \\
- -5&\le x\le-3 \\
- K&=\langle-5;-3\rangle
-\end{align*}
-\end{zadaniReseniBox}
-\blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[title={Úloha 1}]
-Vyřešte $|x+2|\le0$.
-\tcblower
-\begin{align*}
-|x+2|&\ge0 \\
- x+2&=0 \\
- K&=\{-2\}
-\end{align*}
+-5&\le x\le-3 \\
+K&=\langle-5;-3\rangle
+\end{aligned}\]
 
-Při ostré nerovnosti $|x+2|<0$ by naopak bylo $K=\varnothing$.
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
 \begin{zadaniReseniBox}[title={Domácí příprava}]
-\begin{enumerate}[label=\alph*)]
-\item
-$|3x|<6$.
-\item
-$|x-2|>4$.
-\item
-$|x+3|\le3$.
-\item
-$|x-4|\le2$.
-\item
-$|2x+1|>5$.
-\item
-$|x+1|\ge0$.
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $|3x|<6$.
+\item $|x-2|>4$.
+\item $|x+3|\le3$.
+\item $|x-4|\le2$.
+\item $|2x+1|>5$.
+\item $|x+1|\ge0$.
 \end{enumerate}
 \tcblower
-\begin{enumerate}[label=\alph*)]
+\begin{enumerate}[label=\alph*),itemsep=1pt]
 \item
-\begin{align*}
+\[\begin{aligned}
 -6&<3x<6 \\
- -2&<x<2 \\
- K&=(-2;2)
-\end{align*}
+-2&<x<2 \\
+K&=(-2;2)
+\end{aligned}\]
 \item
-\begin{align*}
+\[\begin{aligned}
 x-2&<-4\quad\text{nebo}\quad x-2>4 \\
- x&<-2\quad\text{nebo}\quad x>6
-\end{align*}
+x&<-2\quad\text{nebo}\quad x>6 \\
+K&=(-\infty;-2)\cup(6;+\infty)
+\end{aligned}\]
 \item
-\begin{align*}
+\[\begin{aligned}
 -3&\le x+3\le3 \\
- -6&\le x\le0 \\
- K&=\langle-6;0\rangle
-\end{align*}
+-6&\le x\le0 \\
+K&=\langle-6;0\rangle
+\end{aligned}\]
 \item
-$\begin{aligned}
--2&\le x-4\le2\\2&\le x\le6\\K&=\langle2;6\rangle
-\end{aligned}$
+\[\begin{aligned}
+-2&\le x-4\le2 \\
+2&\le x\le6 \\
+K&=\langle2;6\rangle
+\end{aligned}\]
 \item
-$\begin{aligned}
-2x+1&<-5\quad\text{nebo}\quad2x+1>5\\x&<-3\quad\text{nebo}\quad x>2\\K&=(-\infty;-3)\cup(2;+\infty)
-\end{aligned}$
+\[\begin{aligned}
+2x+1&<-5\quad\text{nebo}\quad 2x+1>5 \\
+x&<-3\quad\text{nebo}\quad x>2 \\
+K&=(-\infty;-3)\cup(2;+\infty)
+\end{aligned}\]
 \item
-$\begin{aligned}
-|x+1|&\ge0\quad\text{pro každé }x\in\mathbb R\\K&=\mathbb R
-\end{aligned}$
+\[\begin{aligned}
+|x+1|&\ge0\quad\text{vždy} \\
+K&=\mathbb R
+\end{aligned}\]
 \end{enumerate}
 \end{zadaniReseniBox}
-\poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
+\poznamka{45 minut: úvod s číselnou osou 10, dvojice vzorů 13, zvláštní případ 4, samostatná práce 13, kontrola 5. Nerovnice se dvěma absolutními hodnotami nejsou povinným učivem této hodiny.}
 \end{document}
