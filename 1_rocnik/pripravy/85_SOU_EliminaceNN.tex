@@ -19,110 +19,192 @@ Pro soustavu $n\times n$ používáme stejnou myšlenku jako u sčítací metody
 \begin{prikladReseniBox}[title={Příklad 1}]
 Vyřešte eliminačně $\begin{cases}2x+y-z=4,\\x-y+z=2,\\x+y+z=6.\end{cases}$
 \tcblower
-\begin{align*}
+\[
+\begin{aligned}
 (2x+y-z)+(x-y+z)&=4+2 \\
  3x&=6\Rightarrow x=2 \\
  -y+z&=0 \\
  y+z&=4 \\
  y&=2,\quad z=2
-\end{align*}
+\end{aligned}
+\]
 
 Zkouška všech tří rovnic dává postupně $4,2,6$.
+\[
+\begin{aligned}
+K &= \{[2;2;2]\}
+\end{aligned}
+\]
 \end{prikladReseniBox}
 \begin{prikladReseniBox}[title={Příklad 2}]
 Vyřešte trojúhelníkovou soustavu $\begin{cases}x+y+z=6,\\2x+y+z=8,\\x+2y+z=9.\end{cases}$
 \tcblower
-\begin{align*}
+\[
+\begin{aligned}
 (2x+y+z)-(x+y+z)&=8-6 \\
  x&=2 \\
  (x+2y+z)-(x+y+z)&=9-6 \\
- y&=3,\quad z=1
-\end{align*}
+ y&=3,\quad z=1 \\[2mm]
+K &= \{[2;3;1]\}
+\end{aligned}
+\]
 \end{prikladReseniBox}
 \poznamka{Smyslem není memorovat tabulku elementárních řádkových operací. Stačí rozumět eliminaci a zpětnému dosazení.}
 \blok{Samostatné procvičování}
 \begin{zadaniReseniBox}[title={Úloha 1}]
 $\begin{cases}x+y+z=9,\\y+z=5,\\z=2.\end{cases}$
 \tcblower
-\begin{align*}
+\[
+\begin{aligned}
 z&=2 \\
  y&=5-2=3 \\
- x&=9-3-2=4
-\end{align*}
+ x&=9-3-2=4 \\[2mm]
+K &= \{[4;3;2]\}
+\end{aligned}
+\]
 \end{zadaniReseniBox}
 \begin{zadaniReseniBox}[title={Úloha 2}]
 Co se změní, když máme jen $x+y=4$, $y+z=5$?
 \tcblower
-\begin{align*}
+\[
+\begin{aligned}
 y&=t \\
  x&=4-t \\
  z&=5-t,\quad t\in\mathbb R
-\end{align*}
+\end{aligned}
+\]
 
 Bez další nezávislé podmínky je nekonečně mnoho řešení.
+\[
+\begin{aligned}
+K &= \{[4-t;t;5-t]\mid t\in\mathbb R\}
+\end{aligned}
+\]
 \end{zadaniReseniBox}
 \begin{zadaniReseniBox}[title={Úloha 3}]
 Vyřešte $\begin{cases}x+y+z=7,\\x+y=4,\\y+z=5.\end{cases}$
 \tcblower
-\begin{align*}
+\[
+\begin{aligned}
 z&=7-4=3 \\
  y&=5-3=2 \\
- x&=4-2=2
-\end{align*}
+ x&=4-2=2 \\[2mm]
+K &= \{[2;2;3]\}
+\end{aligned}
+\]
 \end{zadaniReseniBox}
 \blok{Volitelná rezerva – skutečný přechod na čtyři neznámé}
 \begin{zadaniReseniBox}[title={Jak rozběhnout eliminaci v soustavě $4\times4$?}]
 Soustava je $\begin{cases}x-y+z+u=0,\\x+y-z-u=2,\\2x-y+u=3,\\3x+z-u=0.\end{cases}$
 \tcblower
 Po odečtení první rovnice od druhé, dvojnásobku první od třetí a trojnásobku první od čtvrté vzniknou tři rovnice o $y,z,u$. Následná eliminace dá \emph{trojúhelníkový systém}:
-\begin{align*}
+\[
+\begin{aligned}
  x-y+z+u&=0,\\
  2y-2z-2u&=2,\\
  -2z&=4,\\
  4u&=4.
-\end{align*}
+\end{aligned}
+\]
 Zpětné dosazení:
-\begin{align*}
+\[
+\begin{aligned}
 u&=1,\\ z&=-2,\\ 2y-2(-2)-2&=2\Rightarrow y=0,\\ x-0-2+1&=0\Rightarrow x=1.
-\end{align*}
-Tedy $K=\{[1;0;-2;1]\}$. Jde o soustavu ze sbírky, příklad 32b.
+\end{aligned}
+\]
+ Jde o soustavu ze sbírky, příklad 32b.
+\[
+\begin{aligned}
+K &= \{[1;0;-2;1]\}
+\end{aligned}
+\]
 \end{zadaniReseniBox}
-\blok{Domácí úkol – volitelný náročnější výběr}
-\begin{zadaniReseniBox}[title={Úloha 1 – samostatná eliminace $3\times3$}]
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*)]
+\item
 $\begin{cases}2x-y+3z=9,\\4x+3y-z=7,\\x+2y+2z=11.\end{cases}$
+\item
+$\begin{cases}2x-3y+z+2u=0,\\3x+y-2z-u=6,\\4x-2y-3z-4u=-6,\\x+2y+3z-2u=-7.\end{cases}$
+\item
+$\begin{cases}x+y+z=3,\\2x-y+z=2,\\x+2y-z=2,\end{cases}$.
+\item
+$\begin{cases}x+y+z+u=7,\\2x+y+z+u=8,\\2x+2y+z+u=10,\\2x+2y+2z+u=13,\end{cases}$.
+\item
+$\begin{cases}x+y+z+u=3,\\2x+2y+2z+2u=6,\\x-y+z-u=1,\\2x-2y+2z-2u=3,\end{cases}$.
+\end{enumerate}
 \tcblower
+\begin{enumerate}[label=\alph*)]
+\item
 Zvolíme třetí rovnici pro eliminaci $x$:
-\begin{align*}
+\[
+\begin{aligned}
 (\mathrm I)-2(\mathrm{III})&:\ -5y-z=-13,\\
 (\mathrm{II})-4(\mathrm{III})&:\ -5y-9z=-37,\\
 8z&=24,\\
 z&=3,\quad y=2,\quad x=1.
-\end{align*}
-$K=\{[1;2;3]\}$. Každou rovnici ověřte dosazením.
-\end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={Úloha 2 – čtyři rovnice, čtyři neznámé, sbírka č. 32a}]
-$\begin{cases}2x-3y+z+2u=0,\\3x+y-2z-u=6,\\4x-2y-3z-4u=-6,\\x+2y+3z-2u=-7.\end{cases}$
-\tcblower
+\end{aligned}
+\]
+Každou rovnici ověřte dosazením.
+\[
+\begin{aligned}
+K &= \{[1;2;3]\}
+\end{aligned}
+\]
+\item
 Zvolíme \emph{poslední} původní rovnici, protože u $x$ má koeficient $1$. Jejím vhodným násobkem odstraníme $x$ z ostatních řádků:
-\begin{align*}
+\[
+\begin{aligned}
 -7y-5z+6u&=14,\\
 -5y-11z+5u&=27,\\
 -10y-15z+4u&=22.
-\end{align*}
+\end{aligned}
+\]
 Další eliminací $y$ dostaneme dvě rovnice o $z,u$:
-\begin{align*}
+\[
+\begin{aligned}
 52z-5u&=-119,\\
 -7z+6u&=32,\\
 6(52z-5u)+5(-7z+6u)&=6(-119)+5\cdot32,\\
 277z&=-554,\\
 z&=-2,\qquad u=3.
-\end{align*}
+\end{aligned}
+\]
 Zpětné dosazení:
-\begin{align*}
+\[
+\begin{aligned}
 -7y-5(-2)+6\cdot3&=14\Rightarrow y=2,\\
 x+2\cdot2+3(-2)-2\cdot3&=-7\Rightarrow x=1.
-\end{align*}
-$K=\{[1;2;-2;3]\}$. Zkouška např. v první rovnici: $2-6-2+6=0$; doporučeno zkontrolovat všechny.
+\end{aligned}
+\]
+Zkouška např. v první rovnici: $2-6-2+6=0$; doporučeno zkontrolovat všechny.
+\[
+\begin{aligned}
+K &= \{[1;2;-2;3]\}
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+(\mathrm{II})-(\mathrm I)&:\quad x-2y=-1\\(\mathrm I)+(\mathrm{III})&:\quad 2x+3y=5\\x&=2y-1\\4y-2+3y&=5\\x&=y=z=1 \\[2mm]
+K &= \{[1;1;1]\}
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+(\mathrm{II})-(\mathrm I)&:\quad x=1\\(\mathrm{III})-(\mathrm{II})&:\quad y=2\\(\mathrm{IV})-(\mathrm{III})&:\quad z=3\\1+2+3+u&=7\ \Rightarrow\ u=1 \\[2mm]
+K &= \{[1;2;3;1]\}
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+2(\mathrm{III})&:\quad 2x-2y+2z-2u=2\\(\mathrm{IV})&:\quad 2x-2y+2z-2u=3\\2&=3\quad\text{-- spor} \\[2mm]
+K &= \varnothing
+\end{aligned}
+\]
+\end{enumerate}
 \end{zadaniReseniBox}
 \poznamka{Hodina je hlavně o principu. Samostatné vyřešení soustavy $4\times4$ je \emph{dobrovolná výzva}, nikoli očekávaný standard pro všechny. Vyžaduj srozumitelnou argumentaci, proč se eliminuje daná neznámá.}
 \poznamka{Orientační časové rozvržení: 5 + 12 + 12 + 10 + 6 = 45 min. Přednost má pochopení jádra; rezerva není součástí časového součtu. Domácí úlohy jsou určeny na samostatnou práci, řešení zůstávají učiteli.}
