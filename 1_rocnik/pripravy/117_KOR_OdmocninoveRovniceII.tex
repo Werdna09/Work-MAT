@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\nastavPripravu{1. ročník}{Kvadratické rovnice a nerovnice}{117}{Rovnice se dvěma odmocninami}
+\begin{document}
+\blok{Rovnice se dvěma odmocninami}
+Izolování odmocniny, dvě umocnění a průběžná kontrola podmínek; náročnější dobrovolný blok.
+\blok{Metoda a návaznost na graf}
+\poznamka{Po každém umocnění je třeba dosadit všechny kandidáty do původní rovnice; platí $\sqrt{u^2}=|u|$, a proto se nesmí automaticky psát $\sqrt{u^2}=u$.}
+\begin{itemize}
+\item Obě odmocniny vyžadují nezáporné radikandy. U součtu dvou odmocnin lze po izolaci jedné odmocniny dvakrát umocnit; v konkrétních číselných případech pomůže i součet a rozdíl jejich hodnot.
+\item Po prvním umocnění jednu odmocninu izoluj a umocni až potom; čím více umocnění, tím důležitější zkouška.
+\end{itemize}
+\blok{Úplný postup -- dvě umocnění}
+\begin{prikladReseniBox}[title={Příklad rozpisu bez hádání kořenů}]
+Vyřešte $\sqrt{x+4}+\sqrt{x+9}=5$.
+\tcblower
+Podmínky: $x\ge-4$. Nejprve izolujeme jednu odmocninu:
+\[
+\begin{aligned}
+\sqrt{x+9}&=5-\sqrt{x+4}\\
+x+9&=25-10\sqrt{x+4}+x+4\\
+10\sqrt{x+4}&=20\\
+\sqrt{x+4}&=2\\
+x+4&=4\\
+x&=0.
+\end{aligned}
+\]
+Zkouška: $\sqrt4+\sqrt9=2+3=5$, tedy $K=\{0\}$.
+\end{prikladReseniBox}
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+$\sqrt{x+4}+\sqrt{x+9}=5$
+\tcblower
+\[
+\begin{aligned}
+a&=\sqrt{x+4},\quad b=\sqrt{x+9}\\[2pt]
+a+b&=5,\quad b^2-a^2=5\\[2pt]
+(b-a)(a+b)&=5\ \Rightarrow\ b-a=1\\[2pt]
+a&=2,\quad b=3\ \Rightarrow\ x=0\\[2pt]
+K&=\{0\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+$\sqrt{x+1}+\sqrt{x+4}=3$
+\tcblower
+\[
+\begin{aligned}
+a&=\sqrt{x+1},\quad b=\sqrt{x+4}\\[2pt]
+a+b&=3,\quad b^2-a^2=3\\[2pt]
+b-a&=1\ \Rightarrow\ a=1,\ b=2\\[2pt]
+x&=0\\[2pt]
+K&=\{0\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\sqrt{x+9}-\sqrt{x+1}=2$
+\tcblower
+\[
+\begin{aligned}
+a&=\sqrt{x+9},\quad b=\sqrt{x+1}\\[2pt]
+a-b&=2,\quad a^2-b^2=8\\[2pt]
+a+b&=4\ \Rightarrow\ a=3,\ b=1\\[2pt]
+x&=0\\[2pt]
+K&=\{0\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\poznamka{Studenti si vymyslí obdobný příklad se změnou jednoho koeficientu a vysvětlí, jak se změní počet kořenů či řešení.}
+\blok{Rozšiřující příklady ze sbírky}
+\poznamka{Úlohy s více odmocninami jsou dobrovolné; u 20g vychází z podmínek x>=5.}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 1}]
+Řešte v $\mathbb R$: $\sqrt{x-1}+\sqrt{x+4}=5$.
+\tcblower
+\[
+\begin{aligned}x&\ge1\\\sqrt{x+4}&=5-\sqrt{x-1}\\x+4&=25-10\sqrt{x-1}+x-1\\\sqrt{x-1}&=2\ \Rightarrow\ K=\{5\}\end{aligned}
+\]
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad 2}]
+Řešte v $\mathbb R$: $\sqrt{2x+7}+\sqrt{x-5}=\sqrt{3x+2}$.
+\tcblower
+\[
+\begin{aligned}x&\ge5\\\sqrt{2x+7}+\sqrt{x-5}&=\sqrt{3x+2}\\2\sqrt{(2x+7)(x-5)}&=0\\x&=5\ \Rightarrow\ K=\{5\}\end{aligned}
+\]
+\end{zadaniReseniBox}
+
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava -- od základů k výzvám}]
+\begin{enumerate}[label=\alph*)]
+\item $\sqrt{x+5}=3$.
+\item $\sqrt x+x=2$.
+\item $3\sqrt{x+5}-5=x$.
+\item $\sqrt{x-1}+\sqrt{x+4}=5$.
+\item $\sqrt{x+2}-2\sqrt{x+7}=-4$.
+\item $\sqrt{-x}=2-\sqrt{2-x}$.
+\item $\sqrt{10-x}+\sqrt{x-10}=2$.
+\item $\sqrt{2x+7}+\sqrt{x-5}=\sqrt{3x+2}$.
+\item $\sqrt{-x-\sqrt{1-x}}=1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[\begin{aligned}x+5&=9\\x&=4\\K&=\{4\}\end{aligned}\]
+\item \[\begin{aligned}\sqrt{x}&=2-x,\quad0\le x\le2\\x&=(2-x)^2\\x^2-5x+4&=0\\x&=1\ \text{nebo}\ 4\\\text{pouze }x=1&\text{ vyhovuje}\quad K=\{1\}\end{aligned}\]
+\item \[\begin{aligned}t&=\sqrt{x+5}\ge0,\quad x=t^2-5\\3t-5&=t^2-5\\t(t-3)&=0\\t&=0\ \text{nebo}\ 3\\x&=-5\ \text{nebo}\ 4\\K&=\{-5;4\}\end{aligned}\]
+\item \[\begin{aligned}x&\ge1\\\sqrt{x+4}&=5-\sqrt{x-1}\\x+4&=25-10\sqrt{x-1}+x-1\\\sqrt{x-1}&=2\\x&=5\\\sqrt4+\sqrt9&=5\\K&=\{5\}\end{aligned}\]
+\item \[\begin{aligned}t&=\sqrt{x+2}\ge0,\quad x=t^2-2\\2\sqrt{t^2+5}&=t+4\\4(t^2+5)&=(t+4)^2\\3t^2-8t+4&=0\\t&=\frac23\ \text{nebo}\ 2\\K&=\left\{-\frac{14}{9};2\right\}\end{aligned}\]
+Oba kořeny byly ověřeny dosazením do původní rovnice.
+\item \[\begin{aligned}t&=\sqrt{-x}\ge0,\quad t\le2\\\sqrt{2+t^2}&=2-t\\2+t^2&=4-4t+t^2\\t&=\frac12\\x&=-\frac14\\K&=\left\{-\frac14\right\}\end{aligned}\]
+\item \[\begin{aligned}10-x&\ge0,\quad x-10\ge0\\x&=10\\\sqrt0+\sqrt0&=0\ne2\\K&=\varnothing\end{aligned}\]
+\item \[\begin{aligned}x&\ge5\\2x+7+x-5+2\sqrt{(2x+7)(x-5)}&=3x+2\\2\sqrt{(2x+7)(x-5)}&=0\\x&=5\\\sqrt{17}+0&=\sqrt{17}\\K&=\{5\}\end{aligned}\]
+\item \[\begin{aligned}-x-\sqrt{1-x}&=1\\-x-1&=\sqrt{1-x}\ge0\\y&=-x-1\ge0\\y^2&=y+2\\(y-2)(y+1)&=0\\y&=2,\quad x=-3\\K&=\{-3\}\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Povinně doporučuji a)--d), při svižném tempu také e). Úlohy f)--i) jsou dobrovolná výzva; cílem není dopočítat vše, ale vybrat správné podmínky a ověřit kořeny.}
+\end{document}

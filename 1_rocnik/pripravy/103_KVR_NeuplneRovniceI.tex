@@ -1,0 +1,159 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\nastavPripravu{1. ročník}{Kvadratické rovnice a nerovnice}{103}{Neúplná kvadratická rovnice I}
+\begin{document}
+\blok{Neúplná kvadratická rovnice I}
+Od průsečíku paraboly s osou x k rovnici druhého stupně. Přímé odmocňování a počet reálných řešení.
+
+
+\begin{definiceBox}
+\textbf{Kvadratická rovnice} je rovnice převoditelná ekvivalentními úpravami na
+\[
+ax^2+bx+c=0,\qquad a,b,c\in\mathbb R,\quad a\ne0.
+\]
+Koeficient $a$ je \textbf{kvadratický}, $b$ \textbf{lineární} a $c$ \textbf{absolutní člen}.
+Kořeny jsou všechna reálná $x$ splňující rovnici; jejich množinu značíme $K$.
+\textbf{Úplná kvadratická rovnice} má navíc $b\ne0$ a $c\ne0$.
+Tvar $ax^2+bx+c=0$ proto obecně označuje kvadratickou rovnici, nikoli nutně úplnou.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Neúplná kvadratická rovnice} má alespoň jeden z koeficientů $b,c$ roven nule.
+Rozlišujeme tvary $ax^2+bx=0$ a $ax^2+c=0$ (včetně případu $ax^2=0$).
+\end{definiceBox}
+\poznamka{Terminologie \uv{ryze kvadratická} není jednotná. Často se tím myslí $ax^2+c=0$ ($b=0$); případ $ax^2=0$ má navíc $c=0$. Pro žáky je důležité rozpoznat tvar a správnou metodu, nikoli memorovat sporné názvosloví.}
+\blok{Po odmocnění musí zůstat absolutní hodnota}
+Pro reálná čísla platí $\sqrt{x^2}=|x|$. Odtud plyne
+\[
+\begin{aligned}
+x^2&=9\
+|x|&=3\
+x&=-3\quad\text{nebo}\quad x=3,\qquad K=\{-3;3\}.
+\end{aligned}
+\]
+\textbf{Pozor:} $x^2=-9$ nemá reálné řešení; $x^2=0$ má jediný kořen. Stejnou zásadu
+použijeme i při odmocňování výrazu $(x-p)^2$.
+\blok{Tvar nemusí být hned uspořádán podle mocnin}
+Na výsledný \emph{nulový tvar} přivedeme všechny členy k jedné straně a zapíšeme
+je sestupně: nejprve $x^2$, poté $x$, nakonec absolutní člen.
+Například $5=2x^2+x$ upravíme na $2x^2+x-5=0$.
+
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+$x^{2} - 16=0$
+\tcblower
+\[
+\begin{aligned}
+x^2&=16\\|x|&=4\\[2pt]
+K&=\{-4;4\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+$2x^{2} + 8=0$
+\tcblower
+\[
+\begin{aligned}
+x^2&=-4\\[2pt]
+K&=\varnothing
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+$3x^{2}=0$
+\tcblower
+\[
+\begin{aligned}
+3x^2&=0\ \Rightarrow\ x=0\\[2pt]
+K&=\{0\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4 – nejprve uprav na nulový tvar}]
+$4x^2=12x$.
+\tcblower
+\[\begin{aligned}
+4x^2-12x&=0\\4x(x-3)&=0\\K&=\{0;3\}
+\end{aligned}\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$x^{2} - 9=0$
+\tcblower
+\[
+\begin{aligned}
+x^2&=9\\|x|&=3\\[2pt]
+K&=\{-3;3\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$2x^{2} - 18=0$
+\tcblower
+\[
+\begin{aligned}
+x^2&=9\\|x|&=3\\[2pt]
+K&=\{-3;3\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\poznamka{Studenti si vymyslí obdobný příklad se změnou jednoho koeficientu a vysvětlí, jak se změní počet kořenů či řešení.}
+\blok{Rozšiřující příklady ze sbírky}
+\poznamka{Ukázka ryze neúplné rovnice s necelými kořeny: stihneme-li, porovnej s grafem.}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad}]
+Řešte v $\mathbb R$: $2x^{2} - 5=0$.
+\tcblower
+\[
+\begin{aligned}2x^2-5&=0\\x^2&=\frac52\\|x|&=\sqrt{\frac52}\\K&=\{-\frac{\sqrt{10}}2;\frac{\sqrt{10}}2\}\end{aligned}
+\]
+\end{zadaniReseniBox}
+
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $x^{2} - 25=0$
+\item $3x^{2} - 27=0$
+\item $2x^{2} + 8=0$
+\item $5x^{2}=0$
+\item $2x^{2} - 7=0$
+\item $- 3x^{2} - 12=0$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[\begin{aligned}
+x^2&=25\\|x|&=5\\[2pt]
+K&=\{-5;5\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x^2&=9\\|x|&=3\\[2pt]
+K&=\{-3;3\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x^2&=-4\\[2pt]
+K&=\varnothing
+\end{aligned}\]
+\item
+\[\begin{aligned}
+3x^2&=0\ \Rightarrow\ x=0\\[2pt]
+K&=\{0\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x^2&=\frac{7}{2}\\|x|&=\sqrt{\frac72}\\[2pt]
+K&=\{- \frac{\sqrt{14}}{2};\frac{\sqrt{14}}{2}\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x^2&=-4\\[2pt]
+K&=\varnothing
+\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Orientační čas: úvod 5 min, společné příklady 18 min, samostatně 15 min, kontrola a shrnutí 7 min. Rezerva je dobrovolná. Číselné parametry modelových aplikací nejsou skutečně naměřená data.}
+\end{document}

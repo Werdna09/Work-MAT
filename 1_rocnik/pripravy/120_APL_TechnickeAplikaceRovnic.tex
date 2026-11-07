@@ -1,0 +1,147 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\nastavPripravu{1. ročník}{Kvadratické rovnice a nerovnice}{120}{Slovní úlohy na kvadratické rovnice II}
+\begin{document}
+\blok{Slovní úlohy na kvadratické rovnice II}
+Technické aplikace: brzdná dráha, trajektorie, výrobní optimalizace s modelovými parametry.
+\blok{Metoda a návaznost na graf}
+\begin{itemize}
+\item V každé úloze uveď jednotky, zjednodušující předpoklady a konečný smysluplný výsledek.
+\item Číselné provozní parametry jsou ilustrativní modelová data, nikoli deklarovaná měření.
+\end{itemize}
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Dráha brzdění je v modelu $s=\frac{v^2}{2a}$, $a=5\,\mathrm{m/s^2}$. Jakou počáteční rychlost (v m/s) odpovídá dráha $40\,\mathrm m$?
+\tcblower
+\[
+\begin{aligned}
+40&=\frac{v^2}{10}\\[2pt]
+v^2&=400\\[2pt]
+v&=20\,\mathrm{m/s}\quad(v\ge0)
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Výnos výrobního procesu je modelován $Z(q)=-2q^2+40q-150$ (tis. Kč). Pro které nezáporné $q$ je $Z(q)>0$?
+\tcblower
+\[
+\begin{aligned}
+-2q^2+40q-150&>0\\[2pt]
+q^2-20q+75&<0\\[2pt]
+(q-5)(q-15)&<0\\[2pt]
+K&=(5;15)
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+Obdélníková obrazovka má obsah $96\,\mathrm{cm^2}$, šířka je o $4\,\mathrm{cm}$ menší než výška. Určete rozměry.
+\tcblower
+\[
+\begin{aligned}
+x(x-4)&=96\\[2pt]
+x^2-4x-96&=0\\[2pt]
+(x-12)(x+8)&=0\\[2pt]
+\text{Výška}&=12\,\mathrm{cm},\ \text{šířka}=8\,\mathrm{cm}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+Model výkonové ztráty odporu je $P=I^2R$, $R=8\,\Omega$. Pro jaký nezáporný proud dosahuje $P=72\,\mathrm W$?
+\tcblower
+\[
+\begin{aligned}
+72&=8I^2\\[2pt]
+I^2&=9\\[2pt]
+I&=3\,\mathrm A\quad(I\ge0)
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\poznamka{Studenti si vymyslí obdobný příklad se změnou jednoho koeficientu a vysvětlí, jak se změní počet kořenů či řešení.}
+\blok{Rozšiřující příklady ze sbírky}
+\poznamka{Využij jako kontrast ke kvadratickým rovnicím: hledání extrému může být rychlejší ve vrcholovém tvaru.}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad}]
+Určete maximum/minimum a bod extrému výrazu: $x \cdot \left(1 - 2x\right)$.
+\tcblower
+\[
+\begin{aligned}x_v&=-\frac{1}{2\cdot(-2)}=\frac{1}{4}\\\max f&=f(\frac{1}{4})=\frac{1}{8}\\V&=[\frac{1}{4};\frac{1}{8}]\end{aligned}
+\]
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad}]
+Určete maximum/minimum a bod extrému výrazu: $- x^{2} + 2x + 3$.
+\tcblower
+\[
+\begin{aligned}x_v&=-\frac{2}{2\cdot(-1)}=1\\\max f&=f(1)=4\\V&=[1;4]\end{aligned}
+\]
+\end{zadaniReseniBox}
+
+\blok{Volitelná výzva -- vrchol místo derivace}
+\begin{zadaniReseniBox}[title={Rozšiřující příklad}]
+Určete maximum $p(x)=-(x-2)^2+9$ a hodnotu $x$, kdy nastává.
+\tcblower
+\[\begin{aligned}
+p(x)&=9-(x-2)^2\le9\\x&=2\\\max p&=9
+\end{aligned}\]
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item Obdélník má obsah $60\,\mathrm{cm^2}$ a delší strana je o $7\,\mathrm{cm}$ větší. Určete délky stran.
+\item Čtvercový pozemek má po rozšíření každé strany o $3\,\mathrm m$ obsah $100\,\mathrm{m^2}$. Jaká byla původní strana?
+\item Model výšky míčku je $h(t)=-5t^2+20t+1$ (metry, sekundy). Kdy je míček ve výšce $16\,\mathrm m$?
+\item Dráha brzdění je v modelu $s=\frac{v^2}{2a}$, $a=5\,\mathrm{m/s^2}$. Jakou počáteční rychlost (v m/s) odpovídá dráha $40\,\mathrm m$?
+\item Výnos výrobního procesu je modelován $Z(q)=-2q^2+40q-150$ (tis. Kč). Pro které nezáporné $q$ je $Z(q)>0$?
+\item Obdélníková obrazovka má obsah $96\,\mathrm{cm^2}$, šířka je o $4\,\mathrm{cm}$ menší než výška. Určete rozměry.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[\begin{aligned}
+x(x+7)&=60\\[2pt]
+x^2+7x-60&=0\\[2pt]
+(x-5)(x+12)&=0\\[2pt]
+x&=5\,\mathrm{cm}\quad (x=-12\text{ nelze})\\[2pt]
+\text{Strany: }&5\,\mathrm{cm};\ 12\,\mathrm{cm}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+(x+3)^2&=100\\[2pt]
+x+3&=10\quad (x>0)\\[2pt]
+x&=7\,\mathrm m
+\end{aligned}\]
+\item
+\[\begin{aligned}
+-5t^2+20t+1&=16\\[2pt]
+t^2-4t+3&=0\\[2pt]
+(t-1)(t-3)&=0\\[2pt]
+t&=1\,\mathrm s\ \text{nebo}\ 3\,\mathrm s
+\end{aligned}\]
+\item
+\[\begin{aligned}
+40&=\frac{v^2}{10}\\[2pt]
+v^2&=400\\[2pt]
+v&=20\,\mathrm{m/s}\quad(v\ge0)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+-2q^2+40q-150&>0\\[2pt]
+q^2-20q+75&<0\\[2pt]
+(q-5)(q-15)&<0\\[2pt]
+K&=(5;15)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x(x-4)&=96\\[2pt]
+x^2-4x-96&=0\\[2pt]
+(x-12)(x+8)&=0\\[2pt]
+\text{Výška}&=12\,\mathrm{cm},\ \text{šířka}=8\,\mathrm{cm}
+\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Orientační čas: úvod 5 min, společné příklady 18 min, samostatně 15 min, kontrola a shrnutí 7 min. Rezerva je dobrovolná. Číselné parametry modelových aplikací nejsou skutečně naměřená data.}
+\end{document}

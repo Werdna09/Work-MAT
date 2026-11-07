@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Kvadratické rovnice a nerovnice}{125}{Rovnice v podílovém tvaru}
+\begin{document}
+\blok{Co se změní, když je ve jmenovateli neznámá?}
+Oproti běžné kvadratické rovnici musíme ještě před úpravami určit
+\textbf{definiční podmínky}. Krácením nesmí do množiny řešení přibýt
+zakázaná hodnota. Rovnice $\frac{A(x)}{B(x)}=0$ platí právě tehdy,
+když $A(x)=0$ a současně $B(x)\ne0$.
+\blok{Společně řešené příklady -- postupně těžší}
+\begin{prikladReseniBox}[title={Příklad 1 -- přímé krácení}]
+Řešte $\frac{x^2-9}{x-3}=5$.
+\tcblower
+\[\begin{aligned}x&\ne3\\\frac{(x-3)(x+3)}{x-3}&=5\\x+3&=5\\x&=2\\K&=\{2\}\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2 -- zakázaný kořen}]
+Řešte $\frac{x^2-5x+6}{x-2}=0$.
+\tcblower
+\[\begin{aligned}x&\ne2\\\frac{(x-2)(x-3)}{x-2}&=0\\x-3&=0\\K&=\{3\}\end{aligned}\]
+Nulový čitatel má také kořen $2$, ale ten je ve jmenovateli zakázaný.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3 -- nekonečně mnoho řešení}]
+Řešte $\frac{x^2-4}{x+2}=x-2$.
+\tcblower
+\[\begin{aligned}x&\ne-2\\\frac{(x-2)(x+2)}{x+2}&=x-2\\x-2&=x-2\\K&=\mathbb R\setminus\{-2\}\end{aligned}\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\frac{x^2-16}{x-4}=x+4$.
+\tcblower
+\[\begin{aligned}x&\ne4\\x+4&=x+4\\K&=\mathbb R\setminus\{4\}\end{aligned}\]
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$\frac{x^2-1}{x+1}=0$.
+\tcblower
+\[\begin{aligned}x&\ne-1\\\frac{(x-1)(x+1)}{x+1}&=0\\x&=1\\K&=\{1\}\end{aligned}\]
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{x^2-25}{x-5}=7$.
+\item $\frac{x^2-16}{x+4}=0$.
+\item $\frac{x^2-4}{x-2}=x+2$.
+\item $\frac{x^2-4x+3}{x-1}=0$.
+\item $\frac{x^2-x-6}{x+2}=0$.
+\item $\frac{x^2-9}{x-3}=x+3$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x\ne5$, zkrátíme na $x+5=7$. $K=\{2\}$.
+\item $x\ne-4$, zkrátíme na $x-4=0$. $K=\{4\}$.
+\item $x\ne2$, identita pro všechna přípustná $x$; $K=\mathbb R\setminus\{2\}$.
+\item $x\ne1$, zkrátíme na $x-3=0$. $K=\{3\}$.
+\item $x\ne-2$, zkrátíme na $x-3=0$. $K=\{3\}$.
+\item $x\ne3$, identita; $K=\mathbb R\setminus\{3\}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření -- podílové nerovnice}
+Zde \emph{nemůžeme} násobit jmenovatelem bez znalosti jeho znaménka.
+Kritické body z čitatele a jmenovatele vyznačíme do znaménkové tabulky.
+\begin{zadaniReseniBox}[title={Ukázková nerovnice}]
+$\frac{(x-2)(x+2)}{x-1}>0$.
+\tcblower
+Kritické body jsou $-2,1,2$. Znaménka na čtyřech intervalech:
+\[\begin{array}{c|cccc}
+x&(-\infty;-2)&(-2;1)&(1;2)&(2;+\infty)\\\hline
+\frac{(x-2)(x+2)}{x-1}&-&+&-&+
+\end{array}\]
+\[K=(-2;1)\cup(2;+\infty).\]
+\end{zadaniReseniBox}
+\poznamka{Původní úlohy na podílové nerovnice zachovány níže jako samostatný \textbf{dobrovolný} blok; nejsou povinným obsahem nové 125. hodiny.}
+\blok{Původní náročné úlohy -- jen pro zájemce}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $\dfrac{\left(x - 2\right) \cdot \left(x + 2\right)}{x - 1}>0$
+\item $\dfrac{\left(x - 3\right) \cdot \left(x + 4\right)}{x - 2}\le0$
+\item $\dfrac{\left(x - 5\right) \cdot \left(x + 1\right)}{x}\ge0$
+\item $\dfrac{\left(x - 1\right) \cdot \left(x + 3\right)}{x - 4}<0$
+\item $\dfrac{\left(x - 3\right) \cdot \left(x - 1\right)}{x + 1}\le0$
+\item $\dfrac{\left(x - 5\right) \cdot \left(x + 2\right)}{x - 2}>0$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[\begin{aligned}
+x&\ne 1\quad\text{(podmínka)}\\[2pt]
+\text{Kritické body: }&-2,\ 1,\ 2\\[2pt]
+K&=(-2;1)\cup(2;+\infty)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x&\ne 2\quad\text{(podmínka)}\\[2pt]
+\text{Kritické body: }&-4,\ 2,\ 3\\[2pt]
+K&=(-\infty;-4\rangle\cup(2;3\rangle
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x&\ne 0\quad\text{(podmínka)}\\[2pt]
+\text{Kritické body: }&-1,\ 0,\ 5\\[2pt]
+K&=\langle-1;0)\cup\langle5;+\infty)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x&\ne 4\quad\text{(podmínka)}\\[2pt]
+\text{Kritické body: }&-3,\ 1,\ 4\\[2pt]
+K&=(-\infty;-3)\cup(1;4)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x&\ne -1\quad\text{(podmínka)}\\[2pt]
+\text{Kritické body: }&-1,\ 1,\ 3\\[2pt]
+K&=(-\infty;-1)\cup\langle1;3\rangle
+\end{aligned}\]
+\item
+\[\begin{aligned}
+x&\ne 2\quad\text{(podmínka)}\\[2pt]
+\text{Kritické body: }&-2,\ 2,\ 5\\[2pt]
+K&=(-2;2)\cup(5;+\infty)
+\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

@@ -1,0 +1,132 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage[czech]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,geometry,enumitem,tikz,pgfplots,needspace}
+\pgfplotsset{compat=1.18}
+\geometry{a4paper,top=17mm,bottom=18mm,left=22mm,right=22mm}
+\pagestyle{plain}\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\begin{document}
+\begin{center}\Large\bfseries 124. hodina -- Grafy kvadratických funkcí s absolutními hodnotami\end{center}
+\noindent Jméno: \rule{58mm}{0.4pt}\hfill Třída: \rule{22mm}{0.4pt}
+\par \small Naleznete nulové body výrazů uvnitř absolutních hodnot, sestrojte graf a vyznačte kritické body.
+Porovnávejte $g_1$--$g_4$, $h_1$--$h_4$ a náročné $k_1$--$k_4$.\normalsize
+\needspace{9cm}
+\noindent\textbf{g1:} $y=x^2+2x-3$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{g2:} $y=|x^2+2x-3|$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{g3:} $y=x^2+2|x|-3$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{g4:} $y=|x^2+2|x|-3|$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{h1:} $y=x^2-3x$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{h2:} $y=x^2-3|x|$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{h3:} $y=|x(x-3)|$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{h4:} $y=|x|(x-3)$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{k1:} $y=|2x+1|-x|x-4|$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{k2:} $y=x|x-2|+|x^2-2x|$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{k3:} $y=|x^2-x|+|x|-2$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\needspace{9cm}
+\noindent\textbf{k4:} $y=|9-x^2|+|4-x^2|-5$\par
+\begin{tikzpicture}
+\begin{axis}[width=0.92\linewidth,height=6.1cm,axis lines=middle,
+ xmin=-5.5,xmax=5.5,ymin=-12,ymax=24,xtick={-5,-4,...,5},ytick={-10,-5,...,20},
+ grid=both,minor tick num=1,grid style={black!14},minor grid style={black!7},
+ tick label style={font=\scriptsize},clip=true]
+\end{axis}
+\end{tikzpicture}
+
+\end{document}

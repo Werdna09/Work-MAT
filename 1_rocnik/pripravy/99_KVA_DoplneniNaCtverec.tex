@@ -1,0 +1,148 @@
+% 1. ročník MAT – příprava 99; inspirace Realisticky.cz 020501–020506, úlohy nově sestavené.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{1. ročník}{Kvadratické funkce}{99}{Doplnění na čtverec}
+\begin{document}
+\blok{Proč potřebujeme doplnění na čtverec?}
+U vrcholového tvaru poznáme vrchol okamžitě. Ale předpis $f(x)=x^2-6x+5$ jej neukazuje. Vrátíme se k algebraickému vzorci $(u-v)^2=u^2-2uv+v^2$. Přičteme a odečteme stejné číslo, takže se funkce nezmění.
+\begin{definiceBox}
+\textbf{Doplnění na čtverec} je ekvivalentní úprava
+\[ x^2+px+q=\left(x+\frac p2\right)^2+q-\left(\frac p2\right)^2. \]
+Pro $a\ne0$ nejdříve vytkneme $a$ z členů obsahujících $x$; cílem je předpis ve vrcholovém tvaru.
+\end{definiceBox}
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}
+Upravte $f(x)=x^2-6x+5$ na vrcholový tvar a určete vrchol, minimum a obor hodnot.
+\tcblower
+\[
+\begin{aligned}
+f(x)&=x^2-6x+9-9+5 \\
+&=(x-3)^2-4 \\
+V&=[3;-4],\quad \min f=-4 \\
+H(f)&=\langle-4;+\infty)
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Doplňte na čtverec $g(x)=x^2+4x+1$. Proč musíme přidat i odečíst právě číslo $4$?
+\tcblower
+\[
+\begin{aligned}
+g(x)&=x^2+4x+4-4+1 \\
+&=(x+2)^2-3 \\
+V&=[-2;-3],\quad H(g)=\langle-3;+\infty)
+\end{aligned}
+\]
+Platí $4=2^2$, protože prostřední člen $4x=2\cdot x\cdot2$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}
+Upravte $h(x)=2x^2-8x+3$. Nezapomeňte vytknout dvojku ještě před doplněním čtverce.
+\tcblower
+\[
+\begin{aligned}
+h(x)&=2(x^2-4x)+3 \\
+&=2\bigl((x-2)^2-4\bigr)+3 \\
+&=2(x-2)^2-5 \\
+V&=[2;-5],\quad H(h)=\langle-5;+\infty)
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\blok{Společný krátký postup s negativním $a$}
+U $k(x)=-x^2+6x-7$ nejprve vytkneme mínus:
+\[\begin{aligned}k(x)&=-(x^2-6x)-7\\&=-\bigl((x-3)^2-9\bigr)-7\\&=-(x-3)^2+2.\end{aligned}\]
+Vrchol je $[3;2]$, hodnota $2$ je \emph{maximum}.
+\blok{Samostatné procvičování}
+
+\begin{zadaniReseniBox}
+a) $x^2-4x+1$; b) $x^2+2x-3$; c) $-x^2-2x+3$. Upravte na vrcholový tvar a zapište vrchol.
+\tcblower
+\[
+\begin{aligned}
+x^2-4x+1&=(x-2)^2-3\quad V[2;-3] \\
+x^2+2x-3&=(x+1)^2-4\quad V[-1;-4] \\
+-x^2-2x+3&=-(x+1)^2+4\quad V[-1;4]
+\end{aligned}
+\]
+
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=3pt]
+\item Doplňte na čtverec $x^2-2x+3$ a určete vrchol.
+\item Doplňte na čtverec $x^2+6x+5$ a určete minimum.
+\item Upravte $x^2-8x+10$ a určete $H(f)$.
+\item Upravte $-x^2+4x+1$ na vrcholový tvar a určete maximum.
+\item Upravte $2x^2+8x+5$ na vrcholový tvar.
+\item Upravte $-2x^2+8x-3$ na vrcholový tvar.
+\item \textbf{Výzva:} Doplňte na čtverec $x^2+3x+1$ a určete vrchol.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=4pt]
+\item
+\[
+\begin{aligned}
+x^2-2x+3&=(x-1)^2+2 \\
+V&=[1;2]
+\end{aligned}
+\]
+
+\item
+\[
+\begin{aligned}
+x^2+6x+5&=(x+3)^2-4 \\
+\min f&=-4
+\end{aligned}
+\]
+
+\item
+\[
+\begin{aligned}
+x^2-8x+10&=(x-4)^2-6 \\
+H(f)&=\langle-6;+\infty)
+\end{aligned}
+\]
+
+\item
+\[
+\begin{aligned}
+-x^2+4x+1&=-(x-2)^2+5 \\
+\max f&=5
+\end{aligned}
+\]
+
+\item
+\[
+\begin{aligned}
+2x^2+8x+5&=2(x^2+4x)+5 \\
+&=2(x+2)^2-3
+\end{aligned}
+\]
+
+\item
+\[
+\begin{aligned}
+-2x^2+8x-3&=-2(x^2-4x)-3 \\
+&=-2(x-2)^2+5
+\end{aligned}
+\]
+
+\item
+\[
+\begin{aligned}
+x^2+3x+1&=(x+\tfrac32)^2-\tfrac94+1 \\
+&=(x+\tfrac32)^2-\tfrac54 \\
+V&=[-\tfrac32;-\tfrac54]
+\end{aligned}
+\]
+
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Čas: zopakování vzorce 5 min, dva monické příklady 12 min, koeficient před $x^2$ 10 min, případ se záporným $a$ 5 min, samostatně 10 min, závěr 3 min. V této hodině počítej bez vzorce pro kořeny kvadratické rovnice.}
+\end{document}

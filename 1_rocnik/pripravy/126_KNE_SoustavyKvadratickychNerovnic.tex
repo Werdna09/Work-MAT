@@ -1,0 +1,106 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\nastavPripravu{1. ročník}{Kvadratické rovnice a nerovnice}{126}{Soustavy kvadratických nerovnic}
+\begin{document}
+\blok{Soustavy kvadratických nerovnic}
+Průnik dvou nebo více intervalových řešení; opakování množin.
+\blok{Metoda a návaznost na graf}
+\begin{itemize}
+\item Nejprve vyřeš nerovnice zvlášť a potom najdi průnik jejich řešení.
+\item Nakresli každou množinu na číselnou osu; prázdný průnik je legitimní výsledek.
+\end{itemize}
+\blok{Proč průnik?}
+Nerovnice popisují dvě podmínky, které mají platit současně. Nejprve označíme například
+$K_1=\langle-3;3\rangle$ a $K_2=(1;5)$, pak na stejné číselné ose vyznačíme jejich průnik
+$K_1\cap K_2=(1;3\rangle$. Nulové body se započítají podle ostrého či neostrého znaménka.
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+$\begin{cases}x^{2} - 9<0\\x^{2} - 4x + 3>0\end{cases}$
+\tcblower
+\[
+\begin{aligned}
+K_1&=(-3;3)\\[2pt]
+K_2&=(-\infty;1)\cup(3;+\infty)\\[2pt]
+K&=K_1\cap K_2=(-3;1)
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+$\begin{cases}x^{2} - 5x + 6\le0\\x^{2} - 16\ge0\end{cases}$
+\tcblower
+\[
+\begin{aligned}
+K_1&=\langle2;3\rangle\\[2pt]
+K_2&=(-\infty;-4\rangle\cup\langle4;+\infty)\\[2pt]
+K&=K_1\cap K_2=\varnothing
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$\begin{cases}x^{2} - 4\ge0\\x^{2} - 6x + 5<0\end{cases}$
+\tcblower
+\[
+\begin{aligned}
+K_1&=(-\infty;-2\rangle\cup\langle2;+\infty)\\[2pt]
+K_2&=(1;5)\\[2pt]
+K&=K_1\cap K_2=\langle2;5)
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\poznamka{Studenti si vymyslí obdobný příklad se změnou jednoho koeficientu a vysvětlí, jak se změní počet kořenů či řešení.}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $\begin{cases}x^{2} - 25<0\\x^{2} - 4x + 3>0\end{cases}$
+\item $\begin{cases}x^{2} - 7x + 10\le0\\x^{2} - 9\ge0\end{cases}$
+\item $\begin{cases}x^{2} - 1>0\\x^{2} - 2x - 3<0\end{cases}$
+\item $\begin{cases}x^{2} - 5x + 6>0\\x^{2} - 16<0\end{cases}$
+\item $\begin{cases}x^{2} - 4x + 4\le0\\x^{2} - 16\ge0\end{cases}$
+\item $\begin{cases}x^{2} - 9>0\\x^{2} - 8x + 12<0\end{cases}$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[\begin{aligned}
+K_1&=(-5;5)\\[2pt]
+K_2&=(-\infty;1)\cup(3;+\infty)\\[2pt]
+K&=K_1\cap K_2=(-5;1)\cup(3;5)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+K_1&=\langle2;5\rangle\\[2pt]
+K_2&=(-\infty;-3\rangle\cup\langle3;+\infty)\\[2pt]
+K&=K_1\cap K_2=\langle3;5\rangle
+\end{aligned}\]
+\item
+\[\begin{aligned}
+K_1&=(-\infty;-1)\cup(1;+\infty)\\[2pt]
+K_2&=(-1;3)\\[2pt]
+K&=K_1\cap K_2=(1;3)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+K_1&=(-\infty;2)\cup(3;+\infty)\\[2pt]
+K_2&=(-4;4)\\[2pt]
+K&=K_1\cap K_2=(-4;2)\cup(3;4)
+\end{aligned}\]
+\item
+\[\begin{aligned}
+K_1&=\{2\}\\[2pt]
+K_2&=(-\infty;-4\rangle\cup\langle4;+\infty)\\[2pt]
+K&=K_1\cap K_2=\varnothing
+\end{aligned}\]
+\item
+\[\begin{aligned}
+K_1&=(-\infty;-3)\cup(3;+\infty)\\[2pt]
+K_2&=(2;6)\\[2pt]
+K&=K_1\cap K_2=(3;6)
+\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Orientační čas: úvod 5 min, společné příklady 18 min, samostatně 15 min, kontrola a shrnutí 7 min. Rezerva je dobrovolná. Číselné parametry modelových aplikací nejsou skutečně naměřená data.}
+\end{document}

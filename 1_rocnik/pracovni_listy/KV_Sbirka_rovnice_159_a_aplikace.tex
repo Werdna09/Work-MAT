@@ -1,0 +1,271 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,geometry,enumitem,booktabs,xcolor,needspace}
+\usepackage[hidelinks]{hyperref}
+\geometry{a4paper,top=18mm,bottom=18mm,left=22mm,right=22mm}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\setlist[enumerate]{leftmargin=11mm,topsep=2pt,itemsep=4pt}
+\pagestyle{plain}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Sbírka úloh -- kvadratické rovnice a související učivo}\\[2mm]
+{\normalsize 1. ročník SPŠ \textbar\ Dobrovolné rozšíření pro hodiny 103--129}\\[3mm]
+\end{center}
+\textbf{Jak pracovat:} Příklady jsou rozdělené podle matematického tématu, nikoli podle pořadí v hodinách.
+Uvnitř oddílů obtížnost zhruba roste. Část úloh pochází ze sbírkových fotografií poskytnutých vyučujícím.
+\textbf{Zapisuj množinu řešení $K$}, u odmocnin ověř podmínky a u lomených výrazů nepřepisuj původní definiční obor.
+Po odmocnění druhé mocniny vždy používej $\sqrt{x^2}=|x|$.
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}\toprule
+Úroveň 1 & základní procvičení\\
+Úroveň 2 & náročnější kombinace a několik kroků\\
+Úroveň 3 & dobrovolné výzvy ze sbírky a přijímacích příkladů\\
+\bottomrule\end{tabular}
+\end{center}
+\needspace{11\baselineskip}
+\section*{A -- Neúplné a úplné kvadratické rovnice}
+\textit{Vytýkání, odmocňování, diskriminant}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{A001}] Řešte v $\mathbb R$: $4x^{2} + x=0$. 
+\item[\textbf{A002}] Řešte v $\mathbb R$: $2x^{2} - 5=0$. 
+\item[\textbf{A003}] Řešte v $\mathbb R$: $3x^{2} + x - 2=0$. 
+\item[\textbf{A004}] Řešte v $\mathbb R$: $x^{2} + 2x - 1=0$. 
+\item[\textbf{A005}] Řešte v $\mathbb R$: $4x^{2} - 4x + 1=0$. 
+\item[\textbf{A006}] Řešte v $\mathbb R$: $3x^{2} + x + 2=0$. 
+\item[\textbf{A011}] Řešte v $\mathbb R$: $x^{2} - 36=0$.
+\item[\textbf{A012}] Řešte v $\mathbb R$: $3x^{2} - 27=0$.
+\item[\textbf{A013}] Řešte v $\mathbb R$: $5x^{2} + 20=0$.
+\item[\textbf{A014}] Řešte v $\mathbb R$: $18 - 2x^{2}=0$.
+\item[\textbf{A015}] Řešte v $\mathbb R$: $4x^{2} - 7=0$.
+\item[\textbf{A016}] Řešte v $\mathbb R$: $2x^{2}=0$.
+\item[\textbf{A017}] Řešte v $\mathbb R$: $- 7x^{2}=0$.
+\item[\textbf{A018}] Řešte v $\mathbb R$: $x^{2} + 3x=0$.
+\item[\textbf{A019}] Řešte v $\mathbb R$: $3x^{2} - 12x=0$.
+\item[\textbf{A020}] Řešte v $\mathbb R$: $- 2x^{2} + 8x=0$.
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{A021}] Řešte v $\mathbb R$: $2x^{2} + 5x - 3=0$.
+\item[\textbf{A022}] Řešte v $\mathbb R$: $3x^{2} + 5x - 2=0$.
+\item[\textbf{A023}] Řešte v $\mathbb R$: $x^{2} - 6x + 5=0$.
+\item[\textbf{A024}] Řešte v $\mathbb R$: $x^{2} + 2x + 7=0$.
+\item[\textbf{A025}] Řešte v $\mathbb R$: $x^{2} - 4x + 4=0$.
+\item[\textbf{A026}] Řešte v $\mathbb R$: $2x^{2} - 4x - 6=0$.
+\item[\textbf{A027}] Řešte v $\mathbb R$: $- x^{2} + 4x - 3=0$.
+\item[\textbf{A028}] Řešte v $\mathbb R$: $x^{2} - 2x - 2=0$.
+\item[\textbf{A029}] Řešte v $\mathbb R$: $5x^{2} + 2x + 1=0$.
+\item[\textbf{A030}] Řešte v $\mathbb R$: $4x^{2} - 12x + 9=0$.
+\item[\textbf{A031}] Řešte v $\mathbb R$: $3x^{2} + 2x - 1=0$.
+\item[\textbf{A032}] Řešte v $\mathbb R$: $2x^{2} - x - 4=0$.
+\item[\textbf{A033}] Řešte v $\mathbb R$: $x^{2} + x - 1=0$.
+\item[\textbf{A034}] Řešte v $\mathbb R$: $6x^{2} + 7x - 3=0$.
+\end{enumerate}
+\subsection*{III. Náročné výzvy}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{A007}] Řešte v $\mathbb R$: $x^2+(2\sqrt3+1)x+3+\sqrt3=0$. 
+\item[\textbf{A008}] Řešte v $\mathbb R$: $x^2+x(2\sqrt3+1)+2\sqrt3=0$. 
+\item[\textbf{A009}] Řešte v $\mathbb R$: $x^2-\sqrt2\,x+x-\sqrt2=0$. 
+\item[\textbf{A010}] Řešte v $\mathbb R$: $\frac12(2x-1)^2-\left[\frac12(x+1)\right]^2=3\left[\left(\frac x2\right)^2-\left(\frac12\right)^2\right]$. 
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{B -- Součinové rovnice}
+\textit{Nulový součin a součiny mnohočlenů}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{B001}] Řešte v $\mathbb R$: $\left(9 - 4x^{2}\right) \cdot \left(x^{2} - 6x + 9\right)=0$. 
+\item[\textbf{B002}] Řešte v $\mathbb R$: $\left(50 - x^{2}\right) \cdot \left(4x^{2} + 25\right)=0$. 
+\item[\textbf{B003}] Řešte v $\mathbb R$: $\left(x - 3\right) \cdot \left(x - 2\right) \cdot \left(x + 1\right)=0$.
+\item[\textbf{B004}] Řešte v $\mathbb R$: $\left(x - 5\right) \cdot \left(x - 4\right) \cdot \left(x + 1\right)=0$.
+\item[\textbf{B005}] Řešte v $\mathbb R$: $\left(x - 7\right) \cdot \left(x + 1\right)^{2}=0$.
+\item[\textbf{B006}] Řešte v $\mathbb R$: $x \cdot \left(x + 1\right) \cdot \left(x + 4\right)=0$.
+\item[\textbf{B007}] Řešte v $\mathbb R$: $\left(x - 1\right)^{2} \cdot \left(x + 1\right)=0$.
+\item[\textbf{B008}] Řešte v $\mathbb R$: $\left(x - 2\right) \cdot \left(x + 1\right) \cdot \left(x + 3\right)=0$.
+\item[\textbf{B009}] Řešte v $\mathbb R$: $\left(x^{2} - 1\right) \cdot \left(x^{2} - 2x + 1\right)=0$.
+\item[\textbf{B010}] Řešte v $\mathbb R$: $\left(x^{2} - 4\right) \cdot \left(x^{2} - 2x + 1\right)=0$.
+\item[\textbf{B011}] Řešte v $\mathbb R$: $\left(x^{2} - 9\right) \cdot \left(x^{2} - 2x + 1\right)=0$.
+\item[\textbf{B012}] Řešte v $\mathbb R$: $\left(x^{2} - 16\right) \cdot \left(x^{2} - 2x + 1\right)=0$.
+\item[\textbf{B013}] Řešte v $\mathbb R$: $\left(x^{2} - 25\right) \cdot \left(x^{2} - 2x + 1\right)=0$.
+\item[\textbf{B014}] Řešte v $\mathbb R$: $\left(x^{2} - 36\right) \cdot \left(x^{2} - 2x + 1\right)=0$.
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{C -- Rozklad na kořenové činitele}
+\textit{Diskriminant, vzorce, reálná rozložitelnost}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{C001}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} - 5x + 6$. 
+\item[\textbf{C002}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 7x + 10$. 
+\item[\textbf{C003}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 2x - 8$. 
+\item[\textbf{C004}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 10x - 11$. 
+\item[\textbf{C005}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + x - 2$. 
+\item[\textbf{C006}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} - 11x + 30$. 
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{C007}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} - 10x + 25$. 
+\item[\textbf{C008}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 4x + 4$. 
+\item[\textbf{C009}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} - 6x + 9$. 
+\item[\textbf{C010}] Rozložte v $\mathbb R$ na kořenové činitele: $4x^{2} + 4x + 1$. 
+\item[\textbf{C011}] Rozložte v $\mathbb R$ na kořenové činitele: $16x^{2} - 25$. 
+\item[\textbf{C012}] Rozložte v $\mathbb R$ na kořenové činitele: $15x^{2} - 30x$. 
+\item[\textbf{C013}] Rozložte v $\mathbb R$ na kořenové činitele: $2x^{2} + x - 1$. 
+\item[\textbf{C014}] Rozložte v $\mathbb R$ na kořenové činitele: $3x^{2} - 17x + 10$. 
+\item[\textbf{C015}] Rozložte v $\mathbb R$ na kořenové činitele: $- x^{2} + 7x + 8$. 
+\item[\textbf{C016}] Rozložte v $\mathbb R$ na kořenové činitele: $- 2x^{2} + 11x - 15$. 
+\item[\textbf{C017}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 4$. 
+\item[\textbf{C018}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 4x + 5$. 
+\item[\textbf{C019}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} - 8x + 7$.
+\item[\textbf{C020}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 7x + 10$.
+\item[\textbf{C021}] Rozložte v $\mathbb R$ na kořenové činitele: $2x^{2} - 10x + 8$.
+\item[\textbf{C022}] Rozložte v $\mathbb R$ na kořenové činitele: $3x^{2} - 21x + 30$.
+\item[\textbf{C023}] Rozložte v $\mathbb R$ na kořenové činitele: $2x^{2} - 18$.
+\item[\textbf{C024}] Rozložte v $\mathbb R$ na kořenové činitele: $3x^{2} - 6x - 24$.
+\item[\textbf{C025}] Rozložte v $\mathbb R$ na kořenové činitele: $4x^{2} - 16x + 12$.
+\item[\textbf{C026}] Rozložte v $\mathbb R$ na kořenové činitele: $2x^{2} - 22x + 60$.
+\item[\textbf{C027}] Rozložte v $\mathbb R$ na kořenové činitele: $5x^{2} - 15x + 10$.
+\item[\textbf{C028}] Rozložte v $\mathbb R$ na kořenové činitele: $3x^{2} + 15x + 12$.
+\item[\textbf{C029}] Rozložte v $\mathbb R$ na kořenové činitele: $x^{2} + 2x - 24$.
+\item[\textbf{C030}] Rozložte v $\mathbb R$ na kořenové činitele: $6x^{2} - 6x - 12$.
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{D -- Extrémy kvadratického trojčlenu}
+\textit{Doplnění na čtverec a vrchol paraboly}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{D001}] Určete extrém a souřadnice vrcholu: $x^{2} + 2x + 6$. 
+\item[\textbf{D002}] Určete extrém a souřadnice vrcholu: $x^{2} + 4x + 4$. 
+\item[\textbf{D003}] Určete extrém a souřadnice vrcholu: $x^{2} - 3x + 2$. 
+\item[\textbf{D004}] Určete extrém a souřadnice vrcholu: $4x^{2} - 4x$. 
+\item[\textbf{D005}] Určete extrém a souřadnice vrcholu: $4x^{2} + 8x + 12$. 
+\item[\textbf{D006}] Určete extrém a souřadnice vrcholu: $2x^{2} - 8x + 1$. 
+\item[\textbf{D007}] Určete extrém a souřadnice vrcholu: $- 2x^{2} + x$. 
+\item[\textbf{D008}] Určete extrém a souřadnice vrcholu: $- x^{2} + 2x + 3$. 
+\item[\textbf{D009}] Určete extrém a souřadnice vrcholu: $- x^{2} - 16$. 
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{D010}] Určete extrém a souřadnice vrcholu: $2x^{2} + 4x + 9$.
+\item[\textbf{D011}] Určete extrém a souřadnice vrcholu: $- 3x^{2} + 6x - 1$.
+\item[\textbf{D012}] Určete extrém a souřadnice vrcholu: $3x^{2} - 12x + 8$.
+\item[\textbf{D013}] Určete extrém a souřadnice vrcholu: $- 2x^{2} - 8x + 3$.
+\item[\textbf{D014}] Určete extrém a souřadnice vrcholu: $x^{2} + 5x + 11$.
+\item[\textbf{D015}] Určete extrém a souřadnice vrcholu: $- 4x^{2} + 8x - 2$.
+\item[\textbf{D016}] Určete extrém a souřadnice vrcholu: $2x^{2} - 6x + 5$.
+\item[\textbf{D017}] Určete extrém a souřadnice vrcholu: $- x^{2} - 5x - 3$.
+\item[\textbf{D018}] Určete extrém a souřadnice vrcholu: $5x^{2} - 10x + 2$.
+\item[\textbf{D019}] Určete extrém a souřadnice vrcholu: $x^{2} + 7x + 6$.
+\item[\textbf{D020}] Určete extrém a souřadnice vrcholu: $3x^{2} + x - 5$.
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{E -- Lomené algebraické výrazy}
+\textit{Rozklad, definiční podmínky, krácení}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{E001}] Určete původní definiční podmínky a zjednodušte: $\displaystyle \frac{4x^{2} + 7x - 2}{12x^{2} + 5x - 2}$. 
+\item[\textbf{E003}] Určete původní definiční podmínky a zjednodušte: $\displaystyle \frac{x^{2} - 9}{x^{2} - 3x}$.
+\item[\textbf{E004}] Určete původní definiční podmínky a zjednodušte: $\displaystyle \frac{2x^{2} + 5x + 2}{4x^{2} - 1}$.
+\item[\textbf{E005}] Určete původní definiční podmínky a zjednodušte: $\displaystyle \frac{x^{2} - 1}{x^{2} + 2x + 1}$.
+\item[\textbf{E006}] Určete původní definiční podmínky a zjednodušte: $\displaystyle \frac{x^{2} + 5x + 6}{x^{2} - 4}$.
+\item[\textbf{E007}] Určete původní definiční podmínky a zjednodušte: $\displaystyle \frac{3x^{2} - 12x}{x^{2} - 4x}$.
+\item[\textbf{E008}] Určete původní definiční podmínky a zjednodušte: $\displaystyle \frac{x^{2} + 2x - 3}{x^{2} - 9}$.
+\end{enumerate}
+\subsection*{III. Náročné výzvy}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{E002}] Zjednodušte a určete původní definiční podmínky: \[\displaystyle \frac{\dfrac{x^2+4x+3}{x^2-x-2}-\dfrac{x^2-x-12}{x^2+x-6}}{\dfrac{x^2+2x-15}{x^2+3x-10}-\dfrac{x^2+10x+24}{x^2+4x-12}}\] 
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{F -- Odmocninové rovnice}
+\textit{Definiční podmínky a zkouška po umocnění}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{F001}] Řešte v $\mathbb R$: $\sqrt{x}+x=2$. 
+\item[\textbf{F002}] Řešte v $\mathbb R$: $3\sqrt{x+5}-5=x$. 
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{F011}] Řešte v $\mathbb R$: $\sqrt{x + 1} - 3=0$.
+\item[\textbf{F012}] Řešte v $\mathbb R$: $\sqrt{2x - 1} - 5=0$.
+\item[\textbf{F013}] Řešte v $\mathbb R$: $- x + \sqrt{x + 4} + 2=0$.
+\item[\textbf{F014}] Řešte v $\mathbb R$: $- x + \sqrt{3x + 1} - 1=0$.
+\item[\textbf{F015}] Řešte v $\mathbb R$: $- x + \sqrt{x - 2} + 1=0$.
+\item[\textbf{F016}] Řešte v $\mathbb R$: $\sqrt{x - 1} + \sqrt{x + 4} - 5=0$.
+\item[\textbf{F017}] Řešte v $\mathbb R$: $- \sqrt{x} + \sqrt{x + 9} - 1=0$.
+\item[\textbf{F018}] Řešte v $\mathbb R$: $- \sqrt{x + 4} + \sqrt{2x + 1}=0$.
+\item[\textbf{F019}] Řešte v $\mathbb R$: $- 2 \cdot \sqrt{x - 3} + \sqrt{x + 6}=0$.
+\item[\textbf{F020}] Řešte v $\mathbb R$: $\sqrt{x} - \sqrt{x + 1} + 1=0$.
+\end{enumerate}
+\subsection*{III. Náročné výzvy}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{F003}] Řešte v $\mathbb R$: $\sqrt{x-1}+\sqrt{x+4}=5$. 
+\item[\textbf{F004}] Řešte v $\mathbb R$: $\sqrt{x+2}-2\sqrt{x+7}=-4$. 
+\item[\textbf{F005}] Řešte v $\mathbb R$: $\sqrt{-x}=2-\sqrt{2-x}$. 
+\item[\textbf{F006}] Řešte v $\mathbb R$: $\sqrt{10-x}+\sqrt{x-10}=2$. 
+\item[\textbf{F007}] Řešte v $\mathbb R$: $\sqrt{2x+7}+\sqrt{x-5}=\sqrt{3x+2}$. 
+\item[\textbf{F008}] Řešte v $\mathbb R$: $\sqrt{-x-\sqrt{1-x}}=1$. 
+\item[\textbf{F009}] Řešte v $\mathbb R$: $\frac{2x}{2\sqrt3+\sqrt{x}}=\frac{2\sqrt3-\sqrt{x}}{\frac92}$. 
+\item[\textbf{F010}] Řešte v $\mathbb R$: $\frac4{x+\sqrt{x^2+x}}-\frac1{x-\sqrt{x^2+x}}=\frac3x$. 
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{G -- Kvadratické rovnice s absolutní hodnotou}
+\textit{Tabulka znamének a grafické souvislosti}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{G001}] Řešte v $\mathbb R$: $\left|{x^{2} - 4}\right| - 5=0$.
+\item[\textbf{G002}] Řešte v $\mathbb R$: $\left|{x^{2} - 9}\right| - 7=0$.
+\item[\textbf{G003}] Řešte v $\mathbb R$: $\left|{x^{2} - 1}\right| - 2=0$.
+\item[\textbf{G004}] Řešte v $\mathbb R$: $x^{2} - 4 \cdot \left|{x}\right| + 3=0$.
+\item[\textbf{G005}] Řešte v $\mathbb R$: $x^{2} - 5 \cdot \left|{x}\right| + 6=0$.
+\item[\textbf{G006}] Řešte v $\mathbb R$: $2x^{2} - 3 \cdot \left|{x}\right| + 1=0$.
+\item[\textbf{G007}] Řešte v $\mathbb R$: $\left|{x^{2} - 4x + 3}\right| - 2=0$.
+\item[\textbf{G008}] Řešte v $\mathbb R$: $\left|{x^{2} + 2x}\right| - 3=0$.
+\item[\textbf{G009}] Řešte v $\mathbb R$: $- \left|{x - 1}\right| + \left|{x^{2} - 5}\right|=0$.
+\item[\textbf{G010}] Řešte v $\mathbb R$: $- \left|{x}\right| + \left|{x^{2} - 4}\right|=0$.
+\item[\textbf{G011}] Řešte v $\mathbb R$: $x^{2} + \left|{x}\right| - 2=0$.
+\item[\textbf{G012}] Řešte v $\mathbb R$: $x^{2} - \left|{x}\right| - 6=0$.
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{H -- Kvadratické nerovnice}
+\textit{Nulové body, intervaly, znaménka}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{H001}] Řešte v $\mathbb R$: $\left(x - 3\right) \cdot \left(x - 2\right) > 0$.
+\item[\textbf{H004}] Řešte v $\mathbb R$: $\left(x - 2\right) \cdot \left(2x + 1\right) < 0$.
+\item[\textbf{H005}] Řešte v $\mathbb R$: $\left(x + 2\right)^{2} > 0$.
+\item[\textbf{H006}] Řešte v $\mathbb R$: $x^{2} + 2 < 0$.
+\item[\textbf{H009}] Řešte v $\mathbb R$: $\frac{\left(x - 2\right) \cdot \left(x + 3\right)}{x - 1} > 0$.
+\item[\textbf{H011}] Řešte v $\mathbb R$: $\left(x - 1\right) \cdot \left(x + 1\right) < 0$.
+\item[\textbf{H012}] Řešte v $\mathbb R$: $3 \cdot \left(x - 2\right) \cdot \left(x + 2\right) > 0$.
+\item[\textbf{H013}] Řešte v $\mathbb R$: $- x^{2} - 1 < 0$.
+\item[\textbf{H015}] Řešte v $\mathbb R$: $\frac{\left(x - 3\right) \cdot \left(x + 3\right)}{\left(x - 1\right) \cdot \left(x + 1\right)} > 0$.
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{H002}] Řešte v $\mathbb R$: $x^{2} - 9 <= 0$.
+\item[\textbf{H003}] Řešte v $\mathbb R$: $- x^{2} + 4x + 5 >= 0$.
+\item[\textbf{H007}] Řešte v $\mathbb R$: $- 2x^{2} + 8x - 6 <= 0$.
+\item[\textbf{H008}] Řešte v $\mathbb R$: $x^{2} - 2x - 3 >= 0$.
+\item[\textbf{H010}] Řešte v $\mathbb R$: $\frac{x^{2} - 4}{x + 3} <= 0$.
+\item[\textbf{H014}] Řešte v $\mathbb R$: $x^{2} + 2x + 1 >= 0$.
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{I -- Zlatý řez a další výzvy}
+\textit{Algebraické identity a geometrické souvislosti}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=5pt]
+\item[\textbf{I001}] Řešte v $\mathbb R$: $x^{2} - x - 1=0$.
+\item[\textbf{I002}] Řešte v $\mathbb R$: $x^{2} - 3x + 1=0$.
+\item[\textbf{I003}] Řešte v $\mathbb R$: $x^{2} - 2=0$.
+\item[\textbf{I004}] Řešte v $\mathbb R$: $x^{2} + 2x - 5=0$.
+\item[\textbf{I005}] Řešte v $\mathbb R$: $x^{2} - 6x + 8=0$.
+\item[\textbf{I006}] Řešte v $\mathbb R$: $x^{2} - 7=0$.
+\end{enumerate}
+\subsection*{Zlatý řez -- geometrické aplikace}
+\begin{enumerate}[label={},itemsep=8pt]
+\item[\textbf{I007}] Vypočtěte zlatý poměr $\varphi>1$ z rovnice $\varphi^2-\varphi-1=0$ a výsledek zaokrouhlete na tři desetinná místa.
+\item[\textbf{I008}] Zlatý obdélník má kratší stranu 10 cm. Určete délku delší strany a obsah obdélníku.
+\item[\textbf{I009}] V pravidelném pětiúhelníku má strana délku 6 cm. Určete délku úhlopříčky, jestliže její poměr ke straně je $\varphi$.
+\item[\textbf{I010}] Obdélník má rozměry $16\times10$ cm. Rozhodněte, zda je přesně zlatý; porovnejte poměr stran s $\varphi$.
+\end{enumerate}
+\end{document}

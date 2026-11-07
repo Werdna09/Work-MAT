@@ -1,0 +1,197 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\nastavPripravu{1. ročník}{Kvadratické rovnice a nerovnice}{105}{Úplná kvadratická rovnice: diskriminant}
+\begin{document}
+\blok{Úplná kvadratická rovnice: diskriminant}
+Odvození obecného postupu doplněním na čtverec; vztah mezi znaménkem diskriminantu a průsečíky paraboly.
+
+\blok{Odkud se vezme vzorec pro kořeny?}
+Začneme $ax^2+bx+c=0$ s $a\ne0$. V předchozích hodinách jsme
+převáděli kvadratickou funkci na vrcholový tvar \textbf{doplněním na čtverec}.
+Stejný nápad nyní využijeme pro rovnici; každý krok musí být ekvivalentní.
+\[
+\begin{aligned}
+ax^2+bx+c&=0\qquad\big|:a\\
+x^2+\frac ba x+\frac ca&=0\\
+x^2+\frac ba x&=-\frac ca.
+\end{aligned}
+\]
+Připomeňme $(x+p)^2=x^2+2px+p^2$. Proto potřebujeme $2p=b/a$,
+tedy $p=b/(2a)$; jeho druhou mocninu \textbf{přičteme k oběma stranám}:
+\[
+\begin{aligned}
+x^2+\frac ba x+\left(\frac{b}{2a}\right)^2
+  &=-\frac ca+\left(\frac{b}{2a}\right)^2\\
+\left(x+\frac b{2a}\right)^2
+  &=\frac{b^2-4ac}{4a^2}.
+\end{aligned}
+\]
+Pro stručnost označíme výraz pod odmocninou pracovně $D=b^2-4ac$. Protože $4a^2>0$, má pravá strana stejné znaménko jako $D$.
+\textbf{Pokud $D<0$, v reálných číslech řešení neexistuje.} Pro $D\ge0$ odmocníme:
+\[
+\begin{aligned}
+\left|x+\frac b{2a}\right|&=\sqrt{\frac D{4a^2}}
+      =\frac{\sqrt D}{2|a|}\\
+x+\frac b{2a}&=\pm\frac{\sqrt D}{2|a|}\\
+x&=-\frac b{2a}\pm\frac{\sqrt D}{2|a|}.
+\end{aligned}
+\]
+Při $a<0$ se změnou $|a|$ na $a$ pouze vymění role znamének $+$ a $-$;
+\emph{množina obou kořenů zůstane stejná}. Dostáváme známý vzorec.
+\begin{definiceBox}
+\textbf{Vzorec pro kořeny kvadratické rovnice.} Pro $a\ne0$ a $D=b^2-4ac\ge0$
+jsou reálné kořeny rovnice $ax^2+bx+c=0$ dány vztahem
+\[
+  x_{1,2}=\frac{-b\pm\sqrt D}{2a}.
+\]
+Při $D>0$ má rovnice dva různé kořeny, při $D=0$ jeden dvojnásobný kořen
+$x=-b/(2a)$; při $D<0$ platí $K=\varnothing$ v $\mathbb R$.
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Diskriminant} kvadratické rovnice $ax^2+bx+c=0$ ($a\ne0$) je
+\[ D=b^2-4ac. \]
+Podle jeho znaménka rozlišujeme:
+\begin{itemize}
+\item $D>0$: dva různé reálné kořeny,
+\item $D=0$: jeden reálný kořen (dvojnásobný),
+\item $D<0$: žádný reálný kořen; $K=\varnothing$.
+\end{itemize}
+\end{definiceBox}
+\blok{Geometrický význam diskriminantu}
+$D>0$: parabola protne osu $x$ ve dvou bodech. $D=0$: dotýká se jí ve vrcholu.
+$D<0$: nemá s osou $x$ společný bod. Osa paraboly $x=-b/(2a)$ leží
+uprostřed případných dvou nulových bodů.
+\poznamka{Odvození tvoří jádro hodiny. Při pomalejším tempu vyber pouze jeden společný příklad a druhý a třetí dej jako rychlou samostatnou práci / rezervu. Zvlášť připomeň, proč $\sqrt{4a^2}=2|a|$, nikoli $2a$.}
+
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+$x^{2} - 5x + 6=0$
+\tcblower
+\[
+\begin{aligned}
+D&=25-4\cdot(1)\cdot(6)=1\\[2pt]
+x_1&=2\\[2pt]
+x_2&=3\\[2pt]
+K&=\{2;3\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+$x^{2} - 4x + 4=0$
+\tcblower
+\[
+\begin{aligned}
+D&=16-4\cdot(1)\cdot(4)=0\\[2pt]
+x&=2\\[2pt]
+K&=\{2\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+$x^{2} + 2x + 5=0$
+\tcblower
+\[
+\begin{aligned}
+D&=4-4\cdot(1)\cdot(5)=-16\\[2pt]
+D&<0\ \Rightarrow\ \text{žádný reálný kořen}\\[2pt]
+K&=\varnothing
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$x^{2} - 3x + 2=0$
+\tcblower
+\[
+\begin{aligned}
+D&=9-4\cdot(1)\cdot(2)=1\\[2pt]
+x_1&=1\\[2pt]
+x_2&=2\\[2pt]
+K&=\{1;2\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$2x^{2} - 4x + 2=0$
+\tcblower
+\[
+\begin{aligned}
+D&=16-4\cdot(2)\cdot(2)=0\\[2pt]
+x&=1\\[2pt]
+K&=\{1\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\poznamka{Studenti si vymyslí obdobný příklad se změnou jednoho koeficientu a vysvětlí, jak se změní počet kořenů či řešení.}
+\blok{Rozšiřující příklady ze sbírky}
+\poznamka{Rovnice s D<0; důležité je zdůvodnit počet kořenů, nikoli jen dosadit do vzorce.}
+
+\begin{zadaniReseniBox}[title={Rozšiřující příklad}]
+Řešte v $\mathbb R$: $3x^{2} + x + 2=0$.
+\tcblower
+\[
+\begin{aligned}D&=1^2-4\cdot(3)\cdot(2)=-23\\K&=\varnothing\end{aligned}
+\]
+\end{zadaniReseniBox}
+
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $x^{2} - 7x + 10=0$
+\item $x^{2} + 6x + 9=0$
+\item $x^{2} + 2x + 2=0$
+\item $2x^{2} + 3x - 2=0$
+\item $3x^{2} - 6x - 9=0$
+\item $x^{2} - 2x + 5=0$
+\item Řešte v $\mathbb R$: $3x^{2} + x - 2=0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[\begin{aligned}
+D&=49-4\cdot(1)\cdot(10)=9\\[2pt]
+x_1&=2\\[2pt]
+x_2&=5\\[2pt]
+K&=\{2;5\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+D&=36-4\cdot(1)\cdot(9)=0\\[2pt]
+x&=-3\\[2pt]
+K&=\{-3\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+D&=4-4\cdot(1)\cdot(2)=-4\\[2pt]
+D&<0\ \Rightarrow\ \text{žádný reálný kořen}\\[2pt]
+K&=\varnothing
+\end{aligned}\]
+\item
+\[\begin{aligned}
+D&=9-4\cdot(2)\cdot(-2)=25\\[2pt]
+x_1&=-2\\[2pt]
+x_2&=\frac{1}{2}\\[2pt]
+K&=\{-2;\frac{1}{2}\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+D&=36-4\cdot(3)\cdot(-9)=144\\[2pt]
+x_1&=-1\\[2pt]
+x_2&=3\\[2pt]
+K&=\{-1;3\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+D&=4-4\cdot(1)\cdot(5)=-16\\[2pt]
+D&<0\ \Rightarrow\ \text{žádný reálný kořen}\\[2pt]
+K&=\varnothing
+\end{aligned}\]
+\item \[ \begin{aligned}D&=1^2-4\cdot(3)\cdot(-2)=25\\K&=\{-1;\frac{2}{3}\}\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Orientační čas: úvod 5 min, společné příklady 18 min, samostatně 15 min, kontrola a shrnutí 7 min. Rezerva je dobrovolná. Číselné parametry modelových aplikací nejsou skutečně naměřená data.}
+\end{document}

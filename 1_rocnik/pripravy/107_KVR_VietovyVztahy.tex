@@ -1,0 +1,146 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz,pgfplots}
+\pgfplotsset{compat=1.18}
+\nastavPripravu{1. ročník}{Kvadratické rovnice a nerovnice}{107}{Viètovy vztahy}
+\begin{document}
+\blok{Viètovy vztahy}
+Součet a součin kořenů; rychlá kontrola a jednoduché určování kořenů bez vzorce.
+\begin{definiceBox}
+\textbf{Viètovy vztahy:} pro kořeny kvadratické rovnice $ax^2+bx+c=0$ ($a\ne0$) platí $x_1+x_2=-\frac ba$ a $x_1x_2=\frac ca$.
+\end{definiceBox}
+\blok{Odvození z již známého vzorce pro kořeny}
+Předpokládejme $D\ge0$. Ze vzorce pro kořeny máme
+\[x_1=\frac{-b+\sqrt D}{2a},\qquad x_2=\frac{-b-\sqrt D}{2a}.\]
+Potom součet a součin získáme přímo výpočtem:
+\[
+\begin{aligned}
+x_1+x_2&=\frac{-b+\sqrt D-b-\sqrt D}{2a}=-\frac ba,\\
+x_1x_2&=\frac{b^2-D}{4a^2}
+=\frac{b^2-(b^2-4ac)}{4a^2}=\frac ca.
+\end{aligned}
+\]
+Zatím nepotřebujeme rozklad trojčlenu -- ten si odvodíme až v další hodině.
+\blok{Metoda a její omezení}
+Viètovy vztahy jsou výborné pro rychlou zkoušku a hledání jednoduchých kořenů.
+Nejsou však náhradou za diskriminant, pokud se kořeny nedají odhadnout.
+\begin{prikladReseniBox}[title={Ukázka -- zkontroluj oba kořeny bez dosazování}]
+Pro rovnici $x^2-5x+6=0$ ověřte navržené kořeny $2$ a $3$ pomocí Viètových vztahů.
+\tcblower
+\[\begin{aligned}
+x_1+x_2&=2+3=5=-\frac{-5}{1},\\
+x_1x_2&=2\cdot3=6=\frac61,\\
+K&=\{2;3\}.
+\end{aligned}\]
+\end{prikladReseniBox}
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+$x^{2} - 5x + 6=0$
+\tcblower
+\[
+\begin{aligned}
+x_1+x_2&=5,\quad x_1x_2=6\\[2pt]
+x&=2\ \vee\ x=3\\[2pt]
+K&=\{2;3\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+$2x^{2} - 6x - 20=0$
+\tcblower
+\[
+\begin{aligned}
+x_1+x_2&=3,\quad x_1x_2=-10\\[2pt]
+x&=-2\ \vee\ x=5\\[2pt]
+K&=\{-2;5\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+$x^{2} + 5x + 4=0$
+\tcblower
+\[
+\begin{aligned}
+x_1+x_2&=-5,\quad x_1x_2=4\\[2pt]
+x&=-4\ \vee\ x=-1\\[2pt]
+K&=\{-4;-1\}
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1}]
+$x^{2} - 10x + 24=0$
+\tcblower
+\[
+\begin{aligned}
+x_1+x_2&=10,\quad x_1x_2=24\\[2pt]
+x&=4\ \vee\ x=6\\[2pt]
+K&=\{4;6\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Úloha 2}]
+$3x^{2} - 15x + 12=0$
+\tcblower
+\[
+\begin{aligned}
+x_1+x_2&=5,\quad x_1x_2=4\\[2pt]
+x&=1\ \vee\ x=4\\[2pt]
+K&=\{1;4\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\poznamka{Studenti si vymyslí obdobný příklad se změnou jednoho koeficientu a vysvětlí, jak se změní počet kořenů či řešení.}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $x^{2} - 11x + 24=0$
+\item $2x^{2} - 14x=0$
+\item $x^{2} + 7x + 10=0$
+\item $3x^{2} - 3x - 6=0$
+\item $x^{2} - 2x + 1=0$
+\item $2x^{2} + 14x + 24=0$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[\begin{aligned}
+&\left(x - 8\right) \cdot \left(x - 3\right)=0\\[2pt]
+x&=3\ \vee\ x=8\\[2pt]
+K&=\{3;8\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+&2x \cdot \left(x - 7\right)=0\\[2pt]
+x&=0\ \vee\ x=7\\[2pt]
+K&=\{0;7\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+&\left(x + 2\right) \cdot \left(x + 5\right)=0\\[2pt]
+x&=-5\ \vee\ x=-2\\[2pt]
+K&=\{-5;-2\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+&\left(x - 2\right) \cdot \left(3x + 3\right)=0\\[2pt]
+x&=-1\ \vee\ x=2\\[2pt]
+K&=\{-1;2\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+&\left(x - 1\right)^{2}=0\\[2pt]
+x&=1\ \vee\ x=1\\[2pt]
+K&=\{1\}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+&\left(x + 4\right) \cdot \left(2x + 6\right)=0\\[2pt]
+x&=-3\ \vee\ x=-4\\[2pt]
+K&=\{-4;-3\}
+\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Orientační čas: úvod 5 min, společné příklady 18 min, samostatně 15 min, kontrola a shrnutí 7 min. Rezerva je dobrovolná. Číselné parametry modelových aplikací nejsou skutečně naměřená data.}
+\end{document}
