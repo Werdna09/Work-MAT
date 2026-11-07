@@ -17,8 +17,7 @@ Z minulé hodiny známe první eliminační krok. Dnes řešíme samostatnějš�
 $\begin{cases}2x+3y+z=15,\\7x-y+z=9,\\x+2y+z=9.\end{cases}$
 \tcblower
 Odečteme třetí rovnici od první a od druhé:
-\[
-\begin{aligned}
+\begin{align*}
 (\mathrm I)-(\mathrm{III})&:\quad x+y=6,\\
 (\mathrm{II})-(\mathrm{III})&:\quad 6x-3y=0,\\
 &\phantom{:}\quad y=2x,\\
@@ -27,91 +26,65 @@ x&=2,\qquad y=4,\\
 x+2y+z&=9,\\
 2+8+z&=9,\\
 z&=-1.
-\end{aligned}
-\]
-Zkouška: $4+12-1=15$, $14-4-1=9$, $2+8-1=9$.
-\[
-\begin{aligned}
-K &= \{[2;4;-1]\}
-\end{aligned}
-\]
+\end{align*}
+Zkouška: $4+12-1=15$, $14-4-1=9$, $2+8-1=9$. $K=\{[2;4;-1]\}$.
 \end{prikladReseniBox}
 \begin{prikladReseniBox}[title={Příklad 2 – sbírka č. 31d, volba neznámé}]
 $\begin{cases}2x-y=6,\\y+4z=8,\\x-z=1.\end{cases}$
 \tcblower
-\[
-\begin{aligned}
+\begin{align*}
 x&=z+1,\\
 y&=2x-6=2z-4,\\
 (2z-4)+4z&=8,\\
 6z&=12,\\
 z&=2,\\
 x&=3,\qquad y=0.
-\end{aligned}
-\]
+\end{align*}
 Zkouška všech tří rovnic: $6-0=6$, $0+8=8$, $3-2=1$.
-\[
-\begin{aligned}
-K &= \{[3;0;2]\}
-\end{aligned}
-\]
 \end{prikladReseniBox}
+\poznamka{Pokud je třída pomalejší, druhý společný příklad využij jako rezervu. Povinné jádro je zvládnutí jednoho úplného eliminačního postupu a jeho zkouška.}
 \blok{Samostatné procvičování}
 \begin{zadaniReseniBox}[title={Úloha ze sbírky č. 31c – hlídej si pořadí souřadnic}]
 $\begin{cases}2x+y-z=0,\\4x+2y+z=0,\\x-y+3z=0.\end{cases}$
 \tcblower
-\[
-\begin{aligned}
+\begin{align*}
 (\mathrm{II})-2(\mathrm I)&:\quad3z=0,\\
 z&=0,\\
 2x+y&=0,\\
 x-y&=0,\\
 y&=x,\\
 3x&=0\ \Rightarrow\ x=0,\quad y=0.
-\end{aligned}
-\]
-Nulová pravá strana \emph{neznamená automaticky} nekonečně mnoho řešení.
-\[
-\begin{aligned}
-K &= \{[0;0;0]\}
-\end{aligned}
-\]
+\end{align*}
+$K=\{[0;0;0]\}$. Nulová pravá strana \emph{neznamená automaticky} nekonečně mnoho řešení.
 \end{zadaniReseniBox}
 \blok{Volitelná rezerva – může nastat spor?}
 \begin{zadaniReseniBox}[title={Úloha ze sbírky č. 31e}]
 $\begin{cases}2x+y-z=0,\\x+y+2z=4,\\4x+3y+3z=5.\end{cases}$
 \tcblower
-\[
-\begin{aligned}
+\begin{align*}
 y&=-2x+z,\\
 -x+3z&=4\ \Rightarrow\ x=3z-4,\\
 -2x+6z&=5,\\
 -2(3z-4)+6z&=5,\\
-8&=5, \\[2mm]
-K &= \varnothing
-\end{aligned}
-\]
+8&=5,\\
+K&=\varnothing.
+\end{align*}
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
+% MAT-REV-2026-11-07: homework-84
 \begin{zadaniReseniBox}[title={Domácí příprava}]
 \begin{enumerate}[label=\alph*)]
-\item
-$\begin{cases}3x-2y+z=11,\\2x+y-3z=-6,\\4x+3y+2z=11.\end{cases}$
-\item
-$\begin{cases}3x+2y+z=3,\\x+y+z=2,\\4x+3y+2z=5.\end{cases}$
-\item
-$\begin{cases}x+y+z=2,\\2x-y+3z=8,\\3x+2y-z=3,\end{cases}$.
-\item
-$\begin{cases}x+y+z=1,\\2x-y+z=-5,\\x-2y+3z=-12,\end{cases}$.
-\item
-$\begin{cases}x+y+z=4,\\2x+2y+2z=8,\\x-y+z=0,\end{cases}$.
+\item $\begin{cases}3x-2y+z=11,\\2x+y-3z=-6,\\4x+3y+2z=11.\end{cases}$
+\item $\begin{cases}3x+2y+z=3,\\x+y+z=2,\\4x+3y+2z=5.\end{cases}$
+\item $\begin{cases}x+y+z=2,\\2x-y+3z=8,\\3x+2y-z=3,\end{cases}$.
+\item $\begin{cases}x+y+z=1,\\2x-y+z=-5,\\x-2y+3z=-12,\end{cases}$.
+\item $\begin{cases}x+y+z=4,\\2x+2y+2z=8,\\x-y+z=0,\end{cases}$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
 \item
 Z druhé rovnice $y=-6-2x+3z$. Dosadíme do první a třetí:
-\[
-\begin{aligned}
+\[\begin{aligned}
 7x-5z&=-1,\\
 -2x+11z&=29,\\
 2(7x-5z)+7(-2x+11z)&=-2+203,\\
@@ -119,51 +92,35 @@ Z druhé rovnice $y=-6-2x+3z$. Dosadíme do první a třetí:
 z&=3,\\
 7x-15&=-1\ \Rightarrow\ x=2,\\
 y&=-6-4+9=-1.
-\end{aligned}
-\]
-Zkouška ve všech původních rovnicích.
-\[
-\begin{aligned}
-K &= \{[2;-1;3]\}
-\end{aligned}
-\]
+\end{aligned}\]
+$K=\{[2;-1;3]\}$. Zkouška ve všech původních rovnicích.
+
 \item
 Třetí rovnice je součtem prvních dvou, neklade novou podmínku:
-\[
-\begin{aligned}
+\[\begin{aligned}
 (\mathrm I)-2(\mathrm{II})&:\quad x-z=-1,\\
 x&=z-1,\\
 y&=2-x-z=3-2z.
-\end{aligned}
-\]
-Položíme $z=t$ a dostaneme.
-\[
-\begin{aligned}
-K &= \{[t-1;3-2t;t]\mid t\in\mathbb R\}
-\end{aligned}
-\]
+\end{aligned}\]
+Položíme $z=t$ a dostaneme $K=\{[t-1;3-2t;t]\mid t\in\mathbb R\}$.
+
 \item
-\[
-\begin{aligned}
-x&=2-y-z\\-3y+z&=4\\-y-4z&=-3\\y&=3-4z\\13z&=13\\z&=1,\quad y=-1,\quad x=2 \\[2mm]
-K &= \{[2;-1;1]\}
-\end{aligned}
-\]
+\[\begin{aligned}
+x&=2-y-z\\-3y+z&=4\\-y-4z&=-3\\y&=3-4z\\13z&=13\\z&=1,\quad y=-1,\quad x=2\\K&=\{[2;-1;1]\}
+\end{aligned}\]
+
 \item
-\[
-\begin{aligned}
-x&=1-y-z\\3y+z&=7\\3y-2z&=13\\3z&=-6\\z&=-2,\quad y=3,\quad x=0 \\[2mm]
-K &= \{[0;3;-2]\}
-\end{aligned}
-\]
+\[\begin{aligned}
+x&=1-y-z\\3y+z&=7\\3y-2z&=13\\3z&=-6\\z&=-2,\quad y=3,\quad x=0\\K&=\{[0;3;-2]\}
+\end{aligned}\]
+
 \item
-\[
-\begin{aligned}
-x+y+z&=4,\quad x-y+z=0\\2y&=4\ \Rightarrow\ y=2\\x+z&=2\\z&=t,\quad x=2-t \\[2mm]
-K &= \{[2-t;2;t]\mid t\in\mathbb R\}
-\end{aligned}
-\]
+\[\begin{aligned}
+x+y+z&=4,\quad x-y+z=0\\2y&=4\ \Rightarrow\ y=2\\x+z&=2\\z&=t,\quad x=2-t\\K&=\{[2-t;2;t]\mid t\in\mathbb R\}
+\end{aligned}\]
 \end{enumerate}
 \end{zadaniReseniBox}
+
+
 \poznamka{Čas: návrat k eliminaci 4 min, příklad 1 přibližně 15 min, příklad 2 asi 10 min, samostatná práce 12 min, shrnutí 4 min. Rezervu nech až po samostatném úspěchu.}
 \end{document}

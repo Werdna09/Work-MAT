@@ -1,0 +1,163 @@
+% Volitelná bonusová hodina mezi 85 a 86; nezasahuje do původního číslování.
+% Didaktická návaznost na soustavy 79–85; matice jsou informativním rozšířením.
+% Zdroje k metodice: PrF MU – metodika lineárních soustav; Gaussova eliminace.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Soustavy rovnic – rozšíření}{85A}{Matice a Gaussova eliminace (bonus)}
+\begin{document}
+
+\blok{Proč se seznamujeme s maticemi?}
+V hodinách 79--85 jsme řešili soustavy rovnic. Při eliminaci jsme stále opisovali proměnné, ačkoliv hlavní práci vykonáváme s \emph{koeficienty} a pravými stranami. Matice je úsporný způsob, jak tato čísla uspořádat a přehledně zaznamenávat výpočet. \textbf{Dnes nejde o povinné učivo; cílem je pochopit zápis a princip.}
+
+\begin{definiceBox}
+\textbf{Matice} je obdélníková tabulka čísel (nebo obecně prvků) uspořádaných do řádků a sloupců. Matice s $m$ řádky a $n$ sloupci má rozměr $m\times n$. Její prvek na $i$-tém řádku a $j$-tém sloupci zapisujeme $a_{ij}$.
+\[
+A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix},\qquad A\text{ má rozměr }2\times3,\quad a_{23}=6.
+\]
+\end{definiceBox}
+
+\begin{definiceBox}
+\textbf{Rozšířená matice soustavy} je tabulka koeficientů rovnic a jejich pravých stran; ty se obvykle oddělují svislou čarou. Každému řádku odpovídá jedna rovnice, každému sloupci koeficientů jedna neznámá.
+\[
+\begin{cases}2x+y=7,\\x-y=2\end{cases}
+\quad\longleftrightarrow\quad
+\left[\begin{array}{cc|c}2&1&7\\1&-1&2\end{array}\right].
+\]
+\end{definiceBox}
+
+\poznamka{Nech žáky ukázat, kde v rozšířené matici hledat koeficient $-1$ a číslo $7$. Zdůrazni pevně zvolené pořadí neznámých $x,y,z,\dots$.}
+
+\blok{Co můžeme s řádky dělat?}
+Při Gaussově eliminaci používáme tytéž ekvivalentní úpravy jako u soustav rovnic:
+\begin{enumerate}[label=\arabic*)]
+\item prohodíme dva řádky;
+\item vynásobíme jeden řádek nenulovým číslem;
+\item k řádku přičteme libovolný násobek jiného řádku.
+\end{enumerate}
+Cíl: získat pod hlavní diagonálou nuly (\emph{stupňovitý tvar}); potom použijeme \textbf{zpětné dosazování}. Nuly i pravé strany musí vznikat úpravou \emph{celého} řádku.
+
+\blok{Společně řešený příklad I: dvě neznámé}
+\begin{prikladReseniBox}[title={Sčítací metoda bez opakování písmen}]
+Vyřešte pomocí rozšířené matice soustavu
+\[
+\begin{cases}2x+y=7,\\x-y=2.\end{cases}
+\]
+\tcblower
+Nejprve prohodíme řádky, aby na prvním místě byl koeficient $1$:
+\[
+\left[\begin{array}{cc|c}2&1&7\\1&-1&2\end{array}\right]
+\ \overset{R_1\leftrightarrow R_2}{\sim}\
+\left[\begin{array}{cc|c}1&-1&2\\2&1&7\end{array}\right]
+\ \overset{R_2\leftarrow R_2-2R_1}{\sim}\
+\left[\begin{array}{cc|c}1&-1&2\\0&3&3\end{array}\right].
+\]
+Ze druhého řádku $3y=3$, z prvního $x-y=2$:
+\[\begin{aligned}
+y&=1,\\x-1&=2,\\x&=3,\\K&=\{[3;1]\}.
+\end{aligned}\]
+Zkouška v původních rovnicích: $2\cdot3+1=7$ a $3-1=2$.
+\end{prikladReseniBox}
+
+\blok{Společně řešený příklad II: tři neznámé}
+\begin{prikladReseniBox}[title={Zpětné dosazení ze stupňovitého tvaru}]
+Převeďte na rozšířenou matici a vyřešte soustavu
+\[
+\begin{cases}x+y+z=6,\\2x+y+z=8,\\x+2y+z=9.\end{cases}
+\]
+\tcblower
+\[
+\left[\begin{array}{ccc|c}1&1&1&6\\2&1&1&8\\1&2&1&9\end{array}\right]
+\overset{\substack{R_2\leftarrow R_2-2R_1\\R_3\leftarrow R_3-R_1}}{\sim}
+\left[\begin{array}{ccc|c}1&1&1&6\\0&-1&-1&-4\\0&1&0&3\end{array}\right]
+\overset{R_3\leftarrow R_3+R_2}{\sim}
+\left[\begin{array}{ccc|c}1&1&1&6\\0&-1&-1&-4\\0&0&-1&-1\end{array}\right].
+\]
+Čteme zdola nahoru:
+\[\begin{aligned}
+-z&=-1&\Rightarrow\quad z&=1,\\
+-y-z&=-4&\Rightarrow\quad y&=3,\\
+x+y+z&=6&\Rightarrow\quad x&=2,\\
+K&=\{[2;3;1]\}.
+\end{aligned}\]
+\end{prikladReseniBox}
+
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Úloha 1 – přepis a eliminace}]
+Zapište rozšířenou matici a vyřešte $\begin{cases}x+2y=7,\\2x-y=4.\end{cases}$
+\tcblower
+\[
+\left[\begin{array}{cc|c}1&2&7\\2&-1&4\end{array}\right]
+\overset{R_2\leftarrow R_2-2R_1}{\sim}
+\left[\begin{array}{cc|c}1&2&7\\0&-5&-10\end{array}\right]
+\]
+\[\begin{aligned}
+y&=2,\\x&=7-2\cdot2=3,\\K&=\{[3;2]\}.
+\end{aligned}\]
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Úloha 2 – co znamená nulový řádek?}]
+Rozhodněte, kolik řešení má soustava $\begin{cases}x+y=2,\\2x+2y=5.\end{cases}$
+\tcblower
+\[
+\left[\begin{array}{cc|c}1&1&2\\2&2&5\end{array}\right]
+\overset{R_2\leftarrow R_2-2R_1}{\sim}
+\left[\begin{array}{cc|c}1&1&2\\0&0&1\end{array}\right].
+\]
+Druhý řádek znamená nepravdivou rovnost $0=1$:
+\[\begin{aligned}K&=\varnothing.\end{aligned}\]
+\end{zadaniReseniBox}
+
+\blok{Volitelná rezerva: když vyjde $0=0$}
+\begin{zadaniReseniBox}
+Rozhodněte o počtu řešení $\begin{cases}x+y=2,\\2x+2y=4.\end{cases}$
+\tcblower
+\[
+\left[\begin{array}{cc|c}1&1&2\\2&2&4\end{array}\right]
+\sim
+\left[\begin{array}{cc|c}1&1&2\\0&0&0\end{array}\right].
+\]
+Druhá rovnice nepřidává novou podmínku:
+\[\begin{aligned}
+y&=t,\quad x=2-t,\qquad t\in\mathbb R,\\
+K&=\{[2-t;t]\mid t\in\mathbb R\}.
+\end{aligned}\]
+\end{zadaniReseniBox}
+
+\blok{Domácí úkol – dobrovolný}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*)]
+\item Zapište rozšířenou matici soustavy $\begin{cases}x+y=5,\\2x-y=4.\end{cases}$
+\item Vyřešte pomocí matice $\begin{cases}x+2y=8,\\3x-y=3.\end{cases}$
+\item Vyřešte $\begin{cases}x+y+z=6,\\x+y=3,\\y+z=5.\end{cases}$
+\item Určete počet řešení z rozšířené matice $\left[\begin{array}{cc|c}1&2&4\\2&4&9\end{array}\right]$.
+\item Určete množinu řešení z matice $\left[\begin{array}{cc|c}1&2&4\\2&4&8\end{array}\right]$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\left[\begin{array}{cc|c}1&1&5\\2&-1&4\end{array}\right]$.
+\item
+\[\begin{aligned}
+\left[\begin{array}{cc|c}1&2&8\\3&-1&3\end{array}\right]
+&\sim\left[\begin{array}{cc|c}1&2&8\\0&-7&-21\end{array}\right],\\
+y&=3,\quad x=2,\quad K=\{[2;3]\}.
+\end{aligned}\]
+\item
+\[\begin{aligned}
+(x+y+z)-(x+y)&=z=3,\\y+3&=5\Rightarrow y=2,\\x+2&=3\Rightarrow x=1,\\K&=\{[1;2;3]\}.
+\end{aligned}\]
+\item
+\[\begin{aligned}
+R_2&\leftarrow R_2-2R_1,\\
+[0\quad0\mid1]&\Rightarrow 0=1,\\K&=\varnothing.
+\end{aligned}\]
+\item
+\[\begin{aligned}
+R_2&\leftarrow R_2-2R_1,\\
+[0\quad0\mid0]&\Rightarrow x+2y=4,\\
+y&=t,\quad x=4-2t,\\K&=\{[4-2t;t]\mid t\in\mathbb R\}.
+\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Čas: motivace 5 min, matice a rozšířená matice 10 min, základní eliminace 10 min, tři neznámé 12 min, vlastní práce 8 min. Ukázky spor/nulový řádek a domácí úkol jsou dobrovolné. Vynech determinanty, inverzní matice i formální hodnost. Pokud bonusovou hodinu vynecháš, další hodina stále zůstává 86 (test).}
+\end{document}
