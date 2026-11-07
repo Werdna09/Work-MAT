@@ -1,0 +1,167 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Souhrnné opakování}{135}{Matematika v praxi: technika a život}
+\begin{document}
+\blok{Úvod a připomenutí}
+Aplikační stanoviště napříč obory: elektrotechnika (ELE), informatika (ICT), mechanika (MEC), ekonomika (EKO), chemie (CHE) a každodenní život (ZIV). \textbf{Číselná data jsou modelová, pokud není řečeno jinak.} Převádíme slovní situace na známé rovnice, soustavy, nerovnice nebo kvadratické funkce; žádné nové učivo.
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={ELE: servis napájecího obvodu}]
+Ideální stejnosměrný zdroj má $U=24\,\mathrm V$. Dva sériově zapojené odpory mají hodnoty $3\,\Omega$ a $R\,\Omega$. Při proudu $I=2\,\mathrm A$ určete $R$.
+\tcblower
+\[
+\begin{aligned}
+I&=\frac{U}{3+R}\\
+2&=\frac{24}{3+R}\\
+6+2R&=24\\
+R&=9\,\Omega
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={EKO: kdy se vyplatí tisk?}]
+3D tiskárna má modelové fixní náklady $250$ Kč a $12$ Kč na výrobek. Prodejní cena jednoho výrobku je $32$ Kč. Kolik \emph{celých} kusů musíme prodat, aby zisk byl kladný?
+\tcblower
+\[
+\begin{aligned}
+32n&>250+12n\\
+20n&>250\\
+n&>12{,}5\\
+n&\ge13\quad(n\in\mathbb N_0)
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={MEC: let modelového tělesa}]
+Výška nad zemí je v metrech dána $h(t)=-5t^2+20t$ pro $0\le t\le4$ s časem $t$ v sekundách. Určete maximální výšku, čas dosažení maxima a dobu návratu na zem.
+\tcblower
+\[
+\begin{aligned}
+h(t)&=-5(t-2)^2+20\\
+h_{\max}&=20\,\mathrm m\quad\text{při }t=2\,\mathrm s\\
+h(t)=0&\ \Rightarrow\ -5t(t-4)=0\\
+\text{návrat }&t=4\,\mathrm s
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={ICT: který algoritmus vítězí?}]
+Pro modelové běhy platí $T_A(n)=8+0{,}4n$ ms a $T_B(n)=2+0{,}7n$ ms. Při jakém $n\ge0$ se časy rovnají a který algoritmus je rychlejší pro malé $n$?
+\tcblower
+\[
+\begin{aligned}
+8+0{,}4n&=2+0{,}7n\\
+6&=0{,}3n\\
+n&=20\\
+n<20&:\ B\text{ rychlejší}\\
+n>20&:\ A\text{ rychlejší}
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={CHE: teoretický výtěžek hašení vápna}]
+Při reakci $\mathrm{CaO+H_2O\rightarrow Ca(OH)_2}$ předpokládejme přebytek vody. Kolik gramů hydroxidu vápenatého teoreticky vznikne ze $56$ g oxidu vápenatého, použijeme-li molární hmotnosti přibližně $56$ a $74\,\mathrm{g/mol}$?
+\tcblower
+\[
+\begin{aligned}
+n(\mathrm{CaO})&=\frac{56}{56}=1\,\mathrm{mol}\\
+n(\mathrm{Ca(OH)_2})&=1\,\mathrm{mol}\\
+m(\mathrm{Ca(OH)_2})&=1\cdot74=74\,\mathrm g
+\end{aligned}
+\]
+
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={ZIV: tolerance teploty}]
+Zařízení má pracovat při teplotě nejvýše o $1{,}5\,^{\circ}\mathrm C$ odchýlené od $40\,^{\circ}\mathrm C$. Vyjádřete přípustné teploty intervalem.
+\tcblower
+\[
+\begin{aligned}
+|T-40|&\le1{,}5\\
+K&=\langle38{,}5;41{,}5\rangle\,^{\circ}\mathrm C
+\end{aligned}
+\]
+
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={CHE: směs dvou roztoků}]
+Chceme $2$ litry roztoku o koncentraci $6\%$ ze dvou roztoků o koncentracích $3\%$ a $9\%$. Kolik litrů od každého potřebujeme? Předpokládejme sčítání objemů.
+\tcblower
+\[
+\begin{aligned}
+x+y&=2\\
+0{,}03x+0{,}09y&=0{,}06\cdot2\\
+3x+9y&=12\\
+3(2-y)+9y&=12\\
+x&=1\,\mathrm l,\quad y=1\,\mathrm l
+\end{aligned}
+\]
+
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva a výzva}
+\poznamka{Výzva: model CPI/počet taktů procesoru; rozhodni, jaké další údaje by byly potřeba pro reálné měření rychlosti hradel.}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item \textbf{EKO:} Výrobek stojí $180$ Kč fixně a $9$ Kč za kus, prodává se za $24$ Kč. Kolik celých kusů musí být prodáno, aby zisk dosáhl alespoň $120$ Kč?
+\item \textbf{ENE:} Baterie o energii $96\,\mathrm{Wh}$ napájí spotřebič se stálým odběrem $12\,\mathrm W$. Jak dlouho vydrží v ideálním modelu?
+\item \textbf{LOG:} Deset nákladů o hmotnostech $4$ a $7$ kg váží dohromady $58$ kg. Kolik je kterých?
+\item \textbf{GEO:} Obdélník má obvod $30$ m. Jaké rozměry maximalizují jeho obsah a jaké je maximum?
+\item \textbf{ICT:} Modelově platí $2t_{\mathrm{NAND}}+t_{\mathrm{XOR}}=13$ ns a $t_{\mathrm{NAND}}+2t_{\mathrm{XOR}}=14$ ns. Určete obě zpoždění.
+\item \textbf{CHE:} Připravte $3$ litry roztoku o koncentraci $4\%$ z roztoků $2\%$ a $8\%$. Předpokládejte aditivitu objemů.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[
+\begin{aligned}
+24n-(180+9n)&\ge120\\
+15n&\ge300\\
+n&\ge20
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+t&=\frac{96\,\mathrm{Wh}}{12\,\mathrm W}\\
+t&=8\,\mathrm h
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+x+y&=10\\
+4x+7y&=58\\
+4(10-y)+7y&=58\\
+y&=6,\quad x=4
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+x+y&=15\\
+S(x)&=x(15-x)\\
+&=-(x-7{,}5)^2+56{,}25\\
+\max S&=56{,}25\,\mathrm{m^2}\\
+x&=y=7{,}5\,\mathrm m
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+2a+b&=13,\quad a+2b=14\\
+3b&=15\ \Rightarrow\ b=5\,\mathrm{ns}\\
+a&=4\,\mathrm{ns}
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+x+y&=3\\
+0{,}02x+0{,}08y&=0{,}12\\
+x&=2\,\mathrm l,\quad y=1\,\mathrm l
+\end{aligned}
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Čas: výběr dvou společných aplikací 16 min, stanoviště 20 min, rozbor a porovnání modelů 9 min. Ne všechny úlohy musí být vyřešeny v hodině. U chemie jde o teoretický výpočet, nikoli doporučení k provedení reakce; zaokrouhlené molární hmotnosti jsou pouze výukové.}
+\end{document}

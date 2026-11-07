@@ -1,0 +1,139 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Souhrnné opakování}{130}{Logické stopy a množiny}
+\begin{document}
+\blok{Úvod a připomenutí}
+Opakujeme rozpoznání výroku, implikaci, negaci, množinové operace a čtení intervalů. Cíl: argumentovat, \emph{proč} tvrzení platí, nikoli pouze zaškrtávat odpověď. Žádné nové definice. Číselnou osu nech žáky vždy dokreslit k zápisu intervalu.
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Implikace není ekvivalence}]
+Rozhodněte, zda platí tvrzení: „Je-li celé číslo dělitelné šesti, je dělitelné třemi.“ A co obrácené tvrzení?
+\tcblower
+\[
+\begin{aligned}
+6\mid n&\ \Rightarrow\ 3\mid n\quad\text{(platí)}\\
+3\mid n&\ \not\Rightarrow\ 6\mid n\quad\text{(např. }n=3\text{)}
+\end{aligned}
+\]
+
+Jeden správný protipříklad stačí k vyvrácení obecného tvrzení.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Dvě množiny, více operací}]
+Nechť $A=\{-3;-2;-1;0;1;2;3\}$ a $B=\{-2;0;2;4\}$. Určete průnik, sjednocení a rozdíl $A\setminus B$.
+\tcblower
+\[
+\begin{aligned}
+A\cap B&=\{-2;0;2\}\\
+A\cup B&=\{-3;-2;-1;0;1;2;3;4\}\\
+A\setminus B&=\{-3;-1;1;3\}
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Intervalový hlavolam}]
+Určete průnik a sjednocení intervalů $I=(-2;3\rangle$ a $J=\langle1;5)$.
+\tcblower
+\[
+\begin{aligned}
+I\cap J&=\langle1;3\rangle\\
+I\cup J&=(-2;5)
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Detektivní karty}]
+Hledáme celé číslo $n\in\{2;3;4;6;7;8;9\}$. Právě dvě z tvrzení „$n$ je sudé“, „$n>5$“, „$3\mid n$“ mají být pravdivá. Najděte všechna možná čísla.
+\tcblower
+\[
+\begin{aligned}
+n=8&:\quad\text{pravda, pravda, nepravda}\\
+n=9&:\quad\text{nepravda, pravda, pravda}\\
+K&=\{8;9\}
+\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Negace výroku}]
+Znegujte výrok: „Každé prvočíslo je liché.“
+\tcblower
+Negace: „Existuje prvočíslo, které není liché.“ Takovým prvočíslem je $2$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Průnik podle osy}]
+Určete $(-5;2)\cap\langle-1;4\rangle$.
+\tcblower
+\[
+\begin{aligned}
+K&=\langle-1;2)
+\end{aligned}
+\]
+
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozdíl množin}]
+Vypište $\{n\in\mathbb Z\mid -2\le n<5\}\setminus\{0;3\}$.
+\tcblower
+\[
+\begin{aligned}
+K&=\{-2;-1;1;2;4\}
+\end{aligned}
+\]
+
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva a výzva}
+\poznamka{Výzva: sestav dvě různé množiny $A,B$, pro něž je $A\cap B=\varnothing$, ale $A\cup B$ obsahuje osm prvků.}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item Vyplňte pravdivostní hodnoty $p\wedge\neg q$ pro dvojice $(p,q)$: $(1,1),(1,0),(0,1),(0,0)$.
+\item Která z čísel $\sqrt2,\ -3{,}5,\ 0,\ 5$ jsou racionální?
+\item Rozhodněte o platnosti: „Je-li celé číslo dělitelné $4$, je sudé“, a o platnosti obráceného tvrzení.
+\item Vypočtěte $\langle-3;2)\cap(0;4\rangle$ a $\langle-3;2)\cup(0;4\rangle$.
+\item Vypište všechny prvky $\{x\in\mathbb Z\mid -3\le x<6\}\setminus\{0;4\}$.
+\item Najděte všechna celá čísla splňující $0<x<4$ a $x^2-4x<0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item
+\[
+\begin{aligned}
+p\wedge\neg q&:\quad 0,1,0,0
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+\mathbb Q\text{ obsahuje }&-3{,}5,\ 0,\ 5\\
+\sqrt2&\notin\mathbb Q
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+4\mid n&\Rightarrow 2\mid n\quad\text{platí}\\
+2\mid n&\Rightarrow 4\mid n\quad\text{neplatí (}n=2\text{)}
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+I\cap J&=(0;2)\\
+I\cup J&=\langle-3;4\rangle
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+K&=\{-3;-2;-1;1;2;3;5\}
+\end{aligned}
+\]
+\item
+\[
+\begin{aligned}
+x(x-4)&<0\ \Rightarrow\ x\in(0;4)\\
+K&=\{1;2;3\}\quad(x\in\mathbb Z)
+\end{aligned}
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Čas: 5 minut zahřátí, 18 minut společný rozbor, 15 minut samostatně, 7 minut obhajoba postupů. Protipříklad je plnohodnotné matematické zdůvodnění.}
+\end{document}
