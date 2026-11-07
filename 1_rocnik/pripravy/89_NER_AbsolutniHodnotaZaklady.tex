@@ -25,7 +25,7 @@ Absolutní hodnota $|x-a|$ znamená vzdálenost bodu $x$ od čísla $a$. Pro $r>
 \end{tikzpicture}
 \end{center}
 \blok{Pravidla při odstraňování modulu}
-Pro $r>0$:
+Tabulku s intervaly používáme jako základní postup. Pro $r>0$ lze výsledek následně zkontrolovat také známými vztahy:
 \[
 \begin{aligned}
 |A(x)|<r&\iff-r<A(x)<r,\\
@@ -37,62 +37,135 @@ Nerovnice s $r=0$ posuzujeme zvlášť; absolutní hodnota nemůže být záporn
 \begin{prikladReseniBox}
 Vyřešte $|x-2|<3$ a řešení zakreslete na osu.
 \tcblower
-\[\begin{aligned}
--3&<x-2<3 \\
--1&<x<5 \\
-K&=(-1;5)
-\end{aligned}\]
-
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;2)$ & $(2;+\infty)$ \\
+\midrule
+$|x - 2|$ & $-(x - 2)$ & $+(x - 2)$ \\
+\midrule
+Nerovnice & $-(x - 2)<3$ & $+(x - 2)<3$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;2):\quad 2 - x &< 3\quad\Longrightarrow\quad x\in(-1;2)\\[2pt]
+x\in (2;+\infty):\quad x - 2 &< 3\quad\Longrightarrow\quad x\in(2;5)\\[2pt]
+x=2:\quad 0 &< 3\quad\text{platí}\\[2pt]
+K&=(-1;5)\end{aligned}\]
 \end{prikladReseniBox}
 \begin{prikladReseniBox}
 Vyřešte $|2x+1|\ge5$.
 \tcblower
-\[\begin{aligned}
-2x+1&\le-5\quad\text{nebo}\quad2x+1\ge5 \\
-x&\le-3\quad\text{nebo}\quad x\ge2 \\
-K&=(-\infty;-3\rangle\cup\langle2;+\infty)
-\end{aligned}\]
-
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;- \frac{1}{2})$ & $(- \frac{1}{2};+\infty)$ \\
+\midrule
+$|2 x + 1|$ & $-(2 x + 1)$ & $+(2 x + 1)$ \\
+\midrule
+Nerovnice & $-(2 x + 1)\ge5$ & $+(2 x + 1)\ge5$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;- \frac{1}{2}):\quad - 2 x - 1 &\ge 5\quad\Longrightarrow\quad x\in(-\infty;-3\rangle\\[2pt]
+x\in (- \frac{1}{2};+\infty):\quad 2 x + 1 &\ge 5\quad\Longrightarrow\quad x\in\langle2;+\infty)\\[2pt]
+x=- \frac{1}{2}:\quad 0 &\ge 5\quad\text{neplatí}\\[2pt]
+K&=(-\infty;-3\rangle\cup\langle2;+\infty)\end{aligned}\]
 \end{prikladReseniBox}
 \begin{prikladReseniBox}
 Co se změní, když je na pravé straně nula: $|x+2|\le0$?
 \tcblower
-\[\begin{aligned}
-|x+2|&\ge0\quad\text{pro každé }x \\
-x+2&=0 \\
-K&=\{-2\}
-\end{aligned}\]
-Kdyby místo $\le$ stálo $<$, řešení by neexistovalo.
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;-2)$ & $(-2;+\infty)$ \\
+\midrule
+$|x + 2|$ & $-(x + 2)$ & $+(x + 2)$ \\
+\midrule
+Nerovnice & $-(x + 2)\le0$ & $+(x + 2)\le0$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;-2):\quad - x - 2 &\le 0\quad\Longrightarrow\quad (\langle-2;+\infty))\cap((-\infty;-2))=\varnothing\\[2pt]
+x\in (-2;+\infty):\quad x + 2 &\le 0\quad\Longrightarrow\quad ((-\infty;-2\rangle)\cap((-2;+\infty))=\varnothing\\[2pt]
+x=-2:\quad 0 &\le 0\quad\text{platí}\\[2pt]
+K&=\{-2\}\end{aligned}\]
 \end{prikladReseniBox}
 \blok{Samostatné procvičování}
 \begin{zadaniReseniBox}
 $|x|<4$.
 \tcblower
-\[\begin{aligned}
--4&<x<4 \\
-K&=(-4;4)
-\end{aligned}\]
-
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;0)$ & $(0;+\infty)$ \\
+\midrule
+$|x|$ & $-(x)$ & $+(x)$ \\
+\midrule
+Nerovnice & $-(x)<4$ & $+(x)<4$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;0):\quad - x &< 4\quad\Longrightarrow\quad x\in(-4;0)\\[2pt]
+x\in (0;+\infty):\quad x &< 4\quad\Longrightarrow\quad x\in(0;4)\\[2pt]
+x=0:\quad 0 &< 4\quad\text{platí}\\[2pt]
+K&=(-4;4)\end{aligned}\]
 \end{zadaniReseniBox}
 \begin{zadaniReseniBox}
 $|x-1|\ge2$.
 \tcblower
-\[\begin{aligned}
-x-1&\le-2\quad\text{nebo}\quad x-1\ge2 \\
-x&\le-1\quad\text{nebo}\quad x\ge3 \\
-K&=(-\infty;-1\rangle\cup\langle3;+\infty)
-\end{aligned}\]
-
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;1)$ & $(1;+\infty)$ \\
+\midrule
+$|x - 1|$ & $-(x - 1)$ & $+(x - 1)$ \\
+\midrule
+Nerovnice & $-(x - 1)\ge2$ & $+(x - 1)\ge2$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;1):\quad 1 - x &\ge 2\quad\Longrightarrow\quad x\in(-\infty;-1\rangle\\[2pt]
+x\in (1;+\infty):\quad x - 1 &\ge 2\quad\Longrightarrow\quad x\in\langle3;+\infty)\\[2pt]
+x=1:\quad 0 &\ge 2\quad\text{neplatí}\\[2pt]
+K&=(-\infty;-1\rangle\cup\langle3;+\infty)\end{aligned}\]
 \end{zadaniReseniBox}
 \begin{zadaniReseniBox}
 $|x+4|\le1$.
 \tcblower
-\[\begin{aligned}
--1&\le x+4\le1 \\
--5&\le x\le-3 \\
-K&=\langle-5;-3\rangle
-\end{aligned}\]
-
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;-4)$ & $(-4;+\infty)$ \\
+\midrule
+$|x + 4|$ & $-(x + 4)$ & $+(x + 4)$ \\
+\midrule
+Nerovnice & $-(x + 4)\le1$ & $+(x + 4)\le1$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;-4):\quad - x - 4 &\le 1\quad\Longrightarrow\quad x\in\langle-5;-4)\\[2pt]
+x\in (-4;+\infty):\quad x + 4 &\le 1\quad\Longrightarrow\quad x\in(-4;-3\rangle\\[2pt]
+x=-4:\quad 0 &\le 1\quad\text{platí}\\[2pt]
+K&=\langle-5;-3\rangle\end{aligned}\]
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
 \begin{zadaniReseniBox}[title={Domácí příprava}]
@@ -107,40 +180,119 @@ K&=\langle-5;-3\rangle
 \tcblower
 \begin{enumerate}[label=\alph*),itemsep=1pt]
 \item
-\[\begin{aligned}
--6&<3x<6 \\
--2&<x<2 \\
-K&=(-2;2)
-\end{aligned}\]
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;0)$ & $(0;+\infty)$ \\
+\midrule
+$|3 x|$ & $-(3 x)$ & $+(3 x)$ \\
+\midrule
+Nerovnice & $-(3 x)<6$ & $+(3 x)<6$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;0):\quad - 3 x &< 6\quad\Longrightarrow\quad x\in(-2;0)\\[2pt]
+x\in (0;+\infty):\quad 3 x &< 6\quad\Longrightarrow\quad x\in(0;2)\\[2pt]
+x=0:\quad 0 &< 6\quad\text{platí}\\[2pt]
+K&=(-2;2)\end{aligned}\]
 \item
-\[\begin{aligned}
-x-2&<-4\quad\text{nebo}\quad x-2>4 \\
-x&<-2\quad\text{nebo}\quad x>6 \\
-K&=(-\infty;-2)\cup(6;+\infty)
-\end{aligned}\]
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;2)$ & $(2;+\infty)$ \\
+\midrule
+$|x - 2|$ & $-(x - 2)$ & $+(x - 2)$ \\
+\midrule
+Nerovnice & $-(x - 2)>4$ & $+(x - 2)>4$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;2):\quad 2 - x &> 4\quad\Longrightarrow\quad x\in(-\infty;-2)\\[2pt]
+x\in (2;+\infty):\quad x - 2 &> 4\quad\Longrightarrow\quad x\in(6;+\infty)\\[2pt]
+x=2:\quad 0 &> 4\quad\text{neplatí}\\[2pt]
+K&=(-\infty;-2)\cup(6;+\infty)\end{aligned}\]
 \item
-\[\begin{aligned}
--3&\le x+3\le3 \\
--6&\le x\le0 \\
-K&=\langle-6;0\rangle
-\end{aligned}\]
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;-3)$ & $(-3;+\infty)$ \\
+\midrule
+$|x + 3|$ & $-(x + 3)$ & $+(x + 3)$ \\
+\midrule
+Nerovnice & $-(x + 3)\le3$ & $+(x + 3)\le3$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;-3):\quad - x - 3 &\le 3\quad\Longrightarrow\quad x\in\langle-6;-3)\\[2pt]
+x\in (-3;+\infty):\quad x + 3 &\le 3\quad\Longrightarrow\quad x\in(-3;0\rangle\\[2pt]
+x=-3:\quad 0 &\le 3\quad\text{platí}\\[2pt]
+K&=\langle-6;0\rangle\end{aligned}\]
 \item
-\[\begin{aligned}
--2&\le x-4\le2 \\
-2&\le x\le6 \\
-K&=\langle2;6\rangle
-\end{aligned}\]
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;4)$ & $(4;+\infty)$ \\
+\midrule
+$|x - 4|$ & $-(x - 4)$ & $+(x - 4)$ \\
+\midrule
+Nerovnice & $-(x - 4)\le2$ & $+(x - 4)\le2$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;4):\quad 4 - x &\le 2\quad\Longrightarrow\quad x\in\langle2;4)\\[2pt]
+x\in (4;+\infty):\quad x - 4 &\le 2\quad\Longrightarrow\quad x\in(4;6\rangle\\[2pt]
+x=4:\quad 0 &\le 2\quad\text{platí}\\[2pt]
+K&=\langle2;6\rangle\end{aligned}\]
 \item
-\[\begin{aligned}
-2x+1&<-5\quad\text{nebo}\quad 2x+1>5 \\
-x&<-3\quad\text{nebo}\quad x>2 \\
-K&=(-\infty;-3)\cup(2;+\infty)
-\end{aligned}\]
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;- \frac{1}{2})$ & $(- \frac{1}{2};+\infty)$ \\
+\midrule
+$|2 x + 1|$ & $-(2 x + 1)$ & $+(2 x + 1)$ \\
+\midrule
+Nerovnice & $-(2 x + 1)>5$ & $+(2 x + 1)>5$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;- \frac{1}{2}):\quad - 2 x - 1 &> 5\quad\Longrightarrow\quad x\in(-\infty;-3)\\[2pt]
+x\in (- \frac{1}{2};+\infty):\quad 2 x + 1 &> 5\quad\Longrightarrow\quad x\in(2;+\infty)\\[2pt]
+x=- \frac{1}{2}:\quad 0 &> 5\quad\text{neplatí}\\[2pt]
+K&=(-\infty;-3)\cup(2;+\infty)\end{aligned}\]
 \item
-\[\begin{aligned}
-|x+1|&\ge0\quad\text{vždy} \\
-K&=\mathbb R
-\end{aligned}\]
+\begin{center}
+\begingroup\footnotesize
+\renewcommand{\arraystretch}{1.32}
+\begin{tabular}{@{}lcc@{}}
+\toprule
+$x$ & $(-\infty;-1)$ & $(-1;+\infty)$ \\
+\midrule
+$|x + 1|$ & $-(x + 1)$ & $+(x + 1)$ \\
+\midrule
+Nerovnice & $-(x + 1)\ge0$ & $+(x + 1)\ge0$ \\
+\bottomrule
+\end{tabular}
+\endgroup
+\end{center}
+\[\begin{aligned}x\in (-\infty;-1):\quad - x - 1 &\ge 0\quad\Longrightarrow\quad \text{platí v celém intervalu}\\[2pt]
+x\in (-1;+\infty):\quad x + 1 &\ge 0\quad\Longrightarrow\quad \text{platí v celém intervalu}\\[2pt]
+x=-1:\quad 0 &\ge 0\quad\text{platí}\\[2pt]
+K&=\mathbb R\end{aligned}\]
 \end{enumerate}
 \end{zadaniReseniBox}
 \poznamka{45 minut: úvod s číselnou osou 10, dvojice vzorů 13, zvláštní případ 4, samostatná práce 13, kontrola 5. Nerovnice se dvěma absolutními hodnotami nejsou povinným učivem této hodiny.}
