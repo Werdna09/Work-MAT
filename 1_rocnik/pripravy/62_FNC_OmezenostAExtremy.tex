@@ -23,7 +23,7 @@ Teď se zajímáme o to, \emph{zda jsou hodnoty nějak shora
 či zdola ohraničené} a zda funkce dosahuje skutečně největší
 nebo nejmenší hodnoty.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Shora omezená funkce}]
 Funkce $f$ je \textbf{shora omezená}, jestliže existuje
 číslo $M\in\mathbb R$ takové, že pro každé $x\in D(f)$ platí
 \[
@@ -31,7 +31,7 @@ f(x)\le M.
 \]
 Číslo $M$ nazýváme \textbf{horní mezí} funkce.
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Zdola omezená funkce}]
 Funkce $f$ je \textbf{zdola omezená}, jestliže existuje
 číslo $m\in\mathbb R$ takové, že pro každé $x\in D(f)$ platí
 \[
@@ -39,7 +39,7 @@ f(x)\ge m.
 \]
 Číslo $m$ nazýváme \textbf{dolní mezí} funkce.
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Omezená funkce}]
 Funkce je \textbf{omezená}, jestliže je omezená současně
 shora i zdola, tedy existují $m,M\in\mathbb R$ tak, že
 \[
@@ -48,7 +48,7 @@ shora i zdola, tedy existují $m,M\in\mathbb R$ tak, že
 \end{definiceBox}
 
 \blok{Tři příklady omezenosti}
-\begin{prikladReseniBox}[title={Příklad 1: pouze zdola omezená funkce}]
+\begin{prikladReseniBox}[title={Příklad 1}]
 Urči omezenost funkce $f(x)=x^2$ na $\mathbb R$.
 \tcblower
 Pro každé $x\in\mathbb R$ je $x^2\ge0$; číslo $0$ je
@@ -58,7 +58,7 @@ $|x|$ překročí $x^2$ libovolné předem zvolené číslo $M$.
 Obor hodnot je $H(f)=\langle0;+\infty)$.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}[title={Příklad 2: pouze shora omezená funkce}]
+\begin{prikladReseniBox}[title={Příklad 2}]
 Urči omezenost funkce $g(x)=-x^2$ na $\mathbb R$.
 \tcblower
 Protože $-x^2\le0$, číslo $0$ je horní mezí;
@@ -67,7 +67,7 @@ neboť s rostoucí velikostí $|x|$ nabývá libovolně malých
 (záporných) hodnot. $H(g)=(-\infty;0\rangle$.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}[title={Příklad 3: omezená shora i zdola}]
+\begin{prikladReseniBox}[title={Příklad 3}]
 Je dána $h(x)=x^2$ na $D(h)=\langle-2;1\rangle$.
 Urči její omezenost a obor hodnot.
 \tcblower
@@ -107,14 +107,14 @@ pokračují mimo obrázek. Rozhodnutí o neomezenosti proto
 nevyvozujeme jen z nakreslené části.}
 
 \blok{Maximum a minimum: mez nemusí být dosažena}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Maximum funkce}]
 Funkce $f$ má \textbf{maximum}, existuje-li $x_0\in D(f)$ takové, že
 \[
 \forall x\in D(f):\qquad f(x)\le f(x_0).
 \]
 Číslo $f(x_0)$ je její největší funkční hodnota.
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Minimum funkce}]
 Funkce $f$ má \textbf{minimum}, existuje-li $x_0\in D(f)$ takové, že
 \[
 \forall x\in D(f):\qquad f(x)\ge f(x_0).
@@ -122,7 +122,7 @@ Funkce $f$ má \textbf{minimum}, existuje-li $x_0\in D(f)$ takové, že
 Číslo $f(x_0)$ je její nejmenší funkční hodnota.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={Příklad 4: omezenost není totéž co maximum/minimum}]
+\begin{prikladReseniBox}[title={Příklad 4}]
 Funkce $u(x)=x$ je zadána na $D(u)=(0;1)$.
 Je omezená? Má maximum a minimum?
 \tcblower
@@ -138,7 +138,7 @@ a argument, kde nastává (např. $x=-2$).
 Maximum se může dosahovat ve více bodech.}
 
 \blok{Samostatná práce}
-\begin{zadaniReseniBox}[title={Procvičování}]
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item Je $p(x)=|x|$ na $\mathbb R$ omezená shora,
     zdola, nebo obojí? Má maximum či minimum?

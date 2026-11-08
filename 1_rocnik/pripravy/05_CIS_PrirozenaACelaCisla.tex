@@ -37,12 +37,12 @@ Nech žáky vyjádřit počet strojů v dílně, prázdný sklad a teplotu tři 
 pod nulou. V minulé hodině jsme volili obor proměnné; nyní upřesníme,
 která čísla do jednotlivých oborů patří a které výpočty v nich zvládneme.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Přirozená čísla}]
 \textbf{Přirozená čísla} jsou čísla $1,2,3,\ldots$; jejich obor značíme
 $\mathbb N$. V naší učebnici nulu mezi přirozená čísla nezahrnujeme.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Následník přirozeného čísla}]
 \textbf{Následník} přirozeného čísla $n$ je číslo $n+1$:
 například následníkem $4$ je $5$ a následníkem $5$ je $6$.
 \end{definiceBox}
@@ -93,7 +93,7 @@ k testu. Při běžné hodině stačí obraz řetězu a dva nutné kroky indukce
 podrobný rozbor může zůstat pro zájemce.
 Nech žáky určit následníka $99$ a vysvětlit, proč přirozená čísla nemají poslední prvek.}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Celá čísla}]
 \textbf{Celá čísla} jsou přirozená čísla, jejich záporné protějšky a nula.
 Jejich obor značíme
 \[
@@ -106,12 +106,12 @@ znamená, že není přirozené. Každé přirozené číslo je celé, opačně 
 Čísla větší než nula jsou kladná, menší než nula záporná. Nula není ani
 kladná, ani záporná; je současně nezáporná i nekladná.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Opačné číslo}]
 \textbf{Opačné číslo} k číslu $a$ je číslo $-a$; jejich součet je nula:
 $a+(-a)=0$. K nule je opačným číslem opět nula.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={P1: číslo a jeho protějšek},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
 Urči opačná čísla k $7$, $-9$, $0$ a k hodnotě $4-11$.
 Je zápis $-a$ vždy záporné číslo?
 \tcblower
@@ -126,7 +126,7 @@ ale $2-5=-3$ už ne. Stejná čísla tak mohou při jiné operaci vyžadovat
 rozšíření oboru. Jediný protipříklad vyvrátí obecné pravidlo;
 několik správných výpočtů samo o sobě obecnou platnost nedokazuje.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Uzavřenost vzhledem k operaci}]
 \textbf{Uzavřenost oboru vzhledem k operaci} znamená, že pro každé dva
 prvky tohoto oboru je výsledek dané operace definován a patří opět do téhož oboru.
 \end{definiceBox}
@@ -137,12 +137,12 @@ už $3-3=0$ není podle naší konvence přirozené číslo.
 Vlastnosti nejsou tvrzením, že \emph{některý} výpočet vyjde, ale že
 vyjdou \emph{všechny} přípustné výpočty daného typu.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Komutativita}]
 \textbf{Komutativita} znamená, že záměna pořadí obou čísel nemění výsledek
 operace. Pro sčítání píšeme $a+b=b+a$, pro násobení $a\cdot b=b\cdot a$.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Asociativita}]
 \textbf{Asociativita} znamená, že změna seskupení tří čísel nemění
 výsledek operace: $(a+b)+c=a+(b+c)$, případně
 $(a\cdot b)\cdot c=a\cdot(b\cdot c)$. Pořadí čísel přitom zůstává stejné.
@@ -151,7 +151,7 @@ $(a\cdot b)\cdot c=a\cdot(b\cdot c)$. Pořadí čísel přitom zůstává stejn�
 Sčítání i násobení jsou v $\mathbb N$ a $\mathbb Z$ komutativní
 a asociativní. Odčítání v $\mathbb Z$ nemá ani jednu z těchto vlastností.
 
-\begin{prikladReseniBox}[title={V1: pořadí a závorky jsou dvě různé věci},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
 Porovnej a pojmenuj použitou vlastnost, nebo uveď, proč rovnost neplatí:
 \begin{enumerate}[label=\alph*)]
 \item $(-4)+9$ a $9+(-4)$;\quad $(-2)\cdot7$ a $7\cdot(-2)$.
@@ -165,7 +165,7 @@ c) Dostáváme $5\ne-5$ a $3\ne7$. Jsou to protipříklady komutativity
 a asociativity odčítání v $\mathbb Z$; všechny uvedené rozdíly jsou přitom celé.
 \end{prikladReseniBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Neutrální prvek}]
 \textbf{Neutrální prvek} dané operace v daném oboru je jeho prvek,
 který při této operaci s libovolným prvkem oboru nezmění jeho hodnotu
 v žádném z obou pořadí.
@@ -176,7 +176,7 @@ Pro násobení je v $\mathbb N$ i $\mathbb Z$ neutrální $1$: $a\cdot1=1\cdot a
 V $\mathbb N$ s naší konvencí sčítání neutrální prvek nemá,
 protože nula do tohoto oboru nepatří a přičtení kladného čísla hodnotu zvětší.
 
-\begin{prikladReseniBox}[title={V2: neutralita a opačný prvek závisejí na operaci a oboru},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 3},breakable=false]
 a) Doplň v $\mathbb Z$: $-7+\square=-7$; $-7\cdot\square=-7$;
 $-7+\square=0$. b) Je $0$ neutrální pro odčítání?
 c) Má číslo $5$ opačný prvek pro sčítání v $\mathbb N$ i $\mathbb Z$?
@@ -196,7 +196,7 @@ Převrácený prvek vzhledem k násobení přijde v hodině 06.
 Názvy vlastností žáci vysvětlují na výpočtech; není nutné memorovat
 abstraktní seznam bez porozumění.}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Inverzní prvek}]
 \textbf{Inverzní prvek} k prvku $a$ vzhledem k dané operaci
 je prvek téhož oboru, který s $a$ v obou pořadích dává neutrální prvek
 této operace. Pro sčítání v $\mathbb Z$ je to opačné číslo $-a$.
@@ -234,7 +234,7 @@ Pro násobení platí také komutativita a asociativita. Inverzní prvek
 pro násobení by musel dávat součin $1$; například ke $2$ v $\mathbb Z$
 neexistuje. K tomu se vrátíme při rozšíření na zlomky.
 
-\begin{zadaniReseniBox}[title={V3: krátké procvičení vlastností},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 1},breakable=false]
 a) Zdůvodni, proč z $9-4=5$ neplyne uzavřenost odčítání v $\mathbb N$.
 b) Zjednoduš výpočet $(-17)+28+17+72$ a pojmenuj změny pořadí a seskupení.
 c) Je nula neutrálním prvkem násobení v $\mathbb Z$?
@@ -267,7 +267,7 @@ Operace stejné úrovně vyhodnocujeme zleva doprava.
 Druhou mocninu zde jen připomínáme ze ZŠ: $3^2=3\cdot3$;
 pravidla pro mocniny přijdou později.
 
-\begin{prikladReseniBox}[title={P2: stejná čísla, různý postup},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 4},breakable=false]
 Vypočti a vysvětli rozdíly:
 \[
 18:3\cdot2,\qquad 18:(3\cdot2),\qquad -3^2,\qquad (-3)^2.
@@ -279,7 +279,7 @@ Zápis $-3^2=-(3\cdot3)=-9$, zatímco $(-3)^2=(-3)\cdot(-3)=9$.
 Závorky rozhodují, zda se násobí také záporné znaménko.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}[title={P3: více operací v jednom výrazu},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 5},breakable=false]
 Vypočti $-24:(-6)+3\cdot[2-(-5)]-(-2)^2$.
 \tcblower
 \begin{align*}
@@ -291,7 +291,7 @@ Znaménko před poslední mocninou znamená odčítání její hodnoty $4$.
 \end{prikladReseniBox}
 
 \blok{Samostatná práce: nejprve postup, potom výsledek}
-\begin{zadaniReseniBox}[title={S1: základní sada},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 2},breakable=false]
 U a) a b) urči také, zda je výsledek přirozený, pouze celý, nebo není celý.
 \begin{enumerate}[label=\alph*)]
 \item $-8+13$;\quad $6-14$;\quad $4-4$;\quad $5:2$.
@@ -310,7 +310,7 @@ c) $(-12)\cdot2=-24$; $20-3\cdot(-3)=29$.
 d) $-2\cdot(5+6)=-22$; $4-4=0$.
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={S2: najdi první chybný krok},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 3},breakable=false]
 Oprav: a) $-5-(-8)=-13$; b) $24:4\cdot3=24:12=2$;
 c) $-4^2=16$. Vysvětli, jaké pravidlo bylo porušeno.
 \tcblower
@@ -324,7 +324,7 @@ výsledek. Na závěr nech každého vysvětlit, proč $3-3$ není při naší k
 přirozené číslo. Neúplnost oboru $\mathbb Z$ při dělení je mostem k hodině 06.}
 
 \blok{Rezerva pro svižnější práci}
-\begin{zadaniReseniBox}[title={R1: volitelně, přibližně 10–15 minut},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Spočti $-\{18-2\cdot[5-(-3)]\}+30:(-5)$.
 \item Vlož závorky do $16-8:2$ tak, aby výsledek byl $4$.
@@ -346,7 +346,7 @@ d) První dva součiny jsou opačná čísla a vyruší se; zbývá $-100$.
 pro mocniny. Žákům, kteří chybují ve znaménkách, dej místo R1 znovu S1b)
 s vysvětlením pomocí opačného čísla.}
 
-\begin{zadaniReseniBox}[title={R2: volitelné doplnění k vlastnostem},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 2},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Zdůvodni, proč v $\mathbb N$ existuje neutrální prvek násobení,
 ale ne sčítání. Uveď jejich kandidáty.
@@ -366,7 +366,7 @@ Měníme seskupení pomocí asociativity násobení v $\mathbb Z$.
 práce D1. Po tomto rozšíření není cílem stihnout všechny sady v jedné hodině.}
 
 \blok{Domácí procvičování}
-\begin{zadaniReseniBox}[title={D1: přibližně 15 minut},breakable=false]
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
 U výpočtů zapiš alespoň jeden mezikrok.
 \begin{enumerate}[label=\arabic*)]
 \item Rozhodni o příslušnosti čísel $-1,0,4$ do $\mathbb N$ a $\mathbb Z$.

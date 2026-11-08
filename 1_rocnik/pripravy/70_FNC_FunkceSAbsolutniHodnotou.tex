@@ -9,10 +9,10 @@
 \begin{document}
 \blok{Od lineární funkce ke dvěma větvím}
 Z předchozích hodin známe graf $y=x$. Absolutní hodnota ponechá nezáporné výstupy a záporné změní na jejich opačná čísla. Levá část přímky se proto odrazí nad osu $x$. Nejde o novou metodu kreslení od nuly: použijeme známé přímky $y=x$ a $y=-x$ na správných polovinách oboru.
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Absolutní hodnota}]
 \textbf{Absolutní hodnota} čísla $x$ je jeho vzdálenost od nuly: $|x|=x$ pro $x\ge0$ a $|x|=-x$ pro $x<0$.
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Funkce absolutní hodnoty}]
 \textbf{Funkce absolutní hodnoty} je $f:\mathbb R\to\mathbb R$, $f(x)=|x|$. Její definiční obor je $\mathbb R$ a obor hodnot $\langle0;\infty)$.
 \end{definiceBox}
 Pro $x<0$ máme $f(x)=-x$, pro $x\ge0$ máme $f(x)=x$. V bodě $(0;0)$ se části setkají. Z obou větví je patrná sudost $f(-x)=f(x)$, minimum $0$ a pokles vlevo, růst vpravo. Využijeme také tabulku $x=-2,-1,0,1,2$ a hodnoty $2,1,0,1,2$; sama tabulka neurčuje celý graf, předpis ano.
@@ -31,7 +31,7 @@ Pro $x<0$ máme $f(x)=-x$, pro $x\ge0$ máme $f(x)=x$. V bodě $(0;0)$ se část
 \end{center}
 \poznamka{Čárkovaná část ukazuje původní $y=x$ pod osou; není součástí grafu $y=|x|$. Ptej se, proč $|-2|$ není záporné, i když ve větvi stojí výraz $-x$.}
 \blok{Základní posuny grafu}
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 1}]
 Sestrojte $g(x)=|x-2|+1$. Určete vrchol, obor hodnot, průsečík s osou $y$ a popište obě větve.
 \tcblower
 Výraz uvnitř modulu se mění v nule při $x=2$. Pro $x<2$ je $g(x)=-(x-2)+1=3-x$, pro $x\ge2$ je $g(x)=x-2+1=x-1$. Vrchol je $(2;1)$, $D(g)=\mathbb R$, $H(g)=\langle1;\infty)$ a $g(0)=3$, tedy průsečík s osou $y$ je $(0;3)$. Základní véčko se posunulo o 2 doprava a o 1 nahoru.
@@ -47,13 +47,13 @@ Výraz uvnitř modulu se mění v nule při $x=2$. Pro $x<2$ je $g(x)=-(x-2)+1=3
 \fill (0,3) circle (2.2pt) node[above left] {\small $(0;3)$};
 \end{tikzpicture}
 \end{center}
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
 Porovnejte $u(x)=|x+1|$ a $v(x)=|x|-2$. Určete vrcholy a hodnoty v $x=0$.
 \tcblower
 $u$ vznikne posunem $|x|$ o 1 doleva: vrchol $(-1;0)$ a $u(0)=1$. Funkce $v$ je posunutá o 2 dolů: vrchol $(0;-2)$ a $v(0)=-2$. Zápis $|x+1|$ proto neposouvá graf doprava.
 \end{prikladReseniBox}
 \blok{Samostatné procvičení}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item Pro $h(x)=|x-3|$ sestavte tabulku pro $x=1,2,3,4,5$, najděte vrchol a obor hodnot.
 \item Pro $p(x)=|x|+2$ určete průsečík s osou $y$ a rozhodněte, zda má nulovou hodnotu.
@@ -67,18 +67,18 @@ $u$ vznikne posunem $|x|$ o 1 doleva: vrchol $(-1;0)$ a $u(0)=1$. Funkce $v$ je 
 \end{enumerate}
 \end{zadaniReseniBox}
 \blok{Volitelné rozšíření a rezerva}
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
 Jak se liší $|2x|$ a $-2|x|$? Uveďte jejich obory hodnot a hodnoty pro $x=-1$.
 \tcblower
 $|2x|=2|x|$ je nezáporná funkce se strmějšími větvemi, $H=\langle0;\infty)$ a hodnota při $-1$ je $2$. Funkce $-2|x|$ je její odraz podle osy $x$, $H=(-\infty;0\rangle$ a hodnota při $-1$ je $-2$. Záporné znaménko uvnitř modulu by odraz nezpůsobilo.
 \end{prikladReseniBox}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
 Na omezeném oboru $\langle-1;3\rangle$ určete obor hodnot $r(x)=|x-2|+1$.
 \tcblower
 Vrchol $(2;1)$ do oboru patří, tedy minimum je $1$. Na levém konci je $r(-1)=4$, na pravém $r(3)=2$. Na obou úsečkách grafu se nejvyšší hodnota $4$ objeví vlevo, takže $H(r)=\langle1;4\rangle$.
 \end{zadaniReseniBox}
 \blok{Domácí práce}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
 \item Sestrojte $f(x)=|x+2|+1$ pomocí vrcholu a bodů se vzdáleností 1 od něj; určete $D,H,f(0)$.
 \item U $g(x)=|x-1|-2$ určete vrchol, průsečík s osou $y$ a nulové hodnoty.

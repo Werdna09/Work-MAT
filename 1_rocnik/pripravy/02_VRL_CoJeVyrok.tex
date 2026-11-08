@@ -23,7 +23,7 @@
 
 \blok{1. Motivace}
 Na tabuli napiš následující čtyři věty a nech žáky hlasovat, zda jim lze přiřadit pravdivostní hodnotu.
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 1}]
 \begin{enumerate}[label=\alph*)]
   \item Sedm je prvočíslo.
   \item Otevřete si sešity.
@@ -36,7 +36,7 @@ a) pravdivý výrok; b) není výrok (rozkaz); c) nepravdivý výrok; d) bez up�
 \poznamka{Nezaměňovat \uv{nepravdivý výrok} a \uv{není výrok}. Pro žáky je to zásadní rozdíl.}
 
 \blok{2. Co je výrok}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Výrok}]
 \textbf{Výrok} je sdělení, u něhož má smysl rozhodovat, zda je \textbf{pravdivé}, nebo \textbf{nepravdivé}. Jeho pravdivostní hodnotu značíme zpravidla $1$ (pravda) a $0$ (nepravda).
 \end{definiceBox}
 
@@ -54,7 +54,7 @@ může být potřeba teprve najít zdůvodnění; otázka ani rozkaz tímto
 způsobem pravdivostní hodnotu nemají.
 
 \blok{3. Rozlišování výroků}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 Rozhodni, které položky jsou výroky. U výroků urči pravdivostní hodnotu.
 \begin{enumerate}[label=\alph*)]
   \item $2^4=16$.
@@ -69,15 +69,15 @@ a) výrok, $1$; b) otázka; c) výrok, $1$; d) otevřená formule, bez určení 
 \end{zadaniReseniBox}
 
 \blok{4. Atomický, složený výrok a formule}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Atomický výrok}]
 \textbf{Atomický výrok} je výrok, který nelze rozložit na jednodušší výroky pomocí výrokových spojek.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Složený výrok}]
 \textbf{Složený výrok} vzniká užitím výrokových spojek na jeden či více výroků (např. \uv{a}, \uv{nebo}, \uv{jestliže -- pak}).
 \end{definiceBox}
 
-\begin{prikladBox}
+\begin{prikladBox}[title={Příklad 2}]
 $p$: \vyrok{4 je sudé číslo.}\qquad $q$: \vyrok{9 je dělitelné třemi.}
 \begin{itemize}
   \item $p$ je atomický výrok.
@@ -85,7 +85,7 @@ $p$: \vyrok{4 je sudé číslo.}\qquad $q$: \vyrok{9 je dělitelné třemi.}
 \end{itemize}
 \end{prikladBox}
 
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
 U každé položky řekni, zda jde o atomický výrok, složený výrok, nebo o výraz, který zatím není výrokem.
 \begin{enumerate}[label=\alph*)]
   \item $15$ je liché číslo.
@@ -118,7 +118,7 @@ Ekvivalence & $p\Leftrightarrow q$ & $p$ právě tehdy, když $q$\\
 \end{tabularx}
 \end{center}
 
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
 Nechť $p$: \vyrok{Prší.} a $q$: \vyrok{Mám deštník.} Přečti nahlas výroky
 \[
   p\land q,\qquad p\lor q,\qquad p\Rightarrow q,\qquad p\Leftrightarrow q,\qquad \neg p.
@@ -129,7 +129,7 @@ $p\land q$: \uv{Prší a mám deštník.} $p\lor q$: \uv{Prší nebo mám deštn
 \poznamka{Upozorni, že matematické \uv{nebo} je zpravidla nevýlučné. Zatím po žácích nechci všechny pravdivostní hodnoty složených výroků ani jejich tabulky.}
 
 
-\begin{zadaniReseniBox}[title={Rezerva: od věty k přesnému zápisu},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Je $x+2=5$ s neurčeným $x$ výrok? Dosaď $x=3$ a potom $x=1$ a popiš, co se změnilo.
 \item Je zápis \uv{Číslo $12$ je velké} jednoznačný? Zpřesni jej dvěma způsoby, jedním pravdivým a jedním nepravdivým.
@@ -146,7 +146,7 @@ $p\land q$: \uv{Prší a mám deštník.} $p\lor q$: \uv{Prší nebo mám deštn
 \end{zadaniReseniBox}
 
 \blok{6. Závěr a rychlé ověření}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 4}]
 \begin{enumerate}
   \item Je \vyrok{$x>0$} bez dalšího určení výrokem? Proč?
   \item Zapiš symbolem: \uv{Sedm je prvočíslo a osm je sudé číslo.}
@@ -165,7 +165,7 @@ $p\land q$: \uv{Prší a mám deštník.} $p\lor q$: \uv{Prší nebo mám deštn
 
 \blok{Domácí procvičení}
 
-\begin{zadaniReseniBox}[title={Domácí úlohy s kontrolou},breakable=false]
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Rozhodni, zda jde o výrok, a případně urči pravdivost: $11$ je sudé; $3\cdot4=12$; Vypočítej $3\cdot4$; $x+1=5$ s neurčeným $x$.
 \item Nechť $p$: \uv{Číslo $6$ je sudé}, $q$: \uv{Číslo $6$ je dělitelné třemi}. Zapiš slovy $p\land q$, $p\lor q$ a $\neg p$.

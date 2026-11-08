@@ -25,7 +25,7 @@ nezapočítali dvakrát? Vennův diagram už známe z minulé hodiny; nyní
 \poznamka{Základ hodiny: motivace a P1 12 min, odvození vzorce a význam slov 8 min,
 P2 8 min, S1 a)--b) s kontrolou 12 min, organizace a závěr 5 min.
 Úlohy S2, R1, R2 jsou rozšířením, nikoliv podmínkou zvládnutí hodiny.}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Mohutnost konečné množiny}]
 \textbf{Mohutnost konečné množiny} $A$, značená $|A|$, je počet jejích
 různých prvků. Například $|\{1,2,2,3\}|=3$ a $|\varnothing|=0$.
 \end{definiceBox}
@@ -34,7 +34,7 @@ V úlohách označuje $U$ všechny sledované osoby nebo předměty.
 Množiny $A,B\subseteq U$ označují dvě vlastnosti. Nezaměňuj $A\cap B$
 (množina) a $|A\cap B|$ (počet jejích prvků).
 
-\begin{prikladReseniBox}[title={P1: Dva školní kroužky}]
+\begin{prikladReseniBox}[title={Příklad 1}]
 V ročníku je $32$ studentů. Programování navštěvuje $18$ studentů,
 robotiku $15$ a oba kroužky $7$ studentů. Urči, kolik studentů navštěvuje:
 \textbf{a)} pouze programování; \textbf{b)} pouze robotiku;
@@ -74,7 +74,7 @@ Ptej se: \uv{Je student z průniku také studentem programování?}}
 Sčítáme-li $|A|+|B|$, započítáme každý společný prvek dvakrát.
 Každý prvek ve sjednocení však máme započítat jen jednou.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Věta - Princip inkluze a exkluze pro dvě množiny}]
 \textbf{Princip inkluze a exkluze pro dvě konečné množiny:}
 \[
 \boxed{|A\cup B|=|A|+|B|-|A\cap B|.}
@@ -98,7 +98,7 @@ Výraz v zadání & Jaké oblasti hledáme?\\ \midrule
 \end{tabularx}
 \end{center}
 
-\begin{prikladReseniBox}[title={P2: Kontrola výrobků -- neznámý překryv}]
+\begin{prikladReseniBox}[title={Příklad 2}]
 Kontrolor má $42$ součástek. Poškrábaný povrch má $25$ kusů,
 chybný rozměr $21$ kusů a \emph{ani jednu z těchto vad} nemá $8$ kusů.
 Urči počet se dvěma vadami, pouze s jednou vadou a právě s jednou vadou.
@@ -119,7 +119,7 @@ U P2 je první krok doplnění \uv{alespoň jedna} z údaje \uv{ani jedna}.
 Do povinného jádra patří P1, odvození vzorce a P2; náročnější úlohy jsou níže.}
 
 \blok{Samostatná práce: od údajů k odpovědím}
-\begin{zadaniReseniBox}[title={S1: dvě základní úlohy}]
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item V $36$členné skupině používá CAD $22$ žáků, 3D tisk $19$ žáků a obojí $9$.
 Kolik používá pouze CAD, pouze 3D tisk, alespoň jedno a ani jedno?
@@ -136,7 +136,7 @@ Jen první $15$, jen druhou $17$; kontrola $15+13+17+9=54$.
 \end{enumerate}
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={S2: složitější význam slov \uv{právě} a \uv{možné}},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 2},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item V $48$členné skupině sportuje v oddílu $A$ celkem $30$ žáků,
 v oddílu $B$ celkem $26$ a \emph{právě jeden} oddíl navštěvuje $32$ žáků.
@@ -162,7 +162,7 @@ S2 b) navíc testuje smysluplnost výsledku.}
 \blok{Rozšiřující úlohy: dvě množiny a neznámé údaje}
 \poznamka{Příklady níže nejsou povinným jádrem. Mohou sloužit k diferenciaci
 nebo k dokončení doma. Úlohy se třemi množinami byly přesunuty do 18. hodiny.}
-\begin{zadaniReseniBox}[title={R1: když známe počet právě v jedné skupině}]
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
 Ve skupině $48$ osob je $30$ členů klubu $A$, $26$ členů klubu $B$
 a právě v jednom klubu je $32$ osob. Kolik je v obou klubech a kolik v žádném?
 \tcblower
@@ -173,7 +173,7 @@ Označme společnou část $x$. Ve výlučných oblastech je $(30-x)$ a $(26-x)$
 Alespoň jeden klub navštěvuje $30+26-12=44$ osob, žádný $48-44=4$.
 Kontrola oblastí: $18+12+14+4=48$.
 \end{zadaniReseniBox}
-\begin{zadaniReseniBox}[title={R2: ne každé číslo v zadání je možné},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 2},breakable=false]
 Ve skupině $30$ osob má vlastnost $A$ celkem $24$,
 vlastnost $B$ celkem $18$ a obě vlastnosti má $7$ lidí.
 Mohou všechny údaje platit současně?
@@ -183,7 +183,7 @@ což převyšuje celkový počet $30$. Výsledek není možné vyznačit do diag
 \end{zadaniReseniBox}
 
 \blok{Domácí procvičení: pouze dvě množiny}
-\begin{zadaniReseniBox}[title={D1: tři situace, vždy čtyři oblasti}]
+\begin{zadaniReseniBox}[title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
 \item Z $38$ žáků jezdí do školy na kole $21$, autobusem $18$,
 obojí využívá $8$. Urči pouze kolo, pouze autobus, alespoň jednu

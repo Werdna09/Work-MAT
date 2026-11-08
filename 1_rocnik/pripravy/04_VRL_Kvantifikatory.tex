@@ -38,7 +38,7 @@ výrokem? Pro $x=1$ rovnost platí, pro $x=0$ neplatí. Minule jsme
 určovali pravdivost složených výroků; nyní upřesníme, \emph{pro které
 hodnoty proměnné} má tvrzení platit.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Výroková forma}]
 \textbf{Výroková forma (otevřená formule)} $P(x)$ je sdělení
 s proměnnou $x$ z určené množiny $M$, které se po dosazení konkrétního
 prvku za $x$ stane výrokem.
@@ -54,20 +54,20 @@ prvky dané množiny, nebo alespoň pro jeden. K tomu slouží kvantifikátory.
 Zápis $x\in M$ čteme \uv{$x$ je prvkem množiny $M$}.
 
 \blok{2. Pro každé a existuje}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Obecný kvantifikátor}]
 \textbf{Obecný (univerzální) kvantifikátor} $\forall$ vyjadřuje
 \uv{pro každé}. Výrok $\forall x\in M:\ P(x)$ je pravdivý právě tehdy,
 když $P(x)$ platí pro každý prvek množiny $M$.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Existenční kvantifikátor}]
 \textbf{Existenční kvantifikátor} $\exists$ vyjadřuje
 \uv{existuje alespoň jeden}. Výrok $\exists x\in M:\ P(x)$ je pravdivý
 právě tehdy, když v množině $M$ existuje alespoň jeden prvek, pro který
 $P(x)$ platí.
 \end{definiceBox}
 
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 1}]
 Nechť $M=\{-2,-1,0,1,2\}$. Přečti a rozhodni o pravdivosti výroků:
 \[
  A:\ \forall x\in M:\ x^2=1,
@@ -93,7 +93,7 @@ $\exists x:\ x^2=1$ neplatil. Nezaváděj nyní více kvantifikátorů za sebou.
 
 \newpage
 \blok{3. Matematické věty}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Matematická věta}]
 \textbf{Matematická věta} je matematické tvrzení, jehož pravdivost
 je dokázána na základě přijatých výchozích tvrzení (axiomů), definic
 a již dokázaných vět.
@@ -103,7 +103,7 @@ Matematické věty často vyjadřují obecnou platnost. Slovo \uv{každé}
 bývá skryto i ve větách tvaru \uv{Je-li splněn předpoklad, pak platí závěr.}
 Předpoklady i množina, o níž mluvíme, musí být zřejmé.
 
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
 Zapiš pomocí kvantifikátoru větu \uv{Druhá mocnina každého reálného
 čísla je nezáporná} a zdůvodni ji pro libovolné reálné číslo.
 \tcblower
@@ -134,7 +134,7 @@ Při negaci proto zaměníme kvantifikátor a současně negujeme vlastnost:
 \end{align*}
 Množina $M$ zůstává stejná. Negaci tvoříme i u nepravdivého výroku.
 
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
 Utvoř negace následujících výroků, přečti je slovy a urči pravdivost
 původních výroků i jejich negací:
 \begin{enumerate}[label=\alph*)]
@@ -158,7 +158,7 @@ Nestačí jen zaměnit $\forall$ a $\exists$ nebo jen přidat zápor.}
 
 \newpage
 \blok{5. Samostatné procvičení}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 U každé položky zapiš původní výrok i jeho negaci pomocí kvantifikátoru,
 negaci přečti slovy a urči pravdivost obou výroků. Odpověď zdůvodni.
 \begin{enumerate}[label=\alph*)]
@@ -196,7 +196,7 @@ následující rozšíření vynech.}
 
 \blok{Navazující procvičování ve třídě}
 
-\begin{zadaniReseniBox}[title={Rezerva: proč záleží na množině},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Rozhodni o výroku $\forall x\in M:\ x>0$ nejprve pro $M=\{1,2,3\}$, pak pro $M=\{0,1,2\}$. Napiš jeho negaci.
 \item Je pravdivá věta \uv{Existuje právě jedno celé číslo, jehož druhá mocnina je $4$}? A co věta bez slov \uv{právě jedno}?
@@ -209,7 +209,7 @@ následující rozšíření vynech.}
 \end{zadaniReseniBox}
 
 \blok{Volitelné rozšíření: kvantifikátor a implikace}
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
 Neguj výrok $\forall n\in\mathbb{Z}:\ (n>0\Rightarrow n>1)$.
 Urči pravdivost původního výroku i negace.
 \tcblower
@@ -236,7 +236,7 @@ negujeme vlastnost a zachováme množinu.
 
 \blok{Domácí procvičení}
 
-\begin{zadaniReseniBox}[title={Domácí negace a zdůvodnění},breakable=false]
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Neguj $\forall n\in\mathbb Z:\ n^2>0$. Urči pravdivost obou výroků.
 \item Neguj $\exists n\in\mathbb Z:\ n<0$. Urči pravdivost obou výroků.

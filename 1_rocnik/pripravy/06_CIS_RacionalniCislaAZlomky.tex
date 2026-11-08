@@ -38,7 +38,7 @@ Tři stejné tyče rozdělíme rovným dílem mezi pět lidí. Každý dostane
 $\frac35$ tyče. Rozdělením každé pětiny ještě napůl dostane každý
 šest desetin téže tyče. Zápisy $\frac35$ a $\frac6{10}$ označují stejné číslo.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Racionální číslo}]
 \textbf{Racionální číslo} je číslo zapsatelné jako $\frac pq$, kde
 $p,q\in\mathbb Z$ a $q\ne0$. Obor racionálních čísel značíme $\mathbb Q$.
 \end{definiceBox}
@@ -49,23 +49,23 @@ Zlomek s nulovým čitatelem a nenulovým jmenovatelem je nula,
 například $\frac07=0$. Zápisy $\frac50$ ani $\frac00$ číslo nevyjadřují.
 Pro přehlednost budeme záporné znaménko psát před zlomek a jmenovatel kladný.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Rozšiřování zlomků}]
 \textbf{Rozšiřování zlomku} znamená vynásobení čitatele i jmenovatele
 týmž nenulovým celým číslem $k$:
 $\frac pq=\frac{kp}{kq}$. Hodnota se nemění, protože násobíme číslem $\frac kk=1$.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Krácení zlomků}]
 \textbf{Krácení zlomku} znamená vydělení čitatele i jmenovatele
 týmž jejich nenulovým společným celočíselným dělitelem. Hodnota zlomku se nemění.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Zlomek v základním tvaru}]
 Zlomek s kladným jmenovatelem je v \textbf{základním tvaru}, jestliže
 čitatel a jmenovatel nemají společného kladného dělitele většího než $1$.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={P1: zjednodušení a kontrola},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
 Zkrať do základního tvaru $\frac{-84}{126}$ a $\frac{-45}{-60}$.
 První výsledek rozšiř na jmenovatele $30$.
 \tcblower
@@ -86,7 +86,7 @@ U dělení to nestačí ani po vyloučení nuly z dělitelů: některý podíl
 celý je, jiný není. Racionální čísla doplní všechny podíly celých čísel
 s nenulovým dělitelem.
 
-\begin{prikladReseniBox}[title={V1: některé dělení vyjde v Z, jiné až v Q},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
 Vypočti $12:3$, $5:2$, $(-7):3$ a $0:4$.
 Které výsledky jsou celé? Výsledky ověř násobením dělitelem.
 \tcblower
@@ -100,12 +100,12 @@ jako tvrzení, že vyjde vždy.
 \end{prikladReseniBox}
 
 \blok{Opačné číslo sčítáme, převráceným násobíme}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Opačné číslo}]
 Připomenutí: \textbf{opačné číslo} k $a\in\mathbb Q$ je $-a$;
 platí $a+(-a)=0$. Jde o opačný prvek vzhledem ke sčítání.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Převrácené číslo}]
 \textbf{Převrácené číslo} k nenulovému $a\in\mathbb Q$ je číslo $\frac1a$,
 jehož součin s $a$ je $1$. Jde o inverzní prvek vzhledem k násobení:
 $a\cdot\frac1a=1$.
@@ -120,7 +120,7 @@ také $p\ne0$. Číslo $\frac qp$ je proto opět racionální a
 Nula má opačné číslo $0$, ale převrácené číslo nemá:
 pro žádné $b$ neplatí $0\cdot b=1$.
 
-\begin{prikladReseniBox}[title={V2: dva různé návraty k neutrálnímu prvku},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 3},breakable=false]
 Doplň opačné a převrácené číslo k $-\frac34$, $\frac25$, $-1$ a $0$.
 U prvního čísla proveď zkoušku součtem i součinem.
 \tcblower
@@ -154,7 +154,7 @@ Jednička není oboustranně neutrální pro dělení: $6:1=6$, ale $1:6\ne6$.
 To je jiný výrok než neutralita jedničky pro násobení.}
 
 \blok{Distributivita propojuje násobení se sčítáním}
-\begin{definiceBox}
+\begin{definiceBox}[title={Věta - Distributivní zákon}]
 \textbf{Distributivita násobení vzhledem ke sčítání} znamená, že pro
 všechna $a,b,c\in\mathbb Q$ platí
 \[
@@ -168,7 +168,7 @@ Pravidlo platí už v $\mathbb N$ a $\mathbb Z$, nyní také pro zlomky.
 nebo zvlášť šestkrát každý díl a výsledky sečíst. Podstatné je,
 že vně závorky je násobení, uvnitř sčítání.
 
-\begin{prikladReseniBox}[title={V3: dvě cesty k témuž výsledku},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 4},breakable=false]
 Vypočti dvojím způsobem $6\cdot(\frac56-\frac13)$ a
 $-\frac32\cdot(\frac23+\frac49)$. Potom posuď chybný přepis
 $6:(2+1)=6:2+6:1$.
@@ -230,7 +230,7 @@ jmenovatelích zlomky rozšíříme na společný jmenovatel. Pro $b,d>0$
 tedy platí $\frac ab<\frac cd$ právě tehdy, když $ad<bc$.
 Podmínka kladných jmenovatelů brání chybě se znaménkem nerovnosti.
 
-\begin{prikladReseniBox}[title={P2: záporná čísla a společný jmenovatel},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 5},breakable=false]
 Porovnej $-\frac56$ a $-\frac78$. Potom seřaď vzestupně
 $-\frac56$, $-\frac78$, $-\frac34$, $0$.
 \tcblower
@@ -242,7 +242,7 @@ $-\frac34=-\frac{18}{24}$. Proto
 Číslo $-21$ je menší než $-20$; záporné znaménko nesmíme při porovnávání ignorovat.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}[title={P3: desetinný zápis a číslo mezi zlomky},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 6},breakable=false]
 Zapiš $0{,}375$ jako zlomek v základním tvaru.
 Najdi racionální číslo ostře mezi $\frac23$ a $\frac34$.
 \tcblower
@@ -252,7 +252,7 @@ takže vyhovuje $\frac{17}{24}$. Nejde o jediné možné číslo.
 \end{prikladReseniBox}
 
 \blok{Samostatně: zápis, velikost, časté chyby}
-\begin{zadaniReseniBox}[title={S1: základní sada},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Zkrať $\frac{54}{90}$, $\frac{72}{-120}$, $\frac{-63}{-84}$.
 \item Doplň $\frac{-3}{5}=\frac{\square}{35}$,
@@ -272,7 +272,7 @@ d) $-\frac{125}{100}=-\frac54$; $0{,}35$.
 e) Například $\frac{19}{30}$, protože $\frac35=\frac{18}{30}$ a $\frac23=\frac{20}{30}$.
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={S2: oprav a vysvětli},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 2},breakable=false]
 Rozhodni, zda platí: a) $\frac23=\frac{2+3}{3+3}$;
 b) $\frac{2+6}{2+10}=\frac6{10}$;
 c) $\frac{6\cdot5}{6\cdot7}=\frac57$.
@@ -289,7 +289,7 @@ která jako podíl celých čísel vyjádřit nejdou.}
 
 \newpage
 \blok{Rezerva}
-\begin{zadaniReseniBox}[title={R1: volitelně, 10–15 minut},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Porovnej bez desetinného dělení $\frac{101}{102}$ a $\frac{100}{101}$.
 \item Urči všechna přirozená $n$, pro která $\frac23<\frac n{12}<\frac56$.
@@ -308,7 +308,7 @@ d) Například $\frac45>\frac12$, ačkoli $5>2$.
 Pravidlo platí při stejném kladném čitateli a kladných jmenovatelích.
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={R2: volitelně k novým vlastnostem},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 2},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Urči opačné a převrácené číslo k $-\frac58$ a proveď obě zkoušky.
 \item Vypočti pomocí roznásobení $-\frac23\cdot(\frac94-\frac32)$.
@@ -332,7 +332,7 @@ $1\cdot1$ nebo $(-1)\cdot(-1)$; celočíselní dělitelé jedničky jsou jen $1$
 nikoli povinný přídavek k celé domácí práci.}
 
 \blok{Domácí procvičování}
-\begin{zadaniReseniBox}[title={D1: přibližně 15–20 minut},breakable=false]
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
 \begin{enumerate}[label=\arabic*)]
 \item Zkrať $\frac{96}{144}$, $\frac{-75}{105}$, $\frac{-56}{-98}$.
 \item Rozšiř $-\frac7{12}$ na jmenovatele $60$ a $\frac9{14}$ na $42$.

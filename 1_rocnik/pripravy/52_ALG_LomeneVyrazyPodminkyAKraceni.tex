@@ -9,31 +9,31 @@
 \poznamka{Jádro 45 minut: 5 min motivace, 8 min definice a podmínky, 12 min řešené příklady, 15 min samostatná práce s kontrolou, 5 min shrnutí. Poslední příklad a rezerva volitelné. Domácí práce asi 15--20 minut.}
 \blok{Proč nestačí jen rozložit a krátit?}
 Z hodin 49--51 umíme rozložit čitatel i jmenovatel na součin. Ve zlomku však nejdříve zjistíme, kdy vůbec existuje: \emph{jmenovatel nesmí být nulový}. Například výraz $\frac{x^2-x}{x}$ má smysl jen pro $x\ne0$, i když po krácení dostaneme $x-1$.
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Racionální lomený výraz}]
 \textbf{Racionální lomený výraz} je podíl dvou mnohočlenů
 \[V(x)=\frac{A(x)}{B(x)},\qquad B\not\equiv0.\]
 Jeho definiční obor nad $\mathbb R$ tvoří právě ta $x$, pro která $B(x)\ne0$.
 \end{definiceBox}
-\begin{zadaniBox}[title={Pravidlo krácení a rozšiřování}]
+\begin{zadaniBox}[title={Věta - Krácení a rozšiřování lomených výrazů}]
 Pro nenulové $B(x)$ a $C(x)$ platí
 \[\frac{A(x)C(x)}{B(x)C(x)}=\frac{A(x)}{B(x)}.\]
 Krátíme \textbf{celé činitele}, nikoli jednotlivé sčítance. Podmínky odvozujeme vždy z \textbf{původního} zápisu.
 \end{zadaniBox}
-\begin{prikladReseniBox}[breakable=false,title={Příklad 1: po krácení zůstává zákaz}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1}]
 Zkrať $\displaystyle\frac{x^2-4}{x^2-2x}$ a určete definiční obor.
 \tcblower
 Z původního jmenovatele: $x(x-2)\ne0$, tedy $x\ne0,2$.
 \[\frac{x^2-4}{x^2-2x}=\frac{(x-2)(x+2)}{x(x-2)}=\frac{x+2}{x},\qquad x\ne0,2.\]
 Zakázaná hodnota $x=2$ zůstává, i když už ve výsledném jmenovateli není.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[breakable=false,title={Příklad 2: kvadratický trojčlen ve jmenovateli}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2}]
 Uprav $\displaystyle\frac{x^2-9}{x^2-5x+6}$.
 \tcblower
 $x^2-5x+6=(x-2)(x-3)$, takže $x\ne2,3$. Dále
 \[\frac{(x-3)(x+3)}{(x-2)(x-3)}=\frac{x+3}{x-2},\qquad x\ne2,3.\]
 \end{prikladReseniBox}
 \blok{Samostatná práce}
-\begin{zadaniReseniBox}[breakable=false,title={Procvičení: určuj podmínky před krácením}]
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item $\displaystyle\frac{x^2-1}{x^2+x}$;
 \item $\displaystyle\frac{2x+2}{x+1}$;
@@ -52,13 +52,13 @@ $x^2-5x+6=(x-2)(x-3)$, takže $x\ne2,3$. Dále
 \end{zadaniReseniBox}
 \poznamka{U každého zadání vyžaduj pořadí: podmínky -- rozklad -- krácení -- výsledek. Krátit lze např. $(x-2)$; samotné $x$ v součtu $x+2$ zkrátit nelze.}
 \blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[breakable=false,title={Rozšíření: změna znaménka}]
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření 1}]
 Uprav $\displaystyle\frac{1-x^2}{(x+1)^2}$ a určete, která hodnota je zakázaná.
 \tcblower
 $1-x^2=-(x-1)(x+1)$, takže $\frac{1-x}{x+1}$, $x\ne-1$. Znaménko minus patří k celému činiteli.
 \end{zadaniReseniBox}
 \blok{Domácí procvičení}
-\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol: krácení a definiční obor}]
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
 \item $\frac{x^2-16}{x^2+4x}$;
 \item $\frac{2x^2-8}{x-2}$;

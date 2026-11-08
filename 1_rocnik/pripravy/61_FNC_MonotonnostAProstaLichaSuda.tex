@@ -37,26 +37,26 @@ Graf čteme zleva doprava; zatím nemusí být přímkou.
 Graf funkce $f$ má $D(f)=\langle-4;4)$. Například
 $f(-3)=1$, $f(0)=0$ a $f(2)=-2$; hodnota $f(4)$ neexistuje.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Rostoucí funkce}]
 Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{rostoucí}, jestliže
 pro každá $x_1,x_2\in I$ platí
 \[
 x_1<x_2\ \Longrightarrow\ f(x_1)<f(x_2).
 \]
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Klesající funkce}]
 Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{klesající}, jestliže
 pro každá $x_1,x_2\in I$ platí
 \[
 x_1<x_2\ \Longrightarrow\ f(x_1)>f(x_2).
 \]
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Konstantní funkce}]
 Funkce $f$ je na intervalu $I\subseteq D(f)$ \textbf{konstantní}, jestliže
 pro všechna $x_1,x_2\in I$ platí $f(x_1)=f(x_2)$.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={Příklad 1: čtení monotónnosti z grafu}]
+\begin{prikladReseniBox}[title={Příklad 1}]
 Urči z úvodního grafu intervaly růstu, poklesu a konstantnosti.
 Je funkce rostoucí na celém $D(f)$?
 \tcblower
@@ -76,7 +76,7 @@ Pojmy neklesající a nerostoucí případně přidej jen jako rezervu.}
 Nestačí porovnat jen dvě vybrané hodnoty. Nejdřív musí platit,
 že s každým přípustným $x$ leží v definičním oboru i $-x$.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Sudá funkce}]
 Funkce $f$ je \textbf{sudá}, jestliže je její definiční obor
 souměrný vzhledem k nule a pro každé $x\in D(f)$ platí
 \[
@@ -84,7 +84,7 @@ f(-x)=f(x).
 \]
 Graf sudé funkce je souměrný podle osy $y$.
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Lichá funkce}]
 Funkce $f$ je \textbf{lichá}, jestliže je její definiční obor
 souměrný vzhledem k nule a pro každé $x\in D(f)$ platí
 \[
@@ -114,7 +114,7 @@ Graf liché funkce je středově souměrný podle počátku.
 \end{minipage}
 \end{center}
 
-\begin{prikladReseniBox}[title={Příklad 2: rozhodnutí z předpisu}]
+\begin{prikladReseniBox}[title={Příklad 2}]
 Rozhodni, zda jsou funkce $u(x)=x^2+2$ a $v(x)=x^3-x$
 na $\mathbb R$ sudé, liché, nebo ani jedno.
 \tcblower
@@ -132,7 +132,7 @@ Sudost a lichost se ptají na vztah $f(-x)$ a $f(x)$.
 \textbf{Prostota} je jiná vlastnost: zda mohou dva různé
 argumenty dávat stejnou funkční hodnotu.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Prostá funkce}]
 Funkce $f$ je \textbf{prostá}, jestliže pro všechna
 $x_1,x_2\in D(f)$ platí
 \[
@@ -141,7 +141,7 @@ f(x_1)=f(x_2)\ \Longrightarrow\ x_1=x_2.
 Ekvivalentně: dvěma různým argumentům odpovídají dvě různé hodnoty.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={Příklad 3: prostá, nebo neprostá?}]
+\begin{prikladReseniBox}[title={Příklad 3}]
 Rozhodni o prostotě $a(x)=2x+1$ a $b(x)=x^2$ na $\mathbb R$.
 Co se stane s $b$, omezíme-li její obor na $\langle0;+\infty)$?
 \tcblower
@@ -159,7 +159,7 @@ kterým rozhodujeme, zda je křivka vůbec grafem funkce.}
 \blok{Periodická funkce: opakování hodnot}
 Periodická funkce opakuje své hodnoty po stále stejném posunutí argumentu.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Periodická funkce}]
 Funkce $f$ je \textbf{periodická}, jestliže existuje číslo $T>0$
 takové, že pro každé $x\in D(f)$ platí $x-T,x+T\in D(f)$ a
 \[
@@ -168,7 +168,7 @@ f(x+T)=f(x).
 Číslo $T$ nazýváme \textbf{periodou funkce}.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={Příklad 4: periodická funkce}]
+\begin{prikladReseniBox}[title={Příklad 4}]
 Ukaž, že funkce $f(x)=\sin x$ na $\mathbb R$ je periodická.
 \tcblower
 Pro každé $x\in\mathbb R$ platí $\sin(x+2\pi)=\sin x$.
@@ -177,7 +177,7 @@ $f(0)=f(2\pi)=0$ a $f(\frac\pi2)=f(\frac{5\pi}2)=1$.
 \end{prikladReseniBox}
 
 \blok{Samostatná práce}
-\begin{zadaniReseniBox}[title={Procvičování}]
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item Rozhodni, zda $p(x)=-3x+1$ roste, nebo klesá na $\mathbb R$.
 \item Rozhodni o sudosti či lichosti $q(x)=x^4-2x^2$

@@ -17,7 +17,7 @@
 \end{itemize}
 \poznamka{Čísla v úlohách (s výjimkou citovaných fyzikálních a chemických konstant a skutečných vztahů) jsou didaktické modely. Zejména zpoždění NAND/XOR se mění podle technologie, zátěže a zapojení; z jednoho příkladu nelze vyvozovat univerzální žebříček rychlosti hradel.}
 \blok{Výběr sedmi aplikačních příkladů (jeden na typ)}
-\begin{prikladReseniBox}[title={Lineární rovnice -- ELE}]
+\begin{prikladReseniBox}[title={Příklad 1}]
 Zdroj má napětí $12\,\mathrm V$. LED v pracovním bodě vykazuje úbytek $2\,\mathrm V$ a v sérii je rezistor $500\,\Omega$. Podle modelu $2+500I=12$ určete proud $I$ v ampérech a miliampérech.
 \tcblower
 \[\begin{aligned}
@@ -25,14 +25,14 @@ Zdroj má napětí $12\,\mathrm V$. LED v pracovním bodě vykazuje úbytek $2\,
 \end{aligned}\]
 \par\textit{Poznámka:} Jde o model s přibližně konstantním úbytkem napětí na LED.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Lineární nerovnice -- MEC}]
+\begin{prikladReseniBox}[title={Příklad 2}]
 Plošina má modelovou nosnost $360\,\mathrm{kg}$. Nářadí váží $60\,\mathrm{kg}$ a každý pracovník $75\,\mathrm{kg}$. Kolik pracovníků se může bezpečně vejít podle hmotnostního limitu? Neřešte další bezpečnostní předpisy.
 \tcblower
 \[\begin{aligned}
 60+75n&\le360\\75n&\le300\\n&\le4\\n_{\max}&=4\ \text{osoby}
 \end{aligned}\]
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Soustavy lineárních rovnic -- ICT}]
+\begin{prikladReseniBox}[title={Příklad 3}]
 Ve stejné modelové technologii byly změřeny dvě sériové cesty: dva NAND a jeden XOR mají dohromady $14\,\mathrm{ns}$, jeden NAND a dva XOR $16\,\mathrm{ns}$. Určete z těchto měření zpoždění $n$ jednoho NAND a $x$ jednoho XOR a porovnejte je.
 \tcblower
 \[\begin{aligned}
@@ -40,21 +40,21 @@ Ve stejné modelové technologii byly změřeny dvě sériové cesty: dva NAND a
 \end{aligned}\]
 \par\textit{Poznámka:} Výsledek platí pouze pro tuto modelovou sadu měření, zpoždění závisí na technologii a zátěži.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Rovnice s absolutní hodnotou -- MEC}]
+\begin{prikladReseniBox}[title={Příklad 4}]
 Robot je na přímé kolejnici v poloze $x$ (metry). Kontrolní bod je na souřadnici $50\,\mathrm m$. Robot má být přesně $8\,\mathrm m$ od něj. Určete všechna $x$ z $|x-50|=8$.
 \tcblower
 \[\begin{aligned}
 |x-50|&=8\\x-50&=8\ \text{nebo}\ x-50=-8\\x&=58\ \text{nebo}\ x=42\\K&=\{42;58\}\,\mathrm m
 \end{aligned}\]
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Nerovnice s absolutní hodnotou -- ELE}]
+\begin{prikladReseniBox}[title={Příklad 5}]
 Zdroj má jmenovité napětí $12\,\mathrm V$ a povolenou odchylku nejvýše $0{,}5\,\mathrm V$. Určete interval přijatelných hodnot $U$ z $|U-12|\le0{,}5$.
 \tcblower
 \[\begin{aligned}
 |U-12|&\le0{,}5\\-0{,}5\le U-12&\le0{,}5\\11{,}5\le U&\le12{,}5\\K&=\langle11{,}5;12{,}5\rangle\,\mathrm V
 \end{aligned}\]
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Lineární rovnice s parametrem -- ELE}]
+\begin{prikladReseniBox}[title={Příklad 6}]
 V idealizované elektrické větvi platí $(a-2)I=6$, kde $a$ je reálný parametr odpovídající odporu v ohmech a $I$ je orientovaný proud v ampérech. Diskutujte řešení pro všechna $a$.
 \tcblower
 \[\begin{aligned}
@@ -62,7 +62,7 @@ V idealizované elektrické větvi platí $(a-2)I=6$, kde $a$ je reálný parame
 \end{aligned}\]
 \par\textit{Fyzikální interpretace:} U běžného pasivního odporu požadujeme $a-2>0$, tedy $a>2$. Záporné matematické hodnoty odporu nelze automaticky vykládat jako běžný rezistor.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[title={Chemické rovnice jako soustavy bilancí -- CHE}]
+\begin{prikladReseniBox}[title={Příklad 7}]
 Doplňte nejmenší kladné celočíselné koeficienty $a,b,c$ do chemické rovnice $a\,\mathrm{CaO}+b\,\mathrm{H_2O}\rightarrow c\,\mathrm{Ca(OH)_2}$. Sestavte bilanci atomů Ca, O a H; vysvětlete, proč lze jeden koeficient zvolit.
 \tcblower
 \[\begin{aligned}
@@ -71,13 +71,13 @@ Doplňte nejmenší kladné celočíselné koeficienty $a,b,c$ do chemické rovn
 \par\textit{Poznámka:} Reakce je skutečná a exotermická; nejde o návod na praktické provádění.
 \end{prikladReseniBox}
 \blok{Samostatná práce -- volba podle zaměření třídy}
-\begin{zadaniReseniBox}[title={Vyber dva úkoly z různých oborů}]
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 Otevři přiloženou \textbf{sbírku 93} a vyber dva různé typy matematiky. Doporučené dvojice: \textbf{SOU-03 + ABN-02} (elektrotechnika a mechanika), \textbf{ROV-03 + NER-03} (ICT), nebo \textbf{ABS-05 + PAR-05} (doprava). Nejdřív sestav vlastní model, pak zkontroluj omezení a jednotky.
 \tcblower
 Postupy, mezivýsledky i odpovědi jsou v samostatném souboru \texttt{93\_SB\_AplikacniUlohy\_reseni.pdf}. Učitel vybere úlohy podle oboru konkrétní třídy. K hodnocení nestačí samotné číslo; žák musí popsat předpoklady modelu.
 \end{zadaniReseniBox}
 \blok{Domácí úkol}
-\begin{zadaniReseniBox}[title={Dobrovolné rozšíření -- sbírka 49 úloh}]
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
 Vyber si \textbf{alespoň dvě dobrovolné úlohy} z různých matematických kategorií a rozdílných oborů. Není nutné vyřešit vše; volitelně můžeš zkusit více oddílů. U každé uveď matematický model, výsledek s jednotkami a zkoušku.
 \tcblower
 Využij učitelský klíč. Cílem je argumentace, nikoli mechanické dosazování. Zvlášť sleduj, které modelové předpoklady by se v praxi musely ověřit.

@@ -36,7 +36,7 @@ Nyní obojí propojíme: \textbf{interval je množina reálných čísel}.
 Průnik proto znamená \uv{splň obě podmínky}, sjednocení \uv{splň alespoň jednu},
 rozdíl \uv{splň první, ale ne druhou}.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Množinové operace s intervaly}]
 Pro intervaly $A,B\subseteq\mathbb R$ platí stejné množinové definice:
 \[
 \begin{aligned}
@@ -51,7 +51,7 @@ Na tabuli nejprve nech žáky odhadnout, zda výsledek bude jeden interval,
 jediný bod, prázdná množina, nebo sjednocení více intervalů.}
 
 \blok{Průnik a sjednocení překrývajících se intervalů}
-\begin{prikladReseniBox}[title={P1: jedna osa, čtyři řádky}]
+\begin{prikladReseniBox}[title={Příklad 1}]
 Nechť $A=\langle-3;2)$ a $B=(0;5\rangle$. Urči $A\cap B$ a $A\cup B$.
 Vyznač oba vstupní intervaly i výsledky na číselné ose.
 \tcblower
@@ -78,7 +78,7 @@ oba vnější kraje patří alespoň do jedné množiny.
 $-3$, $0$, $2$ a $5$. Pouhé porovnání čtyř krajních čísel nestačí:
 rozhodují i otevřené či uzavřené konce.}
 
-\begin{zadaniReseniBox}[title={Volitelná diagnostika P1: příslušnost konkrétních čísel},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 Předcházející výsledek ověř pro čísla $-3,0,1,2,5$.
 Rozhodni, zda leží v $A$, $B$, v jejich průniku a ve sjednocení.
 \tcblower
@@ -97,7 +97,7 @@ Průnik vyžaduje dvě odpovědi \uv{ano}, sjednocení alespoň jednu.
 \end{zadaniReseniBox}
 
 \blok{Tři typy dotyku: bod, díra, navazující interval}
-\begin{prikladReseniBox}[title={P2: jediná změna závorky změní výsledek},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
 Porovnej následující tři dvojice. V každé urči průnik a sjednocení:
 \begin{enumerate}[label=\alph*)]
 \item $C=(-2;1\rangle$, $D=\langle1;4)$;
@@ -130,7 +130,7 @@ V a) je průnik jednoprvková množina $\{1\}$, nikoli samotné číslo $1$.
 \end{prikladReseniBox}
 
 \blok{Rozdíl: nezapomeň, že záleží na pořadí}
-\begin{prikladReseniBox}[title={P3: odebrání prostřední části}]
+\begin{prikladReseniBox}[title={Příklad 3}]
 Pro $A=\langle-2;4)$ a $B=(1;6\rangle$ vypočti oba rozdíly.
 \tcblower
 \begin{center}
@@ -150,7 +150,7 @@ Jednička zůstává v prvním rozdílu, protože není v $B$.
 Čtyřka patří do druhého rozdílu, protože není v $A$.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}[title={P3b: když odebereme vnitřní interval},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 4},breakable=false]
 Co zbude z $K=\langle-3;5\rangle$, odebereme-li $L=(0;2)$?
 \tcblower
 \[
@@ -164,12 +164,12 @@ Výsledkem rozdílu nemusí být jediný interval.
 $0$ a $2$ za vymazané body, přestože odebíraná množina je otevřená.}
 
 \blok{Doplněk v $\mathbb R$: co na ose zůstalo mimo interval?}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Doplněk intervalu}]
 \textbf{Doplněk intervalu} $I$ vzhledem k $\mathbb R$
 je $I'_{\mathbb R}=\mathbb R\setminus I$.
 Obecně závisí doplněk na zvolené základní množině.
 \end{definiceBox}
-\begin{prikladReseniBox}[title={P4: dvě neomezené části},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 5},breakable=false]
 Urči doplněk intervalu $I=(-1;3\rangle$ vzhledem k $\mathbb R$.
 \tcblower
 \begin{center}
@@ -194,7 +194,7 @@ podle tempa a tři samostatné položky S1. Nezkoušej během 45 minut
 vyčerpat celý dokument; ostatní příklady tvoří připravenou rezervu.}
 
 \blok{Samostatná práce: od obrázku ke správným závorkám}
-\begin{zadaniReseniBox}[title={S1: určuj $\cap$ a $\cup$, vždy nakresli osu}]
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item $A=(-\infty;2\rangle$, $B=(-1;4)$.
 \item $A=\langle0;3\rangle$, $B=(3;7\rangle$.
@@ -216,7 +216,7 @@ $0$ obsahuje pouze $B$.
 \end{enumerate}
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={S2: rozdíl a doplněk}]
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
 \begin{enumerate}[label=\alph*)]
 \item Pro $A=\langle-3;5\rangle$, $B=(0;2)$ vypočti $A\setminus B$.
 \item Urči doplněk $\langle2;6)$ v $\mathbb R$.
@@ -233,7 +233,7 @@ s $(-\infty;2)$ dává $\langle-1;1)$.
 \end{zadaniReseniBox}
 
 \blok{Volitelná rezerva: složitější případy a kontrola oboru}
-\begin{zadaniReseniBox}[title={R1: tři množiny a celá čísla}]
+\begin{zadaniReseniBox}[title={Rozšíření 2}]
 \begin{enumerate}[label=\alph*)]
 \item Pro $A=(-\infty;3)$, $B=\langle-1;5\rangle$, $C=(1;+\infty)$
 urči $(A\cap B)\cap C$ a $(A\cup B)\cap C$.
@@ -253,7 +253,7 @@ větší také do pravého.
 \end{enumerate}
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={R2: vzdálenost na ose -- bonus},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 3},breakable=false]
 Čísla vzdálená od $2$ nejvýše o $3$ tvoří množinu $M$.
 Zapiš $M$ intervalem a spočti $M\setminus(0;3)$.
 \tcblower
@@ -264,7 +264,7 @@ Bod $0$ i $3$ zůstávají, protože je nevyjímáme.
 \end{zadaniReseniBox}
 
 \blok{Domácí procvičování}
-\begin{zadaniReseniBox}[title={D1: postupné ztížení, 15--20 minut}]
+\begin{zadaniReseniBox}[title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
 \item Pro $A=(-4;2\rangle$, $B=\langle-1;6)$ určuj $A\cap B$, $A\cup B$, $A\setminus B$.
 \item Urči průnik a sjednocení intervalů $(-\infty;-1)$ a $(-1;+\infty)$.

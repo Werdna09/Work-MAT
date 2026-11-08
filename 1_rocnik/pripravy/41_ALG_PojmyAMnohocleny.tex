@@ -12,7 +12,7 @@
 
 Výrazy $3x+5$, $2a^2b$ nebo $\frac1x$ již umíme vyčíslit. Nyní přesněji pojmenujeme jejich části, rozlišíme jednočleny a mnohočleny a naučíme se určovat stupeň mnohočlenu.
 
-\begin{prikladReseniBox}[title={Úvodní společný příklad},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
 Pro $P(x)=3x^2-2x+5$ vypočítej $P(2)$. Která čísla násobí jednotlivé mocniny $x$? Který člen neobsahuje proměnnou?
 \tcblower
 $P(2)=3\cdot 2^2-2\cdot 2+5=13$. Členy jsou $3x^2$, $-2x$, $5$; jejich koeficienty jsou $3$, $-2$, $5$. Nejvyšší mocnina s nenulovým koeficientem je $x^2$.
@@ -22,21 +22,21 @@ $P(2)=3\cdot 2^2-2\cdot 2+5=13$. Členy jsou $3x^2$, $-2x$, $5$; jejich koeficie
 
 \blok{Základní pojmy a definice}
 
-\begin{definiceBox}[title={Definice: Algebraický výraz}]
+\begin{definiceBox}[title={Definice - Algebraický výraz}]
 \textbf{Algebraický výraz} je smysluplný matematický zápis vytvořený z čísel a proměnných pomocí konečného počtu algebraických operací (sčítání, odčítání, násobení, dělení, umocňování a odmocňování), případně závorek.
 \end{definiceBox}
 
-\begin{definiceBox}[title={Definice: Proměnná}]
+\begin{definiceBox}[title={Definice - Proměnná}]
 \textbf{Proměnná} je symbol, kterému lze přiřazovat hodnoty z určené číselné množiny; například $x\in\mathbb R$.
 \end{definiceBox}
 
-\begin{definiceBox}[title={Definice: Definiční obor výrazu}]
+\begin{definiceBox}[title={Definice - Definiční obor výrazu}]
 \textbf{Definiční obor výrazu} $V(x)$ je množina všech hodnot proměnné, pro které mají všechny operace ve výrazu smysl v uvažovaném číselném oboru. Značíme jej $D_V$.
 \end{definiceBox}
 
 Například pro $V(x)=\frac1x$ je $D_V=\mathbb R\setminus\{0\}$, zatímco pro $W(x)=\sqrt{x}$ je při práci v reálných číslech $D_W=\langle 0;+\infty)$.
 
-\begin{definiceBox}[title={Definice: Jednočlen}]
+\begin{definiceBox}[title={Definice - Jednočlen}]
 \textbf{Jednočlen (monom)} je výraz tvořený součinem reálného čísla a mocnin proměnných s nezápornými celočíselnými exponenty. Například pro dvě proměnné má tvar
 \[
 M=ax^m y^n,\qquad a\in\mathbb R,\quad m,n\in\mathbb N_0.
@@ -44,17 +44,17 @@ M=ax^m y^n,\qquad a\in\mathbb R,\quad m,n\in\mathbb N_0.
 Jednočlen neobsahuje součet ani rozdíl různých členů.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={Příklad: Jednočlen, nebo mnohočlen?},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
 Roztřiď výrazy $-ab$, $3x$, $\sqrt7$, $-5a^2b^3$, $3x+2$ a $x^2-1$.
 \tcblower
 Jednočleny: $-ab$, $3x$, $\sqrt7$, $-5a^2b^3$ (také konstanty jsou jednočleny). Výrazy $3x+2$ a $x^2-1$ obsahují součet či rozdíl více jednočlenů, jsou to mnohočleny, ale nikoli jednočleny.
 \end{prikladReseniBox}
 
-\begin{definiceBox}[title={Definice: Koeficient jednočlenu}]
+\begin{definiceBox}[title={Definice - Koeficient jednočlenu}]
 \textbf{Koeficient jednočlenu} je číselný činitel $a$ v součinu $M=ax^m y^n$. Například u $-ab$ je koeficient $-1$, u $3x$ je $3$.
 \end{definiceBox}
 
-\begin{definiceBox}[title={Definice: Stupeň jednočlenu}]
+\begin{definiceBox}[title={Definice - Stupeň jednočlenu}]
 \textbf{Stupeň nenulového jednočlenu} je součet exponentů všech jeho proměnných. Pro $M=ax^m y^n$, $a\ne0$, platí
 \[
 \deg M=m+n.
@@ -64,11 +64,11 @@ Nenulová konstanta má stupeň $0$.
 
 \poznamka{Vysvětli, že $ax^m y^n$ znamená násobení, nikoli sčítání. Například $-5a^2b^3$ je jediný jednočlen stupně $5$. Součet $3x+2$ už je dvojčlen. Stupeň nulového jednočlenu neurčujeme.}
 
-\begin{definiceBox}[title={Definice: Mnohočlen}]
+\begin{definiceBox}[title={Definice - Mnohočlen}]
 \textbf{Mnohočlen (polynom)} je konečný součet jednočlenů. Každý jednočlen je tedy také mnohočlenem, ale mnohočlen s více nenulovými členy není jednočlenem.
 \end{definiceBox}
 
-\begin{definiceBox}[title={Definice: Obecný tvar mnohočlenu jedné proměnné}]
+\begin{definiceBox}[title={Věta - Jednoznačný zápis mnohočlenu}]
 Každý \textbf{nenulový mnohočlen} v jedné proměnné $x$ lze jednoznačně zapsat ve tvaru
 \[
 P(x)=a_0+a_1x+a_2x^2+\dots+a_nx^n,
@@ -76,11 +76,11 @@ P(x)=a_0+a_1x+a_2x^2+\dots+a_nx^n,
 kde $a_0,a_1,\ldots,a_n\in\mathbb R$, $a_n\ne0$ a $n\in\mathbb N_0$.
 \end{definiceBox}
 
-\begin{definiceBox}[title={Definice: Člen mnohočlenu}]
+\begin{definiceBox}[title={Definice - Člen a koeficient mnohočlenu}]
 \textbf{Členem mnohočlenu} v zápisu $P(x)=\sum_{i=0}^{n}a_ix^i$ je jednočlen $a_ix^i$; číslo $a_i$ je \textbf{koeficient při mocnině} $x^i$. Číslo $a_0$ nazýváme \textbf{konstantním členem}.
 \end{definiceBox}
 
-\begin{definiceBox}[title={Definice: Stupeň mnohočlenu}]
+\begin{definiceBox}[title={Definice - Stupeň mnohočlenu}]
 \textbf{Stupeň nenulového mnohočlenu} $P(x)=a_0+a_1x+\cdots+a_nx^n$ s $a_n\ne0$ je číslo $n$; píšeme $\deg P=n$. U mnohočlenu s více proměnnými je stupeň největší stupeň jeho nenulového jednočlenu po sloučení stejných členů.
 \end{definiceBox}
 
@@ -90,13 +90,13 @@ Nulový mnohočlen $P(x)=0$ nemá v této přípravě definovaný stupeň. U ví
 
 \blok{Řešené příklady}
 
-\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 3},breakable=false]
 Urči členy, koeficienty a stupeň mnohočlenu $P(x)=3x^4-2x^2+7$.
 \tcblower
 Členy: $3x^4$, $-2x^2$, $7$; nenulové koeficienty: $a_4=3$, $a_2=-2$, $a_0=7$. Chybějící koeficienty jsou $a_3=a_1=0$. Platí $\deg P=4$.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 4},breakable=false]
 Urči stupeň mnohočlenu $Q(x,y)=2x^3y^2-xy+1$.
 \tcblower
 Stupně členů jsou $3+2=5$, $1+1=2$ a $0$. Proto $\deg Q=5$.
@@ -104,7 +104,7 @@ Stupně členů jsou $3+2=5$, $1+1=2$ a $0$. Proto $\deg Q=5$.
 
 \blok{Samostatné procvičení}
 
-\begin{zadaniReseniBox}[title={Procvičení},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Rozhodni, zda $x^2+\frac1x$ a $x^2-\frac34x+\sqrt3$ jsou mnohočleny.
 \item Urči koeficient a stupeň jednočlenu $-5a^2b^3$.
@@ -120,7 +120,7 @@ Stupně členů jsou $3+2=5$, $1+1=2$ a $0$. Proto $\deg Q=5$.
 
 \blok{Navazující procvičování ve třídě}
 
-\begin{zadaniReseniBox}[title={Základ: rozpoznání a vyčíslení},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 2},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Pro $P(x)=-x^3+\frac12x^2-4$ urči členy, koeficienty a stupeň; vypočítej $P(0)$ a $P(-2)$.
 \item Urči koeficient a stupeň $3a^2b^4$, $-xy^3$, $\frac12x$ a $-8$.
@@ -134,7 +134,7 @@ Stupně členů jsou $3+2=5$, $1+1=2$ a $0$. Proto $\deg Q=5$.
 \end{enumerate}
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={Rezerva: zápis může klamat},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Urči stupeň $3x^4-3x^4+2$ a $2x^2y^3+xy^5$.
 \item Obdélník má délky stran $x+2$ a $3$ centimetry, $x>0$. Zapiš jeho obsah a vypočítej jej pro $x=4$.
@@ -150,7 +150,7 @@ Stupně členů jsou $3+2=5$, $1+1=2$ a $0$. Proto $\deg Q=5$.
 
 \blok{Domácí procvičení}
 
-\begin{zadaniReseniBox}[title={Domácí úlohy},breakable=false]
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item U $Q(x)=2x^3-x+5$ urči členy, koeficienty, stupeň a $Q(-1)$.
 \item Urči stupeň $-4a^3b^2+2ab^4+1$.

@@ -8,20 +8,20 @@
 \poznamka{Jádro 45 minut: analogie s písemným dělením čísel 5 min, algoritmus na tabuli 12 min, společný příklad 10 min, samostatná práce 13 min, kontrola 5 min. Dělení se zbytkem je podle tempa závěr nebo rezerva.}
 \blok{Písemné dělení čísel a mnohočlenů má stejnou logiku}
 Při dělení odhadujeme nejvyšší řád, zpětně násobíme a odečítáme. U mnohočlenů místo nejvyšších cifer sledujeme \textbf{členy s nejvyšší mocninou}. Oba mnohočleny nejdřív seřadíme podle klesajících exponentů.
-\begin{zadaniBox}[title={Podíl a zbytek při dělení mnohočlenů}]
+\begin{zadaniBox}[title={Věta - Dělení mnohočlenů se zbytkem}]
 Pro mnohočleny $A(x)$ a $B(x)\ne0$ existují jednoznačné mnohočleny $Q(x)$ (\textbf{podíl}) a $R(x)$ (\textbf{zbytek}), pro které
 \[A(x)=B(x)Q(x)+R(x),\]
 přičemž $R=0$ nebo $\deg R<\deg B$. Pro podíl výrazů $A(x)/B(x)$ navíc požadujeme $B(x)\ne0$.
 \end{zadaniBox}
 \blok{Algoritmus: vyděl, vynásob, odečti, pokračuj}
-\begin{prikladReseniBox}[breakable=false,title={Příklad 1: dělení beze zbytku}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1}]
 Vyděl $(x^2+5x+6):(x+2)$.
 \tcblower
 Nejvyšší členy: $x^2:x=x$. Zpětné násobení a odečtení:
 \[(x^2+5x+6)-(x^2+2x)=3x+6.\]
 Dále $3x:x=3$ a $(3x+6)-3(x+2)=0$. Proto $Q(x)=x+3$, $R(x)=0$. Zkouška: $(x+2)(x+3)=x^2+5x+6$. Podíl výrazů platí pro $x\ne-2$.
 \end{prikladReseniBox}
-\begin{prikladReseniBox}[breakable=false,title={Příklad 2: záporné koeficienty}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2}]
 Vyděl $(2x^3-x^2-13x+5):(2x+5)$.
 \tcblower
 \begin{align*}
@@ -35,7 +35,7 @@ Po posledním odečtení dostaneme $0$. Podíl $Q(x)=x^2-3x+1$, zbytek $R=0$. Po
 \end{prikladReseniBox}
 \poznamka{Dbej na znak mínus před \emph{celým} zpětně násobeným mnohočlenem. Než žák začne další krok, musí správně sečíst zbývající členy. Zkoušku dělej vždy součinem dělitele a podílu, případně přičtením zbytku.}
 \blok{Samostatná práce — základ}
-\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce: urči podíl a zbytek}]
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item $(x^2+7x+10):(x+5)$;
 \item $(x^2-4):(x-2)$;
@@ -51,7 +51,7 @@ Po posledním odečtení dostaneme $0$. Podíl $Q(x)=x^2-3x+1$, zbytek $R=0$. Po
 \end{enumerate}
 \end{zadaniReseniBox}
 \blok{Zbytek, který nezmizí}
-\begin{prikladReseniBox}[breakable=false,title={Příklad 3: dělení se zbytkem}]
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3}]
 Vyděl $(x^2+2x+3):(x+1)$.
 \tcblower
 $x^2:x=x$; po odečtení $x(x+1)$ zůstává $x+3$. Další člen podílu je $1$; po odečtení $(x+1)$ zůstává $2$. Proto $Q=x+1$, $R=2$ a
@@ -59,13 +59,13 @@ $x^2:x=x$; po odečtení $x(x+1)$ zůstává $x+3$. Další člen podílu je $1$
 Podíl výrazů lze zapsat $x+1+\frac2{x+1}$ pro $x\ne-1$.
 \end{prikladReseniBox}
 \blok{Volitelná rezerva}
-\begin{zadaniReseniBox}[breakable=false,title={Rozšíření: chybějící mocnina}]
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření 1}]
 Vyděl $(x^3+2x+1):(x+1)$. Nezapomeň na nulový koeficient u $x^2$.
 \tcblower
 $Q=x^2-x+3$, $R=-2$; zkouška $(x+1)(x^2-x+3)-2=x^3+2x+1$.
 \end{zadaniReseniBox}
 \blok{Domácí procvičení}
-\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol: podíl, zbytek a zkouška}]
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
 \item $(x^2+3x+2):(x+1)$;
 \item $(x^2+1):(x-1)$;

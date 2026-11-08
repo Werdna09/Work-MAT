@@ -9,14 +9,14 @@
 \blok{Proč se seznamujeme s maticemi?}
 V hodinách 79--85 jsme řešili soustavy rovnic. Při eliminaci jsme stále opisovali proměnné, ačkoliv hlavní práci vykonáváme s \emph{koeficienty} a pravými stranami. Matice je úsporný způsob, jak tato čísla uspořádat a přehledně zaznamenávat výpočet. \textbf{Dnes nejde o povinné učivo; cílem je pochopit zápis a princip.}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Matice}]
 \textbf{Matice} je obdélníková tabulka čísel (nebo obecně prvků) uspořádaných do řádků a sloupců. Matice s $m$ řádky a $n$ sloupci má rozměr $m\times n$. Její prvek na $i$-tém řádku a $j$-tém sloupci zapisujeme $a_{ij}$.
 \[
 A=\begin{pmatrix}1&2&3\\4&5&6\end{pmatrix},\qquad A\text{ má rozměr }2\times3,\quad a_{23}=6.
 \]
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Rozšířená matice soustavy}]
 \textbf{Rozšířená matice soustavy} je tabulka koeficientů rovnic a jejich pravých stran; ty se obvykle oddělují svislou čarou. Každému řádku odpovídá jedna rovnice, každému sloupci koeficientů jedna neznámá.
 \[
 \begin{cases}2x+y=7,\\x-y=2\end{cases}
@@ -37,7 +37,7 @@ Při Gaussově eliminaci používáme tytéž ekvivalentní úpravy jako u soust
 Cíl: získat pod hlavní diagonálou nuly (\emph{stupňovitý tvar}); potom použijeme \textbf{zpětné dosazování}. Nuly i pravé strany musí vznikat úpravou \emph{celého} řádku.
 
 \blok{Společně řešený příklad I: dvě neznámé}
-\begin{prikladReseniBox}[title={Sčítací metoda bez opakování písmen}]
+\begin{prikladReseniBox}[title={Příklad 1}]
 Vyřešte pomocí rozšířené matice soustavu
 \[
 \begin{cases}2x+y=7,\\x-y=2.\end{cases}
@@ -59,7 +59,7 @@ Zkouška v původních rovnicích: $2\cdot3+1=7$ a $3-1=2$.
 \end{prikladReseniBox}
 
 \blok{Společně řešený příklad II: tři neznámé}
-\begin{prikladReseniBox}[title={Zpětné dosazení ze stupňovitého tvaru}]
+\begin{prikladReseniBox}[title={Příklad 2}]
 Převeďte na rozšířenou matici a vyřešte soustavu
 \[
 \begin{cases}x+y+z=6,\\2x+y+z=8,\\x+2y+z=9.\end{cases}
@@ -82,7 +82,7 @@ K&=\{[2;3;1]\}.
 \end{prikladReseniBox}
 
 \blok{Samostatné procvičování}
-\begin{zadaniReseniBox}[title={Úloha 1 – přepis a eliminace}]
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 Zapište rozšířenou matici a vyřešte $\begin{cases}x+2y=7,\\2x-y=4.\end{cases}$
 \tcblower
 \[
@@ -95,7 +95,7 @@ y&=2,\\x&=7-2\cdot2=3,\\K&=\{[3;2]\}.
 \end{aligned}\]
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={Úloha 2 – co znamená nulový řádek?}]
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
 Rozhodněte, kolik řešení má soustava $\begin{cases}x+y=2,\\2x+2y=5.\end{cases}$
 \tcblower
 \[
@@ -108,7 +108,7 @@ Druhý řádek znamená nepravdivou rovnost $0=1$:
 \end{zadaniReseniBox}
 
 \blok{Volitelná rezerva: když vyjde $0=0$}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
 Rozhodněte o počtu řešení $\begin{cases}x+y=2,\\2x+2y=4.\end{cases}$
 \tcblower
 \[
@@ -124,7 +124,7 @@ K&=\{[2-t;t]\mid t\in\mathbb R\}.
 \end{zadaniReseniBox}
 
 \blok{Domácí úkol – dobrovolný}
-\begin{zadaniReseniBox}[title={Domácí příprava}]
+\begin{zadaniReseniBox}[title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
 \item Zapište rozšířenou matici soustavy $\begin{cases}x+y=5,\\2x-y=4.\end{cases}$
 \item Vyřešte pomocí matice $\begin{cases}x+2y=8,\\3x-y=3.\end{cases}$

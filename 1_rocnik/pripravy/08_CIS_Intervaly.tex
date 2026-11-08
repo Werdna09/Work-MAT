@@ -26,7 +26,7 @@ Součástka smí mít délku alespoň $9{,}8$ mm a nejvýše $10{,}2$ mm.
 Vyhovují krajní délky i všechna reálná čísla mezi nimi, nejen desetinná
 čísla s jedním místem. Nekonečný výčet nahradíme zápisem intervalu.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Interval}]
 \textbf{Interval} je souvislá část číselné osy: spolu s libovolnými dvěma
 svými čísly obsahuje všechna reálná čísla mezi nimi.
 Zahrnutí krajních bodů vyznačujeme závorkami.
@@ -35,17 +35,17 @@ Zahrnutí krajních bodů vyznačujeme závorkami.
 V následujících definicích předpokládáme $a,b\in\mathbb R$ a $a<b$.
 V zápisu oddělujeme meze středníkem, aby se nepletl s desetinnou čárkou.
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Uzavřený interval}]
 \textbf{Uzavřený interval} $\langle a;b\rangle$ obsahuje právě všechna
 reálná $x$, pro která $a\le x\le b$. Oba krajní body do něj patří.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Otevřený interval}]
 \textbf{Otevřený interval} $(a;b)$ obsahuje právě všechna reálná $x$,
 pro která $a<x<b$. Ani jeden krajní bod do něj nepatří.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Polouzavřený interval}]
 \textbf{Polouzavřený interval} zahrnuje právě jeden krajní bod:
 $\langle a;b)$ znamená $a\le x<b$, zatímco $(a;b\rangle$ znamená $a<x\le b$.
 \end{definiceBox}
@@ -53,7 +53,7 @@ $\langle a;b)$ znamená $a\le x<b$, zatímco $(a;b\rangle$ znamená $a<x\le b$.
 Na ose značíme zahrnutý kraj plným kolečkem a nezahrnutý prázdným.
 Úsek mezi nimi zvýrazníme spojitou čarou, protože zahrnuje i necelá čísla.
 
-\begin{prikladReseniBox}[title={P1: nejprve rozhodni o krajích},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
 Zapiš intervalem a nakresli všechna reálná čísla $x$ s vlastností $-2\le x<3$.
 Rozhodni, zda vyhovují čísla $-2$, $0{,}5$ a $3$.
 \tcblower
@@ -73,7 +73,7 @@ $-2\le-2<3$ platí, ale $-2\le3<3$ neplatí.
 
 \newpage
 \blok{Když je omezení jen na jedné straně}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Neomezený interval}]
 \textbf{Neomezený interval} pokračuje alespoň jedním směrem bez konce.
 Například $(a;+\infty)$ znamená $x>a$, $\langle a;+\infty)$ znamená $x\ge a$,
 $(-\infty;b)$ znamená $x<b$ a $(-\infty;b\rangle$ znamená $x\le b$.
@@ -109,7 +109,7 @@ celou místo samostatného kreslení; vyber vždy dva rozdílné typy a nech
 žáky zdůvodnit zahrnutí krajů. Tato práce přidává k původnímu základu
 asi 7–10 minut. Operace s intervaly patří až do hodiny 18.}
 
-\begin{prikladReseniBox}[title={P2: převod oběma směry},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
 a) Zapiš $x\le-1$ intervalem a zakresli na osu.
 b) Přečti $(\frac12;+\infty)$ jako nerovnost.
 c) Zapiš přípustné délky součástky z úvodu.
@@ -127,7 +127,7 @@ b) $x>\frac12$, $x\in\mathbb R$; polovina nepatří.
 c) $d\in\langle9{,}8;10{,}2\rangle$ v milimetrech.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}[title={P3: obor nelze vynechat},breakable=false]
+\begin{prikladReseniBox}[title={Příklad 3},breakable=false]
 Je zápis $\langle-1;2\rangle$ přesným popisem \emph{celých} čísel mezi
 $-1$ a $2$ včetně? Jaká celá čísla dané podmínce vyhovují?
 \tcblower
@@ -137,7 +137,7 @@ Interval vždy označuje všechna \emph{reálná} čísla mezi mezemi.
 \end{prikladReseniBox}
 
 \blok{Samostatná práce}
-\begin{zadaniReseniBox}[title={S1: zápis a obrázek},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 1},breakable=false]
 U každé položky zapiš druhou podobu (interval nebo nerovnost)
 a nakresli osu s vyznačenými kraji. Všude je $x\in\mathbb R$.
 \begin{enumerate}[label=\alph*)]
@@ -154,7 +154,7 @@ e) $-3<x<-1$: oba kraje prázdné.
 f) $2\le x\le5$: oba kraje plné.
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={S2: zkontroluj význam},breakable=false]
+\begin{zadaniReseniBox}[title={Samostatná práce 2},breakable=false]
 a) Která z čísel $-2,-\frac32,0,2$ patří do $(-2;2\rangle$?
 b) Oprav zápis $\langle-\infty;4\rangle$ pro $x\le4$.
 c) Žák zapsal $2<x\le5$ jako $\langle2;5)$. Najdi obě chyby.
@@ -169,7 +169,7 @@ krajního čísla do nerovnosti. Sjednocení ani průnik intervalů dnes nezavá
 
 \newpage
 \blok{Rezerva}
-\begin{zadaniReseniBox}[title={R1: volitelně, 10–15 minut},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Vypiš všechna celá čísla ležící v $(-\frac52;\frac72\rangle$.
 Kolik jich je? Proč to není úplný výčet prvků intervalu?
@@ -189,7 +189,7 @@ d) $x<-\frac12$; ano, $-\frac23=-\frac46<-\frac36=-\frac12$.
 \end{zadaniReseniBox}
 
 \blok{Domácí procvičování}
-\begin{zadaniReseniBox}[title={D1: přibližně 15–20 minut},breakable=false]
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
 \begin{enumerate}[label=\arabic*)]
 \item Zapiš intervalem a zakresli: $-5\le x<0$ a $1<x<4$, $x\in\mathbb R$.
 \item Zapiš intervalem a zakresli: $x\ge\frac32$ a $x<-1$, $x\in\mathbb R$.

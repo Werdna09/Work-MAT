@@ -29,7 +29,7 @@
 Připomeň zápis $\neg p$, $p\land q$, $p\lor q$, $p\Rightarrow q$ a $p\Leftrightarrow q$.
 Rozliš \emph{výrok} a jeho \emph{pravdivostní hodnotu}.
 
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 1}]
 Nechť $p$: \vyrok{Číslo 8 je sudé.} a $q$: \vyrok{Číslo 8 je prvočíslo.}
 Rozhodni o pravdivosti výroků $p\land q$, $p\lor q$ a $\neg q$.
 \tcblower
@@ -41,7 +41,7 @@ Platí $p=1$, $q=0$. Proto
 \poznamka{Nejdřív vyžaduj zdůvodnění slovy. Pro disjunkci platí matematické \uv{nebo}: stačí aspoň jedna pravdivá část.}
 
 \blok{2. Co určuje pravdivostní tabulka}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Pravdivostní tabulka}]
 \textbf{Pravdivostní tabulka} přehledně zachycuje pravdivostní hodnotu složeného výroku pro všechny možné kombinace pravdivostních hodnot jeho jednotlivých částí.
 \end{definiceBox}
 
@@ -67,23 +67,23 @@ $p$ & $q$ & $\neg p$ & $p\land q$ & $p\lor q$ & $p\Rightarrow q$ & $p\Leftrighta
 \poznamka{Nechej žáky nejprve vyjmenovat všechny dvojice hodnot. Uspořádání řádků je jen systematická pomůcka, nikoli další matematické pravidlo.}
 
 \blok{3. Kdy je složený výrok pravdivý?}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Negace výroku}]
 \textbf{Negace} $\neg p$ má vždy opačnou pravdivostní hodnotu než výrok $p$.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Konjunkce}]
 \textbf{Konjunkce} $p\land q$ je pravdivá právě tehdy, když jsou pravdivé \emph{oba} výroky.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Disjunkce}]
 \textbf{Disjunkce} $p\lor q$ je pravdivá právě tehdy, když je pravdivý \emph{alespoň jeden} z výroků.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Implikace}]
 \textbf{Implikace} $p\Rightarrow q$ je nepravdivá pouze tehdy, když $p$ je pravdivý a $q$ nepravdivý.
 \end{definiceBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Ekvivalence}]
 \textbf{Ekvivalence} $p\Leftrightarrow q$ je pravdivá právě tehdy, když mají $p$ a $q$ stejnou pravdivostní hodnotu.
 \end{definiceBox}
 
@@ -94,7 +94,7 @@ Podmínku \uv{jestliže $p$, pak $q$} poruší právě situace, kdy $p$
 nastane a $q$ nenastane. Pokud $p$ neplatí, tato podmínka o $q$
 nic dalšího nepožaduje; neznamená to, že samotné $q$ musí být pravdivé.
 
-\begin{prikladReseniBox}[title={Implikace a její obrácení}]
+\begin{prikladReseniBox}[title={Příklad 2}]
 Pro celá čísla posuď tvrzení \uv{Je-li číslo dělitelné čtyřmi, je sudé}
 a jeho obrácení. Co by požadovala ekvivalence?
 \tcblower
@@ -105,14 +105,14 @@ obou směrů. Obrácení není negace: původní tvrzení by vyvrátilo
 číslo dělitelné čtyřmi, které by nebylo sudé.
 \end{prikladReseniBox}
 
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
 Posuď pravdivost věty \uv{Jestliže je 12 liché číslo, pak je 12 dělitelné třemi.}
 \tcblower
 Předpoklad $p$: \uv{12 je liché} má hodnotu $0$; závěr $q$: \uv{12 je dělitelné třemi} má hodnotu $1$. Implikace $p\Rightarrow q$ má tedy hodnotu $1$.
 \end{prikladReseniBox}
 
 \blok{4. Výpočet pravdivostní hodnoty formule}
-\begin{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
 Sestav pravdivostní tabulku formule $A=(p\land\neg q)\lor q$.
 \tcblower
 Nejdříve spočítej $\neg q$, potom $p\land\neg q$ a nakonec disjunkci s $q$.
@@ -131,7 +131,7 @@ $p$ & $q$ & $\neg q$ & $p\land\neg q$ & $A$\\
 \end{prikladReseniBox}
 \poznamka{Nech postupně doplňovat jednotlivé sloupce. Je užitečné zvýraznit poslední sloupec jako výsledek celé formule.}
 
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 Doplň pravdivostní tabulku formule $B=(p\lor q)\Rightarrow p$. Rozepiš nejprve hodnoty $p\lor q$.
 \tcblower
 \begin{center}
@@ -150,7 +150,7 @@ Implikace je nepravdivá jen ve třetím řádku ($1\Rightarrow0$).
 \end{zadaniReseniBox}
 
 \blok{5. Samostatné procvičení}
-\begin{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
 \begin{enumerate}[label=\alph*)]
   \item Je-li $p=0$ a $q=1$, urči hodnoty $\neg p$, $p\Rightarrow q$ a $p\Leftrightarrow q$.
   \item Jsou-li $p=1$, $q=1$ a $r=0$, urči hodnotu $\neg p\lor(q\Rightarrow r)$.
@@ -171,7 +171,7 @@ Implikace je nepravdivá jen ve třetím řádku ($1\Rightarrow0$).
 
 \blok{Navazující procvičování ve třídě}
 
-\begin{zadaniReseniBox}[title={Rezerva: výrok a jeho obrácení},breakable=false]
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Pro všechny čtyři dvojice hodnot $p,q$ porovnej $p\Rightarrow q$ a $q\Rightarrow p$. Jsou vždy stejné?
 \item Nechť $p=0$, $q=0$. Urči $p\lor q$, $\neg(p\lor q)$ a $\neg p\lor q$.
@@ -188,7 +188,7 @@ Implikace je nepravdivá jen ve třetím řádku ($1\Rightarrow0$).
 
 \blok{Domácí procvičení}
 
-\begin{zadaniReseniBox}[title={Domácí pravdivostní kontrola},breakable=false]
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
 \begin{enumerate}[label=\alph*)]
 \item Sestav tabulku $\neg p\lor q$ a porovnej ji s $p\Rightarrow q$.
 \item Sestav tabulku $(p\land q)\Rightarrow q$.

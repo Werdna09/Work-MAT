@@ -35,7 +35,7 @@ ve výrokové logice pomocí spojek $\land$, $\lor$ a negace.
 shrnutí a organizace 3 min. Vyber jen úlohy označené \uv{jádro}.}
 
 \blok{1. Podmnožina: jedna množina je obsažena ve druhé}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Podmnožina}]
 Množina $A$ je \textbf{podmnožinou} množiny $B$, jestliže
 \textbf{každý} prvek $A$ patří také do $B$.
 Zapisujeme $A\subseteq B$, formálně
@@ -44,12 +44,12 @@ A\subseteq B\quad\Longleftrightarrow\quad
 \forall x\,(x\in A\Rightarrow x\in B).
 \]
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Vlastní podmnožina}]
 Množina $A$ je \textbf{vlastní podmnožinou} $B$, pokud
 $A\subseteq B$ a zároveň $A\ne B$. Značíme $A\subsetneq B$.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={P1 — jádro: porovnání množin}]
+\begin{prikladReseniBox}[title={Příklad 1}]
 Nechť $A=\{1,2,4,6,9\}$, $B=\{2,3,6,8\}$ a $C=\{2,6\}$.
 Rozhodni, zda $C\subseteq A$, $C\subseteq B$, $A\subseteq B$.
 Je některé zahrnutí vlastní?
@@ -66,14 +66,14 @@ $\varnothing\subseteq A$ pro libovolné $A$. Zdůrazni rozdíl $2\in A$
 a $\{2\}\subseteq A$. Pokud se žáci zaseknou, odlož vlastní podmnožinu do rezervy.}
 
 \blok{2. Průnik a sjednocení: společné versus všechny vybrané prvky}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Průnik množin}]
 \textbf{Průnik množin} $A$ a $B$ tvoří právě ty prvky, které
 patří \textbf{současně do obou} množin:
 \[
 A\cap B=\{x\mid x\in A\land x\in B\}.
 \]
 \end{definiceBox}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Sjednocení množin}]
 \textbf{Sjednocení množin} $A$ a $B$ tvoří právě ty prvky,
 které patří \textbf{alespoň do jedné} z množin:
 \[
@@ -82,7 +82,7 @@ A\cup B=\{x\mid x\in A\lor x\in B\}.
 Slovo \uv{nebo} znamená i možnost, že prvek patří do obou množin.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={P2 — jádro: dvě operace nad stejnými množinami}]
+\begin{prikladReseniBox}[title={Příklad 2}]
 Pro $A=\{1,2,4,6,9\}$ a $B=\{2,3,6,8\}$ vypočti
 $A\cap B$ a $A\cup B$. Jaký význam má prvek $2$?
 \tcblower
@@ -94,7 +94,7 @@ Prvek $2$ splňuje obě podmínky, proto je i v průniku i ve sjednocení;
 ve sjednocení se nepíše dvakrát.
 \end{prikladReseniBox}
 
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Disjunktní množiny}]
 Dvě množiny jsou \textbf{disjunktní}, jestliže nemají žádný
 společný prvek, tedy $A\cap B=\varnothing$.
 \end{definiceBox}
@@ -103,7 +103,7 @@ Ano. Jejich sjednocením je $\mathbb Z$. Není třeba zavádět Vennovy diagramy
 ty přijdou podrobně v hodině 14.}
 
 \blok{3. Rozdíl: z první množiny vybereme, co není ve druhé}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Rozdíl množin}]
 \textbf{Rozdíl množin} $A\setminus B$ tvoří prvky, které
 patří do $A$, ale \textbf{nepatří do $B$}:
 \[
@@ -111,7 +111,7 @@ A\setminus B=\{x\mid x\in A\land x\notin B\}.
 \]
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={P3 — jádro: záleží na pořadí}]
+\begin{prikladReseniBox}[title={Příklad 3}]
 Pro $A=\{1,2,4,6,9\}$ a $B=\{2,3,6,8\}$ urči oba rozdíly.
 Rozhodni, zda obecně platí $A\setminus B=B\setminus A$.
 \tcblower
@@ -121,7 +121,7 @@ Výsledky se liší; \textbf{rozdíl není komutativní}.
 \end{prikladReseniBox}
 
 \blok{4. Doplněk: co zbývá v základní množině}
-\begin{definiceBox}
+\begin{definiceBox}[title={Definice - Doplněk množiny}]
 Je-li $A\subseteq U$, nazýváme \textbf{doplňkem $A$ v základní množině $U$}
 právě množinu $U\setminus A$. Značíme ji například $A'_U$:
 \[
@@ -130,7 +130,7 @@ A'_U=U\setminus A=\{x\in U\mid x\notin A\}.
 Je-li $U$ předem jasné, lze psát stručně $A'$.
 \end{definiceBox}
 
-\begin{prikladReseniBox}[title={P4 — jádro: doplněk potřebuje základní množinu}]
+\begin{prikladReseniBox}[title={Příklad 4}]
 Uvažuj $U=\{1,2,3,4,5,6,7,8,9,10\}$ a
 $A=\{1,2,4,6,9\}$. Urči $A'_U$.
 Jak by se výsledek změnil pro $V=\{1,2,3,4,5,6,9\}$?
@@ -162,7 +162,7 @@ $A'_U$ & $\{3,5,7,8,10\}$\\
 \end{center}
 
 \blok{Samostatné procvičení — povinné jádro}
-\begin{zadaniReseniBox}[title={S1 — základní výpočty}]
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
 Pro $U=\{0,1,2,3,4,5,6,7,8\}$, $K=\{0,2,4,6,8\}$ a
 $L=\{1,2,3,4\}$ rozhodni:
 \begin{enumerate}[label=\alph*)]
@@ -197,7 +197,7 @@ Očekávané odpovědi: patří do obou; rozdíl závisí na pořadí; chybí z�
 množina $U$.
 
 \blok{Volitelné rozšíření: nečti značku mechanicky}
-\begin{zadaniReseniBox}[title={R1 — překlad z podmínky do výsledku}]
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
 Uvažuj $U=\{1,2,3,4,5,6,7,8,9\}$,
 $A=\{1,3,5,7,9\}$ (lichá čísla) a
 $B=\{3,6,9\}$ (násobky tří).
@@ -220,7 +220,7 @@ protože například $1\in A$, ale $1\notin A\cap B$.
 \end{enumerate}
 \end{zadaniReseniBox}
 
-\begin{zadaniReseniBox}[title={R2 — dvě závorkování, dva možné výsledky}]
+\begin{zadaniReseniBox}[title={Rozšíření 2}]
 Nechť $A=\{1,2,3\}$, $B=\{2,3,4\}$, $C=\{3,4,5\}$.
 Porovnej $(A\cup B)\cap C$ a $A\cup(B\cap C)$.
 \tcblower
@@ -232,7 +232,7 @@ mezi dvěma různými operacemi.
 žáci dosud potřebují upevnit samotné významy operací.}
 
 \blok{Domácí procvičení}
-\begin{zadaniReseniBox}[title={D1 — tři úlohy s kontrolou}]
+\begin{zadaniReseniBox}[title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
 \item Pro $A=\{-2,0,2,4\}$ a $B=\{0,1,4,6\}$ urči
 $A\cap B$, $A\cup B$, $A\setminus B$ a $B\setminus A$.
