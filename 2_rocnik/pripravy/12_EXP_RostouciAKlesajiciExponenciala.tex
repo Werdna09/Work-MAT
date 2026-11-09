@@ -23,26 +23,56 @@ $(\frac{1}{2})^{-2}=4>\frac{1}{2}=(\frac{1}{2})^1$. Záporný exponent převrac�
 \end{prikladReseniBox}
 \blok{Růst po stejných časových krocích}
 Exponenciála je vhodná pro veličiny, které se v každém kroku \emph{násobí stejným koeficientem}. Platí $a^{x+1}=a\cdot a^x$; proto má řada hodnot $100,110,121,133{,}1,\ldots$ stejný procentní, nikoli stejný číselný přírůstek.
-\begin{zadaniBox}[title={Věta - Násobný koeficient změny}]
-Pro $f(x)=a^x$ platí $f(x+1)=a f(x)$. Pro model $N(n)=N_0a^n$ se při zvýšení $n$ o jedna hodnota násobí číslem $a$. Základ $1{,}08$ tedy odpovídá růstu o $8\,\%$ za krok, základ $0{,}92$ poklesu o $8\,\%$.
+\begin{zadaniBox}[title={Věta - Násobný koeficient exponenciální funkce}]
+Je-li $f(x)=a^x$, kde $a>0$, $a\ne1$, potom pro všechna $x,h\in\mathbb R$ platí
+\[ f(x+h)=a^h f(x). \]
+Stejný přírůstek argumentu $h$ tedy vždy znamená stejný \emph{násobný koeficient} $a^h$.
 \end{zadaniBox}
 \begin{prikladReseniBox}[title={Příklad 3}]
-Množství materiálu je $200$ kusů a každý den se zvýší o $10\,\%$. Zapiš model a spočítej stav po dvou dnech.
+Množství materiálu je $200$ kusů a každý den se zvýší o $10\,\%$. Sestav předpis a spočti stav po dvou dnech.
 \tcblower
-$N(n)=200\cdot 1{,}1^n$. Po dvou dnech je $N(2)=200\cdot1{,}21=242$ kusů. Přičíst dvakrát 20 kusů by bylo chybné: druhých $10\,\%$ se počítá už z 220.
+$N(n)=200\cdot1{,}1^n$; $N(2)=200\cdot1{,}21=242$ kusů. Není správné přičíst dvakrát 20 kusů, protože druhých $10\,\%$ se počítá již z 220.
 \end{prikladReseniBox}
-\poznamka{Zkus nechat žáky navrhnout model pro pokles a upozorni, že $a=0{,}9$ neznamená násobení „mínus deseti procenty“, ale zachování 90 procent předchozí hodnoty.}
-\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{prikladReseniBox}[title={Příklad 4}]
+Základní funkce $f(x)=\left(\frac{4}{5}\right)^x$:
 \begin{enumerate}[label=\alph*)]
-\item Porovnej $3^{-1}$ a $3^{-2}$; $(\frac{1}{3})^{-1}$ a $(\frac{1}{3})^{-2}$.
-\item U $f(x)=(0{,}8)^x$ urči $f(0)$, $f(2)$, monotónnost a obor hodnot.
-\item Počáteční hodnota 500 klesá každý krok o $20\,\%$. Urči hodnotu po dvou krocích.
+\item spočti poměr $\frac{f(x+2)}{f(x)}$;
+\item řekni, jaké procento původní hodnoty zůstane za dva kroky;
+\item vysvětli, zda jde o stále stejný absolutní úbytek.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $3^{-1}=\frac{1}{3}>\frac{1}{9}=3^{-2}$; $(\frac{1}{3})^{-1}=3<9=(\frac{1}{3})^{-2}$.
-\item $f(0)=1$, $f(2)=0{,}64$, klesá, $H(f)=(0;+\infty)$.
-\item $500\cdot0{,}8^2=320$.
+\item $\frac{f(x+2)}{f(x)}=\left(\frac{4}{5}\right)^2=\frac{16}{25}=0{,}64$.
+\item Zůstane $64\,\%$, tedy ubyde $36\,\%$.
+\item Ne; úbytek závisí na aktuální hodnotě funkce.
+\end{enumerate}
+\end{prikladReseniBox}
+\poznamka{U poklesu pozor na význam základu: $a=0{,}9$ znamená, že zůstává $90\,\%$ předchozí hodnoty, nikoli že se přičítá stále stejné záporné číslo.}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item Porovnej $3^{-1}$ a $3^{-2}$.
+\item Porovnej $\left(\frac{1}{3}\right)^{-1}$ a $\left(\frac{1}{3}\right)^{-2}$.
+\item Porovnej $2^{1{,}6}$ a $2^{1{,}9}$.
+\item Porovnej $\left(\frac{3}{4}\right)^{1{,}6}$ a $\left(\frac{3}{4}\right)^{1{,}9}$.
+\item U $f(x)=\left(\frac{4}{5}\right)^x$ spočti $f(0)$, $f(2)$ a urči obor hodnot.
+\item U funkce $g(x)=3^x$ vypočti $\frac{g(x+3)}{g(x)}$.
+\item Počátečních 500 kusů klesá o $20\,\%$ v každém kroku. Kolik zbude po dvou krocích?
+\item Populace 40 jedinců se v každém kroku zdvojnásobí. Sestav model a urči stav po třech krocích.
+\item Předpis $N(n)=600\cdot0{,}95^n$: rozhodni, zda jde o růst, či pokles a o kolik procent za krok.
+\item Model $N(n)=70\cdot1{,}2^n$: spočti $N(0)$ a $N(2)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{1}{3}>\frac{1}{9}$.
+\item $3<9$.
+\item $2^{1{,}6}<2^{1{,}9}$.
+\item $\left(\frac{3}{4}\right)^{1{,}6}>\left(\frac{3}{4}\right)^{1{,}9}$.
+\item $f(0)=1$, $f(2)=\frac{16}{25}$, $H(f)=(0;+\infty)$.
+\item $3^3=27$.
+\item $500\cdot\left(\frac{4}{5}\right)^2=320$.
+\item $N(n)=40\cdot2^n$, tedy $N(3)=320$.
+\item Klesá o $5\,\%$ za krok.
+\item $N(0)=70$, $N(2)=100{,}8$.
 \end{enumerate}
 \end{zadaniReseniBox}
 \begin{zadaniReseniBox}[title={Rozšíření 1}]
@@ -57,15 +87,30 @@ Základ musí být kladný a různý od jedné. Nerovnice $\frac{p+2}{p-1}>0$ pl
 \end{zadaniReseniBox}
 \begin{zadaniReseniBox}[title={Domácí úkol}]
 \begin{enumerate}[label=\alph*)]
-\item Porovnej $(0{,}7)^3$ a $(0{,}7)^4$ bez kalkulačky.
-\item Těleso ztrácí každou hodinu $5\,\%$ hmotnosti. Jaká část původní hmotnosti zbude po třech hodinách?
-\item Pro $a=1{,}2$ spočti poměr $\frac{a^{x+1}}{a^x}$ pro libovolné $x$.
+\item Porovnej $\left(\frac{7}{10}\right)^3$ a $\left(\frac{7}{10}\right)^4$.
+\item Porovnej $4^{-\frac{1}{3}}$ a $4^{\frac{1}{3}}$.
+\item Vypočti $\frac{3^{x+2}}{3^x}$.
+\item Vypočti $\frac{\left(\frac{1}{2}\right)^{x+3}}{\left(\frac{1}{2}\right)^x}$.
+\item Klesá-li hmotnost každou hodinu o $5\,\%$, jaká část zbude po třech hodinách?
+\item Stav 250 kusů roste o $12\,\%$ za krok. Sestav předpis a určete stav po dvou krocích.
+\item Sestav funkci pro počáteční hodnotu 800 a pokles o $15\,\%$ za krok.
+\item Pro $f(x)=\left(\frac{3}{2}\right)^x$ urči, jak se změní hodnota při zvýšení $x$ o dvě.
+\item Vysvětli, proč řada $100,110,120,130$ nepředstavuje růst o $10\,\%$ za každý krok.
+\item Načrtni ve stejné soustavě grafy $y=2^x$ a $y=\left(\frac{1}{2}\right)^x$; označ monotónnost a průsečík s osou $y$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $(0{,}7)^3>(0{,}7)^4$.
-\item $0{,}95^3=0{,}857375$, tedy asi $85{,}74\,\%$.
-\item Poměr je vždy $a=1{,}2$.
+\item První je větší: klesající funkce.
+\item $4^{-\frac{1}{3}}<4^{\frac{1}{3}}$; funkce se základem 4 roste.
+\item $9$.
+\item $\frac{1}{8}$.
+\item $0{,}95^3=0{,}857375$, tedy $85{,}7375\,\%$.
+\item $N(n)=250\cdot1{,}12^n$; $N(2)=313{,}6$.
+\item $N(n)=800\cdot0{,}85^n$.
+\item Vynásobí se $\left(\frac{3}{2}\right)^2=\frac{9}{4}$.
+\item Absolutní přírůstek je stálých 10, zatímco procentní přírůstek se mění.
+\item Rostoucí $2^x$, klesající $\left(\frac{1}{2}\right)^x$, obě procházejí $[0;1]$.
 \end{enumerate}
 \end{zadaniReseniBox}
+\poznamka{Domácí úkol odhadem 20--25 minut. Z grafů stačí přehledný náčrtek se čtyřmi vhodnými body.}
 \end{document}

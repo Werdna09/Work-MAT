@@ -1,93 +1,197 @@
-% Work-MAT | 2. rocnik | hodina 14
+% Work-MAT | 2. rocnik | hodina 14 | revize 2026-11-09
 \documentclass[11pt,a4paper]{article}
 \input{../../sablony/pripravy/priprava.sty}
-\nastavPripravu{2. ročník}{Exponenciální funkce}{14}{Sestavování předpisu exponenciální funkce}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Exponenciální funkce}{14}{Exponenciální funkce IV: sestavování předpisu a grafu}
 \begin{document}
-\poznamka{Navazuje na tvorbu grafu a jeho posuny. Dnešní otázka je obrácená: místo kreslení z předpisu budou žáci sestavovat předpis z několika údajů. Zatím nepoužívat logaritmy ani exponenciální rovnice s neznámým exponentem.}
-\blok{Z bodu zpět k předpisu}
-Základní exponenciální funkci popisuje předpis $f(x)=a^x$. Známe-li bod grafu s nenulovou první souřadnicí, můžeme hledat základ $a$. Při určování odmocniny vždy respektujeme podmínku $a>0$.
+\poznamka{Plynule navázat na hodinu 13: minule žáci znali předpis a kreslili graf. Dnes půjdeme oběma směry: z bodů, asymptoty a grafu sestavíme předpis a nový předpis rovnou ověříme náčrtkem. Zatím žádné logaritmy.}
+\blok{Co prozradí bod $[0;1]$}
+Základní exponenciální funkce $f(x)=a^x$ vždy prochází bodem $[0;1]$, protože $a^0=1$. Tento bod známe ještě předtím, než spočítáme jedinou další funkční hodnotu. Při sestavování předpisu proto stačí často jeden další bod, který určí základ $a$.
+
+V minulé hodině jsme také posouvali graf nahoru či dolů: předpis $a^x+q$ potom prochází bodem $[0;1+q]$ a asymptota je $y=q$. Naopak při svislém násobení $g(x)=b\cdot a^x$ získáme $g(0)=b$. Tyto tři situace je nutné rozlišovat: \emph{základní funkce, svisle násobený graf a posunutý graf nejsou tentýž typ zadání}.
 \begin{prikladReseniBox}[title={Příklad 1}]
-Urči předpis $f(x)=a^x$, pokud graf prochází bodem $[2;9]$. Sestroj ještě dva snadno počitatelné body grafu.
+Sestav předpis $f(x)=a^x$, jestliže graf prochází bodem $[2;9]$. Urči nejméně tři další body a sestroj graf.
 \tcblower
 \[
 \begin{aligned}
 f(2)&=9,\\
 a^2&=9,\\
-a&=3\quad(a>0).
+a&=3\qquad (a>0),\\
+f(x)&=3^x.
 \end{aligned}
 \]
-Proto $f(x)=3^x$. Na grafu leží například body $[0;1]$ a $[1;3]$.
+Další body: $[-1;\frac{1}{3}]$, $[0;1]$, $[1;3]$. Asymptota $y=0$.\begin{center}
+\begin{tikzpicture}[x=.47cm,y=.32cm,>=Latex]
+\clip (-8.5,-6.5) rectangle (8.5,10.6);
+\draw[step=2,gray!17,very thin] (-8,-6) grid (8,10);
+\draw[->] (-8.3,0)--(8.25,0) node[right] {$x$};
+\draw[->] (0,-6.35)--(0,10.35) node[above] {$y$};
+\foreach \x in {-8,-4,4,8}{\node[below,font=\scriptsize] at (\x,0) {\x};}
+\foreach \y in {-4,4,8}{\node[left,font=\scriptsize] at (0,\y) {\y};}
+\draw[densely dotted,thick] (-8.25,0)--(8.2,0) node[above left,font=\scriptsize] {$y=0$};
+\draw[very thick,domain=-8:3,samples=130,smooth] plot (\x,{pow(3,\x)});
+\fill (0,1) circle (2pt);
+\node[font=\scriptsize,anchor=north west,fill=white,inner sep=1.5pt] at (-8,8.75) {{$f(x)=3^x$}};
+\end{tikzpicture}
+\end{center}
 \end{prikladReseniBox}
+\Needspace{26\baselineskip}
 \begin{prikladReseniBox}[title={Příklad 2}]
-Graf základní exponenciální funkce prochází bodem $[-1;4]$. Sestav její předpis a urči monotónnost.
+Graf základní exponenciální funkce prochází bodem $[-1;4]$. Urči předpis a načrtni graf společně s $y=4^x$.
 \tcblower
 \[
 \begin{aligned}
 a^{-1}&=4,\\
 \frac{1}{a}&=4,\\
-a&=\frac{1}{4}.
+a&=\frac{1}{4},\\
+f(x)&=\left(\frac{1}{4}\right)^x.
 \end{aligned}
 \]
-Předpis je $f(x)=\left(\frac{1}{4}\right)^x$ a funkce klesá.
+Funkce klesá. Grafy $4^x$ a $\left(\frac{1}{4}\right)^x$ jsou souměrné podle osy $y$.\begin{center}
+\begin{tikzpicture}[x=.47cm,y=.32cm,>=Latex]
+\clip (-8.5,-6.5) rectangle (8.5,10.6);
+\draw[step=2,gray!17,very thin] (-8,-6) grid (8,10);
+\draw[->] (-8.3,0)--(8.25,0) node[right] {$x$};
+\draw[->] (0,-6.35)--(0,10.35) node[above] {$y$};
+\foreach \x in {-8,-4,4,8}{\node[below,font=\scriptsize] at (\x,0) {\x};}
+\foreach \y in {-4,4,8}{\node[left,font=\scriptsize] at (0,\y) {\y};}
+\draw[densely dotted,thick] (-8.25,0)--(8.2,0) node[above left,font=\scriptsize] {$y=0$};
+\draw[thin,dashed,domain=-8:2.2,samples=110,smooth] plot (\x,{pow(4,\x)});
+\node[font=\scriptsize,anchor=north west] at (-8,9.9) {{$4^x$ (čárkovaně)}};
+\draw[very thick,domain=-2.2:8,samples=130,smooth] plot (\x,{pow(0.25,\x)});
+\fill (-1,4) circle (2pt);
+\node[font=\scriptsize,anchor=north west,fill=white,inner sep=1.5pt] at (-8,8.75) {{$f(x)=\left(\frac{1}{4}\right)^x$}};
+\end{tikzpicture}
+\end{center}
 \end{prikladReseniBox}
-\blok{Když funkce nezačíná na hodnotě jedna}
-V aplikacích často známe počáteční hodnotu $b$ a za každý další krok násobíme stálým číslem $a$. Pak používáme model $g(x)=b\cdot a^x$, kde $b>0$ a $a>0$, $a\ne1$. Nejde o základní tvar $a^x$, ale o jeho svisle násobenou variantu.
+\blok{Když už průsečík s osou $y$ není jedna}
+Předpis $g(x)=b\cdot a^x$ prochází při $x=0$ bodem $[0;b]$. Nejprve tedy určíme koeficient $b$ z této hodnoty, potom z dalšího bodu hledáme základ $a$. Pokud je $b>0$, obor hodnot zůstává $(0;+\infty)$, asymptota $y=0$; pro záporné $b$ se graf obrátí pod osu $x$.
 \begin{prikladReseniBox}[title={Příklad 3}]
 Sestav předpis $g(x)=b\cdot a^x$, jestliže $g(0)=5$ a $g(1)=15$.
+\begin{enumerate}[label=\alph*)]
+\item urči $b$ a $a$;
+\item vypočti $g(-1)$ a $g(2)$;
+\item sestroj graf a označ asymptotu.
+\end{enumerate}
 \tcblower
 \[
 \begin{aligned}
-g(0)&=b\cdot a^0=b=5,\\
+g(0)&=b=5,\\
 g(1)&=5a=15,\\
-a&=3.
+a&=3,\\
+g(x)&=5\cdot3^x.
 \end{aligned}
 \]
-Hledaná funkce je $g(x)=5\cdot3^x$. Kontrola: $g(0)=5$, $g(1)=15$.
+$g(-1)=\frac{5}{3}$, $g(2)=45$. Pro graf stačí body $[-1;\frac{5}{3}]$, $[0;5]$, $[1;15]$ a asymptota $y=0$; pro bod $[1;15]$ je třeba rozšířit svislou osu.\begin{center}
+\begin{tikzpicture}[x=.47cm,y=.25cm,>=Latex]
+\clip (-8.5,-6.5) rectangle (8.5,18.6);
+\draw[step=2,gray!17,very thin] (-8,-6) grid (8,18);
+\draw[->] (-8.3,0)--(8.25,0) node[right] {$x$};
+\draw[->] (0,-6.35)--(0,18.35) node[above] {$y$};
+\foreach \x in {-8,-4,4,8}{\node[below,font=\scriptsize] at (\x,0) {\x};}
+\foreach \y in {-4,4,8,12,16}{\node[left,font=\scriptsize] at (0,\y) {\y};}
+\draw[densely dotted,thick] (-8.25,0)--(8.2,0) node[above left,font=\scriptsize] {$y=0$};
+\draw[very thick,domain=-8:2,samples=130,smooth] plot (\x,{5*pow(3,\x)});
+\fill (0,5) circle (2pt);\fill (1,15) circle (2pt);
+\node[font=\scriptsize,anchor=north west,fill=white,inner sep=1.5pt] at (-8,16.9) {{$g(x)=5\cdot3^x$}};
+\end{tikzpicture}
+\end{center}
 \end{prikladReseniBox}
-\Needspace{10\baselineskip}
+\blok{Sestavení posunuté funkce z asymptoty a dvou bodů}
+Když známe vodorovnou asymptotu $y=q$, odhadneme posunutý předpis $h(x)=b\cdot a^x+q$. Z hodnoty v nule nejprve určíme $b$ a pomocí druhého bodu dopočítáme $a$. Výsledný graf musí procházet oběma známými body a asymptoticky se blížit přímce $y=q$.
 \begin{prikladReseniBox}[title={Příklad 4}]
-Funkce $h(x)=b\cdot a^x$ splňuje $h(0)=2$ a $h(2)=18$. Urči předpis a hodnotu $h(3)$.
+Funkce má tvar $h(x)=b\cdot a^x+q$, vodorovnou asymptotu $y=-2$ a prochází body $[0;1]$ a $[1;7]$. Sestav předpis, urči obor hodnot a sestroj graf.
 \tcblower
 \[
 \begin{aligned}
-h(0)&=b=2,\\
-h(2)&=2a^2=18,\\
-a^2&=9,\\
-a&=3\quad(a>0).
+q&=-2,\\
+h(0)&=b-2=1\quad\Rightarrow\quad b=3,\\
+h(1)&=3a-2=7\quad\Rightarrow\quad a=3,\\
+h(x)&=3\cdot3^x-2.
 \end{aligned}
 \]
-Tedy $h(x)=2\cdot3^x$ a $h(3)=54$.
+Asymptota $y=-2$, $D(h)=\mathbb R$, $H(h)=(-2;+\infty)$; graf roste.\begin{center}
+\begin{tikzpicture}[x=.47cm,y=.32cm,>=Latex]
+\clip (-8.5,-6.5) rectangle (8.5,10.6);
+\draw[step=2,gray!17,very thin] (-8,-6) grid (8,10);
+\draw[->] (-8.3,0)--(8.25,0) node[right] {$x$};
+\draw[->] (0,-6.35)--(0,10.35) node[above] {$y$};
+\foreach \x in {-8,-4,4,8}{\node[below,font=\scriptsize] at (\x,0) {\x};}
+\foreach \y in {-4,4,8}{\node[left,font=\scriptsize] at (0,\y) {\y};}
+\draw[densely dotted,thick] (-8.25,-2)--(8.2,-2) node[above left,font=\scriptsize] {$y=-2$};
+\draw[very thick,domain=-8:2.6,samples=130,smooth] plot (\x,{3*pow(3,\x)-2});
+\fill (0,1) circle (2pt);
+\node[font=\scriptsize,anchor=north west,fill=white,inner sep=1.5pt] at (-8,8.75) {{$h(x)=3\cdot3^x-2$}};
+\end{tikzpicture}
+\end{center}
 \end{prikladReseniBox}
-\poznamka{Dobrý rychlý test porozumění: v předpisu $b\cdot a^x$ určujeme $b$ z hodnoty pro $x=0$; teprve potom hledáme $a$. Srovnej s lineární funkcí, kde se po jednotkovém kroku hodnoty sčítají.}
+\poznamka{Žáci si při každém zadání vyznačí asymptotu, bod pro $x=0$ a minimálně dva další body; jen výsledný předpis bez grafu nestačí. Připomenout, že $y=a^x$ protíná osu $y$ vždy v 1, $y=b\cdot a^x$ v $b$ a $y=b\cdot a^x+q$ v $b+q$.}
 \begin{zadaniReseniBox}[title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
-\item Urči $f(x)=a^x$, pokud $f(2)=\frac{1}{25}$.
-\item Urči $g(x)=b\cdot a^x$, pokud $g(0)=3$ a $g(1)=12$.
-\item Urči $h(x)=b\cdot a^x$, pokud $h(0)=8$ a $h(2)=2$.
+\item Z bodu $[1;6]$ sestav $f(x)=a^x$ a načrtni graf.
+\item Z bodu $[-1;3]$ sestav $f(x)=a^x$ a načrtni graf.
+\item Z bodu $[2;\frac{1}{16}]$ sestav $f(x)=a^x$ a načrtni graf.
+\item Graf $g(x)=b\cdot a^x$ prochází $[0;2]$ a $[1;8]$. Urči předpis a sestroj graf.
+\item Graf $h(x)=b\cdot a^x$ prochází $[0;6]$ a $[2;\frac{3}{2}]$. Urči předpis.
+\item Graf $k(x)=b\cdot a^x$ prochází $[0;-3]$ a $[1;-6]$. Urči předpis a obor hodnot.
+\item Pro $p(x)=2^{x+1}-3$ urči $p(0)$, asymptotu a vyznač tři body grafu.
+\item Sestav $y=2^{x-p}+q$, když asymptota je $y=3$ a graf prochází $[2;4]$.
+\item Sestav předpis $m(x)=b\cdot2^x-1$, jestliže $m(0)=3$; sestroj graf.
+\item Vysvětli, proč funkce $g(x)=7\cdot3^x+2$ prochází bodem $[0;9]$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $a^2=\frac{1}{25}$, tedy $a=\frac{1}{5}$ a $f(x)=\left(\frac{1}{5}\right)^x$.
-\item $b=3$ a $3a=12$, tedy $g(x)=3\cdot4^x$.
-\item $b=8$, $8a^2=2$, $a=\frac{1}{2}$, tedy $h(x)=8\cdot\left(\frac{1}{2}\right)^x$.
+\item $f(x)=6^x$, bod $[0;1]$, roste.
+\item $a^{-1}=3$, tedy $f(x)=\left(\frac{1}{3}\right)^x$; klesá.
+\item $a^2=\frac{1}{16}$, tedy $f(x)=\left(\frac{1}{4}\right)^x$.
+\item $b=2$, $a=4$, tedy $g(x)=2\cdot4^x$.
+\item $b=6$, $6a^2=\frac{3}{2}$, takže $a=\frac{1}{2}$ a $h(x)=6\cdot\left(\frac{1}{2}\right)^x$.
+\item $b=-3$, $-3a=-6$, tedy $k(x)=-3\cdot2^x$; $H=(-\infty;0)$.
+\item $p(0)=-1$, asymptota $y=-3$; body například $[-1;-2]$, $[0;-1]$, $[1;1]$.
+\item $q=3$, $2^{2-p}=1$, proto $p=2$ a $y=2^{x-2}+3$.
+\item $m(0)=b-1=3$, tedy $m(x)=4\cdot2^x-1$.
+\item $g(0)=7\cdot1+2=9$.
 \end{enumerate}
 \end{zadaniReseniBox}
 \begin{zadaniReseniBox}[title={Rozšíření 1}]
-Předpis $k(x)=a^{x-p}+2$ má asymptotu $y=2$ a prochází body $[1;3]$ a $[2;5]$. Urči $a>0$ a $p$, víš-li, že $a\ne1$.
+\begin{enumerate}[label=\alph*)]
+\item Funkce má tvar $f(x)=a^{x-p}+q$, má asymptotu $y=2$ a prochází body $[1;3]$ a $[2;5]$. Urči $a$ a $p$; nakresli graf.
+\item Jak se změní výsledek, když zaměníš pouze $q=2$ za $q=-2$?
+\end{enumerate}
 \tcblower
-Z rovností $a^{1-p}=1$ a $a^{2-p}=3$ plyne $1-p=0$, tedy $p=1$; druhá rovnost pak dává $a=3$. Proto $k(x)=3^{x-1}+2$.
+\begin{enumerate}[label=\alph*)]
+\item $q=2$, $a^{1-p}=1$ znamená $p=1$; $a^{2-p}=3$ tedy $a=3$. Předpis $3^{x-1}+2$.
+\item Celý graf se posune dolů o 4 a asymptota bude $y=-2$.
+\end{enumerate}
 \end{zadaniReseniBox}
+\enlargethispage{1\baselineskip}
 \begin{zadaniReseniBox}[title={Domácí úkol}]
-\begin{enumerate}[label=\alph*)]
-\item Sestav $f(x)=a^x$ z bodu $[-1;2]$.
-\item Sestav $g(x)=b\cdot a^x$ z hodnot $g(0)=4$, $g(1)=6$.
-\item Vysvětli, jaký význam mají parametry $a$ a $b$ v předpisu $b\cdot a^x$.
+\begin{enumerate}[label=\alph*),itemsep=-1pt,topsep=0pt]
+\item Sestav $f(x)=a^x$ z bodu $[-1;2]$ a načrtni graf.
+\item Sestav $f(x)=a^x$ z bodu $[2;25]$ a určete monotónnost.
+\item Sestav $g(x)=b\cdot a^x$ z $g(0)=4$, $g(1)=6$; načrtni graf.
+\item Sestav $h(x)=b\cdot a^x$ z $h(0)=8$, $h(2)=2$.
+\item Sestroj do jedné soustavy $2^x$ a $2^x-2$; určete asymptoty.
+\item Sestroj $k(x)=-2\cdot2^x+3$; urči obor hodnot.
+\item U $m(x)=3^{x-1}+2$ urči asymptotu, $m(1)$ a bod $[0;m(0)]$.
+\item Sestav $n(x)=b\cdot2^x+1$ z údaje $n(0)=5$.
+\item Znáš-li asymptotu $y=-1$, bod $[0;2]$ a bod $[1;8]$, sestav $r(x)=b\cdot a^x-1$.
+\item Vysvětli rozdíl mezi posunem $q$ a násobením koeficientem $b$ v předpisu $b\cdot a^x+q$.
 \end{enumerate}
 \tcblower
-\begin{enumerate}[label=\alph*)]
-\item $a^{-1}=2$, tedy $f(x)=\left(\frac{1}{2}\right)^x$.
-\item $b=4$, $4a=6$, $a=\frac{3}{2}$, tedy $g(x)=4\cdot\left(\frac{3}{2}\right)^x$.
-\item $b$ je počáteční hodnota a $a$ je násobný koeficient při zvýšení $x$ o jednu.
+\begin{enumerate}[label=\alph*),itemsep=-1pt,topsep=0pt]
+\item $a=\frac{1}{2}$, tedy $f(x)=\left(\frac{1}{2}\right)^x$.
+\item $a=5$, tedy $f(x)=5^x$, roste.
+\item $b=4$, $a=\frac{3}{2}$, tedy $g(x)=4\cdot\left(\frac{3}{2}\right)^x$.
+\item $b=8$, $a=\frac{1}{2}$, tedy $h(x)=8\cdot\left(\frac{1}{2}\right)^x$.
+\item Asymptoty $y=0$ a $y=-2$, druhý graf je o 2 níže.
+\item $H=(-\infty;3)$; graf zrcadlí $2^x$, dvojnásobí hodnoty a posune o 3 nahoru.
+\item $y=2$, $m(1)=3$, $m(0)=\frac{7}{3}$.
+\item $b=4$, tedy $n(x)=4\cdot2^x+1$.
+\item $b=3$ a $3a-1=8$, proto $a=3$ a $r(x)=3\cdot3^x-1$.
+\item $q$ posouvá graf svisle, zatímco $b$ násobí funkční hodnoty; průsečík s osou $y$ má hodnotu $b+q$.
 \end{enumerate}
 \end{zadaniReseniBox}
+\poznamka{Domácí úkol přibližně 25--30 minut; z úloh na graf vyžadovat soustavu se správným měřítkem a vyznačené asymptoty. Nezavádět logaritmy.}
 \end{document}
