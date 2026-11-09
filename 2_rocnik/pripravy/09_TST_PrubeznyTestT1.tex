@@ -1,0 +1,72 @@
+% Work-MAT -- 2. rocnik, hodina 09. Metodicka priprava, nikoli zadani testu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Inverzní a mocninné funkce}{09}{Průběžný test T1 a rozbor}
+\begin{document}
+\poznamka{Toto je výhradně učitelská příprava. Neobsahuje schválené zadání testu ani bodování či klasifikační hranice. Před hodinou připrav konkrétní test z platné šablony a ověř jeho rozsah, varianty, řešení a tisk. Doporučené načasování: 3 min instrukce, 15--20 min test, 12 min anonymní rozbor typických postupů, 8 min krátké upevnění, zbytek organizační závěr.}
+
+\blok{Před hodinou: kontrolní seznam}
+\begin{itemize}[label=$\square$]
+\item Ověřit, že test prověřuje pouze \textbf{probraný obsah hodin 03--08} a potřebné opakování z hodiny 02.
+\item Připravit odpovídající varianty zadání a samostatná učitelská řešení; předem provést vlastní matematickou kontrolu.
+\item Vycházet z aktuálních pravidel pro psaní testů, pomůcky, absence a náhradní termíny zveřejněných v Moodle.
+\item Připravit čistý papír na výpočty a promyslet sběr testů; přesné pokyny sdělit žákům před začátkem.
+\end{itemize}
+
+\blok{Obsahový rámec T1}
+Test má být krátký a přiměřený času. Nabízí se ověřit dvě až tři odlišné dovednosti, například:
+\begin{itemize}
+\item poznání prosté funkce a podmínek existence inverze;
+\item získání inverzního předpisu včetně definičního oboru;
+\item základní vlastnosti $x^n$ pro kladný a záporný celočíselný exponent, zejména definiční obor, paritu a obor hodnot.
+\end{itemize}
+\poznamka{Samotný test do této přípravy nevkládám. Právě tak zde neurčuji body, váhy ani hranice klasifikace. Hodina 10 o transformacích mocninných funkcí \textbf{ještě nenastala}, a proto nemá být jejím obsahem test T1 podmiňován.}
+
+\blok{Po odevzdání: rozbor bez prozrazování variant}
+Připomeň žákům rozdíl mezi prostotou a monotónností, mezi inverzí a převrácenou hodnotou funkce a mezi $x^2$ na $\mathbb R$ a na $\langle0;+\infty)$. Nezveřejňuj řešení testových úloh, pokud se tytéž varianty budou používat při dopisování; místo toho pracuj na jiných, analogických příkladech.
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Pro funkci $f(x)=2x-5$ na $\mathbb R$ určete předpis inverze a ověřte jej složením.
+\tcblower
+\[
+\begin{aligned}
+f(x)&=2x-5 &&\bigm|\ x\to y\\
+x&=2y-5\\
+2y&=x+5\\
+y&=\frac{x+5}{2}\\
+f^{-1}(x)&=\frac{x+5}{2}.
+\end{aligned}
+\]
+Kontrola: $f^{-1}(f(x))=(2x-5+5)/2=x$ pro každé $x\in\mathbb R$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Porovnej definiční obory, obory hodnot a paritu funkcí $g(x)=x^4$ a $h(x)=x^{-4}$.
+\tcblower
+$g$ má $D=\mathbb R$, $H=\langle0;+\infty)$ a je sudá; $h$ má $D=\mathbb R\setminus\{0\}$, $H=(0;+\infty)$ a je rovněž sudá. První funkce dosahuje nuly, druhá nikdy.
+\end{prikladReseniBox}
+
+\blok{Krátké nehodnocené upevnění}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item Je funkce $f(x)=x^2$ na $\langle0;+\infty)$ prostá? Jaký má inverzní předpis?
+\item Jaké jsou asymptoty grafu $g(x)=x^{-3}$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Ano, protože na uvedeném oboru přísně roste.
+\(\displaystyle\begin{aligned}f(x)&=x^2 &&\bigm|\ x\to y\\x&=y^2\\y&=\sqrt{x}\\f^{-1}(x)&=\sqrt{x}\end{aligned}\)
+
+$D(f^{-1})=\langle0;+\infty)$.
+\item $x=0$ a $y=0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\poznamka{Pokud do konce hodiny není čas na upevnění, ulož je jako dobrovolné procvičení a věnuj se organizačnímu uzavření. Záznam o reálném průběhu a případných nepřítomných proveď podle školních pravidel.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+Zapiš si dva pojmy nebo postupy z bloku inverzních a mocninných funkcí, ve kterých si stále nejsi jistý, a ke každému vymysli jednoduchý vlastní příklad. Nejprve zkus příklady vyřešit bez poznámek.
+\tcblower
+Jde o sebereflexi. Např. „prostota“: $x^2$ na $\mathbb R$ není prostá; „záporný exponent“: $x^{-2}=1/x^2$, proto $x\ne0$. Konkrétní příklady se budou mezi žáky lišit.
+\end{zadaniReseniBox}
+\end{document}

@@ -1,0 +1,61 @@
+% Work-MAT | 2. rocnik | hodina 20
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Exponenciální funkce a rovnice}{20}{Průběžný test T2 a rozbor}
+\begin{document}
+\poznamka{Metodická příprava, NIKOLI hotové zadání testu. Neobsahuje testové varianty ani body. Připrav je v projektové testové šabloně až po schválení skladby a obtížnosti. Orientačně 3 min instrukce, 15--20 min test, 12 min rozbor analogických úloh, 8 min upevnění, zbytek organizace.}
+\blok{Před hodinou: příprava ověřování}
+\begin{itemize}[label=$\square$]
+\item Ověřit, že byly probrány hodiny 11--19; nezkoušet logaritmy ani exponenciální nerovnice, které přijdou později.
+\item Připravit varianty, řešení a výtisky podle platných pravidel. Bodové hodnoty a kritéria klasifikace neodvozovat odhadováním.
+\item Zkontrolovat aktuální pravidla v Moodle, pomůcky, oznámení a postup pro nepřítomné.
+\end{itemize}
+\blok{Obsahový rámec testu T2}
+Krátký test může ověřit základní vlastnosti funkce $a^x$, čtení grafů včetně asymptot, sestavení předpisu z daných údajů a přepis mocnin na společný základ a volbu jednoduché metody exponenciální rovnice. Podle času lze vybrat více méně náročných úloh nebo několik úloh s postupem; není nutné testovat všechny metody jednou písemkou.
+\poznamka{T2 není kopie dřívějších testů z adresáře \texttt{testy/ExponencialniRovnice}. Existující testové soubory je třeba samostatně posoudit, než se přidělí ke konkrétní hodině. Nepřipojuj k této přípravě neověřené úlohy jako hotový test.}
+\poznamka{Jde o návrh obsahového okruhu po přesunu témat: hodiny 11--15 jsou výhradně o exponenciálních funkcích, hodiny 16--19 o prvních exponenciálních rovnicích. Na T2 lze klást hlavní důraz na funkce a grafy, jak předpokládal původní tematický plán.}
+\blok{Rozbor po odevzdání}
+Pro rozbor jsou určeny \emph{analogické nehodnocené} úlohy níže. Neodhaluj při dopisování řešení skutečných variant, pokud budou použity pro náhradní termíny.
+\begin{prikladReseniBox}[title={Příklad 1}]
+Urči vlastnosti $f(x)=(\frac{1}{4})^x+2$: monotónnost, definiční obor, obor hodnot a asymptotu.
+\tcblower
+Základ je v $(0;1)$, proto funkce klesá. $D(f)=\mathbb R$, $H(f)=(2;+\infty)$, asymptota $y=2$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Sestav model $g(x)=b\cdot a^x$, jestliže $g(0)=6$ a $g(1)=3$.
+\tcblower
+$b=6$; ze vztahu $6a=3$ plyne $a=\frac{1}{2}$. Tedy $g(x)=6\cdot\left(\frac{1}{2}\right)^x$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš $8^x=4^{x+1}$.
+\tcblower
+$2^{3x}=2^{2x+2}$, tedy $3x=2x+2$ a $x=2$. Zkouška: $8^2=64$ a $4^3=64$.
+\end{prikladReseniBox}
+\Needspace{10\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš $4^x-10\cdot2^x+16=0$.
+\tcblower
+$t=2^x>0$, $(t-2)(t-8)=0$. Oba pomocné kořeny jsou kladné; z $2^x=2$ plyne $x=1$, z $2^x=8$ plyne $x=3$. Množina kořenů $K=\{1,3\}$.
+\end{prikladReseniBox}
+\poznamka{Ve všech rozborových úlohách lze kořeny určit známými mocninami, bez logaritmů. Důraz dej na volbu metody a kontrolu podmínek.}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $9^x-4\cdot3^x+3=0$;
+\item $2^{x+2}+2^x=20$;
+\item Kde protne graf $g(x)=2^{x-2}-1$ osu $x$?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $t=3^x>0$, $(t-1)(t-3)=0$, tedy $x=0$ nebo $x=1$.
+\item $5\cdot2^x=20$, $2^x=4$, tedy $x=2$.
+\item $2^{x-2}=1=2^0$, tedy $x=2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+Zapiš dvě věci, které se ti v exponenciálních funkcích nebo rovnicích ještě pletou. Ke každé uveď krátký vlastní příklad a své řešení. Následující hodinu se věnujeme dalším úpravám exponenciálních rovnic.
+\tcblower
+Sebereflexe; konkrétní odpovědi se liší. Vhodné jsou např. rozdíl $2^{x+1}=2\cdot2^x$ a $2^x+1$, nebo podmínka $t=2^x>0$.
+\end{zadaniReseniBox}
+\end{document}

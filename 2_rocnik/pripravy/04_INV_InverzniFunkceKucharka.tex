@@ -1,0 +1,125 @@
+% Work-MAT -- 2. rocnik, hodina 04. Algebraicky vypocet inverze podle kucharky.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Inverzní funkce}{04}{Inverzní funkce II: výpočet předpisu}
+\begin{document}
+\poznamka{Předcházející hodina byla výhradně grafická. Začni dvěma dvojicemi souměrných bodů podle $y=x$ a připomeň, že inverzi mají jen prosté funkce. Dnes přejdi od geometrického prohození souřadnic k algebraickému prohození proměnných. Ve všech výpočtech používej přesně stejný zápis: první řádek $f(x)=\cdots$ s označením $\bigm|\ x\to y$, další řádek $x=\cdots y$, vyjádření $y$ a závěr $f^{-1}(x)$.}
+
+\blok{Z grafu k výpočtu předpisu}
+V minulé hodině jsme zjistili, že graf inverzní funkce vznikne zrcadlením podle přímky $y=x$. Souřadnice bodu $[a;b]$ se vymění na $[b;a]$. Stejné prohození můžeme zapsat do rovnice funkce a následně vyjádřit $y$.
+
+\blok{Kuchařka pro inverzní funkci}
+\begin{enumerate}[label=\arabic*.]
+\item Ověř, že funkce je na zadaném definičním oboru prostá.
+\item Napiš původní předpis $f(x)=\cdots$.
+\item U původního řádku připiš $\bigm|\ x\to y$ a na následujícím řádku prohoď proměnné: $x=\cdots y$.
+\item Postupnými ekvivalentními úpravami vyjádři $y$.
+\item Výsledek přepiš ve tvaru $f^{-1}(x)=\cdots$ a urči $D(f^{-1})=H(f)$.
+\end{enumerate}
+\poznamka{Při výpočtech nepiš slovní komentáře mezi jednotlivé rovnice. Šipka $x\to y$ je domluvené označení výměny obou proměnných, nikoli substituce pouze za jedno $x$.}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Urči předpis inverzní funkce k $f(x)=3x-6$, $D(f)=\mathbb R$.
+\tcblower
+\[
+\begin{aligned}
+f(x)&=3x-6 &&\bigm|\ x\to y\\
+x&=3y-6\\
+3y&=x+6\\
+y&=\frac{x+6}{3}\\
+f^{-1}(x)&=\frac{x+6}{3}.
+\end{aligned}
+\]
+Původní funkce je prostá, protože má kladnou nenulovou směrnici. $D(f^{-1})=H(f)=\mathbb R$. Kontrola: $f^{-1}(f(2))=f^{-1}(0)=2$.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Urči předpis inverzní funkce k $g(x)=5-2x$, $D(g)=\mathbb R$.
+\tcblower
+\[
+\begin{aligned}
+g(x)&=5-2x &&\bigm|\ x\to y\\
+x&=5-2y\\
+2y&=5-x\\
+y&=\frac{5-x}{2}\\
+g^{-1}(x)&=\frac{5-x}{2}.
+\end{aligned}
+\]
+Funkce $g$ je prostá (přísně klesající) a $D(g^{-1})=\mathbb R$.
+\end{prikladReseniBox}
+
+\clearpage
+\begin{prikladReseniBox}[title={Příklad 3}]
+Urči předpis inverzní funkce k $h(x)=\frac{x+4}{3}$, $D(h)=\mathbb R$.
+\tcblower
+\[
+\begin{aligned}
+h(x)&=\frac{x+4}{3} &&\bigm|\ x\to y\\
+x&=\frac{y+4}{3}\\
+3x&=y+4\\
+y&=3x-4\\
+h^{-1}(x)&=3x-4.
+\end{aligned}
+\]
+$D(h^{-1})=\mathbb R$.
+\end{prikladReseniBox}
+
+\blok{Kontrola výsledku}
+Máme-li správný inverzní předpis, pak $f^{-1}(f(a))=a$ pro každý přípustný argument $a$. Například
+\[
+f^{-1}(f(x))=\frac{3x-6+6}{3}=x.
+\]
+Geometricky jde o návrat od bodu $[a;b]$ přes $[b;a]$ zpět k původnímu argumentu.
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Podle kuchařky vypočítej inverzní předpisy a jejich definiční obory.
+\begin{enumerate}[label=\alph*)]
+\item $f(x)=4x+8$ na $\mathbb R$.
+\item $g(x)=7-3x$ na $\mathbb R$.
+\item $h(x)=\dfrac{x-5}{2}$ na $\mathbb R$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item
+\(\displaystyle\begin{aligned}f(x)&=4x+8 &&\bigm|\ x\to y\\x&=4y+8\\4y&=x-8\\y&=\frac{x-8}{4}\\f^{-1}(x)&=\frac{x-8}{4}\end{aligned}\)
+\item
+\(\displaystyle\begin{aligned}g(x)&=7-3x &&\bigm|\ x\to y\\x&=7-3y\\3y&=7-x\\y&=\frac{7-x}{3}\\g^{-1}(x)&=\frac{7-x}{3}\end{aligned}\)
+\item
+\(\displaystyle\begin{aligned}h(x)&=\frac{x-5}{2} &&\bigm|\ x\to y\\x&=\frac{y-5}{2}\\2x&=y-5\\y&=2x+5\\h^{-1}(x)&=2x+5\end{aligned}\)
+\end{enumerate}
+Ve všech třech případech $D(f^{-1})=D(g^{-1})=D(h^{-1})=\mathbb R$.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Urči inverzní předpis k $p(x)=\dfrac{2x+3}{5}$ a ověř výsledek pro argument $x=1$.
+\tcblower
+\[
+\begin{aligned}
+p(x)&=\frac{2x+3}{5} &&\bigm|\ x\to y\\
+x&=\frac{2y+3}{5}\\
+5x&=2y+3\\
+2y&=5x-3\\
+y&=\frac{5x-3}{2}\\
+p^{-1}(x)&=\frac{5x-3}{2}.
+\end{aligned}
+\]
+$p(1)=1$ a $p^{-1}(1)=1$.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Urči $f^{-1}$ pro $f(x)=2x-9$ na $\mathbb R$.
+\item Urči $g^{-1}$ pro $g(x)=\dfrac{3x+1}{4}$ na $\mathbb R$.
+\item Graficky zdůvodni, proč se při inverzi mění souřadnice bodu $[2;7]$ na $[7;2]$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item
+\(\displaystyle\begin{aligned}f(x)&=2x-9 &&\bigm|\ x\to y\\x&=2y-9\\2y&=x+9\\y&=\frac{x+9}{2}\\f^{-1}(x)&=\frac{x+9}{2}\end{aligned}\)
+\item
+\(\displaystyle\begin{aligned}g(x)&=\frac{3x+1}{4} &&\bigm|\ x\to y\\x&=\frac{3y+1}{4}\\4x&=3y+1\\3y&=4x-1\\y&=\frac{4x-1}{3}\\g^{-1}(x)&=\frac{4x-1}{3}\end{aligned}\)
+\item Jde o zrcadlení bodů podle osy souměrnosti $y=x$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

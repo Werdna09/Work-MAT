@@ -1,0 +1,92 @@
+% Work-MAT -- 2. rocnik, hodina 07. Mocninne funkce se sudym a lichym exponentem.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Mocninné funkce}{07}{Mocninné funkce I: kladné exponenty}
+\begin{document}
+\poznamka{Navazujeme na inverze, ale dnes je cílem přehled rodiny $x^n$. Orientačně 5 min motivace, 12 min sudé exponenty, 10 min liché exponenty, 12 min příklady a samostatná práce, 6 min shrnutí. Znalosti 1. ročníku (parabola, prostota, sudost) aktivně využívej.}
+
+\blok{Jedna rodina funkcí, různé tvary grafu}
+Známe již přímku $y=x$, parabolu $y=x^2$ i graf $y=x^3$. Všechny patří do rodiny mocninných funkcí. Jejich tvar a vlastnosti závisí především na tom, zda je exponent \emph{sudý} nebo \emph{lichý}.
+
+\begin{definiceBox}[title={Definice - Mocninná funkce s kladným celočíselným exponentem}]
+Pro celé číslo $n\ge1$ je \textbf{mocninná funkce} funkce daná předpisem $f(x)=x^n$ pro všechna $x\in\mathbb R$.
+\end{definiceBox}
+
+\begin{center}
+\begin{minipage}{.47\linewidth}\centering
+\begin{tikzpicture}[x=.82cm,y=.55cm,>=Latex]
+\draw[->](-2.2,0)--(2.2,0)node[right]{$x$};\draw[->](0,-.3)--(0,3.7)node[above]{$y$};
+\draw[very thick,domain=-1.8:1.8,samples=70]plot(\x,{\x*\x});
+\draw[thick,dashed,domain=-1.37:1.37,samples=70]plot(\x,{\x*\x*\x*\x});
+\end{tikzpicture}\par\footnotesize sudé: $x^2$ (plně), $x^4$ (čárkovaně)
+\end{minipage}\hfill
+\begin{minipage}{.47\linewidth}\centering
+\begin{tikzpicture}[x=.82cm,y=.55cm,>=Latex]
+\draw[->](-2.2,0)--(2.2,0)node[right]{$x$};\draw[->](0,-3.7)--(0,3.7)node[above]{$y$};
+\draw[very thick,domain=-1.5:1.5,samples=70]plot(\x,{\x*\x*\x});
+\draw[thick,dashed,domain=-1.28:1.28,samples=70]plot(\x,{\x*\x*\x*\x*\x});
+\end{tikzpicture}\par\footnotesize liché: $x^3$ (plně), $x^5$ (čárkovaně)
+\end{minipage}
+\end{center}
+\poznamka{Grafy jsou ilustrativní výřezy; funkce pokračují dál. Z porovnání v okolí nuly ukaž, že vyšší mocniny v intervalu $(0;1)$ hodnoty zmenšují, kdežto pro $x>1$ je zvětšují.}
+
+\begin{zadaniBox}[title={Věta - Vlastnosti sudých mocnin}]
+Je-li $n\ge2$ sudé, potom $f(x)=x^n$ má $D(f)=\mathbb R$, $H(f)=\langle0;+\infty)$, je sudá a na $(-\infty;0\rangle$ klesá, zatímco na $\langle0;+\infty)$ roste. Minimum $0$ má v $x=0$.
+\end{zadaniBox}
+\noindent\textbf{Zdůvodnění.}\enspace Platí $(-x)^n=x^n\ge0$. Pro větší $|x|$ je $|x|^n$ větší; na záporné poloose se při růstu $x$ absolutní hodnota zmenšuje, na kladné se zvětšuje.
+
+
+\begin{zadaniBox}[title={Věta - Vlastnosti lichých mocnin}]
+Je-li $n\ge1$ liché, potom $f(x)=x^n$ má $D(f)=H(f)=\mathbb R$, je lichá a na celé $\mathbb R$ přísně roste, tedy je i prostá.
+\end{zadaniBox}
+\noindent\textbf{Zdůvodnění.}\enspace Platí $(-x)^n=-x^n$ a pro $x_1<x_2$ také $x_1^n<x_2^n$; mocnění lichým kladným exponentem zachovává pořadí reálných čísel.
+
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Porovnej $f(x)=x^4$ a $g(x)=x^5$: sudost/lichost, monotónnost, obor hodnot a prostotu na $\mathbb R$.
+\tcblower
+$x^4$ je sudá, má $H(f)=\langle0;+\infty)$, klesá na záporné a roste na kladné poloose; na $\mathbb R$ prostá není, neboť $f(-1)=f(1)$. Funkce $x^5$ je lichá, přísně roste na $\mathbb R$, má $H(g)=\mathbb R$ a je prostá.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Rozhodni, která z hodnot $\left(\frac12\right)^2$, $\left(\frac12\right)^4$, $2^2$ a $2^4$ je větší v každé dvojici se stejným základem.
+\tcblower
+$\left(\frac12\right)^2=\frac14>\frac1{16}=\left(\frac12\right)^4$, zatímco $2^2=4<16=2^4$. Účinek zvýšení exponentu závisí na velikosti kladného základu vzhledem k $1$.
+\end{prikladReseniBox}
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Pro funkce $u(x)=x^6$ a $v(x)=x^7$ urči $D$, $H$, sudost/lichost, prostotu na $\mathbb R$ a znaménko pro $x<0$.
+\tcblower
+$u$: $D=\mathbb R$, $H=\langle0;+\infty)$, sudá, neprostá, pro záporná nenulová $x$ je kladná. $v$: $D=H=\mathbb R$, lichá, prostá, pro $x<0$ záporná.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Vysvětli, proč je $x^4$ na $\langle0;+\infty)$ prostá, ale na $\mathbb R$ nikoli. Jaký je její inverzní předpis na nezáporném oboru?
+\tcblower
+Na nezáporných argumentech přísně roste, na celé ose mají $x$ a $-x$ stejný obraz. Pro $D(f)=\langle0;+\infty)$:
+\[
+\begin{aligned}
+f(x)&=x^4 &&\bigm|\ x\to y\\
+x&=y^4\\
+y&=\sqrt[4]{x}\\
+f^{-1}(x)&=\sqrt[4]{x}.
+\end{aligned}
+\]
+$D(f^{-1})=\langle0;+\infty)$.
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Urči vlastnosti $f(x)=x^8$ a $g(x)=x^9$ stejným způsobem jako u příkladu 1.
+\item Srovnej $\left(\frac13\right)^2$ a $\left(\frac13\right)^3$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x^8$: sudá, $H=\langle0;+\infty)$, na $\mathbb R$ neprostá; $x^9$: lichá, $H=\mathbb R$, přísně rostoucí a prostá. Obě mají $D=\mathbb R$.
+\item $\frac19>\frac1{27}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

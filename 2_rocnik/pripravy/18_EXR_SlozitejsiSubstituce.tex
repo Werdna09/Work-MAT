@@ -1,0 +1,65 @@
+% Work-MAT | 2. rocnik | hodina 18
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{18}{Exponenciální rovnice VI: složitější substituce}
+\begin{document}
+\poznamka{Postup od známého typu $t^2+bt+c=0$ k podílům a záporným exponentům. Bez logaritmů. Orientačně 6 min návrat, 15 min nový trik, 13 min procvičení, 11 min diskuse o volbě metody.}
+\blok{Když v rovnici vystupuje $a^x$ i $a^{-x}$}
+Díky pravidlům pro mocniny můžeme vyjádřit $a^{-x}=1/a^x$. Proto při substituci $t=a^x>0$ dostaneme $a^{-x}=1/t$. Po vynásobení nenulovým $t$ se někdy opět objeví kvadratická rovnice.
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš $2^x+2^{-x}=\frac52$.
+\tcblower
+\[\begin{aligned}t&=2^x>0,\\t+\frac1t&=\frac52,\\2t^2+2&=5t,\\2t^2-5t+2&=0,\\(2t-1)(t-2)&=0.\end{aligned}\]
+Oba pomocné kořeny jsou kladné: $t_1=\frac12$, $t_2=2$. Návrat:
+\[2^x=2^{-1}\Rightarrow x=-1,\qquad2^x=2^1\Rightarrow x=1.\]
+$K=\{-1,1\}$; zkouška v obou případech dává $2+\frac12=\frac52$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš $2^x+2^{3-x}=6$.
+\tcblower
+Položme $t=2^x>0$. Pak $2^{3-x}=8/2^x=8/t$. Dostáváme
+\[\begin{aligned}t+\frac8t&=6,\\t^2-6t+8&=0,\\(t-2)(t-4)&=0.\end{aligned}\]
+Z $t=2$ plyne $x=1$, z $t=4$ plyne $x=2$. Zkouška: $2+4=6$; $4+2=6$. $K=\{1,2\}$.
+\end{prikladReseniBox}
+\blok{Po sjednocení základu může být substituce jednoduchá}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš $2\cdot4^x+4\cdot2^x=48$.
+\tcblower
+\[\begin{aligned}t&=2^x>0,\\2t^2+4t&=48,\\t^2+2t-24&=0,\\(t+6)(t-4)&=0.\end{aligned}\]
+Přijmeme pouze $t=4$, tedy $2^x=4$ a $x=2$. Zkouška: $2\cdot16+4\cdot4=48$.
+\end{prikladReseniBox}
+\poznamka{První dvě úlohy vyžadují násobení $t$. Zdůrazni, že to smíme provést, protože $t>0$, takže nedělíme ani nenásobíme nulou. Záporný kořen pomocné rovnice se vždy vylučuje.}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $3^x+3^{2-x}=6$;
+\item $2^x+2^{2-x}=5$;
+\item $2\cdot4^x-6\cdot2^x+4=0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $t+9/t=6$, tj. $(t-3)^2=0$, $t=3$, tedy $x=1$.
+\item $t+4/t=5$, tj. $(t-1)(t-4)=0$, tedy $x=0$ nebo $x=2$.
+\item $2t^2-6t+4=0$, tj. $(t-1)(t-2)=0$, tedy $x=0$ nebo $x=1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Vyřeš $3^{x}+3^{-x}=\frac{10}{3}$.
+\tcblower
+$t=3^x>0$. Z $t+1/t=10/3$ dostaneme $3t^2-10t+3=(3t-1)(t-3)=0$. Pro $t=1/3,3$ plyne $K=\{-1,1\}$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Vyřeš $2^x+2^{1-x}=3$.
+\item Vyřeš $4^x-5\cdot2^x+4=0$ a popiš volbu substituce.
+\item Vysvětli, proč je vždy povoleno násobit $t$ v rovnici s $t=5^x$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $t+2/t=3$, tj. $(t-1)(t-2)=0$, tedy $x=0,1$.
+\item $t=2^x>0$, $(t-1)(t-4)=0$, tedy $x=0,2$.
+\item Protože $t=5^x>0$, takže $t\ne0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

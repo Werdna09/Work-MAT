@@ -1,0 +1,99 @@
+% Work-MAT -- 2. rocnik, hodina 05. Navazujici vypocty inverzi: odmocniny a lomene vyrazy.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Inverzní funkce}{05}{Inverzní funkce III: další předpisy}
+\begin{document}
+\poznamka{Navazuj na kuchařku z hodiny 04, její kroky neměň. Dnes je cílem zvládnout výpočet u odmocninových a lomených funkcí a vždy správně určit obory. Příklady se mají řešit řádek po řádku, bez vynechávání prohození proměnných. Pro slabší třídu nech racionální lomenou funkci v rozšíření.}
+
+\blok{Kuchařka platí i pro složitější předpisy}
+Stejný postup jako u lineárních funkcí používáme i tehdy, pokud je proměnná pod odmocninou nebo ve jmenovateli. Při každé úpravě hlídáme podmínky: odmocnina je nezáporná, jmenovatel nesmí být nulový a obor původní funkce určuje, jaké hodnoty může mít inverze.
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Urči inverzní předpis k $g(x)=\sqrt{x+1}$ s přirozeným definičním oborem. Uveď obory.
+\tcblower
+\[
+\begin{aligned}
+g(x)&=\sqrt{x+1} &&\bigm|\ x\to y\\
+x&=\sqrt{y+1}\\
+x^2&=y+1\\
+y&=x^2-1\\
+g^{-1}(x)&=x^2-1.
+\end{aligned}
+\]
+$D(g)=\langle-1;+\infty)$, $H(g)=\langle0;+\infty)$, a tedy $D(g^{-1})=\langle0;+\infty)$ a $H(g^{-1})=\langle-1;+\infty)$. Při umocňování musí být $x\ge0$. Kontrola na oboru inverze: $g(g^{-1}(x))=\sqrt{x^2}=|x|=x$ pro $x\ge0$.
+\end{prikladReseniBox}
+\poznamka{Při srovnání grafů nakresli náčrt podle $y=x$. Žáci často správně spočítají $x^2-1$, ale chybně napíšou definiční obor celé $\mathbb R$.}
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Urči inverzní předpis k $h(x)=\dfrac{5}{x-2}+1$ a jeho definiční obor.
+\tcblower
+\[
+\begin{aligned}
+h(x)&=\frac5{x-2}+1 &&\bigm|\ x\to y\\
+x&=\frac5{y-2}+1\\
+x-1&=\frac5{y-2}\\
+(x-1)(y-2)&=5\\
+y-2&=\frac5{x-1}\\
+y&=2+\frac5{x-1}\\
+h^{-1}(x)&=2+\frac5{x-1}.
+\end{aligned}
+\]
+$D(h)=\mathbb R\setminus\{2\}$, $H(h)=\mathbb R\setminus\{1\}$ a $D(h^{-1})=\mathbb R\setminus\{1\}$. Ověření: $h(3)=6$ a $h^{-1}(6)=3$.
+\end{prikladReseniBox}
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Urči inverzní funkce podle kuchařky včetně definičních oborů.
+\begin{enumerate}[label=\alph*)]
+\item $f(x)=\sqrt{x-3}$, $x\ge3$.
+\item $g(x)=\dfrac{3}{x+2}-1$, $x\ne-2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item
+\(\displaystyle\begin{aligned}f(x)&=\sqrt{x-3} &&\bigm|\ x\to y\\x&=\sqrt{y-3}\\x^2&=y-3\\y&=x^2+3\\f^{-1}(x)&=x^2+3\end{aligned}\)
+
+$D(f^{-1})=\langle0;+\infty)$, $H(f^{-1})=\langle3;+\infty)$.
+\item
+\(\displaystyle\begin{aligned}g(x)&=\frac3{x+2}-1 &&\bigm|\ x\to y\\x&=\frac3{y+2}-1\\x+1&=\frac3{y+2}\\(x+1)(y+2)&=3\\y+2&=\frac3{x+1}\\y&=\frac3{x+1}-2\\g^{-1}(x)&=\frac3{x+1}-2\end{aligned}\)
+
+$D(g^{-1})=\mathbb R\setminus\{-1\}$, $H(g^{-1})=\mathbb R\setminus\{-2\}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Urči inverzi k $p(x)=\dfrac{2x-1}{x+3}$ na $\mathbb R\setminus\{-3\}$ a její definiční obor.
+\tcblower
+\[
+\begin{aligned}
+p(x)&=\frac{2x-1}{x+3} &&\bigm|\ x\to y\\
+x&=\frac{2y-1}{y+3}\\
+x(y+3)&=2y-1\\
+xy+3x&=2y-1\\
+y(x-2)&=-1-3x\\
+y&=\frac{1+3x}{2-x}\\
+p^{-1}(x)&=\frac{1+3x}{2-x}.
+\end{aligned}
+\]
+$D(p^{-1})=\mathbb R\setminus\{2\}$. Původní funkce je prostá: po rovnosti $p(a)=p(b)$ a vynásobení přípustnými jmenovateli vyjde $7a=7b$, takže $a=b$.
+\end{zadaniReseniBox}
+
+\clearpage
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Urči $f^{-1}$ pro $f(x)=\sqrt{x+5}$ a správně zapiš obory.
+\item Urči $g^{-1}$ pro $g(x)=\dfrac4{x-1}+2$ a správně zapiš jeho definiční obor.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item
+\(\displaystyle\begin{aligned}f(x)&=\sqrt{x+5} &&\bigm|\ x\to y\\x&=\sqrt{y+5}\\x^2&=y+5\\y&=x^2-5\\f^{-1}(x)&=x^2-5\end{aligned}\)
+
+$D(f^{-1})=\langle0;+\infty)$, $H(f^{-1})=\langle-5;+\infty)$.
+\item
+\(\displaystyle\begin{aligned}g(x)&=\frac4{x-1}+2 &&\bigm|\ x\to y\\x&=\frac4{y-1}+2\\x-2&=\frac4{y-1}\\(x-2)(y-1)&=4\\y-1&=\frac4{x-2}\\y&=1+\frac4{x-2}\\g^{-1}(x)&=1+\frac4{x-2}\end{aligned}\)
+
+$D(g^{-1})=\mathbb R\setminus\{2\}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

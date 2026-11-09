@@ -1,0 +1,92 @@
+% Work-MAT | 2. rocnik | hodina 11
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Exponenciální funkce}{11}{Exponenciální funkce I: zavedení}
+\begin{document}
+\poznamka{Návaznost na hodinu 10: rozlišit $x^2$ a $2^x$. Orientačně 6 min motivace, 12 min zavedení, 9 min tabulka a graf, 12 min příklady, 6 min samostatné upevnění. Zatím bez logaritmů.}
+\blok{Od mocninné k exponenciální funkci}
+U mocninné funkce $x^2$ dosazujeme proměnnou za základ; exponent se nemění. Nyní budeme umocňovat stále stejné číslo, ale měnit \emph{exponent}. Pro $f(x)=2^x$ známe z pravidel pro mocniny
+\[
+\begin{array}{c|rrrrrr}
+x&-2&-1&0&1&2&3\\\hline
+x^2&4&1&0&1&4&9\\
+2^x&\frac{1}{4}&\frac{1}{2}&1&2&4&8
+\end{array}
+\]
+Z pouhých hodnot vidíme, že jde o různé funkce. Důležitý je i význam záporného exponentu: $2^{-2}=\frac{1}{2^2}$, nikoli $-4$.\par
+\begin{prikladReseniBox}[title={Příklad 1}]
+Co se stane, jestliže položíme $a=1$? Sestav tabulku hodnot $f(x)=1^x$ pro několik argumentů a urči druh funkce.
+\tcblower
+\[
+\begin{array}{c|rrrrr}
+x&-2&-1&0&1&2\\\hline
+1^x&1&1&1&1&1
+\end{array}
+\]
+Pro každé $x\in\mathbb R$ dostáváme $1^x=1$, takže předpis $f(x)=1$ určuje \textbf{konstantní funkci} a grafem je vodorovná přímka $y=1$. Proto číslo $1$ jako základ exponenciální funkce nepřipouštíme.
+\end{prikladReseniBox}
+\begin{definiceBox}[title={Definice - Exponenciální funkce}]
+\textbf{Exponenciální funkce} o základu $a$ má předpis $f(x)=a^x$, kde $a>0$ a $a\ne1$; je definována pro všechna $x\in\mathbb R$. 
+\end{definiceBox}
+Proč vyžadujeme $a>0$? Nulu nelze umocnit například na $-1$; záporný základ nemá v reálných číslech smysl pro každý necelý exponent.\par
+\begin{center}
+\begin{tikzpicture}[x=1.06cm,y=.58cm,>=Latex]
+\clip(-3.2,-.45)rectangle(3.35,6.65);
+\draw[step=1,gray!18,very thin](-3,-.3)grid(3,6);
+\draw[->](-3.15,0)--(3.2,0)node[right]{$x$};
+\draw[->](0,-.3)--(0,6.4)node[above]{$y$};
+\draw[very thick,domain=-3:2.65,samples=90]plot(\x,{pow(2,\x)});
+\draw[thick,dashed,domain=-2.6:3,samples=90]plot(\x,{pow(0.5,\x)});
+\fill(0,1)circle(2.6pt);
+\node[anchor=west,font=\small]at(1.5,5.1){$2^x$};
+\node[anchor=west,font=\small]at(-2.4,5.1){$(\frac{1}{2})^x$};
+\node[anchor=south east,font=\scriptsize]at(0,1){$[0;1]$};
+\end{tikzpicture}
+\end{center}
+\poznamka{Plná křivka roste, čárkovaná klesá. Žáci mají výslovně říci, proč oba grafy procházejí bodem $[0;1]$ a proč nikde nedávají nulu.}
+Protože $a^0=1$, prochází každá exponenciální funkce bodem $[0;1]$. Její funkční hodnoty jsou kladné, graf tedy nikdy neprotíná osu $x$; přímka $y=0$ je vodorovnou asymptotou. Zároveň platí $D(f)=\mathbb R$ a $H(f)=(0;+\infty)$.
+\begin{zadaniBox}[title={Věta - Monotónnost exponenciální funkce}]
+Pro $a>1$ je exponenciální funkce $f(x)=a^x$ \textbf{rostoucí}. Pro $0<a<1$ je \textbf{klesající}.
+\end{zadaniBox}
+\blok{Výpočty a čtení grafu}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vypočti hodnoty $f(x)=3^x$ pro $x=-2,0,1,2$ a urči $D(f)$ a $H(f)$.
+\tcblower
+$f(-2)=\frac{1}{9}$, $f(0)=1$, $f(1)=3$, $f(2)=9$. Platí $D(f)=\mathbb R$, $H(f)=(0;+\infty)$. Funkce je přísně rostoucí.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Rozhodni, zda jde o exponenciální funkce: a) $4^x$, b) $x^4$, c) $1^x$, d) $(0{,}2)^x$. U každé vhodné urči monotónnost.
+\tcblower
+Exponenciální jsou a) a d); a) roste, d) klesá. Výraz $x^4$ je mocninná funkce a $1^x$ je konstantní funkce, kterou z definice exponenciální funkce vylučujeme.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Sestav předpis exponenciální funkce $f(x)=a^x$, jejíž graf prochází bodem $[2;16]$. Urči, zda roste, nebo klesá.
+\tcblower
+Protože bod leží na grafu, platí $a^2=16$. Ze zadání víme, že $a>0$, a proto $a=4$. Hledaný předpis je $f(x)=4^x$. Protože $4>1$, funkce roste.
+\end{prikladReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Pro $g(x)=(\frac{1}{3})^x$ dopočti $g(-2)$, $g(-1)$, $g(0)$, $g(2)$; načrtni průběh a rozhodni, zda někdy $g(x)=0$.
+\tcblower
+$g(-2)=9$, $g(-1)=3$, $g(0)=1$, $g(2)=\frac{1}{9}$. Graf přísně klesá a osu $x$ neprotne, protože všechny hodnoty jsou kladné.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Exponenciální funkce $f(x)=a^x$ prochází bodem $[2;25]$. Urči základ $a$.
+\tcblower
+$a^2=25$ a z podmínky $a>0$ plyne $a=5$. Předpis je $f(x)=5^x$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Urči $D$, $H$, průsečík s osou $y$ a monotónnost $f(x)=(\frac{1}{5})^x$.
+\item Vypočti $2^{-3}$, $4^{\frac{1}{2}}$, $9^{-\frac{1}{2}}$.
+\item Vysvětli jednou větou rozdíl mezi $x^3$ a $3^x$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $D=\mathbb R$, $H=(0;+\infty)$, průsečík $[0;1]$, klesající.
+\item $\frac{1}{8}$, $2$, $\frac{1}{3}$.
+\item V $x^3$ je proměnný základ, v $3^x$ exponent.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}
