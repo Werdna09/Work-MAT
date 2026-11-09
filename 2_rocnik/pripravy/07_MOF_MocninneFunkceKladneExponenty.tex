@@ -51,9 +51,9 @@ $x^4$ je sudá, má $H(f)=\langle0;+\infty)$, klesá na záporné a roste na kla
 \end{prikladReseniBox}
 
 \begin{prikladReseniBox}[title={Příklad 2}]
-Rozhodni, která z hodnot $\left(\frac12\right)^2$, $\left(\frac12\right)^4$, $2^2$ a $2^4$ je větší v každé dvojici se stejným základem.
+Rozhodni, která z hodnot $\left(\frac{1}{2}\right)^2$, $\left(\frac{1}{2}\right)^4$, $2^2$ a $2^4$ je větší v každé dvojici se stejným základem.
 \tcblower
-$\left(\frac12\right)^2=\frac14>\frac1{16}=\left(\frac12\right)^4$, zatímco $2^2=4<16=2^4$. Účinek zvýšení exponentu závisí na velikosti kladného základu vzhledem k $1$.
+$\left(\frac{1}{2}\right)^2=\frac{1}{4}>\frac{1}{16}=\left(\frac{1}{2}\right)^4$, zatímco $2^2=4<16=2^4$. Účinek zvýšení exponentu závisí na velikosti kladného základu vzhledem k $1$.
 \end{prikladReseniBox}
 
 \blok{Samostatná práce}
@@ -79,14 +79,63 @@ $D(f^{-1})=\langle0;+\infty)$.
 \end{zadaniReseniBox}
 
 \begin{zadaniReseniBox}[title={Domácí úkol}]
+\textbf{Lineární funkce} (od jednodušší k obtížnější):
 \begin{enumerate}[label=\alph*)]
-\item Urči vlastnosti $f(x)=x^8$ a $g(x)=x^9$ stejným způsobem jako u příkladu 1.
-\item Srovnej $\left(\frac13\right)^2$ a $\left(\frac13\right)^3$.
+\item Urči inverzi k $f(x)=2x+3$ a definiční obor i obor hodnot obou funkcí.
+\item Urči inverzi k $g(x)=\frac{3-2x}{4}$ a proveď zkoušku složením.
+\end{enumerate}
+\textbf{Lineárně lomené funkce}:
+\begin{enumerate}[label=\alph*),start=3]
+\item Urči inverzi k $h(x)=\frac{2}{x-1}$, obory obou funkcí a jejich asymptoty.
+\item Urči inverzi k $k(x)=\frac{2x+3}{x-4}$, obory obou funkcí a jejich asymptoty.
+\end{enumerate}
+\textbf{Kvadratické funkce}:
+\begin{enumerate}[label=\alph*),start=5]
+\item Urči inverzi k $m(x)=x^2$ na $D(m)=\langle0;+\infty)$.
+\item Urči inverzi k $n(x)=(x-2)^2+1$ na $D(n)=(-\infty;2\rangle$ a její definiční obor.
+\end{enumerate}
+\textbf{Mocninné funkce}:
+\begin{enumerate}[label=\alph*),start=7]
+\item Urči $D$, $H$, paritu, monotónnost a prostotu funkce $u(x)=x^4$ na $\mathbb R$.
+\item Urči $D$, $H$, paritu, monotónnost a prostotu funkce $v(x)=-2x^3$ na $\mathbb R$; navíc vypočti její inverzi.
+\end{enumerate}
+\textbf{Znalostní otázky}:
+\begin{enumerate}[label=\alph*),start=9]
+\item Jaký je rozdíl mezi $f^{-1}(x)$ a $\frac{1}{f(x)}$? Vysvětli na konkrétní funkci.
+\item Proč nemá $f(x)=x^2$ na celé $\mathbb R$ inverzní funkci? Jaká dvě omezení jejího oboru vedou ke dvěma různým inverzím?
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
-\item $x^8$: sudá, $H=\langle0;+\infty)$, na $\mathbb R$ neprostá; $x^9$: lichá, $H=\mathbb R$, přísně rostoucí a prostá. Obě mají $D=\mathbb R$.
-\item $\frac19>\frac1{27}$.
+\item
+\(\displaystyle\begin{aligned}f(x)&=2x+3 &&\bigm|\ x\to y\\x&=2y+3\\2y&=x-3\\y&=\frac{x-3}{2}\\f^{-1}(x)&=\frac{x-3}{2}\end{aligned}\)
+
+Obě funkce mají definiční obor i obor hodnot $\mathbb R$.
+\item
+\(\displaystyle\begin{aligned}g(x)&=\frac{3-2x}{4} &&\bigm|\ x\to y\\x&=\frac{3-2y}{4}\\4x&=3-2y\\2y&=3-4x\\y&=\frac{3-4x}{2}\\g^{-1}(x)&=\frac{3-4x}{2}\end{aligned}\)
+
+$g(g^{-1}(x))=\frac{3-2\cdot\frac{3-4x}{2}}{4}=x$.
+\item
+\(\displaystyle\begin{aligned}h(x)&=\frac{2}{x-1} &&\bigm|\ x\to y\\x&=\frac{2}{y-1}\\x(y-1)&=2\\y-1&=\frac{2}{x}\\y&=1+\frac{2}{x}\\h^{-1}(x)&=1+\frac{2}{x}\end{aligned}\)
+
+$D(h)=\mathbb R\setminus\{1\}$, $H(h)=\mathbb R\setminus\{0\}$; $D(h^{-1})=\mathbb R\setminus\{0\}$, $H(h^{-1})=\mathbb R\setminus\{1\}$. Asymptoty $h$: $x=1$, $y=0$; u inverze $x=0$, $y=1$.
+\item
+\(\displaystyle\begin{aligned}k(x)&=\frac{2x+3}{x-4} &&\bigm|\ x\to y\\x&=\frac{2y+3}{y-4}\\x(y-4)&=2y+3\\xy-4x&=2y+3\\y(x-2)&=4x+3\\y&=\frac{4x+3}{x-2}\\k^{-1}(x)&=\frac{4x+3}{x-2}\end{aligned}\)
+
+$D(k)=\mathbb R\setminus\{4\}$, $H(k)=\mathbb R\setminus\{2\}$; $D(k^{-1})=\mathbb R\setminus\{2\}$, $H(k^{-1})=\mathbb R\setminus\{4\}$. Asymptoty $k$: $x=4$, $y=2$; u inverze $x=2$, $y=4$.
+\item
+\(\displaystyle\begin{aligned}m(x)&=x^2 &&\bigm|\ x\to y\\x&=y^2\\y&=\sqrt{x}\\m^{-1}(x)&=\sqrt{x}\end{aligned}\)
+
+$D(m^{-1})=H(m^{-1})=\langle0;+\infty)$.
+\item
+\(\displaystyle\begin{aligned}n(x)&=(x-2)^2+1 &&\bigm|\ x\to y\\x&=(y-2)^2+1\\x-1&=(y-2)^2\\y-2&=-\sqrt{x-1}\\y&=2-\sqrt{x-1}\\n^{-1}(x)&=2-\sqrt{x-1}\end{aligned}\)
+
+$D(n^{-1})=\langle1;+\infty)$, $H(n^{-1})=(-\infty;2\rangle$. Zápornou větev odmocniny určuje $y\le2$.
+\item $D(u)=\mathbb R$, $H(u)=\langle0;+\infty)$; $u$ je sudá, klesá na $(-\infty;0\rangle$ a roste na $\langle0;+\infty)$. Na celé $\mathbb R$ není prostá.
+\item $D(v)=H(v)=\mathbb R$; funkce je lichá, přísně klesá, a tedy je prostá.
+
+\(\displaystyle\begin{aligned}v(x)&=-2x^3 &&\bigm|\ x\to y\\x&=-2y^3\\y^3&=-\frac{x}{2}\\y&=\sqrt[3]{-\frac{x}{2}}\\v^{-1}(x)&=\sqrt[3]{-\frac{x}{2}}\end{aligned}\)
+\item Inverzní funkce vrací původní argument, převrácená hodnota převrací číslo $f(x)$. Například pro $f(x)=2x$ je $f^{-1}(x)=\frac{x}{2}$, kdežto $\frac{1}{f(x)}=\frac{1}{2x}$ (pro $x\ne0$).
+\item Protože $f(-2)=f(2)=4$, není na $\mathbb R$ prostá. Při omezení na $\langle0;+\infty)$ je inverze $\sqrt{x}$, při omezení na $(-\infty;0\rangle$ je inverze $-\sqrt{x}$, obě s definičním oborem $\langle0;+\infty)$.
 \end{enumerate}
 \end{zadaniReseniBox}
 \end{document}

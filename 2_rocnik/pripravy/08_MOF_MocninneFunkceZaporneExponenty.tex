@@ -24,8 +24,8 @@ Doplň hodnoty funkcí $f(x)=x^{-2}$ a $g(x)=x^{-3}$ pro $x\in\{-2;-1;1;2\}$. Ro
 \[
 \begin{array}{c|rrrr}
 x&-2&-1&1&2\\\hline
-f(x)=1/x^2&1/4&1&1&1/4\\
-g(x)=1/x^3&-1/8&-1&1&1/8
+f(x)=\frac{1}{x^2}&\frac{1}{4}&1&1&\frac{1}{4}\\
+g(x)=\frac{1}{x^3}&-\frac{1}{8}&-1&1&\frac{1}{8}
 \end{array}
 \]
 Platí $f(-x)=f(x)$, tedy $f$ je sudá. Naproti tomu $g(-x)=-g(x)$, takže $g$ je lichá.
@@ -65,18 +65,40 @@ U $f(x)=x^{-4}$ urči $D$, $H$, sudost, znaménko a průsečíky s osami.
 $D(f)=\mathbb R\setminus\{0\}$, $H(f)=(0;+\infty)$; je sudá a na celém svém oboru kladná. Nemá průsečík s osou $x$ (nikdy není rovna nule) ani s osou $y$ (v nule není definována).
 \end{prikladReseniBox}
 
+\begin{prikladReseniBox}[title={Příklad 3}]
+Pro $h(x)=-\frac{3}{x^2}$ urči definiční obor, obor hodnot, paritu, asymptoty a funkční hodnoty $h(-1)$, $h(1)$, $h(2)$.
+\tcblower
+$D(h)=\mathbb R\setminus\{0\}$ a $H(h)=(-\infty;0)$. Funkce je sudá, protože $h(-x)=h(x)$. Asymptoty jsou $x=0$ a $y=0$. Platí $h(-1)=h(1)=-3$ a $h(2)=-\frac{3}{4}$. Obě větve leží pod osou $x$.
+\end{prikladReseniBox}
+
 \blok{Samostatná práce}
 \begin{zadaniReseniBox}[title={Samostatná práce 1}]
 \begin{enumerate}[label=\alph*)]
 \item Přepiš $x^{-5}$ zlomkem a určete jeho $D$, $H$ a paritu.
-\item Urči hodnoty $f(-2)$ a $f(1/2)$ pro $f(x)=x^{-2}$.
+\item Urči hodnoty $f(-2)$ a $f(\frac{1}{2})$ pro $f(x)=x^{-2}$.
 \item Napiš asymptoty grafu funkce $g(x)=-\frac{2}{x^3}$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
 \item $x^{-5}=1/x^5$, $D=H=\mathbb R\setminus\{0\}$, lichá.
-\item $f(-2)=1/4$, $f(1/2)=4$.
+\item $f(-2)=\frac{1}{4}$, $f(\frac{1}{2})=4$.
 \item $x=0$, $y=0$. Znaménko $g(x)$ je opačné než znaménko $x$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+\begin{enumerate}[label=\alph*)]
+\item U $f(x)=x^{-4}$ urči $D$, $H$, paritu a asymptoty.
+\item U $g(x)=-\frac{2}{x^3}$ urči $D$, $H$, paritu, asymptoty a znaménko na záporných $x$.
+\item Pro $p(x)=\frac{1}{2x^2}$ spočítej $p(-2)$, $p(2)$ a popiš polohu grafu vůči osám.
+\item Porovnej znaménka $x^{-2}$ a $x^{-3}$ na intervalu $(-\infty;0)$ a vysvětli proč.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $D(f)=\mathbb R\setminus\{0\}$, $H(f)=(0;+\infty)$; sudá, asymptoty $x=0$, $y=0$.
+\item $D(g)=H(g)=\mathbb R\setminus\{0\}$; lichá, asymptoty $x=0$, $y=0$. Pro $x<0$ je $g(x)>0$.
+\item $p(-2)=p(2)=\frac{1}{8}$. Graf je souměrný podle osy $y$, leží nad osou $x$ a ani jednu osu neprotíná.
+\item Pro $x<0$ platí $x^{-2}=\frac{1}{x^2}>0$, ale $x^{-3}=\frac{1}{x^3}<0$, protože sudá mocnina je kladná a lichá zachovává znaménko základu.
 \end{enumerate}
 \end{zadaniReseniBox}
 
@@ -87,14 +109,34 @@ $D(h)=\mathbb R\setminus\{2\}$, $H(h)=(0;+\infty)$. Svislá asymptota je $x=2$, 
 \end{zadaniReseniBox}
 
 \begin{zadaniReseniBox}[title={Domácí úkol}]
+\textbf{Mix učiva o inverzích, kladných a záporných mocninách:}
 \begin{enumerate}[label=\alph*)]
-\item U $f(x)=x^{-6}$ a $g(x)=x^{-7}$ určete $D$, $H$, paritu a znaménko pro $x<0$.
+\item U $f(x)=x^{-6}$ a $g(x)=x^{-7}$ urči $D$, $H$, paritu a znaménko pro $x<0$.
 \item Vypočítej $2^{-3}$ a $(-2)^{-3}$ a vysvětli rozdíl.
+\item Urči inverzi k lineární funkci $h(x)=3x-5$.
+\item Urči inverzi k lineárně lomené funkci $k(x)=\frac{x+1}{x-2}$ a její definiční obor.
+\item Urči inverzi k $m(x)=(x-1)^2$ na $D(m)=\langle1;+\infty)$.
+\item Urči $D$, $H$, paritu a monotónnost funkce $p(x)=x^5$.
+\item Urči $D$, $H$, paritu a asymptoty funkce $q(x)=x^{-4}$.
+\item Urči $D$, $H$, paritu, znaménko a asymptoty funkce $r(x)=-\frac{2}{x^3}$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
 \item Obě mají $D=\mathbb R\setminus\{0\}$. $x^{-6}$ je sudá, kladná a má $H=(0;+\infty)$; $x^{-7}$ je lichá, pro $x<0$ záporná a má $H=\mathbb R\setminus\{0\}$.
-\item $2^{-3}=1/8$, $(-2)^{-3}=-1/8$; třetí mocnina zachovává znaménko základu.
+\item $2^{-3}=\frac{1}{8}$, $(-2)^{-3}=-\frac{1}{8}$; třetí mocnina zachovává znaménko základu.
+\item
+\(\displaystyle\begin{aligned}h(x)&=3x-5 &&\bigm|\ x\to y\\x&=3y-5\\3y&=x+5\\y&=\frac{x+5}{3}\\h^{-1}(x)&=\frac{x+5}{3}\end{aligned}\)
+\item
+\(\displaystyle\begin{aligned}k(x)&=\frac{x+1}{x-2} &&\bigm|\ x\to y\\x&=\frac{y+1}{y-2}\\x(y-2)&=y+1\\xy-2x&=y+1\\y(x-1)&=2x+1\\y&=\frac{2x+1}{x-1}\\k^{-1}(x)&=\frac{2x+1}{x-1}\end{aligned}\)
+
+$D(k^{-1})=\mathbb R\setminus\{1\}$.
+\item
+\(\displaystyle\begin{aligned}m(x)&=(x-1)^2 &&\bigm|\ x\to y\\x&=(y-1)^2\\y-1&=\sqrt{x}\\y&=1+\sqrt{x}\\m^{-1}(x)&=1+\sqrt{x}\end{aligned}\)
+
+$D(m^{-1})=\langle0;+\infty)$.
+\item $D(p)=H(p)=\mathbb R$; funkce je lichá a přísně roste.
+\item $D(q)=\mathbb R\setminus\{0\}$, $H(q)=(0;+\infty)$; sudá, asymptoty $x=0$ a $y=0$.
+\item $D(r)=H(r)=\mathbb R\setminus\{0\}$; lichá, pro $x>0$ záporná a pro $x<0$ kladná, asymptoty $x=0$ a $y=0$.
 \end{enumerate}
 \end{zadaniReseniBox}
 \end{document}

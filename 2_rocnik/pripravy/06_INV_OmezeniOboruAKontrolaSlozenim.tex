@@ -140,6 +140,10 @@ V obou případech je $D(p^{-1})=\langle1;+\infty)$; obory hodnot se liší.
 \begin{enumerate}[label=\alph*)]
 \item Urči inverzní funkci k $f(x)=(x+1)^2-3$ na $\langle-1;+\infty)$.
 \item Vysvětli, proč $x^2$ na $\mathbb R$ inverzní funkci nemá, ale na $\langle0;+\infty)$ má.
+\item Urči inverzi k $g(x)=x^2$ na $D(g)=\langle0;+\infty)$.
+\item Urči inverzi k $h(x)=x^3$ na $\mathbb R$.
+\item Urči inverzi k $k(x)=|2x-4|$ na $D(k)=\langle2;+\infty)$.
+\item Urči inverzi k $p(x)=x^2-2x$ na $D(p)=\langle1;+\infty)$.
 \end{enumerate}
 \tcblower
 \begin{enumerate}[label=\alph*)]
@@ -156,6 +160,50 @@ f^{-1}(x)&=-1+\sqrt{x+3}.
 \]
 $D(f^{-1})=\langle-3;+\infty)$.
 \item Na $\mathbb R$ mají opačné argumenty stejnou druhou mocninu; na nezáporné části je funkce prostá.
+\item
+\[
+\begin{aligned}
+g(x)&=x^2 &&\bigm|\ x\to y\\
+x&=y^2\\
+y&=\sqrt{x}\\
+g^{-1}(x)&=\sqrt{x}.
+\end{aligned}
+\]
+$D(g^{-1})=\langle0;+\infty)$, $H(g^{-1})=\langle0;+\infty)$.
+\item
+\[
+\begin{aligned}
+h(x)&=x^3 &&\bigm|\ x\to y\\
+x&=y^3\\
+y&=\sqrt[3]{x}\\
+h^{-1}(x)&=\sqrt[3]{x}.
+\end{aligned}
+\]
+$D(h^{-1})=H(h^{-1})=\mathbb R$.
+\item
+\[
+\begin{aligned}
+k(x)&=|2x-4| &&\bigm|\ x\to y\\
+x&=|2y-4|\\
+x&=2y-4\\
+2y&=x+4\\
+y&=\frac{x+4}{2}\\
+k^{-1}(x)&=\frac{x+4}{2}.
+\end{aligned}
+\]
+Z podmínky $y\ge2$ plyne $|2y-4|=2y-4$. $D(k^{-1})=\langle0;+\infty)$, $H(k^{-1})=\langle2;+\infty)$.
+\item
+\[
+\begin{aligned}
+p(x)&=x^2-2x &&\bigm|\ x\to y\\
+x&=y^2-2y\\
+x+1&=(y-1)^2\\
+y-1&=\sqrt{x+1}\\
+y&=1+\sqrt{x+1}\\
+p^{-1}(x)&=1+\sqrt{x+1}.
+\end{aligned}
+\]
+Na zadané větvi $y\ge1$ bereme kladnou odmocninu. $D(p^{-1})=\langle-1;+\infty)$ a $H(p^{-1})=\langle1;+\infty)$.
 \end{enumerate}
 \end{zadaniReseniBox}
 \end{document}
