@@ -1,137 +1,123 @@
-% Obsahový zdroj: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex a odpovídající PDF (obě strany).
-% P1–P5: zdrojové Příklady 1–5; C1–C5: zdrojové Procvičování 1–5.
-% Matematický obsah zachován; výklad, odvození a řešení pedagogicky rozvedeny.
-% Upřesnění a opravy: viz KMB_29-41_Kontrola.md; původní import zůstává beze změny.
-% Rozpis: 4_rocnik/tematicke_plany/Rozpis_vyuky_MAT_4_rocnik.tex, hodina 30.
-% Plán: 4_rocnik/tematicke_plany/SPS.pdf, oddíly 2.1–2.3.
-% Sazba: sablony/pripravy/TEMPLATE_Priprava.tex a společný priprava.sty.
-% Vlastní doplnění: didaktický výklad, zdůvodnění, metodika; žádné nové číslované úlohy.
-% Učebnice/09_Kombinatorika nemá obsahovou kapitolu; místní kombinatorické listy ani Realisticky.cz nejsou dostupné.
 \documentclass[11pt,a4paper]{article}
+
 \input{../../sablony/pripravy/priprava.sty}
+
 \nastavPripravu{4. ročník}{Kombinatorika}{30}{Pravidlo součtu a součinu}
+
 \begin{document}
 
+\blok{Motivace a návaznost}
 
-Vrať se ke dvěma způsobům výpisu z hodiny 29. Ve skupinách alternativ sčítáme počty větví, při postupném vytváření jednoho výsledku zjišťujeme počet všech pokračování.
-\poznamka{Předpoklady: pořadí, opakování a úplný výpis. Cíl: žák zdůvodní volbu součtu či součinu a správně započítá omezení na pozicích. Společně řeš P1–P4; P5 nabídni jako rozšíření rychlejším žákům.}
+V jídelně lze vybrat jednu ze tří polévek nebo jednu ze čtyř svačin; při obědě si naopak vybíráme polévku i hlavní chod. Kdy sčítáme a kdy násobíme?
+
+\poznamka{Předpoklady: systematický výpis, rozlišení alternativ a kroků. Cíl: zdůvodnit pravidlo součtu nebo součinu a ošetřit omezení první pozice.}
 
 \blok{Výklad a odvození}
+
 \begin{definiceBox}
-\textbf{Kombinatorické pravidlo součtu.} Rozdělíme-li všechny přípustné výsledky na vzájemně disjunktní (nepřekrývající se) skupiny o počtech $a_1,\ldots,a_r$, je všech výsledků $a_1+\cdots+a_r$. Každý výsledek musí patřit právě do jedné skupiny.
+\textbf{Pravidlo součtu:} rozdělíme-li všechny přípustné výsledky na nepřekrývající se skupiny o počtech $a_1,\ldots,a_r$, je jich celkem $a_1+\cdots+a_r$.
 \end{definiceBox}
 \begin{definiceBox}
-\textbf{Kombinatorické pravidlo součinu.} Vytváříme-li výsledek v $r$ krocích a po každé přípustné volbě v předchozích krocích má krok $i$ vždy právě $a_i$ pokračování, je výsledků $a_1a_2\cdots a_r$. Každý sled voleb musí jednoznačně určit právě jeden výsledek.
+\textbf{Pravidlo součinu:} vytváříme-li výsledek postupně v $r$ krocích a každý dosavadní přípustný výběr má v kroku $i$ právě $a_i$ pokračování, je výsledků $a_1a_2\cdots a_r$.
 \end{definiceBox}
-\begin{definiceBox}
-\textbf{Strom možností} je diagram postupných voleb: větve představují povolené volby, úplná cesta od začátku ke konci jeden výsledek.
-\end{definiceBox}
-
-U dvou kroků si představ $a$ skupin, každou s $b$ pokračováními. Opakovaný součet $b+\cdots+b$ ($a$ sčítanců) dává $ab$. Stejně zdůvodníme více kroků.
-
-\textbf{Strom pro dvě první cifry trojciferného čísla z P4:}
-\[
-\begin{array}{c|c|c}
-\text{první cifra}&\text{druhá cifra}&\text{poslední cifra}\\\hline
-1&2,3,4&0\\
-2&1,3,4&0\\
-3&1,2,4&0\\
-4&1,2,3&0
-\end{array}
-\]
-Každý ze čtyř začátků má tři pokračování a jedno pevné zakončení. Tabulka je úsporným zachycením větví stromu, nikoli seznamem hotových čísel.
-
-Dovolené znaky mohou záviset na minulých volbách; pro součin je podstatný \emph{stejný počet} pokračování v daném kroku. Není nutné, aby zůstávala stejná množina znaků. Liší-li se i počty, rozdělujeme na případy se stejným větvením a výsledky sčítáme.
-
-
-\poznamka{Průběh: 0–6 min návrat k výpisu; 6–17 min pravidla a P1–P2; 17–30 min P3–P4, strom; 30–41 min C1–C4, při dostatku času C5; 41–45 min kontrola. P5 a případně C5 jsou rezerva či domácí práce, aby neubraly čas vysvětlení počáteční nuly.}
+Počet pokračování se někdy mění podle předchozí volby. Pak rozlišíme disjunktní případy a jejich počty sečteme. Kontrolní otázka: vede každý sled voleb právě k jednomu výsledku?
 
 \blok{Společně řešené příklady}
 
-% Zdroj P1: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Příklad 1.
-\begin{prikladReseniBox}[title={Příklad P1}]
-Jízdenku lze koupit ve čtyřech různých tarifech na vlak nebo ve třech tarifech na autobus. Kolik je možností jedné jízdenky?
+\begin{prikladReseniBox}[title={Příklad 1}]
+V kiosku nabízejí čtyři různé nápoje a šest různých tyčinek. Kolika způsoby lze koupit právě jednu věc?
 \tcblower
-Volíme buď vlak, nebo autobus, nikoli oba zároveň. Množiny typů jízdenek jsou disjunktní. \(4+3=7\).
+Buď nápoj, nebo tyčinka: $4+6=10$.
 \end{prikladReseniBox}
 
 
-% Zdroj P2: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Příklad 2.
-\begin{prikladReseniBox}[title={Příklad P2}]
-Na oběd je pět hlavních jídel a tři nápoje. Vybíráme jedno z každého.
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Jaký je počet obědů sestavených z pěti polévek a čtyř hlavních chodů?
 \tcblower
-Nejprve \(5\) možností jídla a pro každé z nich \(3\) možnosti nápoje. \(5\cdot3=15\).
+Volíme jedno z pěti a potom jedno ze čtyř: $5\cdot4=20$.
 \end{prikladReseniBox}
 
 
-% Zdroj P3: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Příklad 3.
-\begin{prikladReseniBox}[title={Příklad P3}]
-Kolik existuje čtyřciferných čísel bez opakování číslic?
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolik trojciferných čísel s různými ciframi lze vytvořit z číslic $0,1,2,3,4$?
 \tcblower
-Obsazujeme postupně čtyři pozice. První cifra je z $1,\ldots,9$: devět voleb. Pak zbývá devět nepoužitých číslic, protože se vrací možnost nuly. Další pozice mají osm a sedm možností. Pravidlem součinu
-\[
-9\cdot9\cdot8\cdot7=4536.
-\]
-Každé čtyřciferné číslo má právě jeden takový zápis. Součin $10\cdot9\cdot8\cdot7$ by navíc započítal kódy začínající nulou.
+První cifra nemůže být nula: $4$ volby; druhá $4$; třetí $3$. Celkem $4\cdot4\cdot3=48$.
 \end{prikladReseniBox}
 
 
-% Zdroj P4: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Příklad 4.
-\begin{prikladReseniBox}[title={Příklad P4}]
-Kolik trojciferných čísel s navzájem různými číslicemi dělitelných pěti vytvoříme z číslic $0,1,2,3,4$?
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Kolik dresů sestavíme ze tří triček a dvou kraťasů?
 \tcblower
-Dělitelnost pěti vyžaduje poslední cifru $0$ nebo $5$. Zadaná nabídka neobsahuje $5$, takže konec je pevně $0$. Na prvním místě jsou čtyři nenulové možnosti, na druhém tři zbývající nenulové. Dostáváme $4\cdot3=12$ čísel. Například větev začínající $1$ dává $120,130,140$; obdobně další tři větve.
-\end{prikladReseniBox}
-
-
-% Zdroj P5: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Příklad 5.
-\begin{prikladReseniBox}[title={Příklad P5}]
-Kolik čtyřznakových kódů z $A,B,C,D$ lze sestavit, nesmějí-li být stejné dva sousední znaky? Opakování na nesousedních pozicích je dovoleno.
-\tcblower
-První místo má čtyři volby. Na druhém jsou tři (vše kromě prvního znaku). Na třetím opět tři, protože vylučujeme jen druhý znak, a na čtvrtém zase tři. Celkem $4\cdot3\cdot3\cdot3=108$. Množina dovolených znaků se mění, její počet ale zůstává stejný, a proto lze použít součin.
-\end{prikladReseniBox}
-
-
-\newpage
-\blok{Samostatná práce a zásoba k procvičení}
-
-U každé úlohy nejprve žák napíše, zda volí alternativu, nebo sestavuje výsledek v několika krocích. C1–C2 tvoří krátký kontrast; těžiště samostatné práce je v C3–C4.
-
-% Zdroj C1: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Procvičování, položka 1.
-\begin{zadaniReseniBox}[title={Úloha C1}]
-Tři různé příchutě a čtyři polevy: jedna příchuť a jedna poleva.
-\tcblower
-Pro každou ze tří příchutí jsou čtyři polevy. Jeden výsledek je dvojice příchuť–poleva, tedy $3\cdot4=12$ možností.
-\end{zadaniReseniBox}
-
-% Zdroj C2: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Procvičování, položka 2.
-\begin{zadaniReseniBox}[title={Úloha C2}]
-Do finále se lze dostat jednou z pěti postupových cest A nebo jednou ze sedmi cest B; cesty se nepřekrývají.
-\tcblower
-Vybereme jednu cestu z jedné ze dvou disjunktních skupin. Sčítáme $5+7=12$ cest, protože nejde o dvě postupné volby.
-\end{zadaniReseniBox}
-
-% Zdroj C3: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Procvičování, položka 3.
-\begin{zadaniReseniBox}[title={Úloha C3}]
-Kolik čtyřmístných kódů z číslic \(0\) až \(5\) lze napsat, je-li opakování dovoleno?
-\tcblower
-Na každé ze čtyř pozic je šest možností $0,\ldots,5$. Opakování ani počáteční nula nejsou zakázány, tedy $6\cdot6\cdot6\cdot6=1296$ kódů.
-\end{zadaniReseniBox}
-
-% Zdroj C4: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Procvičování, položka 4.
-\begin{zadaniReseniBox}[title={Úloha C4}]
-Kolik trojciferných čísel lze napsat z číslic \(0\) až \(6\), bez opakování?
-\tcblower
-První cifra: šest možností $1,\ldots,6$. Druhá: šest zbývajících včetně nuly. Třetí: pět zbývajících. Počet je $6\cdot6\cdot5=180$.
-\end{zadaniReseniBox}
-
-% Zdroj C5: import_hodiny/30_Pravidlo_souctu_a_soucinu.tex, Procvičování, položka 5.
-\begin{zadaniReseniBox}[title={Úloha C5}]
-Kolik existuje pětimístných hesel ze tří znaků, v nichž žádné dva sousední nejsou stejné?
-\tcblower
-První znak má tři možnosti. Na každé z dalších čtyř pozic vyloučíme pouze bezprostředně předcházející znak, a proto zbývají vždy dvě volby. Celkem $3\cdot2^4=48$ hesel.
+$3\cdot2=6$.
 \end{zadaniReseniBox}
 
 
-\poznamka{Typické chyby: sčítání počtů jídel a nápojů; překrývající se případy; druhé místo v P3 mylně jen s osmi možnostmi. Po první nenulové cifře zbývá devět cifer včetně nuly. U P5 je zakázáno pouze sousední opakování, nikoli návrat znaku později (např. $ABAB$). Příště zavedeme faktoriál jako zápis zkracující dlouhé součiny.}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Z osmi červených a sedmi modrých rozlišitelných míčků vybíráme právě jeden. Kolik možností?
+\tcblower
+$8+7=15$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Kolik čtyřmístných PINů lze vytvořit z číslic $0,1,2$, pokud se číslice nesmějí opakovat?
+\tcblower
+Žádný: pro čtyři místa máme jen tři různé symboly.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Z číslic $0,1,2,3$ tvoříme trojciferná sudá čísla bez opakování. Kolik jich je?
+\tcblower
+Poslední cifra 0: $3\cdot2=6$. Poslední cifra 2: první cifra 1 nebo 3 ($2$), druhá ze dvou zbývajících ($2$): $4$. Celkem $10$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item V obchodě je 5 druhů pečiva a 6 druhů nápojů. Kolik různých dvojic pečivo--nápoj lze vytvořit?
+\item Mám si koupit buď jednu z 5 tužek, nebo jeden ze 4 sešitů. Kolik možností?
+\item Kolik dvojciferných čísel s různými ciframi lze vytvořit z číslic $0,1,2,3,4$?
+\item Kolik trojciferných lichých čísel bez opakování lze sestavit z číslic $0,1,2,3,4$?
+\item Kolik čtyřmístných PINů vytvoříš z číslic $0,1,2$ s opakováním?
+\item Kolik trojciferných čísel s navzájem různými ciframi vznikne z číslic $0,1,2,3,4$, je-li první cifra sudá a poslední lichá?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $5\cdot6=30$.
+\item $5+4=9$.
+\item $4\cdot4=16$.
+\item Poslední cifra 1 nebo 3: $2$ možnosti. První z ostatních nenulových: $3$; prostřední ze zbylých $3$. Celkem $2\cdot3\cdot3=18$.
+\item $3^4=81$.
+\item První cifra 2 nebo 4: dvě možnosti. Poslední 1 nebo 3: dvě možnosti. Prostřední jedna ze tří zbývajících: $2\cdot2\cdot3=12$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--10 min motivace; 10--20 min pravidla; 20--35 min příklady; 35--45 min samostatná práce a kontrola.}
+
+\poznamka{U poslední domácí úlohy zdůrazni rozdíl mezi pořadím číslic a volbou množiny číslic.}
+
 \end{document}

@@ -1,0 +1,131 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{39}{Variace s opakováním}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Čtyřmístný PIN má na každé pozici na výběr číslici od 0 do 9. Co se mění oproti permutacím s předem danými četnostmi?
+
+\poznamka{Předpoklady: pravidlo součinu, variace bez opakování a permutace s opakováním. Cíl: rozlišit volné opakování symbolů od pevných četností a řešit omezené kódy.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Variace s opakováním} délky $k$ z $n$ různých prvků je uspořádaná $k$-tice, v níž se smí každý prvek opakovat. Pro $n\ge1$, $k\ge0$ platí
+\[
+\overline{V}(n,k)=n^k.
+\]
+\end{definiceBox}
+Kód smí začínat nulou, pokud zadání neurčí opak. Číslo začínat nulou nesmí. Při zákazu opakování sousedních znaků dostává první pozice $n$ možností, každá další $n-1$: celkem $n(n-1)^{k-1}$ pro $k\ge1$.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Kolik existuje čtyřmístných PINů z deseti číslic, pokud se číslice mohou opakovat?
+\tcblower
+$10^4=10000$. Počáteční nula je dovolena.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Kolik čtyřciferných čísel existuje, smějí-li se cifry opakovat?
+\tcblower
+První cifra $9$ možností, další po $10$: $9\cdot10^3=9000$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolik pětiznakových kódů lze vytvořit z písmen A, B, C, pokud nesmějí být dva sousední znaky stejné?
+\tcblower
+První pozice tři možnosti, další vždy dvě: $3\cdot2^4=48$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Kolik trojmístných hesel z pěti písmen existuje s opakováním?
+\tcblower
+$5^3=125$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Kolik dvouciferných čísel se stejnými ciframi existuje?
+\tcblower
+Devět: $11,22,\ldots,99$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Kolik čtyřznakových kódů nad abecedou A, B, C obsahuje právě dvě A?
+\tcblower
+Polohy A vybereme $\binom42=6$ způsoby a na zbývající dvě místa po dvou možnostech B,C. Celkem $6\cdot2^2=24$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Kolik čtyřmístných PINů obsahuje alespoň jednou číslici 7?
+\tcblower
+Všech PINů $10^4$, bez sedmičky $9^4$. Rozdíl $10000-6561=3439$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Rozšíření 2}]
+\textbf{Volitelné:} Ze čtyř druhů zmrzliny vybereme tři kopečky, pořadí chutí nerozlišujeme a jednu chuť můžeme zvolit vícekrát. Kolik výběrů vznikne?
+\tcblower
+Jde o kombinace s opakováním. Počet je $\binom{4+3-1}{3}=\binom63=20$. Lze ověřit výpisem možností nebo modelem hvězdiček a přepážek. Nejde o povinný vzorec této hodiny.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Kolik je pětimístných PINů, pokud lze opakovat všechny číslice?
+\item Kolik čtyřciferných čísel existuje při povoleném opakování číslic?
+\item Kolik čtyřznakových hesel nad třemi písmeny A, B, C nemá dva sousední znaky stejné?
+\item Kolik trojznakových kódů z číslic $0,1,2,3,4$ obsahuje alespoň jednu nulu?
+\item Vysvětli rozdíl mezi permutací písmen slova AABB a čtyřznakovým kódem z písmen A, B s opakováním.
+\item Kolik pětiznakových kódů nad písmeny A, B, C obsahuje právě jedno A?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $10^5=100000$.
+\item $9\cdot10^3=9000$.
+\item $3\cdot2^3=24$.
+\item $5^3-4^3=125-64=61$.
+\item Pevné dvě A a dvě B: $4!/(2!2!)=6$; volné četnosti: $2^4=16$.
+\item Poloha A: pět možností, zbývající čtyři místa po dvou možnostech: $5\cdot2^4=80$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--10 min kontrast kód a slovo; 10--24 min odvození; 24--38 min omezení; 38--45 min shrnutí.}
+
+\poznamka{Kombinace s opakováním jsou pouze rozšiřující možnost; základní test by je neměl vyžadovat bez samostatného probrání.}
+
+\end{document}

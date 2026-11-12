@@ -1,0 +1,116 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{35}{Variace II -- omezení a smíšené úlohy}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Když je první znak čísla nenulový nebo některé osoby nesmějí být zvoleny, nelze bez rozmyslu použít jeden hotový vzorec. Propojujeme postupné volby s permutacemi.
+
+\poznamka{Předpoklady: permutace, variace, pravidla součtu a součinu. Cíl: rozpoznat kombinaci omezení, rozdělit případy a zvolit model v úlohách smíšených s permutacemi.}
+
+\blok{Výklad a odvození}
+
+U čísel nesmí být první cifra nula; u kódů smí, pokud zadání neříká jinak. U omezených výběrů může být snazší zafixovat určitou pozici, vytvořit blok, odečíst zakázané výsledky nebo rozdělit případy na nepřekrývající se části.
+\begin{definiceBox}
+\textbf{Doplňková metoda} počítá přípustné výsledky jako všechny výsledky minus zakázané výsledky. Všechny případy musíme započítat právě jednou.
+\end{definiceBox}
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Kolik čtyřciferných čísel s navzájem různými ciframi lze vytvořit z číslic $0,1,2,3,4,5$?
+\tcblower
+První cifra má $5$ možností; další postupně $5,4,3$. Celkem $5\cdot5\cdot4\cdot3=300$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Ze sedmi různých studentů obsadíme předsedu, zástupce a zapisovatele. Zapisovatelem nesmí být Petr. Kolik možností?
+\tcblower
+Zapisovatel: šest možností. Předseda: šest ze zbylých, zástupce pět. Celkem $6\cdot6\cdot5=180$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Na slavnost vystupuje sedm různých hudebních skupin, jedna musí být poslední. Kolik pořadí je možných? Jak se úloha liší od výběru prvních tří vystupujících?
+\tcblower
+Pevné poslední místo: $6!=720$ permutací. Při výběru tří různých prvních míst ze sedmi jde o $V(7,3)=210$ variací.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Kolik trojciferných čísel bez opakování vznikne z číslic $0,1,2,3,4$?
+\tcblower
+$4\cdot4\cdot3=48$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Z osmi osob vybereme kapitána a zástupce. Kapitánem musí být Anna nebo Boris. Kolik obsazení?
+\tcblower
+Kapitán má dvě možnosti, zástupce sedm: $2\cdot7=14$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Seřaď šest různých knih tak, aby dvě konkrétní stály na prvních dvou místech v libovolném pořadí.
+\tcblower
+$2!\cdot4!=48$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Kolik čtyřciferných sudých čísel bez opakování lze sestavit ze všech deseti číslic $0,\ldots,9$?
+\tcblower
+Poslední cifra 0: $9\cdot8\cdot7=504$. Poslední cifra 2,4,6,8: $4\cdot8\cdot8\cdot7=1792$. Celkem $2296$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Kolik čtyřmístných kódů bez opakování lze vytvořit ze sedmi různých symbolů?
+\item Kolik čtyřciferných čísel bez opakování vytvoříme z číslic $0,1,2,3,4,5$?
+\item Ze šesti osob obsadíme tři funkce, přičemž předsedou smí být jen Anna nebo Eva. Kolik možností?
+\item Ve frontě stojí šest různých osob; Petra musí stát první a Adam poslední. Urči počet pořadí a vysvětli, proč jde o permutaci, ne variaci.
+\item Z číslic $1,2,3,4,5,6$ vytvoř čtyřciferná lichá čísla bez opakování. Kolik jich je?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $7\cdot6\cdot5\cdot4=840$.
+\item $5\cdot5\cdot4\cdot3=300$.
+\item $2\cdot5\cdot4=40$.
+\item $4!=24$; všech šest osob se řadí.
+\item Jednotky 1,3,5: $3$ možnosti; zbylá místa $5\cdot4\cdot3$, celkem $180$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--10 min opakování; 10--28 min rozklad podle omezení; 28--40 min smíšené úlohy; 40--45 min kontrola.}
+
+\end{document}

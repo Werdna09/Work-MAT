@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{38}{Permutace s opakováním}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Kolik různých slov (i nesmyslných) vznikne přeskupením písmen slova MAMA? Stejná písmena nelze vzájemně rozlišit.
+
+\poznamka{Předpoklady: permutace různých prvků, faktoriály a kombinace. Cíl: vysvětlit pevné četnosti stejných prvků a zdůvodnit dělení faktoriály četností.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Permutace s opakováním} uspořádávají všech $n$ prvků, které mohou zahrnovat nerozlišitelné kopie stejných druhů. Mají-li jednotlivé druhy pevné četnosti $n_1,\ldots,n_r$, kde $n_1+\cdots+n_r=n$, potom
+\[
+P(n;n_1,\ldots,n_r)=\frac{n!}{n_1!\cdots n_r!}.
+\]
+\end{definiceBox}
+Nejprve dočasně očíslujeme stejné kopie a seřadíme všech $n$ odlišných objektů. Každé viditelné pořadí se objeví přesně $n_1!\cdots n_r!$-krát. Zde \textbf{nevolíme libovolnou četnost}; počty jednotlivých symbolů jsou předepsány.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Kolik různých přeskupení písmen má slovo MAMA?
+\tcblower
+Dvě M a dvě A: $\frac{4!}{2!2!}=6$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Kolik různých přeskupení má slovo BANANA?
+\tcblower
+Šest písmen: A třikrát, N dvakrát, B jednou. $\frac{6!}{3!2!}=60$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolik řad vznikne ze tří červených a dvou modrých nerozlišitelných korálků?
+\tcblower
+$\frac{5!}{3!2!}=10$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Urči počet různých přeskupení slova TATA.
+\tcblower
+$\frac{4!}{2!2!}=6$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Kolik pořadí vznikne ze čtyř bílých a dvou černých nerozlišitelných karet?
+\tcblower
+$\frac{6!}{4!2!}=15$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Kolik různých řetězců délky 5 obsahuje přesně tři nuly a dvě jedničky?
+\tcblower
+$\frac{5!}{3!2!}=10$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Z číslic $0,0,1,1,2$ vytvoříme pěticiferná čísla, použijeme-li všechny číslice. Kolik jich je?
+\tcblower
+Všech přeskupení je $5!/(2!2!)=30$. S nulou na začátku je $4!/(1!2!)=12$. Platných pěticiferných čísel je $30-12=18$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Kolik různých přeskupení má slovo ANANAS?
+\item Kolik různých řad ze tří červených a tří modrých nerozlišitelných kostek?
+\item Z číslic $1,1,2,2,3$ sestav všechna různá pěticiferná čísla; urči jejich počet.
+\item Kolik různých přeskupení má slovo AABBC?
+\item Vysvětli, proč do počtu permutací s opakováním slova AABB nepatří nové slovo, pokud prohodíme obě A.
+\item Kolik řad vytvoří tři stejné červené a dvě stejné modré kostky, pokud všechny červené musejí stát pohromadě?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $6!/(3!2!)=60$.
+\item $6!/(3!3!)=20$.
+\item $5!/(2!2!)=30$.
+\item $5!/(2!2!)=30$.
+\item Obě A jsou nerozlišitelné, jejich záměna nemění viditelné pořadí.
+\item Blok ČČČ a dvě nerozlišitelné modré kostky tvoří tři objekty se dvěma stejnými: $3!/2!=3$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--12 min problém MAMA; 12--24 min odvození; 24--40 min úlohy; 40--45 min kontrola.}
+
+\poznamka{Pozor na odlišný význam opakování oproti variacím s opakováním. Žáci nesmějí zaměňovat pevně určené četnosti a libovolné opakované volby.}
+
+\end{document}

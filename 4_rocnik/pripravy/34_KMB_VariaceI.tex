@@ -1,0 +1,121 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{34}{Variace I -- základy}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Ze sedmi uchazečů obsadíme tři různá místa na stupních vítězů. Na rozdíl od permutací nepoužijeme všechny uchazeče.
+
+\poznamka{Předpoklady: permutace bez opakování, faktoriál, pravidlo součinu. Cíl: pochopit uspořádaný výběr jen části prvků a odvodit vzorec variací bez opakování.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Variace bez opakování} délky $k$ z $n$ různých prvků je uspořádaný výběr $k$ různých prvků. Pro celá $0\le k\le n$ platí
+\[
+V(n,k)=n(n-1)\cdots(n-k+1)=\frac{n!}{(n-k)!}.
+\]
+\end{definiceBox}
+U permutace řadíme všech $n$ objektů; u variace jen $k$ z nich a rozlišujeme pořadí nebo role. Pro $k=n$ dostaneme permutaci. Je-li $k=0$, existuje jediný prázdný výběr.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Osm běžců obsadí první tři místa bez dělených umístění. Kolik výsledků existuje?
+\tcblower
+$V(8,3)=8\cdot7\cdot6=336$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Ze šesti žáků vybereme předsedu a místopředsedu. Kolik obsazení funkcí?
+\tcblower
+$V(6,2)=6\cdot5=30$. Funkce jsou různé.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolik pětimístných řetězců bez opakování lze vytvořit ze sedmi různých písmen?
+\tcblower
+$V(7,5)=7\cdot6\cdot5\cdot4\cdot3=2520$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Deset lidí soutěží o zlato a stříbro. Kolik dvojic vítězů?
+\tcblower
+$10\cdot9=90$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Kolik třípísmenných hesel bez opakování vytvoříme ze čtyř různých písmen?
+\tcblower
+$4\cdot3\cdot2=24$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Vysvětli rozdíl mezi počtem pořadí šesti lidí a obsazením tří rolí ze šesti lidí.
+\tcblower
+Permutace: $6!=720$; variace: $6\cdot5\cdot4=120$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Z $12$ finalistů vybereme první čtyři místa v pořadí. Jaký je výsledek ve faktoriálovém tvaru?
+\tcblower
+$V(12,4)=12!/8!=12\cdot11\cdot10\cdot9=11880$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Kolik různých pořadí prvních tří soutěžících může nastat mezi devíti soutěžícími?
+\item Ze sedmi studentů obsadíme tři různé funkce. Kolik možností?
+\item Kolik různých čtyřznakových kódů bez opakování vytvoříme z pěti různých písmen?
+\item Vysvětli, kdy se ze vzorce $V(n,k)$ stává vzorec pro permutace.
+\item Urči přesnou hodnotu $V(9,4)$.
+\item Vypočti $V(7,0)$ a $V(7,7)$; vysvětli, co oba výsledky znamenají.
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $9\cdot8\cdot7=504$.
+\item $7\cdot6\cdot5=210$.
+\item $5\cdot4\cdot3\cdot2=120$.
+\item Při $k=n$ máme $V(n,n)=n!=P(n)$.
+\item $9\cdot8\cdot7\cdot6=3024$.
+\item $1$ (prázdný výběr) a $7!=5040$ (permutace všech sedmi).
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--12 min kontrast s permutací; 12--25 min odvození; 25--40 min procvičení; 40--45 min kontrola.}
+
+\end{document}

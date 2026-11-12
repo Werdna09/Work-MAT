@@ -1,0 +1,135 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{40}{Vlastnosti kombinačních čísel a Pascalův trojúhelník}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Seřaď na tabuli hodnoty $\binom n0,\ldots,\binom nn$ pro $n=0,1,2,3,4$. Nech žáky objevit zrcadlovou souměrnost a součet sousedních hodnot.
+
+\poznamka{Předpoklady: kombinační číslo a faktoriál. Cíl: objevit symetrii, Pascalův vztah, vyplnit trojúhelník a používat jej k jednoduchým výpočtům.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+Pro $n\in\mathbb N_0$ a $0\le k\le n$ platí \textbf{symetrie} $\binom nk=\binom n{n-k}$. Pro $n\ge2$ a $1\le k\le n-1$ platí \textbf{Pascalův vztah}
+\[
+\binom nk=\binom{n-1}{k-1}+\binom{n-1}{k}.
+\]
+\end{definiceBox}
+Důkaz symetrie: volba $k$ prvků odpovídá jednoznačně volbě $n-k$ prvků, které vynecháme. Pascalův vztah: při výběru $k$ lidí rozdělíme komise podle toho, zda obsahují jednu pevně zvolenou osobu. Na krajích jsou jedničky.
+\[
+\begin{array}{c|l}
+n&\text{řádek Pascalova trojúhelníku}\\\hline
+0&1\\
+1&1\quad1\\
+2&1\quad2\quad1\\
+3&1\quad3\quad3\quad1\\
+4&1\quad4\quad6\quad4\quad1\\
+5&1\quad5\quad10\quad10\quad5\quad1
+\end{array}
+\]
+Součet hodnot v řádku $n$ je $2^n$, protože pro každý z $n$ prvků samostatně rozhodujeme, zda patří do podmnožiny.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vypočti $\binom{10}{8}$ pomocí symetrie.
+\tcblower
+$\binom{10}{8}=\binom{10}{2}=45$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Sestav z Pascalova trojúhelníku řádek s indexem $6$.
+\tcblower
+$1,6,15,20,15,6,1$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Urči $\binom83$ použitím Pascalova vztahu.
+\tcblower
+$\binom83=\binom72+\binom73=21+35=56$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Urči $\binom91$ a $\binom99$.
+\tcblower
+$9$, $1$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Vypočti $\binom{11}{9}$ pomocí symetrie.
+\tcblower
+$\binom{11}{2}=55$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Jaký je součet sedmého řádku Pascalova trojúhelníku, pokud první řádek má index 0?
+\tcblower
+Jde o index $6$, součet $2^6=64$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Kolik cest vede z bodu $(0,0)$ do bodu $(3,4)$, pohybujeme-li se pouze o jednotku doprava nebo nahoru?
+\tcblower
+Sedm kroků, z toho tři doprava a čtyři nahoru. Volíme polohy tří kroků doprava: $\binom73=35$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Pomocí symetrie vypočti $\binom{12}{10}$.
+\item Napiš celý řádek Pascalova trojúhelníku s indexem 5.
+\item Urči $\binom72$ z Pascalova vztahu.
+\item Jaký je součet všech kombinačních čísel v řádku s indexem 8?
+\item Na čtvercové síti kolik monotónních cest z $(0,0)$ do $(2,3)$ vede pouze doprava a nahoru?
+\item Napiš řádek Pascalova trojúhelníku s indexem 7 a ověř jeho součet.
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $\binom{12}{2}=66$.
+\item $1,5,10,10,5,1$.
+\item $\binom61+\binom62=6+15=21$.
+\item $2^8=256$.
+\item $\binom52=10$.
+\item $1,7,21,35,35,21,7,1$, součet $128=2^7$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--15 min objevování; 15--28 min pravidla; 28--40 min aplikace; 40--45 min kontrola.}
+
+\poznamka{Jde o obsahově nabitou hodinu; nevyžaduj složité důkazy identit. Zásadní je názornost a správný index řádku. Náročnější mřížkové úlohy ponech k rozšíření.}
+
+\end{document}

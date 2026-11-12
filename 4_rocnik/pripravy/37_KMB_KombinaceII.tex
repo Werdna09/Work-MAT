@@ -1,0 +1,115 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{37}{Kombinace II -- podmínky a smíšené úlohy}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Při výběru komise často požadujeme určitý počet dívek a chlapců, přítomnost člena či zákaz společné účasti. Propojíme kombinace s permutacemi a variacemi.
+
+\poznamka{Předpoklady: kombinace, variace, permutace a pravidlo součtu. Cíl: rozdělit výběr na části a samostatně rozhodnout o použité metodě.}
+
+\blok{Výklad a odvození}
+
+Při podmínce \uv{právě dva z jedné skupiny} použijeme součin kombinací za jednotlivé skupiny. Podmínku \uv{alespoň} často rozdělíme na disjunktní případy nebo spočteme doplněk. U smíšených úloh se před výpočtem vždy ptej, zda zaměnění pořadí osob vytváří nový výsledek.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Ze šesti dívek a pěti chlapců vybereme čtyřčlennou komisi s přesně dvěma dívkami. Kolik komisí vznikne?
+\tcblower
+$\binom62\binom52=15\cdot10=150$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Z deseti lidí včetně Anny a Borise vybíráme čtyřčlenný tým. Kolik týmů obsahuje Annu, ale nikoliv Borise?
+\tcblower
+Anna je pevně vybrána, Boris zakázán, ostatní tři volíme z osmi: $\binom83=56$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Ze sedmi lidí obsazujeme tři různé funkce. Kolik možností? A kolik je tříčlenných komisí bez funkcí?
+\tcblower
+Funkce $V(7,3)=210$, komise $\binom73=35$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Z pěti dívek a čtyř chlapců vybereme tři osoby, přesně dvě dívky.
+\tcblower
+$\binom52\binom41=40$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Ze šesti žáků vybereme dvojici, v níž nesmějí být společně Adam a Eva.
+\tcblower
+Všechny dvojice $\binom62=15$ minus zakázaná $1$: $14$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Pět různých knih chceme jen seřadit na polici. Jde o variace, permutace nebo kombinace?
+\tcblower
+O permutace, protože se řadí všech pět různých knih: $5!=120$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Ze šesti dívek a pěti chlapců vybereme čtyřčlennou komisi obsahující alespoň dvě dívky.
+\tcblower
+Případy 2, 3, 4 dívky: $\binom62\binom52+\binom63\binom51+\binom64\binom50=150+100+15=265$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Ze sedmi žen a pěti mužů vyber čtyřčlennou komisi s přesně dvěma ženami.
+\item Z osmi osob (včetně A a B) vyber tříčlennou skupinu tak, aby A byl členem a B nebyl.
+\item Kolik tříčlenných skupin lze vytvořit ze sedmi žáků, jestliže dva určení žáci nesmějí být společně?
+\item Z osmi osob se zvolí předseda, zástupce a zapisovatel. Kolik různých obsazení?
+\item Ze sedmi různých knih vybereme čtyři, potom je seřadíme. Kolik výsledků?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $\binom72\binom52=21\cdot10=210$.
+\item Ze šesti ostatních vybereme dvě: $\binom62=15$.
+\item $\binom73-\binom51=35-5=30$.
+\item $V(8,3)=8\cdot7\cdot6=336$.
+\item $\binom74\cdot4!=V(7,4)=840$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--10 min srovnání; 10--25 min podmíněné kombinace; 25--40 min smíšené úlohy; 40--45 min vyhodnocení.}
+
+\poznamka{Domácí úkol je mix tří typů bez opakování; zkontroluj hlavně zdůvodnění metody, ne pouze konečná čísla.}
+
+\end{document}
