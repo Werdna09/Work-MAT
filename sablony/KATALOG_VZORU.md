@@ -4,10 +4,10 @@
 
 ## 1. Jak katalog používat
 
-1. Před tvorbou si přečti kořenový `AGENTS.md` a pravidla příslušného Skillu v `.agents/skills/`. Při přípravách přečti také `sablony/pripravy/TUTORIAL_pripravy.md` a skutečný zdroj společného stylu.
+1. Před tvorbou si prostuduj odpovídající šablonu a existující materiály. Při přípravách přečti také `sablony/pripravy/TUTORIAL_pripravy.md` a skutečný zdroj společného stylu.
 2. Vyber **jeden nebo dva nejbližší vzory podle typu úlohy**; není nutné procházet každou přípravu. Vždy ověř, že soubory v projektu opravdu existují a že jejich aktuální obsah odpovídá tomuto popisu.
 3. **Přebírej strukturu a didaktické postupy, ne automaticky matematická zadání.** Závazná je aktuální šablona a projektová pravidla. Ukázkové dokumenty mohou obsahovat rozpracovaná místa.
-4. U testů výběr konkrétních zadání a jejich schvalování řídí `AGENTS.md` a Skill `vytvor-test`. Žádný dokument uvedený jako vzor sám o sobě nedává souhlas s použitím nebo úpravou úloh.
+4. U testů výběr konkrétních zadání a jejich schvalování určuje učitel. Žádný dokument uvedený jako vzor sám o sobě nedává souhlas s použitím nebo úpravou úloh.
 5. Pokud je vzor nedostupný, zastaralý nebo odporuje zadání, **neodvozuj z něj pravidlo**. Neopravuj vzor, společný styl ani jiné soubory bez výslovného zadání.
 6. Vytvořený dokument kontroluj matematicky i technicky; tam, kde to pro samostatný dokument dává smysl, spusť `./scripts/build_latex.sh cesta/k/souboru.tex` a vizuálně ověř PDF.
 
@@ -28,7 +28,7 @@
 | S-T1 | Projektová šablona | `sablony/testy/A5x2.tex` | Krátký test: dvě varianty na jedné A4; ověřit skutečné rozměry a přetečení. |
 | S-T2 | Projektová šablona | `sablony/testy/A4.tex` | Delší test: jedna varianta na A4 podle stávající konvence. |
 
-> Šablony testů určují především **rozvržení**. Nejsou schválenou sadou matematických úloh. Pokud se katalog a šablona liší, otevři skutečný soubor a postupuj podle `AGENTS.md`.
+> Šablony testů určují především **rozvržení**. Nejsou schválenou sadou matematických úloh. Pokud se katalog a šablona liší, otevři skutečný soubor a postupuj podle skutečné šablony a schválených požadavků učitele.
 
 ## 3. Přípravy – příklady použití
 
@@ -44,8 +44,8 @@
 ## 4. Testy, pracovní listy a zdroje úloh
 
 - **Testy:** Pro sazbu používej `S-T1` nebo `S-T2`. V projektu může existovat například `2_rocnik/testy/ExponencialniRovnice/01_test_ExponencialniRovnice_AB.tex`; jde nanejvýš o **neprověřený kandidát** pro porovnání konvencí, nikoli o schválený obsahový vzor. Nejprve ho otevři, zkontroluj a ověř jeho aktuální podobu.
-- **Pracovní listy:** Zatím zde není označen žádný konkrétní schválený referenční pracovní list. Při tvorbě se řiď `AGENTS.md` a skutečně dostupnou šablonou v `sablony/pracovni_listy/`, pokud existuje. Nové vzory do katalogu přidávej až po kontrole.
-- **Zdroj matematických zadání:** Preferuj odpovídající kapitoly v `ucebnice/`, pak příslušné `N_rocnik/pracovni_listy/` a další učitelem určené materiály podle `AGENTS.md`. Zdroj zadání není automaticky typografický vzor a každou použitou úlohu je třeba ověřit.
+- **Pracovní listy:** Zatím zde není označen žádný konkrétní schválený referenční pracovní list. Při tvorbě se řiď dostupnou šablonou v `sablony/pracovni_listy/`, pokud existuje, a požadavky učitele. Nové vzory do katalogu přidávej až po kontrole.
+- **Zdroj matematických zadání:** Preferuj odpovídající kapitoly v `ucebnice/`, pak příslušné `N_rocnik/pracovni_listy/` a další učitelem určené materiály. Zdroj zadání není automaticky typografický vzor a každou použitou úlohu je třeba ověřit.
 - **Nevěřené archivy a externí podklady:** `import_testu/` a `externi_zdroje/` nejsou schválené šablony ani automaticky ověřené banky úloh. Respektuj jejich určení, omezení a autorská práva.
 
 ## 5. Jak přidat nový schválený vzor

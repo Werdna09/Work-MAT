@@ -22,3 +22,13 @@
 
 # Externi knihovna Realisticky.cz - pouze lokalne
 /externi_zdroje/realisticky/
+
+# Localni soubory pro Codex a Claude Code (zustavaji na tomto pocitaci)
+/AGENTS.md
+/CLAUDE.md
+/.agents/
+/.claude/
+/planovani/recenze/
+/planovani/DOKONCENI_PRIPRAV_13_24.md
+/planovani/KONTROLA_PRIPRAV_05_11.md
+/planovani/REVIZE_PRIPRAV_1_ROCNIK.md

@@ -2,7 +2,7 @@
 
 **Pracovní standard pro `~/Work/MAT` · verze 1.2 (28. 10. 2026)**
 
-Tento dokument popisuje, jak vytvářet a dlouhodobě udržovat **učitelské přípravy** pro 1.–4. ročník. Slouží učiteli, Codexu i Claude Code. Společná pravidla kvality, časové náročnosti a spolupráce určuje [AGENTS.md](../../AGENTS.md); zde jsou technické postupy a ukázky. V případě rozporu upozorni na konflikt a nevymýšlej si řešení.
+Tento dokument popisuje, jak vytvářet a dlouhodobě udržovat **učitelské přípravy** pro 1.–4. ročník. Obsahuje technické postupy, ukázky a zásady pro jednotnou tvorbu příprav.
 
 ## 1. Kam jednotlivé soubory patří
 
@@ -10,7 +10,6 @@ Umístění odpovídá **skutečné struktuře** repozitáře `~/Work/MAT`:
 
 ```text
 ~/Work/MAT/
-├── AGENTS.md                    # společná projektová pravidla
 ├── 1_rocnik/
 │   ├── pripravy/
 │   │   ├── 01_ÚVD_ÚvodníHodina.tex
@@ -35,7 +34,7 @@ Styl, vzor i tutorial patří do `sablony/pripravy/`. Každá vlastní příprav
 
 `priprava.sty` je **jeden společný zdroj vzhledu**. Nekopíruj jej do každé hodiny. V každém ročníkovém `.tex` použij relativní cestu `../../sablony/pripravy/priprava.sty`.
 
-Kořenový `AGENTS.md` na tento tutorial odkazuje. Při běžné tvorbě hodiny upravuj pouze zadaný materiál a potřebnou evidenci; společná pravidla a šablony mají vlastní rozsah změn podle zadání učitele.
+Při běžné tvorbě hodiny upravuj pouze zadaný materiál a potřebnou evidenci; společná pravidla a šablony mají vlastní rozsah změn podle zadání učitele.
 
 ## 2. Pojmenování příprav
 
@@ -136,7 +135,7 @@ Po `\tcblower` nezačínej další `tcolorbox` a nepřidávej druhé samostatné
 
 ## 5. Jak vytvořit novou hodinu (při zadané tvorbě)
 
-1. **Zjisti skutečný stav repozitáře** (`AGENTS.md`, ročníková složka, podobné přípravy a šablona). Nic nepřepisuj naslepo.
+1. **Zjisti skutečný stav repozitáře** (ročníková složka, podobné přípravy a šablona). Nic nepřepisuj naslepo.
 2. **Urči číslo, téma a rozsah** podle našeho schváleného rozpisu. Ověř návaznost předchozí a následující hodiny; pokud materiály nesouhlasí, upozorni, ale neupravuj jinou hodinu bez zadání.
 3. **Přečti tento tutorial a šablonu.** Použij centrální `priprava.sty`, nevkládej lokální kopii jeho definic do každého souboru.
 4. **Připrav didaktickou posloupnost:** motivace → jednoznačné definice → krátké vysvětlení → společné příklady → samostatné úlohy → případně shrnutí. Pořadí a rozsah přizpůsob konkrétnímu tématu, netvoř povinné administrativní sekce.
@@ -154,7 +153,7 @@ Starší příprava mohla obsahovat celý design v preambuli. Při migraci zacho
 
 Realisticky.cz může sloužit pro **didaktickou inspiraci, pořadí výkladu a hledání typů úloh**. Neznamená to ale automaticky, že všechny jejich lekce musí být zařazeny do našeho plánu.
 
-Pro studium lokální knihovny, porovnání skutečných PDF, evidenci zdrojů a omezení aktualizací či šíření platí část [Lokální knihovna Realisticky.cz](../../AGENTS.md#lokální-knihovna-realistickycz). Následující poznámky ukazují použití zdroje v přípravě, nejsou další licencí ani pokynem ke stahování.
+Při práci s podklady Realisticky.cz respektuj autorská práva a eviduj skutečně použité lekce. Následující poznámky nejsou licencí ani pokynem ke stahování.
 
 - U každé hodiny si poznamenej **skutečně použitý** název a URL lekce, například v komentáři na začátku `.tex` (`% Inspirace: ...`). Kódy ani odkazy nevymýšlej.
 - Z webu **nekopíruj celé lekce, velké bloky textu či soubory příkladů** do vlastních materiálů bez odpovídajícího oprávnění. Připrav vlastní formulace a vlastní úlohy inspirované metodou, anebo pracuj s materiálem v mezích skutečně získané licence/oprávnění. Pouhý veřejný přístup není automaticky svolením k přepracování nebo dalšímu šíření.
@@ -163,7 +162,7 @@ Pro studium lokální knihovny, porovnání skutečných PDF, evidenci zdrojů a
 
 ## 7. Kompilace a kontrola
 
-Při tvorbě nebo opravě použij z kořene `~/Work/MAT` přednostně společný postup podle `AGENTS.md`:
+Při tvorbě nebo opravě použij z kořene `~/Work/MAT` sestavovací skript:
 
 ```bash
 ./scripts/build_latex.sh 1_rocnik/pripravy/02_VRL_CoJeVyrok.tex
@@ -176,7 +175,7 @@ latexmk -cd -pdf -interaction=nonstopmode -halt-on-error \
   1_rocnik/pripravy/02_VRL_CoJeVyrok.tex
 ```
 
-`-cd` je důležité, protože cesta `../../sablony/pripravy/priprava.sty` vychází z ročníkové složky. Při jiné struktuře adresářů uprav relativní cestu; při úpravě stylu kontroluj kompatibilitu již vytvořených hodin. V režimu recenze pouze pro čtení nekompiluj; prohlédni existující PDF a neověřenou aktuálnost zaznamenej.
+`-cd` je důležité, protože cesta `../../sablony/pripravy/priprava.sty` vychází z ročníkové složky. Při jiné struktuře adresářů uprav relativní cestu; při úpravě stylu kontroluj kompatibilitu již vytvořených hodin. Při kontrole pouze pro čtení nekompiluj; prohlédni existující PDF a neověřenou aktuálnost zaznamenej.
 
 Při kompilaci dej pozor na:
 
@@ -201,9 +200,6 @@ Samostatné definice a zadání se nerozdělují mezi stránky. Spojené boxy se
 - [ ] Použité zdroje jsou zaznamenány a užití cizích materiálů je oprávněné.
 - [ ] PDF se úspěšně přeloží a vizuálně nemá chyby.
 
-## 9. Ukázkové zadání pro Codex
-
-> Připrav hodinu `03_VRL_PravdivostSlozenychVyroku.tex` pro 1. ročník podle naší schválené osnovy. Nejdřív přečti projektová pravidla a `sablony/pripravy/TUTORIAL_pripravy.md`, styl v `sablony/pripravy/priprava.sty` a předchozí hodinu. Použij společné boxy, každou definici odděl do vlastního boxu, řešení připoj pomocí `\tcblower` do spodní části stejného rámečku a učitelské poznámky piš šedě. Vytvoř přiměřené množství úloh s kontrolou řešení, zkompiluj PDF a vizuálně ověř výsledek. Pokud je k dispozici odpovídající lekce Realisticky.cz, použij ji jako metodickou inspiraci a zdroj zaznamenej; nevymýšlej odkazy a nepřejímej rozsáhlé chráněné pasáže.
 
 ---
 

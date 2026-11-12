@@ -303,7 +303,7 @@ Zdroj: [41_Smisene_kombinatoricke_ulohy.tex](../../import_hodiny/41_Smisene_komb
 - Byl ověřen počet stran pomocí `pdfinfo`, čitelnost všech PDF, umístění vedle `.tex`, počet prostředí a právě jeden `\tcblower` v každém spojeném boxu.
 - Všech 39 výsledných stran bylo vykresleno a vizuálně prohlédnuto, včetně změněných stran po opravách. Kontrolována byla diakritika, rovnice, tabulky, nekolizní záhlaví, dělení boxů, Pascalův trojúhelník a náčrt mřížky. V hodině 36 bylo odstraněno oddělení krátkého zadání P3 od jeho řešení.
 - Podpůrná kontrola souřadnic extrahovaného textu nenašla text mimo očekávané tiskové okraje. Tato kontrola nenahrazovala vizuální prohlídku.
-- Hashová kontrola všech 50 původních souborů zahrnutých do vstupního snímku potvrdila zachování importů, plánů, šablon, projektových skillů, `AGENTS.md` i starší úvodní přípravy. Nevznikl commit ani push. Pomocné soubory kontrol a kompilace byly ponechány mimo adresář materiálů.
+- Hashová kontrola všech 50 původních souborů zahrnutých do vstupního snímku potvrdila zachování importů, plánů, šablon i starší úvodní přípravy. Nevznikl commit ani push. Pomocné soubory kontrol a kompilace byly ponechány mimo adresář materiálů.
 
 ## Omezení a použití při výuce
 
