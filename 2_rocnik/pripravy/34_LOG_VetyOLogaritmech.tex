@@ -1,0 +1,81 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 34
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Logaritmy}{34}{Věty o logaritmech}
+\begin{document}
+\blok{Motivace a návaznost}
+Začni rovností $8\cdot4=32$ a mocninami dvojky. Žáci mají objevit, že součinu argumentů odpovídá součet logaritmů, nikoliv logaritmus součtu exponentů.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Pro $u,v>0$ platí $\log_a(uv)=\log_a u+\log_a v$, $\log_a(\frac uv)=\log_a u-\log_a v$, $\log_a(u^r)=r\log_a u$.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\log_2 8+\log_2 4$.
+\tcblower
+\[\begin{aligned}\log_2(8\cdot4)=\log_2 32 \\ =5\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $2\log_3 9-\log_3 3$.
+\tcblower
+\[\begin{aligned}\log_3 81-\log_3 3 \\ =\log_3 27=3\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Zdůrazni, že $\log_a(u+v)$ nemá žádné obdobné rozkladové pravidlo. Podmínky $u,v>0$ říkej při každém použití.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}8+\log_{2}4$.
+\item $\log_{3}9-\log_{3}3$.
+\item $\log_{2}16+\log_{2}2$.
+\item $\log_{5}25-\log_{5}5$.
+\item $\log_{2}32+\log_{2}8$.
+\item $\log_{3}27-\log_{3}9$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $5$.
+\item $1$.
+\item $5$.
+\item $1$.
+\item $8$.
+\item $1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item $Vytvoř vlastní úlohu tohoto typu a se spolužákem porovnej podmínky a výsledek.$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Zkontroluj definice a argumenty..
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+U každého logaritmu vypiš podmínky argumentu a proveď zkoušku. U rovnic vyznač případně nepřípustné kořeny, u nerovnic odpověz intervalem.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}4+\log_{2}8$.
+\item $\log_{3}3-\log_{3}27$.
+\item $\log_{5}125+\log_{5}25$.
+\item $\log_{2}64-\log_{2}4$.
+\item $\log_{3}81+\log_{3}9$.
+\item $\log_{2}8-\log_{2}32$.
+\item $\log_{5}25+\log_{5}125$.
+\item $\log_{2}2-\log_{2}4$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $5$.
+\item $-2$.
+\item $5$.
+\item $4$.
+\item $6$.
+\item $-2$.
+\item $5$.
+\item $-1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

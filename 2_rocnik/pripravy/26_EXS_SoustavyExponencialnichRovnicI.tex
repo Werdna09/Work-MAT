@@ -1,0 +1,66 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 26
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Soustavy exponenciálních rovnic}{26}{Soustavy exponenciálních rovnic I}
+\begin{document}
+\blok{Motivace a návaznost}
+Připomeň sčítací a dosazovací metodu z prvního ročníku. Nové je pouze to, že neznámými na chvíli budou mocniny $2^x$ a $2^y$.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Je-li $u=2^x>0$ a $v=2^y>0$, řešíme soustavu pro $u,v$ a teprve poté se vrátíme k $x,y$.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\begin{cases}2^x+2^y=12\\2^x-2^y=4\end{cases}$.
+\tcblower
+\[\begin{aligned}u=2^x>0,\quad v=2^y>0 \\ \begin{cases}u+v=12\\u-v=4\end{cases}\;\Longrightarrow\;u=8,\;v=4 \\ x=3,\quad y=2\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $\begin{cases}3^x+3^y=12\\3^x-3^y=6\end{cases}$.
+\tcblower
+\[\begin{aligned}u=3^x,\quad v=3^y \\ u=9,\quad v=3 \\ x=2,\quad y=1\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{U dvojic mocnin respektuj jednotný společný základ. Zkoušku proveď v obou původních rovnicích.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $2^x+2^y=6,\quad 2^x-2^y=2$.
+\item $3^x+3^y=12,\quad3^x-3^y=6$.
+\item $2^x+2^y=10,\quad2^x-2^y=6$.
+\item $2^x+2^y=5,\quad2^x-2^y=3$.
+\item Proč $u,v>0$?.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(x,y)=(2,1)$.
+\item $(2,1)$.
+\item $(3,1)$.
+\item $(2,0)$.
+\item Jsou to hodnoty exponenciálních funkcí..
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\blok{Úkol na doma}
+Při početních úlohách napiš postup, zvolenou metodu a zkoušku v původním zadání. U soustav kontroluj obě rovnice; u nerovnic výsledek zakresli na osu.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $2^x+2^y=12,\;2^x-2^y=4$.
+\item $2^x+2^y=6,\;2^x-2^y=2$.
+\item $3^x+3^y=12,\;3^x-3^y=6$.
+\item $2^x+2^y=5,\;2^x-2^y=3$.
+\item $2^x+2^y=10,\;2^x-2^y=6$.
+\item Vysvětli postup substituce v soustavě..
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $(3,2)$.
+\item $(2,1)$.
+\item $(2,1)$.
+\item $(2,0)$.
+\item $(3,1)$.
+\item Zaveď u,v, vyřeš lineární soustavu, vrať mocniny..
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 6 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

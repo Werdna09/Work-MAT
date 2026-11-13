@@ -1,0 +1,81 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 37
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Logaritmické rovnice}{37}{Rovnice se stejným základem}
+\begin{document}
+\blok{Motivace a návaznost}
+Využij prostotu logaritmické funkce. Porovnání argumentů je možné jen po kontrole kladnosti obou výrazů.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Pro přípustný základ $a$ a kladné argumenty platí $\log_a u=\log_a v\iff u=v$.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\log_2(x+1)=\log_2(5-x)$.
+\tcblower
+\[\begin{aligned}x+1>0,\quad5-x>0 \\ x+1=5-x \\ x=2\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $\log_3(x^2-1)=\log_3(3x+3)$.
+\tcblower
+\[\begin{aligned}x>1\text{ (po průniku podmínek)} \\ (x-4)(x+1)=0 \\ x=4\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Pokaždé prober vyloučené kořeny algebraické rovnice. Nesmí se přijímat řešení porovnání argumentů bez zkoušky.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}(x+1)=\log_{2}(3-x)$.
+\item $\log_{3}(x+2)=\log_{3}(6-x)$.
+\item $\log_{5}(x+3)=\log_{5}(9-x)$.
+\item $\log_{2}(x+4)=\log_{2}(6-x)$.
+\item $\log_{3}(x+5)=\log_{3}(9-x)$.
+\item $\log_{5}(x+1)=\log_{5}(7-x)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=1,\;x>-1,\;x<3$.
+\item $x=2,\;x>-2,\;x<6$.
+\item $x=3,\;x>-3,\;x<9$.
+\item $x=1,\;x>-4,\;x<6$.
+\item $x=2,\;x>-5,\;x<9$.
+\item $x=3,\;x>-1,\;x<7$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item $Vytvoř vlastní úlohu tohoto typu a se spolužákem porovnej podmínky a výsledek.$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Zkontroluj definice a argumenty..
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+U každého logaritmu vypiš podmínky argumentu a proveď zkoušku. U rovnic vyznač případně nepřípustné kořeny, u nerovnic odpověz intervalem.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}(x+2)=\log_{2}(4-x)$.
+\item $\log_{3}(x+3)=\log_{3}(7-x)$.
+\item $\log_{5}(x+4)=\log_{5}(10-x)$.
+\item $\log_{2}(x+5)=\log_{2}(7-x)$.
+\item $\log_{3}(x+1)=\log_{3}(5-x)$.
+\item $\log_{5}(x+2)=\log_{5}(8-x)$.
+\item $\log_{2}(x+3)=\log_{2}(5-x)$.
+\item $\log_{3}(x+4)=\log_{3}(8-x)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=1,\;x>-2,\;x<4$.
+\item $x=2,\;x>-3,\;x<7$.
+\item $x=3,\;x>-4,\;x<10$.
+\item $x=1,\;x>-5,\;x<7$.
+\item $x=2,\;x>-1,\;x<5$.
+\item $x=3,\;x>-2,\;x<8$.
+\item $x=1,\;x>-3,\;x<5$.
+\item $x=2,\;x>-4,\;x<8$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

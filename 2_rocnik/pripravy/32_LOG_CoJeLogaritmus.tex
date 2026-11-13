@@ -1,0 +1,82 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 32
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Logaritmy}{32}{Co je logaritmus?}
+\begin{document}
+\blok{Motivace a návaznost}
+Z hodin o exponenciálních funkcích už umíme hledat neznámý exponent u jednoduchých mocnin. Pojmenujeme tuto operaci a navážeme na grafickou inverzi z hodin 03–06.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Zápis $\log_a b=c$ znamená právě $a^c=b$. Vždy $a>0$, $a\ne1$ a $b>0$.
+\begin{definiceBox}[title={Definice - Logaritmus}] $\log_a b=c$ právě tehdy, když $a^c=b$ pro $a>0$, $a\ne1$, $b>0$.\end{definiceBox}
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\log_2 8=x$.
+\tcblower
+\[\begin{aligned}2^x=8=2^3 \\ x=3\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $\log_3\frac{1}{9}=x$.
+\tcblower
+\[\begin{aligned}3^x=3^{-2} \\ x=-2\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Každý zápis převáděj oběma směry. Základ logaritmu není hledaný exponent.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}\left(8\right)$.
+\item $\log_{3}\left(9\right)$.
+\item $\log_{5}\left(25\right)$.
+\item $\log_{2}\left(32\right)$.
+\item $\log_{4}\left(16\right)$.
+\item $\log_{3}\left(27\right)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3$.
+\item $2$.
+\item $2$.
+\item $5$.
+\item $2$.
+\item $3$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item $Vytvoř vlastní úlohu tohoto typu a se spolužákem porovnej podmínky a výsledek.$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Zkontroluj definice a argumenty..
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+U každého logaritmu vypiš podmínky argumentu a proveď zkoušku. U rovnic vyznač případně nepřípustné kořeny, u nerovnic odpověz intervalem.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}\left(\frac{1}{4}\right)$.
+\item $\log_{5}\left(\frac{1}{5}\right)$.
+\item $\log_{10}\left(1000\right)$.
+\item $\log_{2}\left(1\right)$.
+\item $\log_{3}\left(\frac{1}{9}\right)$.
+\item $\log_{4}\left(64\right)$.
+\item $\log_{5}\left(1\right)$.
+\item $\log_{10}\left(\frac{1}{10}\right)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-2$.
+\item $-1$.
+\item $3$.
+\item $0$.
+\item $-2$.
+\item $3$.
+\item $0$.
+\item $-1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

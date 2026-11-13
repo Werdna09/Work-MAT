@@ -1,0 +1,77 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 22
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{22}{Kvadratická substituce}
+\begin{document}
+\blok{Motivace a návaznost}
+Zopakuj pomocnou proměnnou $t=2^x>0$ a potom ukaž, že $4^x=(2^x)^2=t^2$. Tím se z exponenciální rovnice stane známá kvadratická.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Pomocná rovnice může mít záporný kořen, který nelze přijmout, protože $t=a^x>0$. Oba kroky — výběr přípustných $t$ a návrat k $x$ — zapisujeme odděleně.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $4^x-5\cdot2^x+4=0$.
+\tcblower
+\[\begin{aligned}t=2^x>0,\quad t^2-5t+4=0 \\ (t-1)(t-4)=0\;\Longrightarrow\;t\in\{1,4\} \\ 2^x=1\;\lor\;2^x=4\;\Longrightarrow\;x\in\{0,2\}\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $9^x+2\cdot3^x-15=0$.
+\tcblower
+\[\begin{aligned}t=3^x>0,\quad t^2+2t-15=0 \\ (t-3)(t+5)=0\;\Longrightarrow\;t=3 \\ 3^x=3\;\Longrightarrow\;x=1\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš, resp. urči: $4^x-6\cdot2^x+8=0$.
+\tcblower
+\[\begin{aligned}t=2^x>0,\quad (t-2)(t-4)=0 \\ 2^x=2\;\lor\;2^x=4 \\ K=\{1,2\}\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Požaduj, aby žáci napsali obě substituce vedle sebe: $t=2^x$ a $4^x=t^2$. Vyřazení záporného kořene musí být výslovné.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $4^x-3\cdot 2^x+2=0$.
+\item $9^x-4\cdot3^x+3=0$.
+\item $4^x+2^x-2=0$.
+\item $25^x-6\cdot5^x+5=0$.
+\item $4^x-10\cdot2^x+16=0$.
+\item $9^x+3^x-12=0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $K=\{0,1\}$.
+\item $K=\{0,1\}$.
+\item $x=0$.
+\item $K=\{0,1\}$.
+\item $K=\{1,3\}$.
+\item $x=1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\blok{Úkol na doma}
+Při početních úlohách napiš postup, zvolenou metodu a zkoušku v původním zadání. U soustav kontroluj obě rovnice; u nerovnic výsledek zakresli na osu.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $4^x-5\cdot2^x+4=0$.
+\item $9^x-10\cdot3^x+9=0$.
+\item $25^x-6\cdot5^x+5=0$.
+\item $4^x-6\cdot2^x+8=0$.
+\item $9^x+2\cdot3^x-15=0$.
+\item $4^x-3\cdot2^x+2=0$.
+\item Co vyřadíme, vyjde-li $t=-2$?.
+\item Kdy se hodí kvadratická substituce?.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $K=\{0,2\}$.
+\item $K=\{0,2\}$.
+\item $K=\{0,1\}$.
+\item $K=\{1,2\}$.
+\item $K=\{1\}$.
+\item $K=\{0,1\}$.
+\item Záporný kořen pomocné rovnice..
+\item Při $a^{2x}$ a $a^x$ společného základu..
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

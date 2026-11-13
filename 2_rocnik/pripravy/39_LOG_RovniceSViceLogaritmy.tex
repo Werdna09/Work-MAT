@@ -1,0 +1,81 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 39
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Logaritmické rovnice}{39}{Rovnice s více logaritmy}
+\begin{document}
+\blok{Motivace a návaznost}
+Žáci nejprve určují průnik podmínek několika logaritmů. Po sloučení získají často kvadratickou rovnici, jejíž kořeny je nutné filtrovat.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Každý argument logaritmu musí být kladný současně; následující algebraické kroky nelze použít k jejich opomenutí.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\log_2 x+\log_2(x-2)=3$.
+\tcblower
+\[\begin{aligned}x>2 \\ \log_2(x(x-2))=3 \\ x^2-2x=8\;\Longrightarrow\;x=4\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $\log_3(x-1)+\log_3(x+1)=1$.
+\tcblower
+\[\begin{aligned}x>1 \\ x^2-1=3 \\ x=2\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Povinný krok je zápis průniku definičních oborů. Záporný algebraický kořen nevyhovuje ani když formálně řeší pomocnou rovnici.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}x+\log_{2}\left(x-1\right)=\log_{2}\left(6\right)$.
+\item $\log_{3}x+\log_{3}\left(x-2\right)=\log_{3}\left(99\right)$.
+\item $\log_{5}x+\log_{5}\left(x-3\right)=\log_{5}\left(16000\right)$.
+\item $\log_{2}x+\log_{2}\left(x-1\right)=\log_{2}\left(6\right)$.
+\item $\log_{3}x+\log_{3}\left(x-2\right)=\log_{3}\left(99\right)$.
+\item $\log_{5}x+\log_{5}\left(x-3\right)=\log_{5}\left(16000\right)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=3 (x>1)$.
+\item $x=11 (x>2)$.
+\item $x=128 (x>3)$.
+\item $x=3 (x>1)$.
+\item $x=11 (x>2)$.
+\item $x=128 (x>3)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item $Vytvoř vlastní úlohu tohoto typu a se spolužákem porovnej podmínky a výsledek.$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Zkontroluj definice a argumenty..
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+U každého logaritmu vypiš podmínky argumentu a proveď zkoušku. U rovnic vyznač případně nepřípustné kořeny, u nerovnic odpověz intervalem.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_{2}x+\log_{2}\left(x-1\right)=\log_{2}\left(6\right)$.
+\item $\log_{3}x+\log_{3}\left(x-2\right)=\log_{3}\left(99\right)$.
+\item $\log_{5}x+\log_{5}\left(x-3\right)=\log_{5}\left(16000\right)$.
+\item $\log_{2}x+\log_{2}\left(x-1\right)=\log_{2}\left(6\right)$.
+\item $\log_{3}x+\log_{3}\left(x-2\right)=\log_{3}\left(99\right)$.
+\item $\log_{5}x+\log_{5}\left(x-3\right)=\log_{5}\left(16000\right)$.
+\item $\log_{2}x+\log_{2}\left(x-1\right)=\log_{2}\left(6\right)$.
+\item $\log_{3}x+\log_{3}\left(x-2\right)=\log_{3}\left(99\right)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=3 (x>1)$.
+\item $x=11 (x>2)$.
+\item $x=128 (x>3)$.
+\item $x=3 (x>1)$.
+\item $x=11 (x>2)$.
+\item $x=128 (x>3)$.
+\item $x=3 (x>1)$.
+\item $x=11 (x>2)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

@@ -1,0 +1,86 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 21
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{21}{Lineární substituce}
+\begin{document}
+\blok{Motivace a návaznost}
+Po vytýkání poznáme jiný zápis téže myšlenky: opakující se kladnou mocninu dočasně nahradíme písmenem $t$. Z algebraicky jednoduché rovnice potom vrátíme původní mocninu.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Při substituci $t=a^x$ vždy píšeme $t>0$ pro $a>0$, $a\ne1$. Při návratu musí vyhovovat původní exponenciální rovnici.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $3\cdot 2^x+2^x=32$.
+\tcblower
+\[\begin{aligned}t=2^x>0 \\ 3t+t=32\;\Longrightarrow\;t=8 \\ 2^x=8=2^3\;\Longrightarrow\;x=3\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $5\cdot3^x-2\cdot3^x=81$.
+\tcblower
+\[\begin{aligned}t=3^x>0 \\ 3t=81\;\Longrightarrow\;t=27 \\ 3^x=3^3\;\Longrightarrow\;x=3\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš, resp. urči: $4\cdot 5^x+5^x=1$.
+\tcblower
+\[\begin{aligned}5t=1\;\Longrightarrow\;t=\frac{1}{5}>0 \\ 5^x=5^{-1}\;\Longrightarrow\;x=-1\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Nepřeskoč zápis $t>0$. Po závěru napiš množinu kořenů a zkoušku alespoň u prvního příkladu. Zeptej se, zda by zde nešlo také vytýkat.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $2^x+3\cdot2^x=16$.
+\item $3\cdot3^x+6\cdot3^x=81$.
+\item $7\cdot2^x-3\cdot2^x=8$.
+\item $4\cdot5^x+5^x=25$.
+\item $3^x+3^x=\frac{2}{3}$.
+\item $2\cdot4^x-4^x=16$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=2$.
+\item $x=2$.
+\item $x=1$.
+\item $x=1$.
+\item $x=-1$.
+\item $x=2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item $2^x+2^{x+1}=12$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $t=2^x>0; 3t=12; x=2.$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+Při početních úlohách napiš postup, zvolenou metodu a zkoušku v původním zadání. U soustav kontroluj obě rovnice; u nerovnic výsledek zakresli na osu.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $2\cdot2^x+2^x=24$.
+\item $5\cdot3^x-2\cdot3^x=27$.
+\item $3\cdot 4^x+4^x=4$.
+\item $7\cdot2^x-5\cdot2^x=\frac{1}{2}$.
+\item $3^x+2\cdot3^x=1$.
+\item $5^x+4\cdot5^x=125$.
+\item $2\cdot7^x-7^x=49$.
+\item Vysvětli, proč se nesmí dosadit $t=0$..
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=3$.
+\item $x=2$.
+\item $x=0$.
+\item $x=-2$.
+\item $x=-1$.
+\item $x=2$.
+\item $x=2$.
+\item Protože $a^x>0$..
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

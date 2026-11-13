@@ -1,0 +1,75 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 23
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{23}{Substituce se zápornými exponenty}
+\begin{document}
+\blok{Motivace a návaznost}
+Připomeň pravidlo $a^{-x}=1/a^x$. Pokud se ve výrazu objeví $a^x$ i $a^{-x}$, jediná substituce stále stačí.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Při $t=a^x>0$ platí $a^{-x}=\frac{1}{t}$. Násobení rovnice výrazem $t$ je přípustné, protože $t>0$.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $2^x+2^{3-x}=6$.
+\tcblower
+\[\begin{aligned}t=2^x>0,\quad t+\frac{8}{t}=6 \\ t^2-6t+8=0\;\Longrightarrow\;(t-2)(t-4)=0 \\ K=\{1,2\}\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $3^x+3^{2-x}=6$.
+\tcblower
+\[\begin{aligned}t=3^x>0,\quad t+\frac{9}{t}=6 \\ t^2-6t+9=0\;\Longrightarrow\;t=3 \\ x=1\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš, resp. urči: $5^x+5^{3-x}=30$.
+\tcblower
+\[\begin{aligned}t=5^x>0,\quad t+\frac{125}{t}=30 \\ (t-5)(t-25)=0\;\Longrightarrow\;K=\{1,2\}\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{V každém kroku napiš přeměnu $a^{k-x}=a^k/t$. Upozorni, že logaritmy zatím nepotřebujeme.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $2^x+2^{3-x}=6$.
+\item $3^x+3^{2-x}=6$.
+\item $5^x+5^{3-x}=30$.
+\item $2^x+2^{4-x}=8$.
+\item $3^x+3^{4-x}=18$.
+\item Vysvětli podmínku při násobení výrazem $t$..
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $K=\{1,2\}$.
+\item $x=1$.
+\item $K=\{1,2\}$.
+\item $t=4, x=2$.
+\item $x=2$.
+\item $t=a^x>0$, takže nenásobíme nulou..
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\blok{Úkol na doma}
+Při početních úlohách napiš postup, zvolenou metodu a zkoušku v původním zadání. U soustav kontroluj obě rovnice; u nerovnic výsledek zakresli na osu.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $2^x+2^{3-x}=6$.
+\item $3^x+3^{2-x}=6$.
+\item $5^x+5^{3-x}=30$.
+\item $2^x+2^{4-x}=8$.
+\item $3^x+3^{4-x}=18$.
+\item $2^x+2^{2-x}=5$.
+\item Jak se vyjádří $4^{-x}$ pomocí $t=2^x$?.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $K=\{1,2\}$.
+\item $x=1$.
+\item $K=\{1,2\}$.
+\item $x=2$.
+\item $x=2$.
+\item $t=1 nebo4, K=\{0,2\}$.
+\item $t^{-2}$..
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 7 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

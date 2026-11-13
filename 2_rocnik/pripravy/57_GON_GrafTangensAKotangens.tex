@@ -1,0 +1,88 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 57
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{2. ročník}{Grafy goniometrických funkcí}{57}{Grafy tangens a kotangens}
+\begin{document}
+\blok{Motivace a návaznost}
+U tangens a kotangens najdeme body nespojitosti ze jmenovatele. Žáci mají zakreslit alespoň jednu větev mezi dvěma asymptotami.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Tangens má periodu $\pi$ a svislé asymptoty $x=\frac{\pi}{2}+k\pi$; kotangens má periodu $\pi$ a asymptoty $x=k\pi$.
+\begin{center}\begin{tikzpicture}[xscale=1.15,yscale=.65]
+\draw[->] (-2.0,0)--(2.0,0) node[right] {$x$};
+\draw[->] (0,-2.2)--(0,2.2) node[above] {$y$};
+\draw[dashed] (1.5708,-2)--(1.5708,2);\draw[dashed] (-1.5708,-2)--(-1.5708,2);
+\draw[thick] plot coordinates {(-1.2,-2.5722) (-1.16,-2.2958) (-1.12,-2.066) (-1.08,-1.8712) (-1.04,-1.7036) (-1.0,-1.5574) (-0.96,-1.4284) (-0.92,-1.3133) (-0.88,-1.2097) (-0.84,-1.1156) (-0.8,-1.0296) (-0.76,-0.9505) (-0.72,-0.8771) (-0.68,-0.8087) (-0.64,-0.7445) (-0.6,-0.6841) (-0.56,-0.6269) (-0.52,-0.5726) (-0.48,-0.5206) (-0.44,-0.4708) (-0.4,-0.4228) (-0.36,-0.3764) (-0.32,-0.3314) (-0.28,-0.2876) (-0.24,-0.2447) (-0.2,-0.2027) (-0.16,-0.1614) (-0.12,-0.1206) (-0.08,-0.0802) (-0.04,-0.04) (0.0,0.0) (0.04,0.04) (0.08,0.0802) (0.12,0.1206) (0.16,0.1614) (0.2,0.2027) (0.24,0.2447) (0.28,0.2876) (0.32,0.3314) (0.36,0.3764) (0.4,0.4228) (0.44,0.4708) (0.48,0.5206) (0.52,0.5726) (0.56,0.6269) (0.6,0.6841) (0.64,0.7445) (0.68,0.8087) (0.72,0.8771) (0.76,0.9505) (0.8,1.0296) (0.84,1.1156) (0.88,1.2097) (0.92,1.3133) (0.96,1.4284) (1.0,1.5574) (1.04,1.7036) (1.08,1.8712) (1.12,2.066) (1.16,2.2958) (1.2,2.5722)};
+\end{tikzpicture}\end{center}
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\operatorname{tg}x:\;\text{asymptoty}$.
+\tcblower
+\[\begin{aligned}x=\frac{\pi}{2}+k\pi,\quad k\in\mathbb Z\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $\operatorname{cotg}x:\;\text{asymptoty}$.
+\tcblower
+\[\begin{aligned}x=k\pi,\quad k\in\mathbb Z\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Nepropojuj větve grafu přes svislou asymptotu. Nech označit základní interval pro každou větev.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $f(x)=\operatorname{cotg}x:\;\text{asymptoty}$.
+\item $f(x)=\operatorname{tg}(2x):\;T$.
+\item $f(x)=\cos(2x)-1:\;H(f)$.
+\item $f(x)=3\sin x-1:\;H(f)$.
+\item $f(x)=\sin(\frac x2):\;T$.
+\item $f(x)=\cos(x-\pi):\;\text{posun}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=k\pi$.
+\item $\frac{\pi}{2}$.
+\item $[-2;0]$.
+\item $[-4;2]$.
+\item $4\pi$.
+\item vpravo o $\pi$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item Navrhni obdobnou úlohu s jiným úhlem a zkontroluj výsledek graficky..
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $Srovnej s jednotkovou kružnicí nebo grafem.$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+U každé funkce udělej náčrtek grafu se stupnicí, významnými body a případnými asymptotami; vlastnosti odečti z grafu.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $f(x)=\operatorname{tg}(x-\frac{\pi}{4}):\;\text{posun}$.
+\item $f(x)=\sin x:\;\text{nuly}$.
+\item $f(x)=\cos x:\;\text{nuly}$.
+\item $f(x)=2\sin x:\; H(f)$.
+\item $f(x)=3\cos x:\;H(f)$.
+\item $f(x)=\sin(2x):\;T$.
+\item $f(x)=\cos(3x):\;T$.
+\item $f(x)=2\sin(x)+1:\;H(f)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item vpravo o $\frac{\pi}{4}$.
+\item $x=k\pi$.
+\item $x=\frac{\pi}{2}+k\pi$.
+\item $[-2;2]$.
+\item $[-3;3]$.
+\item $\pi$.
+\item $\frac{2\pi}{3}$.
+\item $[-1;3]$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

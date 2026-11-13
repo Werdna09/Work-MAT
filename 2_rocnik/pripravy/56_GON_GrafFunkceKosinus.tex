@@ -1,0 +1,87 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 56
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{2. ročník}{Grafy goniometrických funkcí}{56}{Graf funkce kosinus}
+\begin{document}
+\blok{Motivace a návaznost}
+Graf kosinu nezačínej bez souvislosti: vznikne z grafu sinu posunutím o $\frac{\pi}{2}$ doleva. Nech vedle sebe zakreslit obě funkce.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Kosinus má periodu $2\pi$, obor hodnot $[-1;1]$ a je sudý. Posun argumentu $x-p$ znamená posun grafu vpravo o $p$.
+\begin{center}\begin{tikzpicture}[xscale=1.15,yscale=.65]
+\draw[->] (-0.1,0)--(6.4,0) node[right] {$x$};
+\draw[->] (0,-2.2)--(0,2.2) node[above] {$y$};
+\draw[thick] plot coordinates {(-0.1,0.995) (-0.035,0.9994) (0.03,0.9996) (0.095,0.9955) (0.16,0.9872) (0.225,0.9748) (0.29,0.9582) (0.355,0.9376) (0.42,0.9131) (0.485,0.8847) (0.55,0.8525) (0.615,0.8168) (0.68,0.7776) (0.745,0.7351) (0.81,0.6895) (0.875,0.641) (0.94,0.5898) (1.005,0.5361) (1.07,0.4801) (1.135,0.4221) (1.2,0.3624) (1.265,0.3011) (1.33,0.2385) (1.395,0.1749) (1.46,0.1106) (1.525,0.0458) (1.59,-0.0192) (1.655,-0.0841) (1.72,-0.1487) (1.785,-0.2126) (1.85,-0.2756) (1.915,-0.3374) (1.98,-0.3979) (2.045,-0.4566) (2.11,-0.5135) (2.175,-0.5681) (2.24,-0.6204) (2.305,-0.67) (2.37,-0.7168) (2.435,-0.7606) (2.5,-0.8011) (2.565,-0.8383) (2.63,-0.872) (2.695,-0.9019) (2.76,-0.9281) (2.825,-0.9503) (2.89,-0.9685) (2.955,-0.9826) (3.02,-0.9926) (3.085,-0.9984) (3.15,-1.0) (3.215,-0.9973) (3.28,-0.9904) (3.345,-0.9794) (3.41,-0.9642) (3.475,-0.9449) (3.54,-0.9217) (3.605,-0.8945) (3.67,-0.8636) (3.735,-0.829) (3.8,-0.791) (3.865,-0.7496) (3.93,-0.705) (3.995,-0.6574) (4.06,-0.6071) (4.125,-0.5542) (4.19,-0.499) (4.255,-0.4416) (4.32,-0.3824) (4.385,-0.3216) (4.45,-0.2594) (4.515,-0.1961) (4.58,-0.132) (4.645,-0.0673) (4.71,-0.0024) (4.775,0.0626) (4.84,0.1273) (4.905,0.1914) (4.97,0.2548) (5.035,0.317) (5.1,0.378) (5.165,0.4373) (5.23,0.4948) (5.295,0.5502) (5.36,0.6033) (5.425,0.6538) (5.49,0.7016) (5.555,0.7464) (5.62,0.788) (5.685,0.8264) (5.75,0.8612) (5.815,0.8924) (5.88,0.9198) (5.945,0.9434) (6.01,0.9629) (6.075,0.9784) (6.14,0.9898) (6.205,0.9969) (6.27,0.9999) (6.335,0.9987) (6.4,0.9932)};
+\end{tikzpicture}\end{center}
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $f(x)=3\cos x:\;\text{obor hodnot}$.
+\tcblower
+\[\begin{aligned}H(f)=[-3;3]\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $g(x)=\cos\left(x-\frac{\pi}{2}\right)$.
+\tcblower
+\[\begin{aligned}\text{Jde o posun }\cos x\text{ doprava o }\frac{\pi}{2} \\ g(x)=\sin x\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Žáci porovnají vrcholy, nulové body a posunutí obou základních grafů.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $f(x)=\sin(x-\pi):\;\text{posun}$.
+\item $f(x)=\cos(x+\frac{\pi}{2}):\;\text{posun}$.
+\item $f(x)=\operatorname{tg}x:\;\text{asymptoty}$.
+\item $f(x)=\operatorname{cotg}x:\;\text{asymptoty}$.
+\item $f(x)=\operatorname{tg}(2x):\;T$.
+\item $f(x)=\cos(2x)-1:\;H(f)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item doprava o $\pi$.
+\item doleva o $\frac{\pi}{2}$.
+\item $x=\frac{\pi}{2}+k\pi$.
+\item $x=k\pi$.
+\item $\frac{\pi}{2}$.
+\item $[-2;0]$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item Navrhni obdobnou úlohu s jiným úhlem a zkontroluj výsledek graficky..
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $Srovnej s jednotkovou kružnicí nebo grafem.$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+U každé funkce udělej náčrtek grafu se stupnicí, významnými body a případnými asymptotami; vlastnosti odečti z grafu.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $f(x)=3\sin x-1:\;H(f)$.
+\item $f(x)=\sin(\frac x2):\;T$.
+\item $f(x)=\cos(x-\pi):\;\text{posun}$.
+\item $f(x)=\operatorname{tg}(x-\frac{\pi}{4}):\;\text{posun}$.
+\item $f(x)=\sin x:\;\text{nuly}$.
+\item $f(x)=\cos x:\;\text{nuly}$.
+\item $f(x)=2\sin x:\; H(f)$.
+\item $f(x)=3\cos x:\;H(f)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $[-4;2]$.
+\item $4\pi$.
+\item vpravo o $\pi$.
+\item vpravo o $\frac{\pi}{4}$.
+\item $x=k\pi$.
+\item $x=\frac{\pi}{2}+k\pi$.
+\item $[-2;2]$.
+\item $[-3;3]$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}

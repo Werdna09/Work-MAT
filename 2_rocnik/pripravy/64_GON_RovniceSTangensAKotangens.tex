@@ -1,0 +1,82 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 64
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{2. ročník}{Goniometrické rovnice}{64}{Rovnice s tangens a kotangens}
+\begin{document}
+\blok{Motivace a návaznost}
+Tangens a kotangens mají periodu $\pi$. Na grafu uveď, proč stačí jediná větev řešení v délce $\pi$.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+Obecné řešení $\operatorname{tg}x=c$ je $x=x_0+k\pi$; analogicky pro kotangens. Zkontroluj nepřípustné body svislých asymptot.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\operatorname{tg}x=1$.
+\tcblower
+\[\begin{aligned}x=\frac{\pi}{4}+k\pi,\quad k\in\mathbb Z\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $\operatorname{cotg}x=1$.
+\tcblower
+\[\begin{aligned}x=\frac{\pi}{4}+k\pi,\quad k\in\mathbb Z\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Žáci musí zdůvodnit, proč perioda není $2\pi$ jako u sinu a kosinu.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\cos(x+\pi)=1$.
+\item $\sin^2x=1$.
+\item $\cos^2x=1$.
+\item $\operatorname{tg}(2x)=0$.
+\item $\cos x=-1$.
+\item $2\sin^2x-\sin x=0$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=(2k-1)\pi$.
+\item $x=\frac{\pi}{2}+k\pi$.
+\item $x=k\pi$.
+\item $x=\frac{k\pi}{2}$.
+\item $x=\pi+2k\pi$.
+\item $\sin x=0\lor\frac{1}{2}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item Navrhni obdobnou úlohu s jiným úhlem a zkontroluj výsledek graficky..
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $Srovnej s jednotkovou kružnicí nebo grafem.$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+Ke každé rovnici zakresli na kružnici příslušné úhly a napiš všechny větve periodických řešení pro $k\in\mathbb Z$.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\sin x=0$.
+\item $\cos x=0$.
+\item $\sin x=1$.
+\item $\cos x=1$.
+\item $\sin x=\frac{1}{2}$.
+\item $\cos x=-\frac{1}{2}$.
+\item $\operatorname{tg}x=1$.
+\item $\operatorname{tg}x=-1$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x=k\pi$.
+\item $x=\frac{\pi}{2}+k\pi$.
+\item $x=\frac{\pi}{2}+2k\pi$.
+\item $x=2k\pi$.
+\item $x=\frac{\pi}{6}+2k\pi\;\lor\;\frac{5\pi}{6}+2k\pi$.
+\item $x=\frac{2\pi}{3}+2k\pi\;\lor\;\frac{4\pi}{3}+2k\pi$.
+\item $x=\frac{\pi}{4}+k\pi$.
+\item $x=-\frac{\pi}{4}+k\pi$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}
