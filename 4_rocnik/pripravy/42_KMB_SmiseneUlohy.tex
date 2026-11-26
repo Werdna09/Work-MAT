@@ -1,0 +1,138 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{42}{Smíšené kombinatorické úlohy}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Ke každému zadání musí žák nejprve říct, co tvoří jeden výsledek: pořadí všech prvků, obsazení rolí, výběr skupiny, opakování s pevnými četnostmi, nebo opakované volby do kódu.
+
+\poznamka{Předpoklady: celý blok 29--41. Cíl: samostatně zvolit model, řešit omezení a vysvětlit úplnost zvoleného postupu.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Rozhodovací postup:} (1) Co přesně tvoří výsledek? (2) Záleží na pořadí? (3) Používáme všechny prvky? (4) Smí se opakovat a mají druhy pevné četnosti? (5) Jaká omezení musí splňovat začátek, konec a sousednost?
+\end{definiceBox}
+Nejdřív vysvětli zvolenou metodu. Následně spočítej výsledek a ověř, že nebyl započten vícekrát. U velkých faktoriálů může zůstat odpověď v přesném faktoriálovém tvaru.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Šest různých lidí se řadí do fronty. Dvě předem určené osoby musí stát vedle sebe. Kolik pořadí je možných?
+\tcblower
+Spojíme dvojici do bloku: $2\cdot5!=240$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Z osmi lidí vybíráme tříčlenný tým bez funkcí. Kolik možností? Kolik, jestliže obsazujeme tři různé funkce?
+\tcblower
+Tým $\binom83=56$; funkce $V(8,3)=8\cdot7\cdot6=336$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolik různých řetězců délky šest ze znaků A, A, B, B, B, C lze vytvořit?
+\tcblower
+$6!/(2!3!)=60$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 4}]
+Kolik čtyřmístných kódů nad písmeny A, B, C, D existuje s opakováním?
+\tcblower
+$4^4=256$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Z desetimístné kandidátky vybíráme čtyřčlenný výbor bez funkcí.
+\tcblower
+$\binom{10}{4}=210$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Kolik různých přeskupení slova KOKOS vznikne?
+\tcblower
+Dvě K, dvě O, jedno S: $5!/(2!2!)=30$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Kolik pětimístných PINů z číslic 0 až 9 existuje, nejsou-li dovoleny stejné sousední cifry?
+\tcblower
+$10\cdot9^4=65610$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Na fotografii stojí osm různých postav. A musí být před B a C musí stát poslední. Kolik pořadí vyhovuje?
+\tcblower
+Poslední místo obsadí C; ze zbylých sedmi postav je A před B právě v polovině pořadí: $7!/2=2520$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Rozšíření 2}]
+\textbf{Volitelné:} Kolika způsoby lze z pěti příchutí vybrat čtyři kopečky, když se chuť může opakovat a pořadí nerozlišujeme?
+\tcblower
+Kombinace s opakováním: $\binom{5+4-1}{4}=\binom84=70$. Pouze pro třídu, kde byl tento typ vysvětlen.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Ze sedmi studentů se seřadí všichni; Petra musí být první. Urči počet.
+\item Ze sedmi studentů vybereme předsedu a zapisovatele. Urči počet.
+\item Ze sedmi studentů vybereme dvojčlennou komisi bez rolí. Urči počet.
+\item Kolik různých přeskupení má slovo ABABA?
+\item Kolik čtyřmístných PINů z číslic $0,1,2,3$ existuje s opakováním?
+\item Kolik tříčlenných komisí ze šesti lidí obsahuje Annu?
+\item Osm různých lidí se seřadí do fronty. Dvě konkrétní osoby musejí stát vedle sebe. Urči počet pořadí.
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $6!=720$ (permutace).
+\item $7\cdot6=42$ (variace).
+\item $\binom72=21$ (kombinace).
+\item $5!/(3!2!)=10$ (permutace s opakováním).
+\item $4^4=256$ (variace s opakováním).
+\item Anna je pevně, vybereme dvě z pěti: $\binom52=10$.
+\item $2\cdot7!=10080$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--10 min klasifikační tabulka; 10--32 min smíšené úlohy; 32--42 min samostatná práce; 42--45 min shrnutí.}
+
+\poznamka{Domácí práce je současně individuální přípravou na krátký průběžný test. Nehodnoť pouhý výběr vzorce bez slovního zdůvodnění.}
+
+\end{document}

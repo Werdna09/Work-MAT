@@ -1,0 +1,837 @@
+\subsection{Vzdálenost dvou přímek}
+\label{subsec:Distance_between_lines_space}
+
+U dvou přímek v prostoru můžeme kromě jejich vzájemné polohy
+a odchylky zkoumat také jejich vzdálenost.
+
+\begin{definition}
+    \label{def:Distance_between_lines_space}
+
+    \textbf{Vzdáleností dvou přímek} $p$ a $q$ nazýváme nejmenší
+    vzdálenost mezi libovolným bodem přímky $p$ a libovolným bodem
+    přímky $q$.
+
+    Platí tedy
+    \[
+        d(p,q)
+        =
+        \min_{\substack{X\in p\\Y\in q}} |XY|.
+    \]
+\end{definition}
+
+Pokud mají přímky alespoň jeden společný bod, je jejich vzdálenost
+rovna nule. Pro různoběžné přímky tedy platí
+\[
+    d(p,q)=0.
+\]
+
+Stejně tak je vzdálenost nulová u totožných přímek.
+
+Nenulovou vzdálenost proto budeme určovat především ve dvou případech:
+u přímek \textbf{rovnoběžných} a u přímek \textbf{mimoběžných}.
+
+
+% ============================================================
+%             R O V N O B Ě Ž N É   P Ř Í M K Y
+% ============================================================
+
+\subsubsection{Vzdálenost rovnoběžných přímek}
+\label{subsubsec:Distance_parallel_lines_space}
+
+Uvažujme dvě různé rovnoběžné přímky. Jejich vzdálenost odpovídá
+délce úsečky, která spojuje obě přímky a je k nim kolmá.
+
+Mezi dvěma rovnoběžnými přímkami můžeme vést nekonečně mnoho
+společných kolmic. Úsečky vymezené průsečíky těchto kolmic
+s oběma přímkami mají vždy stejnou délku.
+
+Nejprve si ukážeme, jak můžeme vzdálenost určit přímo z této
+geometrické představy.
+
+\begin{example}
+    \label{exa:Distance_parallel_lines_geometrically}
+
+    Určete vzdálenost rovnoběžných přímek
+    \[
+        \begin{aligned}
+            p: x&=t,\\
+            y&=t,\\
+            z&=0; t\in\mathbb{R}
+        \end{aligned}
+    \]
+    a
+    \[
+        \begin{aligned}
+            q: x&=s,\\
+            y&=2+s,\\
+            z&=1; s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Směrové vektory obou přímek jsou
+    \[
+        \vec{u}=(1;1;0),
+    \]
+    takže jsou přímky rovnoběžné.
+
+    Chceme najít přímku, která protíná obě přímky $p$ a $q$
+    a je k nim kolmá.
+
+    Na přímce $p$ si zvolíme například bod
+    \[
+        A[0;0;0].
+    \]
+
+    Průsečík společné kolmice s přímkou $q$ označíme $B$.
+    Protože $B\in q$, můžeme jeho souřadnice vyjádřit pomocí
+    parametru $s$:
+    \[
+        B[s;2+s;1].
+    \]
+
+    Vektor spojující body $A$ a $B$ je
+    \[
+        \overrightarrow{AB}
+        =
+        (s;2+s;1).
+    \]
+
+    Přímka $AB$ má být kolmá k přímkám $p$ a $q$.
+    Proto musí být vektor $\overrightarrow{AB}$ kolmý
+    k jejich směrovému vektoru $\vec{u}$:
+    \[
+        \overrightarrow{AB}\cdot\vec{u}=0.
+    \]
+
+    Po dosazení dostáváme
+    \begin{align*}
+        (s;2+s;1)\cdot(1;1;0)&=0,\\
+        s+2+s&=0,\\
+        2s+2&=0,\\
+        s&=-1.
+    \end{align*}
+
+    Hledaný bod na přímce $q$ je tedy
+    \[
+        B[-1;1;1].
+    \]
+
+    Vektor
+    \[
+        \overrightarrow{AB}=(-1;1;1)
+    \]
+    je skutečně kolmý ke směrovému vektoru obou přímek, protože
+    \[
+        (-1;1;1)\cdot(1;1;0)=0.
+    \]
+
+    Přímka procházející body $A$ a $B$ je tedy společnou kolmicí
+    přímek $p$ a $q$.
+
+    Její parametrické vyjádření může být například
+    \[
+        \begin{aligned}
+            r: x&=-\lambda,\\
+            y&=\lambda,\\
+            z&=\lambda; \lambda\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Pro $\lambda=0$ získáme bod
+    \[
+        A[0;0;0]\in p,
+    \]
+    zatímco pro $\lambda=1$ získáme bod
+    \[
+        B[-1;1;1]\in q.
+    \]
+
+    Nyní již stačí určit vzdálenost těchto dvou bodů:
+    \begin{align*}
+        d(p,q)
+        &=
+        |AB|\\
+        &=
+        \sqrt{(-1-0)^2+(1-0)^2+(1-0)^2}\\
+        &=
+        \sqrt3.
+    \end{align*}
+
+    Platí tedy
+    \[
+        d(p,q)=\sqrt3.
+    \]
+\end{example}
+
+Předchozí postup přesně odpovídá geometrické představě vzdálenosti
+rovnoběžných přímek. Nejprve jsme nalezli jejich společnou kolmici,
+poté její průsečíky s oběma přímkami a nakonec jsme vypočítali
+vzdálenost těchto dvou bodů.
+
+Pokud nás však zajímá pouze samotná vzdálenost přímek a nepotřebujeme
+znát společnou kolmici ani její průsečíky, můžeme celý výpočet
+výrazně zjednodušit.
+
+Uvažujme dvě různé rovnoběžné přímky
+\[
+    p:\ X=A+t\vec{u}
+    \qquad\text{a}\qquad
+    q:\ X=B+s\vec{u},
+\]
+kde $A\in p$, $B\in q$ a $\vec{u}$ je jejich společný směrový vektor.
+
+Protože jsou přímky rovnoběžné, mají všechny body jedné přímky
+od druhé přímky stejnou vzdálenost. Stačí tedy zvolit libovolný
+bod jedné z přímek a určit jeho vzdálenost od druhé přímky.
+
+Například zvolíme bod $B\in q$. Potom
+\[
+    d(p,q)=d(B,p).
+\]
+
+Pro vzdálenost bodu od přímky jsme již odvodili vztah
+\[
+    d(B,p)
+    =
+    \frac{
+        |\overrightarrow{AB}\times\vec{u}|
+    }{
+        |\vec{u}|
+    }.
+\]
+
+Proto pro dvě rovnoběžné přímky platí
+
+\begin{equation}
+        d(p,q)
+        =
+        \frac{
+            |\overrightarrow{AB}\times\vec{u}|
+        }{
+            |\vec{u}|
+        }
+    \label{eq:Distance_parallel_lines_space}
+\end{equation}
+
+kde $A$ je libovolný bod přímky $p$, $B$ libovolný bod přímky $q$
+a $\vec{u}$ směrový vektor obou přímek.
+
+\begin{example}
+    \label{exa:Distance_parallel_lines_space}
+
+    Vraťme se k přímkám z předchozího příkladu:
+    \[
+        \begin{aligned}
+            p: x&=t,\\
+            y&=t,\\
+            z&=0
+        \end{aligned}
+        \qquad\text{a}\qquad
+        \begin{aligned}
+            q: x&=s,\\
+            y&=2+s,\\
+            z&=1.
+        \end{aligned}
+    \]
+
+    Tentokrát nebudeme hledat společnou kolmici, ale použijeme
+    přímo vztah pro vzdálenost rovnoběžných přímek.
+
+    Zvolíme například body
+    \[
+        A[0;0;0]\in p
+        \qquad\text{a}\qquad
+        B[0;2;1]\in q.
+    \]
+
+    Potom
+    \[
+        \overrightarrow{AB}
+        =
+        (0;2;1)
+    \]
+    a společný směrový vektor přímek je
+    \[
+        \vec{u}=(1;1;0).
+    \]
+
+    Vektorový součin je
+    \begin{align*}
+        \overrightarrow{AB}\times\vec{u}
+        &=
+        (0;2;1)\times(1;1;0)\\
+        &=
+        (-1;1;-2).
+    \end{align*}
+
+    Proto
+    \[
+        |\overrightarrow{AB}\times\vec{u}|
+        =
+        \sqrt{(-1)^2+1^2+(-2)^2}
+        =
+        \sqrt6
+    \]
+    a
+    \[
+        |\vec{u}|=\sqrt2.
+    \]
+
+    Dosadíme:
+    \[
+        d(p,q)
+        =
+        \frac{\sqrt6}{\sqrt2}
+        =
+        \sqrt3.
+    \]
+
+    Dostáváme tedy stejný výsledek jako při hledání společné kolmice,
+    tentokrát však výrazně kratším výpočtem.
+\end{example}
+
+\begin{remark}
+    Při výpočtu můžeme zaměnit přímky $p$ a $q$, protože
+    \[
+        d(p,q)=d(q,p).
+    \]
+
+    Stejně tak můžeme použít libovolný nenulový násobek směrového
+    vektoru. Výsledná vzdálenost se tím nezmění.
+\end{remark}
+
+\begin{example}
+    \label{exa:Find_parallel_lines_given_distance_space}
+
+    Je dána přímka
+    \[
+        \begin{aligned}
+            p: x&=1+t,\\
+            y&=-1+t,\\
+            z&=2; t\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Určete všechny přímky $q$, které jsou rovnoběžné s přímkou $p$,
+    protínají osu $z$ a jejich vzdálenost od přímky $p$ je rovna $3$.
+
+    Směrový vektor přímky $p$ je
+    \[
+        \vec{u}=(1;1;0).
+    \]
+
+    Protože má být přímka $q$ rovnoběžná s přímkou $p$, můžeme pro ni
+    použít stejný směrový vektor.
+
+    Přímka $q$ má zároveň protínat osu $z$. Její průsečík s osou $z$
+    proto můžeme označit
+    \[
+        B[0;0;m],
+    \]
+    kde $m\in\mathbb{R}$.
+
+    Přímka $q$ má tedy parametrické vyjádření
+    \[
+        \begin{aligned}
+            q: x&=s,\\
+            y&=s,\\
+            z&=m; s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Z přímky $p$ zvolíme například bod
+    \[
+        A[1;-1;2].
+    \]
+
+    Potom
+    \[
+        \overrightarrow{AB}
+        =
+        B-A
+        =
+        (-1;1;m-2).
+    \]
+
+    Nejprve vypočítáme vektorový součin:
+    \begin{align*}
+        \overrightarrow{AB}\times\vec{u}
+        &=
+        (-1;1;m-2)\times(1;1;0)\\
+        &=
+        (2-m;m-2;-2).
+    \end{align*}
+
+    Jeho velikost je
+    \begin{align*}
+        |\overrightarrow{AB}\times\vec{u}|
+        &=
+        \sqrt{(2-m)^2+(m-2)^2+(-2)^2}\\
+        &=
+        \sqrt{2(m-2)^2+4}.
+    \end{align*}
+
+    Dále
+    \[
+        |\vec{u}|=\sqrt2.
+    \]
+
+    Vzdálenost přímek je tedy
+    \[
+        d(p,q)
+        =
+        \frac{\sqrt{2(m-2)^2+4}}{\sqrt2}
+        =
+        \sqrt{(m-2)^2+2}.
+    \]
+
+    Požadujeme
+    \[
+        d(p,q)=3.
+    \]
+
+    Dostáváme
+    \begin{align*}
+        \sqrt{(m-2)^2+2}&=3,\\
+        (m-2)^2+2&=9,\\
+        (m-2)^2&=7,\\
+        m-2&=\pm\sqrt7,
+    \end{align*}
+    a tedy
+    \[
+        m=2\pm\sqrt7.
+    \]
+
+    Existují proto dvě hledané přímky:
+    \[
+        \begin{aligned}
+            q_1: x&=s,\\
+                 y&=s,\\
+                 z&=2+\sqrt7; s\in\mathbb{R}
+        \end{aligned}
+        \qquad
+        \begin{aligned}
+            q_2: x&=s,\\
+                 y&=s,\\
+                 z&=2-\sqrt7; s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Pro obě platí
+    \[
+        d(p,q_1)=d(p,q_2)=3.
+    \]
+\end{example}
+
+
+% ============================================================
+%             M I M O B Ě Ž N É   P Ř Í M K Y
+% ============================================================
+
+\subsubsection{Vzdálenost mimoběžných přímek}
+\label{subsubsec:Distance_skew_lines_space}
+
+U rovnoběžných přímek jsme mohli zvolit bod na jedné přímce
+a hledat jeho kolmý průmět na přímku druhou. U mimoběžných přímek
+je situace složitější, protože jejich směry nejsou rovnoběžné.
+
+Také zde však vzdálenost odpovídá délce nejkratší úsečky spojující
+obě přímky. Tato úsečka musí být kolmá současně k oběma přímkám.
+
+\begin{definition}
+    \label{def:Common_perpendicular_skew_lines}
+
+    Přímku, která protíná dvě mimoběžné přímky a je kolmá
+    k oběma z nich, nazýváme jejich \textbf{společnou kolmicí}.
+
+    Úsečka společné kolmice vymezená jejími průsečíky s oběma
+    mimoběžkami má nejmenší možnou délku ze všech úseček spojujících
+    body těchto přímek. Její délka je vzdáleností mimoběžných přímek.
+\end{definition}
+
+Nejprve si opět ukážeme výpočet přímo podle geometrické představy.
+
+\begin{example}
+    \label{exa:Distance_skew_lines_geometrically}
+
+    Určete vzdálenost mimoběžných přímek
+    \[
+        \begin{aligned}
+            p: x&=t,\\
+            y&=t,\\
+            z&=0; t\in\mathbb{R}
+        \end{aligned}
+    \]
+    a
+    \[
+        \begin{aligned}
+            q: x&=s,\\
+            y&=0,\\
+            z&=-3+s; s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Směrové vektory přímek jsou
+    \[
+        \vec{u}=(1;1;0),
+        \qquad
+        \vec{v}=(1;0;1).
+    \]
+
+    Vektory nejsou rovnoběžné. Přímky zároveň nemají společný bod,
+    a jsou tedy mimoběžné.
+
+    Hledáme jejich společnou kolmici. Její průsečík s přímkou $p$
+    označíme $P$ a průsečík s přímkou $q$ označíme $Q$.
+
+    Protože $P\in p$, můžeme psát
+    \[
+        P[t;t;0].
+    \]
+
+    Podobně pro $Q\in q$ platí
+    \[
+        Q[s;0;-3+s].
+    \]
+
+    Vektor spojující oba body je
+    \begin{align*}
+        \overrightarrow{PQ}
+        &=
+        Q-P\\
+        &=
+        (s-t;-t;-3+s).
+    \end{align*}
+
+    Společná kolmice musí být kolmá k přímce $p$. Proto
+    \[
+        \overrightarrow{PQ}\cdot\vec{u}=0.
+    \]
+
+    Po dosazení dostáváme
+    \begin{align*}
+        (s-t;-t;-3+s)\cdot(1;1;0)&=0,\\
+        s-t-t&=0,\\
+        s-2t&=0.
+    \end{align*}
+
+    Zároveň musí být společná kolmice kolmá také k přímce $q$.
+    Proto
+    \[
+        \overrightarrow{PQ}\cdot\vec{v}=0.
+    \]
+
+    Po dosazení
+    \begin{align*}
+        (s-t;-t;-3+s)\cdot(1;0;1)&=0,\\
+        s-t-3+s&=0,\\
+        2s-t-3&=0.
+    \end{align*}
+
+    Dostáváme soustavu
+    \[
+        \begin{cases}
+            s-2t=0,\\
+            2s-t-3=0.
+        \end{cases}
+    \]
+
+    Z první rovnice
+    \[
+        s=2t.
+    \]
+
+    Dosadíme do druhé:
+    \begin{align*}
+        2(2t)-t-3&=0,\\
+        3t&=3,\\
+        t&=1.
+    \end{align*}
+
+    Odtud
+    \[
+        s=2.
+    \]
+
+    Průsečíky společné kolmice s oběma mimoběžkami jsou tedy
+    \[
+        P[1;1;0]
+        \qquad\text{a}\qquad
+        Q[2;0;-1].
+    \]
+
+    Vektor
+    \[
+        \overrightarrow{PQ}
+        =
+        (1;-1;-1)
+    \]
+    je skutečně kolmý k oběma směrovým vektorům:
+    \[
+        (1;-1;-1)\cdot(1;1;0)=0
+    \]
+    a
+    \[
+        (1;-1;-1)\cdot(1;0;1)=0.
+    \]
+
+    Společná kolmice může být zapsána například ve tvaru
+    \[
+        \begin{aligned}
+            r: x&=1+\lambda,\\
+            y&=1-\lambda,\\
+            z&=-\lambda; \lambda\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Pro $\lambda=0$ získáme bod $P$ a pro $\lambda=1$ bod $Q$.
+
+    Nyní již stačí určit vzdálenost těchto dvou bodů:
+    \begin{align*}
+        d(p,q)
+        &=
+        |PQ|\\
+        &=
+        \sqrt{(2-1)^2+(0-1)^2+(-1-0)^2}\\
+        &=
+        \sqrt3.
+    \end{align*}
+
+    Platí tedy
+    \[
+        d(p,q)=\sqrt3.
+    \]
+\end{example}
+
+Předchozí postup přesně odpovídá geometrické představě vzdálenosti
+mimoběžných přímek. Museli jsme najít dva body, jejichž spojnice
+je kolmá k oběma přímkám, a poté již pouze vypočítat vzdálenost
+těchto dvou bodů.
+
+Pokud však potřebujeme pouze samotnou vzdálenost a nepotřebujeme
+znát společnou kolmici ani její průsečíky, můžeme výpočet výrazně
+zkrátit.
+
+Uvažujme mimoběžné přímky
+\[
+    p:\ X=A+t\vec{u}
+    \qquad\text{a}\qquad
+    q:\ X=B+s\vec{v}.
+\]
+
+Protože nejsou jejich směrové vektory rovnoběžné, platí
+\[
+    \vec{u}\times\vec{v}\neq\vec{0}.
+\]
+
+Vektor
+\[
+    \vec{u}\times\vec{v}
+\]
+je kolmý současně k oběma směrovým vektorům, a tedy ke směrům
+obou přímek. Jeho směr je proto rovnoběžný se směrem jejich
+společné kolmice.
+
+Zvolíme libovolné body
+\[
+    A\in p,
+    \qquad
+    B\in q.
+\]
+
+Vektory
+\[
+    \vec{u},
+    \qquad
+    \vec{v},
+    \qquad
+    \overrightarrow{AB}
+\]
+určují rovnoběžnostěn.
+
+Jeho objem můžeme pomocí smíšeného součinu vyjádřit jako
+\[
+    V
+    =
+    \left|
+        \overrightarrow{AB}\cdot
+        (\vec{u}\times\vec{v})
+    \right|.
+\]
+
+Obsah podstavy tohoto rovnoběžnostěnu určené vektory
+$\vec{u}$ a $\vec{v}$ je
+\[
+    S
+    =
+    |\vec{u}\times\vec{v}|.
+\]
+
+Výškou rovnoběžnostěnu je právě vzdálenost mimoběžných přímek.
+Proto
+\[
+    V
+    =
+    |\vec{u}\times\vec{v}|\cdot d(p,q).
+\]
+
+Porovnáním obou vyjádření objemu dostáváme
+\[
+    |\vec{u}\times\vec{v}|\cdot d(p,q)
+    =
+    \left|
+        \overrightarrow{AB}\cdot
+        (\vec{u}\times\vec{v})
+    \right|.
+\]
+
+Odtud
+
+\begin{equation}
+        d(p,q)
+        =
+        \frac{
+            \left|
+                \overrightarrow{AB}\cdot
+                (\vec{u}\times\vec{v})
+            \right|
+        }{
+            |\vec{u}\times\vec{v}|
+        }
+    \label{eq:Distance_skew_lines_space}
+\end{equation}
+
+kde $A\in p$ a $B\in q$ jsou libovolné body daných mimoběžek
+a $\vec{u}$ a $\vec{v}$ jsou jejich směrové vektory.
+
+\begin{example}
+    \label{exa:Distance_skew_lines_space}
+
+    Vraťme se k mimoběžkám z předchozího příkladu:
+    \[
+        \begin{aligned}
+            p: x&=t,\\
+            y&=t,\\
+            z&=0
+        \end{aligned}
+        \qquad\text{a}\qquad
+        \begin{aligned}
+            q: x&=s,\\
+            y&=0,\\
+            z&=-3+s.
+        \end{aligned}
+    \]
+
+    Tentokrát použijeme přímo vztah pro vzdálenost mimoběžek.
+
+    Zvolíme například body
+    \[
+        A[0;0;0]\in p,
+        \qquad
+        B[0;0;-3]\in q.
+    \]
+
+    Potom
+    \[
+        \overrightarrow{AB}=(0;0;-3).
+    \]
+
+    Směrové vektory přímek jsou
+    \[
+        \vec{u}=(1;1;0),
+        \qquad
+        \vec{v}=(1;0;1).
+    \]
+
+    Nejprve vypočítáme jejich vektorový součin:
+    \[
+        \vec{u}\times\vec{v}
+        =
+        (1;-1;-1).
+    \]
+
+    Jeho velikost je
+    \[
+        |\vec{u}\times\vec{v}|
+        =g
+        \sqrt3.
+    \]
+
+    Dále vypočítáme smíšený součin:
+    \begin{align*}
+        \overrightarrow{AB}\cdot
+        (\vec{u}\times\vec{v})
+        &=
+        (0;0;-3)\cdot(1;-1;-1)\\
+        &=
+        3.
+    \end{align*}
+
+    Dosadíme:
+    \[
+        d(p,q)
+        =
+        \frac{|3|}{\sqrt3}
+        =
+        \sqrt3.
+    \]
+
+    Dostáváme stejný výsledek jako při hledání společné kolmice,
+    tentokrát však bez nutnosti určovat její průsečíky s oběma
+    přímkami.
+\end{example}
+
+\begin{remark}
+    Vztah
+    \[
+        d(p,q)
+        =
+        \frac{
+            \left|
+                \overrightarrow{AB}\cdot
+                (\vec{u}\times\vec{v})
+            \right|
+        }{
+            |\vec{u}\times\vec{v}|
+        }
+    \]
+    nemůžeme použít pro rovnoběžné přímky.
+
+    Pokud jsou jejich směrové vektory rovnoběžné, platí
+    \[
+        \vec{u}\times\vec{v}=\vec{0},
+    \]
+    takže by byl jmenovatel roven nule. Vzdálenost rovnoběžných
+    přímek proto určujeme předchozím způsobem.
+\end{remark}
+
+Vzdálenost dvou přímek v prostoru tedy závisí na jejich vzájemné
+poloze:
+
+\[
+    \begin{array}{c|c}
+        \text{vzájemná poloha přímek} & \text{vzdálenost}\\
+        \hline
+        \text{totožné} & 0\\
+        \text{různoběžné} & 0\\
+        \text{rovnoběžné}
+        &
+        \displaystyle
+        \frac{
+            |\overrightarrow{AB}\times\vec{u}|
+        }{
+            |\vec{u}|
+        }\\[4mm]
+        \text{mimoběžné}
+        &
+        \displaystyle
+        \frac{
+            \left|
+                \overrightarrow{AB}\cdot
+                (\vec{u}\times\vec{v})
+            \right|
+        }{
+            |\vec{u}\times\vec{v}|
+        }
+    \end{array}
+\]

@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{33}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Permutace s opakováním}\par
+{\sffamily\large\color{teal} Výukový podklad · 33. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.1\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Počítat pořadí multisetů se stejnými prvky, odvodit dělení faktoriály četností a vyřešit jednoduchá omezení.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+Pokud ve skupině \(n\) prvků rozlišujeme pouze typy, které se vyskytují \(n_1,n_2,\ldots,n_r\)-krát, kde \(n_1+\cdots+n_r=n\), počet různých pořadí je
+\[P(n;n_1,\ldots,n_r)=\frac{n!}{n_1!\,n_2!\cdots n_r!}.\]
+Důvod: při hypotetickém rozlišení všech kopií napočítáme \(n!\) pořadí, ale výměny \(n_i\) nerozlišitelných kopií žádné nové pořadí netvoří; každé skutečné pořadí jsme proto započetli \(n_1!\cdots n_r!\)-krát.\par
+\textbf{Rozhodovací znak:} uspořádáme všechny prvky, ale některé jsou stejné. Nevkládej vzorec pro variace s opakováním: tam se naopak znaky mohou \emph{svobodně volit} z celé abecedy na každé pozici.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Kolik různých slov (nemusejí dávat smysl) vznikne přeskupením písmen \textsc{ANANAS}?\par
+\textit{Řešení.} Je \(6\) písmen: \(A\) třikrát, \(N\) dvakrát, \(S\) jednou. Počet \(\frac{6!}{3!\,2!}=\frac{720}{12}=60\).\par\smallskip
+\textbf{Příklad 2.} Kolik pořadí vznikne z písmen \textsc{KOKOS}?\par
+\textit{Řešení.} Pět písmen; \(K\) dvakrát, \(O\) dvakrát, \(S\) jednou. \(\frac{5!}{2!\,2!}=30\).\par\smallskip
+\textbf{Příklad 3.} Kolik sedmimístných řetězců obsahuje právě čtyři nuly a tři jedničky?\par
+\textit{Řešení.} Vybíráme, kam postavíme tři jedničky; ostatní pozice budou nuly. \(\frac{7!}{4!\,3!}=35\).\par\smallskip
+\textbf{Příklad 4.} U slova \textsc{ANANAS} požadujeme, aby všechna tři \(A\) stála vedle sebe.\par
+\textit{Řešení.} Blok \(AAA\), dále \(N,N,S\): čtyři objekty se dvěma nerozlišitelnými \(N\). Počet \(\frac{4!}{2!}=12\). Blok \(AAA\) uvnitř nemá další různá pořadí.\par\smallskip
+\textbf{Příklad 5.} Kolik různých rozložení pěti shodných červených a dvou shodných modrých žetonů do sedmi míst v řadě?\par
+\textit{Řešení.} Sedm pozic, z toho dvě pro modré: \(\frac{7!}{5!\,2!}=21\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Přeskup písmena \textsc{TATRA}.
+\item Kolik různých řad tvoří tři nuly a dvě jedničky?
+\item Přeskup \textsc{MAMA} tak, aby všechna \(M\) byla vedle sebe.
+\item Kolik pořadí má osm žetonů: \(3\) červené, \(3\) modré a \(2\) zelené?
+\item Ve slově \textsc{ANANAS} mají být obě \(N\) vedle sebe.
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item Pět znaků, \(T\) dvakrát, \(A\) dvakrát: \(5!/(2!2!)=30\).
+\item \(5!/(3!2!)=10\).
+\item Blok \(MM\) a dvě \(A\): \(3!/2!=3\) možnosti.
+\item \(8!/(3!3!2!)=560\).
+\item Blok \(NN\), tři \(A\) a \(S\): \(5!/3!=20\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Dělíme faktoriály četností, nikoli samotnými četnostmi.
+\item Nerozlišitelné prvky nemají vnitřní \(2!\) uspořádání.
+\item Při podmínce „vedle sebe“ přepočítat počet nových objektů.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–10 motivace na slovech; 10–20 odvození; 20–32 blokové úlohy; 32–42 samostatně; 42–45 shrnutí.\par
+\textbf{Návaznost:} V následující hodině budeme na každé pozici vybírat znak nezávisle: variace s opakováním.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

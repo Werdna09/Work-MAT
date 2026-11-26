@@ -1,0 +1,155 @@
+% Doplneno podle fotografie uzivatele z 21. 11. 2026; bez zasahu do dalsich hodin.
+% Work-MAT | 2. rocnik | revize cilove obtiznosti exponencialnich uloh | 2026-11-21
+% Zdroje inspirace: autorova ucebnice Work-MAT, dodane ucitelske screenshoty typovych prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Soustavy exponenciálních rovnic}{27}{Soustavy exponenciálních rovnic II}
+\begin{document}
+\blok{Návaznost a motivace}
+Po lineárních soustavách přicházejí soustavy, které se po substituci změní na součet a součin dvou kladných čísel. Věnuj pozornost tomu, že prohození uspořádané dvojice vede často ke druhému řešení.
+\poznamka{Pro vyučovací hodinu počítej přibližně s 5 minutami opakování, 20 minutami společného výkladu a 20--25 minutami samostatného řešení. Náročnější úlohy slouží jako rezerva pro rychlejší žáky.}
+\blok{Nová myšlenka}
+Pro $u=a^x$, $v=a^y$ platí $uv=a^{x+y}$. Známe-li součet $u+v=s$ a součin $uv=p$, jsou $u$ a $v$ kořeny kvadratické rovnice $z^2-sz+p=0$; přijímáme pouze kladné hodnoty.
+\blok{Společné příklady – od základního typu k cílové obtížnosti}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš soustavu \[
+\begin{cases}2^{x+y}=8\\2^x+2^y=6\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=2^x>0,\quad v=2^y>0,\\uv&=8,\quad u+v=6,\\z^2-6z+8&=0,\\z_1&=2,\quad z_2=4,\\(u,v)&\in\{(2,4),(4,2)\},\\K&=\{[1;2],[2;1]\}.\end{aligned}
+\]
+V tabuli výslovně zaměň pomocnou dvojici $u,v$ a ukaž odpovídající dvě dvojice $[x;y]$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš soustavu \[
+\begin{cases}3^{x+y}=27\\3^x+3^y=12\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=3^x>0,\quad v=3^y>0,\\uv&=27,\quad u+v=12,\\z^2-12z+27&=0,\\z_1&=3,\quad z_2=9,\\K&=\{[1;2],[2;1]\}.\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš soustavu \[
+\begin{cases}81^{x+y}=27\\81^x+81^y=12\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=81^x>0,\quad v=81^y>0,\\uv&=27,\quad u+v=12,\\\{u,v\}&=\{3,9\},\\81^x=3&\Rightarrow 3^{4x}=3\Rightarrow x=\frac{1}{4},\\81^y=9&\Rightarrow 3^{4y}=3^2\Rightarrow y=\frac{1}{2},\\K&=\left\{\left[\frac{1}{4};\frac{1}{2}\right],\left[\frac{1}{2};\frac{1}{4}\right]\right\}.\end{aligned}
+\]
+Cílový typ ze screenshotu. Ukaž obě uspořádání, jinak se ztratí polovina řešení.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Ukaž, proč soustava nemá řešení: \[
+\begin{cases}2^{x+y}=4\\2^x+2^y=3\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=2^x>0,\quad v=2^y>0,\\uv&=4,\quad u+v=3,\\z^2-3z+4&=0,\\D&=9-16=-7<0,\\K&=\varnothing.\end{aligned}
+\]
+
+\end{prikladReseniBox}
+% Ukazka z dodane fotografie, cviceni 8c
+\begin{prikladReseniBox}[title={Příklad 5}]
+Polož $u=2^{x-y}$ a $v=2^{x+y}$ a vyřeš soustavu
+\[
+\begin{cases}
+2\cdot2^{x-y}+2^{x+y-1}=20,\\
+10\cdot2^{x-y-1}-2^{x+y}=-22.
+\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=2^{x-y}>0,\quad v=2^{x+y}>0,\\\begin{cases}4u+v=40,\\5u-v=-22,\end{cases}\\u&=2,\quad v=32,\\\begin{cases}x-y=1,\\x+y=5,\end{cases}\\K&=\{[3;2]\}.\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Cílová obtížnost podle dodané fotografie. Zařaď po základním vzoru; při pomalejším tempu ukaž jen rozhodující úpravu a celý výpočet použij jako rozšíření.}
+
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item \[\begin{cases}2^{x+y}=16\\2^x+2^y=10\end{cases}\]
+\item \[\begin{cases}3^{x+y}=9\\3^x+3^y=10\end{cases}\]
+\item \[
+\begin{cases}4^{x+y}=16\\4^x+4^y=8\end{cases}
+\]
+\item \[\begin{cases}9^{x+y}=9\\9^x+9^y=10\end{cases}\]
+\item \[
+\begin{cases}2^{x+y}=2\\2^x+2^y=3\end{cases}
+\]
+\item \[\begin{cases}2^{x+y}=16\\2^x+2^y=7\end{cases}\]
+\item \[
+\begin{cases}2^{x+y}=8\\2^x-2^y=2\end{cases}
+\]
+\item Jak poznáš, zda jsou dvě dvojice $[x;y]$, $[y;x]$ opravdu různá řešení?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{[1;3],[3;1]\}\]
+\item \[K=\{[0;2],[2;0]\}\]
+\item \[
+K=\{[1;1]\}
+\]
+\item \[K=\{[0;1],[1;0]\}\]
+\item \[
+K=\{[0;1],[1;0]\}
+\]
+\item \[K=\varnothing\]
+\item \[
+K=\{[2;1]\}
+\]
+\item \[
+x\ne y\Rightarrow [x;y]\ne[y;x]
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Vyřeš samostatně další typ úlohy ze stejného tematického celku:
+\[
+\displaystyle\begin{cases}16^{x+y}=8,\\16^x+16^y=6\end{cases}
+\]
+\tcblower
+\[\begin{aligned}u&=16^x>0,\quad v=16^y>0,\\\begin{cases}uv=8,\\u+v=6,\end{cases}\\\{u,v\}&=\{2;4\},\\K&=\left\{\left[\frac{1}{4};\frac{1}{2}\right];\left[\frac{1}{2};\frac{1}{4}\right]\right\}.\end{aligned}\]
+\end{zadaniReseniBox}
+
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Prozkoumej \[
+\begin{cases}x^{y+1}=16\\x^{3-y}=1\end{cases}
+\] a vyřeš ji při $x>0$. Potom ověř zvlášť, zda existuje řešení i pro záporný základ s celočíselným exponentem.
+\tcblower
+\[
+\begin{aligned}x>0:\ &x^{3-y}=1\Rightarrow x=1\text{ nebo }y=3,\\x=1:\ &1=16\text{ spor},\\y=3:\ &x^4=16\Rightarrow x=2,\\\text{navíc }x=-2:\ &(-2)^4=16,\quad(-2)^0=1,\\K&=\{[-2;3],[2;3]\}.\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item \[\begin{cases}2^{x+y}=32\\2^x+2^y=12\end{cases}\]
+\item \[\begin{cases}3^{x+y}=81\\3^x+3^y=30\end{cases}\]
+\item \[\begin{cases}4^{x+y}=64\\4^x+4^y=20\end{cases}\]
+\item \[\begin{cases}9^{x+y}=81\\9^x+9^y=82\end{cases}\]
+\item \[\begin{cases}2^{x+y}=16\\2^x+2^y=6\end{cases}\]
+\item \[\begin{cases}3^{x+y}=9\\3^x-3^y=0\end{cases}\]
+\item Vysvětli, proč mohou mít soustavy se součtem $u+v$ a součinem $uv$ dvě řešení, ale nemusejí.
+\item Sestav soustavu tvaru $2^{x+y}=p$, $2^x+2^y=s$, jejímž řešením jsou právě body $[0;3]$ a $[3;0]$.
+\item \[ \begin{cases}\frac{5^{\frac{x+y}{2}}}{5^{\frac{x+y}{4}}}=625,\\\frac{6^{\frac{x-y}{2}}}{6^{\frac{x-y}{4}}}=216\end{cases} \]
+\end{enumerate}
+\tcblower
+\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{[2;3],[3;2]\}\]
+\item \[K=\{[1;3],[3;1]\}\]
+\item \[K=\{[1;2],[2;1]\}\]
+\item \[K=\{[0;2],[2;0]\}\]
+\item \[K=\varnothing\]
+\item \[K=\{[1;1]\}\]
+\item \[\text{Podle diskriminantu, kladnosti kořenů a jejich různosti.}\]
+\item \[2^{x+y}=8,\qquad2^x+2^y=9\]
+\item \[\begin{aligned}5^{\frac{x+y}{4}}&=5^4,\quad6^{\frac{x-y}{4}}=6^3,\\\begin{cases}x+y=16,\\x-y=12,\end{cases}\\K&=\{[14;2]\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Z domácího úkolu zadej přiměřený výběr na 15--30 minut; uvedená sada obsahuje základní i cílové obtížnější typy. Na konci většího celku nech žáky samostatně vybrat metodu řešení.}
+\end{document}

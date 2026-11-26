@@ -1,0 +1,50 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,margin=17mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=4pt,topsep=4pt}
+
+\newcommand{\TestTitle}{Název testu}
+\newcommand{\TestHeader}[1]{%
+    \begin{center}
+        {\Large\bfseries TEST -- \TestTitle}\\[2mm]
+        {\bfseries Varianta #1}
+    \end{center}
+    \vspace{2mm}
+    Jméno a příjmení: \rule{9cm}{0.4pt}\hfill Třída: \rule{2cm}{0.4pt}\\[3mm]
+    Datum: \rule{3cm}{0.4pt}\hfill Počet bodů: \rule{2cm}{0.4pt}\hfill Známka: \rule{2cm}{0.4pt}\\[2mm]
+    \hrule\vspace{4mm}
+}
+\newcommand{\AnswerSpace}[1]{\vspace{#1}}
+
+\begin{document}
+\TestHeader{A}
+
+% ZADÁNÍ VARIANTY A
+\begin{enumerate}
+    \item Vlož zadání první úlohy.
+    \AnswerSpace{25mm}
+    \item Vlož zadání druhé úlohy.
+    \AnswerSpace{25mm}
+\end{enumerate}
+
+\newpage
+\TestHeader{B}
+
+% ZADÁNÍ VARIANTY B
+\begin{enumerate}
+    \item Vlož zadání první úlohy.
+    \AnswerSpace{25mm}
+    \item Vlož zadání druhé úlohy.
+    \AnswerSpace{25mm}
+\end{enumerate}
+\end{document}

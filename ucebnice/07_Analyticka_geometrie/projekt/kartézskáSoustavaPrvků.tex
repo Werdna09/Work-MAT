@@ -1,0 +1,124 @@
+\section{Kartézská soustava souřadnic a její prvky}\label{sec:Cartesian_coordinate_system}
+
+\textbf{Kartézská soustava souřadnic}, také známá jako \emph{kartézská soustava prvků},
+je základním nástrojem pro popis geometrických objektů v rovině a prostoru pomocí čísel.
+Umožňuje každému bodu přiřadit jednoznačnou sadu čísel, které nazýváme souřadnicemi.
+
+Každému bodu tak přiřazujeme uspořádanou $n$-tici reálných čísel, která jednoznačně určuje jeho polohu.
+V rovině jde o dvojici čísel, v prostoru o trojici čísel a obecně o $n$-tici čísel v $n$-rozměrném prostoru.
+
+Kartézská soustava souřadnic se často znázorňuje jako tzv. \textbf{pravoúhlá soustava souřadnic}.
+Jde o soustavu, ve které jsou osy navzájem kolmé a mají společný počátek,
+označovaný jako $O$ (z latinského \emph{origin}).
+V \textbf{rovině} se jedná o dvě osy, označované $x$ a $y$ (viz Obrázek~\ref{fig:cartesian_plane}),
+v \textbf{prostoru} pak o tři osy $x$, $y$ a $z$ (viz Obrázek~\ref{fig:cartesian_space}).
+
+
+
+\subsection{Kartézská soustava prvků v rovině}\label{subsec:Cartesian_coordinate_system_plane}
+V rovině zavádíme dvě na sebe kolmé orientované osy $x$ a $y$.
+Jejich průsečík nazýváme počátek soustavy a značíme jej $O$ (viz Obrázek~\ref{fig:cartesian_plane}).
+Kartézskou soustavu souřadnic v rovině formálně definujeme následovně:
+
+\begin{definition}\label{def:karteska_soustava}
+    Kartézská soustava souřadnic v rovině je dvojice kolmých orientovaných os se společným počátkem.
+\end{definition}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw [<->] (-2,0) -- (2,0) node[right] {$x$};
+        \draw [<->] (0,-2) -- (0,2) node[above] {$y$};
+        \node[below left] at (0,0) {$O$};
+    \end{tikzpicture}
+    \caption{Kartézská soustava souřadnic v rovině}
+    \label{fig:cartesian_plane}
+\end{figure}
+
+
+Orientace os není určena jednoznačně, obvykle se však volí konvence, že osa $x$ směřuje vodorovně a osa $y$ svisle.
+Osy souřadnic rozdělují rovinu na čtyři oblasti (viz Obrázek~\ref{fig:cartesian_quadrants}), které nazýváme kvadranty:
+\begin{itemize}
+    \item I. kvadrant: $x > 0$, $y > 0$,
+    \item II. kvadrant: $x < 0$, $y > 0$,
+    \item III. kvadrant: $x < 0$, $y < 0$,
+    \item IV. kvadrant: $x > 0$, $y < 0$.
+\end{itemize}
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \draw [<->] (-3,0) -- (3,0) node[right] {$x$};
+        \draw [<->] (0,-3) -- (0,3) node[above] {$y$};
+        \node[below left] at (0,0) {$O$};
+
+        % Jednotky na osách
+        \foreach \x in {-2,-1,1,2} {
+            \draw (\x,0.1) -- (\x,-0.1) node[below] {\x};
+        }
+        \foreach \y in {-2,-1,1,2} {
+            \draw (0.1,\y) -- (-0.1,\y) node[left] {\y};
+        }
+
+        % Kvadranty
+        \node [node font=\small] at (1.5,1.5) {I. kvadrant};
+        \node [node font=\small] at (-1.5,1.5) {II. kvadrant};
+        \node [node font=\small] at (-1.5,-1.5) {III. kvadrant};
+        \node [node font=\small] at (1.5,-1.5) {IV. kvadrant};
+    \end{tikzpicture}
+    \caption{Kvadranty v kartézské soustavě souřadnic v rovině}
+    \label{fig:cartesian_quadrants}
+\end{figure}
+
+
+
+\subsection{Kartézská soustava souřadnic v prostoru}\label{subsec:Cartesian_coordinate_system_space}
+V prostoru zavádíme tři na sebe kolmé orientované osy $x$, $y$ a $z$.
+Jejich průsečík nazýváme počátek soustavy a značíme jej $O$. Každému bodu v prostoru přiřazujeme uspořádanou trojici reálných čísel
+Obdobně jako v rovině jsme definovali kartézskou soustavu souřadnic, můžeme ji definovat i pro prostor:
+
+\begin{definition}\label{def:karteska_soustava_prostor}
+    Kartézská soustava souřadnic v prostoru je trojice kolmých orientovaných os se společným počátkem.
+\end{definition}
+
+
+Znázornění kartézské soustavy souřadnic v prostoru je složitější než v rovině, protože musíme zobrazit tři osy.
+Obvykle se používá tzv. \textbf{perspektivní zobrazení}, kde osa $x$ směřuje vodorovně, osa $y$ svisle a osa $z$ směrem kolmo k oběma osám $x$ a $y$ (viz Obrázek~\ref{fig:cartesian_space}).
+
+\begin{figure}[h!] 
+    \centering
+    \begin{tikzpicture}
+        \draw [->] (0,0,0) -- (3,0,0) node[right] {$x$};
+        \draw [->] (0,0,0) -- (0,3,0) node[above] {$y$};
+        \draw [->] (0,0,0) -- (0,0,3) node[below left] {$z$};
+
+        \draw [->, dashed] (0,0,0) -- (-2,0,0);
+        \draw [->, dashed] (0,0,0) -- (0,-2,0);
+        \draw [->, dashed] (0,0,0) -- (0,0,-3);
+
+        \node[below right] at (0,0,0) {$O$};
+    \end{tikzpicture}
+    \caption{Kartézská soustava souřadnic v prostoru}
+    \label{fig:cartesian_space}
+\end{figure}
+
+\begin{remark}
+    Stejně jako v rovině, i v prostoru platí, že orientace os není určena jednoznačně, ale obvykle se používá konvence, že kladná část osy $x$ směřuje doprava, kladná část osy $y$ nahoru a kladná část osy $z$ směřuje dopředu. 
+    Tato konvence nám umožňuje snadno vizualizovat a pracovat s body v prostoru pomocí jejich souřadnic.
+\end{remark}
+
+
+\subsection{Kartézská soustava prvků v n-rozměrném prostoru}\label{subsec:Cartesian_coordinate_system_n}
+Obecně můžeme definovat kartézskou soustavu souřadnic i pro $n$-rozměrný prostor, kde $n$ je libovolné kladné celé číslo.
+\begin{definition}\label{def:karteska_soustava_n}
+    Kartézská soustava souřadnic v n-rozměrném prostoru je n-tice kolmých orientovaných os se společným počátkem.
+\end{definition}
+
+Nicméně pro naše potřeby se budeme zabývat pouze kartézskou soustavou souřadnic v rovině a prostoru, protože ty jsou nejčastěji používané v analytické geometrii a zbylé jsou pouze teoretickým rozšířením.
+
+
+
+
+
+
+

@@ -1,0 +1,227 @@
+% Work/MAT, 1. rocnik, hodina 26: soucin, podil, mocnina mocniny a soucinu.
+% Revize podle zadani a obrazku z 30. 10. 2026.
+% Navazuje na 25_MOC_MocninaSPrirozenymExponentem.tex: pravidla doplnujeme
+% jako radky teze prubezne tabulky, bez opakovani definic z hodiny 25.
+% Odvozovani: ucebnice/01_Zakladni_poznatky/Mocniny_a_odmocniny/
+% Mocniny a Odmocniny.tex; Realisticky.cz: 010602 Vzorce pro mocniny I.
+% Vybrane ulohy S2 a D1, priklady P3 a P5 prevzaty ze screenshotu uzivatele.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Mocniny a odmocniny}{26}{Pravidla pro mocniny}
+\begin{document}
+
+\poznamka{\textbf{Jádro 45 minut:} 3 min aktivace z hodiny 25; 8 min odvození
+součinu a podílu + tabulka; 6 min P1 a P2; 11 min S2 (a--c), další dvě
+položky jako výzva; 7 min mocnina mocniny + P3 a), b); 7 min mocnina
+součinu + P5 a), b); 3 min shrnutí a domácí práce. P3 c), P5 c)--e),
+původní S1 a R1 jsou rezerva. Všechny úlohy jsou v přípravě, ale nejde
+o povinnou náplň jediné hodiny. V hodině 27 lze pravidla důkladněji procvičit.}
+
+\blok{Navážeme na 25. hodinu: kolik máme činitelů?}
+Z minulé hodiny víme, že $a^n$ je součin $n$ stejných činitelů.
+Když dva takové součiny spojíme, počty činitelů \textbf{sčítáme}.
+Při dělení můžeme společné nenulové činitele odebrat.
+\[
+\underbrace{a\cdot a\cdot a}_{3}\cdot
+\underbrace{a\cdot a}_{2}=a^5,
+\qquad
+\frac{\overbrace{a\cdot a\cdot a\cdot a\cdot a}^{5}}{\underbrace{a\cdot a}_{2}}=a^3
+\quad(a\ne0).
+\]
+\textbf{Důkaz obecně:} pro $r,s\in\mathbb N$ platí
+\[
+\underbrace{a\cdots a}_{r\text{ činitelů}}\cdot
+\underbrace{a\cdots a}_{s\text{ činitelů}}
+=\underbrace{a\cdots a}_{r+s\text{ činitelů}}.
+\]
+Při podílu $r>s$ a $a\ne0$ zbude po odstranění $s$ stejných
+činitelů $r-s$ činitelů v čitateli.
+
+\blok{Nové řádky do naší tabulky pravidel}
+Stejně jako v hodině 25 si tabulku \textbf{postupně rozšiřujeme}.
+Následující čtyři řádky připojíme k pravidlům pro znaménka,
+první mocninu, $0^n$ a $1^n$; nejde o jejich náhradu.
+\begin{center}
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{31mm}>{\raggedright\arraybackslash}p{50mm}X@{}}
+\toprule
+\textbf{Pravidlo} & \textbf{Zápis} & \textbf{Podmínky a význam} \\
+\midrule
+Součin stejného základu & $a^r\cdot a^s=a^{r+s}$ & $a\in\mathbb R$, $r,s\in\mathbb N$ \\
+Podíl stejného základu & $\dfrac{a^r}{a^s}=a^{r-s}$ & $a\ne0$, $r>s$, $r,s\in\mathbb N$ \\
+Mocnina mocniny & $(a^r)^s=a^{r\cdot s}$ & $a\in\mathbb R$, $r,s\in\mathbb N$ \\
+Mocnina součinu & $(ab)^r=a^r b^r$ & $a,b\in\mathbb R$, $r\in\mathbb N$ \\
+\bottomrule
+\end{tabularx}
+\normalsize
+\end{center}
+\textbf{Případ $r=s$:} pro $a\ne0$ máme $a^r/a^r=1$.
+\textbf{Případ $r<s$:} zatím výsledek zapíšeme jako převrácenou
+hodnotu mocniny; \emph{záporný exponent} systematicky zavedeme v hodině 28.
+
+\blok{Řešené příklady — zachované z původní přípravy}
+\begin{prikladReseniBox}[title={Příklad 1},breakable=false]
+Uprav $2^5\cdot 2^3$ a $\dfrac{3^7}{3^4}$.
+\tcblower
+$2^5\cdot2^3=2^{5+3}=2^8=256$;
+$\dfrac{3^7}{3^4}=3^{7-4}=3^3=27$.
+\end{prikladReseniBox}
+\poznamka{\textbf{Otázka žákům právě u P1:} Co kdybychom v podílu
+$3^7/3^4$ \emph{prohodili čitatele a jmenovatele}?
+Výsledek už nebude $3^3$; dostaneme $3^4/3^7=1/3^3$.
+Zatím nech jen vysvětlit počet činitelů. Zápis $3^{-3}$
+a jeho pravidla probereme v hodině 28.}
+
+\begin{prikladReseniBox}[title={Příklad 2},breakable=false]
+Uprav $\dfrac{x^7x^2}{x^4}$ a uveď podmínku.
+\tcblower
+Původní jmenovatel vyžaduje $x\ne0$. Potom
+$\dfrac{x^7x^2}{x^4}=x^{7+2-4}=x^5$.
+I když ve výsledku žádný jmenovatel není, $x\ne0$ nadále platí.
+\end{prikladReseniBox}
+
+\blok{S2: výrazy z pracovního listu — povinné a dobrovolné}
+\begin{zadaniReseniBox}[title={Samostatná práce 1},breakable=false]
+Odstraň zlomky ve výrazech (nepoužívej přímé krácení,
+ale \textbf{vzorec pro podíl mocnin}). Výsledek udej jako mocninu
+nebo součin mocnin. Nezapomeň na podmínky.
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{2^{14}}{2^6}$
+\item $\displaystyle\frac{(-4)^{35}}{(-4)^{13}}$
+\item $\displaystyle\frac{a^3\cdot b^5}{b^2\cdot a}$
+\item $\displaystyle\frac{x^4\cdot(-x)^7}{(-x)^3\cdot x^2}$
+\item $\displaystyle\frac{a^4\cdot(-a)^3\cdot b^5}{(-a)^6\cdot(-b)^3}$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $2^{14-6}=\boxed{2^8}$.
+\item $(-4)^{35-13}=\boxed{(-4)^{22}}$.
+\item $a^{3-1}b^{5-2}=\boxed{a^2b^3}$; $a,b\ne0$.
+\item $x^{4-2}(-x)^{7-3}=x^2(-x)^4=\boxed{x^6}$; $x\ne0$.
+\item $a^4\,(-a)^{3-6}\,b^5\,(-b)^{-3}$ takto \emph{zatím nezapisujeme}.
+Znaménka oddělíme ještě před podílem: nahoře $-a^7b^5$,
+dole $-a^6b^3$, proto $\boxed{ab^2}$; $a,b\ne0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{V povinném jádru S2 a)--c). Písmena d), e) jsou náročnější
+příklady pro rychlé; u e) záměrně nepiš záporné exponenty, ale přeuspořádej
+znaménka a spočti rozdíly kladných exponentů. U všech podílů
+původně nesmí být jmenovatel nula.}
+
+\blok{Mocnina mocniny — další rozšíření tabulky}
+V zápisu $(a^r)^s$ opakujeme součin $a^r$ právě $s$-krát.
+V každém bloku je $r$ činitelů, dohromady tedy $r\cdot s$.
+\[
+(a^r)^s=\underbrace{a^r\cdot a^r\cdots a^r}_{s\text{ bloků}}
+=\underbrace{a\cdot a\cdots a}_{r\cdot s\text{ činitelů}}
+=a^{r\cdot s}.
+\]
+\textbf{Pozor:} exponenty zde \emph{násobíme}, nesčítáme.
+
+\begin{prikladReseniBox}[title={Příklad 3},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $(2^3)^5$
+\item $\bigl((-\pi)^3\bigr)^4$
+\item $\bigl(-(3)^4\bigr)^3$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $(2^3)^5=2^{3\cdot5}=\boxed{2^{15}}$.
+\item $\bigl((-\pi)^3\bigr)^4=(-\pi)^{3\cdot4}
+=(-\pi)^{12}=\boxed{\pi^{12}}$.
+\item $\bigl(-(3)^4\bigr)^3=(-3^4)^3=-\bigl(3^4\bigr)^3
+=\boxed{-3^{12}}$. Mínus není součástí základu v $3^4$;
+vnější exponent $3$ je lichý.
+\end{enumerate}
+\end{prikladReseniBox}
+
+\blok{Mocnina součinu — odvoď pravidlo, pak použij}
+Pro $r\in\mathbb N$ máme $r$ kopií stejného součinu $(ab)$.
+Díky komutativitě a asociativitě násobení přeuspořádáme činitele:
+\[
+(ab)^r=\underbrace{(ab)(ab)\cdots(ab)}_{r\text{ činitelů }ab}
+=\underbrace{a\cdots a}_{r\text{ činitelů}}
+ \underbrace{b\cdots b}_{r\text{ činitelů}}=a^r b^r.
+\]
+\textbf{Důležité:} toto pravidlo funguje pro \emph{součin}, nikoliv
+pro součet: $(a+b)^r\ne a^r+b^r$ obecně (např. pro $a=b=1$, $r=2$).
+
+\begin{prikladReseniBox}[title={Příklad 4},breakable=false]
+Vypočti nebo uprav; výsledek udej jako součin mocnin.
+\begin{enumerate}[label=\alph*)]
+\item $(2\cdot3)^2$
+\item $(2^3\cdot3)^4$
+\item $3(a^2\cdot b^3)^3$
+\item $\displaystyle\frac{(a^2\cdot b^3)^3\cdot a^4}{(a^3\cdot b^2)^3}$
+\item $[(-a)\cdot b]^3(-a^4b^3)^5$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $(2\cdot3)^2=\boxed{2^2\cdot3^2}=36$.
+\item $(2^3\cdot3)^4=(2^3)^4\cdot3^4
+=\boxed{2^{12}\cdot3^4}$.
+\item $3(a^2b^3)^3=3(a^2)^3(b^3)^3=\boxed{3a^6b^9}$.
+\item Pro $a,b\ne0$:
+$\displaystyle\frac{a^6b^9a^4}{a^9b^6}
+=a^{6+4-9}b^{9-6}=\boxed{ab^3}$.
+\item $[(-a)b]^3(-a^4b^3)^5
+=(-a)^3b^3\,(-1)^5a^{20}b^{15}
+=\boxed{a^{23}b^{18}}$.
+\end{enumerate}
+\end{prikladReseniBox}
+\poznamka{P5 a), b) patří do jádra; c)--e) jsou výzva
+nebo rezerva do hodiny 27. Zvlášť u e) rozlišuj $(-a)^4$ a $-a^4$.
+Pravidlo pro mocninu \emph{podílu} zatím nemusíme zavádět.}
+
+\blok{Další původní procvičení — dobrovolná rezerva}
+\begin{zadaniReseniBox}[title={Samostatná práce 2},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $a^3a^5$.
+\item $\dfrac{5^6}{5^2}$ a $\dfrac{2^3}{2^5}$.
+\item $\dfrac{b^4b^3}{b^5}$ a $\dfrac{b^2}{b^2}$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a^8$ pro libovolné $a\in\mathbb R$.
+\item $5^4=625$ a $1/2^2=1/4$.
+\item $b^2$ a $1$, vždy při $b\ne0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $a^4a^3a^2$, $\dfrac{x^9}{x^4}$ a $\dfrac{y^3}{y^7}$.
+\item $\dfrac{3^5\cdot3^2}{3^4}$ a $\dfrac{2^3\cdot4^2}{2^5}$.
+\item Platí $a^3+a^2=a^5$ pro každé $a$?
+\item $\dfrac{a^6b^3\cdot ab^2}{a^4b^6}$; uveď podmínky.
+\item Porovnej $\dfrac{7^8}{7^5}$ a $7^2$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $a^9$, $x^5$ pro $x\ne0$, $1/y^4$ pro $y\ne0$.
+\item $3^3=27$ a $2^2=4$.
+\item Ne, například pro $a=2$ je $8+4=12\ne32$.
+\item $a^3/b$, kde $a\ne0$ a $b\ne0$.
+\item $7^3>7^2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení — přesně čtyři položky ze zadání}
+\begin{zadaniReseniBox}[title={Domácí úkol},breakable=false]
+\begin{enumerate}[label=\alph*)]
+\item $\displaystyle\frac{2^5\cdot2^7}{2^{10}}$
+\item $\displaystyle\frac{(-3)^3\cdot(-3)^6}{(-3)^5\cdot3^2}$
+\item $\displaystyle\frac{3^{15}}{3^2\cdot3^7}$
+\item $\displaystyle\frac{(-2)^5\cdot2^6}{(-2)^4\cdot2^2}$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $2^{5+7-10}=\boxed{2^2}=4$.
+\item $\dfrac{(-3)^{3+6-5}}{3^2}=\dfrac{(-3)^4}{3^2}
+=\boxed{3^2}=9$.
+\item $3^{15-2-7}=\boxed{3^6}$.
+\item $\dfrac{(-2)^5\cdot2^6}{(-2)^4\cdot2^2}
+=(-2)^{5-4}2^{6-2}=(-2)\cdot2^4=\boxed{-2^5}=-32$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

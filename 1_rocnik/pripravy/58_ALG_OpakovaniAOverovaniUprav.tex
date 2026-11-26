@@ -1,0 +1,75 @@
+% Work-MAT, hodina 58. Zaverecne opakovani celeho bloku algebraickych vyrazu 41--57.
+% Podklady: ucebnice Algebraické výrazy, metodicka inspirace realisticky.cz a
+% puvodni priprava 58 v repozitari. Nezavadi se nove ucivo.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Algebraické výrazy}{58}{Opakování a ověřování správnosti úprav}
+\begin{document}
+\poznamka{45 minut: 5 min strategie kontroly, 10 min společná práce s identitou, 15 min samostatná práce a kontrola, 10 min práce s chybným výpočtem, 5 min shrnutí. Rozšíření jen pro rychlé, domácí úlohy 15--20 minut. Navazuje na diagnostiku hodiny 57.}
+\blok{Kdy máme jistotu, že jsme výraz upravili správně?}
+Dosazení několika čísel je \emph{kontrolou}; neshoda v jediném přípustném dosazení rovnost vyvrací. K obecné platnosti potřebujeme zdůvodněné algebraické úpravy, platné na původním definičním oboru.
+\begin{prikladReseniBox}[breakable=false,title={Příklad 1}]
+Ověř pro všechna reálná $x$, že $(x-2)(x^2+2x+4)=x^3-8$.
+\tcblower
+\[(x-2)(x^2+2x+4)=x^3+2x^2+4x-2x^2-4x-8=x^3-8.\]
+Rovnost platí pro každé reálné $x$, protože jsme použili identické úpravy.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 2}]
+Uprav $\frac{x^2-4}{x-2}$ a posuď, zda lze dosadit $x=2$.
+\tcblower
+Čitatel $(x-2)(x+2)$ lze krátit \emph{jen při} $x\ne2$. Výsledný zápis $x+2$ je definovaný i pro $x=2$, ale \textbf{původní zlomek ne}. Obecně tedy rovnost platí pouze na $\mathbb R\setminus\{2\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[breakable=false,title={Příklad 3}]
+Ověř dělení $x^3+1=(x-1)(x^2+x+1)+2$.
+\tcblower
+\[(x-1)(x^2+x+1)+2=x^3-1+2=x^3+1.\]
+Toto je polynomická identita pro všechna reálná $x$. Podíl číselných hodnot $(x^3+1)/(x-1)$ je však definován jen pro $x\ne1$.
+\end{prikladReseniBox}
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[breakable=false,title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item Ověř $(x+2)(x^2-2x+4)=x^3+8$.
+\item Rozlož a zpětně ověř $2x^3-18x$.
+\item Uprav $\frac{x^2-9}{x-3}$ včetně podmínek.
+\item Najdi protipříklad k $(x-1)^2=x^2-1$.
+\item Vyděl $(x^2+1):(x+1)$, určete podíl a zbytek.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Roznásobením $x^3+8$, pro všechna $x\in\mathbb R$.
+\item $2x(x-3)(x+3)$, protože $2x[(x-3)(x+3)]=2x(x^2-9)$.
+\item $x+3$, původní podmínka $x\ne3$.
+\item Pro $x=0$ je vlevo $1$, vpravo $-1$. Správný rozvoj je $x^2-2x+1$.
+\item $Q(x)=x-1$, $R(x)=2$, neboť $(x+1)(x-1)+2=x^2+1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Po testu vybírej příklady podle zjištěných slabin třídy. Nezaměň obecný důkaz s úspěšným dosazením dvou hodnot. Cílem není další objem látky, ale správná argumentace.}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[breakable=false,title={Rozšíření 1}]
+Žák uvedl $x^3+3x^2-4=x^2(x+3)-4$ a tvrdí, že je hotov rozklad na součin. Je to pravda? Dokonči rozklad.
+\tcblower
+Rovnost je správná, ale vpravo zůstává \emph{rozdíl}. Platí
+\[x^3+3x^2-4=(x-1)(x^2+4x+4)=(x-1)(x+2)^2.\]
+Zkouška roznásobením potvrzuje původní mnohočlen.
+\end{zadaniReseniBox}
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[breakable=false,title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Ověř $(x-1)(x^2+x+1)=x^3-1$.
+\item Rozlož $x^2-6x+9$ a ověř roznásobením.
+\item Ověř $\frac1{x-1}+\frac1{x+1}=\frac{2x}{x^2-1}$ a uveď podmínky.
+\item Ověř $x^3+2x^2-2x-1=(x+1)(x^2+x-3)+2$.
+\item Najdi protipříklad k rovnosti $\frac{x^2+1}{x+1}=x$.
+\item Uprav $\frac{x^2-1}{x-1}$ a vysvětli význam zakázané hodnoty.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Po roznásobení $x^3-1$; identita pro všechna $x$.
+\item $(x-3)^2=x^2-6x+9$.
+\item Společný jmenovatel je $(x-1)(x+1)$; v čitateli $(x+1)+(x-1)=2x$. Podmínky $x\ne-1,1$.
+\item Roznásobením vznikne $x^3+2x^2-2x-3+2$, tedy levá strana. Identita pro každé $x$.
+\item Např. $x=0$: původní zlomek má hodnotu $1$, pravá strana $0$. Původní obor $x\ne-1$.
+\item $x+1$, $x\ne1$; upravený výraz existuje také pro $x=1$, původní zlomek nikoli.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

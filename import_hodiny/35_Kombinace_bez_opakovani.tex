@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{35}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Kombinace bez opakování: výběr skupiny}\par
+{\sffamily\large\color{teal} Výukový podklad · 35. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.1\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Odvodit dělení uspořádaných výběrů \(k!\), řešit výběry osob, geometrické úlohy a členění na nezávislé skupiny.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Kombinace bez opakování} je neuspořádaný výběr \(k\) různých prvků z \(n\), kde \(0\le k\le n\). Každou \(k\)-člennou skupinu variace bez opakování započítají \(k!\)-krát, protože vybrané osoby lze uspořádat všemi \(k!\) způsoby.\par
+Proto \[C(n,k)=\frac{V(n,k)}{k!}=\frac{n!}{k!(n-k)!}=\binom nk.\]
+\textbf{Rozhodovací otázka:} změna pořadí vybraných osob změní výsledek? Pokud ne, jde o kombinaci. Při přidělení různých funkcí už jde o uspořádaný výběr.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Ze skupiny devíti osob vybereme tři členy komise.\par
+\textit{Řešení.} U komise nezáleží na pořadí. \(\binom93=\frac{9\cdot8\cdot7}{3\cdot2\cdot1}=84\).\par\smallskip
+\textbf{Příklad 2.} Kolik úseček určuje šest bodů, nejsou-li žádné dva totožné?\par
+\textit{Řešení.} Každou úsečku určuje neuspořádaná dvojice různých bodů. \(\binom62=\frac{6\cdot5}{2}=15\).\par\smallskip
+\textbf{Příklad 3.} Výběr přesně dvou dívek z šesti a dvou chlapců z pěti.\par
+\textit{Řešení.} Nezávisle vybereme dvojici dívek \(\binom62=15\) a dvojici chlapců \(\binom52=10\). Počet komisí \(15\cdot10=150\).\par\smallskip
+\textbf{Příklad 4.} Kolik úhlopříček má konvexní desetiúhelník?\par
+\textit{Řešení.} Dva vrcholy určují úsečku: \(\binom{10}{2}=45\). Deset z nich je stranami mnohoúhelníku, úhlopříček je \(45-10=35\).\par\smallskip
+\textbf{Příklad 5.} Ze skupiny osmi lidí vybereme tři, přičemž právě jeden ze dvou konkrétních lidí A a B musí být vybrán.\par
+\textit{Řešení.} Vybereme A nebo B: \(2\) možnosti. Dále dva z ostatních šesti: \(\binom62=15\). Celkem \(2\cdot15=30\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Vyber dva z osmi žáků do nerozlišených rolí.
+\item Kolik trojúhelníků určuje sedm bodů, žádné tři neleží na přímce?
+\item Ze šesti žen a čtyř mužů vyber tříčlennou skupinu přesně s jedním mužem.
+\item Kolik možností má výběr dvou karet z pěti různých karet, pokud pořadí nehraje roli?
+\item Z devíti hráčů vyber čtyři, přičemž vybraný hráč P musí být mezi nimi.
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(\binom82=28\).
+\item Každá trojice bodů určuje trojúhelník: \(\binom73=35\).
+\item \(\binom41\binom62=4\cdot15=60\).
+\item \(\binom52=10\).
+\item K P vybereme ještě tři z ostatních osmi: \(\binom83=56\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Nevydělit \(k!\) v případě, kdy pořadí nehraje roli, znamená \(k!\)-násobné započítání.
+\item Ve smíšených týmech nejprve určit požadované počty z každé skupiny.
+\item Geometrický počet dvojic nezaměňovat s počtem úhlopříček (odečítají se strany).
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–10 výběr vs funkce; 10–20 odvození \(\binom nk\); 20–33 geometrie a smíšené komise; 33–42 cvičení; 42–45 shrnutí.\par
+\textbf{Návaznost:} Příště budeme vzorec \(\binom nk\) cíleně upravovat a používat v rovnicích.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

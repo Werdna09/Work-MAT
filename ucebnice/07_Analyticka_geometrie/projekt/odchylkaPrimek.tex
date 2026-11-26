@@ -1,0 +1,1131 @@
+\subsection{Odchylka přímek}
+\label{subsec:Angle_between_lines}
+
+V předchozích částech jsme určovali, zda jsou dvě přímky různoběžné,
+rovnoběžné, totožné nebo kolmé. U různoběžných přímek však můžeme
+zkoumat také velikost úhlu, pod kterým se protínají.
+
+Směr přímky je určen jejím směrovým vektorem. Výpočet odchylky dvou
+přímek proto navazuje na geometrický význam skalárního součinu,
+kterému jsme se věnovali v části
+\ref{subsubsec:Geometric_meaning_of_dot_product}. Budeme přitom
+vycházet zejména ze vztahu \eqref{eq:dot_product_angle} pro výpočet
+úhlu dvou vektorů, případně z jeho odvozené formy z poznámky \ref{rem:dot_product_angle}
+
+
+\subsubsection{Geometrický význam odchylky přímek}
+\label{subsubsec:Geometric_meaning_angle_lines}
+
+Dvě různoběžné přímky vytvářejí ve svém průsečíku čtyři úhly.
+Protilehlé úhly mají stejnou velikost a dva sousední úhly jsou
+vedlejší, takže jejich součet je roven $\pi$.
+
+Při určování odchylky přímek vybíráme menší z úhlů, které přímky
+svírají. Jsou-li přímky kolmé, je jejich odchylka rovna
+$\frac{\pi}{2}$. Rovnoběžné a totožné přímky mají odchylku rovnou
+nule.
+
+\begin{definition}\label{def:Angle_between_lines}
+    \textbf{Odchylkou dvou přímek} $p$ a $q$ v rovině nazýváme číslo
+    \[
+        \varphi\in\left[0;\frac{\pi}{2}\right],
+    \]
+    které je u různoběžných přímek velikostí jejich ostrého nebo
+    pravého úhlu.
+
+    Pro rovnoběžné a totožné přímky definujeme
+    \[
+        \varphi=0.
+    \]
+\end{definition}
+
+Odchylku přímek budeme značit
+\[
+    \varphi=\angle(p,q).
+\]
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.05]
+
+        \coordinate (O) at (0,0);
+
+        % Přímky
+        \draw[thin, <->] (-3,-1.5) -- (3,1.5)
+            node[above right] {$p$};
+        \draw[thin, <->] (-2.6,2.2) -- (2.6,-2.2)
+            node[below right] {$q$};
+
+        % Průsečík
+        \fill (O) circle (2.3pt) node[below left] {$P$};
+
+        % Směrové vektory
+        \draw[vector] (0.4,0.2) -- (1.8,0.9)
+            node[midway, above, sloped] {$\vec{u}$};
+        \draw[vector] (0.35,-0.30) -- (1.55,-1.31)
+            node[midway, below, sloped] {$\vec{v}$};
+
+        % Oblouk odchylky
+        \draw[->]
+            (0.85,0.425)
+            arc[start angle=26.565, end angle=-40.236, radius=0.95];
+
+        \node[right] at (0.92,-0.08) {$\varphi$};
+
+    \end{tikzpicture}
+    \caption{Odchylka přímek je velikost menšího úhlu, který přímky
+    svírají.}
+    \label{fig:Angle_between_lines}
+\end{figure}
+
+Úhel dvou vektorů může nabývat hodnot od $0$ do $\pi$. Odchylka
+přímek však nepřesahuje $\frac{\pi}{2}$. Navíc můžeme směrový vektor
+přímky nahradit jeho opačným vektorem, aniž bychom změnili směr
+přímky. Výpočet odchylky proto nesmí záviset na zvolené orientaci
+směrových vektorů.
+
+
+\subsubsection{Odchylka pomocí směrových vektorů}
+\label{subsubsec:Angle_lines_direction_vectors}
+
+Uvažujme přímky $p$ a $q$ s nenulovými směrovými vektory
+\[
+    \vec{u}_p=(u_1;u_2),
+    \qquad
+    \vec{u}_q=(v_1;v_2).
+\]
+
+Pro úhel $\alpha\in[0;\pi]$ jejich směrových vektorů platí
+\[
+    \cos\alpha
+    =
+    \frac{\vec{u}_p\cdot\vec{u}_q}
+    {|\vec{u}_p|\,|\vec{u}_q|}.
+\]
+
+Je-li úhel $\alpha$ ostrý nebo pravý, je přímo odchylkou přímek.
+Je-li $\alpha$ tupý, je odchylkou přímek vedlejší úhel
+\[
+    \varphi=\pi-\alpha.
+\]
+Pro jejich kosiny platí
+\[
+    \cos(\pi-\alpha)=-\cos\alpha.
+\]
+
+Obě možnosti můžeme spojit pomocí absolutní hodnoty skalárního
+součinu. Pro odchylku přímek tedy platí
+\begin{equation}\label{eq:Angle_lines_direction_vectors}
+        \cos\varphi
+    =
+    \frac{
+        \left|\vec{u}_p\cdot\vec{u}_q\right|
+    }
+    {
+        |\vec{u}_p|\,|\vec{u}_q|
+    }.
+\end{equation}
+
+Po rozepsání souřadnic směrových vektorů dostáváme
+\begin{equation}\label{eq:Angle_lines_direction_vectors_coordinates}
+    \cos\varphi
+    =
+    \frac{
+        |u_1v_1+u_2v_2|
+    }
+    {
+        \sqrt{u_1^2+u_2^2}\,
+        \sqrt{v_1^2+v_2^2}
+    }.
+\end{equation}
+
+Samotnou odchylku určíme pomocí funkce arkus kosinus:
+\begin{equation}\label{eq:Angle_lines_arccos}
+    \varphi
+    =
+    \arccos
+    \left(
+        \frac{
+            \left|\vec{u}_p\cdot\vec{u}_q\right|
+        }
+        {
+            |\vec{u}_p|\,|\vec{u}_q|
+        }
+    \right).
+\end{equation}
+
+\begin{remark}\label{rem:Absolute_value_angle_lines}
+    Absolutní hodnota v čitateli zajišťuje dvě důležité vlastnosti:
+
+    \begin{itemize}
+        \item výsledná odchylka nepřesáhne $\frac{\pi}{2}$;
+        \item výsledek nezávisí na orientaci směrových vektorů.
+    \end{itemize}
+
+    Nahradíme-li například vektor $\vec{u}_p$ opačným vektorem
+    $-\vec{u}_p$, změní se znaménko skalárního součinu, ale jeho
+    absolutní hodnota zůstane stejná.
+\end{remark}
+
+Ze vztahu \eqref{eq:Angle_lines_direction_vectors} přímo plynou známé
+zvláštní případy:
+
+\[
+\begin{array}{c|c|c}
+    \text{podmínka}
+    &
+    \cos\varphi
+    &
+    \text{vzájemná poloha}
+    \\
+    \hline
+    \vec{u}_p=k\vec{u}_q,\ k\neq0
+    &
+    1
+    &
+    \varphi=0
+    \\[1mm]
+    \vec{u}_p\cdot\vec{u}_q=0
+    &
+    0
+    &
+    \varphi=\frac{\pi}{2}
+\end{array}
+\]
+
+Rovnoběžné a totožné přímky mají odchylku $0$, zatímco kolmé přímky
+mají odchylku $\frac{\pi}{2}$.
+
+\begin{example}\label{exa:Angle_parametric_lines}
+    Určete odchylku přímek
+    \[
+        \begin{aligned}
+            p:\quad x&=1+2t,\\
+                     y&=3-3t,
+                     \qquad t\in\mathbb{R},
+        \end{aligned}
+    \]
+    a
+    \[
+        \begin{aligned}
+            q:\quad x&=2-s,\\
+                     y&=3+s,
+                     \qquad s\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Z parametrických vyjádření získáme směrové vektory
+    \[
+        \vec{u}_p=(2;-3),
+        \qquad
+        \vec{u}_q=(-1;1).
+    \]
+
+    Jejich skalární součin je
+    \[
+        \vec{u}_p\cdot\vec{u}_q
+        =
+        (2;-3)\cdot(-1;1)
+        =
+        -2-3
+        =
+        -5.
+    \]
+
+    Velikosti směrových vektorů jsou
+    \[
+        |\vec{u}_p|
+        =
+        \sqrt{2^2+(-3)^2}
+        =
+        \sqrt{13}
+    \]
+    a
+    \[
+        |\vec{u}_q|
+        =
+        \sqrt{(-1)^2+1^2}
+        =
+        \sqrt2.
+    \]
+
+    Dosadíme do vztahu
+    \eqref{eq:Angle_lines_direction_vectors}:
+    \begin{align*}
+        \cos\varphi
+        &=
+        \frac{|-5|}{\sqrt{13}\sqrt2}\\
+        &=
+        \frac{5}{\sqrt{26}}.
+    \end{align*}
+
+    Odtud
+    \[
+        \varphi
+        =
+        \arccos\left(\frac{5}{\sqrt{26}}\right)
+        \doteq
+        11{,}31^\circ.
+    \]
+
+    Odchylka přímek je přibližně
+    \[
+        \varphi\doteq11^\circ19'.
+    \]
+\end{example}
+
+
+\subsubsection{Odchylka přímek zadaných obecnými rovnicemi}
+\label{subsubsec:Angle_general_lines}
+
+Uvažujme přímky zadané obecnými rovnicemi
+\[
+    p:\quad a_1x+b_1y+c_1=0
+\]
+a
+\[
+    q:\quad a_2x+b_2y+c_2=0.
+\]
+
+Jejich normálové vektory jsou
+\[
+    \vec{n}_p=(a_1;b_1),
+    \qquad
+    \vec{n}_q=(a_2;b_2).
+\]
+
+Obě přímky otočíme o pravý úhel, zvolíme-li místo nich přímky ve
+směru jejich normálových vektorů. Otočení obou směrů o stejný úhel
+nezmění jejich vzájemnou odchylku. Odchylka přímek $p$ a $q$ je proto
+stejná jako odchylka jejich normálových vektorů.
+
+Můžeme tedy použít vztah
+\begin{equation}\label{eq:Angle_general_lines}
+    \cos\varphi
+    =
+    \frac{
+        |a_1a_2+b_1b_2|
+    }
+    {
+        \sqrt{a_1^2+b_1^2}\,
+        \sqrt{a_2^2+b_2^2}
+    }.
+\end{equation}
+
+Absolutní členy $c_1$ a $c_2$ se ve vzorci nevyskytují, protože
+ovlivňují polohu přímek, nikoli jejich směr.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=1.0]
+
+        \coordinate (O) at (0,0);
+
+        % Přímky
+        \draw[thin, <->] (-3,-1.25) -- (3,1.25)
+            node[above right] {$p$};
+        \draw[thin, <->] (-2.7,2.0) -- (2.7,-2.0)
+            node[below right] {$q$};
+
+        % Normálové vektory z průsečíku
+        \draw[vector] (O) -- (-0.7,1.7)
+            node[midway, left] {$\vec{n}_p$};
+        \draw[vector] (O) -- (1.25,1.7)
+            node[midway, right] {$\vec{n}_q$};
+
+        % Oblouky
+        \draw[->]
+            (0.75,0.313)
+            arc[start angle=22.62, end angle=-36.53, radius=0.81];
+        \node[right] at (0.82,-0.05) {$\varphi$};
+
+        \draw[->]
+            (-0.32,0.78)
+            arc[start angle=112.38, end angle=53.67, radius=0.84];
+        \node[above] at (0.05,0.86) {$\varphi$};
+
+        \fill (O) circle (2.2pt);
+
+    \end{tikzpicture}
+    \caption{Odchylka dvou přímek je stejná jako odchylka jejich
+    normálových vektorů.}
+    \label{fig:Angle_general_lines_normals}
+\end{figure}
+
+\begin{example}\label{exa:Angle_general_line_equations}
+    Určete odchylku přímek $p: 2x-y+3=0$ a $q:3x+2y-1=0$.
+
+    Normálové vektory přímek jsou
+    \[
+        \vec{n}_p=(2;-1),
+        \qquad
+        \vec{n}_q=(3;2).
+    \]
+
+    Jejich skalární součin je
+    \[
+        \vec{n}_p\cdot\vec{n}_q
+        =
+        (2;-1)\cdot(3;2)
+        =
+        6-2
+        =
+        4.
+    \]
+
+    Velikosti normálových vektorů jsou
+    \[
+        |\vec{n}_p|=\sqrt{2^2+(-1)^2}=\sqrt5
+    \]
+    a
+    \[
+        |\vec{n}_q|=\sqrt{3^2+2^2}=\sqrt{13}.
+    \]
+
+    Dosadíme do vztahu \eqref{eq:Angle_general_lines}:
+    \[
+        \cos\varphi
+        =
+        \frac{4}{\sqrt5\sqrt{13}}
+        =
+        \frac{4}{\sqrt{65}}.
+    \]
+
+    Odtud
+    \[
+        \varphi
+        =
+        \arccos\left(\frac{4}{\sqrt{65}}\right)
+        \doteq
+        60{,}26^\circ.
+    \]
+
+    Odchylka přímek je přibližně
+    \[
+        \varphi\doteq60^\circ15'.
+    \]
+\end{example}
+
+
+\subsubsection{Odchylka přímek ve směrnicovém tvaru}
+\label{subsubsec:Angle_slope_lines}
+
+Uvažujme dvě nesvislé přímky ve směrnicovém tvaru
+\[
+    p:\quad y=k_1x+q_1
+\]
+a
+\[
+    q:\quad y=k_2x+q_2.
+\]
+
+Jako jejich směrové vektory můžeme zvolit
+\[
+    \vec{u}_p=(1;k_1),
+    \qquad
+    \vec{u}_q=(1;k_2).
+\]
+
+Dosazením do vztahu
+\eqref{eq:Angle_lines_direction_vectors} získáme
+\begin{equation}\label{eq:Angle_slope_lines_cosine}
+    \cos\varphi
+    =
+    \frac{|1+k_1k_2|}
+    {\sqrt{1+k_1^2}\sqrt{1+k_2^2}}.
+\end{equation}
+
+Odchylku můžeme určit také pomocí směrových úhlů přímek. Platí-li
+\[
+    k_1=\tan\alpha_1
+    \qquad\text{a}\qquad
+    k_2=\tan\alpha_2,
+\]
+pak s využitím vztahu pro tangens rozdílu dostáváme
+\begin{equation}\label{eq:Angle_slope_lines_tangent}
+    \tan\varphi
+    =
+    \left|
+        \frac{k_2-k_1}{1+k_1k_2}
+    \right|.
+\end{equation}
+
+Tento vztah můžeme použít, pokud
+\[
+    1+k_1k_2\neq0.
+\]
+
+Jestliže
+\[
+    1+k_1k_2=0,
+\]
+platí
+\[
+    k_1k_2=-1,
+\]
+a přímky jsou kolmé. Jejich odchylka je tedy
+\[
+    \varphi=\frac{\pi}{2}.
+\]
+
+Absolutní členy $q_1$ a $q_2$ opět nemají na odchylku vliv.
+
+\begin{remark}\label{rem:Alternative_method_angle_slope_lines}
+    Vztahy \eqref{eq:Angle_slope_lines_cosine}
+    a \eqref{eq:Angle_slope_lines_tangent} umožňují určit odchylku
+    přímo ze směrnic obou přímek.
+
+    Tyto vztahy však není nutné pamatovat jako další samostatné
+    vzorce. Obě přímky můžeme nejprve převést ze směrnicového tvaru
+    na obecné rovnice a následně použít již známý vztah
+    \eqref{eq:Angle_general_lines} pro výpočet odchylky pomocí
+    normálových vektorů.
+
+    Přímku
+    \[
+        y=kx+q
+    \]
+    převedeme na obecnou rovnici ve tvaru
+    \[
+        kx-y+q=0.
+    \]
+    Jejím normálovým vektorem je potom
+    \[
+        \vec{n}=(k;-1).
+    \]
+
+    Oba postupy vedou ke stejnému výsledku. Přímý vztah využívající
+    směrnice představuje pouze zkrácení výpočtu.
+\end{remark}
+
+\begin{example}\label{exa:Angle_slope_intercept_lines}
+    Určete odchylku přímek
+    \[
+        p:\quad y=2x-1
+    \]
+    a
+    \[
+        q:\quad y=\frac12x+3.
+    \]
+
+    Směrnice přímek jsou
+    \[
+        k_1=2,
+        \qquad
+        k_2=\frac12.
+    \]
+
+    Použijeme vztah
+    \eqref{eq:Angle_slope_lines_tangent}:
+    \begin{align*}
+        \tan\varphi
+        &=
+        \left|
+            \frac{\frac12-2}
+            {1+2\cdot\frac12}
+        \right|\\
+        &=
+        \left|
+            \frac{-\frac32}{2}
+        \right|\\
+        &=
+        \frac34.
+    \end{align*}
+
+    Odtud
+    \[
+        \varphi
+        =
+        \arctan\left(\frac34\right)
+        \doteq
+        36{,}87^\circ.
+    \]
+
+    Odchylka přímek je přibližně
+    \[
+        \varphi\doteq36^\circ52'.
+    \]
+\end{example}
+
+\begin{remark}\label{rem:Vertical_line_angle}
+    Směrnicový tvar nelze použít pro svislou přímku. Je-li alespoň
+    jedna z přímek svislá, určíme odchylku pomocí směrových nebo
+    normálových vektorů. Pro svislou přímku můžeme zvolit například
+    směrový vektor
+    \[
+        \vec{u}=(0;1).
+    \]
+\end{remark}
+
+\begin{example}\label{exa:Angle_slope_lines_by_conversion}
+    Určete odchylku přímek $p: y=\frac{3}{4}x-2$ a $q: y=-\frac{1}{2}x+1$.
+
+    Přímky jsou zadány ve směrnicovém tvaru. Místo přímého použití
+    vztahu pro jejich směrnice je nejprve převedeme na obecné rovnice
+    a následně použijeme vztah \eqref{eq:Angle_general_lines}.
+
+    Nejprve upravíme rovnici přímky $p$:
+    \begin{align*}
+        y&=\frac{3}{4}x-2,\\
+        \frac{3}{4}x-y-2&=0.
+    \end{align*}
+
+    Abychom odstranili zlomek, vynásobíme rovnici číslem $4$:
+    \[
+        p:\quad 3x-4y-8=0.
+    \]
+
+    Normálový vektor přímky $p$ je tedy
+    \[
+        \vec{n}_p=(3;-4).
+    \]
+
+    Nyní převedeme na obecnou rovnici přímku $q$:
+    \begin{align*}
+        y&=-\frac{1}{2}x+1,\\
+        \frac{1}{2}x+y-1&=0.
+    \end{align*}
+
+    Po vynásobení rovnice číslem $2$ dostáváme
+    \[
+        q:\quad x+2y-2=0.
+    \]
+
+    Normálový vektor přímky $q$ je
+    \[
+        \vec{n}_q=(1;2).
+    \]
+
+    Vypočítáme skalární součin normálových vektorů:
+    \[
+        \vec{n}_p\cdot\vec{n}_q
+        =
+        (3;-4)\cdot(1;2)
+        =
+        3-8
+        =
+        -5.
+    \]
+
+    Velikosti normálových vektorů jsou
+    \[
+        |\vec{n}_p|
+        =
+        \sqrt{3^2+(-4)^2}
+        =
+        5
+    \]
+    a
+    \[
+        |\vec{n}_q|
+        =
+        \sqrt{1^2+2^2}
+        =
+        \sqrt5.
+    \]
+
+    Dosadíme do vztahu \eqref{eq:Angle_general_lines}:
+    \begin{align*}
+        \cos\varphi
+        &=
+        \frac{
+            |\vec{n}_p\cdot\vec{n}_q|
+        }
+        {
+            |\vec{n}_p|\,|\vec{n}_q|
+        }\\
+        &=
+        \frac{|-5|}{5\sqrt5}\\
+        &=
+        \frac{1}{\sqrt5}.
+    \end{align*}
+
+    Odtud
+    \[
+        \varphi
+        =
+        \arccos\left(\frac{1}{\sqrt5}\right)
+        \doteq
+        63{,}43^\circ.
+    \]
+
+    Odchylka přímek je přibližně
+    \[
+        \varphi\doteq63^\circ26'.
+    \]
+
+    Ke stejnému výsledku bychom dospěli také přímým použitím vztahu
+    \eqref{eq:Angle_slope_lines_tangent}. Převod na obecné rovnice
+    nám však umožnil použít již známý postup založený na normálových
+    vektorech.
+\end{example}
+
+
+\subsubsection{Přímky zadané různými způsoby}
+\label{subsubsec:Angle_lines_mixed_forms}
+
+Jsou-li přímky zadány různými způsoby, není nutné vždy převádět celé
+jejich rovnice do stejného tvaru. Často stačí z každého zápisu získat
+směrový nebo normálový vektor a následně použít vztah
+\eqref{eq:Angle_lines_direction_vectors}.
+
+Můžeme postupovat například takto:
+
+\[
+\begin{array}{c|c}
+    \text{zadání přímky}
+    &
+    \text{vhodný vektor}
+    \\
+    \hline
+    \text{dva body }A,B
+    &
+    \overrightarrow{AB}=B-A
+    \\[1mm]
+    \text{parametrické vyjádření}
+    &
+    \vec{u}=(u_x;u_y)
+    \\[1mm]
+    \text{obecná rovnice }ax+by+c=0
+    &
+    \vec{n}=(a;b)
+    \text{ nebo }
+    \vec{u}=(-b;a)
+    \\[1mm]
+    \text{směrnicový tvar }y=kx+q
+    &
+    \vec{u}=(1;k)
+\end{array}
+\]
+
+Pro výpočet musí být oba zvolené vektory stejného typu: buď dva
+směrové, nebo dva normálové vektory.
+
+\begin{example}\label{exa:Angle_line_through_points_and_general_line}
+    Jsou dány body
+    \[
+        A[-3;1],
+        \qquad
+        B[1;2]
+    \]
+    a přímka
+    \[
+        p:\quad 2x-y+3=0.
+    \]
+
+    Určete odchylku přímky $AB$ a přímky $p$.
+
+    Směrový vektor přímky $AB$ je
+    \[
+        \vec{u}_{AB}
+        =
+        \overrightarrow{AB}
+        =
+        (1-(-3);2-1)
+        =
+        (4;1).
+    \]
+
+    Z obecné rovnice přímky $p$ získáme normálový vektor
+    \[
+        \vec{n}_p=(2;-1).
+    \]
+    K němu zvolíme kolmý směrový vektor
+    \[
+        \vec{u}_p=(1;2).
+    \]
+
+    Skalární součin směrových vektorů je
+    \[
+        \vec{u}_{AB}\cdot\vec{u}_p
+        =
+        (4;1)\cdot(1;2)
+        =
+        4+2
+        =
+        6.
+    \]
+
+    Jejich velikosti jsou
+    \[
+        |\vec{u}_{AB}|=\sqrt{4^2+1^2}=\sqrt{17}
+    \]
+    a
+    \[
+        |\vec{u}_p|=\sqrt{1^2+2^2}=\sqrt5.
+    \]
+
+    Proto
+    \[
+        \cos\varphi
+        =
+        \frac{6}{\sqrt{17}\sqrt5}
+        =
+        \frac{6}{\sqrt{85}}.
+    \]
+
+    Odtud
+    \[
+        \varphi
+        =
+        \arccos\left(\frac{6}{\sqrt{85}}\right)
+        \doteq
+        49{,}40^\circ.
+    \]
+
+    Odchylka přímek je přibližně
+    \[
+        \varphi\doteq49^\circ24'.
+    \]
+\end{example}
+
+
+
+
+
+\subsubsection{Přímka procházející bodem s danou odchylkou}
+\label{subsubsec:Line_through_point_given_angle}
+
+Úlohu můžeme také obrátit. Známe-li přímku $p$, bod $Q$ a požadovanou
+odchylku $\varphi$, hledáme přímky procházející bodem $Q$, které
+svírají s přímkou $p$ daný úhel.
+
+Není-li požadovaná odchylka rovna nule ani pravému úhlu, existují
+obvykle dvě takové přímky. Jedna vznikne otočením směru přímky $p$
+o úhel $\varphi$ na jednu stranu a druhá otočením o tentýž úhel na
+stranu opačnou.
+
+\begin{example}\label{exa:Lines_through_point_given_angle}
+    Je dána přímka $p:x-3y-2=0$ a bod $Q[1;1]$. Určete všechny
+    přímky procházející bodem $Q$, jejichž odchylka od přímky $p$
+    je $45^\circ$.
+
+    Z obecné rovnice přímky $p$ získáme normálový vektor
+    \[
+        \vec{n}_p=(1;-3).
+    \]
+    Jako směrový vektor přímky $p$ můžeme zvolit
+    \[
+        \vec{u}_p=(3;1).
+    \]
+
+    Hledaná přímka $q$ prochází bodem $Q[1;1]$. Nejprve budeme
+    předpokládat, že není svislá, a její směrový vektor zapíšeme jako
+    \[
+        \vec{u}_q=(1;k),
+    \]
+    kde $k$ je její směrnice.
+
+    Pro odchylku $45^\circ$ musí platit
+    \[
+        \cos45^\circ
+        =
+        \frac{
+            |\vec{u}_p\cdot\vec{u}_q|
+        }
+        {
+            |\vec{u}_p|\,|\vec{u}_q|
+        }.
+    \]
+
+    Po dosazení dostáváme
+    \[
+        \frac{\sqrt2}{2}
+        =
+        \frac{|3+k|}
+        {\sqrt{10}\sqrt{1+k^2}}.
+    \]
+
+    Umocníme obě strany rovnice a postupně upravíme:
+    \begin{align*}
+        \frac12
+        &=
+        \frac{(3+k)^2}{10(1+k^2)},\\
+        5(1+k^2)
+        &=
+        (3+k)^2,\\
+        5+5k^2
+        &=
+        9+6k+k^2,\\
+        4k^2-6k-4
+        &=
+        0,\\
+        2k^2-3k-2
+        &=
+        0.
+    \end{align*}
+
+    Vyřešíme kvadratickou rovnici:
+    \[
+        (2k+1)(k-2)=0.
+    \]
+
+    Dostáváme dvě směrnice:
+    \[
+        k_1=2,
+        \qquad
+        k_2=-\frac12.
+    \]
+
+    \paragraph{První hledaná přímka}
+
+    Přímka se směrnicí $k_1=2$ prochází bodem $Q[1;1]$. Použijeme
+    bodově-směrnicový tvar (viz vztah \eqref{eq:Point_slope_line_equation}):
+    \begin{align*}
+        y-1&=2(x-1),\\
+        y-1&=2x-2,\\
+        2x-y-1&=0.
+    \end{align*}
+
+    První hledaná přímka je
+    \[
+        q_1:2x-y-1=0.
+    \]
+
+    Přímka $q_1$ společně s původní přímkou $p$ je znázorněna
+    na obrázku~\ref{fig:First_line_through_point_given_angle}.
+    Přímky se protínají v bodě
+    \[
+        P_1\left[\frac15;-\frac35\right]
+    \]
+    a jejich odchylka je $45^\circ$.
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.85]
+
+            % Osy
+            \draw[<->, thin] (-3,0) -- (6,0) node[right] {$x$};
+            \draw[<->, thin] (0,-3) -- (0,6) node[above] {$y$};
+            \node[below left] at (0,0) {$O$};
+
+            % Původní přímka p: y=(x-2)/3
+            \draw[thin, <->]
+                (-3,-5/3) -- (6,4/3)
+                node[above right] {$p$};
+
+            % První hledaná přímka q_1: y=2x-1
+            \draw[thick, <->]
+                (-1,-3) -- (3.5,6)
+                node[above right] {$q_1$};
+
+            % Bod Q
+            \fill (1,1) circle (2.6pt)
+                node[above left] {$Q[1;1]$};
+
+            % Průsečík p a q_1
+            \coordinate (Pone) at (0.2,-0.6);
+            \fill (Pone) circle (2.2pt)
+                node[below right] {$P_1$};
+
+            % Odchylka 45 stupňů
+            \draw[->]
+                ($(Pone)+(0.75,0.25)$)
+                arc[
+                    start angle=18.435,
+                    end angle=63.435,
+                    radius=0.79
+                ];
+
+            \node[right] at (0.85,0.02) {$45^\circ$};
+
+        \end{tikzpicture}
+        \caption{První přímka $q_1$ procházející bodem $Q$ a svírající
+        s přímkou $p$ úhel $45^\circ$.}
+        \label{fig:First_line_through_point_given_angle}
+    \end{figure}
+
+
+    \paragraph{Druhá hledaná přímka}
+
+    Pro směrnici $k_2=-\frac12$ dostáváme
+    \begin{align*}
+        y-1&=-\frac12(x-1),\\
+        2y-2&=-x+1,\\
+        x+2y-3&=0.
+    \end{align*}
+
+    Druhá hledaná přímka je
+    \[
+        q_2:x+2y-3=0.
+    \]
+
+    Na obrázku~\ref{fig:Second_line_through_point_given_angle} je
+    nově sestrojená přímka $q_2$ znázorněna plnou čarou. První
+    nalezená přímka $q_1$ je pro porovnání vyznačena čárkovaně.
+    Přímky $p$ a $q_2$ se protínají v bodě
+    \[
+        P_2\left[\frac{13}{5};\frac15\right]
+    \]
+    a jejich odchylka je opět $45^\circ$.
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=0.85]
+
+            % Osy
+            \draw[<->, thin] (-3,0) -- (6,0) node[right] {$x$};
+            \draw[<->, thin] (0,-3) -- (0,6) node[above] {$y$};
+            \node[below left] at (0,0) {$O$};
+
+            % Původní přímka p
+            \draw[thin, <->]
+                (-3,-5/3) -- (6,4/3)
+                node[above right] {$p$};
+
+            % První řešení čárkovaně
+            \draw[thick, dashed, <->]
+                (-1,-3) -- (3.5,6)
+                node[above right] {$q_1$};
+
+            % Druhé řešení plnou čarou
+            \draw[thick, <->]
+                (-3,3) -- (6,-1.5)
+                node[below right] {$q_2$};
+
+            % Bod Q
+            \fill (1,1) circle (2.6pt)
+                node[above right] {$Q[1;1]$};
+
+            % Průsečík p a q_2
+            \coordinate (Ptwo) at (2.6,0.2);
+            \fill (Ptwo) circle (2.2pt)
+                node[above right] {$P_2$};
+
+            % Odchylka 45 stupňů
+            \draw[->]
+                ($(Ptwo)+(0.72,-0.36)$)
+                arc[
+                    start angle=-26.565,
+                    end angle=18.435,
+                    radius=0.81
+                ];
+
+            \node[right] at (3.38,0.18) {$45^\circ$};
+
+        \end{tikzpicture}
+        \caption{Druhá přímka $q_2$ procházející bodem $Q$. První
+        nalezená přímka $q_1$ je znázorněna čárkovaně.}
+        \label{fig:Second_line_through_point_given_angle}
+    \end{figure}
+
+    Svislá přímka procházející bodem $Q$ má směrový vektor
+    \[
+        \vec{u}_s=(0;1).
+    \]
+    Pro její odchylku od přímky $p$ by platilo
+    \[
+        \cos\varphi
+        =
+        \frac{|(3;1)\cdot(0;1)|}
+        {\sqrt{3^2+1^2}\sqrt{0^2+1^2}}
+        =
+        \frac{1}{\sqrt{10}}.
+    \]
+    Tato hodnota neodpovídá úhlu $45^\circ$, takže žádné další
+    řešení nevzniká.
+
+    Zadání splňují právě dvě přímky:
+    \[
+        q_1:2x-y-1=0
+    \]
+    a
+    \[
+        q_2:x+2y-3=0.
+    \]
+
+    Celková situace je znázorněna na obrázku
+    \ref{fig:Lines_through_point_given_angle}. Původní přímka $p$
+    je v obrázku zvýrazněna silnější čarou.
+
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=1]
+
+            % Osy
+            \draw[<->, thin] (-4,0) -- (7,0) node[right] {$x$};
+            \draw[<->, thin] (0,-4) -- (0,7) node[above] {$y$};
+            \node[below left] at (0,0) {$O$};
+
+            % Hodnoty na ose x
+            \foreach \x in {-3,-2,-1,1,2,3,4,5,6}
+            {
+                \draw (\x,0.10) -- (\x,-0.10);
+                \node[below, font=\scriptsize] at (\x,0) {$\x$};
+            }
+
+            % Hodnoty na ose y
+            \foreach \y in {-3,-2,-1,1,2,3,4,5,6}
+            {
+                \draw (0.10,\y) -- (-0.10,\y);
+                \node[left, font=\scriptsize] at (0,\y) {$\y$};
+            }
+
+            % Původní přímka p zvýrazněně
+            \draw[very thick, <->]
+                (-4,-2) -- (7,5/3)
+                node[above right] {$p$};
+
+            % Hledané přímky
+            \draw[thick, <->]
+                (-1.5,-4) -- (4,7)
+                node[above right] {$q_1$};
+
+            \draw[thick, <->]
+                (-4,3.5) -- (7,-2)
+                node[below right] {$q_2$};
+
+            % Bod Q
+            \fill (1,1) circle (3pt)
+                node[above right] {$Q[1;1]$};
+
+            % Průsečíky
+            \coordinate (Pone) at (0.2,-0.6);
+            \coordinate (Ptwo) at (2.6,0.2);
+
+            \fill (Pone) circle (2.2pt)
+                node[below left] {$P_1$};
+
+            \fill (Ptwo) circle (2.2pt)
+                node[above right] {$P_2$};
+
+            % První úhel
+            \draw[->]
+                ($(Pone)+(0.72,0.24)$)
+                arc[
+                    start angle=18.435,
+                    end angle=63.435,
+                    radius=0.76
+                ];
+
+            \node[above right, font=\small] at (0.82,0.00) {$45^\circ$};
+
+            % Druhý úhel
+            \draw[->]
+                ($(Ptwo)+(0.68,-0.34)$)
+                arc[
+                    start angle=-26.565,
+                    end angle=18.435,
+                    radius=0.76
+                ];
+
+            \node[right, font=\small] at (3.34,0.18) {$45^\circ$};
+
+        \end{tikzpicture}
+        \caption{Přímky $q_1$ a $q_2$ procházející bodem $Q$, jejichž
+        odchylka od zvýrazněné přímky $p$ je $45^\circ$.}
+        \label{fig:Lines_through_point_given_angle}
+    \end{figure}
+\end{example}
+
+
+\begin{remark}\label{rem:Summary_angle_between_lines}
+    Při výpočtu odchylky přímek není nutné pamatovat několik
+    nesouvisejících vzorců. Základním postupem je vždy určit dva
+    směrové vektory a použít vztah
+    \eqref{eq:Angle_lines_direction_vectors}.
+
+    Vzorce pro obecné rovnice a směrnicové tvary jsou pouze jeho
+    upravenými podobami, které umožňují pracovat přímo se zadaným
+    tvarem přímek.
+\end{remark}

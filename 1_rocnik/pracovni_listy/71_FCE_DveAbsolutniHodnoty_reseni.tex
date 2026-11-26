@@ -1,0 +1,41 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../../sablony/pripravy/priprava.sty}
+\pagestyle{empty}
+\geometry{a4paper,top=16mm,bottom=17mm,left=22mm,right=22mm}
+\begin{document}
+{\Large\bfseries Pracovní list 71 – výsledky pro učitele}\par
+\smallskip
+\textbf{1.} $f(x)=|x-4|+|x+4|$. Body změny $-4$ a $4$.
+\[
+\begin{array}{c|ccc}
+ &x<-4&-4\le x\le4&x>4\\\hline
+|x-4|&4-x&4-x&x-4\\
+|x+4|&-x-4&x+4&x+4\\\hline
+f(x)&-2x&8&2x
+\end{array}
+\]
+\[
+f(x)=\begin{cases}-2x,&x<-4,\\8,&-4\le x\le4,\\2x,&x>4.\end{cases}
+\]
+$D(f)=\mathbb R$, $H(f)=\langle8;+\infty)$, minimum $8$ nastává na $\langle-4;4\rangle$. Graf: levá polopřímka přes $[-4;8]$, vodorovná úsečka do $[4;8]$, pravá polopřímka.
+\bigskip
+\textbf{2.} $p(x)=|x+2|+|x-2|$:
+\[
+p(x)=\begin{cases}-2x,&x<-2,\\4,&-2\le x\le2,\\2x,&x>2.\end{cases}
+\]
+$D(p)=\mathbb R$, $H(p)=\langle4;+\infty)$, interval konstantnosti $\langle-2;2\rangle$, minimum $4$.
+\bigskip
+\textbf{3.} $q(x)=|x-2|-|x+1|$:
+\[
+q(x)=\begin{cases}3,&x<-1,\\1-2x,&-1\le x\le2,\\-3,&x>2.\end{cases}
+\]
+$D(q)=\mathbb R$, $H(q)=\langle-3;3\rangle$. Krajní body prostřední úsečky: $[-1;3]$, $[2;-3]$.
+\bigskip
+\textbf{4.} $r(x)=|2x-2|+|x+2|$: změny při $x=-2$ a $x=1$.
+\[
+r(x)=\begin{cases}-3x,&x<-2,\\4-x,&-2\le x\le1,\\3x,&x>1.\end{cases}
+\]
+Minimum $3$ v $x=1$. Střední část není konstantní; první člen má dvojnásobnou strmost oproti $|x-1|$.
+\medskip
+\textbf{Typické chyby:} změna znaménka před celou závorkou (např. $-(x-4)=4-x$); chybné pořadí nulových bodů; chybějící dosazení $x=\pm4$; zaměnění celé přímky za její platnou část.
+\end{document}

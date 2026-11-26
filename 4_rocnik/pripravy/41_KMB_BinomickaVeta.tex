@@ -1,0 +1,119 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{41}{Binomická věta}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Roznásob $(a+b)^2$ a $(a+b)^3$ a porovnej koeficienty s Pascalovým trojúhelníkem. Proč se shodují?
+
+\poznamka{Předpoklady: násobení mnohočlenů, kombinační čísla a Pascalův trojúhelník. Cíl: vysvětlit vznik koeficientů, rozvinout malou mocninu a určit konkrétní koeficient bez celého rozvoje.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Binomická věta.} Pro libovolné reálné $a,b$ a $n\in\mathbb N_0$ platí (s obvyklou polynomiální interpretací mocniny s exponentem 0)
+\[
+(a+b)^n=\sum_{k=0}^{n}\binom nk a^{n-k}b^k.
+\]
+\end{definiceBox}
+V součinu $n$ závorek vybereme člen $b$ právě v $k$ z nich. Počet takových výběrů je $\binom nk$. Koeficienty proto tvoří $n$-tý řádek Pascalova trojúhelníku. Exponenty u každého součinu dávají součet $n$.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Rozviň $(x+2)^4$.
+\tcblower
+Koeficienty $1,4,6,4,1$: $x^4+8x^3+24x^2+32x+16$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Rozviň $(2x-y)^3$.
+\tcblower
+$8x^3-12x^2y+6xy^2-y^3$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Urči koeficient u $x^2$ v $(x-3)^4$.
+\tcblower
+Člen s dvěma faktory $x$ má koeficient $\binom42(-3)^2=6\cdot9=54$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Rozviň $(a+b)^3$.
+\tcblower
+$a^3+3a^2b+3ab^2+b^3$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Urči koeficient u $x^3$ v $(2x-1)^5$.
+\tcblower
+$\binom53\cdot 2^3\cdot(-1)^2=10\cdot8=80$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Kolik členů má obecný symbolický rozvoj $(a+b)^6$ před případným sloučením?
+\tcblower
+Sedm členů, pro $k=0,1,\ldots,6$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Urči koeficient u $x^4$ v $(2x-3)^6$ bez úplného roznásobení.
+\tcblower
+$\binom64\cdot2^4\cdot(-3)^2=15\cdot16\cdot9=2160$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Rozviň $(x+1)^4$.
+\item Rozviň $(x-2)^3$.
+\item Urči koeficient u $x^2$ v $(3x+2)^4$.
+\item Urči koeficient u $x^3$ v $(x-1)^5$.
+\item Vysvětli, proč součet koeficientů rozvoje $(1+x)^n$ je $2^n$.
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $x^4+4x^3+6x^2+4x+1$.
+\item $x^3-6x^2+12x-8$.
+\item $\binom42\cdot3^2\cdot2^2=6\cdot9\cdot4=216$.
+\item $\binom53\cdot(-1)^2=10$.
+\item Dosadíme $x=1$: $(1+1)^n=2^n$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--12 min motivace a vzorec; 12--30 min rozvoje; 30--40 min koeficienty; 40--45 min shrnutí.}
+
+\end{document}

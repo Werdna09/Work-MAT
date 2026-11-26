@@ -1,0 +1,166 @@
+% Doplneno podle fotografie uzivatele z 21. 11. 2026; bez zasahu do dalsich hodin.
+% Work-MAT | 2. rocnik | revize cilove obtiznosti exponencialnich uloh | 2026-11-21
+% Zdroje inspirace: autorova ucebnice Work-MAT, dodane ucitelske screenshoty typovych prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Soustavy exponenciálních rovnic}{26}{Soustavy exponenciálních rovnic I}
+\begin{document}
+\blok{Návaznost a motivace}
+Připomeň sčítací a dosazovací metodu lineárních soustav. Nyní dosazujeme do pomocných proměnných $u=2^x$, $v=3^y$ nebo obdobně. Závěrečný výsledek je množina uspořádaných dvojic; zapisujeme například $K=\{[2;1]\}$.
+\poznamka{Pro vyučovací hodinu počítej přibližně s 5 minutami opakování, 20 minutami společného výkladu a 20--25 minutami samostatného řešení. Náročnější úlohy slouží jako rezerva pro rychlejší žáky.}
+\blok{Nová myšlenka}
+Při substituci $u=a^x$, $v=b^y$ se $a,b>0$, $a,b\ne1$ platí $u>0$, $v>0$. Původní soustavu řešíme pomocí lineární soustavy v $u,v$ a nakonec vracíme oba exponenty. Výsledek se zapisuje jako množina bodů v kartézské soustavě.
+\blok{Společné příklady – od základního typu k cílové obtížnosti}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš soustavu \[
+\begin{cases}2^x+2^y=12\\2^x-2^y=4\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=2^x>0,\quad v=2^y>0,\\\begin{cases}u+v=12\\u-v=4\end{cases}&\Longrightarrow \begin{cases}u=8\\v=4\end{cases},\\2^x&=8\Rightarrow x=3,\\2^y&=4\Rightarrow y=2,\\K&=\{[3;2]\}.\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš soustavu s různými základy \[
+\begin{cases}2^x+3^y=11\\2^{x+1}-3^y=13\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=2^x>0,\quad v=3^y>0,\\\begin{cases}u+v=11\\2u-v=13\end{cases}&\Longrightarrow\begin{cases}u=8\\v=3\end{cases},\\x&=3,\quad y=1,\\K&=\{[3;1]\}.\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš náročnější soustavu \[
+\begin{cases}2\cdot3^x+3\cdot4^y=24\\3\cdot3^x-10\cdot4^y=7\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=3^x>0,\quad v=4^y>0,\\\begin{cases}2u+3v=24\\3u-10v=7\end{cases}&\Longrightarrow\begin{cases}u=9\\v=2\end{cases},\\3^x&=9\Rightarrow x=2,\\4^y&=2\Rightarrow y=\frac{1}{2},\\K&=\left\{\left[2;\frac{1}{2}\right]\right\}.\end{aligned}
+\]
+Cílová obtížnost ze screenshotu. Před zpětnou substitucí nech žáky ověřit získaná čísla $u,v$ v obou lineárních rovnicích.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Rozhodni, zda má soustava řešení: \[
+\begin{cases}2^x+2^y=2\\2^x-2^y=4\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u+v&=2,\quad u-v=4,\\u&=3,\quad v=-1,\\v=2^y>0&\ \text{je spor},\\K&=\varnothing.\end{aligned}
+\]
+
+\end{prikladReseniBox}
+% Ukazka z dodane fotografie, cviceni 8a
+\begin{prikladReseniBox}[title={Příklad 5}]
+Vyřeš soustavu; nevypočítej nejprve $x,y$, ale kladné pomocné proměnné $u=2^x$, $v=3^y$:
+\[
+\begin{cases}
+2^x+5\cdot3^y=53,\\
+7\cdot2^x-3^y=47.
+\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=2^x>0,\quad v=3^y>0,\\
+\begin{cases}u+5v=53,\\7u-v=47,\end{cases}\\
+u&=8,\quad v=9,\\
+2^x&=8,\quad3^y=9,\\
+K&=\{[3;2]\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Cílová obtížnost podle dodané fotografie. Zařaď po základním vzoru; při pomalejším tempu ukaž jen rozhodující úpravu a celý výpočet použij jako rozšíření.}
+
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item \[
+\begin{cases}2^x+2^y=6\\2^x-2^y=2\end{cases}
+\]
+\item \[
+\begin{cases}3^x+3^y=12\\3^x-3^y=6\end{cases}
+\]
+\item \[\begin{cases}2^x+3^y=13\\2^{x+1}-3^y=-1\end{cases}\]
+\item \[\begin{cases}2\cdot3^x+3\cdot4^y=30\\3\cdot3^x-10\cdot4^y=-13\end{cases}\]
+\item \[
+\begin{cases}2^x+2^y=5\\2^x-2^y=3\end{cases}
+\]
+\item \[\begin{cases}2^x+2^y=4\\2^x-2^y=6\end{cases}\]
+\item \[
+\begin{cases}3^x+4^y=13\\3^x-4^y=5\end{cases}
+\]
+\item Proč se podmínky $u>0$, $v>0$ kontrolují před zpětnou substitucí?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[
+K=\{[2;1]\}
+\]
+\item \[
+K=\{[2;1]\}
+\]
+\item \[K=\{[2;2]\}\]
+\item \[K=\{[2;1]\}\]
+\item \[
+K=\{[2;0]\}
+\]
+\item \[K=\varnothing\]
+\item \[
+K=\{[2;1]\}
+\]
+\item \[
+2^x,3^y,4^y>0\text{ pro všechna reálná }x,y
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Vyřeš samostatně další typ úlohy ze stejného tematického celku:
+\[
+\displaystyle\begin{cases}2^{x+1}+3^y=31,\\2^x-3^{y-2}=-1\end{cases}
+\]
+\tcblower
+\[\begin{aligned}u&=2^x>0,\quad v=3^y>0,\\\begin{cases}2u+v=31,\\u-\frac{1}{9}v=-1,\end{cases}\\u&=2,\quad v=27,\\K&=\{[1;3]\}.\end{aligned}\]
+\end{zadaniReseniBox}
+
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Navrhni soustavu, která po substituci $u=2^x$, $v=2^y$ dá $u=4$, $v=8$.
+\tcblower
+\[
+\begin{aligned}
+\begin{cases}u+v=12\\u-v=-4\end{cases}
+&\Longrightarrow K=\{[2;3]\}
+\end{aligned}
+\]
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item \[\begin{cases}2^x+2^y=10\\2^x-2^y=6\end{cases}\]
+\item \[\begin{cases}2^x+2^y=12\\2^x-2^y=-4\end{cases}\]
+\item \[\begin{cases}3^x+2^y=31\\3^x-2^y=23\end{cases}\]
+\item \[\begin{cases}2^x+3^y=17\\2^{x+1}-3^y=7\end{cases}\]
+\item \[\begin{cases}3^x+2\cdot4^y=13\\2\cdot3^x-4^y=16\end{cases}\]
+\item \[\begin{cases}2^x+3^y=3\\2^x-3^y=5\end{cases}\]
+\item \[\begin{cases}2^{x+1}+3^y=19\\2^x-3^y=5\end{cases}\]
+\item Popiš, jak se při řešení soustavy kontroluje přípustnost pomocných proměnných a proč se provádí zkouška v obou původních rovnicích.
+\item \[ \begin{cases}2^x+4\cdot3^y=112,\\3\cdot2^x-3^y=-15\end{cases} \]
+\end{enumerate}
+\tcblower
+\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{[3;1]\}\]
+\item \[K=\{[2;3]\}\]
+\item \[K=\{[3;2]\}\]
+\item \[K=\{[3;2]\}\]
+\item \[K=\left\{\left[2;\frac{1}{2}\right]\right\}\]
+\item \[K=\varnothing\]
+\item \[K=\{[3;1]\}\]
+\item \[u>0,\ v>0;\ \text{zkouška ověřuje oba původní vztahy.}\]
+\item \[\begin{aligned}u&=2^x=4,\quad v=3^y=27,\\\begin{cases}u+4v=112,\\3u-v=-15,\end{cases}\\K&=\{[2;3]\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Z domácího úkolu zadej přiměřený výběr na 15--30 minut; uvedená sada obsahuje základní i cílové obtížnější typy. Na konci většího celku nech žáky samostatně vybrat metodu řešení.}
+\end{document}

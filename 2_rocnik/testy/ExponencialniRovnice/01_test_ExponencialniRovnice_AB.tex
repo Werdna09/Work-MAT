@@ -1,0 +1,67 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,landscape,left=8mm,right=8mm,top=8mm,bottom=8mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=2pt}
+
+% Uprav název testu; jednotlivé varianty jsou vždy A/B, C/D atd.
+\newcommand{\TestTitle}{Exponenciální rovnice}
+\newcommand{\TestHeader}[1]{%
+    {\bfseries TEST -- \TestTitle}\hfill{\bfseries Varianta #1}\\[2mm]
+    Jméno a příjmení: \rule{4.5cm}{0.4pt}\hfill Třída: \rule{1.5cm}{0.4pt}\\[2mm]
+    Datum: \rule{2.4cm}{0.4pt}\hfill Počet bodů: \rule{1.4cm}{0.4pt}\hfill Známka: \rule{1.4cm}{0.4pt}\\[1mm]
+    \hrule\vspace{3mm}
+}
+\newcommand{\AnswerSpace}[1]{\vspace{#1}}
+
+\begin{document}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{A}
+
+    % ZADÁNÍ VARIANTY A
+    Řešte v $\mathbb{R}$. Uveďte postup a množinu řešení.
+    U zlomků stanovte podmínky. Bez kalkulačky a logaritmů.
+    Čas: 15--20 minut. Celkem: 14 bodů.
+    \begin{enumerate}
+        \item $\displaystyle 4^{x-1}=8$ \hfill (2 b.)
+        \AnswerSpace{18mm}
+        \item $\displaystyle 3^{x+1}+3^x=36$ \hfill (3 b.)
+        \AnswerSpace{23mm}
+        \item $\displaystyle 4^x-5\cdot2^x+4=0$ \hfill (4 b.)
+        \AnswerSpace{30mm}
+        \item $\displaystyle \frac{4^x-4}{2^x-2}=6$ \hfill (5 b.)
+        \AnswerSpace{30mm}
+    \end{enumerate}
+\end{minipage}%
+\hfill\vrule width 0.4pt\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{B}
+
+    % ZADÁNÍ VARIANTY B
+    Řešte v $\mathbb{R}$. Uveďte postup a množinu řešení.
+    U zlomků stanovte podmínky. Bez kalkulačky a logaritmů.
+    Čas: 15--20 minut. Celkem: 14 bodů.
+    \begin{enumerate}
+        \item $\displaystyle 9^{x+1}=27$ \hfill (2 b.)
+        \AnswerSpace{18mm}
+        \item $\displaystyle 2^{x+2}+2^x=40$ \hfill (3 b.)
+        \AnswerSpace{23mm}
+        \item $\displaystyle 9^x-10\cdot3^x+9=0$ \hfill (4 b.)
+        \AnswerSpace{30mm}
+        \item $\displaystyle \frac{9^x-9}{3^x-3}=12$ \hfill (5 b.)
+        \AnswerSpace{30mm}
+    \end{enumerate}
+\end{minipage}
+\end{document}

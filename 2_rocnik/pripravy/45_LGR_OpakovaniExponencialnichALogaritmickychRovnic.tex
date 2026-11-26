@@ -1,0 +1,129 @@
+% Work-MAT | 2. ročník | hodina 45 | 2026-11-22
+% Zadání vybírána z WorkMAT_Logaritmy_Sbirka_PodleMetod.tex (481 příkladů)
+% Vždy zachována matematická formulace zdroje, učitelův výklad a řešení dopsány k vybraným příkladům.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{mathtools}
+\nastavPripravu{2. ročník}{Logaritmické rovnice a nerovnice}{45}{Smíšené logaritmické úlohy – volba metody}
+\begin{document}
+\blok{Návaznost a cíl hodiny}
+Při souhrnném opakování už žáci nesmějí poznat metodu z nadpisu. Společně hledáme charakteristické znaky úlohy: stejné základy, součet logaritmů, neznámý jmenovatel, kvadratickou závislost či soustavu.
+\poznamka{\textbf{Časový plán (45--55 minut):} Rozpoznání metod 5 min, příklady 1--2 18 min, samostatná práce a--d 15 min, společný rozbor 10 min, závěrečná kontrola 5 min. Příklady 3--4 jako zásobník.}
+
+\blok{Pracovní strategie}
+Nejprve určím definiční obor. Poté vyberu vhodnou metodu, vyřeším upravenou úlohu a výsledek ověřím v původním zadání.
+
+\blok{Společné řešené příklady}
+
+% Sbírka: oddíl 8, položka 3
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš: $\displaystyle \log_2\bigl[14+2\log_7(1+2\log_{\frac12}x)\bigr]=4$
+\tcblower
+\[
+\begin{aligned}
+14+2\log_7(1+2\log_{\frac12}x)&=16,\\
+\log_7(1+2\log_{\frac12}x)&=1,\\
+1+2\log_{\frac12}x&=7,\\
+\log_{\frac12}x&=3,\\
+K&=\left\{\frac18\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Vnořenou rovnici řeš po vrstvách, nikoli zkoušením vzorců pro součet uvnitř logaritmu.}
+% Sbírka: oddíl 13, položka 3
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš: $\displaystyle \log_2 x-\log_4 x+\log_{16}x=\frac34$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log_2x,\\
+\log_4x&=\frac{t}{2},\quad\log_{16}x=\frac{t}{4},\\
+t-\frac t2+\frac t4&=\frac34,\\
+\frac34 t&=\frac34,\\
+K&=\{2\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Předem neprozraď změnu základu, žáci mají poznat, že základy jsou mocniny dvojky.}
+% Sbírka: oddíl 15, položka 13
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš: $\displaystyle \frac{\log x-2}{\log x+1}=\frac{\log x+3}{\log x-1}$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad\log x\ne-1,1,\\
+t&=\log x,\\
+\frac{t-2}{t+1}&=\frac{t+3}{t-1},\\
+(t-2)(t-1)&=(t+3)(t+1),\\
+-7t&=1,\\
+t&=-\frac17,\\
+K&=\{10^{-\frac17}\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{V průběhu řešení kontrolovat oba jmenovatele. Není dovoleno krátit nulovým výrazem.}
+% Sbírka: oddíl 17, položka 5
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš: $\displaystyle \begin{cases}\log x+\log y=1\\2\log x-\log y=5\end{cases}$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad y>0,\\
+t&=\log x,\quad s=\log y,\\
+\begin{cases}t+s=1,\\2t-s=5\end{cases}&\Longrightarrow
+\begin{cases}t=2,\\s=-1\end{cases},\\
+K&=\left\{\left[100;\frac1{10}\right]\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{U logaritmických soustav je někdy nejrychlejší soustava přímo pro logaritmy. Zápis uspořádané dvojice je závazný.}
+\blok{Samostatná práce}
+\poznamka{Ve třídě doporučuji nejdříve úlohy a)--d); další jsou rezervou pro rychlejší žáky nebo volitelným dokončením po hodině. Neopisovat řešený vzor — vybrat postup.}
+\begin{zadaniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 8, položka 15
+\item $\displaystyle \log_5\left\{6+\log_2\left[8+\log_3(x-1)\right]\right\}=2$
+% Sbírka: oddíl 11, položka 17
+\item $\displaystyle \log_{10}\frac{2x+6}{x-3}+\log_{10}(x-5)=1$
+% Sbírka: oddíl 12, položka 14
+\item $\displaystyle \frac{\log(x+1)}{\log(x-2)}=2$
+% Sbírka: oddíl 13, položka 7
+\item $\displaystyle \log(x^2)+\log(x^4)=3$
+% Sbírka: oddíl 22, položka 2
+\item $\displaystyle -3\le\frac{4\log x-3}{5}\le1$
+% Sbírka: oddíl 15, položka 9
+\item $\displaystyle \frac{\log_2(2x)}{\log_2(8x)}+\log_2\frac{x}{8}=\frac{2}{\log_2 4-\log_2 0{,}5}$
+% Sbírka: oddíl 17, položka 14
+\item $\displaystyle \begin{cases}\log(xy^3)=1\\ \log(x^2y)=1\end{cases}$
+% Sbírka: oddíl 21, položka 5
+\item $\displaystyle \left|\frac{\log x-3}{4}\right|\le\frac12$
+\end{enumerate}
+\end{zadaniBox}
+\blok{Úkol na doma}
+Vyřeš úlohy a)--e) a zapiš podmínky. Zbývající úlohy jsou procvičování navíc; podle rychlosti je můžeš dokončit doma. U soustav uváděj $K=\{[x;y]\}$. 
+\begin{zadaniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 8, položka 14
+\item $\displaystyle \log_{\frac12}\left\{4+\log_5\left[10+\log_2(x-3)\right]\right\}=-3$
+% Sbírka: oddíl 10, položka 35
+\item $\displaystyle \log_4(x^2-9)-\log_4(x+3)=1$
+% Sbírka: oddíl 11, položka 19
+\item $\displaystyle \log_2\frac{x^2-5x+6}{x^2-4}=3$
+% Sbírka: oddíl 12, položka 13
+\item $\displaystyle \frac{\log_2(x^2-1)}{\log_2(x-1)}=3$
+% Sbírka: oddíl 16, položka 18
+\item $\displaystyle 3\cdot4^{\log x}-25\cdot2^{\log x}+8=0$
+% Sbírka: oddíl 8, položka 6
+\item $\displaystyle \ln\bigl(\log_2(\log_{0{,}5}x)\bigr)=0$
+% Sbírka: oddíl 10, položka 14
+\item $\displaystyle \log(100x)+\log(10x^2)=7$
+% Sbírka: oddíl 10, položka 19
+\item $\displaystyle 2\log(2x^2)+4\log(x^3)+2\log 3=3\log(x^4)+2+\log(x^2)$
+\end{enumerate}
+\end{zadaniBox}
+\poznamka{\textbf{Učitelovo vodítko:} Před každým výpočtem nech žáka napsat jednu větu: „Zvolím ... protože ...“; teprve pak řeší. Domácí sada má 8 různých zadání; základních pět úloh na přibližně 15--30 minut a zbytek jako volitelnou zásobu.}
+\end{document}

@@ -1,0 +1,147 @@
+% Doplneno podle fotografie uzivatele z 21. 11. 2026; bez zasahu do dalsich hodin.
+% Work-MAT | 2. rocnik | revize cilove obtiznosti exponencialnich uloh | 2026-11-21
+% Zdroje inspirace: autorova ucebnice Work-MAT, dodane ucitelske screenshoty typovych prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{22}{Kvadratická substituce}
+\begin{document}
+\blok{Návaznost a motivace}
+Navazujeme na předchozí hodinu: pokud se vedle $a^x$ objeví také $a^{2x}$, vznikne po vhodné substituci kvadratická rovnice. Důsledně oddělit pomocné kořeny od skutečných řešení původní rovnice.
+\poznamka{Pro vyučovací hodinu počítej přibližně s 5 minutami opakování, 20 minutami společného výkladu a 20--25 minutami samostatného řešení. Náročnější úlohy slouží jako rezerva pro rychlejší žáky.}
+\blok{Nová myšlenka}
+Využíváme $a^{2x}=(a^x)^2$. Po dosazení $t=a^x>0$ vznikne kvadratická rovnice. Do původní rovnice se vracíme \emph{jen} pro kladné pomocné kořeny.
+\blok{Společné příklady – od základního typu k cílové obtížnosti}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš $4^x-5\cdot2^x+4=0$.
+\tcblower
+\[
+\begin{aligned}t&=2^x>0,\quad 4^x=t^2,\\t^2-5t+4&=0,\\(t-1)(t-4)&=0,\\t_1&=1,\quad t_2=4,\\2^x=1&\Rightarrow x=0,\\2^x=4&\Rightarrow x=2,\\K&=\{0,2\}.\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš $9^x+2\cdot3^x-15=0$.
+\tcblower
+\[
+\begin{aligned}t&=3^x>0,\\t^2+2t-15&=0,\\(t+5)(t-3)&=0,\\t_1&=-5\ \text{nepřípustné},\\t_2&=3,\\3^x&=3,\quad K=\{1\}.\end{aligned}
+\]
+Proč nelze přijmout záporný kořen $t=-5$?
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš $16^x-17\cdot4^x+16=0$.
+\tcblower
+\[
+\begin{aligned}t&=4^x>0,\\t^2-17t+16&=0,\\(t-1)(t-16)&=0,\\4^x=1&\Rightarrow x=0,\\4^x=16&\Rightarrow x=2,\\K&=\{0,2\}.\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš rovnici s více mocninami dvojky: $4\cdot16^x+4^{x+1}=2\cdot8^{x+1}+2^{3x}$.
+\tcblower
+\[
+\begin{aligned}t&=2^x>0,\\4t^4+4t^2&=16t^3+t^3,\\t^2(4t^2-17t+4)&=0,\\4t^2-17t+4&=0,\\t_1&=4,\qquad t_2=\frac{1}{4},\\2^x=2^2&\Rightarrow x=2,\\2^x=2^{-2}&\Rightarrow x=-2,\\K&=\{-2,2\}.\end{aligned}
+\]
+Cílová obtížnost: nejprve převést všechny čtyři členy na jediný základ; při dělení $t^2$ využijeme $t>0$.
+\end{prikladReseniBox}
+% Ukazka z dodane fotografie, cviceni 3a
+\begin{prikladReseniBox}[title={Příklad 5}]
+Vyřeš kvadratickou substitucí rovnici
+\[
+4^{2x}-6\cdot4^x+8=0.
+\]
+\tcblower
+\[
+\begin{aligned}
+t&=4^x>0,\\t^2-6t+8&=0,\\(t-2)(t-4)&=0,\\4^x&=2\quad\text{nebo}\quad4^x=4,\\K&=\left\{\frac{1}{2};1\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Cílová obtížnost podle dodané fotografie. Zařaď po základním vzoru; při pomalejším tempu ukaž jen rozhodující úpravu a celý výpočet použij jako rozšíření.}
+
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $4^x-3\cdot2^x+2=0$
+\item $9^x-4\cdot3^x+3=0$
+\item $4^x+2^x-2=0$
+\item $25^x-6\cdot5^x+5=0$
+\item $4^x-10\cdot2^x+16=0$
+\item $9^x+3^x-12=0$
+\item $16^x-5\cdot4^x+4=0$
+\item Co se stane se záporným kořenem pomocné kvadratické rovnice?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[
+K=\{0,1\}
+\]
+\item \[
+K=\{0,1\}
+\]
+\item \[
+K=\{0\}
+\]
+\item \[
+K=\{0,1\}
+\]
+\item \[
+K=\{1,3\}
+\]
+\item \[
+K=\{1\}
+\]
+\item \[
+K=\{0,1\}
+\]
+\item \[
+t<0\text{ vyloučíme, neboť }a^x>0
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Vyřeš samostatně další typ úlohy ze stejného tematického celku:
+\[
+\displaystyle\frac{1}{4}\cdot2^x+\frac{1}{2}\cdot4^x=9
+\]
+\tcblower
+\[\begin{aligned}t&=2^x>0,\\\frac{1}{4}t+\frac{1}{2}t^2&=9,\\(t-4)(2t+9)&=0,\\K&=\{2\}.\end{aligned}\]
+\end{zadaniReseniBox}
+
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Prozkoumej rovnici $4^x-2k\cdot2^x+k^2=0$ podle parametru $k$.
+\tcblower
+\[
+(2^x-k)^2=0;\ \text{řešení existuje jen pro }k>0\text{ (právě jedno)}
+\]
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $4^x-6\cdot2^x+8=0$
+\item $9^x-12\cdot3^x+27=0$
+\item $25^x-30\cdot5^x+125=0$
+\item $4^x+3\cdot2^x-10=0$
+\item $16^x-10\cdot4^x+16=0$
+\item $9^x-6\cdot3^x+9=0$
+\item $4\cdot16^x-10\cdot8^x+4\cdot4^x=0$
+\item Sestav vlastní rovnici s kvadratickou substitucí, která má právě jeden reálný kořen, a dolož jej.
+\item \[ 5^{2x}\bigl(5^{2x}-5\bigr)=3\bigl(5^{2x+1}+5^{2x}\bigr)+50 \]
+\end{enumerate}
+\tcblower
+\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{1,2\}\]
+\item \[K=\{1,2\}\]
+\item \[K=\{1,2\}\]
+\item \[K=\{1\}\]
+\item \[K=\left\{\frac{1}{2},\frac{3}{2}\right\}\]
+\item \[K=\{1\}\]
+\item \[K=\{-1,1\}\]
+\item \[\text{Např. }4^x+4\cdot2^x-5=0\Rightarrow K=\{0\}.\]
+\item \[\begin{aligned}t&=5^{2x}>0,\\t^2-23t-50&=0,\\(t-25)(t+2)&=0,\\5^{2x}&=25,\\K&=\{1\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Z domácího úkolu zadej přiměřený výběr na 15--30 minut; uvedená sada obsahuje základní i cílové obtížnější typy. Na konci většího celku nech žáky samostatně vybrat metodu řešení.}
+\end{document}

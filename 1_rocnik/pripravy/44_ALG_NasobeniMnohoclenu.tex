@@ -1,0 +1,97 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Algebraické výrazy}{44}{Násobení mnohočlenu mnohočlenem}
+\begin{document}
+
+% Zdroje: vlastni ucebnice Algebraicke vyrazy, Nasobeni polynomu;
+% Realisticky.cz 010802 Nasobeni mnohoclenu; navaznost na 43.
+\poznamka{Jádro 45 minut: připomenutí 5 min, dvojčlen krát dvojčlen 10 min, tabulka 7 min, samostatná práce 15 min a společná kontrola 8 min. Obtížnější výrazy a rezerva jsou volitelné. Algebraické vzorce se budou systematicky probírat až v 46. hodině.}
+\blok{Od známého pravidla ke spolehlivému postupu}
+V minulé hodině jsme odvodili $(a+b)(c+d)=ac+ad+bc+bd$. Dnes se zaměříme na \textbf{pořádek v zápisu}, znaménka a součiny, v nichž se členy po roznásobení slučují. Cíl není znát nové pravidlo, ale umět použít distributivitu bez vynechaného součinu.
+\begin{definiceBox}[title={Věta - Součin mnohočlenů}]
+\textbf{Součin dvou mnohočlenů} získáme tak, že každý člen prvního mnohočlenu vynásobíme každým členem druhého mnohočlenu a vzniklé součiny sečteme. Nakonec sloučíme stejnorodé členy.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Uprav $(3x-2)(2x+5)$.
+\tcblower
+\begin{align*}
+(3x-2)(2x+5)&=3x(2x+5)-2(2x+5)\\
+&=6x^2+15x-4x-10\\
+&=6x^2+11x-10.
+\end{align*}
+\end{prikladReseniBox}
+\blok{Jak předejít vynechání členu?}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Uprav $(2x-3)(x^2+x-2)$ roznásobením závorek.
+\tcblower
+\begin{align*}
+(2x-3)(x^2+x-2)
+&=2x(x^2+x-2)-3(x^2+x-2)\\
+&=2x^3+2x^2-4x-3x^2-3x+6\\
+&=2x^3-x^2-7x+6.
+\end{align*}
+\end{prikladReseniBox}
+\poznamka{Požaduj přehledný mezikrok se všemi součiny; nejprve násobíme celou závorku členem $2x$, potom členem $-3$. U dvojčlenu a trojčlenu musí vzniknout šest dílčích součinů, i když se později sloučí.}
+\blok{Samostatná práce — základ}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $(x+4)(x-3)$;
+\item $(2x-5)(x+1)$;
+\item $(a-3)(a^2+a-2)$;
+\item $(2x+y)(x-2y)$;
+\item $(x+2)(x-3)-(x-1)(x+4)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x^2+x-12$;
+\item $2x^2-3x-5$;
+\item $a^3-2a^2-5a+6$;
+\item $2x^2-3xy-2y^2$;
+\item $(x^2-x-6)-(x^2+3x-4)=-4x-2$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Přechod k součinům více členů}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Uprav $(x^2+x+1)(x^2-x+1)$.
+\tcblower
+\begin{align*}
+&(x^2+x+1)(x^2-x+1)\\
+&=x^4-x^3+x^2+x^3-x^2+x+x^2-x+1\\
+&=x^4+x^2+1.
+\end{align*}
+V devíti součinech je třeba hlídat i členy, které se vyruší.
+\end{prikladReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Žák napsal $(x-2)(x+3)=x^2+3x-6$. Vysvětli chybu a výsledek oprav.
+\tcblower
+Vynechal součin $(-2)\cdot x=-2x$. Správně $x^2+3x-2x-6=x^2+x-6$.
+\end{zadaniReseniBox}
+\blok{Domácí procvičení}
+\poznamka{Úlohy a)--f) jsou běžné procvičení, g)--i) náročnější volitelná část. V každé úloze požaduj mezikrok roznásobení, nejen výsledek.}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $(2x+1)(x-3)$;
+\item $(a-2)(a^2-3a+4)$;
+\item $(x+2y)(3x-y)$;
+\item $(x+1)(x-2)-(x-1)(x+2)$;
+\item $(3x-4)(2x+1)$;
+\item $(2a-b)(a^2+ab-b^2)$;
+\item $(x^2-2x+1)(x+3)$;
+\item $(x^2+x-1)(x^2-x+2)$;
+\item $(2x-1)(x+2)-(x-3)(x+4)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $2x^2-5x-3$;
+\item $a^3-5a^2+10a-8$;
+\item $3x^2+5xy-2y^2$;
+\item $-2x$;
+\item $6x^2-5x-4$;
+\item $2a^3+a^2b-3ab^2+b^3$;
+\item $x^3+x^2-5x+3$;
+\item $x^4+3x-2$;
+\item $x^2+2x+10$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\end{document}

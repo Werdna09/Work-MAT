@@ -1,0 +1,150 @@
+% Work-MAT | 2. rocnik | hodina 34
+% Podklady: autorska ucebnice (GitHub), predlozene ukazky, didakticky pristup Realisticky.cz.
+% Zadani a vyresene varianty jsou nově sestavene; respektuj pravidla jejich pouziti.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{2. ročník}{Logaritmy}{34}{Věty o logaritmech I}
+\begin{document}
+\blok{Návaznost}
+V předchozích hodinách jsme určovali hodnoty logaritmů a kreslili jejich grafy. Nyní potřebujeme \textbf{počítat s více logaritmy} tak, abychom nemuseli každý z nich zvlášť vyčíslovat. U každé úpravy nejprve určíme, kdy má původní výraz smysl.
+\blok{Věta -- logaritmus součinu}
+Pro $a>0$, $a\ne1$ a $u>0$, $v>0$ platí
+\[
+\log_a(uv)=\log_a u+\log_a v.
+\]
+\textbf{Odůvodnění.} Zapíšeme-li $u=a^r$ a $v=a^s$, pak $uv=a^{r+s}$, a tedy $\log_a(uv)=r+s$.
+\begin{prikladReseniBox}[title={Příklad 1}]
+Zapiš jediným logaritmem a vypočti:
+\[
+\log_2 4+\log_2 16.
+\]
+\tcblower
+\[
+\begin{aligned}
+\log_2 4+\log_2 16&=\log_2(4\cdot16)\\
+&=\log_2 64=6.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\blok{Věta -- logaritmus podílu}
+Za stejných předpokladů platí
+\[
+\log_a\frac uv=\log_a u-\log_a v.
+\]
+\begin{prikladReseniBox}[title={Příklad 2}]
+Zjednoduš bez kalkulačky:
+\[
+\log_3 54-\log_3 2.
+\]
+\tcblower
+\[
+\log_3\frac{54}{2}=\log_3 27=3.
+\]
+\end{prikladReseniBox}
+\blok{Věta -- logaritmus mocniny}
+Pro $a>0$, $a\ne1$, $u>0$ a $r\in\mathbb R$ platí
+\[
+\log_a(u^r)=r\log_a u.
+\]
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Uprav a uveď podmínku:
+\[
+\log_2\sqrt[3]{x^4},\qquad x>0.
+\]
+\tcblower
+\[
+\begin{aligned}
+\log_2\sqrt[3]{x^4}&=\log_2 x^{\frac43}\\
+&=\frac43\log_2 x.
+\end{aligned}
+\]
+Uvedená úprava platí pro $x>0$. Původní výraz má smysl i pro $x<0$; obecně tedy můžeme psát $\frac43\log_2|x|$ pro $x\ne0$.
+\end{prikladReseniBox}
+\blok{Věta -- změna základu}
+Pro $a>0$, $a\ne1$, $b>0$, $b\ne1$, $u>0$ platí
+\[
+\log_a u=\frac{\log_b u}{\log_b a}.
+\]
+
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vypočti pomocí změny základu:
+\[
+\log_{\sqrt8}\frac14.
+\]
+\tcblower
+\[
+\begin{aligned}
+\log_{\sqrt8}\frac14
+&=\frac{\log_2\frac14}{\log_2\sqrt8}\\
+&=\frac{-2}{\frac32}=-\frac43.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Neuč automatický vzorec pro logaritmus součtu: $\log_a(u+v)\ne\log_a u+\log_a v$. Výjimku se záporným $x$ ukaž až po zvládnutí standardních kladných argumentů. U změny základu připomeň, že jmenovatel je nenulový.}
+\blok{Společná kombinace pravidel}
+\begin{prikladReseniBox}[title={Příklad 5}]
+Vyjádři pomocí $\log_2 x$ a $\log_2 y$; uveď podmínky:
+\[
+\log_2\frac{8x^3}{\sqrt{y}}.
+\]
+\tcblower
+Pro $x>0$, $y>0$ máme
+\[
+\begin{aligned}
+\log_2\frac{8x^3}{\sqrt{y}}
+&=\log_2 8+\log_2 x^3-\log_2\sqrt y\\
+&=3+3\log_2 x-\frac12\log_2 y.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_3 15+\log_3\frac95$
+\item $\log_2 80-\log_2 5$
+\item $\log_4 16^{\frac32}$
+\item $\log_{\sqrt5}125$
+\item Sepiš jediným logaritmem $\log_2x+\log_2y$; podmínky.
+\item Vyjádři $\log_3\frac{x^2}{y}$ pomocí logaritmů $x,y$ pro $x,y>0$.
+\item Proč nelze rozložit $\log_2(x+y)$ na součet?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\log_3 27=3$.
+\item $\log_2 16=4$.
+\item $3$.
+\item $6$.
+\item $\log_2(xy)$, $x>0,y>0$.
+\item $2\log_3x-\log_3y$.
+\item Pro $x=y=1$ by nesprávný rozklad dal $1=0$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_2 24+\log_2\frac43$
+\item $\log_5 75-\log_5 3$
+\item $\log_3 81^{\frac34}$
+\item $\log_{\sqrt7}49$
+\item Zapiš jediným logaritmem $2\log_4 x-\log_4 y$; podmínky.
+\item Rozepiš $\log_2\frac{4a^2}{b^3}$ pro $a>0$, $b>0$.
+\item Vypočti $\log_9\frac1{27}$ pomocí změny základu.
+\item Zjednoduš $\log_2(x^2)$ pro všechna přípustná $x$ a vysvětli význam $|x|$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\log_2 32=5$.
+\item $\log_5 25=2$.
+\item $3$.
+\item $4$.
+\item $\log_4\frac{x^2}{y}$, $x>0,y>0$.
+\item $2+2\log_2 a-3\log_2 b$.
+\item $-\frac32$.
+\item $2\log_2|x|$ pro $x\ne0$; $\log_2 x$ pro záporné $x$ neexistuje.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Rozsah přibližně 45--55 minut: čtyři pravidla a odůvodnění, pět společných příkladů, výběr ze samostatné práce. DÚ 20--30 minut. Příští hodina nebude zavádět nová pravidla; bude čistě procvičovací.}
+
+\end{document}

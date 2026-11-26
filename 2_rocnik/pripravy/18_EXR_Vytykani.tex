@@ -1,0 +1,211 @@
+% Doplneno podle fotografie uzivatele z 21. 11. 2026; bez zasahu do dalsich hodin.
+% Work-MAT | 2. rocnik | hodina 18 | revize 2026-11-09
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{18}{Exponenciální rovnice III: vytýkání}
+\begin{document}
+\poznamka{Zopakovat převod na společný základ z hodiny 17, teprve pak zavést součty exponenciálních výrazů. Celá hodina je věnována pouze vytýkání; substituce přijde až v následujícím bloku. Vybrané typy jsou inspirovány přiloženým přehledem exponenciálních rovnic, ale gradace a většina zadání jsou nově připravené.}
+\blok{Krátké opakování předchozí hodiny}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš $16^{x-1}=8^{x+1}$ převedením obou stran na stejný základ.
+\tcblower
+\[
+\begin{aligned}
+2^{4x-4}&=2^{3x+3},\\
+4x-4&=3x+3,\\
+x&=7.
+\end{aligned}
+\]
+$K=\{7\}$.
+\end{prikladReseniBox}
+\blok{Když se sčítají mocniny téhož základu}
+Dosud jsme upravovali hlavně \emph{součiny} mocnin. V rovnici $2^{x+1}+2^x=24$ ale členy nemůžeme spojit sečtením exponentů. Všimneme si místo toho společného činitele $2^x$ a vytkneme jej, stejně jako při práci s algebraickými výrazy.
+\begin{zadaniBox}[title={Věta - Vytýkání stejné exponenciální mocniny}]
+Pro libovolný kladný základ $a$ a reálná čísla $p,q$ platí
+\[
+c\,a^{x+p}+d\,a^{x+q}=a^x\bigl(ca^p+da^q\bigr).
+\]
+Jde o běžné vytýkání společného činitele; před případným dělením výrazu v závorce ověříme, že není nulový.
+\end{zadaniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš $2^{x+1}+2^x=24$.
+\tcblower
+\[
+\begin{aligned}
+2\cdot2^x+2^x&=24,\\
+(2+1)\cdot2^x&=24,\\
+2^x&=8=2^3,\\
+x&=3.
+\end{aligned}
+\]
+Zkouška: $16+8=24$; $K=\{3\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš rovnici ze skupiny úloh na vytýkání:
+\[3^x+3^{x+1}=108.\]
+\tcblower
+\[
+\begin{aligned}
+3^x+3\cdot3^x&=108,\\
+4\cdot3^x&=108,\\
+3^x&=27=3^3,\\
+x&=3.
+\end{aligned}
+\]
+$K=\{3\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš $3^{x+2}-3^x=72$.
+\tcblower
+\[
+\begin{aligned}
+9\cdot3^x-3^x&=72,\\
+8\cdot3^x&=72,\\
+3^x&=9=3^2,\\
+x&=2.
+\end{aligned}
+\]
+Zkouška: $81-9=72$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 5}]
+Vyřeš rovnici s více různými posuny exponentu:
+\[2^{x+1}+2^{x-1}+2^{x+3}=\frac{21}{8}.\]
+\tcblower
+\[
+\begin{aligned}
+\left(2+\frac{1}{2}+8\right)2^x&=\frac{21}{8},\\
+\frac{21}{2}\cdot2^x&=\frac{21}{8},\\
+2^x&=\frac{1}{4}=2^{-2},\\
+x&=-2.
+\end{aligned}
+\]
+Všechny tři členy jsme převedli na násobky $2^x$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 6}]
+Vyřeš $2^{x+2}-2^{x-1}=28$ a vysvětli, proč není správné odečítat exponenty v součtu.
+\tcblower
+\[
+\begin{aligned}
+\left(4-\frac{1}{2}\right)2^x&=28,\\
+\frac{7}{2}\,2^x&=28,\\
+2^x&=8,\\
+x&=3.
+\end{aligned}
+\]
+Při odčítání dvou mocnin nelze spojovat exponenty jako při dělení; vytkneme společnou mocninu.
+\end{prikladReseniBox}
+\poznamka{Zdůraznit chybu $a^u+a^v
+e a^{u+v}$. Při vytýkání je vhodné psát si nejprve $a^{x+k}=a^k\cdot a^x$, až potom závorku. Nenazývat tento postup substitucí.}
+
+\begin{prikladReseniBox}[title={Příklad 7}]
+Vyřeš rovnici s několika posuny exponentů:
+\[
+3^x-2\cdot3^{x-1}+3^{x-2}-2\cdot3^{x-3}=30.
+\]
+\tcblower
+\[
+\begin{aligned}
+3^{x-3}(27-2\cdot9+3-2)&=30,\\
+10\cdot3^{x-3}&=30,\\
+3^{x-3}&=3,\\
+x-3&=1,\\
+x&=4.
+\end{aligned}
+\]
+$K=\{4\}$. Na levé straně neodčítáme exponenty mezi sčítanci; všechny členy pouze vytkneme.
+\end{prikladReseniBox}
+
+% Ukazka z dodane fotografie, cviceni 2c
+\begin{prikladReseniBox}[title={Příklad 8}]
+Vyřeš rovnici, v níž je účelné vytknout mocninu se záporným exponentem:
+\[
+7\cdot4^{2-x}=3\cdot4^{3-x}-5.
+\]
+\tcblower
+\[
+\begin{aligned}
+(7\cdot16-3\cdot64)\,4^{-x}&=-5,\\
+-80\cdot4^{-x}&=-5,\\
+4^{-x}&=\frac{1}{16}=4^{-2},\\
+x&=2,\\K&=\{2\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Cílová obtížnost podle dodané fotografie. Zařaď po základním vzoru; při pomalejším tempu ukaž jen rozhodující úpravu a celý výpočet použij jako rozšíření.}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $2^{x+3}+2^x=36$.
+\item $5^{x+1}-5^x=100$.
+\item $4^{x+1}+4^x=80$.
+\item $3^{x+2}+3^x=90$.
+\item $2^{x+4}-2^{x+1}=112$.
+\item $7^{x+1}-6\cdot7^x=49$.
+\item $3^{x+1}+3^{x-1}=30$.
+\item $2^{x+2}+2^{x-2}=17$.
+\item $5^{x+2}-5^{x-1}=124$.
+\item $2^{x+1}-2\cdot2^x=0$.
+\item \[ \displaystyle\frac{4}{5}\cdot5^0+5^{-1}-25^x+20\cdot25^{x-1}=0 \]
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $9\cdot2^x=36$, tedy $x=2$.
+\item $4\cdot5^x=100$, tedy $x=2$.
+\item $5\cdot4^x=80$, tedy $x=2$.
+\item $10\cdot3^x=90$, tedy $x=2$.
+\item $14\cdot2^x=112$, tedy $x=3$.
+\item $7^x=49$, tedy $x=2$.
+\item $\frac{10}{3}\,3^x=30$, tedy $x=2$.
+\item $\frac{17}{4}\,2^x=17$, tedy $x=2$.
+\item $\frac{124}{5}\,5^x=124$, tedy $x=1$.
+\item $0=0$ pro všechna $x$: $K=\mathbb R$.
+\item \[\begin{aligned}1-\frac{1}{5}\,25^x&=0,\\25^x&=5,\\K&=\left\{\frac{1}{2}\right\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item Rozhodni, zda má rovnice $5^{x+2}-25\cdot5^x=7$ řešení.
+\item Co se stane, změní-li se pravá strana na nulu?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Levá strana je $5^x(25-25)=0$. Rovnice $0=7$ nemá řešení.
+\item Rovnice $0=0$ platí pro všechna $x\in\mathbb R$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol asi 20--30 minut; při nedostatku času lze vybrat prvních sedm a zbylé úlohy ponechat dobrovolně. Všechna řešení používají pouze vytýkání.}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $3^{x+1}+2\cdot3^x=135$
+\item $2^{x+3}-2^x=56$
+\item $5^{x+2}-4\cdot5^{x+1}=125$
+\item $4^{x+2}+4^{x-1}=260$
+\item $7^{x+1}-5\cdot7^x=98$
+\item $3^{x+2}-2\cdot3^{x+1}+3^{x-1}=30$
+\item $2^{x-2}+2^{x+1}+2^{x+3}=82$
+\item $2^{x+2}-4\cdot2^x=0$
+\item Vysvětli, proč může rovnice po vytknutí společné mocniny nemít žádné řešení.
+\item \[ 3^x\left(\frac{1}{2}\right)^x+3^{x+1}\left(\frac{1}{2}\right)^{x+1}=\frac{5}{3} \]
+\end{enumerate}
+\tcblower
+\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{3\}\]
+\item \[K=\{3\}\]
+\item \[K=\{2\}\]
+\item \[K=\{2\}\]
+\item \[K=\{2\}\]
+\item \[K=\{2\}\]
+\item \[K=\{3\}\]
+\item \[K=\mathbb R\]
+\item \[\text{Protože }a^x>0\text{ a zbývající koeficient může mít nevhodné znaménko.}\]
+\item \[\begin{aligned}\frac{5}{2}\left(\frac{3}{2}\right)^x&=\frac{5}{3},\\\left(\frac{3}{2}\right)^x&=\frac{2}{3},\\K&=\{-1\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\end{document}

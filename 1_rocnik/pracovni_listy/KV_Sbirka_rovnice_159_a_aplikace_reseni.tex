@@ -1,0 +1,271 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,geometry,enumitem,booktabs,xcolor,needspace}
+\usepackage[hidelinks]{hyperref}
+\geometry{a4paper,top=18mm,bottom=18mm,left=22mm,right=22mm}
+\setlength{\parindent}{0pt}\setlength{\parskip}{3pt}
+\setlist[enumerate]{leftmargin=11mm,topsep=2pt,itemsep=4pt}
+\pagestyle{plain}
+\begin{document}
+\begin{center}
+{\LARGE\bfseries Řešení sbírky -- pouze pro učitele}\\[2mm]
+{\normalsize 1. ročník SPŠ \textbar\ Klíč, mezikroky, definiční podmínky}\\[3mm]
+\end{center}
+\textbf{Jak pracovat:} Příklady jsou rozdělené podle matematického tématu, nikoli podle pořadí v hodinách.
+Uvnitř oddílů obtížnost zhruba roste. Část úloh pochází ze sbírkových fotografií poskytnutých vyučujícím.
+\textbf{Zapisuj množinu řešení $K$}, u odmocnin ověř podmínky a u lomených výrazů nepřepisuj původní definiční obor.
+Po odmocnění druhé mocniny vždy používej $\sqrt{x^2}=|x|$.
+\begin{center}\small
+\begin{tabular}{@{}ll@{}}\toprule
+Úroveň 1 & základní procvičení\\
+Úroveň 2 & náročnější kombinace a několik kroků\\
+Úroveň 3 & dobrovolné výzvy ze sbírky a přijímacích příkladů\\
+\bottomrule\end{tabular}
+\end{center}
+\needspace{11\baselineskip}
+\section*{A -- Neúplné a úplné kvadratické rovnice}
+\textit{Vytýkání, odmocňování, diskriminant}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{A001}] \(\displaystyle \begin{aligned}4x^2+x&=0\\x(4x+1)&=0\\K&=\{-\frac14;0\}\end{aligned}\)\par
+\item[\textbf{A002}] \(\displaystyle \begin{aligned}2x^2-5&=0\\x^2&=\frac52\\|x|&=\sqrt{\frac52}\\K&=\{-\frac{\sqrt{10}}2;\frac{\sqrt{10}}2\}\end{aligned}\)\par
+\item[\textbf{A003}] \(\displaystyle \begin{aligned}D&=1^2-4\cdot(3)\cdot(-2)=25\\K&=\{-1;\frac{2}{3}\}\end{aligned}\)\par
+\item[\textbf{A004}] \(\displaystyle \begin{aligned}D&=2^2-4\cdot(1)\cdot(-1)=8\\K&=\{- \sqrt{2} - 1;-1 + \sqrt{2}\}\end{aligned}\)\par
+\item[\textbf{A005}] \(\displaystyle \begin{aligned}D&=(-4)^2-4\cdot(4)\cdot(1)=0\\K&=\{\frac{1}{2}\}\end{aligned}\)\par
+\item[\textbf{A006}] \(\displaystyle \begin{aligned}D&=1^2-4\cdot(3)\cdot(2)=-23\\K&=\varnothing\end{aligned}\)\par
+\item[\textbf{A011}] \(\displaystyle \begin{aligned}x^2&=36\\|x|&=6\\K&=\{-6;6\}\end{aligned}\)\par
+\item[\textbf{A012}] \(\displaystyle \begin{aligned}x^2&=9\\|x|&=3\\K&=\{-3;3\}\end{aligned}\)\par
+\item[\textbf{A013}] \(\displaystyle \begin{aligned}x^2&=-4\\K&=\varnothing\end{aligned}\)\par
+\item[\textbf{A014}] \(\displaystyle \begin{aligned}x^2&=9\\|x|&=3\\K&=\{-3;3\}\end{aligned}\)\par
+\item[\textbf{A015}] \(\displaystyle \begin{aligned}x^2&=\frac74\\|x|&=\frac{\sqrt7}{2}\\K&=\{-\frac{\sqrt7}{2};\frac{\sqrt7}{2}\}\end{aligned}\)\par
+\item[\textbf{A016}] \(\displaystyle \begin{aligned}x^2&=0\\|x|&=0\\K&=\{0\}\end{aligned}\)\par
+\item[\textbf{A017}] \(\displaystyle \begin{aligned}x^2&=0\\|x|&=0\\K&=\{0\}\end{aligned}\)\par
+\item[\textbf{A018}] \(\displaystyle \begin{aligned}D&=3^2-4\cdot(1)\cdot(0)=9\\K&=\{-3;0\}\end{aligned}\)\par
+\item[\textbf{A019}] \(\displaystyle \begin{aligned}D&=(-12)^2-4\cdot(3)\cdot(0)=144\\K&=\{0;4\}\end{aligned}\)\par
+\item[\textbf{A020}] \(\displaystyle \begin{aligned}D&=8^2-4\cdot(-2)\cdot(0)=64\\K&=\{0;4\}\end{aligned}\)\par
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{A021}] \(\displaystyle \begin{aligned}D&=5^2-4\cdot(2)\cdot(-3)=49\\K&=\{-3;\frac{1}{2}\}\end{aligned}\)\par
+\item[\textbf{A022}] \(\displaystyle \begin{aligned}D&=5^2-4\cdot(3)\cdot(-2)=49\\K&=\{-2;\frac{1}{3}\}\end{aligned}\)\par
+\item[\textbf{A023}] \(\displaystyle \begin{aligned}D&=(-6)^2-4\cdot(1)\cdot(5)=16\\K&=\{1;5\}\end{aligned}\)\par
+\item[\textbf{A024}] \(\displaystyle \begin{aligned}D&=2^2-4\cdot(1)\cdot(7)=-24\\K&=\varnothing\end{aligned}\)\par
+\item[\textbf{A025}] \(\displaystyle \begin{aligned}D&=(-4)^2-4\cdot(1)\cdot(4)=0\\K&=\{2\}\end{aligned}\)\par
+\item[\textbf{A026}] \(\displaystyle \begin{aligned}D&=(-4)^2-4\cdot(2)\cdot(-6)=64\\K&=\{-1;3\}\end{aligned}\)\par
+\item[\textbf{A027}] \(\displaystyle \begin{aligned}D&=4^2-4\cdot(-1)\cdot(-3)=4\\K&=\{1;3\}\end{aligned}\)\par
+\item[\textbf{A028}] \(\displaystyle \begin{aligned}D&=(-2)^2-4\cdot(1)\cdot(-2)=12\\K&=\{1 - \sqrt{3};1 + \sqrt{3}\}\end{aligned}\)\par
+\item[\textbf{A029}] \(\displaystyle \begin{aligned}D&=2^2-4\cdot(5)\cdot(1)=-16\\K&=\varnothing\end{aligned}\)\par
+\item[\textbf{A030}] \(\displaystyle \begin{aligned}D&=(-12)^2-4\cdot(4)\cdot(9)=0\\K&=\{\frac{3}{2}\}\end{aligned}\)\par
+\item[\textbf{A031}] \(\displaystyle \begin{aligned}D&=2^2-4\cdot(3)\cdot(-1)=16\\K&=\{-1;\frac{1}{3}\}\end{aligned}\)\par
+\item[\textbf{A032}] \(\displaystyle \begin{aligned}D&=(-1)^2-4\cdot(2)\cdot(-4)=33\\K&=\{\frac{1}{4} - \frac{\sqrt{33}}{4};\frac{1}{4} + \frac{\sqrt{33}}{4}\}\end{aligned}\)\par
+\item[\textbf{A033}] \(\displaystyle \begin{aligned}D&=1^2-4\cdot(1)\cdot(-1)=5\\K&=\{- \frac{\sqrt{5}}{2} - \frac{1}{2};- \frac{1}{2} + \frac{\sqrt{5}}{2}\}\end{aligned}\)\par
+\item[\textbf{A034}] \(\displaystyle \begin{aligned}D&=7^2-4\cdot(6)\cdot(-3)=121\\K&=\{- \frac{3}{2};\frac{1}{3}\}\end{aligned}\)\par
+\end{enumerate}
+\subsection*{III. Náročné výzvy}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{A007}] \(\displaystyle \begin{aligned}D&=1 + 2 \cdot \sqrt{3}^2-4\cdot(1)\cdot(\sqrt{3} + 3)=1\\K&=\{- \sqrt{3} - 1;- \sqrt{3}\}\end{aligned}\)\par
+\item[\textbf{A008}] \(\displaystyle \begin{aligned}D&=1 + 2 \cdot \sqrt{3}^2-4\cdot(1)\cdot(2 \cdot \sqrt{3})=13 - 4 \cdot \sqrt{3}\\K&=\{- 2 \cdot \sqrt{3};-1\}\end{aligned}\)\par
+\item[\textbf{A009}] \(\displaystyle \begin{aligned}D&=1 - \sqrt{2}^2-4\cdot(1)\cdot(- \sqrt{2})=2 \cdot \sqrt{2} + 3\\K&=\{-1;\sqrt{2}\}\end{aligned}\)\par
+\item[\textbf{A010}] \(\displaystyle \begin{aligned}D&=- \frac{5}{2}^2-4\cdot(1)\cdot(1)=\frac{9}{4}\\K&=\{\frac{1}{2};2\}\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{B -- Součinové rovnice}
+\textit{Nulový součin a součiny mnohočlenů}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{B001}] \(\displaystyle \begin{aligned}- \left(x - 3\right)^{2} \cdot \left(2x - 3\right) \cdot \left(2x + 3\right)&=0\\K&=\{- \frac{3}{2};\frac{3}{2};3\}\end{aligned}\)\par
+\item[\textbf{B002}] \(\displaystyle \begin{aligned}- 4x^{4} + 175x^{2} + 1250&=0\\K&=\{- 5 \cdot \sqrt{2};5 \cdot \sqrt{2}\}\end{aligned}\)\par
+\item[\textbf{B003}] \(\displaystyle \begin{aligned}\left(x - 3\right) \cdot \left(x - 2\right) \cdot \left(x + 1\right)&=0\\K&=\{-1;2;3\}\end{aligned}\)\par
+\item[\textbf{B004}] \(\displaystyle \begin{aligned}\left(x - 5\right) \cdot \left(x - 4\right) \cdot \left(x + 1\right)&=0\\K&=\{-1;4;5\}\end{aligned}\)\par
+\item[\textbf{B005}] \(\displaystyle \begin{aligned}\left(x - 7\right) \cdot \left(x + 1\right)^{2}&=0\\K&=\{-1;7\}\end{aligned}\)\par
+\item[\textbf{B006}] \(\displaystyle \begin{aligned}x \cdot \left(x + 1\right) \cdot \left(x + 4\right)&=0\\K&=\{-4;-1;0\}\end{aligned}\)\par
+\item[\textbf{B007}] \(\displaystyle \begin{aligned}\left(x - 1\right)^{2} \cdot \left(x + 1\right)&=0\\K&=\{-1;1\}\end{aligned}\)\par
+\item[\textbf{B008}] \(\displaystyle \begin{aligned}\left(x - 2\right) \cdot \left(x + 1\right) \cdot \left(x + 3\right)&=0\\K&=\{-3;-1;2\}\end{aligned}\)\par
+\item[\textbf{B009}] \(\displaystyle \begin{aligned}\left(x - 1\right)^{3} \cdot \left(x + 1\right)&=0\\K&=\{-1;1\}\end{aligned}\)\par
+\item[\textbf{B010}] \(\displaystyle \begin{aligned}\left(x - 2\right) \cdot \left(x - 1\right)^{2} \cdot \left(x + 2\right)&=0\\K&=\{-2;1;2\}\end{aligned}\)\par
+\item[\textbf{B011}] \(\displaystyle \begin{aligned}\left(x - 3\right) \cdot \left(x - 1\right)^{2} \cdot \left(x + 3\right)&=0\\K&=\{-3;1;3\}\end{aligned}\)\par
+\item[\textbf{B012}] \(\displaystyle \begin{aligned}\left(x - 4\right) \cdot \left(x - 1\right)^{2} \cdot \left(x + 4\right)&=0\\K&=\{-4;1;4\}\end{aligned}\)\par
+\item[\textbf{B013}] \(\displaystyle \begin{aligned}\left(x - 5\right) \cdot \left(x - 1\right)^{2} \cdot \left(x + 5\right)&=0\\K&=\{-5;1;5\}\end{aligned}\)\par
+\item[\textbf{B014}] \(\displaystyle \begin{aligned}\left(x - 6\right) \cdot \left(x - 1\right)^{2} \cdot \left(x + 6\right)&=0\\K&=\{-6;1;6\}\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{C -- Rozklad na kořenové činitele}
+\textit{Diskriminant, vzorce, reálná rozložitelnost}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{C001}] \(\displaystyle \begin{aligned}P(x)&=x^{2} - 5x + 6\\ &= \left(x - 3\right) \cdot \left(x - 2\right)\end{aligned}\)\par
+\item[\textbf{C002}] \(\displaystyle \begin{aligned}P(x)&=x^{2} + 7x + 10\\ &= \left(x + 2\right) \cdot \left(x + 5\right)\end{aligned}\)\par
+\item[\textbf{C003}] \(\displaystyle \begin{aligned}P(x)&=x^{2} + 2x - 8\\ &= \left(x - 2\right) \cdot \left(x + 4\right)\end{aligned}\)\par
+\item[\textbf{C004}] \(\displaystyle \begin{aligned}P(x)&=x^{2} + 10x - 11\\ &= \left(x - 1\right) \cdot \left(x + 11\right)\end{aligned}\)\par
+\item[\textbf{C005}] \(\displaystyle \begin{aligned}P(x)&=x^{2} + x - 2\\ &= \left(x - 1\right) \cdot \left(x + 2\right)\end{aligned}\)\par
+\item[\textbf{C006}] \(\displaystyle \begin{aligned}P(x)&=x^{2} - 11x + 30\\ &= \left(x - 6\right) \cdot \left(x - 5\right)\end{aligned}\)\par
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{C007}] \(\displaystyle \begin{aligned}P(x)&=x^{2} - 10x + 25\\ &= \left(x - 5\right)^{2}\end{aligned}\)\par
+\item[\textbf{C008}] \(\displaystyle \begin{aligned}P(x)&=x^{2} + 4x + 4\\ &= \left(x + 2\right)^{2}\end{aligned}\)\par
+\item[\textbf{C009}] \(\displaystyle \begin{aligned}P(x)&=x^{2} - 6x + 9\\ &= \left(x - 3\right)^{2}\end{aligned}\)\par
+\item[\textbf{C010}] \(\displaystyle \begin{aligned}P(x)&=4x^{2} + 4x + 1\\ &= \left(2x + 1\right)^{2}\end{aligned}\)\par
+\item[\textbf{C011}] \(\displaystyle \begin{aligned}P(x)&=16x^{2} - 25\\ &= 16x^{2} - 25\end{aligned}\)\par
+\item[\textbf{C012}] \(\displaystyle \begin{aligned}P(x)&=15x \cdot \left(x - 2\right)\\ &= 15x \cdot \left(x - 2\right)\end{aligned}\)\par
+\item[\textbf{C013}] \(\displaystyle \begin{aligned}P(x)&=2x^{2} + x - 1\\ &= \left(x + 1\right) \cdot \left(2x - 1\right)\end{aligned}\)\par
+\item[\textbf{C014}] \(\displaystyle \begin{aligned}P(x)&=3x^{2} - 17x + 10\\ &= \left(x - 5\right) \cdot \left(3x - 2\right)\end{aligned}\)\par
+\item[\textbf{C015}] \(\displaystyle \begin{aligned}P(x)&=- x^{2} + 7x + 8\\ &= - \left(x - 8\right) \cdot \left(x + 1\right)\end{aligned}\)\par
+\item[\textbf{C016}] \(\displaystyle \begin{aligned}P(x)&=- 2x^{2} + 11x - 15\\ &= - \left(x - 3\right) \cdot \left(2x - 5\right)\end{aligned}\)\par
+\item[\textbf{C017}] \(\displaystyle \begin{aligned}P(x)&=x^{2} + 4\\ &= \text{nad }\mathbb R\text{ nelze rozložit na lineární činitele}\end{aligned}\)\par
+\item[\textbf{C018}] \(\displaystyle \begin{aligned}P(x)&=x^{2} + 4x + 5\\ &= \text{nad }\mathbb R\text{ nelze rozložit na lineární činitele}\end{aligned}\)\par
+\item[\textbf{C019}] \(\displaystyle \begin{aligned}P(x)&=\left(x - 7\right) \cdot \left(x - 1\right)\\ &= \left(x - 7\right) \cdot \left(x - 1\right)\end{aligned}\)\par
+\item[\textbf{C020}] \(\displaystyle \begin{aligned}P(x)&=\left(x + 2\right) \cdot \left(x + 5\right)\\ &= \left(x + 2\right) \cdot \left(x + 5\right)\end{aligned}\)\par
+\item[\textbf{C021}] \(\displaystyle \begin{aligned}P(x)&=2 \cdot \left(x - 4\right) \cdot \left(x - 1\right)\\ &= 2 \cdot \left(x - 4\right) \cdot \left(x - 1\right)\end{aligned}\)\par
+\item[\textbf{C022}] \(\displaystyle \begin{aligned}P(x)&=3 \cdot \left(x - 5\right) \cdot \left(x - 2\right)\\ &= 3 \cdot \left(x - 5\right) \cdot \left(x - 2\right)\end{aligned}\)\par
+\item[\textbf{C023}] \(\displaystyle \begin{aligned}P(x)&=2x^{2} - 18\\ &= 2x^{2} - 18\end{aligned}\)\par
+\item[\textbf{C024}] \(\displaystyle \begin{aligned}P(x)&=3 \cdot \left(x - 4\right) \cdot \left(x + 2\right)\\ &= 3 \cdot \left(x - 4\right) \cdot \left(x + 2\right)\end{aligned}\)\par
+\item[\textbf{C025}] \(\displaystyle \begin{aligned}P(x)&=4 \cdot \left(x - 3\right) \cdot \left(x - 1\right)\\ &= 4 \cdot \left(x - 3\right) \cdot \left(x - 1\right)\end{aligned}\)\par
+\item[\textbf{C026}] \(\displaystyle \begin{aligned}P(x)&=2 \cdot \left(x - 6\right) \cdot \left(x - 5\right)\\ &= 2 \cdot \left(x - 6\right) \cdot \left(x - 5\right)\end{aligned}\)\par
+\item[\textbf{C027}] \(\displaystyle \begin{aligned}P(x)&=5 \cdot \left(x - 2\right) \cdot \left(x - 1\right)\\ &= 5 \cdot \left(x - 2\right) \cdot \left(x - 1\right)\end{aligned}\)\par
+\item[\textbf{C028}] \(\displaystyle \begin{aligned}P(x)&=3 \cdot \left(x + 1\right) \cdot \left(x + 4\right)\\ &= 3 \cdot \left(x + 1\right) \cdot \left(x + 4\right)\end{aligned}\)\par
+\item[\textbf{C029}] \(\displaystyle \begin{aligned}P(x)&=\left(x - 4\right) \cdot \left(x + 6\right)\\ &= \left(x - 4\right) \cdot \left(x + 6\right)\end{aligned}\)\par
+\item[\textbf{C030}] \(\displaystyle \begin{aligned}P(x)&=6 \cdot \left(x - 2\right) \cdot \left(x + 1\right)\\ &= 6 \cdot \left(x - 2\right) \cdot \left(x + 1\right)\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{D -- Extrémy kvadratického trojčlenu}
+\textit{Doplnění na čtverec a vrchol paraboly}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{D001}] \(\displaystyle \begin{aligned}x_v&=-\frac{2}{2\cdot(1)}=-1\\\min f&=f(-1)=5\\V&=[-1;5]\end{aligned}\)\par
+\item[\textbf{D002}] \(\displaystyle \begin{aligned}x_v&=-\frac{4}{2\cdot(1)}=-2\\\min f&=f(-2)=0\\V&=[-2;0]\end{aligned}\)\par
+\item[\textbf{D003}] \(\displaystyle \begin{aligned}x_v&=-\frac{-3}{2\cdot(1)}=\frac{3}{2}\\\min f&=f(\frac{3}{2})=- \frac{1}{4}\\V&=[\frac{3}{2};- \frac{1}{4}]\end{aligned}\)\par
+\item[\textbf{D004}] \(\displaystyle \begin{aligned}x_v&=-\frac{-4}{2\cdot(4)}=\frac{1}{2}\\\min f&=f(\frac{1}{2})=-1\\V&=[\frac{1}{2};-1]\end{aligned}\)\par
+\item[\textbf{D005}] \(\displaystyle \begin{aligned}x_v&=-\frac{8}{2\cdot(4)}=-1\\\min f&=f(-1)=8\\V&=[-1;8]\end{aligned}\)\par
+\item[\textbf{D006}] \(\displaystyle \begin{aligned}x_v&=-\frac{-8}{2\cdot(2)}=2\\\min f&=f(2)=-7\\V&=[2;-7]\end{aligned}\)\par
+\item[\textbf{D007}] \(\displaystyle \begin{aligned}x_v&=-\frac{1}{2\cdot(-2)}=\frac{1}{4}\\\max f&=f(\frac{1}{4})=\frac{1}{8}\\V&=[\frac{1}{4};\frac{1}{8}]\end{aligned}\)\par
+\item[\textbf{D008}] \(\displaystyle \begin{aligned}x_v&=-\frac{2}{2\cdot(-1)}=1\\\max f&=f(1)=4\\V&=[1;4]\end{aligned}\)\par
+\item[\textbf{D009}] \(\displaystyle \begin{aligned}x_v&=-\frac{0}{2\cdot(-1)}=0\\\max f&=f(0)=-16\\V&=[0;-16]\end{aligned}\)\par
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{D010}] \(\displaystyle \begin{aligned}x_v&=-\frac{4}{2\cdot(2)}=-1\\\min f&=f(-1)=7\\V&=[-1;7]\end{aligned}\)\par
+\item[\textbf{D011}] \(\displaystyle \begin{aligned}x_v&=-\frac{6}{2\cdot(-3)}=1\\\max f&=f(1)=2\\V&=[1;2]\end{aligned}\)\par
+\item[\textbf{D012}] \(\displaystyle \begin{aligned}x_v&=-\frac{-12}{2\cdot(3)}=2\\\min f&=f(2)=-4\\V&=[2;-4]\end{aligned}\)\par
+\item[\textbf{D013}] \(\displaystyle \begin{aligned}x_v&=-\frac{-8}{2\cdot(-2)}=-2\\\max f&=f(-2)=11\\V&=[-2;11]\end{aligned}\)\par
+\item[\textbf{D014}] \(\displaystyle \begin{aligned}x_v&=-\frac{5}{2\cdot(1)}=- \frac{5}{2}\\\min f&=f(- \frac{5}{2})=\frac{19}{4}\\V&=[- \frac{5}{2};\frac{19}{4}]\end{aligned}\)\par
+\item[\textbf{D015}] \(\displaystyle \begin{aligned}x_v&=-\frac{8}{2\cdot(-4)}=1\\\max f&=f(1)=2\\V&=[1;2]\end{aligned}\)\par
+\item[\textbf{D016}] \(\displaystyle \begin{aligned}x_v&=-\frac{-6}{2\cdot(2)}=\frac{3}{2}\\\min f&=f(\frac{3}{2})=\frac{1}{2}\\V&=[\frac{3}{2};\frac{1}{2}]\end{aligned}\)\par
+\item[\textbf{D017}] \(\displaystyle \begin{aligned}x_v&=-\frac{-5}{2\cdot(-1)}=- \frac{5}{2}\\\max f&=f(- \frac{5}{2})=\frac{13}{4}\\V&=[- \frac{5}{2};\frac{13}{4}]\end{aligned}\)\par
+\item[\textbf{D018}] \(\displaystyle \begin{aligned}x_v&=-\frac{-10}{2\cdot(5)}=1\\\min f&=f(1)=-3\\V&=[1;-3]\end{aligned}\)\par
+\item[\textbf{D019}] \(\displaystyle \begin{aligned}x_v&=-\frac{7}{2\cdot(1)}=- \frac{7}{2}\\\min f&=f(- \frac{7}{2})=- \frac{25}{4}\\V&=[- \frac{7}{2};- \frac{25}{4}]\end{aligned}\)\par
+\item[\textbf{D020}] \(\displaystyle \begin{aligned}x_v&=-\frac{1}{2\cdot(3)}=- \frac{1}{6}\\\min f&=f(- \frac{1}{6})=- \frac{61}{12}\\V&=[- \frac{1}{6};- \frac{61}{12}]\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{E -- Lomené algebraické výrazy}
+\textit{Rozklad, definiční podmínky, krácení}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{E001}] \(\displaystyle \begin{aligned}\text{Podmínky: }&\ x\ne - \frac{2}{3},\ x\ne \frac{1}{4}\\ E(x)&=\frac{x + 2}{3x + 2}\end{aligned}\)\par
+\item[\textbf{E003}] \(\displaystyle \begin{aligned}\text{Podmínky: }&\ x\ne 0,\ x\ne 3\\ E(x)&=\frac{x + 3}{x}\end{aligned}\)\par
+\item[\textbf{E004}] \(\displaystyle \begin{aligned}\text{Podmínky: }&\ x\ne - \frac{1}{2},\ x\ne \frac{1}{2}\\ E(x)&=\frac{x + 2}{2x - 1}\end{aligned}\)\par
+\item[\textbf{E005}] \(\displaystyle \begin{aligned}\text{Podmínky: }&\ x\ne -1\\ E(x)&=\frac{x - 1}{x + 1}\end{aligned}\)\par
+\item[\textbf{E006}] \(\displaystyle \begin{aligned}\text{Podmínky: }&\ x\ne -2,\ x\ne 2\\ E(x)&=\frac{x + 3}{x - 2}\end{aligned}\)\par
+\item[\textbf{E007}] \(\displaystyle \begin{aligned}\text{Podmínky: }&\ x\ne 0,\ x\ne 4\\ E(x)&=3\end{aligned}\)\par
+\item[\textbf{E008}] \(\displaystyle \begin{aligned}\text{Podmínky: }&\ x\ne -3,\ x\ne 3\\ E(x)&=\frac{x - 1}{x - 3}\end{aligned}\)\par
+\end{enumerate}
+\subsection*{III. Náročné výzvy}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{E002}] \(\displaystyle \begin{aligned}\text{Původní podmínky: }&\ x\ne -6,\ x\ne -5,\ x\ne -3,\ x\ne -1,\ x\ne 2\\ \text{Po úpravě}\quad E(x)&=-1\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{F -- Odmocninové rovnice}
+\textit{Definiční podmínky a zkouška po umocnění}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{F001}] \(\displaystyle \begin{aligned}t&=\sqrt x\ge0,\quad x=t^2\\t^2+t-2&=0\ \Rightarrow\ (t+2)(t-1)=0\\t&=1\ \Rightarrow\ K=\{1\}\end{aligned}\)\par
+\item[\textbf{F002}] \(\displaystyle \begin{aligned}t&=\sqrt{x+5}\ge0,\quad x=t^2-5\\3t&=t^2\ \Rightarrow\ t(t-3)=0\\t&\in\{0;3\}\ \Rightarrow\ K=\{-5;4\}\end{aligned}\)\par
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{F011}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{8\}\end{aligned}\)\par
+\item[\textbf{F012}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{13\}\end{aligned}\)\par
+\item[\textbf{F013}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{5\}\end{aligned}\)\par
+\item[\textbf{F014}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{0;1\}\end{aligned}\)\par
+\item[\textbf{F015}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\varnothing\end{aligned}\)\par
+\item[\textbf{F016}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{5\}\end{aligned}\)\par
+\item[\textbf{F017}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{16\}\end{aligned}\)\par
+\item[\textbf{F018}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{3\}\end{aligned}\)\par
+\item[\textbf{F019}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{6\}\end{aligned}\)\par
+\item[\textbf{F020}] \(\displaystyle \begin{aligned}\text{Definiční podmínky; po umocnění zkouška v původní rovnici.}\\K&=\{0\}\end{aligned}\)\par
+\end{enumerate}
+\subsection*{III. Náročné výzvy}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{F003}] \(\displaystyle \begin{aligned}x&\ge1\\\sqrt{x+4}&=5-\sqrt{x-1}\\x+4&=25-10\sqrt{x-1}+x-1\\\sqrt{x-1}&=2\ \Rightarrow\ K=\{5\}\end{aligned}\)\par
+\item[\textbf{F004}] \(\displaystyle \begin{aligned}x&\ge-2\\\sqrt{x+2}+4&=2\sqrt{x+7}\\8\sqrt{x+2}&=3x+10\\64(x+2)&=(3x+10)^2\\9x^2-4x-28&=0\\K&=\{-\tfrac{14}{9};2\}\end{aligned}\)\par
+\item[\textbf{F005}] \(\displaystyle \begin{aligned}x&\le0,\quad t=\sqrt{-x}\ge0\\t+\sqrt{t^2+2}&=2\\t^2+2&=(2-t)^2\ \Rightarrow\ t=\tfrac12\\K&=\{-\tfrac14\}\end{aligned}\)\par
+\item[\textbf{F006}] \(\displaystyle \begin{aligned}10-x&\ge0,\ x-10\ge0\ \Rightarrow\ x=10\\\sqrt{10-10}+\sqrt{10-10}&=0\ne2\\K&=\varnothing\end{aligned}\)\par
+\item[\textbf{F007}] \(\displaystyle \begin{aligned}x&\ge5\\\sqrt{2x+7}+\sqrt{x-5}&=\sqrt{3x+2}\\3x+2+2\sqrt{(2x+7)(x-5)}&=3x+2\\(2x+7)(x-5)&=0\ \Rightarrow\ K=\{5\}\end{aligned}\)\par
+\item[\textbf{F008}] \(\displaystyle \begin{aligned}\sqrt{-x-\sqrt{1-x}}&=1\\\sqrt{1-x}&=-x-1\quad (x\le-1)\\1-x&=(x+1)^2\\x(x+3)&=0\ \Rightarrow\ K=\{-3\}\end{aligned}\)\par
+\item[\textbf{F009}] \(\displaystyle \begin{aligned}x&\ge0\\\frac{2x}{2\sqrt3+\sqrt x}&=\frac{2\sqrt3-\sqrt x}{9/2}\\9x&=(2\sqrt3+\sqrt x)(2\sqrt3-\sqrt x)\\9x&=12-x\ \Rightarrow\ K=\{\tfrac65\}\end{aligned}\)\par
+\item[\textbf{F010}] \(\displaystyle \begin{aligned}x^2+x&\ge0,\quad x\ne0\\t&=\sqrt{x^2+x}\\\frac4{x+t}-\frac1{x-t}&=\frac3x\\3x-5t+3&=0\\25(x^2+x)&=9(x+1)^2\\(x+1)(16x-9)&=0\\K&=\{-1;\tfrac9{16}\}\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{G -- Kvadratické rovnice s absolutní hodnotou}
+\textit{Tabulka znamének a grafické souvislosti}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{G001}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-3;3\}\end{aligned}\)\par
+\item[\textbf{G002}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-4;- \sqrt{2};\sqrt{2};4\}\end{aligned}\)\par
+\item[\textbf{G003}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{- \sqrt{3};\sqrt{3}\}\end{aligned}\)\par
+\item[\textbf{G004}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-3;-1;1;3\}\end{aligned}\)\par
+\item[\textbf{G005}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-3;-2;2;3\}\end{aligned}\)\par
+\item[\textbf{G006}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-1;- \frac{1}{2};\frac{1}{2};1\}\end{aligned}\)\par
+\item[\textbf{G007}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{2 - \sqrt{3};\sqrt{3} + 2\}\end{aligned}\)\par
+\item[\textbf{G008}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-3;1\}\end{aligned}\)\par
+\item[\textbf{G009}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-3;\frac{1}{2} - \frac{\sqrt{17}}{2};2;\frac{1}{2} + \frac{\sqrt{17}}{2}\}\end{aligned}\)\par
+\item[\textbf{G010}] \(\displaystyle \begin{aligned}x^2-4&=x\quad\text{nebo}\quad x^2-4=-x,\\ K&=\left\{\frac{-1-\sqrt{17}}2;\frac{-1+\sqrt{17}}2;\right.\\ &\left.\frac{1-\sqrt{17}}2;\frac{1+\sqrt{17}}2\right\}.\end{aligned}\)\par
+\item[\textbf{G011}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-1;1\}\end{aligned}\)\par
+\item[\textbf{G012}] \(\displaystyle \begin{aligned}\text{Rozdělení podle nulových bodů výrazů v }|\cdot|.\\ K&=\{-3;3\}\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{H -- Kvadratické nerovnice}
+\textit{Nulové body, intervaly, znaménka}
+\subsection*{I. Základní obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{H001}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-\infty;2)\cup(3;\infty)\end{aligned}\)\par
+\item[\textbf{H004}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(- \frac{1}{2};2)\end{aligned}\)\par
+\item[\textbf{H005}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-\infty;-2)\cup(-2;\infty)\end{aligned}\)\par
+\item[\textbf{H006}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=\varnothing\end{aligned}\)\par
+\item[\textbf{H009}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-3;1)\cup(2;\infty)\end{aligned}\)\par
+\item[\textbf{H011}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-1;1)\end{aligned}\)\par
+\item[\textbf{H012}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-\infty;-2)\cup(2;\infty)\end{aligned}\)\par
+\item[\textbf{H013}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=\mathbb R\end{aligned}\)\par
+\item[\textbf{H015}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-\infty;-3)\cup(-1;1)\cup(3;\infty)\end{aligned}\)\par
+\end{enumerate}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{H002}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=\langle-3;3\rangle\end{aligned}\)\par
+\item[\textbf{H003}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=\langle-1;5\rangle\end{aligned}\)\par
+\item[\textbf{H007}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-\infty;1\rangle\cup\langle3;\infty)\end{aligned}\)\par
+\item[\textbf{H008}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-\infty;-1\rangle\cup\langle3;\infty)\end{aligned}\)\par
+\item[\textbf{H010}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=(-\infty;-3)\cup\langle-2;2\rangle\end{aligned}\)\par
+\item[\textbf{H014}] \(\displaystyle \begin{aligned}\text{Nulové body, znaménka na intervalech:}\\ K&=\mathbb R\end{aligned}\)\par
+\end{enumerate}
+\needspace{11\baselineskip}
+\section*{I -- Zlatý řez a další výzvy}
+\textit{Algebraické identity a geometrické souvislosti}
+\subsection*{II. Střední obtížnost}
+\begin{enumerate}[label={},itemsep=9pt]
+\item[\textbf{I001}] \(\displaystyle \begin{aligned}D&=5\\K&=\{\frac{1}{2} - \frac{\sqrt{5}}{2};\frac{1}{2} + \frac{\sqrt{5}}{2}\}\end{aligned}\)\par
+\item[\textbf{I002}] \(\displaystyle \begin{aligned}D&=5\\K&=\{\frac{3}{2} - \frac{\sqrt{5}}{2};\frac{\sqrt{5}}{2} + \frac{3}{2}\}\end{aligned}\)\par
+\item[\textbf{I003}] \(\displaystyle \begin{aligned}D&=8\\K&=\{- \sqrt{2};\sqrt{2}\}\end{aligned}\)\par
+\item[\textbf{I004}] \(\displaystyle \begin{aligned}D&=24\\K&=\{- \sqrt{6} - 1;-1 + \sqrt{6}\}\end{aligned}\)\par
+\item[\textbf{I005}] \(\displaystyle \begin{aligned}D&=4\\K&=\{2;4\}\end{aligned}\)\par
+\item[\textbf{I006}] \(\displaystyle \begin{aligned}D&=28\\K&=\{- \sqrt{7};\sqrt{7}\}\end{aligned}\)\par
+\end{enumerate}
+\subsection*{Zlatý řez -- geometrické aplikace}
+\begin{enumerate}[label={},itemsep=8pt]
+\item[\textbf{I007}] $\varphi=\frac{1+\sqrt5}{2}\doteq1{,}618.$
+\item[\textbf{I008}] $a=10\varphi=5(1+\sqrt5)\,\mathrm{cm}\doteq16{,}18\,\mathrm{cm};\quad S=100\varphi\,\mathrm{cm}^2\doteq161{,}80\,\mathrm{cm}^2.$
+\item[\textbf{I009}] $d=6\varphi=3(1+\sqrt5)\,\mathrm{cm}\doteq9{,}708\,\mathrm{cm}.$
+\item[\textbf{I010}] $\frac{16}{10}=1{,}6\ne\varphi\doteq1{,}618;\quad\text{není přesně zlatý}.$
+\end{enumerate}
+\end{document}

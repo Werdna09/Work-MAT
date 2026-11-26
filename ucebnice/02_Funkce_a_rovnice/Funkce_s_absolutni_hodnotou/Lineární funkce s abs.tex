@@ -1,0 +1,1187 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+
+\title{Lineární funkce s absolutní hodnotou}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+
+
+\section{Absolutní hodnota}
+
+\begin{quotebox}
+{„Nemůžeš-li vyřešit zadaný problém, zkus nejprve vyřešit nějaký s ním související problém.“}
+{George Pólya, \textit{Jak to vyřešit (1945)}}
+\end{quotebox}
+
+
+\begin{historicalbox}
+Pojem absolutní hodnoty, který dnes působí samozřejmě a samozřejmě se používá, 
+má ve skutečnosti velmi zajímavou historii.  
+Jeho kořeny sahají až do doby, kdy se lidé teprve učili rozlišovat mezi „velikostí“ a „znaménkem“ čísla.
+
+\medskip
+Ve starověku se počítalo především s délkami, plochami a objemy – tedy s veličinami, které nemohou být záporné.  
+Záporná čísla tehdy ještě neexistovala, a proto nebylo potřeba vyjadřovat pojem vzdálenosti zvlášť.  
+Teprve v 16. a 17. století, s rozvojem algebry, obchodu a astronomie, začali matematici chápat, 
+že číslo může mít i směr, a vznikla potřeba zachytit jeho „čistou velikost“ bez znaménka.  
+Tento krok učinili mimo jiné \textbf{René Descartes} a \textbf{John Wallis}, kteří zavedli pojem \textit{magnituda} – 
+velikost čísla nezávislá na směru.
+
+\medskip
+Současný zápis pomocí svislých čar $|x|$ se objevil až v 19. století u německého matematika 
+\textbf{Karla Weierstrasse}.  
+Ten hledal jednotný způsob, jak vyjádřit vzdálenost v číselné i komplexní rovině, 
+a položil tím základ moderní analýzy.  
+Dnes je symbol $|x|$ natolik univerzální, že jej najdete nejen v matematice, 
+ale i ve fyzice či informatice – například ve funkci \texttt{abs(x)}, která počítá „velikost čísla bez směru“.
+
+\medskip
+Pokud byste si chtěli o historii matematiky přečíst víc, 
+doporučuji knihu \textit{E. T. Bell – Muži, kteří dělali matematiku}, 
+která poutavě popisuje příběhy velkých objevů i lidí, kteří za nimi stáli.  
+Zkuste si při čtení všimnout, jak se v různých obdobích mění pohled na něco tak jednoduchého, 
+jako je „vzdálenost od nuly“ –  
+a přesto zůstává jednou z nejzákladnějších myšlenek celé matematiky.
+\end{historicalbox}
+
+
+
+Myšlenka, že složitější úlohu lze pochopit rozložením na jednodušší části,
+je v matematice velmi užitečná.  
+Podobně budeme nyní zkoumat funkce, 
+které se sice na první pohled zdají jiné než běžné lineární funkce, 
+ale ve skutečnosti se skládají ze dvou lineárních větví.
+
+Než však přistoupíme k samotné definici, připomeňme si pojem \important{absolutní hodnota}, na kterém bude celá kapitola postavena.
+
+\begin{definitionbox}
+\textbf{Absolutní hodnota} reálného čísla $x$ vyjadřuje jeho vzdálenost od nuly na číselné ose.  
+Označuje se symbolem $|x|$ a je definována předpisem:
+\[
+|x| =
+\begin{cases}
+x, & \text{je-li } x \ge 0,\\[4pt]
+-x, & \text{je-li } x < 0.
+\end{cases}
+\]
+Z toho plyne, že absolutní hodnota je vždy nezáporné číslo,
+ tedy $|x| \ge 0$ pro všechna $x \in \mathbb{R}$.
+\end{definitionbox}
+
+
+Absolutní hodnota má velmi přirozený \textbf{geometrický význam}.  
+Na číselné ose totiž udává \textbf{vzdálenost bodu} od počátku.  
+Pokud má bod souřadnici $x$, pak délka úsečky mezi tímto bodem $X(x)$ a počátkem $O(0)$ je právě $|x|$.  
+
+\begin{center}
+\begin{tikzpicture}[scale=0.9]
+    \draw[->] (-4,0)--(4,0) node[below]{$x$};
+    \draw (0,0.1)--(0,-0.1) node[below]{$0$};
+    \draw (2,0.1)--(2,-0.1) node[below]{$x$};
+    \filldraw (2,0) circle (1.5pt);
+    \draw[<->,blue!60!black,thick] (0,0.5)--(2,0.5)
+        node[midway,above,black]{$|x|$};
+\end{tikzpicture}
+\end{center}
+
+Tento význam lze snadno zobecnit i na dva libovolné body $A(a)$ a $B(b)$ na číselné ose.  
+Jejich vzdálenost je dána rozdílem souřadnic, přičemž absolutní hodnota zaručuje,  
+že výsledek bude vždy nezáporný:
+\[
+AB = |a - b|.
+\]
+Například: vzdálenost bodů $A(-3)$ a $B(5)$ je $|{-3}-5| = 8$.
+
+Myšlenka „vzdálenosti“ pomocí absolutní hodnoty se objevuje i v dalších oblastech matematiky.  
+U \textbf{komplexních čísel} $z = a + bi$ udává absolutní hodnota vzdálenost bodu $Z(a,b)$ od počátku souřadnic:
+\[
+|z| = \sqrt{a^2 + b^2}.
+\]
+Stejný princip se rozšiřuje i v \textbf{analytické geometrii},  
+kde vzdálenost dvou bodů $A(x_1, y_1)$ a $B(x_2, y_2)$ vyjádříme vzorcem
+\[
+AB = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}.
+\]
+Vidíme tedy, že absolutní hodnota představuje první a nejjednodušší formu pojmu \textbf{vzdálenosti} v matematice.
+
+
+
+\begin{examplebox}
+Ukažme si několik jednoduchých příkladů, jak absolutní hodnota funguje:
+
+\[
+\begin{aligned}
+|5{,}1| &= 5{,}1, \\
+|-0{,}8| &= 0{,}8, \\
+|-7{,}2| &= 7{,}2, \\
+|0| &= 0.
+\end{aligned}
+\]
+
+Vidíme, že absolutní hodnota v podstatě „odstraňuje“ znaménko mínus z čísla. 
+Což můžeme interpretovat jako jeho vzdálenost od nuly na číselné ose,
+ bez ohledu na to, zda leží vlevo nebo vpravo od nuly.
+\end{examplebox}
+
+\subsubsection*{Pravidla pro výpočty s absolutní hodnotou}
+
+\[
+\begin{array}{cccc}
+|a| \ge 0 
+& \quad |a| = |-a| 
+& \quad |ab| = |a| \cdot |b| 
+& \quad b \ne 0 \Rightarrow \left|\frac{a}{b}\right| = \frac{|a|}{|b|}
+\end{array}
+\]
+
+\smallskip
+
+Tato pravidla nám umožňují jednoduše pracovat s absolutní hodnotou při úpravách výrazů a řešení rovnic.  
+Zejména rovnost $|a| = |-a|$ ukazuje, že znaménko uvnitř absolutní hodnoty nehraje roli — vždy dostáváme stejný výsledek.
+
+\newpage
+\section{Funkce aboslutní hodnoty}
+Pro každé reálné číslo $x \in \mathbb{R}$ platí podle definice, že $|x| \ge 0$.  
+Je-li $x \ne 0$, pak dokonce $|x| > 0$.  
+Každému reálnému číslu je tedy jednoznačně přiřazena jeho absolutní hodnota — vždy nezáporné číslo představující vzdálenost od nuly.  
+Tím získáváme \important{funkci absolutní hodnoty}, kterou lze vyjádřit předpisem
+$
+y = |x|.
+$
+
+Jedná se tedy o funkci definovanou na celé množině reálných čísel $\mathbb{R}$, jejíž hodnota je vždy nezáporná.
+
+
+Nyní si ukážeme, jak lze funkci absolutní hodnoty chápat jako spojení dvou jednoduchých lineárních funkcí.
+
+\begin{examplebox}
+Abychom lépe pochopili tvar grafu funkce absolutní hodnoty, začněme dvěma základními lineárními funkcemi.
+
+\begin{center}
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-3, ymax=3,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = x$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, pastelblue!80!black, domain=-3.5:3.5] {x};
+\end{axisgraph}
+\end{minipage}
+\hfill
+\begin{minipage}{0.45\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-3, ymax=3,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = -x$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, pastelblue!80!black, domain=-3.5:3.5] {-x};
+\end{axisgraph}
+\end{minipage}
+\end{center}
+
+Funkce $y = x$ má rostoucí charakter a prochází počátkem souřadnic.  
+Naopak funkce $y = -x$ je klesající a je k funkci $y = x$ souměrná podle osy $x$.  
+Pokud z těchto dvou funkcí ponecháme pouze části nad osou $x$ (neboli jejich kladné hodnoty) a tyto části spojíme, vznikne nový graf, který nazýváme \important{funkce absolutní hodnoty}.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-1, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={Funkce $y = |x|$},
+    width=0.8\linewidth,
+    height=6cm,
+    samples=100
+]
+    % levá a pravá větev absolutní hodnoty
+    \addplot[thick, pastelblue!80!black, domain=0:3.5] {x};
+    \addplot[thick, pastelblue!80!black, domain=-3.5:0] {-x};
+    % vrchol
+    \addplot[only marks, mark=*, pastelblue!80!black] coordinates {(0,0)};
+\end{axisgraph}
+\end{center}
+
+Vidíme, že graf funkce $y = |x|$ vznikl „překlopením“ části grafu $y = x$, která ležela pod osou $x$, směrem nahoru.  
+Vrchol této funkce leží v počátku souřadnic, a právě zde se graf „láme“ – mění směr, ale zůstává spojitý.
+\end{examplebox}
+
+
+\subsection{Obecný tvar funkce s absolutní hodnotou}
+
+Nyní zobecníme poznatky o základní funkci $y = |x|$ na funkce, které obsahují výraz $a x + b$ uvnitř absolutní hodnoty a mohou být navíc posunuty po ose $y$.
+
+\begin{definitionbox}
+\textbf{Lineární funkcí s absolutní hodnotou} nazýváme každou funkci tvaru
+\[
+f(x) = |a x + b| + c,
+\]
+kde $a, b, c \in \mathbb{R}$ a $a \ne 0$.
+\end{definitionbox}
+
+Taková funkce se skládá ze dvou lineárních částí – podle toho, zda je výraz $a x + b$ kladný, nebo záporný.  
+Použijeme-li definici absolutní hodnoty, můžeme zápis přepsat do tvaru:
+\[
+|a x + b| =
+\begin{cases}
+a x + b, & \text{je-li } a x + b \ge 0,\\[4pt]
+-(a x + b), & \text{je-li } a x + b < 0.
+\end{cases}
+\]
+
+Po dosazení do původního předpisu dostaneme:
+\[
+f(x) =
+\begin{cases}
+a x + b + c, & \text{je-li } a x + b \ge 0,\\[6pt]
+- a x - b + c, & \text{je-li } a x + b < 0.
+\end{cases}
+\]
+
+Získali jsme tedy dvě přímky, které se liší pouze znaménkem u členů s $a$ a $b$.  
+Otázkou zůstává, kde přesně se tyto dvě větve spojí.
+
+\subsubsection*{Odvození vzorce pro vrchol absolutní hodnoty}
+
+Víme, že k \textit{„překlápění“} dochází tehdy, když se mění znaménko výrazu uvnitř absolutní hodnoty – tedy výrazu $a x + b$.  
+Pokud je tento výraz kladný, absolutní hodnota ho nijak nezmění; pokud je záporný, změní se na opačné znaménko.  
+Přechod mezi těmito dvěma situacemi nastává právě ve chvíli, kdy výraz $a x + b$ přechází ze záporné hodnoty do kladné, tedy když se rovná nule.
+
+\[
+a x + b = 0
+\]
+
+Tento bod je hranicí mezi levou a pravou částí grafu a určuje místo, kde se funkce \textit{„láme“}.  
+Z uvedené rovnice snadno vyjádříme souřadnici $x$ vrcholu:
+
+\begin{align*}
+a x + b &= 0 \\[4pt]
+a x &= -b \\[4pt]
+x_v &= -\frac{b}{a}
+\end{align*}
+
+Pro tuto hodnotu proměnné je výraz uvnitř absolutní hodnoty nulový, tedy $|a x_v + b| = 0$, a hodnota funkce je proto rovna konstantě $c$:
+\[
+f(x_v) = c.
+\]
+
+Souřadnice vrcholu funkce jsou tedy
+\[
+V\left[-\frac{b}{a};\, c\right].
+\]
+
+\begin{definitionbox}
+\textbf{Vrchol lineární funkce s absolutní hodnotou} je bod, v němž se graf funkce láme – tedy místo, kde se výraz $a x + b$ uvnitř absolutní hodnoty rovná nule.  
+Jeho souřadnice jsou
+\[
+V\left[-\frac{b}{a};\, c\right],
+\]
+kde $a, b, c \in \mathbb{R}$ a $a \ne 0$.
+\end{definitionbox}
+
+
+
+\subsection{Graf lineární funkce s absolutní hodnotou}
+
+Dříve než si vysvětlíme, jak jednotlivé parametry $a$, $b$ a $c$ ovlivňují tvar a polohu grafu, podívejme se na několik ukázek různých funkcí s absolutní hodnotou:
+
+\begin{center}
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-2, xmax=6,
+    ymin=-1, ymax=5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |x - 2|$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, pastelblue!80!black, domain=-2:2] {-x + 2};
+    \addplot[thick, pastelblue!80!black, domain=2:6] {x - 2};
+\end{axisgraph}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-2, xmax=6,
+    ymin=-1, ymax=5,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |x - 3| + 1$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, pastelblue!80!black, domain=-2:3] {-x + 4};
+    \addplot[thick, pastelblue!80!black, domain=3:6] {x - 2};
+\end{axisgraph}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=3,
+    ymin=-4, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = 2|x + 1| - 3$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, pastelblue!80!black, domain=-4:-1] {-2*(x + 1) - 3};
+    \addplot[thick, pastelblue!80!black, domain=-1:3] {2*(x + 1) - 3};
+\end{axisgraph}
+\end{minipage}
+\end{center}
+
+\vspace{1em}
+
+Na první pohled vidíme, že všechny tři grafy mají stejný tvar písmene „V“, ale liší se svou polohou, výškou i strmostí.  
+V následující části si krok za krokem vysvětlíme, jak jednotlivé parametry $a$, $b$ a $c$ ovlivňují tyto změny.
+
+
+\subsubsection*{Posun grafu podle parametru $b$}
+
+Parametr $b$ určuje, \textit{kde na ose $x$} se bude nacházet vrchol funkce.  
+Základní tvar funkce je
+\[
+y = |x - b|.
+\]
+Hodnota $b$ ovlivňuje posun grafu vodorovným směrem.  
+Podle znaménka výrazu uvnitř absolutní hodnoty se graf posouvá následovně:
+
+\begin{itemize}
+    \item Pokud od $x$ \textbf{odečítáme} číslo $b$, graf se posune o $b$ jednotek doprava.  
+    \item Pokud k $x$ \textbf{přičítáme} číslo $b$, graf se posune o $b$ jednotek doleva. 
+\end{itemize}
+
+\begin{examplebox}
+Porovnejme dvě funkce:
+\[
+y_1 = |x|, \qquad y_2 = |x - 3|.
+\]
+Funkce $y_1$ má vrchol v bodě $[0;0]$, zatímco funkce $y_2$ v bodě $[3;0]$.  
+Vrchol se tedy posunul o 3 jednotky \textbf{doprava}.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-2, xmax=6,
+    ymin=-1, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={Posun grafu podle $b$},
+    width=0.7\linewidth,
+    height=6cm,
+    samples=100
+]
+    % původní funkce y=|x|
+    \addplot[thick, gray!85!black, domain=-2:0] {-x};
+    \addplot[thick, gray!85!black, domain=0:6] {x};
+    % posunutá funkce y=|x-3|
+    \addplot[thick, pastelorange!80!black, domain=-2:3] {-x + 3};
+    \addplot[thick, pastelorange!80!black, domain=3:6] {x - 3};
+    % vrcholy
+    \addplot[only marks, mark=*, gray!85!black] coordinates {(0,0)};
+    \addplot[only marks, mark=*, pastelorange!80!black] coordinates {(3,0)};
+    % popisky
+    \node[below right, gray!70] at (axis cs:0,0) {$[0;0]$};
+    \node[above, pastelorange!80!black] at (axis cs:3,0.5) {$[3;0]$};
+\end{axisgraph}
+\end{center}
+\end{examplebox}
+
+\begin{notebox}
+Vrchol funkce $y = |x - b|$ má souřadnice $V[b;0]$.  
+Pokud $b > 0$, graf se posune doprava; pokud $b < 0$, posune se doleva.
+\end{notebox}
+
+
+
+\subsubsection*{Vliv parametru $a$ na tvar grafu}
+
+Parametr $a$ ovlivňuje, jak je graf \textit{otevřený} (roztažený či zúžený) a zároveň, 
+zda směřuje \textit{nahoru} nebo \textit{dolů}.  
+Zapisujeme funkci ve tvaru
+\[
+y = |a x|.
+\]
+
+\begin{itemize}
+  \item Pokud je $|a| > 1$, graf je \important{strmější} — větve jsou blíže k ose $y$.  
+  \item Pokud je $0 < |a| < 1$, graf je \important{plošší} — větve jsou „roztažené“ do stran.  
+  \item Pokud je $a < 0$, graf se \important{převrátí směrem dolů}.
+\end{itemize}
+
+\begin{examplebox}
+Porovnejme tři funkce:
+\[
+y_1 = |x|, \quad y_2 = |2x|, \quad y_3 = |{\tfrac{1}{2}}x|.
+\]
+\begin{center}
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-1, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |x|$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, gray!80!black, domain=-4:0] {-x};
+    \addplot[thick, gray!80!black, domain=0:4] {x};
+\end{axisgraph}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-1, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |2x|$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, pastelblue!80!black, domain=-4:0] {-2*x};
+    \addplot[thick, pastelblue!80!black, domain=0:4] {2*x};
+\end{axisgraph}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-1, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = \tfrac{1}{2}|x|$},
+    width=\linewidth,
+    height=5.5cm,
+    samples=100
+]
+    \addplot[thick, pastelorange!80!black, domain=-4:0] {-(x/2)};
+    \addplot[thick, pastelorange!80!black, domain=0:4] {x/2};
+\end{axisgraph}
+\end{minipage}
+\end{center}
+
+
+Graf $y = |2x|$ je dvakrát strmější, zatímco $y = \tfrac{1}{2}|x|$ je dvakrát plošší než základní funkce $y = |x|$.
+\end{examplebox}
+
+\begin{notebox}
+\textbf{Shrnutí vlivu parametru $a$:}
+\begin{itemize}
+    \item $a > 1$ – zúžení (graf strmější),
+    \item $0 < a < 1$ – roztažení (graf plošší),
+    \item $a < 0$ – převrácení směrem dolů,
+    \item $|a|$ – určuje míru „otevřenosti“ tvaru.
+\end{itemize}
+\end{notebox}
+
+\subsubsection*{Rozdíl mezi $y = |a x|$ a $y = a |x|$}
+
+Je důležité rozlišovat, zda se koeficient $a$ nachází \textit{uvnitř} nebo \textit{vně} absolutní hodnoty.
+
+\[
+y = |a x| \qquad \text{a} \qquad y = a|x|
+\]
+
+\begin{itemize}
+  \item U funkce $y = |a x|$ se absolutní hodnota vztahuje i na $a$, takže
+  \[
+  |a x| = |a| \cdot |x|,
+  \]
+  a graf je vždy otevřen směrem nahoru – změna znaménka $a$ zde nic nemění.
+  
+  \item U funkce $y = a|x|$ se znaménko $a$ uplatní \textit{až po} výpočtu absolutní hodnoty.  
+  Proto když $a < 0$, celý graf se převrátí dolů.
+\end{itemize}
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={Rozdíl mezi $|a x|$ a $a|x|$},
+    width=0.8\linewidth,
+    height=6cm,
+    samples=100
+]
+    % y=|2x|
+    \addplot[thick, pastelblue!80!black, domain=-4:0] {-2*x};
+    \addplot[thick, pastelblue!80!black, domain=0:4] {2*x};
+    % y=-2|x|
+    \addplot[thick, pastelorange!80!black, domain=-4:0] {2*x};
+    \addplot[thick, pastelorange!80!black, domain=0:4] {-2*x};
+    % popisky
+    \node[above right, pastelblue!80!black] at (axis cs:1,3) {$y=|2x|$};
+    \node[below right, pastelorange!80!black] at (axis cs:1,-3) {$y=-2|x|$};
+\end{axisgraph}
+\end{center}
+
+\begin{notebox}
+Rozdíl mezi $y = |a x|$ a $y = a|x|$ spočívá v tom, že v prvním případě se 
+znaménko $a$ \textit{ztrácí} uvnitř absolutní hodnoty,  
+zatímco v druhém případě zůstává zachováno a ovlivňuje orientaci celého grafu.
+\end{notebox}
+
+
+
+
+\subsubsection*{Posun grafu podle parametru $c$}
+
+Parametr $c$ ovlivňuje, \textit{kde na ose $y$} se nachází vrchol funkce.  
+V základním tvaru
+\[
+y = |x| + c
+\]
+představuje číslo $c$ \important{svislý posun} celého grafu – nemění se jeho tvar ani sklon větví, pouze poloha.
+
+\begin{itemize}
+    \item Pokud je $c > 0$, graf se posune \important{nahoru} o $c$ jednotek.  
+    \item Pokud je $c < 0$, graf se posune \important{dolů} o $|c|$ jednotek.  
+\end{itemize}
+
+\begin{examplebox}
+Porovnejme tři funkce:
+\[
+y_1 = |x|, \quad y_2 = |x| + 2, \quad y_3 = |x| - 3.
+\]
+
+\begin{center}
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |x|$},
+    width=1.25\linewidth,
+    height=7cm,
+    samples=100
+]
+    \addplot[thick, gray!80!black, domain=-4:0] {-x};
+    \addplot[thick, gray!80!black, domain=0:4] {x};
+\end{axisgraph}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |x| + 2$},
+    width=1.25\linewidth,
+    height=7cm,
+    samples=100
+]
+    \addplot[thick, pastelblue!80!black, domain=-4:0] {-x + 2};
+    \addplot[thick, pastelblue!80!black, domain=0:4] {x + 2};
+\end{axisgraph}
+\end{minipage}
+\hfill
+\begin{minipage}{0.32\textwidth}
+\centering
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-4, ymax=4,
+    axis lines=middle,
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |x| - 3$},
+    width=1.25\linewidth,
+    height=7cm,
+    samples=100
+]
+    \addplot[thick, pastelorange!80!black, domain=-4:0] {-x - 3};
+    \addplot[thick, pastelorange!80!black, domain=0:4] {x - 3};
+\end{axisgraph}
+\end{minipage}
+\end{center}
+
+Graf $y = |x| + 2$ je posunut o 2 jednotky nahoru, zatímco graf $y = |x| - 3$ o 3 jednotky dolů.
+\end{examplebox}
+
+\begin{notebox}
+    \textbf{Parametr $c$} způsobuje \textit{svislý posun} grafu:
+    \begin{itemize}
+        \item $c > 0$ – posun nahoru,  
+        \item $c < 0$ – posun dolů.
+    \end{itemize}
+    Vrchol funkce má souřadnice $V[0; c]$.
+\end{notebox}
+
+
+\newpage
+\subsubsection*{Kombinace všech parametrů}
+Nyní už víme, že parametr $a$ ovlivňuje \textit{strmost a orientaci} grafu,
+parametr $b$ \textit{posune po ose $x$} a parametr $c$ \textit{posune po ose $y$}.
+
+Abychom viděli, jak všechny tři působí dohromady, podíváme se na několik příkladů
+ve kterých se kombinují všechny předchozí poznatky.
+Na následujících dvou funkcích budeme sledovat, jak se mění tvar i poloha grafu.
+
+\begin{examplebox}
+\textbf{Příklad:} \(y = |x - 2| - 3\)
+
+Postupně si ukážeme, jak tento graf vzniká z funkce \(y = |x|\).
+
+\medskip
+\textbf{1. krok – základní tvar:}
+\[
+y = |x|
+\]
+Graf má vrchol v počátku $[0;0]$ a tvoří základní tvar písmene „V“.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-2, xmax=6,
+    ymin=-5, ymax=3,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={Základní tvar $y = |x|$},
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    xtick={0,2,4,6},
+    ytick={-5,-3,0,3},
+    grid=none
+]
+    \addplot[thick, gray!75!black, domain=-2:0] {-x};
+    \addplot[thick, gray!75!black, domain=0:6] {x};
+    \addplot[only marks, mark=*, gray!75!black] coordinates {(0,0)};
+    \node[below right, gray!70] at (axis cs:0,0) {$[0;0]$};
+\end{axisgraph}
+\end{center}
+
+\medskip
+\textbf{2. krok – posun o $b=2$ doprava:}
+\[
+y = |x - 2|
+\]
+Protože od $x$ odečítáme číslo 2, celý graf posuneme o 2 jednotky doprava.  
+Vrchol se posune do bodu $[2;0]$.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-2, xmax=6,
+    ymin=-5, ymax=3,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={Posun o $b = 2$ doprava},
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    xtick={0,2,4,6},
+    ytick={-5,-3,0,3},
+    grid=none
+]
+    \addplot[thick, gray!70!black, domain=-2:0] {-x};
+    \addplot[thick, gray!70!black, domain=0:6] {x};
+    \addplot[thick, pastelblue!80!black, domain=-2:2] {-x + 2};
+    \addplot[thick, pastelblue!80!black, domain=2:6] {x - 2};
+    \addplot[only marks, mark=*, pastelblue!80!black] coordinates {(2,0)};
+    \node[below right, pastelblue!80!black] at (axis cs:2,0) {$[2;0]$};
+\end{axisgraph}
+\end{center}
+
+\medskip
+\textbf{3. krok – posun o $c=-3$ dolů:}
+\[
+y = |x - 2| - 3
+\]
+Hodnota $c = -3$ posune celý graf o tři jednotky dolů.  
+Vrchol se tak přesune do bodu $[2;-3]$.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-2, xmax=6,
+    ymin=-5, ymax=3,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={Konečný tvar $y = |x - 2| - 3$},
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    xtick={0,2,4,6},
+    ytick={-5,-3,0,3},
+    grid=none
+]
+    \addplot[thick, gray!70!black, domain=-2:2] {-x + 2};
+    \addplot[thick, gray!70!black, domain=2:6] {x - 2};
+    \addplot[thick, pastelorange!80!black, domain=-2:2] {-x - 1};
+    \addplot[thick, pastelorange!80!black, domain=2:6] {x - 5};
+    \addplot[only marks, mark=*, pastelorange!80!black] coordinates {(2,-3)};
+    \node[below right, pastelorange!80!black] at (axis cs:2,-3) {$[2;-3]$};
+\end{axisgraph}
+\end{center}
+
+Vrchol se posunul o 2 jednotky doprava a o 3 jednotky dolů.  
+Směr i sklon větví zůstaly stejné jako u základní funkce $y = |x|$.
+\end{examplebox}
+
+
+
+Vidíme tedy, že s parametry $b$ a $c$ můžeme celý graf posouvat po rovině 
+nahoru, dolů, doprava či doleva.  
+Ale co se stane, pokud k tomu přidáme i násobek $a$, který mění směr a sklon grafu?  
+Podívejme se na následující příklad.
+
+
+\begin{examplebox}
+\textbf{Příklad:} \(y = -2\,|x + 2{,}5| + 1{,}5\)
+
+Ukážeme si krok za krokem, jak z funkce \(y = |x|\) postupně vznikne výsledný graf.
+
+\medskip
+\textbf{1. krok – základní tvar:}
+\[
+y = |x|
+\]
+Základní graf má vrchol v počátku $[0;0]$ a je otevřen směrem nahoru.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-6, xmax=2,
+    ymin=-5, ymax=4,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={Základní tvar $y = |x|$},
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    xtick={-6,-4,-2,0,2},
+    ytick={-5,-3,0,3},
+    grid=none
+]
+    \addplot[thick, gray!75!black, domain=-6:0] {-x};
+    \addplot[thick, gray!75!black, domain=0:2] {x};
+    \addplot[only marks, mark=*, gray!75!black] coordinates {(0,0)};
+    \node[below right, gray!70] at (axis cs:0,0) {$[0;0]$};
+\end{axisgraph}
+\end{center}
+
+\medskip
+\textbf{2. krok – posun o $b=-2{,}5$ doleva:}
+\[
+y = |x + 2{,}5|
+\]
+Protože k $x$ přičítáme číslo 2,5, posuneme celý graf o 2,5 jednotky \important{doleva}.  
+Vrchol se posune do bodu $[-2{,}5;0]$.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-6, xmax=2,
+    ymin=-5, ymax=4,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={Posun o $b = -2{,}5$ doleva},
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    xtick={-6,-4,-2,0,2},
+    ytick={-5,-3,0,3},
+    grid=none
+]
+    % původní
+    \addplot[thick, gray!70!black, domain=-6:0] {-x};
+    \addplot[thick, gray!70!black, domain=0:2] {x};
+    % posunutý
+    \addplot[thick, pastelblue!80!black, domain=-6:-2.5] {-(x + 2.5)};
+    \addplot[thick, pastelblue!80!black, domain=-2.5:2] {(x + 2.5)};
+    \addplot[only marks, mark=*, pastelblue!80!black] coordinates {(-2.5,0)};
+    \node[below right, pastelblue!80!black] at (axis cs:-2.5,0) {$[-2{,}5;0]$};
+\end{axisgraph}
+\end{center}
+
+\medskip
+\textbf{3. krok – násobek $a=-2$:}
+\[
+y = -2\,|x + 2{,}5|
+\]
+Znaménko „$-$“ graf převrátí \important{směrem dolů} a současně hodnota $|a|=2$ graf \important{zúží} – je strmější.
+
+Vrchol zůstává v bodu $[-2{,}5;0]$.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-6, xmax=2,
+    ymin=-5, ymax=4,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={Převrácení a zúžení ($a = -2$)},
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    xtick={-6,-4,-2,0,2},
+    ytick={-5,-3,0,3},
+    grid=none
+]
+    % předchozí modrý
+    \addplot[thick, gray!70!black, domain=-6:-2.5] {-(x + 2.5)};
+    \addplot[thick, gray!70!black, domain=-2.5:2] {(x + 2.5)};
+    % nový
+    \addplot[thick, pastelorange!80!black, domain=-6:-2.5] {2*x + 5};
+    \addplot[thick, pastelorange!80!black, domain=-2.5:2] {-2*x - 5};
+    \addplot[only marks, mark=*, pastelorange!80!black] coordinates {(-2.5,0)};
+    \node[above right, pastelorange!80!black] at (axis cs:-2.5,0) {$[-2{,}5;0]$};
+\end{axisgraph}
+\end{center}
+
+\medskip
+\textbf{4. krok – posun o $c = +1{,}5$ nahoru:}
+\[
+y = -2\,|x + 2{,}5| + 1{,}5
+\]
+Hodnota $c$ posouvá celý graf o 1,5 jednotky nahoru.  
+Vrchol se přesune do bodu $[-2{,}5;1{,}5]$.
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-6, xmax=2,
+    ymin=-5, ymax=4,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={Konečný tvar $y = -2|x + 2{,}5| + 1{,}5$},
+    width=0.75\linewidth,
+    height=6.5cm,
+    samples=100,
+    xtick={-6,-4,-2,0,2},
+    ytick={-5,-3,0,1.5,3},
+    grid=none
+]
+    % předchozí šedý
+    \addplot[thick, gray!70!black, domain=-6:-2.5] {2*x + 5};
+    \addplot[thick, gray!70!black, domain=-2.5:2] {-2*x - 5};
+    % finální oranžový
+    \addplot[thick, pastelorange!80!black, domain=-6:-2.5] {2*x + 6.5};
+    \addplot[thick, pastelorange!80!black, domain=-2.5:2] {-2*x - 3.5};
+    \addplot[only marks, mark=*, pastelorange!80!black] coordinates {(-2.5,1.5)};
+    \node[above right, pastelorange!80!black] at (axis cs:-2.5,1.5) {$[-2{,}5;\,1{,}5]$};
+\end{axisgraph}
+\end{center}
+
+Vrchol se tedy nachází v bodu $[-2{,}5;\,1{,}5]$,  
+graf je otevřen směrem dolů a je dvakrát strmější než základní tvar $y = |x|$.
+\end{examplebox}
+
+
+
+\subsection{Funkce s více absolutními hodnotami}
+
+Dosud jsme pracovali s funkcemi, které obsahovaly pouze jednu absolutní hodnotu.  
+Nyní se podíváme na případy, kdy se v předpisu vyskytuje více absolutních hodnot.  
+V takových situacích je nutné určit \important{nulové body výrazů uvnitř absolutních hodnot}  
+a podle nich rozdělit osu $x$ na intervaly.  
+V každém z těchto intervalů pak odstraníme absolutní hodnoty podle jejich znamének a funkci určíme zvlášť.
+
+\begin{examplebox}
+\textbf{Příklad:} \(y = |x - 2| + |x|\)
+
+\medskip
+\textbf{1. krok – určení nulových bodů:}
+
+Každý výraz uvnitř absolutní hodnoty může měnit znaménko v bodě, kde se rovná nule:
+\[
+x - 2 = 0 \Rightarrow x = 2, 
+\qquad x = 0.
+\]
+Rozdělíme tedy osu $x$ na tři intervaly:
+\[
+(-\infty; 0), \quad (0; 2), \quad (2; \infty).
+\]
+
+\medskip
+\textbf{2. krok – odstranění absolutních hodnot v jednotlivých intervalech:}
+
+Pomocí nulových bodů $x=0$ a $x=2$ rozdělíme reálnou osu na tři intervaly a sledujeme,  
+jaké hodnoty mají výrazy uvnitř absolutních hodnot v každém z nich.
+
+\arrayrulecolor{tableborder}
+\renewcommand{\arraystretch}{1.4}
+\begin{center}
+\begin{tabular}{|C{2.5cm}|C{2.5cm}|C{2.5cm}|C{2.5cm}|}
+\hline
+\rowcolor{tableheaderdark!70} 
+\textbf{Výraz} & \textbf{$(-\infty; 0)$} & \textbf{$(0; 2)$} & \textbf{$(2; \infty)$} \\ \hline
+$x - 2$ & záporný & záporný & kladný \\ \hline
+\(|x - 2|\) & $-(x - 2)$ & $-(x - 2)$ & $x - 2$ \\ \hline
+$x$ & záporný & kladný & kladný \\ \hline
+\(|x|\) & $-x$ & $x$ & $x$ \\ \hline
+\textbf{$y = |x - 2| + |x|$} & $-(x - 2) - x = -2x + 2$ & $-(x - 2) + x = 2$ & $x - 2+ x = 2x - 2$ \\ \hline
+\end{tabular}
+\end{center}
+\arrayrulecolor{black}
+\renewcommand{\arraystretch}{1.0}
+
+\medskip
+Z tabulky vyčteme, že výsledný předpis má tři části:
+\[
+y =
+\begin{cases}
+-2x + 2, & x < 0,\\[4pt]
+2, & 0 \le x < 2,\\[4pt]
+2x - 2, & x \ge 2.
+\end{cases}
+\]
+
+
+\medskip
+\textbf{3. krok – výsledný předpis:}
+\[
+y =
+\begin{cases}
+-2x + 2, & x < 0,\\[4pt]
+2, & 0 \le x < 2,\\[4pt]
+2x - 2, & x \ge 2.
+\end{cases}
+\]
+
+\begin{center}
+\begin{axisgraph}[
+    xmin=-4, xmax=4,
+    ymin=-2, ymax=5,
+    axis lines=middle,
+    axis line style={thick},
+    xlabel={$x$}, ylabel={$y$},
+    title={$y = |x - 2| + |x|$},
+    width=0.8\linewidth,
+    height=7cm,
+    samples=100,
+    xtick={-4,-2,0,2,4},
+    ytick={0,2,4},
+    grid=none
+]
+    % x < 0
+    \addplot[thick, pastelorange!80!black, domain=-4:0] {-2*x + 2};
+    % 0 <= x < 2
+    \addplot[thick, pastelblue!80!black, domain=0:2] {2};
+    % x >= 2
+    \addplot[thick, pastelgreen!70!black, domain=2:4] {2*x - 2};
+    % body zlomu
+    \addplot[only marks, mark=*, gray!70!black] coordinates {(0,2) (2,2)};
+    \node[below left, gray!60] at (axis cs:0,2) {$[0;2]$};
+    \node[below right, gray!60] at (axis cs:2,2) {$[2;2]$};
+\end{axisgraph}
+\end{center}
+
+\textit{Graf se skládá ze tří lineárních částí, které se lámou v bodech $x=0$ a $x=2$.}
+\end{examplebox}
+
+\begin{notebox}
+Při práci s více absolutními hodnotami postupujeme vždy stejně:
+\begin{enumerate}[label=\alph*)]
+  \item Určíme nulové body výrazů uvnitř absolutních hodnot.  
+  \item Rozdělíme reálnou osu podle těchto bodů na intervaly.  
+  \item V každém intervalu odstraníme absolutní hodnoty podle znaménka výrazů.  
+  \item Sestavíme výsledný předpis a graf po částech.
+\end{enumerate}
+\end{notebox}
+
+
+
+
+
+% -----------------------------------------------------------------
+% ---------------------- P Ř Í K L A D Y --------------------------
+% -----------------------------------------------------------------
+
+\exercisepart
+\setcounter{section}{1} % případně uprav dle předchozího číslování
+
+
+% =========================
+% ÚLOHA 1
+% =========================
+\begin{exercise}[Kdy platí $|a|=-a$]
+    Pro která z čísel $a=\{3;\,-1{,}5;\,-13{,}4;\,2{,}7\}$ platí rovnost $|a|=-a$?
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 2
+% =========================
+\begin{exercise}[Základní výpočty absolutní hodnoty]
+    Vypočítejte hodnoty následujících výrazů:
+    \begin{tasks}(4)
+        \task $|5|$
+        \task $|-7|$
+        \task $|0|$
+        \task $|-3{,}6|$
+        \task $|+12|$
+        \task $|-10{,}2|$
+        \task $|-0{,}1|$
+        \task $|-100|$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 3
+% =========================
+\begin{exercise}[Absolutní hodnota ve výrazech]
+    Vypočítejte:
+    \begin{tasks}(2)
+        \task $|-\sqrt{2}| - |\sqrt{2}|$
+        \task $|8-11| - |3-9|$
+        \task $|-3{,}5 - (-0{,}8)|$
+        \task $14 - |4{,}6 - 5{,}3|$
+        \task $|-2 - |5-7||$
+        \task $|-|2-5| + |1| - 7|$
+        \task $||-8| - |4-10||$
+        \task $||2| - |3-5||$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 4
+% =========================
+\begin{exercise}[Definiční obory funkcí s absolutní hodnotou]
+    Vyjádřete pomocí intervalů definiční obor těchto funkcí:
+    \begin{tasks}(3)
+        \task $y=\sqrt{|x|-x}$
+        \task $y=\sqrt{|x|+x}$
+        \task $y=\dfrac{1}{\sqrt{|x|+x}}$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 5
+% =========================
+\begin{exercise}[Základní grafy funkcí s absolutní hodnotou]
+    Načrtněte grafy následujících funkcí:
+    \begin{tasks}(3)
+        \task $y=|x|$
+        \task $y=|x-1|$
+        \task $y=|x+1{,}5|$
+        \task $y=|2+0{,}5x|$
+        \task $y=|5-2x|$
+        \task $y=|2x|$
+        \task $y=|x|+4$
+        \task $y=1-|0{,}5x|$
+        \task $y=x+|x|$
+        \task $y=x-|x|$
+        \task $y=||x|-4|$
+        \task $y=\dfrac{|x|}{x}$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 6
+% =========================
+\begin{exercise}[Složené funkce s absolutní hodnotou]
+    Narýsujte grafy těchto funkcí:
+    \begin{tasks}(2)
+        \task $f_1: \; y=|x|$
+        \task $f_2: \; y=|x|+2$
+        \task $f_3: \; y=|x+2|$
+        \task $f_4: \; y=|x+2|-3$
+        \task $g_1: \; y=2|x|$
+        \task $g_2: \; y=2|x-3|$
+        \task $g_3: \; y=2|x-3|+1$
+        \task $h_1: \; y=|x+2| + 0{,}5|x-1| - x$
+        \task $h_2: \; y=|x+1| - |3-x| + 2$
+        \task $t_1: \; y=|x-1| - 2$
+        \task $t_2: \; y=||x-1|-2| - 3$
+        \task $t_3: \; y=|||x-1|-2|-3|$
+        \task $t_4: \; y=||||x|-1|-1|-1|$
+        \task $r_1: \; y=|x-3| - |5-2x| + 3|1-x|$
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 7
+% =========================
+\begin{exercise}[Aplikační úlohy s absolutní hodnotou]
+    Absolutní hodnota vyjadřuje v mnoha reálných situacích \textbf{vzdálenost}, \textbf{změnu} či \textbf{odchylku}.  
+    Vyřešte následující úlohy a výsledek vždy zapište pomocí absolutní hodnoty.
+
+    \begin{tasks}(1)
+        \task \textbf{Teplota:}  
+        V poledne bylo $12\,^\circ\mathrm{C}$ a večer $-3\,^\circ\mathrm{C}$.  
+        Jak velká byla změna teploty? Vyjádřete tuto změnu pomocí absolutní hodnoty.
+
+        \task \textbf{Měření chyby:}  
+        Naměřená délka je $l_m = 24{,}8\,\mathrm{cm}$, skutečná délka $l_s = 25{,}0\,\mathrm{cm}$.  
+        Určete absolutní chybu měření.
+
+        \task \textbf{Vzdálenost na číselné ose:}  
+        Jaká je vzdálenost bodů $A(-4)$ a $B(5)$?  
+        Zapište výpočet pomocí absolutní hodnoty.
+
+        \task \textbf{Pohyb po silnici:}  
+        Auto jelo z bodu $x=0$ do bodu $x=-3$ a poté do bodu $x=5$.  
+        Jakou celkovou dráhu ujelo? Zapište výpočet pomocí absolutní hodnoty.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 8
+% =========================
+\begin{exercise}[Graf funkce]
+    Sestroj graf funkce: 
+    \[
+    m: y= 15 -2|x| - |2x-7| - 3\cdot |1+x|
+    \]
+    , pro $x\in \langle -3;5\rangle$. 
+\end{exercise}
+
+
+% =========================
+% ÚLOHA 9
+% =========================
+\begin{exercise}
+    Načrtněte graf funkce, pro kterou platí:
+    \begin{tasks}
+        \task Její definiční obor je $(-2;2)$, je lichá, je klesající.
+        \task Její definiční obor je $\mathbb{R}$, je shora i zdola omezená, je sudá.
+        \task Její definiční obor je $\langle0;5\rangle$, obor hodnot $\langle0;2\rangle$, v bodě $1$ má maximum, v bodech $0$ a $3$ je minimum.
+    \end{tasks}
+\end{exercise}
+
+
+
+\end{document}

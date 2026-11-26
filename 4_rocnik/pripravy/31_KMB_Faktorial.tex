@@ -1,0 +1,118 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{31}{Faktoriál}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Při řazení šesti lidí dostaneme součin $6\cdot5\cdot4\cdot3\cdot2\cdot1$. Najdeme pro něj krátký zápis a naučíme se upravovat faktoriálové zlomky.
+
+\poznamka{Předpoklady: pravidlo součinu, krácení, kvadratické rovnice. Cíl: vysvětlit $0!$, krátit faktoriály bez vyčíslování velkých čísel, řešit jednoduché rovnice s podmínkami.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+Pro $n\in\mathbb N$ definujeme \textbf{faktoriál} $n!=1\cdot2\cdots n$ a doplňujeme $0!=1$. Pro $n\ge1$ platí $n!=n(n-1)!$.
+\end{definiceBox}
+Zlomek $\frac{(n+2)!}{n!}$ nevyčíslujeme; rozepíšeme jen potřebné činitele a zkrátíme: $\frac{(n+2)(n+1)n!}{n!}=(n+2)(n+1)$ pro $n\in\mathbb N_0$. Faktoriál neplatí pro záporné celé argumenty. Obecně neplatí pravidlo $(a+b)!=a!+b!$.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vypočti $5!$, $0!$, $\frac{7!}{5!}$.
+\tcblower
+$5!=120$, $0!=1$, $7!/5!=7\cdot6=42$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Uprav $\frac{(n+3)!}{(n+1)!}$ pro $n\in\mathbb N_0$.
+\tcblower
+$(n+3)(n+2)$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš v nezáporných celých číslech $\frac{n!}{(n-2)!}=30$.
+\tcblower
+Podmínka $n\ge2$. Rovnice $n(n-1)=30$, tj. $(n-6)(n+5)=0$. Přípustné řešení je $n=6$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Vypočti $6!$ a $\frac{9!}{7!}$.
+\tcblower
+$720$, $9\cdot8=72$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Uprav $\frac{(n+1)!}{(n-1)!}$ pro celé $n\ge1$.
+\tcblower
+$n(n+1)$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Urči $n\ge1$ z rovnice $\frac{(n+1)!}{n!}=8$.
+\tcblower
+$n+1=8$, tedy $n=7$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Vyřeš $\frac{(n+2)!}{n!}=56$ v $\mathbb N_0$.
+\tcblower
+$(n+2)(n+1)=56$, tedy $n^2+3n-54=0=(n-6)(n+9)$. Řešení $n=6$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Vypočti $4!$, $7!$ a $0!$.
+\item Zkrať $\frac{10!}{8!}$ a $\frac{12!}{11!}$.
+\item Uprav $\frac{(n+4)!}{(n+2)!}$ pro $n\in\mathbb N_0$.
+\item Vyřeš $\frac{n!}{(n-2)!}=42$ pro celá $n\ge2$.
+\item Vyřeš $\frac{(n+3)!}{(n+2)!}=11$ pro $n\in\mathbb N_0$.
+\item Vyřeš $\frac{(n+1)!}{(n-1)!}=30$ pro celá $n\ge1$.
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $24$, $5040$, $1$.
+\item $10\cdot9=90$ a $12$.
+\item $(n+4)(n+3)$.
+\item $n(n-1)=42$, tedy $n=7$ (záporný kořen nevyhovuje).
+\item $n+3=11$, tedy $n=8$.
+\item $n(n+1)=30$, tedy $n=5$ (druhý kořen záporný).
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--12 min definice a motivace; 12--27 min krácení; 27--40 min rovnice; 40--45 min závěr a zadání domácí práce.}
+
+\end{document}

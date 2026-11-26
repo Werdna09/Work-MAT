@@ -1,0 +1,118 @@
+% Work-MAT | 2. rocnik | revize cilove obtiznosti exponencialnich uloh | 2026-11-21
+% Zdroje inspirace: autorova ucebnice Work-MAT, dodane ucitelske screenshoty typovych prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Exponenciální nerovnice}{30}{Exponenciální nerovnice II}
+\begin{document}
+\blok{Návaznost a motivace}
+V této hodině se kombinují dříve známé metody řešení exponenciálních rovnic se znaménkovým rozborem nerovnice. U každé substituce musíme respektovat $t>0$. Závěrem se objeví nerovnice s lineárně lomeným exponentem.
+\poznamka{Pro vyučovací hodinu počítej přibližně s 5 minutami opakování, 20 minutami společného výkladu a 20--25 minutami samostatného řešení. Náročnější úlohy slouží jako rezerva pro rychlejší žáky.}
+\blok{Nová myšlenka}
+Nerovnice může po substituci přejít na kvadratickou nebo racionální nerovnici. Nejdřív určíme intervaly pro pomocnou proměnnou $t>0$, pak je převedeme zpět přes rostoucí nebo klesající exponenciální funkci.
+\blok{Společné příklady – od základního typu k cílové obtížnosti}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš $4^x-5\cdot2^x+4\le0$.
+\tcblower
+\[
+\begin{aligned}t&=2^x>0,\\t^2-5t+4&\le0,\\(t-1)(t-4)&\le0,\\1&\le t\le4,\\1&\le2^x\le2^2,\\0&\le x\le2,\\K&=[0;2].\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš $4^x-5\cdot2^x+4>0$.
+\tcblower
+\[
+\begin{aligned}t&=2^x>0,\\(t-1)(t-4)&>0,\\t&\in(0;1)\cup(4;\infty),\\x&<0\ \text{nebo}\ x>2,\\K&=(-\infty;0)\cup(2;\infty).\end{aligned}
+\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš $9^{x+1}+5\cdot6^x<4^{x+1}$.
+\tcblower
+\[
+\begin{aligned}9\left(\frac32\right)^{2x}+5\left(\frac32\right)^x&<4,\\t&=\left(\frac32\right)^x>0,\\(9t-4)(t+1)&<0,\\0<t&<\frac49=\left(\frac32\right)^{-2},\\x&<-2,\\K&=(-\infty;-2).\end{aligned}
+\]
+Vše jsme předem vydělili $4^x>0$, takže směr nerovnosti se nezměnil.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš $\left(\frac12\right)^{\frac{x+2}{x-1}}\le\left(\frac12\right)^2$.
+\tcblower
+\[
+\begin{aligned}x&\ne1,\\\frac{x+2}{x-1}&\ge2,\\\frac{4-x}{x-1}&\ge0,\\K&=(1;4].\end{aligned}
+\]
+Zásadní je znaménková tabulka zlomku; násobení $x-1$ bez rozboru znaménka není dovoleno.
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $4^x-5\cdot2^x+4<0$
+\item $4^x-5\cdot2^x+4\ge0$
+\item $9^{x+1}+5\cdot6^x\le4^{x+1}$
+\item $9^x+3\cdot6^x>4\cdot4^x$
+\item $8^{x-1}\ge4^{x+1}$
+\item $\left(\frac13\right)^{\frac{x+1}{x-2}}<\left(\frac13\right)^2$
+\item $25^x-6\cdot5^x+5<0$
+\item $3^x+3^{x+1}>108$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[
+K=(0;2)
+\]
+\item \[
+K=(-\infty;0]\cup[2;\infty)
+\]
+\item \[
+K=(-\infty;-2]
+\]
+\item \[
+K=(0;\infty)
+\]
+\item \[
+K=[5;\infty)
+\]
+\item \[K=(2;5)\]
+\item \[
+K=(0;1)
+\]
+\item \[
+K=(3;\infty)
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Připrav znaménkovou tabulku a vyřeš $\left(\frac13\right)^{\frac{2x-1}{x+1}}>\left(\frac13\right)^2$.
+\tcblower
+\[
+x\ne-1;\quad \frac{2x-1}{x+1}<2\iff -\frac3{x+1}<0\iff x>-1;\ K=(-1;\infty)
+\]
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $4^x-6\cdot2^x+8\le0$
+\item $9^x-12\cdot3^x+27>0$
+\item $25^x-30\cdot5^x+125<0$
+\item $16^x-10\cdot4^x+16\ge0$
+\item $16^x+2\cdot8^x\le8\cdot4^x$
+\item $9^{x+1}+3\cdot6^x\ge6\cdot4^x$
+\item $\left(\frac12\right)^{\frac{2x-1}{x+2}}>\left(\frac12\right)^1$
+\item $27^{x-1}\le9^{x+2}$
+\item Vysvětli rozdíl mezi nerovnicí v pomocné proměnné $t>0$ a nerovnicí s lineárně lomeným exponentem.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[K=[1;2]\]
+\item \[K=(-\infty;1)\cup(2;\infty)\]
+\item \[K=(1;2)\]
+\item \[K=\left(-\infty;\frac12\right]\cup\left[\frac32;\infty\right)\]
+\item \[K=(-\infty;1]\]
+\item \[K=[-1;\infty)\]
+\item \[K=(-2;3)\]
+\item \[K=(-\infty;7]\]
+\item \[\text{V prvním případě filtrujeme }t>0;\text{ ve druhém hlídáme definiční obor a znaménka.}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Z domácího úkolu zadej přiměřený výběr na 15--30 minut; uvedená sada obsahuje základní i cílové obtížnější typy. Na konci většího celku nech žáky samostatně vybrat metodu řešení.}
+\end{document}

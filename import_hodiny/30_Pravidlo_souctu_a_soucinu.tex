@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{30}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Kombinatorické pravidlo součtu a součinu}\par
+{\sffamily\large\color{teal} Výukový podklad · 30. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.1\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Používat pravidlo součtu pro disjunktní případy a pravidlo součinu pro postupné volby, včetně omezení na jednotlivých pozicích.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Pravidlo součtu.} Jestliže se výsledek uskuteční právě jedním ze vzájemně se vylučujících způsobů A nebo B a A má \(a\) možností, B má \(b\), celkem \(a+b\). Sčítat smíme jen \emph{nepřekrývající se} případy.\par
+\textbf{Pravidlo součinu.} Jestliže první krok má \(a\) možností a po každé volbě prvního kroku následuje právě \(b\) možností druhého kroku, existuje \(ab\) dvojic. Při více krocích násobíme jednotlivé počty.\par
+\textbf{Důležitá podmínka.} Jestliže počty pokračování závisejí na předchozí volbě, rozvětvíme řešení na případy a sečteme jejich výsledky. Stromový diagram pomáhá hlídat, zda jsme žádnou větev nevynechali.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Jízdenku lze koupit ve čtyřech různých tarifech na vlak nebo ve třech tarifech na autobus. Kolik je možností jedné jízdenky?\par
+\textit{Řešení.} Volíme buď vlak, nebo autobus, nikoli oba zároveň. Množiny typů jízdenek jsou disjunktní. \(4+3=7\).\par\smallskip
+\textbf{Příklad 2.} Na oběd je pět hlavních jídel a tři nápoje. Vybíráme jedno z každého.\par
+\textit{Řešení.} Nejprve \(5\) možností jídla a pro každé z nich \(3\) možnosti nápoje. \(5\cdot3=15\).\par\smallskip
+\textbf{Příklad 3.} Kolik existuje čtyřciferných čísel bez opakování číslic?\par
+\textit{Řešení.} První cifra nemůže být \(0\): \(9\) možností. Druhá může být nula, ale nesmí být první cifrou: \(9\). Další cifry: \(8\) a \(7\). Počet \(9\cdot9\cdot8\cdot7=4536\).\par\smallskip
+\textbf{Příklad 4.} Z číslic \(0,1,2,3,4\) vytvoř trojciferná čísla s různými číslicemi dělitelná pěti.\par
+\textit{Řešení.} Takové číslo končí cifrou \(0\) (cifra \(5\) není k dispozici). První cifra má \(4\) možnosti, druhá \(3\); poslední je pevně \(0\). Počet \(4\cdot3=12\).\par\smallskip
+\textbf{Příklad 5.} Čtyřznakový kód z \(A,B,C,D\), v němž nesmějí být stejné sousední znaky.\par
+\textit{Řešení.} První místo \(4\) možnosti; na každém z dalších tří míst jsou \(3\) možnosti (vše kromě bezprostředně předchozího znaku). \(4\cdot3^3=108\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Tři různé příchutě a čtyři polevy: jedna příchuť a jedna poleva.
+\item Do finále se lze dostat jednou z pěti postupových cest A nebo jednou ze sedmi cest B; cesty se nepřekrývají.
+\item Kolik čtyřmístných kódů z číslic \(0\) až \(5\) lze napsat, je-li opakování dovoleno?
+\item Kolik trojciferných čísel lze napsat z číslic \(0\) až \(6\), bez opakování?
+\item Kolik existuje pětimístných hesel ze tří znaků, v nichž žádné dva sousední nejsou stejné?
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item Součin \(3\cdot4=12\).
+\item Součet \(5+7=12\).
+\item Každé místo má \(6\) možností: \(6^4=1296\); kód může začínat nulou.
+\item První cifra \(6\) možností, druhá \(6\), třetí \(5\): \(6\cdot6\cdot5=180\).
+\item První znak \(3\), každý další \(2\): \(3\cdot2^4=48\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Součet neznamená „udělám první volbu, potom druhou“; to je součin.
+\item Nesmí se sčítat překrývající se případy bez korekce.
+\item U čísla je první cifra nenulová, u PINu může být nula.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–7 navázání na výpis; 7–18 součet/součin a strom; 18–30 omezení číslic; 30–41 úlohy; 41–45 kontrola.\par
+\textbf{Návaznost:} Na počítání dlouhých řetězců naváže faktoriál a zkracování součinů.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

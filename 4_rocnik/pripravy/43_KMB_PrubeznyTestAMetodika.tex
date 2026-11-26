@@ -1,0 +1,122 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{43}{Průběžný test a rozbor metod}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Krátký test (15--20 minut) ověří, zda žáci rozlišují permutace, variace a kombinace v obou probíraných situacích s opakováním. Následuje rozbor typických chyb.
+
+\poznamka{Předpoklady: hodiny 29--42. Cíl: diagnostikovat volbu metody a podmínky zadání, nikoli zapamatování názvu vzorce. Tento soubor je metodická příprava, není samostatným zadáním testu.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Ověřované dovednosti:} pořadí versus neuspořádaný výběr; všechny prvky versus jejich část; rozlišitelné prvky versus pevné četnosti stejných prvků; volné opakování v kódu; zákaz počáteční nuly; bloková a doplňková metoda.
+\end{definiceBox}
+Test navrhni s několika krátkými typově odlišnými úlohami. V souhrnném hodnocení je důležitá volba modelu, matematické zdůvodnění a správný výpočet. Kombinace s opakováním a náročné důkazy identit do běžného testu bez předchozího probrání nezařazuj.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+\textbf{Modelový rozbor chyby:} Student napíše pro tříčlennou komisi z osmi lidí $8\cdot7\cdot6$. Co je špatně?
+\tcblower
+Výsledek počítá uspořádané trojice, nikoliv komise bez funkcí. Každá komise je započtena $3!$-krát. Správný počet je $\binom83=56$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+\textbf{Modelový rozbor chyby:} Při přeskupení slova MAMA student použije $4!$. Vysvětli nápravu.
+\tcblower
+Písmena stejného druhu jsou nerozlišitelná. Správně $4!/(2!2!)=6$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+\textbf{Modelový rozbor chyby:} Student počítá čtyřciferná čísla pomocí $10^4$.
+\tcblower
+První číslice nesmí být nula. S opakováním je počet $9\cdot10^3=9000$, zatímco PINů je $10^4$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Pojmenuj metodu: ze šesti lidí seřadíme všechny.
+\tcblower
+Permutace bez opakování.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Pojmenuj metodu: ze šesti lidí obsadíme dvě rozlišené role.
+\tcblower
+Variace bez opakování.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Pojmenuj metodu: vytvoříme pětiznakový kód ze tří znaků, opakování je dovoleno.
+\tcblower
+Variace s opakováním.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Jaký je rozdíl mezi přeskupováním pevného slova AABB a libovolným čtyřznakovým kódem z A,B?
+\tcblower
+Pevné četnosti: $4!/(2!2!)=6$; libovolné volby: $2^4=16$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Rozhodni a vypočti: kolik uspořádání pěti různých lidí existuje?
+\item Rozhodni a vypočti: z osmi lidí vybereme tříčlennou komisi.
+\item Rozhodni a vypočti: ze šesti lidí obsadíme dvě odlišné funkce.
+\item Rozhodni a vypočti: kolik přeskupení má slovo TATA?
+\item Rozhodni a vypočti: kolik tříznakových PINů z číslic $0,1,2,3$ existuje s opakováním?
+\item Z osmi osob vyber tříčlennou komisi, která musí obsahovat Annu. Urči počet a zdůvodni výběr metody.
+\item Kolik čtyřciferných čísel bez opakování vznikne z číslic $0,1,2,3,4$?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $5!=120$.
+\item $\binom83=56$.
+\item $6\cdot5=30$.
+\item $4!/(2!2!)=6$.
+\item $4^3=64$.
+\item Anna je pevně vybrána, z ostatních sedmi vybíráme dvě: $\binom72=21$.
+\item První cifra 4 možnosti, další 4,3,2: $4\cdot4\cdot3\cdot2=96$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: Tato příprava záměrně neobsahuje žákovský test ani varianty A/B; vytvářej je zvlášť podle aktuálního výkonu třídy.}
+
+\poznamka{Orientační průběh: 0--5 min organizace; 5--25 min krátký test vytvořený samostatným postupem; 25--38 min obecný rozbor nejčastějších chyb; 38--45 min cílené procvičení. Domácí úkol slouží k nápravě zjištěných mezer, nemusí být plošně známkován.}
+
+\end{document}

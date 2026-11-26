@@ -1,0 +1,133 @@
+% Work-MAT | 2. ročník | hodina 44 | 2026-11-22
+% Zadání vybírána z WorkMAT_Logaritmy_Sbirka_PodleMetod.tex (481 příkladů)
+% Vždy zachována matematická formulace zdroje, učitelův výklad a řešení dopsány k vybraným příkladům.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{mathtools}
+\nastavPripravu{2. ročník}{Logaritmické rovnice a nerovnice}{44}{Změna základu, exponenciálně-logaritmické rovnice a soustavy}
+\begin{document}
+\blok{Návaznost a cíl hodiny}
+Smíšené úlohy už neprozradí metodu v názvu. Ukážeme změnu základu, logaritmování mocniny a dvě základní cesty pro soustavy logaritmických rovnic.
+\poznamka{\textbf{Časový plán (45--55 minut):} Rozpoznání metody 5 min, příklady 1--3 25 min, samostatná práce a--d 12 min, závěrečné shrnutí 5 min. Čtvrtý příklad jako učitelská rezerva.}
+
+\blok{Klíčová metoda}
+\[
+\log_b u=\frac{\log_a u}{\log_a b}\quad\text{a pro kladná }x,y:\quad\log_a x+\log_a y=\log_a(xy).
+\]
+\poznamka{Nejde o novou definici. Jde o důsledek prostoty a pravidel pro logaritmy, která už žáci znají. V řešení mají vždy uvést podmínky.}
+
+\blok{Společné řešené příklady}
+
+% Sbírka: oddíl 13, položka 2
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš: $\displaystyle \log_9 x+\log_3 x=6$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log_3x,\\
+\log_9x&=\frac{t}{2},\\
+\frac{t}{2}+t&=6,\\
+t&=4,\\
+K&=\{81\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Změna základu: $\log_9x=\frac{\log_3x}{\log_3 9}$.}
+% Sbírka: oddíl 16, položka 1
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš: $\displaystyle x^{\log x}=100x$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log x,\\
+\log\!\left(x^{\log x}\right)&=\log(100x),\\
+t^2&=2+t,\\
+(t-2)(t+1)&=0,\\
+K&=\left\{\frac1{10};100\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Zlogaritmování je ekvivalentní pro kladné strany. U $x^{\log x}$ platí $x>0$.}
+% Sbírka: oddíl 17, položka 1
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš: $\displaystyle \begin{cases}x+y=7\\ \log x+\log y=1\end{cases}$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\ y>0,\\
+\log x+\log y&=1,\\
+xy&=10,\\
+x+y&=7,\\
+(x-2)(x-5)&=0,\\
+K&=\{[2;5];[5;2]\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{U soustav vypiš oba uspořádané body v $K=\{[x;y]\}$; dvojice $[2;5]$ není totéž co $[5;2]$.}
+% Sbírka: oddíl 17, položka 11
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš: $\displaystyle \begin{cases}2x+y=12\\\log_4x+\log_4y=2\end{cases}$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad y>0,\\
+\log_4 x+\log_4 y&=2,\\
+xy&=16,\\
+y&=12-2x,\\
+x(12-2x)&=16,\\
+x^2-6x+8&=0,\\
+K&=\{[2;8];[4;4]\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Vytkni do poznámky, že dvě přípustné varianty kořene dávají dvě různá řešení soustavy.}
+\blok{Samostatná práce}
+\poznamka{Ve třídě doporučuji nejdříve úlohy a)--d); další jsou rezervou pro rychlejší žáky nebo volitelným dokončením po hodině. Neopisovat řešený vzor — vybrat postup.}
+\begin{zadaniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 13, položka 1
+\item $\displaystyle \log_2 x+\log_4 8=\log_8 16$
+% Sbírka: oddíl 13, položka 4
+\item $\displaystyle \log_x2+\log_{4x}8=2\log_{4x}16$
+% Sbírka: oddíl 16, položka 7
+\item $\displaystyle x+\log_2(8+2^x)=7$
+% Sbírka: oddíl 16, položka 17
+\item $\displaystyle 0{,}5^{\log_3 x}+4=4\cdot0{,}5^{\log_3x+1}$
+% Sbírka: oddíl 17, položka 3
+\item $\displaystyle \begin{cases}\log_2 x+\log_4 y=2\\ \log_4 x+\log_2 y=2{,}5\end{cases}$
+% Sbírka: oddíl 17, položka 6
+\item $\displaystyle \begin{cases}\log_2 x+2\log_2 y=10\\2\log_2 x^2-\log_2 y^2=10\end{cases}$
+% Sbírka: oddíl 17, položka 9
+\item $\displaystyle \begin{cases}2^{x+y}\cdot4^{2x-y}=8\\\log_3(x+y)=2\end{cases}$
+% Sbírka: oddíl 17, položka 12
+\item $\displaystyle \begin{cases}\log(x^2)+\log(y^3)=5\\\log(xy)=3\end{cases}$
+\end{enumerate}
+\end{zadaniBox}
+\blok{Úkol na doma}
+Vyřeš úlohy a)--e) a zapiš podmínky. Zbývající úlohy jsou procvičování navíc; podle rychlosti je můžeš dokončit doma. U soustav uváděj $K=\{[x;y]\}$. 
+\begin{zadaniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 13, položka 6
+\item $\displaystyle \log_x2\cdot\log_{2x}2=\log_{4x}2$
+% Sbírka: oddíl 16, položka 2
+\item $\displaystyle x^{\log x+2}=100x$
+% Sbírka: oddíl 16, položka 4
+\item $\displaystyle 27x^2=x^{\log_3 x}$
+% Sbírka: oddíl 16, položka 10
+\item $\displaystyle \log_3(4\cdot2^x)+\log_3 3^{x+2}=\log_3 36^x$
+% Sbírka: oddíl 16, položka 11
+\item $\displaystyle \log_5(10\cdot25^x)-\log_5(5^x+25)=x+1$
+% Sbírka: oddíl 17, položka 4
+\item $\displaystyle \begin{cases}\log_3(x+1)=3^{\log_3 1}\\ \log_{\frac13}(x+y)=1+\log_{\frac13}6\end{cases}$
+% Sbírka: oddíl 17, položka 8
+\item $\displaystyle \begin{cases}xy=100\\\log^2 x+\log^2 y=10\end{cases}$
+% Sbírka: oddíl 13, položka 5
+\item $\displaystyle \log_2x-2\log_4x+\log_8x=1$
+\end{enumerate}
+\end{zadaniBox}
+\poznamka{\textbf{Učitelovo vodítko:} Při soustavě zachovávej pořadí souřadnic a zapisuj $K=\{[x;y]\}$. U změny základu zkontroluj i základy závislé na proměnné. Domácí sada má 8 různých zadání; základních pět úloh na přibližně 15--30 minut a zbytek jako volitelnou zásobu.}
+\end{document}

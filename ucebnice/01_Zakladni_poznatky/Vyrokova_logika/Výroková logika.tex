@@ -1,0 +1,957 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage{ucebnice}
+
+\title{Základní matematické poznatky}
+\author{Ondřej Škubala}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+\newpage
+
+
+
+\section{Výroková logika}
+
+\begin{quotebox}{„Všichni lidé jsou smrtelní.\\
+Sokrates je člověk.\\
+\emph{Tedy Sokrates je smrtelný.“}}{Aristoteles}
+\end{quotebox}
+
+\subsection{Výrok}
+
+V běžném životě neustále vyslovujeme nejrůznější věty. Některé z těchto vět mají podobu otázek, jiné rozkazů či přání.  
+\important{Matematická logika} se však zaměřuje pouze na takové věty, o nichž můžeme jednoznačně říct, zda jsou pravdivé, nebo nepravdivé.  
+Právě tyto věty nazýváme \important{výroky}.
+
+\begin{definitionbox}
+\textbf{Výrok} je oznamovací věta, u které má smysl rozhodnout, zda je \important{pravdivá}, nebo \important{nepravdivá}.  
+A tuto skutečnost o ni lze jednoznačně prohlásit.
+\end{definitionbox}
+
+\begin{examplebox}
+\textbf{Co výrok je:}
+\begin{itemize}
+    \item „Hlavní město Indie je Staré Dillí.“                          \hfill (nepravdivý výrok)
+    \item „Číslo $\pi$ je iracionální.“                                 \hfill (pravdivý výrok)
+    \item „Pro všechna $a,b$ platí, že $(a + b)^2 = a^2 + 2ab + b^2 $“   \hfill (pravdivý výrok)
+\end{itemize}
+
+\textbf{Co výrok není:}
+\begin{itemize}
+    \item „Listí a strom“                           \hfill (nedává smysl jako tvrzení)
+    \item „Kolik je hodin?“                         \hfill (otázka)
+    \item „Otevři dveře!“                           \hfill (rozkaz)
+    \item $(a + b)^2 = a^2 + 2ab + b^2$             \hfill (rovnice)
+\end{itemize}
+\end{examplebox}
+Výroky tedy nejsou otázky, básnické obrazy, nesmysly apod. Může se zdát zvláštní, že 3. výrok: 
+\emph{„Pro všechna $a,b$ platí, že $(a + b)^2 = a^2 + 2ab + b^2 $“}, je výrok a dokonce pravdivý avšak
+bezeslov zaspán tentýž výrok $(a + b)^2 = a^2 + 2ab + b^2$, již výrokem není. 
+Vycházíme totiž z toho faktu, že nevíme co jsou proměnné $a, b$ a pro které hodnoty tato rovnost nastává.  
+
+\newpage
+\subsection{Pravdivostní hodnota}
+
+Každý výrok, o kterém lze říct, zda platí, dostává jednu ze dvou \important{pravdivostních hodnot}.  
+Pokud výrok skutečně odpovídá realitě, považujeme jej za \emph{pravdivý}.  
+Pokud naopak výrok skutečnosti neodpovídá, nazáváme jej \emph{nepravdivý}. 
+Pravdivostní hodnoty zapisujeme zjednodušeně pomocí číslic:
+\begin{itemize}
+    \item \textbf{1} – výrok je pravdivý,  
+    \item \textbf{0} – výrok je nepravdivý.
+\end{itemize}
+Nebo je také zapisujeme jako \emph{P/Np}, nebo \emph{T/F}, z anglického \emph{True} a \emph{False}.
+Avšak v matematice se nejčastěji setkáme se zápisem pomocí číslic.
+
+\begin{examplebox}
+\begin{itemize}
+    \item „Venku svítí slunce.“ $\;\Rightarrow\;$ může mít hodnotu 1 (pokud svítí), nebo 0 (pokud nesvítí).  
+    \item „10 je liché číslo.“ $\;\Rightarrow\;$ hodnota 0, protože výrok je nepravdivý.  
+\end{itemize}
+\end{examplebox}
+\subsection{Negace výroku}
+
+Ke každému výroku existuje vždy i \emph{výrok opačné pravdivostní hodnoty}.  
+Tím provádíme tzv. \important{negaci výroku}.  
+Negace výroku tedy převrací pravdivost: pokud původní výrok platil, pak jeho negace neplatí, a naopak.  
+
+\begin{definitionbox}
+Je-li dán výrok $A$, pak \textbf{negace výroku} $A$ je výrok, který je pravdivý právě tehdy, když $A$ není pravdivý.  
+Negaci značíme symbolem $\neg A$, případně $\overline{A}$.
+\end{definitionbox}
+
+Protože máme výrok o kterém můžeme říct, zdali je pravdivý, či nepravdivý. 
+Můžeme z toho také odvodit, že při negaci negovaného výroku, nám nemůže vzniknout 
+nová pravdivostní hodnota než byla hodnota výroku původního. Toto pozorování se nazývá \emph{Zákon vyloučení třetí možnosti}.
+
+\begin{notebox}
+\textbf{Zákon vyloučení třetí možnosti:}  
+Každý výrok je buď pravdivý, nebo nepravdivý. Neexistuje žádná třetí možnost.  
+Jinými slovy, platí tedy:
+\begin{center}
+    $\neg (\neg A) = A$.
+\end{center} 
+Negace negace výroku je tedy opět původní výrok.
+\end{notebox}
+
+\begin{examplebox}
+\textbf{Příklady:}
+\begin{itemize}
+    \item Výrok: „Venku svítí slunce.“  
+          Negace: „Venku \emph{nesvítí} slunce.“  
+    \item Výrok: „Číslo 10 je liché.“  
+          Negace: „Číslo 10 \emph{není} liché.“  
+\end{itemize}
+\end{examplebox}
+
+
+Je užitečné zároveň umět negovat výrok, ve kterém se nachází číselný údaj např. nejvýše, resp. alespoň.
+Důležité je však uvědomit si, co nám tyto slova říkají.
+
+\begin{notebox}
+    Řekneme-li, že se v množině nachází \textbf{alespoň} $k$ prvků, znamená to, že počet prvků je \textbf{větší nebo roven číslu $k$}.
+
+    Řekneme-li, že se v množině nachází \textbf{nanejvýš} $k$ prvků, znamená to, že počet prvků je \textbf{menší nebo roven číslu $k$}.
+\end{notebox}
+
+Negaci výroků tohoto typu dostaneme, když si uvědomíme, že  platí:
+
+Neobsahuje-li množina aspoň $k$ prvků, je počet prvků tedy menší než $k$, neboli je menší nebo roven $k-1$. To tedy znamená, že počet prvků takové množiny je nejvýše $k-1$.
+
+Neobsahuje-li množina nanejvýš $k$ prvků, je počet prvků tedy větší než $k$, neboli je větší nebo roven $k+1$. To tedy znamená, že počet prvků takové množiny je nejméně $k+1$.
+
+Z čehož nám poté vyplývá následující a sice, že:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|C{5cm}|C{2cm}|C{7cm}|}
+\hline
+\rowcolor{pastelblue!40}
+\textbf{Výrok} & \textbf{Význam} & \textbf{Negace} \\
+\hline
+„Množina má \textbf{alespoň} $k$ prvků.“ 
+& $n \geq k$
+& „Množina má \textbf{nejvýše} $k-1$ prvků.“ \quad ($n \leq k-1$) \\
+\hline
+„Množina má \textbf{nanejvýš} $k$ prvků.“ 
+& $n \leq k$
+& „Množina má \textbf{alespoň} $k+1$ prvků.“ \quad ($n \geq k+1$) \\
+\hline
+„Množina má \textbf{právě} $k$ prvků.“ 
+& $n = k$
+& „Množina nemá právě $k$ prvků.“ \quad ($n \neq k$) \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{notebox}
+    Z tvrzení, že \emph{„Množina má $k$ prvků“} nelze zjistit, zdali má nanjevýš, nebo alespoň anebo právě $k$ prvků. 
+    Z toho důvodu abychom se vyhnuli těmto nejasnostem, musíme vždy ujasnit údaj o počtu prvků v dané množině.
+\end{notebox}
+\subsection{Složené výroky a výrokové spojky}
+Samotné jednoduché výroky by v praxi neměly tak velký význam.  
+Proto jednotlivé výroky spojujeme do tzv. \important{složených výroků}, nazývaných také \emph{formule}, pomocí \emph{výrokových spojek}.
+A ty pak dále do \important{složených výrokových forem}
+Díky nim dokážeme tvořit složitější tvrzení a zkoumat jejich pravdivost.  
+
+\begin{definitionbox}
+\textbf{Složený výrok} vzniká spojením dvou nebo více jednoduchých výroků pomocí \important{výrokových spojek}.  
+Pravdivost složeného výroku závisí na pravdivostních hodnotách jednotlivých částí.
+\end{definitionbox}
+
+\newpage
+
+Máme několik základních výrokových spojek. Avšak nejdůležitějšími typy, kterými se budeme zabývat jsou
+\important{konjunkce}, \important{disjunkce}, \important{implikace}, \important{ekvivalence} a řadí se sem i \important{negace}.
+Tyto výrokové spojky čteme jako:
+
+\begin{itemize}
+    \item \textbf{Konjunkce} ($A \land B$): „$A$ a zároveň $B$“
+    \item \textbf{Disjunkce} ($A \lor B$): „$A$ nebo $B$“ (v logice \emph{inkluzivní})
+    \item \textbf{Implikace} ($A \Rightarrow B$): „jestliže $A$, pak $B$“
+    \item \textbf{Ekvivalence} ($A \Leftrightarrow B$): „$A$ právě tehdy, když $B$“
+    \item \textbf{Negace} ($\neg A$): „Není pravda, že …“
+\end{itemize}
+
+\subsubsection*{Konjunkce}
+\begin{definitionbox}
+    \textbf{Konjunkce} libovolných dvou výroků $A, B$ je výrok, který vznikne jejich spojením spojkou \textbf{a}.
+    Konjunkci výroků $A, B$ zapisujeme jako $A \land B$ a tento zápis čteme jako „$A$ a $B$“, nebo také jako „$A$ a zároveň $B$“.
+\end{definitionbox}
+
+
+\begin{examplebox}
+\begin{tabbing}
+    Mějme výroky a z nich utvoříme pomocí konjunkce složené výroky:\\
+    $A$: Číslo 5 je prvočíslo. \=
+    $B$: Číslo 5 je liché.\\
+    $C$: Číslo 5 je záporné.\>
+    $D$: Číslo 5 je sudé.\\
+    \\
+    $A \land B$: Číslo 5 je prvočíslo a zároveň je liché. \\
+    $A \land C$: Číslo 5 je prvočíslo a zároveň je záporné.\\
+    $D \land B$: Číslo 5 je sudé a zároveň liché.\\
+    $D \land C$: Číslo 5 je sudé a zároveň záporné.
+\end{tabbing}
+\end{examplebox}
+
+Přechozí příklad nám poslouží k tomu, abychom si na něm ukázali jak závisí pravdivostní hodnoty konjunkce na hodnotách jednotlivých výroků.
+Ze všech výše vytvořených konjunkcí lze jen o jediné tvrdit, že je pravdivá. A je to hned ta první $A \land B$. O všech ostatních nemůžeme logickou dedukcí
+dojít k závěru, že by byli pravdivé. Můžeme tedy říct, že ze všech těchto konjunkcí byla pradivá pouza ta, ve které byly oba výroky pravdivé.
+V souladu s touto logickou dedukcí lze nyní definovat pravdivostní hodnotu konjunkce každých dvou výroků takto:
+
+\begin{definitionbox}
+    \textbf{Konjunkce} libovolných dvou výroků $A$ a $B$ \textbf{je pravdivá} právě tehdy, jsou-li pradivé oba její výroky $A,B$.
+\end{definitionbox}
+
+
+\subsubsection*{Disjunkce}
+\begin{definitionbox}
+    \textbf{Disjunkce} libovolných dvou výroků $A, B$ je výrok, který vznikne jejich spojením spojkou \textbf{nebo}.  
+    Disjunkci výroků $A, B$ zapisujeme jako $A \lor B$ a tento zápis čteme jako „$A$ nebo $B$“, případně „$A$ alespoň jedno z $A, B$“.
+\end{definitionbox}
+
+\begin{notebox}
+V matematické logice se výrok „$A$ nebo $B$“ chápe jako \textbf{inkluzivní disjunkce}, tj. pravdivý je i v případě, že platí oba výroky současně.  
+Pozor: v běžném jazyce se často „nebo“ používá exkluzivně (buď jedno, nebo druhé, ale ne oboje).
+\end{notebox}
+
+\begin{examplebox}
+\begin{tabbing}
+    Mějme výroky a z nich utvoříme pomocí disjunkce složené výroky:\\
+    $A$: Číslo 5 je prvočíslo. \= 
+    $B$: Číslo 5 je liché.\\
+    $C$: Číslo 5 je záporné.\>
+    $D$: Číslo 5 je sudé.\\
+    \\
+    $A \lor B$: Číslo 5 je prvočíslo nebo je liché. \\ 
+    $A \lor C$: Číslo 5 je prvočíslo nebo je záporné.\\
+    $D \lor B$: Číslo 5 je sudé nebo je liché.\\
+    $D \lor C$: Číslo 5 je sudé nebo je záporné.
+\end{tabbing}
+\end{examplebox}
+
+Z uvedených příkladů si můžeme všimnout, že disjunkce je pravdivá tehdy, pokud platí alespoň jeden z výroků.  
+Například disjunkce $A \lor B$ je pravdivá, protože oba výroky $A$ i $B$ jsou pravdivé. Složený výrok $A \lor C$ je taktéž pravdivý, protože i když $C$ je nepravdivý výrok, tak výrok $A$ je pravdivý.  
+Naopak disjunkce $D \lor C$ není pravdivá, protože oba výroky $D$ i $C$ jsou nepravdivé.
+
+\begin{definitionbox}
+    \textbf{Disjunkce} libovolných dvou výroků $A$ a $B$ \textbf{je pravdivá} právě tehdy, je-li pravdivý alespoň jeden z výroků $A$ nebo $B$.  
+    Nepravdivá je pouze v případě, kdy jsou oba výroky $A, B$ nepravdivé.
+\end{definitionbox}
+
+\subsubsection*{Implikace}
+\begin{definitionbox}
+    \textbf{Implikace} libovolných dvou výroků $A, B$ je výrok, který vznikne spojením „jestliže … pak …“.  
+    Implikaci zapisujeme jako $A \Rightarrow B$ a čteme jako „jestliže $A$, pak $B$“.
+\end{definitionbox}
+\newpage
+\begin{examplebox}
+\begin{tabbing}
+    Mějme výroky a z nich utvoříme pomocí implikace složené výroky:\\
+    $A$: Číslo 5 je prvočíslo. \= 
+    $B$: Číslo 5 je liché.\\
+    $C$: Číslo 5 je záporné.\>
+    $D$: Číslo 5 je sudé.\\
+    \\
+    $A \Rightarrow B$: Jestliže je číslo 5 prvočíslo, pak je liché. \\ 
+    $A \Rightarrow D$: Jestliže je číslo 5 prvočíslo, pak je sudé. \\
+    $D \Rightarrow A$: Jestliže je číslo 5 sudé, pak je prvočíslo.\\
+    $C \Rightarrow D$: Jestliže je číslo 5 záporné, pak je sudé.
+\end{tabbing}
+\end{examplebox}
+
+Na těchto příkladech odhalíme, že všechny implikace jsou pravdivé, kromě situace $A \Rightarrow D$, která je nepravdivá, protože 5 je sice prvočíslo, ale není sudé.  
+
+\begin{definitionbox}
+    \textbf{Implikace} $A \Rightarrow B$ je \textbf{nepravdivá} pouze v případě, že výrok $A$ je pravdivý a výrok $B$ je nepravdivý.  
+    Ve všech ostatních případech je pravdivá.
+\end{definitionbox}
+
+\begin{notebox}
+    U implikace $A \Rightarrow B$ se výrok $A$ nazývá \textbf{předpoklad} (nebo \textbf{antecedent})  
+    a výrok $B$ se nazývá \textbf{závěr} (nebo \textbf{konsekvent}).  
+
+    Místo slovního spojení „jestliže $A$, pak $B$“ se také říká, že:  
+    \begin{itemize}
+        \item $A$ je \textbf{postačující podmínka} pro $B$,  
+        \item $B$ je \textbf{nutná podmínka} pro $A$.
+    \end{itemize}
+\end{notebox}
+
+    Někdy nás zajímá i tzv. \textbf{obrácená implikace}.  
+    Pokud platí $A \Rightarrow B$, neznamená to automaticky, že platí i $B \Rightarrow A$.  
+    Pokud je výrok $A$ pravdivý a výrok $B$ nepravdivý, pak implikace $A \Rightarrow B$ neplatí.  
+    Obrácená implikace $B \Rightarrow A$ však může mít jinou pravdivostní hodnotu, a proto je potřeba je rozlišovat.
+
+\begin{examplebox}
+    Mějme dva výroky, výrok $A$: „Trojúhelník je rovnostranný.“ a výrok $B$: „Trojúhelník je rovnoramenný.“
+
+\begin{itemize}
+    \item $A \Rightarrow B$: „Jestliže je trojúhelník rovnostranný, pak je rovnoramenný.“  
+          \hfill (pravdivý výrok, protože každý rovnostranný trojúhelník je i rovnoramenný)
+    \item $B \Rightarrow A$: „Jestliže je trojúhelník rovnoramenný, pak je rovnostranný.“  
+          \hfill (nepravdivý výrok, protože existují rovnoramenné trojúhelníky, které nejsou rovnostranné)
+\end{itemize}
+
+Tento příklad jasně ukazuje, že \textbf{implikace a její obrácený tvar nejsou totéž}.  
+První implikace ($A \Rightarrow B$) platí, ale její obrácená ($B \Rightarrow A$) už nikoli.
+\end{examplebox}
+
+Logické spojky můžeme použít i na výroky, které spolu na první pohled nijak nesouvisejí.  
+    Logika se totiž zajímá jen o jejich pravdivostní hodnoty, nikoli o obsahovou souvislost. Jako můžeme vidět na příkladu další straně. \newpage
+
+\begin{examplebox}
+       Mějme dva pravdivé výroky $A$: „Velryba je savec.“ a $B$: „J. A. Komenský se narodil roku 1592.“.
+
+
+    \begin{itemize}
+        \item $A \Rightarrow B$: „Je-li je velryba savec, pak se J. A. Komenský narodil roku 1592.“  
+        \item $B \Rightarrow A$: „Jestliže se J. A. Komenský narodil roku 1592, pak je velryba savec.“
+    \end{itemize}
+
+    Přestože spojení působí nesmyslně, z hlediska výrokové logiky se s ním pracuje zcela stejně jako s jinými implikacemi.
+    I přesto, že obě implikace jsou pravdivé, tak se naštěstí s podobnými výroky nesetkáváme.
+\end{examplebox}
+
+\subsubsection*{Tautologie a kontradikce}
+
+Některé výrokové formule mají tu vlastnost, že jsou \textbf{vždy pravdivé}, bez ohledu na pravdivostní hodnotu jednotlivých výroků.  
+Takovým formulím říkáme \important{tautologie}.  
+
+Naopak výrokové formule, které jsou \textbf{vždy nepravdivé}, se nazývají \important{kontradikce}.  
+
+\begin{examplebox}
+\begin{itemize}
+    \item Tautologie: $A \Rightarrow (A \lor B)$  
+          Tento výrok je vždy pravdivý, protože pokud $A$ platí, pak $A \lor B$ je také pravdivé,  
+          a pokud $A$ neplatí, pak implikace $A \Rightarrow (A \lor B)$ je stejně pravdivá.  
+
+    \item Kontradikce: $A \land \neg A$  
+          Tento výrok je vždy nepravdivý, protože výrok nemůže být současně pravdivý i nepravdivý.
+\end{itemize}
+\end{examplebox}
+
+
+\subsubsection*{Ekvivalence}
+Nejprve si připomeňme tabulky pro základní spojky:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|C{1cm}|C{1cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\rowcolor{pastelblue!40}
+\hline
+$A$ & $B$ & $A \land B$ & $A \lor B$ & $A \Rightarrow B$ \\
+\hline
+1 & 1 & 1 & 1 & 1 \\
+1 & 0 & 0 & 1 & 0 \\
+0 & 1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+Pokud vezmeme současně $A \Rightarrow B$ i $B \Rightarrow A$, můžeme je spojit do jednoho složeného výroku pomocí konjunkce, který poté nazýváme ekvivalence:  
+\[
+(A \Rightarrow B) \land (B \Rightarrow A)
+\]
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|C{1cm}|C{1cm}|C{1.5cm}|C{1.5cm}|C{4cm}|}
+\rowcolor{pastelblue!40}
+\hline
+$A$ & $B$ & $A \Rightarrow B$ & $B \Rightarrow A$ & $(A \Rightarrow B) \land (B \Rightarrow A)$ \\
+\hline
+1 & 1 & 1 & 1 & 1\\
+1 & 0 & 0 & 1 & 0\\
+0 & 1 & 1 & 0 & 0\\
+0 & 0 & 1 & 1 & 1\\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{definitionbox}
+\textbf{Ekvivalence} dvou výroků $A$ a $B$ zapisujeme jako $A \Leftrightarrow B$.  
+Čteme „$A$ právě tehdy, když $B$“.
+\end{definitionbox}
+
+\begin{notebox}
+Někdy se také říká, že „$A$ je nutná a postačující podmínka pro $B$“.  
+Toto vyjádření se používá hlavně v matematických definicích a důkazech.
+\end{notebox}
+
+Z předchozí pravdivostní tabulky můžeme vidět, že: 
+
+\begin{definitionbox}
+    Výrok $A \Leftrightarrow B$ je \textbf{pravdivý} tehdy, když oba výroky $A$ a $B$ mají stejnou pravdivostní hodnotu  
+    (oba jsou pravdivé, nebo oba jsou nepravdivé).  
+    Nepravdivý je tehdy, když mají různé pravdivostní hodnoty.
+\end{definitionbox}
+
+\begin{examplebox}
+    Příkladem pravdivé ekvivalence je výrok:  
+
+    \emph{„Druhá mocnina délky nejdelší strany trojúhelníku $ABC$ je rovna součtu druhých mocnin délek jeho zbývajících stran
+    právě tehdy, když je trojúhelník $ABC$ pravoúhlý.“}
+
+
+    Tento výrok je ekvivalence, protože oba dílčí výroky mají vždy stejnou pravdivostní hodnotu:  
+    \begin{itemize}
+        \item jsou \textbf{pravdivé}, pokud je trojúhelník $ABC$ pravoúhlý,  
+        \item jsou \textbf{nepravdivé}, pokud trojúhelník $ABC$ pravoúhlý není.  
+    \end{itemize}
+\end{examplebox}
+
+\subsubsection*{Negace složených výroků}
+
+Negace složených výroků se dá dobře pochopit na příkladu.  
+Podívejme se na výroky $A$ a $B$ a jejich konjunkci $A \land B$.  
+Zkusme zjistit, jak vypadá negace $\neg(A \land B)$ pomocí pravdivostní tabulky:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|C{1cm}|C{1cm}|C{2cm}|C{2cm}|}
+\rowcolor{pastelblue!40}
+\hline
+$A$ & $B$ & $A \land B$ & $\neg(A \land B)$ \\
+\hline
+1 & 1 & 1 & 0 \\
+1 & 0 & 0 & 1 \\
+0 & 1 & 0 & 1 \\
+0 & 0 & 0 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+Vidíme, že ve sloupci $\neg(A \land B)$ máme tři jedničky (ve všech případech kromě situace, kdy jsou oba výroky pravdivé).  
+Když tuto pravdivostní hodnotu porovnáme s výroky $\neg A$ a $\neg B$, dostaneme:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|C{1cm}|C{1cm}|C{1cm}|C{1cm}|C{3cm}|}
+\rowcolor{pastelblue!40}
+\hline
+$A$ & $B$ & $\neg A$ & $\neg B$ & $(\neg A \lor \neg B)$ \\
+\hline
+1 & 1 & 0 & 0 & 0 \\
+1 & 0 & 0 & 1 & 1 \\
+0 & 1 & 1 & 0 & 1 \\
+0 & 0 & 1 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+A zjistíme tedy, že poslední sloupce obou tabulek jsou stejné, což znamená, že platí následující logická ekvivalence:
+\[
+\neg(A \land B) \Leftrightarrow (\neg A \lor \neg B).
+\]
+Takto jsme odvodili první z \important{De Morganových zákonů}.  
+Podobným způsobem lze dokázat i ostatní:
+\begin{notebox}
+\textbf{De Morganovy zákony:}
+\begin{align*}
+\neg(A \lor B) &\Leftrightarrow (\neg A) \land (\neg B), \\
+\neg(A \land B) &\Leftrightarrow (\neg A \lor \neg B), \\
+\neg(A \Rightarrow B) &\Leftrightarrow A \land \neg B, \\
+\neg(A \Leftrightarrow B) &\Leftrightarrow (A \land \neg B) \lor (\neg A \land B).
+\end{align*}
+\end{notebox}
+
+
+\subsubsection*{Shrnutí pravdivostních hodnot}
+
+Všechny výrokové spojky, které jsme dosud zavedli, můžeme shrnout do jediné \emph{pravdivostní tabulky}.  
+Ta ukazuje, jakou pravdivostní hodnotu má složený výrok pro všechny možné kombinace hodnot výroků $A$ a $B$.
+
+\begin{center}
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{|C{1cm}|C{1cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|C{1.5cm}|}
+\rowcolor{pastelblue!40}
+\hline
+$A$ & $B$ & $\neg A$ & $A \land B$ & $A \lor B$ & $A \Rightarrow B$ & $A \Leftrightarrow B$ \\
+\hline
+1 & 1 & 0 & 1 & 1 & 1 & 1 \\
+1 & 0 & 0 & 0 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 1 & 1 \\
+\hline
+\end{tabular}
+\end{center}
+
+Tato tabulka je základním nástrojem výrokové logiky, protože přehledně shrnuje chování všech běžně používaných spojek.
+\subsection{Kvantifikované výroky a jejich negace}
+
+Doposud jsme se zabývali jednotlivými výroky (např. „číslo 5 je liché“).  
+V matematice se však často setkáváme s výroky, které se vztahují k celé množině objektů, např. \emph{„Každé přirozené číslo je větší než nula.“}.  
+Takovým výrokům říkáme \important{kvantifikované výroky}.  
+Kvantifikátory vyjadřují, zda vlastnost platí pro všechny prvky množiny, nebo pouze pro některé prvky.  
+
+Rozlišujeme dva kvantifikátory:  
+\important{Univerzální} (velký) kvantifikátor a \important{Existenční} (malý) kvantifikátor.
+
+\begin{definitionbox}
+\begin{itemize}
+    \item \textbf{Univerzální kvantifikace} ($\forall$): říká, že výrok platí pro všechny prvky dané množiny.  
+    Například: „\textbf{Všechna} přirozená čísla jsou větší než $0$. “  
+    Zapisujeme symbolem $\forall$.
+    \item \textbf{Existenční kvantifikace} ($\exists$): říká, že výrok platí alespoň pro jeden prvek množiny.  
+    Například: „\textbf{Existuje alespoň jedno} přirozené číslo, které je větší než $10$. “  
+    Zapisujeme symbolem $\exists$.
+\end{itemize}
+\end{definitionbox}
+
+\begin{examplebox}
+\begin{itemize}
+    \item $\forall n \in \mathbb{N}: n+1 > n$ \hfill (každé přirozené číslo je menší než jeho následník)  
+    \item $\exists n \in \mathbb{N}: n^2 = 16$ \hfill (existuje přirozené číslo, jehož druhá mocnina je 16)
+\end{itemize}
+\end{examplebox}
+
+Stejně jako ve výrokové logice, i u kvantifikátorů můžeme tvořit \important{negace}.  
+Platí jednoduchý princip: negací univerzálního výroku je výrok existenční a negací existenčního výroku je výrok univerzální.
+
+\begin{notebox}
+\textbf{Pravidla pro negaci kvantifikovaných výroků:}
+\begin{align*}
+\neg(\forall x \in M: P(x)) &\Leftrightarrow \exists x \in M: \neg P(x) \\
+\neg(\exists x \in M: P(x)) &\Leftrightarrow \forall x \in M: \neg P(x)
+\end{align*}
+\end{notebox}
+
+Pro přehlednost lze pravidla shrnout do tabulky:
+\begin{center}
+\renewcommand{\arraystretch}{1.3}
+\begin{tabular}{|C{6,5cm}|C{8cm}|}
+\hline
+\rowcolor{pastelblue!40}
+\textbf{Výrok} & \textbf{Negace výroku} \\
+\hline
+„Každý … je …“ & „Existuje alespoň jeden …, který není …“ \\
+\hline
+„Alespoň jeden … je …“ & „Pro každý … platí, že není …“ \\
+\hline
+„Žádný … není …“ & „Existuje alespoň jeden …, který je …“ \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}
+\begin{itemize}
+    \item Výrok: „Každý žák složil zkoušku.“  
+          Negace: „Existuje alespoň jeden žák, který nesložil zkoušku.“  
+    \item Výrok: „Existuje reálné číslo, které je větší než 10.“  
+          Negace: „Žádné reálné číslo není větší než 10.“  
+\end{itemize}
+\end{examplebox}
+
+Podobně se negují i výroky s nerovnostmi: 
+
+\begin{notebox}
+\begin{align*}
+\neg(x > a) &\Leftrightarrow x \leq a \\
+\neg(x \geq a) &\Leftrightarrow x < a \\
+\neg(x < a) &\Leftrightarrow x \geq a \\
+\neg(x \leq a) &\Leftrightarrow x > a \\
+\neg(x = a) &\Leftrightarrow x \neq a
+\end{align*}
+\end{notebox}
+
+\subsection{Logická výstavba matematiky}
+
+Základní výstavba matematiky je založena na \important{axiomech} a jejich soustavách.  
+\textbf{Axiomy} jsou základní tvrzení (výroky), které přijímáme jako pravdivé i bez důkazu.  
+Axiomy tvoří výchozí bod, z něhož se pak logickými postupy odvozují další matematická tvrzení.  
+
+Axiomy mají několik základních vlastností:
+\begin{itemize}
+    \item \textbf{Jednoduchost}: axiom by měl být co nejjednodušší a intuitivně pochopitelný,  
+    \item \textbf{Bezespornost}: axiom by neměl vést k rozporům,  
+    \item \textbf{Nezávislost}: axiom nesmí být odvoditelný z jiných axiomů,  
+    \item \textbf{Úplnost}: soustava axiomů by měla umožnit rozhodnout pravdivost nebo nepravdivost dalších tvrzení.
+\end{itemize}
+
+\begin{examplebox}
+Příklady axiomů:
+\begin{itemize}
+    \item \textbf{Peanovy axiomy}, které definují přirozená čísla $\mathbb{N}$.  
+    \item Axiomy na začátku \textit{Eukleidových Základů}, které tvoří základ klasické geometrie.
+\end{itemize}
+\end{examplebox}
+
+\begin{definitionbox}
+\textbf{Definice} je přesné určení významu pojmů na základě již známých pojmů, pravidel a jejich vlastností.  
+Definice musí být jednoznačná a neměla by obsahovat tzv. „logické kruhy“ (definice kruhem).  
+\end{definitionbox}
+
+\begin{examplebox}
+Příklad definice:  
+„Číslo je \textbf{sudé}, pokud existuje celé číslo $k$, pro které platí $n = 2k$.“
+\end{examplebox}
+
+Z axiomů a definic se pak odvozují \important{matematické věty}.  
+Matematická věta je výrok, který lze dokázat na základě axiomů, definic nebo jiných vět a má konkrétní matematický obsah.  
+Matematické věty mají často tvar implikace nebo ekvivalence.  
+
+Rozlišujeme několik typů vět:
+\begin{itemize}
+    \item \textbf{Lemma}: pomocná věta, která spojuje a pomáhá při důkazech složitějších vět.  
+    \item \textbf{Věta}: obecné tvrzení.  
+    \item \textbf{Koro­lár (důsledek)}: věta, která přímo vyplývá z jiné věty.
+\end{itemize}
+
+\begin{examplebox}
+Příklad matematické věty:  
+\textbf{Pythagorova věta} – V každém pravoúhlém trojúhelníku platí:  
+„Obsah čtverce nad přeponou je roven součtu obsahů čtverců nad odvěsnami.“  
+Symbolicky: \[ c^2 = a^2 + b^2. \]
+\end{examplebox}
+
+\subsubsection*{Hierarchie matematických tvrzení}
+
+Celá matematika se dá chápat jako logická stavba, kde každý prvek navazuje na ten předchozí:
+
+\begin{center}
+\renewcommand{\arraystretch}{1.4}
+\begin{tabular}{|C{3cm}|C{11,5cm}|}
+\hline
+\rowcolor{pastelblue!40}
+\textbf{Úroveň} & \textbf{Popis} \\
+\hline
+\textbf{Axiomy} & Základní tvrzení přijímaná bez důkazu (např. „Pro každé číslo $n$ existuje jeho následník $n+1$“ – Peanův axiom). \\
+\hline
+\textbf{Definice} & Určení významu pojmů (např. „Sudé číslo je číslo dělitelné dvěma“). \\
+\hline
+\textbf{Věty} & Tvrzení dokazovaná na základě axiomů a definic (např. Pythagorova věta). \\
+\hline
+\textbf{Důsledky (koroláry)} & Věty přímo vyplývající z jiných vět (např. z Pythagorovy věty plyne: „Pravoúhlý trojúhelník nemůže být rovnoramenný se stranami délky 3, 3, 3“). \\
+\hline
+\end{tabular}
+\end{center}
+
+\begin{examplebox}
+\textbf{Ukázka logické výstavby v analýze:}
+
+\begin{itemize}
+    \item \textbf{Axiom}: Každá shora omezená množina reálných čísel má supremum.  
+    \item \textbf{Definice}: Posloupnost $(a_n)$ má limitu $A$, jestliže pro každé $\varepsilon > 0$ existuje $N \in \mathbb{N}$ takové, že pro všechna $n \geq N$ platí $|a_n - A| < \varepsilon$.  
+    \item \textbf{Lemma}: Má-li posloupnost limitu, pak je tato limita jednoznačná.  
+    \item \textbf{Věta}: Pokud $(a_n) \to A$ a $(b_n) \to B$, pak platí $(a_n + b_n) \to A + B$.  
+    \item \textbf{Důsledek}: Pokud $(a_n) \to A$ a $c \in \mathbb{R}$, pak $(c \cdot a_n) \to cA$.
+\end{itemize}
+\end{examplebox}
+
+\subsubsection*{Základní typy matematických důkazů}
+
+Matematické věty dokazujeme různými způsoby. Mezi nejčastější patří:
+
+\begin{definitionbox}
+\textbf{Přímý důkaz} spočívá v tom, že z předpokladů postupně odvozujeme další tvrzení, až dojdeme k závěru.  
+Typické je dokazování implikace $A \Rightarrow B$: předpokládáme, že $A$ platí, a logickými kroky ukážeme, že z toho nutně plyne i $B$.
+\end{definitionbox}
+
+\begin{examplebox}
+Příklad přímého důkazu:  
+„Jestliže je číslo $n$ sudé, pak je $n^2$ sudé.“  
+
+Předpokládejme, že $n = 2k$ pro nějaké celé $k$. Pak $n^2 = (2k)^2 = 4k^2 = 2 \cdot (2k^2)$, což je opět sudé číslo.  
+Tím jsme dokázali implikaci.
+\end{examplebox}
+
+\begin{definitionbox}
+\textbf{Důkaz sporem} probíhá tak, že předpokládáme negaci tvrzení, které chceme dokázat, a ukážeme, že tento předpoklad vede k logickému rozporu.  
+Tím pádem původní tvrzení musí platit.
+\end{definitionbox}
+
+\begin{examplebox}
+Příklad důkazu sporem:  
+„Neexistuje celé číslo $n$, pro které $2n+1$ je sudé.“  
+
+Důkaz sporem: Předpokládejme opak, tj. že existuje celé číslo $n$, pro které je $2n+1$ sudé.  
+Pak ale $2n$ je sudé a po přičtení $1$ získáme liché číslo. To je rozpor.  
+Tedy $2n+1$ nemůže být sudé.
+\end{examplebox}
+
+
+% --- PŘÍKLADY ---
+
+\exercisepart
+
+\begin{exercise}[Určete, co je a není výrok]
+Rozhodněte, zda se jedná o výrok. Pokud ano, určete, zda je jeho pravdivostní hodnota zjistitelná.
+\begin{tasks}(1)
+\task „Kolik je hodin?“  
+\task „Číslo 12 je dělitelné třemi.“  
+\task „V roce 2100 bude žít na Zemi více než 12 miliard lidí.“  
+\task „Praha je hlavní město České republiky.“  
+\task „Každý jednorožec má křídla.“  
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Posouzení pravdivosti výroků]
+Určete, zda jsou následující výroky pravdivé nebo nepravdivé:
+\begin{tasks}(1)
+\task „Číslo $5$ je nezáporné.“  
+\task „Odmocnina ze $49$ není $7$.“  
+\task „Číslo $6-9$ není kladné.“  
+\task „Není nepravda, že pravdivý výrok je vždy nepravdivý.“  
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Negace výroků – jednoduché]
+Znegujte následující výroky:
+\begin{tasks}(1)
+\task „Trojúhelník $ABC$ je pravoúhlý.“  
+\task „Trojúhelník $ABC$ je ostroúhlý.“  
+\task „Venku prší.“  
+\task „$\sqrt{2} + \sqrt{3} \leq \sqrt{5}$.“  
+\task „Každé prvočíslo je liché.“  
+\task „Sterakdary je nejlepší YouTuber.“
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Negace výroků s kvantifikátory]
+Znegujte následující výroky:
+\begin{tasks}(1)
+\task „Množina $M$ má právě $5$ prvků.“  
+\task „Množina $M$ má nanejvýš $10$ prvků.“  
+\task „Množina $M$ má alespoň $2$ prvky.“  
+\task „V každém trojúhelníku je alespoň jeden úhel ostrý.“  
+\task „Existuje přirozené číslo, které je menší než nula.“  
+\end{tasks}
+\end{exercise}
+
+\newpage
+
+\begin{exercise}[Výroky o kružnicích]
+Mějme dvě kružnice $k_1$ a $k_2$. Jsou dány následující výroky:
+\begin{tasks}(1)
+\task „Kružnice nemají žádný společný bod.“  
+\task „Kružnice se protínají.“  
+\task „Kružnice mají vnitřní dotek.“  
+\end{tasks}
+
+Najděte negaci výroku:  
+\begin{center}
+„Kružnice mají vnější dotyk.“
+\end{center}
+\end{exercise}
+
+\begin{exercise}[Konjunkce čtyř výroků]
+Mějme čtyři výroky:
+\[
+\begin{aligned}
+a &: \text{„Slunce vychází na východě.“}\\
+b &: \text{„Všichni tučňáci umí létat.“}\\
+c &: \text{„Praha je hlavní město České republiky.“}\\
+d &: \text{„Londýn leží v Austrálii.“}
+\end{aligned}
+\]
+
+Vytvořte z nich několik konjunkcí a určete jejich pravdivostní hodnotu (stručně zdůvodněte).
+\begin{tasks}(4)
+\task $a \land c$,
+\task $a \land b$,
+\task $(a \land c) \land d$,
+\task $b \land d$.
+\end{tasks}
+\end{exercise}
+
+
+\begin{exercise}[Disjunkce čtyř výroků]
+Mějme tytéž výroky z úlohy 1.6. $a, b, c, d$. 
+Vytvořte z nich několik disjunkcí a určete jejich pravdivostní hodnotu (stručně zdůvodněte).
+U každé disjunkce určete pravdivostní hodnotu a vysvětlete proč (nezapomeňte, že „nebo“ je inkluzivní).
+\begin{tasks}(4)
+\task $a\lor b$, 
+\task $a\lor c$, 
+\task $(a\lor c) \lor d$,
+\task $(b\lor d)$.
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Vyšetřete pravdivost výroku]
+Určete (pomocí pravdivostní tabulky), kdy je pravdivý složený výrok
+\[
+(\neg A \lor B) \land A.
+\]
+\begin{tasks}(1)
+\task Sestavte pravdivostní tabulku pro všechny kombinace hodnot $A,B\in\{0,1\}$.
+\task Vyznačte řádky, ve kterých je celý výraz pravdivý.
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Jazyk vs. logika – „a“ a „nebo“]
+Zdůvodněte, proč je výrok \emph{„Praha a Washington jsou evropská města“} nepravdivý, 
+zatímco výrok \emph{„Praha nebo Washington jsou evropská města“} je pravdivý.
+\begin{tasks}(1)
+\task Vysvětlete, proč konjunkce selhává.
+\task Vysvětlete, proč je disjunkce pravdivá.
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Vyhodnocení složených výrazů pro dané pravdivosti]
+Nechť $A$ je pravdivý výrok, $B$ nepravdivý výrok a $C$ pravdivý výrok. Určete pravdivost následujících složených výroků:
+\begin{tasks}(1)
+\task $(A \lor B) \land C$
+\task $(A \land B) \lor C$
+\task $(A \land C) \lor B$
+\task $(A \lor C) \land B$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Závislost pravdivosti na $A$ a $B$]
+Prozkoumejte, na jakých hodnotách pro $A,B$ jsou pravdivé následující výroky:
+\begin{tasks}(1)
+\task $(\neg A \land B) \lor A$
+\task $(\neg A \land B) \lor B$
+\task $(\neg A \lor B) \lor B$
+\end{tasks}
+
+\medskip
+Doporučení: Sestavte pro každý výraz pravdivostní tabulku a určete, zda nejde o tautologii (vždy pravda) nebo zda se výraz zjednoduší
+(např. pomocí absorbčních a idempotentních zákonů).
+\end{exercise}
+
+\begin{exercise}[Implikace a pravdivostní tabulky]
+Vyšetřete pomocí pravdivostních tabulek, kdy jsou pravdivé následující implikace:
+\begin{tasks}(1)
+\task $A \Rightarrow (A \lor B)$
+\task $(A \lor B) \Rightarrow A$
+\task $(A \lor B) \Rightarrow (A \land B)$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[„Paradoxní“ implikace s reálným tvrzením]
+Adam, který není náčelníkem kmene Apačů, prohlásil:  
+\emph{„Je-li odmocnina z 10 menší než tři, pak jsem náčelníkem kmene Apačů.“}  
+Posuďte pravdivost:
+\begin{tasks}(1)
+\task původní implikace,
+\task \textbf{obrácené} implikace,
+\task \textbf{obměněné} (kontrapozice) původní implikace.
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Pravoúhlý úhel a Thaletova kružnice]
+Jsou dány dva výroky:  
+$a$: „Úhel $ACB$ je pravý.“ \quad $b$: „Bod $C$ leží na kružnici o průměru $AB$.“
+Posuďte pravdivost následujících výroků:
+\begin{tasks}(1)
+\task $a \Rightarrow b$
+\task $b \Rightarrow a$
+\task $a \Leftrightarrow b$
+\task $\neg a \Leftrightarrow \neg b$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Který výrok je tautologie?]
+Určete, která z následujících výrokových formulí je tautologie:
+\begin{tasks}(1)
+\task $(A \land B) \Leftrightarrow (\neg A \lor \neg B)$
+\task $(A \Leftrightarrow B) \Leftrightarrow (\neg A \Leftrightarrow \neg B)$
+\task $(A \Rightarrow B) \Rightarrow (\neg A \Rightarrow \neg B)$
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Negace vět – přirozený jazyk]
+Utuvořte negace následujících výroků:
+\begin{tasks}(1)
+\task „Číslo $72$ je dělitelné dvěma a třemi.“
+\task „Mozart ani Beethoven nejsou čeští skladatelé.“
+\task „\emph{Válku s mloky} napsal Karel Čapek nebo Alois Jirásek.“
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Negace implikací – matematické věty]
+Utuvořte negace následujících výroků (pozor na tvar \,$\neg(P\Rightarrow Q)\Leftrightarrow (P\land\neg Q)$):
+\begin{tasks}(1)
+\task „Je-li $\sqrt{2}$ iracionální číslo, pak je iracionální i číslo $1+\sqrt{2}$.“
+\task „Je-li trojúhelník rovnostranný, je rovnoramenný.“
+\task „Není-li číslo $5$ přirozené, není přirozené ani číslo $1$.“
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Negace známých rčení]
+Považujte následující rčení za výroky a zapište jejich negaci:
+\begin{tasks}(1)
+\task „Přišel jsem, viděl jsem, zvítězil jsem.“  
+\task „Nebude-li pršet, nezmokneme.“  
+\task „Já to platit nebudu, radši se dám na vojnu.“  
+\task „Bude-li každý z nás z křemene, bude celý národ z kvádrů.“  
+\end{tasks}
+\end{exercise}
+
+\begin{exercise}[Kvantifikátory ve větách]
+Pomocí kvantifikátorů přepište následující tvrzení tak, aby vznikly pravdivé výroky:
+\begin{tasks}(1)
+\task „Pro čísla $x,y$ platí $x^2 + y^2 = 0$.“  
+\task „Pro číslo $x$ platí $x^2 + 1 > 0$.“  
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% BONUS – ŠKOLNÍ KOLO (MO)
+% =========================
+\setcounter{section}{2}
+
+\begin{exercise}[BONUS: Výroky o sourozencích]
+Uvažujme 20 výroků dvou typů:
+
+\begin{center}
+\begin{tabular}{ll}
+„Mám právě jednu sestru.“ & „Mám právě jednoho bratra.“ \\
+„Mám právě dvě sestry.“   & „Mám právě dva bratry.“    \\
+\vdots                    & \vdots                     \\
+„Mám právě deset sester.“ & „Mám právě deset bratrů.“  \\
+\end{tabular}
+\end{center}
+
+\begin{tasks}(1)
+    \task Každý ze čtyř sourozenců pronesl jiný z těchto 20 výroků.  
+          Je možné, že všichni čtyři měli pravdu?
+    \task Najděte největší přirozené číslo $n$ takové, že každý z $n$ sourozenců může pronést jiný z těchto 20 výroků a mít pravdu.
+\end{tasks}
+\end{exercise}
+
+
+% =========================
+% BONUS
+% =========================
+\begin{exercise}[BONUS: Logická rekonstrukce trasy silnice]
+Při stavbě silnice, která má spojovat dvě města, se rozhodovalo, 
+kterými \textbf{obcemi} mezi nimi povede. Komise stanovila z 
+ekonomických a technických důvodů tyto podmínky:
+Silnice povede obcí $B$, povede-li obcí $A$.
+Obcemi $A$ a $D$ povede, povede-li obcí $E$.
+Silnice nepovede zároveň obcí $B$ a $C$.
+Obcemi $C$ a $D$ buď povede oběma, anebo žádnou z nich.
+Alespoň jednou z obcí $D$ a $E$ silnice povede.
+    \begin{tasks}(1)
+        \task Přepište podmínky do výrokové logiky.
+        \task Rozhodněte, kterými obcemi silnice \emph{musí} a kterými \emph{nesmí} vést.
+    \end{tasks}
+\end{exercise}
+
+
+% =========================
+% ÚLOHA — Výroková logika (detektivní úloha)
+% =========================
+\begin{exercise}[BONUS: Logická úloha – Kdo je nevinný?]
+    Někdo z podezřelých Antonín ($A$), Boris ($B$) a Cyril ($C$) v muzeu ukradl sošku.  
+    Všichni tři svědci události vypověděli pravdivě následující výroky:
+
+    \begin{enumerate}[label=\arabic*)]
+        \item V muzeu nebyl podezřelý Cyril, nebo není pravda, že tam byl alespoň jeden z dvojice Antonín, Cyril.  
+        \item Podezřelý Cyril byl v muzeu právě tehdy, když tam nebyl nikdo z dvojice Antonín, Boris.
+        \item Pokud neplatí, že v muzeu byl Antonín spolu s Borisem, pak tam byl Cyril.
+    \end{enumerate}
+
+    Pomocí logických úvah (např. vytvořením pravdivostní tabulky nebo postupnou dedukcí) určete,  
+    \textbf{kdo z podezřelých je nevinný}.
+\end{exercise}
+
+
+\end{document}

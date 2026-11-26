@@ -1,0 +1,158 @@
+% Work-MAT | 2. rocnik | hodina 35
+% Podklady: autorska ucebnice (GitHub), predlozene ukazky, didakticky pristup Realisticky.cz.
+% Zadani a vyresene varianty jsou nově sestavene; respektuj pravidla jejich pouziti.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{2. ročník}{Logaritmy}{35}{Věty o logaritmech II -- úpravy}
+\begin{document}
+\blok{Procvičování úprav}
+Navazuje přímo na hodinu 34. V této hodině nezavádíme novou větu. Smyslem je vybrat správnou úpravu, zkontrolovat podmínky a přecházet oběma směry: \textbf{od více logaritmů k jedinému i opačně}.
+\poznamka{Společné vzory řeš nejprve na tabuli, po nich nech žáky samostatně řešit variantu stejného typu, ale s jinými čísly. Měj připravenou přiloženou sbírku: základ 45 minut, zbytek rezerva do 55 minut.}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Zapiš jediným logaritmem a vypočti:
+\[
+\log_2 6+\log_2 12-\log_2 9.
+\]
+\tcblower
+\[
+\begin{aligned}
+\log_2 6+\log_2 12-\log_2 9
+&=\log_2\frac{6\cdot12}{9}\\
+&=\log_2 8=3.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Zjednoduš a uveď podmínku:
+\[
+\log_3\sqrt{x}+\log_3\frac1{x^2}.
+\]
+\tcblower
+Původní zápis vyžaduje $x>0$. Proto
+\[
+\begin{aligned}
+\log_3\sqrt{x}+\log_3\frac1{x^2}
+&=\frac12\log_3 x-2\log_3 x\\
+&=-\frac32\log_3 x.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Zapiš jediným logaritmem; uveď podmínky:
+\[
+2\log_5 a-\frac12\log_5 b+\log_5 25.
+\]
+\tcblower
+Pro $a>0$ a $b>0$:
+\[
+\begin{aligned}
+2\log_5 a-\frac12\log_5 b+\log_5 25
+&=\log_5 a^2-\log_5\sqrt b+\log_5 25\\
+&=\log_5\frac{25a^2}{\sqrt b}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vypočti bez kalkulačky:
+\[
+\log_{\sqrt3}\frac1{81}.
+\]
+\tcblower
+\[
+\begin{aligned}
+\log_{\sqrt3}\frac1{81}
+&=\frac{\log_3 3^{-4}}{\log_3 3^{\frac12}}\\
+&=\frac{-4}{\frac12}=-8.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 5}]
+Zjednoduš bez nevhodného použití vzorců a uveď podmínky:
+\[
+\log_2(x^2)-\log_2|x|.
+\]
+\tcblower
+Pro $x\ne0$ platí
+\[
+\begin{aligned}
+\log_2(x^2)-\log_2|x|
+&=\log_2\frac{x^2}{|x|}\\
+&=\log_2|x|.
+\end{aligned}
+\]
+Bez absolutní hodnoty nesmíme obecně použít $\log_2 x$.
+\end{prikladReseniBox}
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_3 18+\log_3\frac92-\log_3 3$
+\item $\log_2 56-\log_2 7+\log_2 4$
+\item $\log_5\sqrt[3]{125}$
+\item Vyjádři pomocí $\log x$: $\log x^5+\log\frac1{x^2}$ pro $x>0$.
+\item Spoj do jediného logaritmu $3\log_2 a-2\log_2 b$ pro $a,b>0$.
+\item Rozepiš $\log_3\frac{27u^4}{\sqrt{v}}$ pro $u,v>0$.
+\item $\log_{\sqrt2}8$
+\item Zapiš podmínky $\log_2(x^2-1)-\log_2(x-1)$ a zjednoduš.
+\item Zjednoduš $\log_4(x^2)-2\log_4|x|$ a uveď podmínky.
+\item Najdi chybu: $\log_3(9+27)=\log_3 9+\log_3 27$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\log_3 27=3$.
+\item $\log_2 32=5$.
+\item $1$.
+\item $3\log x$.
+\item $\log_2\frac{a^3}{b^2}$.
+\item $3+4\log_3 u-\frac12\log_3 v$.
+\item $6$.
+\item $x>1$; výraz $\log_2(x+1)$.
+\item $0$ pro $x\ne0$.
+\item Součet argumentů nelze rozdělit; $\log_3 36\ne2+3$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Rozšíření}
+\begin{prikladReseniBox}[title={Rozšíření 1}]
+Předpokládej $x>0$ a $x\ne1$. Zjednoduš výraz
+\[
+\frac{\log_2 x}{\log_8 x}.
+\]
+\tcblower
+\[
+\log_8 x=\frac{\log_2 x}{\log_2 8}=\frac{\log_2x}{3}
+\quad\Longrightarrow\quad\frac{\log_2 x}{\log_8x}=3.
+\]
+Při $x=1$ by jmenovatel byl nulový.
+\end{prikladReseniBox}
+\blok{Domácí úkol}
+Přibližně 20--30 minut. Nejdřív uprav výrazy, potom napiš potřebné podmínky; kontrolní výsledky jsou v učitelské části boxu.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_2 14+\log_2 8-\log_2 7$
+\item $\log_5 90-\log_5\frac{18}{5}$
+\item $\log_3\sqrt[4]{81}$
+\item $\log_{\frac14}8$
+\item Zapiš jediným logaritmem $2\log_3m+\log_3 n-\log_3 9$ pro $m,n>0$.
+\item Rozepiš $\log_2\frac{16p^3}{q^2}$ pro $p,q>0$.
+\item Zjednoduš $\log_5(x^6)-\log_5(x^2)$ a urči přípustná $x$.
+\item Zjednoduš $\log_2(x-2)+\log_2(x+2)-\log_2(x^2-4)$ a napiš podmínky.
+\item $\log_{\sqrt[3]{7}}\frac1{49}$
+\item Dokaž krátce, proč pro $x>0$ platí $\log_4x=\frac12\log_2x$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\log_2 16=4$.
+\item $\log_5 25=2$.
+\item $1$.
+\item $-\frac32$.
+\item $\log_3\frac{m^2n}{9}$.
+\item $4+3\log_2p-2\log_2q$.
+\item $4\log_5|x|$ pro $x\ne0$.
+\item $0$ pro $x>2$.
+\item $-6$.
+\item Změna základu: $\log_4x=\frac{\log_2x}{\log_24}=\frac12\log_2x$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Na závěr můžeš dát dvouminutovou kontrolní otázku: Proč $\log_a(x^2)=2\log_a|x|$, a ne vždy $2\log_a x$? Sbírka v adresáři pracovni\_listy/Logaritmy nabízí další varianty bez opakování zadání z této hodiny.}
+
+\end{document}

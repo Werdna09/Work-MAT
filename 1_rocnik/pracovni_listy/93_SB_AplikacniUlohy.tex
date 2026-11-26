@@ -1,0 +1,239 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,geometry,enumitem,booktabs,longtable}\usepackage[hidelinks]{hyperref}
+\geometry{top=18mm,bottom=19mm,left=22mm,right=22mm}
+\pagestyle{plain}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}\setlength{\emergencystretch}{2em}
+\setlist[itemize]{topsep=2pt,itemsep=2pt}
+\begin{document}
+\begin{center}{\LARGE\bfseries Aplikace matematiky v praxi}\\[2mm]{\large 93. hodina -- výběrová sbírka 49 úloh}\end{center}
+\textbf{Jméno:}\rule{65mm}{.4pt}\hfill\textbf{Třída:}\rule{20mm}{.4pt}
+\par\smallskip
+\textbf{Jak pracovat:} Vyber si úlohy napříč kategoriemi. U každé označ neznámou, stanov podmínky a jednotky, vytvoř matematický model, vyřeš a odpověz slovně. Zadání jsou \textbf{dobrovolné}; neřeš všech 49 najednou.
+\textbf{Zkratky oborů:} \textbf{ELE} Elektrotechnika; \textbf{ICT} Informatika a výpočetní technika; \textbf{MEC} Mechanika a strojírenství; \textbf{CHE} Chemie; \textbf{DOP} Doprava; \textbf{ENE} Energetika; \textbf{EKO} Ekologie a provoz; \textbf{ZIV} Běžný život.
+\par\textbf{Důležitá poznámka k datům:} Není-li uveden externí zdroj, číselné údaje jsou \emph{modelové} (vymyšlené pro výuku), nikoli skutečné naměřené hodnoty konkrétního zařízení, tarifu nebo podniku. Fyzikální vztahy, jednotky a chemické vzorce odpovídají skutečným principům.
+\par\medskip
+\tableofcontents
+\newpage
+
+\section{Lineární rovnice}
+\par\medskip\noindent\textbf{ROV-04}\quad\textbf{CHE -- Voda potřebná při hašení vápna}\par
+Při hašení vápna probíhá $\mathrm{CaO+H_2O\rightarrow Ca(OH)_2}$. Použijte zaokrouhlené molární hmotnosti $56\,\mathrm{g/mol}$ a $18\,\mathrm{g/mol}$. Kolik kilogramů vody se stechiometricky spotřebuje na $280\,\mathrm{kg}$ čistého $\mathrm{CaO}$? Zapište rovnici pro neznámou hmotnost $w$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ROV-06}\quad\textbf{DOP -- Dohánění rychlejší soupravou}\par
+Pomalá souprava jede konstantně $80\,\mathrm{km/h}$ a má náskok $20\,\mathrm{km}$. Rychlejší souprava jede po stejné trase $120\,\mathrm{km/h}$. Za kolik hodin ji dojede? Zanedbejte změny rychlosti.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ROV-08}\quad\textbf{EKO -- Sběr recyklovaného papíru}\par
+Sběrný dvůr má $300\,\mathrm{kg}$ papíru a každý další den přibude $25\,\mathrm{kg}$. Za kolik celých dní dosáhne $500\,\mathrm{kg}$? Předpokládejte stálý denní přírůstek.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ROV-07}\quad\textbf{ENE -- Ideální nabíjení baterie}\par
+Akumulátor obsahuje $1{,}5\,\mathrm{kWh}$. Nabíječ dodává stálý využitelný výkon $0{,}7\,\mathrm{kW}$. Za kolik hodin dosáhne energie $5{,}0\,\mathrm{kWh}$? Ztráty zanedbejte.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ROV-03}\quad\textbf{ICT -- Počet instrukcí procesoru}\par
+Procesor Intel Xeon E5-2620 v3 má podle specifikace výrobce základní takt $2{,}4\,\mathrm{GHz}$. Pro výpočet předpokládejte stálý takt bez změn frekvence a modelové průměrné $\mathrm{CPI}=2$. Jak dlouho v tomto zjednodušeném modelu trvá vykonání $12\cdot10^9$ instrukcí? Použijte $2{,}4\cdot10^9t=2\cdot12\cdot10^9$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ROV-02}\quad\textbf{MEC -- Pružina s předpětím}\par
+Pružina má tuhost $120\,\mathrm{N/m}$. Předpětí odpovídá síle $5\,\mathrm N$. Při jakém prodloužení $x$ v metrech bude výsledná síla $29\,\mathrm N$? Použijte $5+120x=29$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ROV-05}\quad\textbf{ZIV -- Půjčovna elektrokol}\par
+Půjčovna účtuje jednorázově $180\,\text{Kč}$ a dále $35\,\text{Kč}$ za hodinu. Kolik hodin trval pronájem s cenou $600\,\text{Kč}$?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+
+\section{Lineární nerovnice}
+\par\medskip\noindent\textbf{NER-04}\quad\textbf{CHE -- Reagent pro analytické vzorky}\par
+Laboratoř má $25\,\mathrm{kg}$ modelového činidla; na jednu sérii spotřebuje $0{,}8\,\mathrm{kg}$. Musí zůstat rezerva nejméně $5\,\mathrm{kg}$. Kolik celých sérií lze nejvýše provést?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{NER-05}\quad\textbf{DOP -- Průměrná rychlost na trati}\par
+V ideálním modelu má vlak ujet $100\,\mathrm{km}$ nejvýše za $50\,\mathrm{min}$ a zároveň nesmí překročit rychlost $160\,\mathrm{km/h}$. V jakém intervalu musí ležet jeho konstantní rychlost $v$?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{NER-07}\quad\textbf{EKO -- Snížení emisí v modelu}\par
+Provoz má modelové denní emise $360\,\mathrm{kg}$ a každým opatřením sníží emise o $15\,\mathrm{kg}$. Kolik opatření je zapotřebí, aby emise nepřekročily $150\,\mathrm{kg}$? Předpokládejte nezávislé účinky a nezáporné emise.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{NER-02}\quad\textbf{ELE -- Příkon na jednom elektrickém okruhu}\par
+Uvažujte síť $230\,\mathrm V$ a modelový proudový limit $16\,\mathrm A$ při účiníku $1$. Na okruhu už běží spotřebič s příkonem $2\,000\,\mathrm W$. Jaký maximální další činný příkon $P$ lze připojit podle nerovnice $2000+P\le230\cdot16$?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{NER-08}\quad\textbf{ENE -- Výdrž ostrovního zdroje}\par
+Baterie má využitelnou energii $2{,}0\,\mathrm{kWh}$. Zařízení o stálém příkonu $0{,}4\,\mathrm{kW}$ běží $t$ hodin. Chceme ponechat rezervu alespoň $0{,}2\,\mathrm{kWh}$. Pro jak dlouhou dobu provozu platí podmínka?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{NER-03}\quad\textbf{ICT -- Rozpočet zpoždění logické cesty}\par
+V měřeném modelovém obvodu má NAND zpoždění $2\,\mathrm{ns}$ a XOR $5\,\mathrm{ns}$. Sériová cesta obsahuje tři XOR a $n$ NAND. Kolik nejvýše NAND lze přidat, má-li být zpoždění nejvýše $25\,\mathrm{ns}$?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{NER-06}\quad\textbf{ZIV -- Rozpočet na výuku}\par
+Vzdělávací kurz stojí jednorázově $900\,\text{Kč}$ a $45\,\text{Kč}$ za každou další konzultaci. Máte rozpočet $1\,500\,\text{Kč}$. Kolik celých konzultací si můžete nejvýše dovolit?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+
+\section{Soustavy lineárních rovnic}
+\par\medskip\noindent\textbf{SOU-02}\quad\textbf{CHE -- Míchání dvou koncentrací}\par
+Máte připravit $10\,\mathrm{kg}$ směsi s $22\,\%$ účinné látky ze surovin o koncentracích $10\,\%$ a $30\,\%$. Kolik kilogramů každé suroviny smícháte? Ztráty zanedbejte.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{SOU-05}\quad\textbf{DOP -- Sestava vlakových vozů}\par
+V modelové soupravě je osm osobních vozů. Vozy typu A mají $60$ míst, typu B $80$ míst. Celková kapacita je $560$ míst. Kolik vozů každého typu je v soupravě?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{SOU-08}\quad\textbf{EKO -- Dvě hmotnosti obalů}\par
+Zásilka má $40$ obalů dvou typů: lehký váží $0{,}2\,\mathrm{kg}$, těžký $0{,}5\,\mathrm{kg}$. Celková hmotnost obalů je $14\,\mathrm{kg}$. Kolik obalů každého typu je v zásilce?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{SOU-03}\quad\textbf{ELE -- Napětí na dvojici rezistorů}\par
+Dva rezistory $100\,\Omega$ a $200\,\Omega$ zapojíme sériově na $12\,\mathrm V$. Označte napětí $U_1,U_2$. Sestavte soustavu vyjadřující $U_1+U_2=12$ a $U_2=2U_1$ a určete obě napětí.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{SOU-07}\quad\textbf{ENE -- Dvě fotovoltaická pole}\par
+Dvě fotovoltaická pole ve stejném okamžiku dávají dohromady $420\,\mathrm W$. První má dvakrát větší výkon než druhé. Jaký výkon má každé?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{SOU-04}\quad\textbf{MEC -- Síly dvou aktuátorů}\par
+Dva aktuátory v modelovém mechanismu působí ve stejném směru celkovou silou $750\,\mathrm N$. První má sílu o $50\,\mathrm N$ větší než druhý. Určete $F_1,F_2$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{SOU-06}\quad\textbf{ZIV -- Vstupenky na festival}\par
+Pořadatel prodal $24$ vstupenek: dospělá stála $250\,\text{Kč}$, dětská $150\,\text{Kč}$. Celkem utržil $5\,000\,\text{Kč}$. Kolik prodal kterých?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+
+\section{Rovnice s absolutní hodnotou}
+\par\medskip\noindent\textbf{ABS-04}\quad\textbf{CHE -- Dvojí možnost hodnoty pH}\par
+Vzorek se liší hodnotou pH od neutrální hodnoty $7$ přesně o $1{,}5$. Jaké dvě hodnoty pH může mít? Jde o matematické porovnání pH, nikoli o míchání roztoků.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABS-05}\quad\textbf{DOP -- Dvě orientační značky na nástupišti}\par
+Značky jsou v bodech $-2$ a $2$ na přímé ose nástupiště (v metrech). Pro jaké polohy $x$ je součet vzdáleností od obou značek roven $12\,\mathrm m$?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABS-02}\quad\textbf{ELE -- Odchylka měřeného napětí}\par
+Senzor očekává $12\,\mathrm V$. Výsledek měření se od referenční hodnoty liší přesně o $0{,}4\,\mathrm V$. Jaké napětí mohl přístroj zaznamenat?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABS-07}\quad\textbf{ENE -- Rozdíl cen dvou energetických tarifů}\par
+Pro odběr $n$ jednotek jsou modelové ceny $A(n)=160+2n$ a $B(n)=100+4n$ Kč. Při jakém nezáporném $n$ je absolutní rozdíl obou cen přesně $20\,\text{Kč}$?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABS-03}\quad\textbf{ICT -- Odchylka odezvy serveru}\par
+Měřicí úloha má referenční dobu odezvy $10\,\mathrm{ms}$ a zaznamenala absolutní odchylku $3\,\mathrm{ms}$. Jaké doby odezvy mohly nastat? Použijte $|t-10|=3$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABS-08}\quad\textbf{MEC -- Dvě měrky a nekonečně mnoho poloh}\par
+Dvě referenční měrky jsou v bodech $-4$ a $4$ na přímce. Určete všechny polohy $x$, v nichž je součet vzdáleností k oběma měrkám právě $8\,\mathrm{cm}$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABS-06}\quad\textbf{ZIV -- Dvě možné zastávky kurýra}\par
+Na přímé ulici délky $10\,\mathrm{km}$ je obchod ve vzdálenosti $3\,\mathrm{km}$ od začátku. Kurýr musí zastavit přesně $2\,\mathrm{km}$ od obchodu. Kde může zastavit?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+
+\section{Nerovnice s absolutní hodnotou}
+\par\medskip\noindent\textbf{ABN-04}\quad\textbf{CHE -- Kontrola pH vzorku}\par
+Ve zjednodušené kontrole má být pH vzorku nejvýše o $1$ od hodnoty $7$. Určete vyhovující rozsah pH. Nejde o pravidlo pro bezpečnost pitné vody.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABN-05}\quad\textbf{DOP -- Bezpečná vzdálenost servisního vozíku}\par
+Servisní vozík se pohybuje po kolejové ose od $0$ do $100\,\mathrm m$. Nesmí být blíže než $3\,\mathrm m$ k souřadnici $50\,\mathrm m$. Určete přípustná $x$ včetně hranic.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABN-08}\quad\textbf{EKO -- Tolerovaná hmotnost balení}\par
+Balení recyklovaného materiálu má mít $10\,\mathrm{kg}$. Výrobní pravidlo připouští odchylku ostře menší než $0{,}2\,\mathrm{kg}$. Určete přípustný rozsah hmotností.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABN-07}\quad\textbf{ENE -- Meze napětí bateriového modulu}\par
+Modelový bateriový modul má mít napětí $48\,\mathrm V$ s dovolenou absolutní odchylkou $2\,\mathrm V$. Určete přípustný interval.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABN-03}\quad\textbf{ICT -- Tolerovaná odezva webu}\par
+Modelová doba odezvy má být $8\,\mathrm{ms}$ s absolutní odchylkou ostře menší než $2\,\mathrm{ms}$. Určete přípustné $t$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABN-02}\quad\textbf{MEC -- Tolerance obráběného rozměru}\par
+Na výkrese je rozměr $20{,}00\,\mathrm{mm}$ s oboustrannou tolerancí $0{,}05\,\mathrm{mm}$. Jaký rozměr $L$ je ještě vyhovující?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{ABN-06}\quad\textbf{ZIV -- Mimo teplotní komfort}\par
+Teplota v místnosti se považuje za výrazně mimo zvolený komfort, pokud se od $22\,{}^\circ\mathrm C$ liší o více než $3\,{}^\circ\mathrm C$. Jaká $T$ splňují tuto modelovou podmínku?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+
+\section{Lineární rovnice s parametrem}
+\par\medskip\noindent\textbf{PAR-04}\quad\textbf{CHE -- Model reakční bilance s parametrem}\par
+V modelové bilanci se hledá nezáporné množství $m$ z rovnice $(p-1)m=4$, kde $p$ je nastavovaný bezrozměrný procesní parametr. Diskutujte matematické řešení a určete, kdy platí $m\ge0$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{PAR-05}\quad\textbf{DOP -- Dohánění vlaku při neznámé rychlosti}\par
+Pomalý vlak jede $80\,\mathrm{km/h}$ a má náskok $40\,\mathrm{km}$. Rychlejší vlak má rychlost $v\,\mathrm{km/h}$. Diskutujte rovnici $(v-80)t=40$ pro všechny reálné hodnoty $v$; uveďte, kdy je dojetí v čase $t\ge0$ možné.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{PAR-07}\quad\textbf{EKO -- Nulová bilance provozu}\par
+V idealizovaném bilančním modelu platí $(r-5)n=0$, kde $r$ je parametr a $n\ge0$ počet technologických cyklů. Diskutujte počet možných reálných řešení podle hodnoty $r$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{PAR-06}\quad\textbf{ENE -- Nabíjení při proměnném výkonu}\par
+Fotovoltaický zdroj dodává konstantní výkon $p\,\mathrm{kW}$, spotřebič bere $0{,}6\,\mathrm{kW}$. Za jak dlouho se uloží $3\,\mathrm{kWh}$ energie? Diskutujte $(p-0{,}6)t=3$ podle $p$ a určete fyzikálně použitelné případy.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{PAR-02}\quad\textbf{ICT -- Doba algoritmu podle frekvence}\par
+Procesor má modelovou frekvenci $f$ miliard cyklů za sekundu. Úloha potřebuje přesně $12$ miliard cyklů. Diskutujte rovnici $ft=12$ pro všechna reálná $f$. Které případy dávají fyzikální smysl?
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{PAR-03}\quad\textbf{MEC -- Vyvážení dvojice pružin}\par
+V idealizovaném mechanismu působí dva protichůdné lineární účinky. Rovnováha vyžaduje $(k-50)x=0$, kde $k$ je parametr tuhosti v $\mathrm{N/m}$ a $x$ posunutí. Diskutujte všechna algebraická řešení $x$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{PAR-08}\quad\textbf{ZIV -- Kdy splývají dva ceníky?}\par
+Dva modelové ceníky mají cenu $A(x)=px+30$ a $B(x)=5x+p+25$ Kč pro $x\ge0$. Pro které $x$ jsou ceny stejné? Rozlište případy podle parametru $p$.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+
+\section{Chemické rovnice jako soustavy bilancí}
+\par\medskip\noindent\textbf{CHE-02}\quad\textbf{CHE -- Vznik oxidu železitého}\par
+Vyčíslete pomocí bilance Fe a O rovnici $a\,\mathrm{Fe}+b\,\mathrm{O_2}\rightarrow c\,\mathrm{Fe_2O_3}$. Najděte nejmenší kladné celé koeficienty.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{CHE-03}\quad\textbf{CHE -- Oxidace hliníku}\par
+Vyčíslete $a\,\mathrm{Al}+b\,\mathrm{O_2}\rightarrow c\,\mathrm{Al_2O_3}$ pomocí soustavy pro Al a O.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{CHE-04}\quad\textbf{CHE -- Rozklad jedlé sody}\par
+Doplňte koeficienty do $a\,\mathrm{NaHCO_3}\rightarrow b\,\mathrm{Na_2CO_3}+c\,\mathrm{CO_2}+d\,\mathrm{H_2O}$. Sepište bilanci Na, H, C a O.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{CHE-05}\quad\textbf{CHE -- Vznik vody}\par
+Vyčíslete $a\,\mathrm{H_2}+b\,\mathrm{O_2}\rightarrow c\,\mathrm{H_2O}$ pomocí bilance vodíku a kyslíku.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{CHE-06}\quad\textbf{CHE -- Úplné spalování propanu}\par
+Vyčíslete čistě teoretickou rovnici úplného spalování propanu $a\,\mathrm{C_3H_8}+b\,\mathrm{O_2}\rightarrow c\,\mathrm{CO_2}+d\,\mathrm{H_2O}$. Použijte bilanci C, H a O.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{CHE-07}\quad\textbf{CHE -- Rozklad vápence}\par
+Vyčíslete $a\,\mathrm{CaCO_3}\rightarrow b\,\mathrm{CaO}+c\,\mathrm{CO_2}$. Určete nejmenší kladné celé koeficienty ze zachování prvků.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\par\medskip\noindent\textbf{CHE-08}\quad\textbf{CHE -- Hořčík a kyselina chlorovodíková}\par
+Vyčíslete pouze matematicky $a\,\mathrm{Mg}+b\,\mathrm{HCl}\rightarrow c\,\mathrm{MgCl_2}+d\,\mathrm{H_2}$. Sestavte bilanční rovnice Mg, H a Cl.
+
+\vspace{4mm}\par\noindent\dotfill\par\medskip
+\section*{Odkud pocházejí některé reálné údaje?}
+\begin{itemize}
+\item Nominální napětí nízkonapěťové sítě ČR: \textbf{230 V}; použitý příkon a proud jsou modelové. \url{https://elektroprumysl.cz/casopis/2023/duben/28/}
+\item Rychlost \textbf{160 km/h} se používá na řadě konvenčních českých tratí; délka úseku a požadovaný čas jsou modelové. Zdroj: Správa železnic, podklady o provozu tratí a zvyšování rychlosti.
+\item Chemická reakce hašení vápna je skutečná, viz \href{https://guidelines.nhmrc.gov.au/australian-drinking-water-guidelines/part-5/treatment-chemicals/calcium-oxide}{Australian Drinking Water Guidelines}.
+\item Skutečný procesor \textbf{Intel Xeon E5-2620 v3}: základní takt \textbf{2,40 GHz}. \href{https://www.intel.com/content/www/us/en/products/sku/83352/intel-xeon-processor-e52620-v3-15m-cache-2-40-ghz/specifications.html}{Specifikace Intel}; použité CPI a počet instrukcí jsou modelové.
+\end{itemize}
+\textit{Veškeré další konkrétní číselné situace jsou výslovně modelové, nikoli empirický záznam.}
+\end{document}

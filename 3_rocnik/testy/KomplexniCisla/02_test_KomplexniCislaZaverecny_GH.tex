@@ -1,0 +1,74 @@
+\documentclass[a4paper,11pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,margin=17mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=4pt,topsep=4pt}
+
+\newcommand{\TestTitle}{Komplexní čísla}
+\newcommand{\TestHeader}[1]{%
+    \begin{center}
+        {\Large\bfseries TEST -- \TestTitle}\\[2mm]
+        {\bfseries Varianta #1}
+    \end{center}
+    \vspace{2mm}
+    Jméno a příjmení: \rule{9cm}{0.4pt}\hfill Třída: \rule{2cm}{0.4pt}\\[3mm]
+    Datum: \rule{3cm}{0.4pt}\hfill Počet bodů: \rule{2cm}{0.4pt}\hfill Známka: \rule{2cm}{0.4pt}\\[2mm]
+    \hrule\vspace{4mm}
+}
+\newcommand{\AnswerSpace}[1]{\vspace{#1}}
+
+\begin{document}
+\TestHeader{G}
+
+% ZADÁNÍ VARIANTY G
+\begin{enumerate}
+    \item Řešte v $\mathbb C$: $z\overline z-z=6-2i$.
+    \AnswerSpace{20mm}
+    \item Určete všechna komplexní čísla $z$, pro která platí
+    $|z-(1+i)|=|z-(3-i)|$ a $|z|=\sqrt{10}$.
+    Jejich obrazy znázorněte v Gaussově rovině.
+    \AnswerSpace{38mm}
+    \item Řešte v $\mathbb C$: $x^2+(2-i)x+3-i=0$.
+    \AnswerSpace{23mm}
+    \item Bez postupného roznásobování vypočtěte
+    $\displaystyle\left(\frac{1+\sqrt3i}{1+i}\right)^6$.
+    Výsledek zapište v algebraickém tvaru.
+    \AnswerSpace{26mm}
+    \item Řešte v $\mathbb C$: $z^3-64i=0$.
+    Všechny kořeny zapište v goniometrickém i algebraickém tvaru
+    a znázorněte je v Gaussově rovině.
+    \AnswerSpace{44mm}
+\end{enumerate}
+
+\newpage
+\TestHeader{H}
+
+% ZADÁNÍ VARIANTY H
+\begin{enumerate}
+    \item Řešte v $\mathbb C$: $z\overline z+z=6+2i$.
+    \AnswerSpace{20mm}
+    \item Určete všechna komplexní čísla $z$, pro která platí
+    $|z-(1-i)|=|z-(3+i)|$ a $|z|=\sqrt{10}$.
+    Jejich obrazy znázorněte v Gaussově rovině.
+    \AnswerSpace{38mm}
+    \item Řešte v $\mathbb C$: $ix^2-3x+4i=0$.
+    \AnswerSpace{23mm}
+    \item Bez postupného roznásobování vypočtěte
+    $\displaystyle\left(\frac{1-\sqrt3i}{1-i}\right)^6$.
+    Výsledek zapište v algebraickém tvaru.
+    \AnswerSpace{26mm}
+    \item Řešte v $\mathbb C$: $z^3+8i=0$.
+    Všechny kořeny zapište v goniometrickém i algebraickém tvaru
+    a znázorněte je v Gaussově rovině.
+    \AnswerSpace{44mm}
+\end{enumerate}
+\end{document}

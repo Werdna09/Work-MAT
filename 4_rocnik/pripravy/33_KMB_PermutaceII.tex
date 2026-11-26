@@ -1,0 +1,126 @@
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{4. ročník}{Kombinatorika}{33}{Permutace II -- náročné úlohy}
+\begin{document}
+\blok{Permutace bez opakování -- náročnější úlohy}
+\poznamka{Doplňkový materiál pro druhou hodinu permutací, nikoli povinná součást první výkladové hodiny. Všechny uvedené osoby jsou navzájem rozlišitelné. Základní metody: faktoriál, pevná místa, bloková metoda, doplněk, výběr pozice a symetrie pořadí. Průběh: nejprve příklad 1 a společný rozbor, potom vybrané podúlohy 2, zbytek jako rozšíření; příklad 3 je moderně laděná zásoba pro skupinovou práci nebo domácí procvičení. Není cílem spočítat všechna zadání během 45 minut.}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Televizního pořadu, v němž diváci kladou politikům nepříjemné otázky, se účastní Nora, Oldřicha, Pavlína, Radek, Stanislav, Tamara a Uršula. Každý účastník může položit právě jednu otázku. Urči počet všech možných pořadí, ve kterých:
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=1pt]
+\item mohou položit své dotazy všichni účastníci;
+\item položí dotazy nejdříve všechny ženy a pak všichni muži;
+\item položí svůj dotaz Pavlína a hned po ní Radek;
+\item Nora položí svůj dotaz dříve než Tamara.
+\end{enumerate}
+\tcblower
+Všech sedm osob je různých. Ženy jsou Nora, Oldřicha, Pavlína, Tamara a Uršula (pět), muži Radek a Stanislav (dva).
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=1pt]
+\item Libovolné pořadí: $7!=5040$.
+\item Nejdřív pět žen v libovolném pořadí, potom dva muži: $5!\cdot2!=240$.
+\item Dvojici Pavlína--Radek spojíme do bloku s jediným povoleným vnitřním pořadím. Řadíme šest objektů: $6!=720$.
+\item Ve všech $7!$ pořadích lze prohodit Noru a Tamaru. Právě polovina má Noru dříve: $\frac{7!}{2}=2520$.
+\end{enumerate}
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Šíleně smutnou princeznu přišlo rozesmát 20 kejklířů, 35 komiků, 41 šašků, 27 zpěváků, 12 bavičů, Zlatovláska, Kocour v botách a Hloupý Honza. Všichni jednotliví účastníci jsou navzájem rozlišitelní. Urči počet všech pořadí, v nichž mohou před princeznu předstoupit:
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=1pt]
+\item všichni uchazeči;
+\item pouze kejklíři a šašci;
+\item pouze komici a po nich zpěváci;
+\item nejdříve všichni baviči a potom ostatní;
+\item každá z pěti profesních skupin pohromadě a tři pohádkové bytosti nakonec;
+\item první Zlatovláska, druhý Kocour v botách a třetí Hloupý Honza;
+\item všichni uchazeči tak, aby byl Hloupý Honza první nebo druhý;
+\item všichni uchazeči tak, aby Kocour v botách nebyl první;
+\item všichni uchazeči tak, aby byl Hloupý Honza nejhůře desátý;
+\item všichni uchazeči tak, aby Zlatovláska vystoupila před Hloupým Honzou i Kocourem v botách; ostatní pořadí je libovolné.
+\end{enumerate}
+\tcblower
+Celkem je $20+35+41+27+12+3=138$ rozlišitelných osob. Ve výsledcích ponecháváme faktoriály; obrovská desetinná čísla nevypisujeme.
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=1pt]
+\item Všichni: $138!$.
+\item Pouze $20+41=61$ osob: $61!$.
+\item Nejdřív všech 35 komiků, potom 27 zpěváků: $35!\cdot27!$.
+\item Prvních 12 míst obsadí baviči, zbylých 126 míst ostatní: $12!\cdot126!$.
+\item Pět profesních bloků můžeme seřadit $5!$ způsoby, uvnitř každého bloku proběhne libovolné pořadí. Tři pohádkové bytosti zaujmou poslední tři místa v $3!$ pořadích:
+$5!\cdot20!\cdot35!\cdot41!\cdot27!\cdot12!\cdot3!$.
+\item První tři místa jsou pevně určena, ostatních 135 osob řadíme libovolně: $135!$.
+\item Dvě možné pozice pro Honzu, ostatních 137 lidí seřadíme: $2\cdot137!$.
+\item Odečteme pořadí s Kocourem na prvním místě: $138!-137!=137\cdot137!$.
+\item Honza obsadí kterékoli z prvních deseti míst: $10\cdot137!$.
+\item Ze šesti relativních pořadí trojice Zlatovláska, Honza, Kocour splňují podmínku dvě. Proto $\frac{2}{3!}\cdot138!=\frac{138!}{3}$. Poslední dva se mezi sebou mohou vystřídat libovolně.
+\end{enumerate}
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Parta ze Scooby-Doo připravuje společnou fotku pro premiéru nového streamovaného speciálu. Do jedné řady se postaví \textbf{devět různých postav}: Scooby-Doo, Shaggy, Fred, Daphne, Velma, Scrappy-Doo a tři členky kapely Hex Girls -- Thorn, Dusk a Luna. Na fotce musí být vždy všech devět postav. Kolika způsoby je lze seřadit, jestliže:
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=1pt]
+\item není žádné omezení;
+\item Scooby a Shaggy musí stát vedle sebe (v libovolném pořadí);
+\item Shaggy stojí bezprostředně před Scoobym;
+\item všechny tři Hex Girls musí stát pohromadě;
+\item všechny tři Hex Girls obsadí první tři místa;
+\item při pohledu zleva stojí Fred před Velmou a Velma před Daphne (nemusí sousedit);
+\item všechny tři Hex Girls stojí pohromadě, ale Scooby a Shaggy nesmějí sousedit;
+\item Scooby nesmí stát ani na prvním, ani na posledním místě;
+\item Scrappy-Doo stojí před Scoobym i Shaggym (pořadí těchto dvou je libovolné);
+\item mezi Scoobym a Shaggym stojí právě dvě další postavy.
+\end{enumerate}
+\tcblower
+Všichni jsou rozlišitelní; v každé podúloze se řadí všech devět postav.
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=1pt]
+\item $9!=362880$.
+\item Blok dvou, dvě pořadí uvnitř: $2\cdot8!=80640$.
+\item Orientace bloku je pevná: $8!=40320$.
+\item Blok tří Hex Girls a šest dalších postav tvoří sedm objektů: $3!\cdot7!=30240$.
+\item První tři pozice pro Hex Girls v libovolném pořadí, zbytek za nimi: $3!\cdot6!=4320$.
+\item Ze šesti možných relativních pořadí Freda, Velmy a Daphne vyhovuje jediné: $\frac{9!}{3!}=60480$.
+\item Po spojení Hex Girls do bloku řadíme sedm objektů. Od všech $7!$ pořadí odečteme $2\cdot6!$ pořadí, v nichž sousedí Scooby a Shaggy. Uvnitř kapely je $3!$ pořadí: $3!(7!-2\cdot6!)=21600$.
+\item Sedm přípustných pozic pro Scoobyho a osm pořadí ostatních: $7\cdot8!=282240$.
+\item Ze šesti relativních pořadí trojice Scrappy, Scooby, Shaggy vyhovují právě dvě: $\frac{9!}{3}=120960$.
+\item Dvojice vybraných míst se vzdáleností tři má šest možností (první místo je 1 až 6). Prohození Scoobyho a Shaggyho má dvě možnosti; ostatních sedm postav tvoří $7!$ pořadí: $6\cdot2\cdot7!=60480$.
+\end{enumerate}
+\end{prikladReseniBox}
+
+\poznamka{U příkladu 2 dbej na rozdíl mezi různými lidmi stejné profese a nerozlišitelnými kopiemi: stále jde o permutace bez opakování. Nezaměňuj je s budoucími permutacemi s opakováním. Podúlohy příkladu 2e, 2j a příkladu 3f, 3g, 3i jsou vhodné jako rozšíření, nikoli jako nutný výkon všech žáků.}
+
+\blok{Samostatná práce}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Osm různých lidí stojí v řadě. Dva předem určení musí sousedit. Kolik pořadí je možných?
+\tcblower
+Dvojice tvoří blok, tedy $2\cdot7!=10080$.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Osm různých lidí stojí v řadě. Nora musí stát před Radkem, ne nutně bezprostředně. Kolik pořadí existuje?
+\tcblower
+Zrcadlovou záměnou Noru/Radka spárujeme všechna pořadí, proto $8!/2=20160$.
+\end{zadaniReseniBox}
+\blok{Rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Kolik pořadí osmi lidí vyhovuje, pokud Adam a Bára nesmějí sousedit a Cyril musí být na posledním místě?
+\tcblower
+Cyril je poslední; zbylých sedm osob má $7!$ pořadí. Uspořádání, v nichž Adam a Bára sousedí, je $2\cdot6!$. Celkem $7!-2\cdot6!=3600$.
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\poznamka{Přibližně 20--30 minut. Volitelné je poslední zadání, pokud byly rozsáhlé příklady ve třídě časově náročné.}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+\item Kolika způsoby lze seřadit sedm různých studentů, je-li jeden z nich vždy první?
+\item Kolik pořadí sedmi různých osob existuje, mají-li dvě určené stát vedle sebe (v libovolném pořadí)?
+\item Kolik pořadí osmi různých lidí splňuje, že A stojí před B?
+\item Ze sedmi různých herních postav seřaď všechny do řady. Kolik pořadí existuje, jestliže dvě konkrétní postavy nesmějí sousedit?
+\item Mezi osmi různými účastníky stojí Adam a Bára tak, že právě jeden člověk je mezi nimi. Urči počet pořadí.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+\item $6!=720$.
+\item $2\cdot6!=1440$.
+\item $8!/2=20160$.
+\item $7!-2\cdot6!=3600$.
+\item Polohy krajních osob mají šest možností $(1,3),\ldots,(6,8)$, jejich pořadí dvě možnosti, ostatních šest lidí seřadíme $6!$ způsoby. Celkem $6\cdot2\cdot6!=8640$.
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\end{document}

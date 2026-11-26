@@ -1,0 +1,125 @@
+% Doplneno podle fotografie uzivatele z 21. 11. 2026; bez zasahu do dalsich hodin.
+% Work-MAT | 2. rocnik | revize cilove obtiznosti exponencialnich uloh | 2026-11-21
+% Zdroje inspirace: autorova ucebnice Work-MAT, dodane ucitelske screenshoty typovych prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{24}{Substituce s různými základy}
+\begin{document}
+\blok{Návaznost a motivace}
+Rovnice může obsahovat mocniny základu 2, 3, 4, 6 či 9 současně. Cílem je vystihnout vhodný podíl mocnin, nikoli automaticky zavádět dvě pomocné proměnné. Tato hodina má náročnější úlohy než čistá kvadratická substituce.
+\poznamka{Pro vyučovací hodinu počítej přibližně s 5 minutami opakování, 20 minutami společného výkladu a 20--25 minutami samostatného řešení. Náročnější úlohy slouží jako rezerva pro rychlejší žáky.}
+\blok{Nová myšlenka}
+Po vydělení rovnice kladnou mocninou $b^{2x}$ platí $\frac{a^{2x}}{b^{2x}}=(\frac ab)^{2x}$ a $\frac{(ab)^x}{b^{2x}}=(\frac ab)^x$. Substituce $t=(\frac ab)^x>0$ pak může převést tři různé základy na jedinou kvadratickou rovnici.
+\blok{Společné příklady – od základního typu k cílové obtížnosti}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš $4^x-5\cdot2^x+4=0$.
+\tcblower
+\[
+\begin{aligned}t&=2^x>0,\\t^2-5t+4&=0,\\(t-1)(t-4)&=0,\\K&=\{0,2\}.\end{aligned}
+\]
+Vstupní úloha – jeden společný základ, který se ukrývá v obou mocninách.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš $9^x+3\cdot6^x=4\cdot4^x$.
+\tcblower
+\[
+\begin{aligned}9^x+3\cdot6^x&=4\cdot4^x,\\\left(\frac{3}{2}\right)^{2x}+3\left(\frac{3}{2}\right)^x&=4,\\t&=\left(\frac{3}{2}\right)^x>0,\\t^2+3t-4&=0,\\(t-1)(t+4)&=0,\\t&=1,\quad x=0,\\K&=\{0\}.\end{aligned}
+\]
+Při dělení $4^x$ nedělíme nulou; pro všechna reálná $x$ je kladná.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš $9^{x+1}+5\cdot6^x=4^{x+1}$.
+\tcblower
+\[
+\begin{aligned}9\cdot9^x+5\cdot6^x&=4\cdot4^x,\\9\left(\frac{3}{2}\right)^{2x}+5\left(\frac{3}{2}\right)^x&=4,\\t&=\left(\frac{3}{2}\right)^x>0,\\9t^2+5t-4&=0,\\(9t-4)(t+1)&=0,\\t&=\frac{4}{9}=\left(\frac{3}{2}\right)^{-2},\\K&=\{-2\}.\end{aligned}
+\]
+Cílová obtížnost ze zaslané předlohy. Nezapomeň: před substitucí je potřeba celou rovnici vydělit $4^x$.
+\end{prikladReseniBox}
+% Ukazka z dodane fotografie, cviceni 5a
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš rovnici s různými základy, které po vydělení vhodnou mocninou vytvoří kvadratickou substituci:
+\[
+4^x+6^x=2\cdot9^x.
+\]
+\tcblower
+\[
+\begin{aligned}\left(\frac{4}{9}\right)^x+\left(\frac{2}{3}\right)^x&=2,\\t&=\left(\frac{2}{3}\right)^x>0,\\t^2+t-2&=0,\\(t-1)(t+2)&=0,\\t&=1,\\K&=\{0\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Dělení mocninou $9^x$ je dovoleno, protože $9^x>0$. Druhý pomocný kořen $t=-2$ nesplňuje podmínku.}
+\poznamka{Cílová obtížnost podle dodané fotografie. Zařaď po základním vzoru; při pomalejším tempu ukaž jen rozhodující úpravu a celý výpočet použij jako rozšíření.}
+
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $16^x+2\cdot12^x=3\cdot9^x$
+\item $25^x+4\cdot10^x=5\cdot4^x$
+\item $9^{x+1}+3\cdot6^x=6\cdot4^x$
+\item $16^x-5\cdot8^x+4\cdot4^x=0$
+\item $9^x+5\cdot6^x=6\cdot4^x$
+\item $16^x+7\cdot12^x=8\cdot9^x$
+\item Jakou mocninou vydělíš rovnici $49^x+7\cdot14^x=8\cdot4^x$ a jakou zvolíš substituci?
+\item Proč je $t=(\frac{3}{2})^x$ vždy kladné?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{0\}\]
+\item \[K=\{0\}\]
+\item \[K=\{-1\}\]
+\item \[K=\{0,2\}\]
+\item \[
+K=\{0\}
+\]
+\item \[K=\{0\}\]
+\item \[4^x>0,\quad t=\left(\frac{7}{2}\right)^x>0\]
+\item \[
+\frac{3}{2}>0\text{ je základ exponenciály}
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Vyřeš samostatně další typ úlohy ze stejného tematického celku:
+\[
+\displaystyle16^x=8\cdot4^x+2\cdot8^x
+\]
+\tcblower
+\[\begin{aligned}16^x&=8\cdot4^x+2\cdot8^x,\\t&=2^x>0,\\t^4&=8t^2+2t^3,\\t^2(t^2-2t-8)&=0,\\t&=4,\\K&=\{2\}.\end{aligned}\]
+\end{zadaniReseniBox}
+
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Pro rovnici $a^{2x}+5(ab)^x=6b^{2x}$ s $a>b>0$ urči řešení.
+\tcblower
+\[
+t=(a/b)^x>0:\quad t^2+5t-6=0\iff t=1\iff x=0
+\]
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $16^x+2\cdot8^x=8\cdot4^x$
+\item $3\cdot9^x+6^x=2\cdot4^x$
+\item $16^x-3\cdot8^x=4\cdot4^x$
+\item $2\cdot25^x-3\cdot10^x=5\cdot4^x$
+\item $4\cdot16^x+12^x=3\cdot9^x$
+\item $25^x-10\cdot5^x+25=0$
+\item Vysvětli, proč u tří členů $a^{2x}$, $(ab)^x$ a $b^{2x}$ dává smysl vydělit výrazem $b^{2x}$.
+\item \[ 3^x+3^{x+1}=7\cdot4^x-4^{x+1} \]
+\end{enumerate}
+\tcblower
+\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{1\}\]
+\item \[K=\{-1\}\]
+\item \[K=\{2\}\]
+\item \[K=\{1\}\]
+\item \[K=\{-1\}\]
+\item \[K=\{1\}\]
+\item \[\text{Vzniknou }t^2,t,1\text{ pro }t=\left(\frac ab\right)^x>0.\]
+\item \[\begin{aligned}4\cdot3^x&=3\cdot4^x,\\\left(\frac{3}{4}\right)^x&=\frac{3}{4},\\K&=\{1\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Z domácího úkolu zadej přiměřený výběr na 15--30 minut; uvedená sada obsahuje základní i cílové obtížnější typy. Na konci většího celku nech žáky samostatně vybrat metodu řešení.}
+\end{document}

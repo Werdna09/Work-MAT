@@ -1,0 +1,179 @@
+% Doplneno podle fotografie uzivatele z 21. 11. 2026; bez zasahu do dalsich hodin.
+% Work-MAT | 2. rocnik | hodina 17
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Exponenciální rovnice}{17}{Exponenciální rovnice II: společný základ}
+\begin{document}
+\poznamka{Nácvik pravidel $a^{p}a^{q}=a^{p+q}$ a $(a^p)^q=a^{pq}$. Orientačně 6 min připomenutí, 12 min převody základů, 12 min obtížnější rovnice, 10 min samostatná práce, 5 min shrnutí.}
+\blok{Nejdřív sjednotit základy}
+Čísla $4,8,16,32$ jsou mocniny dvojky a $9,27,81$ mocniny trojky. Proto rovnice $4^x=8$ není vhodná pro přímé porovnání exponentů, dokud nepřepíšeme obě strany do stejného základu: $(2^2)^x=2^3$.
+\begin{zadaniBox}[title={Věta - Pravidla pro mocniny}]
+Pro $a>0$ a reálná $p,q$ platí $(a^p)^q=a^{pq}$, $a^pa^q=a^{p+q}$ a $\frac{a^p}{a^q}=a^{p-q}$. Mocniny s různými základy lze porovnat podle exponentů teprve po sjednocení na stejný základ $a\ne1$.
+\end{zadaniBox}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš $9^{x-1}=27$.
+\tcblower
+\[\begin{aligned}(3^2)^{x-1}&=3^3\\3^{2x-2}&=3^3\\2x-2&=3\\x&=\frac{5}{2}.\end{aligned}\]
+$K=\{\frac{5}{2}\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš $8^{x+1}=4^{2x-1}$.
+\tcblower
+\[\begin{aligned}(2^3)^{x+1}&=(2^2)^{2x-1}\\2^{3x+3}&=2^{4x-2}\\3x+3&=4x-2\\x&=5.\end{aligned}\]
+Zkouška v exponentu: vlevo $3\cdot6=18$, vpravo $2\cdot9=18$; obě strany jsou $2^{18}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš $\left(\frac{1}{4}\right)^{x-1}=8$.
+\tcblower
+\[\begin{aligned}(2^{-2})^{x-1}&=2^3\\2^{-2x+2}&=2^3\\-2x+2&=3\\x&=-\frac{1}{2}.\end{aligned}\]
+$K=\{-\frac{1}{2}\}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš rovnici
+\[
+\frac{16^{x-1}\cdot8^{x+1}}{2^x}=4^{2x+1}.
+\]
+Nejdříve vše převeď na základ 2 a přehledně sluč exponenty.
+\tcblower
+\[
+\begin{aligned}
+\frac{2^{4x-4}\cdot2^{3x+3}}{2^x}&=2^{4x+2},\\
+2^{4x-4+3x+3-x}&=2^{4x+2},\\
+6x-1&=4x+2,\\
+2x&=3,\\
+x&=\frac{3}{2}.
+\end{aligned}
+\]
+$K=\left\{\frac{3}{2}\right\}$.
+\end{prikladReseniBox}
+\poznamka{Nezaměňuj $2^{x+2}$ za $2^x+2^2$. U převodu základu vždy nejdříve přepiš základ i exponent do závorky, například $(2^3)^{x-1}$.}
+
+\begin{prikladReseniBox}[title={Příklad 5}]
+Převeď odmocniny na mocniny a vyřeš rovnici
+\[
+\frac{9\cdot3^x}{\sqrt3\cdot\sqrt[3]{9^x}}=\frac{\sqrt[4]{3^x}}{27}.
+\]
+\tcblower
+\[
+\begin{aligned}
+\frac{3^{x+2}}{3^{\frac{1}{2}}\cdot3^{\frac{2x}{3}}}&=\frac{3^{\frac{x}{4}}}{3^3},\\
+3^{\frac{3}{2}+\frac{x}{3}}&=3^{\frac{x}{4}-3},\\
+\frac{3}{2}+\frac{x}{3}&=\frac{x}{4}-3,\\
+\frac{x}{12}&=-\frac{9}{2},\\
+x&=-54.
+\end{aligned}
+\]
+$K=\{-54\}$. Každý odmocninový výraz je kladný, proto nevznikají další podmínky pro $x$.
+\end{prikladReseniBox}
+\poznamka{Cílový typ s odmocninami a zlomkovými exponenty: jako mezikrok nech žáky samostatně přepsat všechny členy na základ 3.}
+
+
+\begin{prikladReseniBox}[title={Příklad 6}]
+Vyřeš rovnici se zlomkovými základy:
+\[
+\frac{27}{8}\left(\frac{2}{3}\right)^x=\frac{4}{9}\left(\frac{9}{4}\right)^{x+2}.
+\]
+\tcblower
+\[
+\begin{aligned}
+\left(\frac{3}{2}\right)^{3-x}&=\left(\frac{3}{2}\right)^{-2+2x+4},\\
+3-x&=2x+2,\\
+3x&=1,\\
+x&=\frac{1}{3},\\
+K&=\left\{\frac{1}{3}\right\}.
+\end{aligned}
+\]
+Oba členy jsou nyní mocninami společného základu $\frac{3}{2}>1$.
+\end{prikladReseniBox}
+\poznamka{Příklady 5 a 6 jsou cílovou obtížností převodů na společný základ. Zbývá-li málo času, příklad 6 začni společně a dokončení nech jako dobrovolnou samostatnou práci.}
+
+% Ukazka z dodane fotografie, cviceni 1b
+\begin{prikladReseniBox}[title={Příklad 7}]
+Převeď odmocniny na mocniny a vyřeš rovnici
+\[
+\sqrt[4]{4^x}\cdot\sqrt[3]{2^{x-3}}=\sqrt[6]{16}.
+\]
+\tcblower
+\[
+\begin{aligned}
+2^{\frac{x}{2}}\cdot 2^{\frac{x-3}{3}}&=2^{\frac{2}{3}},\\
+\frac{x}{2}+\frac{x-3}{3}&=\frac{2}{3},\\
+3x+2x-6&=4,\\
+5x&=10,\\
+x&=2,\\
+K&=\{2\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Cílová obtížnost podle dodané fotografie. Zařaď po základním vzoru; při pomalejším tempu ukaž jen rozhodující úpravu a celý výpočet použij jako rozšíření.}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $25^{x-1}=125$.
+\item $16^x=8^{x+2}$.
+\item $\left(\frac{1}{9}\right)^x=27$.
+\item $8^{x+2}=4^{2x-1}$
+\item $27^{x-2}=9^{x+1}$.
+\item $\left(\frac{1}{4}\right)^{x-1}=2^{x+2}$.
+\item $2^{x+2}\cdot4^{x-1}=32$.
+\item $\frac{9^{x+1}}{3^{x-1}}=81$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $5^{2x-2}=5^3$, tedy $x=\frac{5}{2}$.
+\item $2^{4x}=2^{3x+6}$, tedy $x=6$.
+\item $3^{-2x}=3^3$, tedy $x=-\frac{3}{2}$.
+\item \[K=\{8\}\]
+\item $3^{3x-6}=3^{2x+2}$, tedy $x=8$.
+\item $2^{-2x+2}=2^{x+2}$, tedy $x=0$.
+\item $2^{3x}=2^5$, tedy $x=\frac{5}{3}$.
+\item $3^{2x+2-(x-1)}=3^{x+3}=3^4$, tedy $x=1$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Vyřeš samostatně další typ úlohy ze stejného tematického celku:
+\[
+\displaystyle\frac{81}{16}=\left(\frac{2}{3}\right)^x\left(\frac{9}{4}\right)^{x+1}
+\]
+\tcblower
+\[\begin{aligned}\left(\frac{3}{2}\right)^4&=\left(\frac{3}{2}\right)^{-x}\left(\frac{3}{2}\right)^{2x+2},\\4&=x+2,\\K&=\{2\}.\end{aligned}\]
+\end{zadaniReseniBox}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Vyřeš $\frac{2^{x+1}\cdot8^{x-2}}{4^x}=8$.
+\tcblower\[\begin{aligned}2^{2x-5}&=2^3,\\2x-5&=3,\\K&=\{4\}.\end{aligned}\]
+\end{zadaniReseniBox}
+\clearpage
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Vyřeš $27^x=9^{x+1}$.
+\item Vyřeš $\left(\frac{1}{8}\right)^x=4^{x-1}$.
+\item Vyřeš $8^{x-2}=16^{x+1}$.
+\item Vyřeš $\frac{25^{x+1}}{5^{x-1}}=125$.
+\item Vyřeš $\frac{2^{x+3}\cdot4^{x-1}}{8^x}=16$.
+\item Proč nelze v rovnici $2^x=3^x$ hned porovnat exponenty?
+\item Vysvětli význam závorek při převodu $8^{x-1}=(2^3)^{x-1}$.
+\item Rozhodni, zda je $9^x=3^{2x}$ rovnicí s jediným kořenem.
+\item Načrtni graf základní funkce $y=3^x$; vyznač čtyři body a asymptotu.
+\item Před kreslením uprav $y=\frac{2^{x+3}}4-2$ na tvar se zřejmým posunem a sestroj jeho graf.
+\item \[ \frac{3^x}{2\cdot3^{\sqrt3}}=4{,}5 \]
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $3^{3x}=3^{2x+2}$, tedy $x=2$.
+\item $2^{-3x}=2^{2x-2}$, tedy $x=\frac{2}{5}$.
+\item $2^{3x-6}=2^{4x+4}$, tedy $x=-10$.
+\item $5^{2x+2-(x-1)}=5^{x+3}=5^3$, tedy $x=0$.
+\item $2^{x+3+2x-2-3x}=2^1=2$, nikoli 16; tedy $K=\varnothing$.
+\item Základy jsou různé; nejprve musí být společný základ nebo jiný vhodný postup.
+\item Mocnění mocniny dává $2^{3(x-1)}=2^{3x-3}$, ne $2^{3x-1}$.
+\item Ne: jde o identitu, protože $9^x=(3^2)^x=3^{2x}$ pro všechna $x$.
+\item Body $[-1;\frac{1}{3}]$, $[0;1]$, $[1;3]$, $[2;9]$; asymptota $y=0$.
+\item $y=2^{x+1}-2$, takže posun o 1 doleva a o 2 dolů; asymptota $y=-2$. Body například $[-1;-1]$, $[0;0]$, $[1;2]$.
+\item \[\begin{aligned}3^x&=9\cdot3^{\sqrt3}=3^{2+\sqrt3},\\K&=\{2+\sqrt3\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol zhruba 20--30 minut: pět rovnic, tři otázky a dva grafy. U grafů žáci použijí dostatečně široké osy, podobně jako v hodině 13.}
+\end{document}

@@ -1,0 +1,138 @@
+% Work-MAT | 2. ročník | hodina 40 | 2026-11-22
+% Zadání vybírána z WorkMAT_Logaritmy_Sbirka_PodleMetod.tex (481 příkladů)
+% Vždy zachována matematická formulace zdroje, učitelův výklad a řešení dopsány k vybraným příkladům.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{mathtools}
+\nastavPripravu{2. ročník}{Logaritmické rovnice}{40}{Kvadratická substituce v logaritmických rovnicích}
+\begin{document}
+\blok{Návaznost a cíl hodiny}
+V předchozí hodině jsme použili opakující se logaritmus jako pomocnou proměnnou. Teď se stejná substituce promění v kvadratickou rovnici; někdy navíc musíme napřed upravit argumenty.
+\poznamka{\textbf{Časový plán (45--55 minut):} Motivace 5 min, příklady 1--2 20 min, samostatná práce a--d 12 min, grafický pohled a záporné kořeny příkladu 3 8 min, závěr 5 min.}
+
+\blok{Klíčová metoda}
+\[
+t=\log_a x\quad\text{nebo}\quad t=\log_a(x^2)\quad\text{dle původního definičního oboru}.
+\]
+\poznamka{Nejde o novou definici. Jde o důsledek prostoty a pravidel pro logaritmy, která už žáci znají. V řešení mají vždy uvést podmínky.}
+
+\blok{Společné řešené příklady}
+
+% Sbírka: oddíl 14, položka 1
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš: $\displaystyle \log_2^2x+2\log_2 x-3=0$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log_2 x,\\
+t^2+2t-3&=0,\\
+(t-1)(t+3)&=0,\\
+t_1&=1,\quad t_2=-3,\\
+x_1&=2,\quad x_2=2^{-3},\\
+K&=\left\{\frac18;2\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Rozliš zdůvodnění podmínek od kvadratické substituce; po řešení $t$ vždy návrat k $x$.}
+% Sbírka: oddíl 14, položka 10
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš: $\displaystyle \log_2\frac4x+\log_2^2(2x)=9$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log_2 x,\\
+\log_2\frac4x&=2-t,\\
+\log_2(2x)&=1+t,\\
+2-t+(1+t)^2&=9,\\
+t^2+t-6&=0,\\
+t&=2\quad\text{nebo}\quad t=-3,\\
+K&=\left\{\frac18;4\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Nejdřív převést všechny různé argumenty na jediný výraz $\log_2 x$; až potom substituovat.}
+% Sbírka: oddíl 14, položka 11
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš: $\displaystyle \log_2(8x^2)+\log_2^2(2x^2)=8$
+\tcblower
+\[
+\begin{aligned}
+&x\ne0,\quad t=\log_2(x^2),\\
+\log_2(8x^2)&=3+t,\\
+\log_2(2x^2)&=1+t,\\
+3+t+(1+t)^2&=8,\\
+(t+4)(t-1)&=0,\\
+t&=-4\quad\text{nebo}\quad t=1,\\
+x^2&=\frac1{16}\quad\text{nebo}\quad x^2=2,\\
+K&=\left\{-\sqrt2;-\frac14;\frac14;\sqrt2\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Klíčová úloha: při substituci $t=\log_2(x^2)$ mohou být původní kořeny kladné i záporné. Nekrátit předčasně na $2\log_2 x$.}
+% Sbírka: oddíl 14, položka 5
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš: $\displaystyle \log(100x)+\log^2(10x)=7$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log x,\\
+\log(100x)&=2+t,\\
+\log(10x)&=1+t,\\
+2+t+(1+t)^2&=7,\\
+t^2+3t-4&=0,\\
+t&=1\quad\text{nebo}\quad t=-4,\\
+K&=\left\{\frac1{10000};10\right\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Na konci nechej žáky samostatně rozpoznat správnou pomocnou proměnnou.}
+\blok{Samostatná práce}
+\poznamka{Ve třídě doporučuji nejdříve úlohy a)--d); další jsou rezervou pro rychlejší žáky nebo volitelným dokončením po hodině. Neopisovat řešený vzor — vybrat postup.}
+\begin{zadaniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 14, položka 2
+\item $\displaystyle 4\log_9 x(\log_9 x-1)=2+3\log_9 x$
+% Sbírka: oddíl 14, položka 3
+\item $\displaystyle \log_{\frac12}^2(x+1)+5\log_{\frac12}(x+1)=6$
+% Sbírka: oddíl 14, položka 4
+\item $\displaystyle 4\log_3(2x+1)+\log_3\sqrt{2x+1}=\frac32\log_3^2(2x+1)-6$
+% Sbírka: oddíl 14, položka 6
+\item $\displaystyle \log(100x^2)+\log^2(10x^2)=7$
+% Sbírka: oddíl 14, položka 7
+\item $\displaystyle \frac{1-2\log x}{3+\log x}=\frac{4-2\log x}{5+\log x}$
+% Sbírka: oddíl 14, položka 8
+\item $\displaystyle 3\log_4x\,(2\log_4x-1)=2(1-\log_4x)$
+% Sbírka: oddíl 14, položka 9
+\item $\displaystyle \log(x^2)(\log x+1)=3+\log(x^{-3})$
+% Sbírka: oddíl 14, položka 12
+\item $\displaystyle \log_9^2(9x^2)+\log_9(81x^3)=5$
+\end{enumerate}
+\end{zadaniBox}
+\blok{Úkol na doma}
+Vyřeš úlohy a)--e) a zapiš podmínky. Zbývající úlohy jsou procvičování navíc; podle rychlosti je můžeš dokončit doma. 
+\begin{zadaniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 14, položka 16
+\item $\displaystyle (\log_2(x-1))^2-3\log_2(x-1)+2=0$
+% Sbírka: oddíl 14, položka 17
+\item $\displaystyle 2(\log_3(x+2))^2-\log_3(x+2)-1=0$
+% Sbírka: oddíl 14, položka 18
+\item $\displaystyle 2(\log_4(x-3))^2+3\log_4(x-3)-2=0$
+% Sbírka: oddíl 14, položka 19
+\item $\displaystyle (\log_2(x+5))^2-4\log_2(x+5)+3=0$
+% Sbírka: oddíl 14, položka 20
+\item $\displaystyle 3(\log_7(x-1))^2-2\log_7(x-1)-1=0$
+% Sbírka: oddíl 14, položka 21
+\item $\displaystyle (\log_{10}(x+4))^2+\log_{10}(x+4)-6=0$
+% Sbírka: oddíl 14, položka 22
+\item $\displaystyle (\log_5(x^2-4))^2-3\log_5(x^2-4)+2=0$
+% Sbírka: oddíl 14, položka 23
+\item $\displaystyle (\log_{\frac13}(x-2))^2+\log_{\frac13}(x-2)=\log_{\frac13}9$
+\end{enumerate}
+\end{zadaniBox}
+\poznamka{\textbf{Učitelovo vodítko:} Při substituci $t=\log_a(x^2)$ se nesmí ztratit záporné kořeny. Kořeny $t$ nejsou konečným výsledkem. Domácí sada má 8 různých zadání; základních pět úloh na přibližně 15--30 minut a zbytek jako volitelnou zásobu.}
+\end{document}

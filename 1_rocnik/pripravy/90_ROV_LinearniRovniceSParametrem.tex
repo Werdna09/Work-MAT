@@ -1,0 +1,136 @@
+% Revize výukové přípravy, výchozí soubor GitHub Work-MAT, 90. hodina.
+% Zdroje: Realisticky.cz 020801–020802
+% Úlohy jsou vlastní / úlohy výchozí přípravy, případně nově didakticky obměněné.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{1. ročník}{Rovnice a nerovnice}{90}{Lineární rovnice s parametrem}
+\begin{document}
+\blok{Od běžné rovnice k parametru}
+V rovnici $(a-2)x=a+1$ hledáme $x$; $a$ je libovolné \emph{pevně zvolené} číslo. Řešení zapisujeme jako množinu $K_a$ závislou na hodnotě $a$.
+\begin{definiceBox}[title={Definice - Parametr}]
+\textbf{Parametr} je symbol označující pevně zvolenou hodnotu, při níž řešíme rovnici vůči neznámé. Výsledek může záviset na hodnotě parametru.
+\end{definiceBox}
+\blok{Metodický postup}
+Každou rovnici uprav na $A(a)x=B(a)$. Pro $A(a)\ne0$ má jediný kořen $x=B(a)/A(a)$. Pokud je $A(a)=0$, rozliš $B(a)=0$ (řeší všechna $x$) a $B(a)\ne0$ (žádné řešení). \textbf{Nikdy nedělíme výrazem, který může být nulový, bez rozboru.}
+\blok{Společně řešené příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřešte $(a-2)x=a+1$ pro všechna $a\in\mathbb R$.
+\tcblower
+\[\begin{aligned}
+a\ne2&:\quad x=\frac{a+1}{a-2} \\
+a=2&:\quad 0\cdot x=3\quad\text{-- spor} \\
+K_a&=\begin{cases}\left\{\frac{a+1}{a-2}\right\},&a\ne2,\\\varnothing,&a=2.\end{cases}
+\end{aligned}\]
+
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřešte $(a-1)x=a-1$.
+\tcblower
+\[\begin{aligned}
+a\ne1&:\quad x=\frac{a-1}{a-1}=1 \\
+a=1&:\quad 0\cdot x=0 \\
+K_a&=\begin{cases}\{1\},&a\ne1,\\\mathbb R,&a=1.\end{cases}
+\end{aligned}\]
+
+\end{prikladReseniBox}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+$(p+1)x=3$.
+\tcblower
+\[\begin{aligned}
+p\ne-1&:\quad x=\frac3{p+1} \\
+p=-1&:\quad 0=3\quad\text{-- spor} \\
+K_p&=\begin{cases}\left\{\frac3{p+1}\right\},&p\ne-1,\\\varnothing,&p=-1.\end{cases}
+\end{aligned}\]
+
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+$(p-2)x=p-2$.
+\tcblower
+\[\begin{aligned}
+p\ne2&:\quad x=1 \\
+p=2&:\quad0=0 \\
+K_p&=\begin{cases}\{1\},&p\ne2,\\\mathbb R,&p=2.\end{cases}
+\end{aligned}\]
+
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+$(p+3)x=0$.
+\tcblower
+\[\begin{aligned}
+p\ne-3&:\quad x=0 \\
+p=-3&:\quad0=0 \\
+K_p&=\begin{cases}\{0\},&p\ne-3,\\\mathbb R,&p=-3.\end{cases}
+\end{aligned}\]
+
+\end{zadaniReseniBox}
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Proč z $ax=a$ neplyne bez podmínky $x=1$?
+\tcblower
+\[\begin{aligned}
+a\ne0&:\quad x=1 \\
+a=0&:\quad 0=0 \\
+K_a&=\begin{cases}\{1\},&a\ne0,\\\mathbb R,&a=0.\end{cases}
+\end{aligned}\]
+
+\end{zadaniReseniBox}
+\blok{Domácí úkol}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*),itemsep=2pt]
+\item $(m-4)x=5$.
+\item $(m+2)x=m+2$.
+\item $mx=m+1$.
+\item $(a-3)x=2a-6$.
+\item $(a+1)x=a-2$.
+\item $(a-2)x=a+4$.
+\item $(a+1)x+3=2x+a$.
+\item $a(x-2)=2x-4$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*),itemsep=1pt]
+\item
+\[\begin{aligned}
+m\ne4&:\quad x=\frac5{m-4} \\
+m=4&:\quad0=5\ \text{-- spor} \\
+K_m&=\begin{cases}\left\{\frac5{m-4}\right\},&m\ne4,\\\varnothing,&m=4.\end{cases}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+m\ne-2&:\quad x=1 \\
+m=-2&:\quad0=0 \\
+K_m&=\begin{cases}\{1\},&m\ne-2,\\\mathbb R,&m=-2.\end{cases}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+m\ne0&:\quad x=\frac{m+1}{m} \\
+m=0&:\quad0=1\ \text{-- spor} \\
+K_m&=\begin{cases}\left\{\frac{m+1}{m}\right\},&m\ne0,\\\varnothing,&m=0.\end{cases}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+a\ne3&:\quad x=\frac{2(a-3)}{a-3}=2 \\
+a=3&:\quad0=0 \\
+K_a&=\begin{cases}\{2\},&a\ne3,\\\mathbb R,&a=3.\end{cases}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+a\ne-1&:\quad x=\frac{a-2}{a+1} \\
+a=-1&:\quad0=-3\ \text{-- spor} \\
+K_a&=\begin{cases}\left\{\frac{a-2}{a+1}\right\},&a\ne-1,\\\varnothing,&a=-1.\end{cases}
+\end{aligned}\]
+\item
+\[\begin{aligned}
+a\ne2&:\quad x=\frac{a+4}{a-2} \\
+a=2&:\quad0=6\ \text{-- spor} \\
+K_a&=\begin{cases}\left\{\frac{a+4}{a-2}\right\},&a\ne2,\\\varnothing,&a=2.\end{cases}
+\end{aligned}\]
+\item
+\[\begin{aligned}(a-1)x&=a-3\\a\ne1&:\quad K_a=\left\{\frac{a-3}{a-1}\right\}\\a=1&:\quad 0=-2\text{ (spor)},\quad K_1=\varnothing\end{aligned}\]
+\item
+\[\begin{aligned}(a-2)x&=2(a-2)\\a\ne2&:\quad K_a=\{2\}\\a=2&:\quad 0=0,\quad K_2=\mathbb R\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{45 minut: význam parametru a nulového dělitele 9, dva vzory 15, samostatná práce 16, kontrola 5. Jedna hodina je věnována základním případům; složitější parametrické rovnice nejsou povinné.}
+\end{document}

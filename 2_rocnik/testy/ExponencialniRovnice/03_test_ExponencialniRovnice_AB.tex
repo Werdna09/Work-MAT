@@ -1,0 +1,64 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,landscape,left=8mm,right=8mm,top=8mm,bottom=8mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=2pt}
+
+\newcommand{\TestTitle}{Exponenciální rovnice}
+\newcommand{\TestHeader}[1]{%
+    {\bfseries TEST -- \TestTitle}\hfill{\bfseries Varianta #1}\\[2mm]
+    Jméno a příjmení: \rule{4.5cm}{0.4pt}\hfill Třída: \rule{1.5cm}{0.4pt}\\[2mm]
+    Datum: \rule{2.4cm}{0.4pt}\hfill Počet bodů: \rule{1.4cm}{0.4pt}\hfill Známka: \rule{1.4cm}{0.4pt}\\[1mm]
+    \hrule\vspace{3mm}
+}
+\newcommand{\AnswerSpace}[1]{\vspace{#1}}
+
+\begin{document}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{A}
+
+    Vyřešte následující exponenciální rovnice.
+    \begin{enumerate}
+        \item $\displaystyle 3^x=\frac{1}{81}$
+        \AnswerSpace{18mm}
+        \item $\displaystyle 2\cdot 2^x\cdot 4^{2-x}=\frac{8}{2^{3x+1}}$
+        \AnswerSpace{24mm}
+        \item Řešte pomocí vytýkání:
+        $\displaystyle \frac{3^{x+4}}{9}+9\cdot 3^x=\frac{2}{3}$
+        \AnswerSpace{30mm}
+        \item Řešte pomocí substituce:
+        $\displaystyle 9\cdot 3^x+3^{-x}=10$
+        \AnswerSpace{34mm}
+    \end{enumerate}
+\end{minipage}%
+\hfill\vrule width 0.4pt\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{B}
+
+    Vyřešte následující exponenciální rovnice.
+    \begin{enumerate}
+        \item $\displaystyle \left(\frac{1}{2}\right)^x=4$
+        \AnswerSpace{18mm}
+        \item $\displaystyle \frac{3^x}{9^{x-2}}=\frac{27^x}{9\cdot 3^{4-x}}$
+        \AnswerSpace{24mm}
+        \item Řešte pomocí vytýkání:
+        $\displaystyle 2^{x+1}+2^{x-1}+2^{x+3}=\frac{21}{8}$
+        \AnswerSpace{30mm}
+        \item Řešte pomocí substituce:
+        $\displaystyle 2^{x+3}+2^{3-x}=20$
+        \AnswerSpace{34mm}
+    \end{enumerate}
+\end{minipage}
+\end{document}

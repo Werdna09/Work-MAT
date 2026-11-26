@@ -1,0 +1,78 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{32}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Permutace bez opakování; úvod do variací}\par
+{\sffamily\large\color{teal} Výukový podklad · 32. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.1\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Odvodit \(n!\) pro pořadí všech různých prvků a odlišit ho od uspořádaného výběru jen části prvků.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Permutace bez opakování} je uspořádání všech \(n\) různých prvků; jejich počet \(P(n)=n!\). Odvození: na první místo \(n\) možností, na druhé \(n-1\), a tak dále až poslední \(1\).\par
+\textbf{Variace bez opakování} je uspořádaný výběr \(k\) různých prvků z \(n\), kde \(0\le k\le n\). Jejich počet \(V(n,k)=n(n-1)\cdots(n-k+1)=\frac{n!}{(n-k)!}\).\par
+\textbf{Pozor na omezení.} „Dva stojí vedle sebe“ často řešíme spojením do bloku. „Nesmějí stát vedle sebe“ často vyřešíme odečtením nevhodných pořadí.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Kolika způsoby se do řady postaví šest různých studentů?\par
+\textit{Řešení.} Jde o permutaci všech šesti osob: \(P(6)=6!=720\).\par\smallskip
+\textbf{Příklad 2.} V šestičlenné řadě mají Adam a Bára stát vedle sebe. Kolik je pořadí?\par
+\textit{Řešení.} Považujeme oba za jeden blok. Se čtyřmi ostatními lidmi tvoří pět objektů, které lze seřadit \(5!\) způsoby. Uvnitř bloku jsou dvě možnosti \(AB,BA\). Celkem \(2\cdot5!=240\).\par\smallskip
+\textbf{Příklad 3.} Stejní studenti, Adam a Bára nesmějí stát vedle sebe.\par
+\textit{Řešení.} Od všech \(6!=720\) pořadí odečteme \(240\) s dvojicí vedle sebe: \(720-240=480\).\par\smallskip
+\textbf{Příklad 4.} Osm týmů obsazuje první tři místa. Kolik různých výsledků?\par
+\textit{Řešení.} Nevybíráme všech osm týmů, ale pořadí medailí rozhoduje. Variace bez opakování: \(V(8,3)=8\cdot7\cdot6=336=\frac{8!}{5!}\).\par\smallskip
+\textbf{Příklad 5.} Ze sedmi číslic \(1,\ldots,7\) vytvoř sedmiciferné číslo zakončené sudou cifrou bez opakování.\par
+\textit{Řešení.} Na posledním místě jsou \(3\) možnosti: \(2,4,6\). Zbývajících šest číslic lze uspořádat \(6!\) způsoby. Výsledek \(3\cdot6!=2160\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Kolik pořadí má pět různých knih?
+\item Kolika způsoby získají z deseti závodníků zlato a stříbro dva různí?
+\item Z pěti osob postav řadu, v níž je Petra vždy první.
+\item Ze sedmi lidí sestav trojici vedoucí, zástupce a pokladník.
+\item Šest lidí do řady, dva konkrétní musejí stát vedle sebe.
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(5!=120\).
+\item \(V(10,2)=10\cdot9=90\).
+\item Petra pevně první, zbytek má \(4!=24\) pořadí.
+\item Pořadí funkcí je důležité, tedy \(7\cdot6\cdot5=210\).
+\item Jeden blok plus čtyři osoby: \(5!\cdot2!=240\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Permutace používají všechny prvky, variace mohou jen část.
+\item „Skupina“ a „přiřazení funkcí“ nejsou totéž.
+\item Blok dvou lidí má zpravidla také vnitřní pořadí.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–10 odvození \(n!\); 10–23 podmínky/bloky; 23–33 variace bez opakování; 33–42 cvičení; 42–45 výstup.\par
+\textbf{Návaznost:} Nyní dovolíme opakované nerozlišitelné prvky; obyčejné \(n!\) pak výsledky nadhodnocuje.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

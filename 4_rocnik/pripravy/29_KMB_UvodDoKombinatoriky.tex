@@ -1,0 +1,124 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{29}{Úvod do kombinatoriky}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Polož na stůl kartičky A, B, C. Nejprve seřaď všechny tři, pak vyber dvojici bez pořadí, nakonec vytvoř dvoumístný kód, v němž se písmeno může zopakovat. Žáci diskutují, proč jsou výsledky různé.
+
+\poznamka{Předpoklady: základní práce s množinou, součin a výpis možností. Cíl: popsat jeden výsledek, rozhodnout o pořadí a opakování, vypsat možnosti bez duplicit.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Kombinatorika} zkoumá mimo jiné počty možných výběrů a uspořádání při daných podmínkách. Nejdřív vždy přesně určíme, co je jeden výsledek.
+\end{definiceBox}
+\begin{definiceBox}
+Při \textbf{uspořádaném výběru} záleží na pořadí: $(A,B)$ a $(B,A)$ jsou různé výsledky. Při \textbf{neuspořádaném výběru} pořadí nerozlišujeme: $\{A,B\}=\{B,A\}$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Výběr s opakováním} dovoluje opětovné použití stejného prvku. Bez opakování každý prvek použijeme nejvýše jednou.
+\end{definiceBox}
+Ověření výpisu: každý přípustný výsledek je uveden, žádný není uveden dvakrát, žádný nepřípustný výsledek nebyl započítán. Pro malé počty pomáhá tabulka, strom nebo systematický seznam.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vypiš všechna uspořádání písmen A, B, C bez opakování.
+\tcblower
+$ABC,ACB,BAC,BCA,CAB,CBA$; celkem šest.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Ze čtyř různých osob A, B, C, D vyber dvoučlenný tým bez funkcí.
+\tcblower
+$AB,AC,AD,BC,BD,CD$; celkem šest neuspořádaných dvojic.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolik různých dvouhodových výsledků má hod mincí? Označ líc L a rub R.
+\tcblower
+$LL,LR,RL,RR$; celkem čtyři. Pořadí hodů rozlišujeme.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Ze znaků X, Y, Z vytvoř všechny dvoumístné kódy s opakováním.
+\tcblower
+$XX,XY,XZ,YX,YY,YZ,ZX,ZY,ZZ$: devět kódů.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Ze znaků X, Y, Z vytvoř všechny dvoumístné kódy bez opakování.
+\tcblower
+$XY,XZ,YX,YZ,ZX,ZY$: šest kódů.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Vysvětli, proč se výběr dvojice knih liší od určení první a druhé knihy.
+\tcblower
+Při výběru dvojice nezáleží na pořadí; při obsazení prvního a druhého místa jsou $(A,B)$ a $(B,A)$ různé výsledky.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Pět osob A, B, C, D, E si má zvolit dva členy komise. Kolik komisí vznikne? Kolik obsazení funkcí předseda a místopředseda?
+\tcblower
+Komise: $5\cdot4/2=10$; rozlišené funkce: $5\cdot4=20$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Vypiš všechna pořadí tří různých knih A, B, C.
+\item Ze čtyř žáků vyber dvojici bez funkcí a vypiš možnosti.
+\item U dvou hodů kostkou vysvětli, proč výsledky $(2,5)$ a $(5,2)$ nejsou stejné.
+\item Pro čtyři různé symboly urč počet dvoumístných kódů bez opakování a s opakováním.
+\item Ze čtyř různých prvků B, C, D, E vypiš všechny tříprvkové skupiny (pořadí nerozlišuj).
+\item Vypiš všechna trojmístná hesla ze znaků A, B, smí-li se opakovat.
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $ABC,ACB,BAC,BCA,CAB,CBA$ (šest).
+\item $AB,AC,AD,BC,BD,CD$ (šest).
+\item Jde o různé pořadí výsledků prvního a druhého hodu.
+\item Bez opakování $4\cdot3=12$; s opakováním $4^2=16$.
+\item $BCD,BCE,BDE,CDE$: čtyři skupiny.
+\item $AAA,AAB,ABA,ABB,BAA,BAB,BBA,BBB$: osm hesel.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--10 min motivační výpis; 10--20 min pojmy; 20--35 min příklady a samostatná práce; 35--45 min porovnávání zadání.}
+
+\end{document}

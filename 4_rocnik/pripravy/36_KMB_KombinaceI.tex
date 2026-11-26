@@ -1,0 +1,121 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{36}{Kombinace I -- základy a kombinační číslo}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Z devíti studentů vybíráme tříčlennou komisi bez funkcí. Proč nyní různé pořadí týchž tří osob neznamená jinou komisi?
+
+\poznamka{Předpoklady: variace, permutace, faktoriál. Cíl: vysvětlit význam neuspořádaného výběru a proč dělíme počtem uspořádání vybraných prvků.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Kombinace bez opakování} délky $k$ z $n$ různých prvků je neuspořádaný výběr $k$ různých prvků. Jejich počet udává \textbf{kombinační číslo}
+\[
+\binom nk=\frac{n!}{k!(n-k)!},\qquad 0\le k\le n.
+\]
+\end{definiceBox}
+Každou $k$-prvkovou skupinu počítají variace právě $k!$-krát. Proto $\binom nk=V(n,k)/k!$. Platí $\binom n0=\binom nn=1$; prázdná skupina je jedna možnost. Vždy zkontroluj, zda záleží na pořadí a zda jsou objekty různé.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Kolik různých tříčlenných komisí vznikne výběrem z devíti studentů?
+\tcblower
+$\binom93=\frac{9\cdot8\cdot7}{3\cdot2\cdot1}=84$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Kolik úseček určuje šest různých bodů?
+\tcblower
+Každá dvojice různých bodů určuje úsečku, tedy $\binom62=15$. Poloha ostatních bodů výsledek nemění.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolika způsoby lze z osmi knih vybrat pět, pokud nezáleží na pořadí?
+\tcblower
+$\binom85=\frac{8!}{5!3!}=56$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Urči $\binom73$.
+\tcblower
+$35$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Ze šesti žáků vybereme dvojčlenný tým bez funkcí. Kolik možností?
+\tcblower
+$\binom62=15$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Porovnej počet dvojic členů komise a dvojic předseda--místopředseda ze šesti osob.
+\tcblower
+Komise: $\binom62=15$; funkce: $6\cdot5=30$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Urči $\binom{12}{10}$ bez výpočtu velkých faktoriálů.
+\tcblower
+$\binom{12}{10}=\frac{12\cdot11}{2}=66$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Vypočti $\binom82$ a $\binom84$.
+\item Ze sedmi osob vyber tříčlennou komisi bez funkcí.
+\item Kolik různých čtyřprvkových podmnožin má osmiprvková množina?
+\item Vypočti $\binom{10}{8}$ zkrácením faktoriálů.
+\item Vysvětli, proč při výběru předsedy a zástupce ze šesti lidí nepoužijeme přímo $\binom62$.
+\item Z deseti osob vyber čtyřčlenný tým, v němž musí být Anna. Kolik možností?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $28$, resp. $70$.
+\item $\binom73=35$.
+\item $\binom84=70$.
+\item $45$.
+\item Role jsou rozlišené, a proto jde o $V(6,2)=30$, nikoli kombinaci.
+\item Anna je pevná; tři další osoby vybíráme z devíti: $\binom93=84$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--12 min porovnání s variacemi; 12--25 min odvození; 25--40 min úlohy; 40--45 min shrnutí.}
+
+\end{document}

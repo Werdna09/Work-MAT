@@ -1,0 +1,521 @@
+\subsection{Vzdálenost bodu od přímky}
+\label{subsec:Distance_point_line_space}
+
+Vzdálenost dvou bodů v prostoru jsme již určovali pomocí délky
+vektoru (viz podkapitola \ref{subsubsec:Distance_between_points_in_space}) který tyto body spojuje. Nyní budeme hledat vzdálenost bodu
+od přímky.
+
+Je-li dán bod $P$ a přímka $p$, můžeme bod $P$ spojit s libovolným
+bodem přímky $p$. Takových úseček existuje nekonečně mnoho, jejich
+délky však obecně nejsou stejné. Vzdáleností bodu od přímky rozumíme
+délku nejkratší z nich.
+
+Nejkratší spojnice bodu $P$ s přímkou $p$ je na přímku $p$ kolmá.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}[scale=0.9]
+
+        % Body
+        \coordinate (A) at (0.5,0);
+        \coordinate (U) at (3.5,0);
+        \coordinate (H) at (4.5,0);
+        \coordinate (P) at (4.5,2.8);
+        \coordinate (PU) at (7.5,2.8);
+
+        % Rovnoběžník
+        \fill[gray!10]
+            (A) -- (U) -- (PU) -- (P) -- cycle;
+
+        \draw[gray!60]
+            (U) -- (PU) -- (P);
+
+        % Přímka
+        \draw[thick]
+            (-0.5,0) -- (8.2,0)
+            node[right] {$p$};
+
+        % Vektory
+        \draw[vector]
+            (A) -- (U)
+            node[midway, below] {$\vec{u}$};
+
+        \draw[vector]
+            (A) -- (P)
+            node[midway, above left] {$\overrightarrow{AP}$};
+
+        % Kolmice
+        \draw[dashed, thick]
+            (P) -- (H)
+            node[midway, right] {$d(P,p)$};
+
+        % Pravý úhel
+        \draw
+            (H) ++(-0.22,0)
+            -- ++(0,0.22)
+            -- ++(0.22,0);
+
+        % Body
+        \fill (A) circle (2pt) node[below] {$A$};
+        \fill (H) circle (2pt) node[below] {$H$};
+        \fill (P) circle (2pt) node[above] {$P$};
+
+        \node at (6.1,1.4) {$S$};
+
+    \end{tikzpicture}
+    \caption{Vzdálenost bodu $P$ od přímky $p$.}
+    \label{fig:Distance_point_line_space}
+\end{figure}
+
+\begin{definition}
+    \label{def:Distance_point_line_space}
+    \textbf{Vzdáleností bodu $P$ od přímky $p$} nazýváme nejmenší
+    vzdálenost bodu $P$ od libovolného bodu přímky $p$.
+
+    Označíme-li $H$ patu kolmice vedené z bodu $P$ na přímku $p$,
+    potom
+    \[
+        d(P,p)=|PH|.
+    \]
+
+    Ekvivalentně můžeme psát
+    \[
+        d(P,p)
+        =
+        \min_{X\in p}|PX|.
+    \]
+\end{definition}
+
+Nyní odvodíme vztah, pomocí kterého můžeme tuto vzdálenost určit
+přímo ze souřadnic.
+
+Uvažujme přímku $p$, která prochází bodem
+\[
+    A[x_A;y_A;z_A]
+\]
+a má nenulový směrový vektor
+\[
+    \vec{u}=(u_x;u_y;u_z).
+\]
+
+Dále mějme bod
+\[
+    P[x_P;y_P;z_P].
+\]
+
+Z bodu $A$ do bodu $P$ vede vektor
+\[
+    \overrightarrow{AP}
+    =
+    (x_P-x_A;y_P-y_A;z_P-z_A).
+\]
+
+Vektory $\overrightarrow{AP}$ a $\vec{u}$ určují rovnoběžník.
+Jeho obsah můžeme podle geometrického významu vektorového součinu (viz podkapitola \ref{subsubsec:Vector_cross_product_in_space})
+vyjádřit jako
+\[
+    S
+    =
+    \left|
+        \overrightarrow{AP}\times\vec{u}
+    \right|.
+\]
+
+Na druhou stranu můžeme obsah stejného rovnoběžníku vypočítat jako
+součin délky jeho základny a příslušné výšky. Za základnu zvolíme
+vektor $\vec{u}$. Výškou rovnoběžníku je právě vzdálenost bodu $P$
+od přímky $p$, neboli $|PH|=d(P,p)$.
+
+Platí tedy
+\[
+    S
+    =
+    |\vec{u}|\cdot d(P,p).
+\]
+
+Porovnáním obou vztahů dostáváme
+\[
+    |\vec{u}|\cdot d(P,p)
+    =
+    \left|
+        \overrightarrow{AP}\times\vec{u}
+    \right|,
+\]
+a tedy
+
+\begin{equation}
+        d(P,p)
+        =
+        \frac{
+            \left|
+                \overrightarrow{AP}\times\vec{u}
+            \right|
+        }{
+            |\vec{u}|
+        }
+    \label{eq:Distance_point_line_space}
+\end{equation}
+
+K výpočtu vzdálenosti bodu od přímky tedy potřebujeme libovolný bod
+$A$ ležící na přímce $p$, její směrový vektor $\vec{u}$ a vektor
+$\overrightarrow{AP}$ vedoucí z bodu přímky do zadaného bodu.
+
+\begin{remark}
+    \label{rem:Choice_point_direction_distance_line}
+    Ve vztahu
+    \[
+        d(P,p)
+        =
+        \frac{
+            |\overrightarrow{AP}\times\vec{u}|
+        }{
+            |\vec{u}|
+        }
+    \]
+    můžeme zvolit \textbf{libovolný bod $A$ přímky $p$} a libovolný
+    její nenulový směrový vektor.
+
+    Změníme-li směrový vektor například na $k\vec{u}$, kde $k\neq0$,
+    změní se čitatel i jmenovatel ve stejném poměru:
+    \[
+        \frac{
+            |\overrightarrow{AP}\times(k\vec{u})|
+        }{
+            |k\vec{u}|
+        }
+        =
+        \frac{
+            |k|\,
+            |\overrightarrow{AP}\times\vec{u}|
+        }{
+            |k|\,|\vec{u}|
+        }.
+    \]
+    Výsledná vzdálenost se proto nezmění.
+\end{remark}
+
+\begin{example}
+    \label{exa:Distance_point_parametric_line_space}
+
+    Určete vzdálenost bodu $P[2;2;4]$ od přímky
+    \[
+        \begin{aligned}
+            p:  x&=1+2t,\\
+                y&=-1+t,\\
+                z&=2+2t; t\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Z parametrického vyjádření přímky určíme bod
+    \[
+        A[1;-1;2]
+    \]
+    a její směrový vektor
+    \[
+        \vec{u}=(2;1;2).
+    \]
+
+    Vektor z bodu $A$ do bodu $P$ je
+    \[
+        \overrightarrow{AP}
+        =
+        P-A
+        =
+        (1;3;2).
+    \]
+
+    Vypočítáme vektorový součin
+    \begin{align*}
+        \overrightarrow{AP}\times\vec{u}
+        &=
+        (1;3;2)\times(2;1;2)\\
+        &=
+        \left(
+            3\cdot2-2\cdot1;
+            2\cdot2-1\cdot2;
+            1\cdot1-3\cdot2
+        \right)\\
+        &=
+        (4;2;-5).
+    \end{align*}
+
+    Jeho velikost je
+    \[
+        \left|
+            \overrightarrow{AP}\times\vec{u}
+        \right|
+        =
+        \sqrt{4^2+2^2+(-5)^2}
+        =
+        \sqrt{45}
+        =
+        3\sqrt5.
+    \]
+
+    Velikost směrového vektoru je
+    \[
+        |\vec{u}|
+        =
+        \sqrt{2^2+1^2+2^2}
+        =
+        3.
+    \]
+
+    Dosadíme do vztahu pro vzdálenost bodu od přímky:
+    \[
+        d(P,p)
+        =
+        \frac{
+            |\overrightarrow{AP}\times\vec{u}|
+        }{
+            |\vec{u}|
+        }
+        =
+        \frac{3\sqrt5}{3}
+        =
+        \sqrt5.
+    \]
+
+    Vzdálenost bodu $P$ od přímky $p$ je tedy $d(P,p)=\sqrt{5}$.
+\end{example}
+
+Vzdálenost bodu od přímky můžeme určit také jiným způsobem.
+Místo výpočtu obsahu rovnoběžníku můžeme přímo najít bod přímky,
+který je k bodu $P$ nejblíže.
+
+Označme tento bod $H$. Protože $H$ leží na přímce $p$, můžeme jej
+zapsat ve tvaru
+\[
+    H=A+t\vec{u}.
+\]
+
+Zároveň musí být úsečka $PH$ kolmá k přímce $p$. Vektor
+$\overrightarrow{PH}$ je tedy kolmý ke směrovému vektoru $\vec{u}$:
+\[
+    \overrightarrow{PH}\cdot\vec{u}=0.
+\]
+
+Protože
+\[
+    \overrightarrow{PH}
+    =
+    H-P
+    =
+    A+t\vec{u}-P,
+\]
+dostáváme
+\[
+    (A+t\vec{u}-P)\cdot\vec{u}=0.
+\]
+
+Po roznásobení
+\[
+    (A-P)\cdot\vec{u}
+    +
+    t|\vec{u}|^2
+    =
+    0,
+\]
+a tedy
+\[
+    t
+    =
+    \frac{
+        \overrightarrow{AP}\cdot\vec{u}
+    }{
+        |\vec{u}|^2
+    }.
+\]
+
+Tato hodnota parametru určuje \textbf{patu kolmice} $H$, tedy bod
+přímky $p$, který leží k bodu $P$ nejblíže. Vzdálenost potom můžeme
+určit jako délku úsečky $PH$.
+
+\begin{example}
+    \label{exa:Foot_perpendicular_point_line_space}
+
+    Vraťme se k předchozímu příkladu. Přímka
+    \[
+        \begin{aligned}
+            p: x&=1+2t,\\
+            y&=-1+t,\\
+            z&=2+2t; t\in\mathbb{R}
+        \end{aligned}
+    \]
+    má směrový vektor
+    \[
+        \vec{u}=(2;1;2)
+    \]
+    a hledáme bod $H\in p$ takový, aby
+    \[
+        PH\perp p.
+    \]
+
+    Obecný bod přímky je
+    \[
+        H[1+2t;-1+t;2+2t].
+    \]
+
+    Pro bod $P[2;2;4]$ dostáváme vektor
+    \[
+        \overrightarrow{PH}
+        =
+        (-1+2t;-3+t;-2+2t).
+    \]
+
+    Protože $\overrightarrow{PH}\perp\vec{u}$, musí platit
+    \[
+        \overrightarrow{PH}\cdot\vec{u}=0.
+    \]
+
+    Dosadíme:
+    \begin{align*}
+        (-1+2t)\cdot2
+        +(-3+t)\cdot1
+        +(-2+2t)\cdot2
+        &=0,\\
+        -2+4t-3+t-4+4t
+        &=0,\\
+        9t-9&=0,\\
+        t&=1.
+    \end{align*}
+
+    Pata kolmice má tedy souřadnice
+    \[
+        H[3;0;4].
+    \]
+
+    Vzdálenost bodu $P$ od přímky $p$ je
+    \[
+        d(P,p)
+        =
+        |PH|
+        =
+        \sqrt{(3-2)^2+(0-2)^2+(4-4)^2}
+        =
+        \sqrt5.
+    \]
+
+    Dostáváme stejný výsledek jako při použití vektorového součinu:
+    \[
+        d(P,p)=\sqrt5.
+    \]
+\end{example}
+
+\begin{remark}
+    \label{rem:Point_on_line_distance_zero_space}
+    Leží-li bod $P$ přímo na přímce $p$, je jeho vzdálenost od přímky
+    rovna nule.
+
+    Také vztah
+    \[
+        d(P,p)
+        =
+        \frac{
+            |\overrightarrow{AP}\times\vec{u}|
+        }{
+            |\vec{u}|
+        }
+    \]
+    tuto skutečnost zachycuje. Pokud $P\in p$, jsou vektory
+    $\overrightarrow{AP}$ a $\vec{u}$ rovnoběžné, takže
+    \[
+        \overrightarrow{AP}\times\vec{u}
+        =
+        \vec{0},
+    \]
+    a proto
+    \[
+        d(P,p)=0.
+    \]
+\end{remark}
+
+\begin{example}
+    \label{exa:Distance_point_line_parameter_space}
+
+    Je dána soustava přímek
+    \[
+        \begin{aligned}
+            p_m: x&=t,\\
+            y&=m,\\
+            z&=t; t\in\mathbb{R}.
+        \end{aligned}
+    \]
+
+    Určete hodnoty parametru $m\in\mathbb{R}$ tak, aby vzdálenost
+    přímky $p_m$ od počátku soustavy souřadnic $O[0;0;0]$ byla rovna $3$.
+
+    Bodem přímky může být
+    \[
+        A[0;m;0]
+    \]
+    a jejím směrovým vektorem je
+    \[
+        \vec{u}=(1;0;1).
+    \]
+
+    Vektor
+    \[
+        \overrightarrow{AO}
+        =
+        O-A
+        =
+        (0;-m;0).
+    \]
+
+    Jejich vektorový součin je
+    \[
+        \overrightarrow{AO}\times\vec{u}
+        =
+        (0;-m;0)\times(1;0;1)
+        =
+        (-m;0;m).
+    \]
+
+    Proto
+    \[
+        \left|
+            \overrightarrow{AO}\times\vec{u}
+        \right|
+        =
+        \sqrt{m^2+m^2}
+        =
+        |m|\sqrt2
+    \]
+    a
+    \[
+        |\vec{u}|=\sqrt2.
+    \]
+
+    Vzdálenost počátku od přímky je tedy
+    \[
+        d(O,p_m)
+        =
+        \frac{|m|\sqrt2}{\sqrt2}
+        =
+        |m|.
+    \]
+
+    Požadujeme
+    \[
+        |m|=3,
+    \]
+    odkud
+    \[
+        m=\pm3,
+    \]
+    tedy přímky $p_3$ a $p_{-3}$ mají od počátku vzdálenost $3$ a jejich předpisy jsou:
+    \[
+        \begin{aligned}
+            p_3: x&=t,\\
+                 y&=3,\\
+                 z&=t; t\in\mathbb{R}
+        \end{aligned}
+        \qquad
+        \begin{aligned}
+            p_{-3}: x&=t,\\
+                    y&=-3,\\
+                    z&=t; t\in\mathbb{R}.
+        \end{aligned}
+    \]
+\end{example}

@@ -1,0 +1,128 @@
+\documentclass[a4paper,10pt]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\usepackage{enumitem}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=*,itemsep=9pt,topsep=5pt}
+
+\begin{document}
+\section*{Exponenciální rovnice A/B -- řešení pro učitele}
+K testu \texttt{03\_test\_ExponencialniRovnice\_AB.tex}, 2.~ročník SPŠ.
+Všechny rovnice řešíme v $\mathbb{R}$, bez použití logaritmů.
+
+\smallskip
+\textbf{Původ úloh:}
+{\footnotesize\ttfamily
+ucebnice/02\_Funkce\_a\_rovnice/\\
+Exponencialni\_funkce\_a\_rovnice/\\
+Exponenciální rovnice.tex\par}
+
+\begin{center}
+\begin{tabular}{c|cc}
+Úloha & Varianta A & Varianta B \\ \hline
+1 & Úloha 1.1 g) & Úloha 1.1 q) \\
+2 & Úloha 1.2 n) & Úloha 1.2 q) \\
+3 & Úloha 1.4 c) & Úloha 1.4 t) \\
+4 & Úloha 1.6 c) & Úloha 1.6 e)
+\end{tabular}
+\end{center}
+
+\subsection*{Varianta A}
+U všech čtyř rovnic platí $D=\mathbb{R}$.
+\begin{enumerate}
+\item $\displaystyle 3^x=\frac1{81}$.
+Protože $81=3^4$, dostáváme
+\[
+3^x=3^{-4}\iff x=-4.
+\]
+Tedy $K=\{-4\}$. Zkouška: $3^{-4}=\frac1{81}$.
+
+\item $\displaystyle 2\cdot2^x\cdot4^{2-x}=\frac8{2^{3x+1}}$.
+Převedeme vše na mocniny o základu $2$:
+\begin{align*}
+2^{1+x+2(2-x)}&=2^{3-(3x+1)},\\
+2^{5-x}&=2^{2-3x},\\
+5-x&=2-3x,\\
+2x&=-3 \iff x=-\frac32.
+\end{align*}
+Tedy $K=\{-\frac32\}$. Zkouška: pro $x=-\frac32$ mají obě strany hodnotu $2^{13/2}$.
+
+\item $\displaystyle \frac{3^{x+4}}9+9\cdot3^x=\frac23$.
+Vytkneme společnou mocninu:
+\begin{align*}
+3^x\left(\frac{3^4}{9}+9\right)&=\frac23,\\
+18\cdot3^x&=\frac23,\\
+3^x&=\frac1{27}=3^{-3}\iff x=-3.
+\end{align*}
+Tedy $K=\{-3\}$. Zkouška: $\frac39+9\cdot\frac1{27}=\frac13+\frac13=\frac23$.
+
+\item $\displaystyle 9\cdot3^x+3^{-x}=10$.
+Položíme $t=3^x>0$, takže $3^{-x}=\frac1t$:
+\begin{align*}
+9t+\frac1t&=10,\\
+9t^2-10t+1&=0,\\
+(9t-1)(t-1)&=0,\\
+t&=\frac19\quad\text{nebo}\quad t=1.
+\end{align*}
+Obě hodnoty splňují $t>0$. Zpětně $3^x=3^{-2}$ nebo $3^x=3^0$, tedy
+$K=\{-2;0\}$. Zkoušky: $9\cdot\frac19+9=10$ a $9+1=10$.
+\end{enumerate}
+
+\newpage
+\section*{Exponenciální rovnice -- varianta B}
+Řešení k testu \texttt{03\_test\_ExponencialniRovnice\_AB.tex}.
+U všech čtyř rovnic platí $D=\mathbb{R}$.
+\begin{enumerate}
+\item $\displaystyle \left(\frac12\right)^x=4$.
+Píšeme $4=(\frac12)^{-2}$, takže
+\[
+\left(\frac12\right)^x=\left(\frac12\right)^{-2}\iff x=-2.
+\]
+Tedy $K=\{-2\}$. Zkouška: $(\frac12)^{-2}=4$.
+
+\item $\displaystyle \frac{3^x}{9^{x-2}}=\frac{27^x}{9\cdot3^{4-x}}$.
+Převedeme všechny mocniny na základ $3$:
+\begin{align*}
+\frac{3^x}{3^{2x-4}}&=\frac{3^{3x}}{3^{2+4-x}},\\
+3^{4-x}&=3^{4x-6},\\
+4-x&=4x-6,\\
+5x&=10 \iff x=2.
+\end{align*}
+Tedy $K=\{2\}$. Zkouška: $L(2)=\frac9{9^0}=9$,
+$P(2)=\frac{27^2}{9\cdot3^2}=\frac{729}{81}=9$.
+
+\item $\displaystyle 2^{x+1}+2^{x-1}+2^{x+3}=\frac{21}{8}$.
+Vytkneme $2^{x-1}$:
+\begin{align*}
+2^{x-1}\left(2^2+1+2^4\right)&=\frac{21}{8},\\
+21\cdot2^{x-1}&=\frac{21}{8},\\
+2^{x-1}&=2^{-3},\\
+x-1&=-3 \iff x=-2.
+\end{align*}
+Tedy $K=\{-2\}$. Zkouška: $\frac12+\frac18+2=\frac{21}{8}$.
+
+\item $\displaystyle 2^{x+3}+2^{3-x}=20$.
+Položíme $t=2^x>0$ a využijeme $2^{-x}=\frac1t$:
+\begin{align*}
+8t+\frac8t&=20,\\
+2t^2-5t+2&=0,\\
+(2t-1)(t-2)&=0,\\
+t&=\frac12\quad\text{nebo}\quad t=2.
+\end{align*}
+Obě hodnoty jsou kladné. Z rovnic $2^x=2^{-1}$ nebo $2^x=2^1$ vychází
+$K=\{-1;1\}$. Zkoušky: $4+16=20$ a $16+4=20$.
+\end{enumerate}
+
+\subsection*{Kontrola úplnosti řešení}
+U všech rovnic mají základy mocnin kladnou hodnotu různou od $1$.
+V úlohách 1--3 jsme použili ekvivalentní úpravy a prostotu exponenciální funkce.
+V úloze 4 obou variant je $t>0$, a při násobení rovnic hodnotou $t$
+nevznikl nepřípustný kořen $t=0$. Všechny získané kořeny byly ověřeny
+v původních rovnicích. Varianty zkoušejí stejné čtyři postupy a mají
+srovnatelnou časovou náročnost (přibližně 15--20 minut).
+\end{document}

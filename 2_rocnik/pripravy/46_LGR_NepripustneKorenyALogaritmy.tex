@@ -1,0 +1,130 @@
+% Work-MAT | 2. ročník | hodina 46 | 2026-11-22
+% Zadání vybírána z WorkMAT_Logaritmy_Sbirka_PodleMetod.tex (481 příkladů)
+% Vždy zachována matematická formulace zdroje, učitelův výklad a řešení dopsány k vybraným příkladům.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{mathtools}
+\nastavPripravu{2. ročník}{Logaritmické rovnice a nerovnice}{46}{Závěrečný mix – podmínky, nepřípustné kořeny a soustavy}
+\begin{document}
+\blok{Návaznost a cíl hodiny}
+Poslední hodina před goniometrií uzavírá logaritmické metody. Zaměříme se na pravidelnou kontrolu podmínek, úlohy s proměnným základem, náročnější nerovnice a řešení soustav v kartézském zápisu.
+\poznamka{\textbf{Časový plán (45--55 minut):} Opakování podmínek 5 min, příklady 1--2 19 min, samostatná práce a--d 15 min, příklady 3--4 12 min, reflexe a navazující domácí mix 4 min. Náročnější úlohy jsou volitelné.}
+
+\blok{Pracovní strategie}
+Nejprve určím definiční obor. Poté vyberu vhodnou metodu, vyřeším upravenou úlohu a výsledek ověřím v původním zadání.
+
+\blok{Společné řešené příklady}
+
+% Sbírka: oddíl 9, položka 3
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš: $\displaystyle \log_{0{,}1}(x^2-5x)=\log_{0{,}1}(5x+11)$
+\tcblower
+\[
+\begin{aligned}
+&x^2-5x>0,\quad5x+11>0,\\
+x^2-5x&=5x+11,\\
+(x-11)(x+1)&=0,\\
+K&=\{-1;11\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Při rovnici s $x^2$ prověř všechny kořeny v původních argumentech. Záporné $x$ může být přípustné.}
+% Sbírka: oddíl 17, položka 2
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš: $\displaystyle \begin{cases}x^2+y^2=20\\ \log_2 x+\log_2 y=3\end{cases}$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad y>0,\\
+\log_2x+\log_2y&=3,\\
+xy&=8,\quad x^2+y^2=20,\\
+(x+y)^2&=20+16=36,\\
+x+y&=6,\\
+K&=\{[2;4];[4;2]\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Při odmocnění $x+y=\pm6$ přihlédni k $x,y>0$, a proto se záporná větev vyloučí.}
+% Sbírka: oddíl 19, položka 1
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš: $\displaystyle \log_{0{,}3}\frac{x+7}{2-x}\ge0$
+\tcblower
+\[
+\begin{aligned}
+&\frac{x+7}{2-x}>0\Longrightarrow -7<x<2,\\
+\log_{0{,}3}\!\frac{x+7}{2-x}&\ge0,\\
+\frac{x+7}{2-x}&\le1,\\
+x+7&\le2-x,\\
+K&=(-7;-\tfrac52\rangle.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{V základním oboru $-7<x<2$ je jmenovatel $2-x$ kladný, teprve proto lze vynásobit bez dalšího větvení.}
+% Sbírka: oddíl 13, položka 8
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš: $\displaystyle \log_x3+3\log_{3x}9=6\log_{x^2}3$
+\tcblower
+\[
+\begin{aligned}
+&t=\log_3x,\quad t\ne0,-1,\\
+\log_x3&=\frac1t,\\
+\log_{3x}9&=\frac2{1+t},\\
+\log_{x^2}3&=\frac1{2t},\\
+\frac1t+\frac6{1+t}&=\frac3t,\\
+6t&=2(1+t),\\
+t&=\frac12,\\
+K&=\{\sqrt3\}.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Nejdřív se určí přípustné základy $x$, $3x$ a $x^2$; po substituci proto nesmějí být $t=0,-1$.}
+\blok{Samostatná práce}
+\poznamka{Ve třídě doporučuji nejdříve úlohy a)--d); další jsou rezervou pro rychlejší žáky nebo volitelným dokončením po hodině. Neopisovat řešený vzor — vybrat postup.}
+\begin{zadaniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 11, položka 18
+\item $\displaystyle \log_3\frac{x+1}{x-2}+\log_3(x-1)=2$
+% Sbírka: oddíl 11, položka 32
+\item $\displaystyle \log_{2}\!\left(\frac{x^{2} - 5x + 6}{x^{2} - 4}\right) = 3$
+% Sbírka: oddíl 16, položka 25
+\item $\displaystyle x^{\log_2x}=16$
+% Sbírka: oddíl 15, položka 11
+\item $\displaystyle \frac{\log_3^2(9x)}{\log_3(81x^2)}=\frac32$
+% Sbírka: oddíl 21, položka 10
+\item $\displaystyle \log|x|>2$
+% Sbírka: oddíl 19, položka 14
+\item $\displaystyle \log|x-3|<2$
+% Sbírka: oddíl 22, položka 3
+\item $\displaystyle -3\le 2-\log_2x\le-2$
+% Sbírka: oddíl 10, položka 20
+\item $\displaystyle \log_2\sqrt{x}+\log_2(2x^2)-\log_2(3x^3)=\log_2\frac{1}{x^2}+\log_2\frac{x^2}{3}$
+\end{enumerate}
+\end{zadaniBox}
+\blok{Úkol na doma}
+Vyřeš úlohy a)--e) a zapiš podmínky. Zbývající úlohy jsou procvičování navíc; podle rychlosti je můžeš dokončit doma. U soustav uváděj $K=\{[x;y]\}$. 
+\begin{zadaniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 21, položka 11
+\item $\displaystyle \log_2|x-3|\le4$
+% Sbírka: oddíl 11, položka 29
+\item $\displaystyle \log_{5}\!\left(\frac{x^{2} - 4x + 4}{x^{2} - 9}\right) = 0$
+% Sbírka: oddíl 11, položka 31
+\item $\displaystyle \log_{3}\!\left(\frac{x + 1}{x - 2}\right) + \log_{3}(x - 1) = 2$
+% Sbírka: oddíl 16, položka 19
+\item $\displaystyle x+\log_3(3^x+6)=3$
+% Sbírka: oddíl 22, položka 6
+\item $\displaystyle 2\le\frac{|\log x|+1}{2}\le3$
+% Sbírka: oddíl 22, položka 5
+\item $\displaystyle 1\le|\log_3x|\le2$
+% Sbírka: oddíl 10, položka 25
+\item $\displaystyle 2\log(x^3)-3\log\sqrt{x}+\log2=2\log x+\log4-\frac12\log x$
+% Sbírka: oddíl 10, položka 32
+\item $\displaystyle \log_2(x-3)+\log_2(x+5)=4$
+\end{enumerate}
+\end{zadaniBox}
+\poznamka{\textbf{Učitelovo vodítko:} V každé úloze si zkontroluj kladnost argumentů, přípustnost základu a nenulové jmenovatele. U soustav vypiš uspořádané dvojice. Domácí sada má 8 různých zadání; základních pět úloh na přibližně 15--30 minut a zbytek jako volitelnou zásobu.}
+\end{document}

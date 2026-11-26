@@ -1,0 +1,161 @@
+% Doplneno podle fotografie uzivatele z 21. 11. 2026; bez zasahu do dalsich hodin.
+% Work-MAT | 2. rocnik | revize cilove obtiznosti exponencialnich uloh | 2026-11-21
+% Zdroje inspirace: autorova ucebnice Work-MAT, dodane ucitelske screenshoty typovych prikladu.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{2. ročník}{Exponenciální rovnice a soustavy}{31}{Souhrnné opakování exponenciálních úloh}
+\begin{document}
+\blok{Návaznost a motivace}
+Toto je závěrečná kontrola metody: žáci už nemají v zadání napsáno „vytýkání“ ani „substituce“. Začni krátkým tříděním úloh a nech žáky zdůvodnit volbu postupu. Jako rezervu využij obtížnější rovnice ze screenshotů učitele.
+\poznamka{Pro vyučovací hodinu počítej přibližně s 5 minutami opakování, 20 minutami společného výkladu a 20--25 minutami samostatného řešení. Náročnější úlohy slouží jako rezerva pro rychlejší žáky.}
+\blok{Nová myšlenka}
+Při čtení zadání nejprve rozliš: stejný základ, součet podobných exponenciálních členů, kvadratické mocniny téhož výrazu, různé základy, soustava nebo nerovnice. Kontroluj podmínky pro záporné či nulové pomocné kořeny a výsledek zapisuj vždy v původní proměnné.
+\blok{Společné příklady – od základního typu k cílové obtížnosti}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš rovnici s odmocninami $\frac{9\cdot3^x}{\sqrt3\sqrt[3]{9^x}}=\frac{\sqrt[4]{3^x}}{27}$.
+\tcblower
+\[
+\begin{aligned}3^{\frac{3}{2}+\frac{x}{3}}&=3^{\frac{x}{4}-3},\\\frac{3}{2}+\frac{x}{3}&=\frac{x}{4}-3,\\x&=-54,\\K&=\{-54\}.\end{aligned}
+\]
+Typ: převod odmocnin na společný základ.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš $3^x-2\cdot3^{x-1}+3^{x-2}-2\cdot3^{x-3}=30$.
+\tcblower
+\[
+\begin{aligned}3^{x-3}(27-18+3-2)&=30,\\3^{x-3}&=3,\\K&=\{4\}.\end{aligned}
+\]
+Typ: složitější vytýkání.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš $9^{x+1}+5\cdot6^x=4^{x+1}$.
+\tcblower
+\[
+\begin{aligned}t&=\left(\frac{3}{2}\right)^x>0,\\9t^2+5t-4&=0,\\(9t-4)(t+1)&=0,\\t&=\frac{4}{9},\\K&=\{-2\}.\end{aligned}
+\]
+Typ: smíšená substituce.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš soustavu \[
+\begin{cases}81^{x+y}=27\\81^x+81^y=12\end{cases}
+\]
+\tcblower
+\[
+\begin{aligned}u&=81^x>0,\quad v=81^y>0,\\uv&=27,\quad u+v=12,\\\{u,v\}&=\{3,9\},\\K&=\left\{\left[\frac{1}{4};\frac{1}{2}\right],\left[\frac{1}{2};\frac{1}{4}\right]\right\}.\end{aligned}
+\]
+Typ: nelineární soustava a dvě uspořádané dvojice.
+\end{prikladReseniBox}
+% Ukazka z dodane fotografie, cviceni 1a
+\begin{prikladReseniBox}[title={Příklad 5}]
+Vyřeš bez nápovědy, kterou metodu zvolit:
+\[
+2^{3x-1}\cdot4=8^{x+1}\left(\frac{1}{2}\right)^x.
+\]
+\tcblower
+\[
+\begin{aligned}2^{3x+1}&=2^{2x+3},\\3x+1&=2x+3,\\K&=\{2\}.\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Cílová obtížnost podle dodané fotografie. Zařaď po základním vzoru; při pomalejším tempu ukaž jen rozhodující úpravu a celý výpočet použij jako rozšíření.}
+
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\frac{27}{8}\left(\frac{2}{3}\right)^x=\frac{4}{9}\left(\frac{9}{4}\right)^{x+2}$
+\item $4^{x-\frac{1}{5}}-2\cdot4^{\frac{1}{5}-x}=1$
+\item $2^{x-1}\left(\frac{1}{3}\right)^{x-1}-2^x\left(\frac{1}{3}\right)^x=\frac{2}{9}$
+\item $4\cdot16^x+4^{x+1}=2\cdot8^{x+1}+2^{3x}$
+\item \[
+\begin{cases}2\cdot3^x+3\cdot4^y=24\\3\cdot3^x-10\cdot4^y=7\end{cases}
+\]
+\item \[\begin{cases}4^{x+y}=256\\4^x+4^y=68\end{cases}\]
+\item $4^x-5\cdot2^x+4\le0$
+\item $9^{x+1}+5\cdot6^x<4^{x+1}$
+\item Urči $a,b$, aby $y=2^{x+a}+b$ procházel $[-1;-2]$ a $[2;12]$.
+\item Jak poznáš vhodnou metodu pro smíšené exponenciální základy?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item \[
+K=\left\{\frac{1}{3}\right\}
+\]
+\item \[
+K=\left\{\frac{7}{10}\right\}
+\]
+\item \[
+K=\{2\}
+\]
+\item \[
+K=\{-2,2\}
+\]
+\item \[
+K=\left\{\left[2;\frac{1}{2}\right]\right\}
+\]
+\item \[K=\{[1;3],[3;1]\}\]
+\item \[
+K=[0;2]
+\]
+\item \[
+K=(-\infty;-2)
+\]
+\item \[
+a=2,\quad b=-4
+\]
+\item \[
+\text{Najdu společný základ či podíl; pak vytknu nebo substituuji.}
+\]
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Vyřeš samostatně další typ úlohy ze stejného tematického celku:
+\[
+\displaystyle\frac{1}{4}\left(\frac{1}{4}\right)^{2x}=1
+\]
+\tcblower
+\[\begin{aligned}\left(\frac{1}{4}\right)^{2x+1}&=1,\\2x+1&=0,\\K&=\left\{-\frac{1}{2}\right\}.\end{aligned}\]
+\end{zadaniReseniBox}
+
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Vyřeš soustavu \[
+\begin{cases}x^{y+1}=16\\x^{3-y}=1\end{cases}
+\]. Ověř všechna nalezená řešení dosazením.
+\tcblower
+\[
+K=\{[-2;3],[2;3]\};\quad (\pm2)^4=16,\ (\pm2)^0=1
+\]
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+\poznamka{Z domácího úkolu zadej přiměřený výběr na 15--30 minut; uvedená sada obsahuje základní i cílové obtížnější typy. Na konci většího celku nech žáky samostatně vybrat metodu řešení.}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $27^{x+1}=9^{2x-1}$
+\item $\frac{2^{2x+1}\cdot4^{x-1}}{8^{x+1}}=16$
+\item $6^{x+1}-5\cdot6^x=36$
+\item $9^x-18\cdot3^x+81=0$
+\item $3^x+3^{4-x}=30$
+\item $2\cdot16^x-3\cdot8^x=2\cdot4^x$
+\item \[\begin{cases}2^x+3^y=31\\2^{x+1}-3^y=-19\end{cases}\]
+\item \[\begin{cases}2^{x+y}=64\\2^x+2^y=20\end{cases}\]
+\item $9^x-12\cdot3^x+27\le0$
+\item U každé z úloh a)--i) zdůvodni volbu postupu dříve, než začneš počítat.
+\item \[ \begin{cases}x^{y+1}=27,\\x^{1-y}=\frac{1}{3}\end{cases}\quad(x>0) \]
+\end{enumerate}
+\tcblower
+\setlength{\abovedisplayskip}{2pt}\setlength{\belowdisplayskip}{2pt}
+\setlength{\abovedisplayshortskip}{2pt}\setlength{\belowdisplayshortskip}{2pt}
+\begin{enumerate}[label=\alph*)]
+\item \[K=\{5\}\]
+\item \[K=\{8\}\]
+\item \[K=\{2\}\]
+\item \[K=\{2\}\]
+\item \[K=\{1,3\}\]
+\item \[K=\{1\}\]
+\item \[K=\{[2;3]\}\]
+\item \[K=\{[2;4],[4;2]\}\]
+\item \[K=[1;2]\]
+\item Po řadě: společný základ, společný základ, vytýkání, substituce, převrácená mocnina, smíšené základy, lineární soustava, součet a součin, nerovnice substitucí.
+\item \[\begin{aligned}x^{2}&=9,\quad x>0,\\x&=3,\\3^{y+1}&=27=3^3,\\K&=\{[3;2]\}.\end{aligned}\]
+\end{enumerate}
+\end{zadaniReseniBox}
+
+\end{document}

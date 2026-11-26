@@ -1,0 +1,80 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{36}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Kombinační číslo: výpočet a rovnice}\par
+{\sffamily\large\color{teal} Výukový podklad · 36. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.2\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Počítat kombinační čísla bez přetečení faktoriálů, používat krajní hodnoty a řešit přístupné rovnice.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+Kombinační číslo \(\binom nk\) čteme „\(n\) nad \(k\)“ a pro \(n\in\mathbb N_0\), \(0\le k\le n\) definujeme
+\[\binom nk=\frac{n!}{k!(n-k)!}.\]
+Zejména \(\binom n0=\binom nn=1\), \(\binom n1=n\), \(\binom n2=\frac{n(n-1)}2\).\par
+\textbf{Výpočetní strategie:} zkrať faktoriály dříve, než budeš násobit. Pro \(k\) blízké \(n\) je vhodné vybrat menší z hodnot \(k\) a \(n-k\); proč to funguje, dokážeme v další hodině.\par
+\textbf{Rovnice:} při \(\binom n2=45\) se řeší kvadratická rovnice s podmínkou, že \(n\) je celé a \(n\ge2\).
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Vypočti \(\binom{10}{3}\).\par
+\textit{Řešení.} \(\frac{10!}{3!7!}=\frac{10\cdot9\cdot8}{3\cdot2\cdot1}=120\).\par\smallskip
+\textbf{Příklad 2.} Vypočti \(\binom{12}{10}\) bez velkých faktoriálů.\par
+\textit{Řešení.} \(\binom{12}{10}=\frac{12!}{10!2!}=\frac{12\cdot11}{2}=66\).\par\smallskip
+\textbf{Příklad 3.} Urči \(n\), jestliže \(\binom n2=45\).\par
+\textit{Řešení.} \(\frac{n(n-1)}2=45\), tedy \(n^2-n-90=0=(n-10)(n+9)\). Přípustné je pouze \(n=10\).\par\smallskip
+\textbf{Příklad 4.} Vyřeš \(\binom n2=3n\) pro \(n\ge2\).\par
+\textit{Řešení.} \(n(n-1)/2=3n\). Protože \(n>0\), vydělíme \(n\): \(n-1=6\). Dostaneme \(n=7\).\par\smallskip
+\textbf{Příklad 5.} Z osmi lidí se vybírá čtyřčlenná komise. Dva konkrétní kandidáti musejí oba být vybráni.\par
+\textit{Řešení.} Dva jsou již předepsáni, z ostatních šesti vybereme ještě dva: \(\binom62=15\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Spočti \(\binom83\).
+\item Spočti \(\binom{11}{9}\).
+\item Najdi \(n\), pro něž \(\binom n1=13\).
+\item Najdi \(n\ge2\), pro které \(\binom n2=28\).
+\item Ze sedmi prvků vyber sedm, případně žádný.
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(8\cdot7\cdot6/(3\cdot2\cdot1)=56\).
+\item \(11\cdot10/2=55\).
+\item Protože \(\binom n1=n\), \(n=13\).
+\item \(n(n-1)=56\), tedy \(n=8\).
+\item V obou případech existuje právě jeden výběr: \(\binom77=\binom70=1\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Kombinační číslo je celé číslo; výpočet ve faktoriálech zkrať před vyčíslením.
+\item Nikdy nezapomenout \(0!\) a krajní hodnoty \(k=0,n\).
+\item Kořeny rovnic musí splnit podmínky \(n\in\mathbb N_0\) a \(k\le n\).
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–8 definice; 8–20 zkracování; 20–32 rovnice; 32–42 cvičení; 42–45 závěr.\par
+\textbf{Návaznost:} Vlastnosti kombinačních čísel vysvětlíme nejen algebraicky, ale i počítáním skupin dvěma způsoby.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

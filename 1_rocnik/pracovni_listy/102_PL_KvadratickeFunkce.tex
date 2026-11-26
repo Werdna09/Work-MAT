@@ -1,0 +1,66 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype,amsmath,amssymb,geometry,enumitem,tikz}
+\geometry{top=17mm,bottom=17mm,left=22mm,right=22mm}
+\pagestyle{empty}\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\begin{document}
+\begin{center}{\Large\bfseries Kvadratické funkce – souhrnné procvičování (102)}\end{center}
+\textbf{Jméno:}\ \rule{65mm}{0.4pt}\hfill\textbf{Třída:}\ \rule{25mm}{0.4pt}\par
+Vyber si úlohy podle toho, co potřebuješ procvičit. Řešení piš přehledně, s podmínkami a body ve tvaru $[x;y]$. Úlohy C jsou dobrovolně náročnější.\par
+\section*{A – Základy}
+\noindent\textbf{Úloha 1.} Funkce $f(x)=x^2$. Určete $f(-3)$, $f(0)$, $f(2)$ a její obor hodnot.\par
+\vspace{11mm}\par
+\noindent\textbf{Úloha 2.} U $f(x)=-3x^2$ určete orientaci, vrchol, $H(f)$ a extrém.\par
+\vspace{11mm}\par
+\noindent\textbf{Úloha 3.} Najděte $a$, jestliže $f(x)=ax^2$ prochází bodem $[2;12]$.\par
+\vspace{11mm}\par
+\noindent\textbf{Úloha 4.} Pro $f(x)=(x-4)^2-2$ určete vrchol, osu a směr posunu od $y=x^2$.\par
+\vspace{11mm}\par
+\noindent\textbf{Úloha 5.} Pro $g(x)=-\frac12(x+2)^2+1$ určete vrchol, $H(g)$ a maximum.\par
+\vspace{11mm}\par
+\newpage
+\section*{B – Vrchol, graf a průsečíky}
+\noindent\textbf{Úloha 6.} Upravte $f(x)=x^2-6x+8$ na vrcholový tvar; určete vrchol a nulové body.\par
+\vspace{10mm}\par
+\noindent\textbf{Úloha 7.} Upravte $g(x)=x^2+2x-8$; určete vrchol, osu a průsečíky s osami.\par
+\vspace{10mm}\par
+\noindent\textbf{Úloha 8.} U $h(x)=-x^2+2x+3$ určete vrchol, obor hodnot a nulové body.\par
+\vspace{10mm}\par
+\noindent\textbf{Úloha 9.} Pro $p(x)=2x^2-8x+6$ určete vrchol, osu, $H(p)$ a nulové body.\par
+\vspace{10mm}\par
+\noindent\textbf{Úloha 10.} U funkce $q(x)=x^2+4x+5$ určete vrchol a vysvětlete počet nulových bodů.\par
+\vspace{10mm}\par
+\noindent\textbf{Úloha 11.} Pro $r(x)=3x^2-5x+2$ určete průsečík s osou $y$ a ověřte, zda body $[1;0]$ a $[2;4]$ leží na grafu.\par
+\vspace{10mm}\par
+\noindent\textbf{Úloha 12.} Pro $s(x)=(x-1)^2$ s omezeným $D=\langle-1;3\rangle$ určete $H(s)$.\par
+\vspace{10mm}\par
+\newpage
+\noindent\textbf{Úloha 13.} V jedné soustavě načrtněte $y=x^2$, $y=2x^2$, $y=-\frac12x^2$. Vysvětlete vliv $a$.\par
+\begin{center}\begin{tikzpicture}[scale=.62]
+\draw[step=1,black!20,very thin] (-5,-5) grid (5,6);
+\draw[->,thin] (-5.4,0)--(5.4,0) node[right] {$x$};
+\draw[->,thin] (0,-5.4)--(0,6.4) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} \node[below,font=\tiny] at (\x,0) {\x};
+\foreach \y in {-4,-2,2,4,6} \node[left,font=\tiny] at (0,\y) {\y};
+\end{tikzpicture}\end{center}
+\noindent\textbf{Úloha 14.} Do jedné soustavy zakreslete $y=(x+1)^2-2$ a $y=-(x-2)^2+1$; uveďte vrcholy.\par
+\begin{center}\begin{tikzpicture}[scale=.62]
+\draw[step=1,black!20,very thin] (-5,-5) grid (5,6);
+\draw[->,thin] (-5.4,0)--(5.4,0) node[right] {$x$};
+\draw[->,thin] (0,-5.4)--(0,6.4) node[above] {$y$};
+\foreach \x in {-4,-3,-2,-1,1,2,3,4} \node[below,font=\tiny] at (\x,0) {\x};
+\foreach \y in {-4,-2,2,4,6} \node[left,font=\tiny] at (0,\y) {\y};
+\end{tikzpicture}\end{center}
+\newpage
+\section*{C – Výzvy}
+\noindent\textbf{Úloha 15.} Parabola má vrchol $V[1;-2]$, je popsána $y=a(x-1)^2-2$ a prochází bodem $[0;1]$. Určete její předpis.\par
+\vspace{22mm}\par
+\noindent\textbf{Úloha 16.} Funkce $f(x)=x^2-4x+c$ protíná osu $y$ v bodě $[0;5]$. Určete $c$, vrchol a počet nulových bodů.\par
+\vspace{22mm}\par
+\noindent\textbf{Úloha 17.} Parabola $y=a(x+2)^2+3$ prochází bodem $[-1;1]$. Určete $a$, vrchol a obor hodnot.\par
+\vspace{22mm}\par
+\noindent\textbf{Úloha 18.} Najděte průsečíky grafů $f(x)=x^2-2x$ a $g(x)=x$.\par
+\vspace{22mm}\par
+\end{document}

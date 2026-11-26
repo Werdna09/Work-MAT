@@ -1,0 +1,155 @@
+% Work-MAT | 2. rocnik | hodina 32
+% Podklady: autorska ucebnice (GitHub), predlozene ukazky, didakticky pristup Realisticky.cz.
+% Zadani a vyresene varianty jsou nově sestavene; respektuj pravidla jejich pouziti.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{2. ročník}{Logaritmy}{32}{Co je logaritmus?}
+\begin{document}
+\blok{Motivace a návaznost}
+Už umíme řešit například $2^x=16$. Nyní se naučíme pojmenovat výsledek i tehdy, když hledaný exponent není celé číslo. Připomeň funkce $y=2^x$ a inverzní předpisy z úvodních hodin.
+\poznamka{Na tabuli napiš trojici $2^3=8$, $3^2=9$, $5^{-1}=\frac15$ a nech žáky slovně pojmenovat základ, exponent a výsledek. Zatím nezaváděj logaritmické vzorce.}
+\blok{Definice a význam}
+\begin{definiceBox}[title={Definice -- logaritmus}]
+Pro $b>0$, $b\ne1$ a $y>0$ je \textbf{logaritmus} čísla $y$ o základu $b$ právě takové reálné číslo $x$, pro které platí
+\[
+x=\log_b y\quad\Longleftrightarrow\quad y=b^x.
+\]
+\end{definiceBox}
+Základ $b$ je pevný, $y$ je \textbf{argument logaritmu}. Z logaritmu tedy zjistíme exponent, nikoli základ mocniny.
+
+Dekadický logaritmus má základ $10$ a značíme jej $\log x=\log_{10}x$; přirozený logaritmus $\ln x=\log_e x$ má základ $e\doteq2{,}718$.
+\begin{prikladReseniBox}[title={Příklad 1}]
+Doplň odpovídající logaritmické zápisy:
+\[
+2^5=32,\qquad 4^{-1}=\frac14,\qquad 9^{\frac12}=3.
+\]
+\tcblower
+\[
+\log_2 32=5,\qquad \log_4\frac14=-1,\qquad \log_9 3=\frac12.
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vypočti:
+\begin{enumerate}[label=\alph*)]
+\item $\log_4 64$
+\item $\log_{\frac12} 16$
+\item $\log_{\sqrt{3}} 9$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $4^3=64$, tedy $\log_4 64=3$.
+\item $\left(\frac12\right)^{-4}=16$, tedy $\log_{\frac12}16=-4$.
+\item $(\sqrt3)^4=9$, tedy $\log_{\sqrt3}9=4$.
+\end{enumerate}
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Rozhodni, zda uvedené zápisy mají v reálných číslech smysl:
+\begin{enumerate}[label=\alph*)]
+\item $\log_2 0$
+\item $\log_{-3} 9$
+\item $\log_1 5$
+\item $\log_{\frac14} 16$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Ne: argument musí být kladný.
+\item Ne: základ musí být kladný.
+\item Ne: základ nesmí být $1$.
+\item Ano: $\left(\frac14\right)^{-2}=16$, výsledek je $-2$.
+\end{enumerate}
+\end{prikladReseniBox}
+\begin{definiceBox}[title={Definice -- definiční obor logaritmické funkce}]
+Pro $a>0$, $a\ne1$ má funkce $f(x)=\log_a x$ definiční obor
+\[
+D(f)=(0;\infty).
+\]
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Urči, pro která reálná $x$ mají smysl výrazy:
+\begin{enumerate}[label=\alph*)]
+\item $\log_3(x-2)$
+\item $\log_2(5-x)$
+\item $\log_4(x^2-9)$
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $x-2>0$, tedy $x>2$.
+\item $5-x>0$, tedy $x<5$.
+\item $x^2-9>0$, tedy $x\in(-\infty;-3)\cup(3;\infty)$.
+\end{enumerate}
+\end{prikladReseniBox}
+\poznamka{Vracej se k interpretaci $a^c=b$. Častá chyba: žáci dovolí nulový argument nebo zapomenou na zákaz základu $1$. Příklady s proměnným základem nech zatím jako rozšíření.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_3 81$
+\item $\log_{\frac14} 64$
+\item $\log_{\sqrt{2}} 8$
+\item $\log_7 1$
+\item Přepiš $5^{-2}=\frac1{25}$ logaritmicky.
+\item Urči podmínku výrazu $\log_5(2x+6)$.
+\item Urči podmínku výrazu $\log_3(x^2-4)$.
+\item Proč $\log_1 9$ není definován?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $4$
+\item $-3$
+\item $6$
+\item $0$
+\item $\log_5\frac1{25}=-2$.
+\item $x>-3$.
+\item $x\in(-\infty;-2)\cup(2;\infty)$.
+\item Základ $1$ dává stále hodnotu $1$ a není prostý.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{prikladReseniBox}[title={Rozšíření 1}]
+Urči podmínky pro $\log_{x-1}(x+2)$.
+\tcblower
+Základ: $x-1>0$ a $x-1\ne1$. Argument: $x+2>0$. Současně tedy
+\[
+x>1,\qquad x\ne2.
+\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Rozšíření 2}]
+Zjednoduš a uveď podmínky:
+\begin{enumerate}[label=\alph*)]
+\item $2^{\log_2(x^2)}$.
+\item $\log_x(x^2)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item Platí $x^2>0$, tedy $x\ne0$; pak $2^{\log_2(x^2)}=x^2$.
+\item Pro základ musí platit $x>0$, $x\ne1$; potom $\log_x(x^2)=2$.
+\end{enumerate}
+\end{prikladReseniBox}
+\blok{Domácí úkol}
+Přepiš složitější logaritmy na mocniny; u výrazů s proměnnou uveď podmínky.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\log_5 625$
+\item $\log_{\frac13}81$
+\item $\log_{\sqrt5}25$
+\item $\log_{16}2$
+\item $\log_9\frac1{27}$
+\item Přepiš rovnici $\log_7\frac1{49}=c$ do mocninného tvaru a urči $c$.
+\item Urči definiční obor $\log_2(7-3x)$.
+\item Urči definiční obor $\log_3(x^2-16)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $4$
+\item $-4$
+\item $4$
+\item $\frac14$
+\item $-\frac32$
+\item $7^c=\frac1{49}$, tedy $c=-2$.
+\item $x<\frac73$.
+\item $x\in(-\infty;-4)\cup(4;\infty)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Základ hodiny: definice, příklady 1--3, vybrané části samostatné práce (cca 40--45 minut). Další zadání tvoří rezervu do 55 minut. DÚ přibližně 20--25 minut.}
+
+\end{document}

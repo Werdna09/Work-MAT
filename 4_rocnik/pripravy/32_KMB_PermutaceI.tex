@@ -1,0 +1,120 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{32}{Permutace I -- základy}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+Sedm studentů si sedá do jedné řady. Kolik různých zasedacích pořádků je možných? Co se změní, když někdo musí sedět první?
+
+\poznamka{Předpoklady: faktoriál, pravidlo součinu. Cíl: odvodit počet permutací bez opakování a řešit jednoduché úlohy s pevnou pozicí.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Permutace bez opakování} je uspořádání všech $n$ navzájem různých prvků. Počet permutací značíme $P(n)$ a pro $n\in\mathbb N_0$ platí $P(n)=n!$.
+\end{definiceBox}
+Odvození: první pozici můžeme obsadit $n$ způsoby, druhou $n-1$ a tak dále až po jednu zbývající možnost. Při pevně určené pozici zbývají pro ostatní osoby volná místa. Zásadní je, že \textbf{řadíme všechny různé prvky}.
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Kolika způsoby se do řady postaví šest různých studentů?
+\tcblower
+$6!=720$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Pět různých knih seřadíme na polici. Kolik je pořadí, má-li učebnice matematiky být první?
+\tcblower
+První místo je pevně dané, zbývající čtyři knihy: $4!=24$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolika způsoby lze usadit šest různých lidí do šesti očíslovaných židlí, jestliže Eva sedí na poslední židli?
+\tcblower
+Pět zbývajících obsadí pět zbylých míst: $5!=120$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Seřaď čtyři různá písmena A, B, C, D. Kolik pořadí existuje?
+\tcblower
+$4!=24$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Kolika způsoby lze postavit sedm lidí do fronty, musí-li Petr stát první?
+\tcblower
+$6!=720$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Kolik pořadí vznikne ze šesti různých předmětů, musí-li modrý předmět stát poslední?
+\tcblower
+$5!=120$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+V řadě sedmi lidí musí být Anna první a Boris poslední. Kolik pořadí je možných?
+\tcblower
+Obě místa jsou pevná, zůstává pět lidí: $5!=120$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item Vypočti počet pořadí pěti různých knih.
+\item Kolika způsoby se seřadí osm různých osob, pokud je konkrétní osoba první?
+\item V soutěži vystupuje šest různých týmů. Kolik pořadí vystoupení existuje, pokud tým A vystupuje poslední?
+\item Kolik pořadí sedmi různých předmětů vznikne, pokud jeden označený předmět musí být první a jiný poslední?
+\item Osm různých studentů stojí v řadě. Anna musí stát první a Boris druhý. Kolik je pořadí?
+\item Ze sedmi různých lidí musejí Eva a Marek stát na prvních dvou místech v libovolném vzájemném pořadí. Kolik výsledků?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $5!=120$.
+\item $7!=5040$.
+\item $5!=120$.
+\item $5!=120$.
+\item $6!=720$.
+\item $2!\cdot5!=240$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--12 min odvození; 12--27 min ukázky; 27--42 min samostatná práce; 42--45 min kontrola.}
+
+\poznamka{Obtížnější bloková metoda zůstává až do následující hodiny; nepřidávej ji před zvládnutím základní situace.}
+
+\end{document}

@@ -1,0 +1,247 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{margin=1.6cm}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[enumerate]{leftmargin=*, itemsep=0.55em, topsep=0.3em}
+
+\begin{document}
+
+\begin{center}
+    {\Large\bfseries ARITMETICKÁ POSLOUPNOST -- 100 ÚLOH}
+\end{center}
+
+\vspace{0.8em}
+
+\section*{Základní vlastnosti a rozpoznání}
+
+\begin{enumerate}
+    \item Rozhodněte, zda čísla $3, 8, 13$ tvoří tři po sobě jdoucí členy aritmetické posloupnosti. Pokud ano, určete diferenci.
+
+    \item Rozhodněte, zda čísla $-7, -2, 3$ tvoří tři po sobě jdoucí členy aritmetické posloupnosti. Pokud ano, určete diferenci.
+
+    \item Rozhodněte, zda čísla $\frac16, \frac{7}{12}, 1$ tvoří tři po sobě jdoucí členy aritmetické posloupnosti.
+
+    \item Určete $x$ tak, aby čísla $x-3$, $2x+1$, $4x+7$ tvořila tři po sobě jdoucí členy aritmetické posloupnosti.
+
+    \item Určete $x$ tak, aby čísla $x^2-4$, $x^2+x$, $x^2+2x+6$ tvořila tři po sobě jdoucí členy aritmetické posloupnosti.
+
+    \item Určete $x$ tak, aby čísla $2x-5$, $x+4$, $3x+1$ tvořila tři po sobě jdoucí členy aritmetické posloupnosti.
+
+    \item Určete $k$ tak, aby čísla $k+2$, $3k-1$, $7k-9$ tvořila tři po sobě jdoucí členy aritmetické posloupnosti.
+
+    \item Dokažte, že posloupnost $a_n=5n-7$ je aritmetická, a určete její diferenci.
+
+    \item Dokažte, že posloupnost $a_n=\frac{3n+1}{2}$ je aritmetická, a určete její diferenci.
+
+    \item Rozhodněte, zda posloupnost $a_n=n^2-3n+1$ je aritmetická.
+
+    \item Rozhodněte, zda posloupnost $a_n=7-4n$ je aritmetická. Pokud ano, určete $a_1$ a $d$.
+
+    \item Rozhodněte, zda posloupnost $a_n=(-1)^n+3n$ je aritmetická.
+
+    \item V aritmetické posloupnosti je $a_1=-4$ a $d=7$. Vypište prvních šest členů.
+
+    \item V aritmetické posloupnosti je $a_1=\frac52$ a $d=-\frac34$. Vypište prvních pět členů.
+
+    \item V aritmetické posloupnosti je $a_4=11$ a $d=3$. Určete $a_1$ a vypište prvních šest členů.
+\end{enumerate}
+
+\section*{Výpočet členů, diference a vzorec pro $n$-tý člen}
+
+\begin{enumerate}[resume]
+    \item Pro aritmetickou posloupnost platí $a_1=4$, $d=-2$. Určete $a_{13}$.
+
+    \item Pro aritmetickou posloupnost platí $a_1=-7$, $d=5$. Určete $a_{20}$.
+
+    \item Pro aritmetickou posloupnost platí $a_2=8$, $d=5$. Určete $a_1$ a $a_{13}$.
+
+    \item Pro aritmetickou posloupnost platí $a_5=3$, $d=2$. Určete $a_9$ bez výpočtu $a_1$.
+
+    \item Pro aritmetickou posloupnost platí $a_8=-11$, $d=4$. Určete $a_{15}$ bez výpočtu $a_1$.
+
+    \item Pro aritmetickou posloupnost platí $a_{12}=17$, $d=-3$. Určete $a_4$.
+
+    \item Jsou dány členy $a_4=6$, $a_{11}=34$. Určete $d$, $a_1$ a $a_8$.
+
+    \item Jsou dány členy $a_7=2$, $a_{10}=-2$. Určete $d$, $a_1$ a $a_{20}$.
+
+    \item Platí $a_3=-5$, $a_{14}=28$. Určete $a_1$, $d$ a $a_{25}$.
+
+    \item Platí $a_6=17$, $a_{18}=-7$. Určete $a_1$, $d$ a $a_{30}$.
+
+    \item Platí $a_9=\frac72$, $a_{15}=-\frac52$. Určete diferenci.
+
+    \item Určete $n\in\mathbb{N}$, pro které platí $a_n=77$, jestliže $a_1=2$ a $d=5$.
+
+    \item Určete $n\in\mathbb{N}$, pro které platí $a_n=-53$, jestliže $a_1=11$ a $d=-4$.
+
+    \item Zjistěte, zda číslo $101$ je členem posloupnosti s $a_1=5$, $d=6$. Pokud ano, určete index.
+
+    \item Zjistěte, zda číslo $-40$ je členem posloupnosti s $a_1=8$, $d=-3$.
+
+    \item Najděte vzorec pro $n$-tý člen posloupnosti $7, 11, 15, 19,\ldots$
+
+    \item Najděte vzorec pro $n$-tý člen posloupnosti $12, 7, 2, -3,\ldots$
+
+    \item Najděte rekurentní i explicitní vyjádření posloupnosti, pro kterou $a_1=\pi$ a $d=2\pi$.
+
+    \item Posloupnost je dána $a_n=-2+3n$. Určete $a_1$, $d$, $a_{25}$ a rekurentní vyjádření.
+
+    \item Posloupnost je dána $a_n=\frac{7-5n}{3}$. Určete $a_1$, $d$ a $a_{16}$.
+\end{enumerate}
+
+\section*{Součet členů}
+
+\begin{enumerate}[resume]
+    \item Určete součet prvních $20$ členů posloupnosti $3, 7, 11, 15,\ldots$
+
+    \item Určete součet prvních $35$ členů, jestliže $a_1=-4$ a $d=3$.
+
+    \item Určete $S_{50}$ pro posloupnost s $a_1=12$ a $d=-2$.
+
+    \item Určete součet všech přirozených čísel od $1$ do $100$.
+
+    \item Určete součet všech dvouciferných sudých přirozených čísel.
+
+    \item Určete součet všech dvouciferných lichých přirozených čísel.
+
+    \item Určete součet všech trojciferných násobků čísla $7$.
+
+    \item Určete součet všech trojciferných násobků čísla $13$.
+
+    \item Určete součet všech přirozených čísel od $50$ do $250$, která jsou dělitelná $4$.
+
+    \item Určete součet všech celých čísel od $-30$ do $90$, která jsou dělitelná $5$.
+
+    \item Je $a_1=7$, $a_{20}=64$. Určete $S_{20}$.
+
+    \item Je $a_5=18$, $a_{25}=78$. Určete $S_{29}$.
+
+    \item Platí $a_3=11$, $a_{17}=53$. Určete součet prvních $20$ členů.
+
+    \item Platí $a_8=-5$, $a_{24}=43$. Určete $S_{30}$.
+
+    \item Součet prvních $20$ členů je $430$ a $a_1=3$. Určete $d$.
+
+    \item Součet prvních $15$ členů je $330$ a $d=2$. Určete $a_1$.
+
+    \item Platí $S_{12}=246$ a $a_{12}=37$. Určete $a_1$.
+
+    \item Platí $S_{18}=441$ a $a_1=5$. Určete $a_{18}$ a $d$.
+
+    \item Určete počet členů posloupnosti $4, 9, 14,\ldots,149$ a jejich součet.
+
+    \item Určete počet členů posloupnosti $120, 113, 106,\ldots,-41$ a jejich součet.
+\end{enumerate}
+
+\section*{Rovnice, vkládání členů a náročnější úlohy}
+
+\begin{enumerate}[resume]
+    \item Tři po sobě jdoucí členy aritmetické posloupnosti mají součet $60$ a součin $7500$. Určete je.
+
+    \item Tři po sobě jdoucí členy mají součet $36$ a součin $1296$. Určete je.
+
+    \item Tři po sobě jdoucí členy mají součet $27$ a součet jejich druhých mocnin je $275$. Určete je.
+
+    \item Tři po sobě jdoucí členy mají součet $18$ a součet jejich druhých mocnin je $134$. Určete je.
+
+    \item Čtyři po sobě jdoucí členy mají součet $52$. Součet prvního a čtvrtého je $26$. Vysvětlete, proč údaje neurčují jedinou posloupnost.
+
+    \item Deset čísel tvoří aritmetickou posloupnost s diferencí $d=3$. První, třetí a sedmé číslo tvoří tři po sobě jdoucí členy geometrické posloupnosti. Určete těchto deset čísel.
+
+    \item Je $a_1=18$, $d=-5$. Určete $n\in\mathbb{N}$ tak, aby $a_n+a_{n+3}=-189$.
+
+    \item Je $a_1=-7$, $d=4$. Určete $n\in\mathbb{N}$ tak, aby $a_n+a_{n+5}=98$.
+
+    \item Mezi čísla $2$ a $26$ vložte pět čísel tak, aby vzniklo sedm po sobě jdoucích členů aritmetické posloupnosti.
+
+    \item Mezi čísla $-8$ a $34$ vložte šest čísel tak, aby vznikla aritmetická posloupnost.
+
+    \item Mezi kořeny rovnice $x^2-10x+16=0$ vložte čtyři čísla tak, aby všech šest čísel tvořilo aritmetickou posloupnost.
+
+    \item Mezi kořeny rovnice $x^2-14x+40=0$ vložte pět čísel tak, aby všech sedm čísel tvořilo aritmetickou posloupnost.
+
+    \item Určete tři reálná čísla větší než $8$ a menší než $648$ tak, aby spolu s čísly $8$ a $648$ tvořila pět po sobě jdoucích členů aritmetické posloupnosti.
+
+    \item Určete čtyři reálná čísla mezi $-5$ a $25$ tak, aby spolu s krajními čísly tvořila šest po sobě jdoucích členů aritmetické posloupnosti.
+
+    \item Tři čísla tvoří tři po sobě jdoucí členy aritmetické posloupnosti a součet jejich druhých mocnin je $126$. Jestliže první číslo zmenšíme třikrát, druhé ponecháme a třetí zvětšíme čtyřikrát, vzniknou tři po sobě jdoucí členy geometrické posloupnosti. Určete původní trojici.
+\end{enumerate}
+
+\section*{Slovní úlohy}
+
+\begin{enumerate}[resume]
+    \item Na začátku směny je ve skladu $7$ výrobků a každou hodinu přibudou $4$. Kolik jich bude po $10$ hodinách?
+
+    \item Při hladině moře je $22\,^\circ\mathrm{C}$ a s každým kilometrem výšky klesne teplota o $6{,}5\,^\circ\mathrm{C}$. Určete teplotu ve výšce $6$ km.
+
+    \item Divadlo má v první řadě $18$ sedadel a v každé další o $2$ více. Kolik sedadel je ve $25.$ řadě?
+
+    \item Divadlo má $24$ řad. V první je $16$ sedadel a v každé další o $3$ více. Kolik sedadel je celkem?
+
+    \item Schodiště má $30$ stupňů. První je ve výšce $15$ cm a každý další o $15$ cm výše. V jaké výšce je třicátý stupeň?
+
+    \item Student spoří první měsíc $500$ Kč a každý další měsíc o $100$ Kč více. Kolik odloží ve dvanáctém měsíci a za celý rok?
+
+    \item Běžec uběhne první den $2$ km a každý další den o $0{,}5$ km více. Kolik uběhne desátý den a za prvních deset dní?
+
+    \item V kině stojí vstupenka v první zóně $120$ Kč a každá další zóna je o $15$ Kč dražší. Kolik stojí osmá zóna?
+
+    \item Na stadionu je v první řadě $28$ míst a každá další má o $4$ více. Sektor má $18$ řad. Kolik míst je celkem?
+
+    \item V nádrži je $850$ litrů vody a každou hodinu ubude $35$ litrů. Kolik zbývá po $12$ hodinách? Kdy bude poprvé méně než $500$ litrů?
+
+    \item Firma vyrobí v lednu $1200$ kusů a každý další měsíc o $75$ více. Kolik vyrobí v prosinci a za celý rok?
+
+    \item V prvním týdnu přečte student $35$ stran a každý další týden o $12$ více. Kolik přečte v osmém týdnu a za osm týdnů?
+
+    \item Řemeslník účtuje za první metr plotu $450$ Kč a za každý další metr o $20$ Kč více. Kolik stojí desátý metr a prvních deset metrů celkem?
+
+    \item Po $2$ hodinách přijde ve frontě na řadu číslo $17$ a po $6$ hodinách číslo $49$. Určete hodinový přírůstek a kdy přijde na řadu číslo $81$.
+
+    \item V posluchárně je v první řadě $12$ míst a v poslední, dvacáté, $69$ míst. Určete počet míst celkem.
+\end{enumerate}
+
+\section*{Obtížnější a důkazové úlohy}
+
+\begin{enumerate}[resume]
+    \item Platí $a_3+a_7=40$ a $a_5=20$. Co lze o aritmetické posloupnosti určit jednoznačně?
+
+    \item Platí $a_2+a_8=30$ a $a_4+a_6=30$. Vysvětlete, proč druhá podmínka nepřináší novou informaci.
+
+    \item Dokažte, že $a_{n-k}+a_{n+k}=2a_n$, pokud mají všechny členy smysl.
+
+    \item Dokažte, že součet dvou členů se stejným součtem indexů je v aritmetické posloupnosti stejný.
+
+    \item Platí $a_4+a_{10}=52$ a $a_7=26$. Rozhodněte, zda lze jednoznačně určit $a_1$ a $d$.
+
+    \item Určete posloupnost, pro kterou $a_2+a_5=19$ a $a_4+a_9=41$.
+
+    \item Určete posloupnost, pro kterou $a_3=2a_1$ a $a_{10}=47$.
+
+    \item Určete posloupnost, pro kterou $a_6=3a_2$ a $a_{15}=58$.
+
+    \item Najděte $n$, jestliže součet prvních $n$ lichých čísel je $625$.
+
+    \item Najděte $n$, jestliže $1+4+7+\cdots+a_n=280$.
+
+    \item Najděte $n$, jestliže $100+96+92+\cdots+a_n=820$ a poslední člen je kladný.
+
+    \item Je dáno $S_n=3n^2-2n$. Určete vzorec pro $a_n$, první člen a diferenci.
+
+    \item Je dáno $S_n=2n^2+5n$. Určete $a_n$ a $d$.
+
+    \item Platí $S_{10}=145$ a $S_{20}=590$. Určete $a_1$ a $d$.
+
+    \item Platí $S_8=92$ a $S_{16}=376$. Určete $a_1$ a $d$.
+\end{enumerate}
+
+\end{document}

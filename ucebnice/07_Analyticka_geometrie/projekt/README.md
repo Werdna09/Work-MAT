@@ -1,0 +1,3 @@
+- poznámky musí být psané jako souvislý text, bez použití nového řádku (ENTER)
+- zadání příkladu musí být psané jako souvislý text, bez použití nového řádku, mimo parametrické rovnice a další víceřádkové matematickétexty
+- nesepisovat shrnutí

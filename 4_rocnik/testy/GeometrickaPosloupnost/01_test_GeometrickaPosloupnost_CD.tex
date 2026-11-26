@@ -1,0 +1,61 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,landscape,left=8mm,right=8mm,top=8mm,bottom=8mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=2pt}
+
+% Uprav název testu; jednotlivé varianty jsou vždy A/B, C/D atd.
+\newcommand{\TestTitle}{Geometrická posloupnost}
+\newcommand{\TestHeader}[1]{%
+    {\bfseries TEST -- \TestTitle}\hfill{\bfseries Varianta #1}\\[2mm]
+    Jméno a příjmení: \rule{4.5cm}{0.4pt}\hfill Třída: \rule{1.5cm}{0.4pt}\\[2mm]
+    Datum: \rule{2.4cm}{0.4pt}\hfill Počet bodů: \rule{1.4cm}{0.4pt}\hfill Známka: \rule{1.4cm}{0.4pt}\\[1mm]
+    \hrule\vspace{3mm}
+}
+\newcommand{\AnswerSpace}[1]{\vspace{#1}}
+
+\begin{document}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{C}
+
+    % ZADÁNÍ VARIANTY C
+    \begin{enumerate}
+        \item Posloupnost je dána vzorcem $a_n=\dfrac{3(-2)^{n+1}}{4^n}$ pro $n\geq1$. Rozhodněte, zda je geometrická. Tvrzení zdůvodněte pro všechna $n\geq1$; pokud ano, určete $a_1$ a $q$.
+        \AnswerSpace{23mm}
+        \item V geometrické posloupnosti platí $a_2=12$, $a_4=3$. Určete všechny reálné možnosti pro $q$, $a_1$ a $a_5$.
+        \AnswerSpace{27mm}
+        \item V geometrické posloupnosti platí $a_1=2$ a $S_3=14$. Určete všechny reálné hodnoty $q$ a pro každou z nich vypočtěte $S_5$.
+        \AnswerSpace{30mm}
+        \item Tři po sobě jdoucí členy geometrické posloupnosti mají součet $21$ a součin $216$. Určete všechny uspořádané trojice těchto členů a jejich kvocienty. Proveďte zkoušku.
+        \AnswerSpace{27mm}
+    \end{enumerate}
+\end{minipage}%
+\hfill\vrule width 0.4pt\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{D}
+
+    % ZADÁNÍ VARIANTY D
+    \begin{enumerate}
+        \item Posloupnost je dána vzorcem $a_n=\dfrac{5(-3)^{n-1}}{9^{n-1}}$ pro $n\geq1$. Rozhodněte, zda je geometrická. Tvrzení zdůvodněte pro všechna $n\geq1$; pokud ano, určete $a_1$ a $q$.
+        \AnswerSpace{23mm}
+        \item V geometrické posloupnosti platí $a_3=6$, $a_5=24$. Určete všechny reálné možnosti pro $q$, $a_1$ a $a_6$.
+        \AnswerSpace{27mm}
+        \item V geometrické posloupnosti platí $a_1=3$ a $S_3=39$. Určete všechny reálné hodnoty $q$ a pro každou z nich vypočtěte $S_5$.
+        \AnswerSpace{30mm}
+        \item Tři po sobě jdoucí členy geometrické posloupnosti mají součet $26$ a součin $216$. Určete všechny uspořádané trojice těchto členů a jejich kvocienty. Proveďte zkoušku.
+        \AnswerSpace{27mm}
+    \end{enumerate}
+\end{minipage}
+\end{document}

@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{40}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Průběžný test: variace, permutace a kombinace}\par
+{\sffamily\large\color{teal} Výukový podklad · 40. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP T3\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Získat diagnostický podklad pro 15–20minutové ověření základních kombinatorických postupů a pro následnou opravu typických chyb.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+\textbf{Tato hodina je obsahový a metodický podklad, nikoli schválený žákovský test.} Vlastní test musí být později vytvořen pomocí projektu \texttt{vytvor-test} a výběr úloh musí schválit učitel.\par
+\textbf{Rozsah:} pravidlo součinu, variace bez opakování a s opakováním, permutace bez opakování a s opakováním, kombinace bez opakování. Vzhledem k názvu testu v rozpisu nezavádíme nové učivo a binomickou větu nepovažujeme za povinnou testovou položku.\par
+\textbf{Organizace 45 min:} \(0\)--\(20\) min krátký test; \(20\)--\(27\) min porovnání strategií bez zveřejňování individuálních výsledků; \(27\)--\(40\) min opravné úlohy; \(40\)--\(45\) min shrnutí rozhodovacího algoritmu.
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Diagnostika A: Kolik různých trojciferných čísel lze napsat z \(0,1,2,3,4,5\), bez opakování?\par
+\textit{Řešení.} První cifra má \(5\) nenulových možností; druhá \(5\) a třetí \(4\). Počet \(5\cdot5\cdot4=100\). Běžná chyba je \(6\cdot5\cdot4=120\), která povoluje úvodní nulu.\par\smallskip
+\textbf{Příklad 2.} Diagnostika B: Kolik různých pořadí písmen vznikne ze slova \textsc{AABBC}?\par
+\textit{Řešení.} Jde o permutace s opakováním: \(\frac{5!}{2!\,2!}=30\). Chybný výsledek \(120\) přehlíží nerozlišitelné kopie.\par\smallskip
+\textbf{Příklad 3.} Diagnostika C: Z osmi osob vyber tři členy nerozlišené komise.\par
+\textit{Řešení.} Na pořadí nezáleží. \(\binom83=56\). Číslo \(8\cdot7\cdot6=336\) je počet uspořádaných trojic, šestkrát větší.\par\smallskip
+\textbf{Příklad 4.} Diagnostika D: Ze šesti družstev urči vítěze, druhého a třetího.\par
+\textit{Řešení.} Jde o variace bez opakování: \(6\cdot5\cdot4=120\).\par\smallskip
+\textbf{Příklad 5.} Diagnostika E: Kolik čtyřznakových PINů z číslic \(0\) až \(9\) je možných?\par
+\textit{Řešení.} Variace s opakováním: \(10^4=10\,000\). PIN nemá zákaz počáteční nuly.\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Oprava 1: Tříznakový kód ze čtyř symbolů s opakováním.
+\item Oprava 2: Všechny možné řady pěti různých osob.
+\item Oprava 3: Z deseti lidí vyber dva bez rozlišení funkcí.
+\item Oprava 4: Uspořádej písmena \textsc{MAMA}.
+\item Oprava 5: Čtyřciferná čísla z cifer \(0\) až \(4\), bez opakování.
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(4^3=64\).
+\item \(5!=120\).
+\item \(\binom{10}{2}=45\).
+\item \(\frac{4!}{2!2!}=6\).
+\item \(4\) možnosti první cifry, pak \(4,3,2\): \(4\cdot4\cdot3\cdot2=96\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Nikdy nevyvozovat z jediného výsledku, že student pochopil typ úlohy; žádat stručné slovní zdůvodnění.
+\item Při opravě zdůraznit nepřípustnou počáteční nulu, dvojnásobné započítání a nerozlišitelné prvky.
+\item Jde o obsahový návrh, nikoli finální písemnou práci pro studenty.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–20 diagnostický test; 20–27 rozbor strategií; 27–40 cílené opravy; 40–45 pravidla rozhodování.\par
+'\textbf{Doporučená diagnostika:} Vybrat čtyři až pět základních položek, celkem přibližně 10--12 bodů. Každá musí ověřovat odlišný typ počítání. Nepředkládat jako hotový test bez učitelova schválení.\par
+\textbf{Návaznost:} Po diagnostice následují smíšené úlohy s omezeními a most k pravděpodobnosti.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

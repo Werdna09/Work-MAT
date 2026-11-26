@@ -1,0 +1,27 @@
+
+{
+    "latex-workshop.latex.tools": [
+        {
+            "name": "mat-latexmk",
+            "command": "latexmk",
+            "args": [
+                "-synctex=1",
+                "-interaction=nonstopmode",
+                "-file-line-error",
+                "-pdf",
+                "%DOC%"
+            ],
+            "env": {
+                "TEXINPUTS": "/home/ondra/Work/MAT/ucebnice//:"
+            }
+        }
+    ],
+    "latex-workshop.latex.recipes": [
+        {
+            "name": "MAT - pdflatex",
+            "tools": ["mat-latexmk"]
+        }
+    ],
+    "latex-workshop.latex.recipe.default": "first",
+    "latex-workshop.latex.autoBuild.run": "never"
+}

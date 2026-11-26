@@ -1,0 +1,132 @@
+% Work-MAT | 2. ročník | hodina 43 | 2026-11-22
+% Zadání vybírána z WorkMAT_Logaritmy_Sbirka_PodleMetod.tex (481 příkladů)
+% Vždy zachována matematická formulace zdroje, učitelův výklad a řešení dopsány k vybraným příkladům.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{mathtools}
+\nastavPripravu{2. ročník}{Logaritmické nerovnice}{43}{Substituce, podíly a absolutní hodnota v nerovnicích}
+\begin{document}
+\blok{Návaznost a cíl hodiny}
+Nerovnice už nespočívá pouze v jednom odlogaritmování: nyní použijeme substituci do kvadratické nerovnice, znaménkový rozbor podílu a absolutní hodnotu.
+\poznamka{\textbf{Časový plán (45--55 minut):} Opakování 5 min, příklady 1--2 20 min, samostatná práce a--d 12 min, příklad 3 8 min, závěr 5 min. Absolutní hodnota jako rozšíření.}
+
+\blok{Klíčová metoda}
+\[
+t=\log_a x;\quad\text{nejprve řešíme nerovnici pro }t,\text{ potom se vracíme k }x.
+\]
+\poznamka{Nejde o novou definici. Jde o důsledek prostoty a pravidel pro logaritmy, která už žáci znají. V řešení mají vždy uvést podmínky.}
+
+\blok{Společné řešené příklady}
+
+% Sbírka: oddíl 20, položka 1
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš: $\displaystyle \log_3^2x+\log_3x-2\le0$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log_3 x,\\
+t^2+t-2&\le0,\\
+(t+2)(t-1)&\le0,\\
+-2&\le t\le1,\\
+-2&\le\log_3x\le1,\\
+K&=\left\langle\frac19;3\right\rangle.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Z kvadratické nerovnice vzniká uzavřený interval v pomocné proměnné, nikoli dvě polopřímky.}
+% Sbírka: oddíl 20, položka 2
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš: $\displaystyle \log_{\frac12}^2x+\log_{\frac12}x-2\le0$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad t=\log_{\frac12}x,\\
+(t+2)(t-1)&\le0,\\
+-2&\le\log_{\frac12}x\le1,\\
+x&\le\left(\frac12\right)^{-2},\\
+x&\ge\left(\frac12\right)^1,\\
+K&=\left\langle\frac12;4\right\rangle.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Kvůli klesání logaritmu se pořadí při přechodu na $x$ obrací u obou hranic.}
+% Sbírka: oddíl 20, položka 5
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Vyřeš: $\displaystyle \frac{\log x+1}{\log x-2}<0$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\quad\log x\ne2,\quad t=\log x,\\
+\frac{t+1}{t-2}&<0,\\
+-1&<t<2,\\
+-1&<\log x<2,\\
+K&=\left(\frac1{10};100\right).
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Proč při násobení výrazem $t-2$ nesmíme bez rozboru znaménka hned odstranit jmenovatel?}
+% Sbírka: oddíl 21, položka 1
+\needspace{9\baselineskip}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Vyřeš: $\displaystyle |\log x|\le4$
+\tcblower
+\[
+\begin{aligned}
+&x>0,\\
+|\log x|&\le4,\\
+-4&\le\log x\le4,\\
+10^{-4}&\le x\le10^4,\\
+K&=\left\langle\frac1{10000};10000\right\rangle.
+\end{aligned}
+\]
+\end{prikladReseniBox}
+\poznamka{Dvě větve absolutní hodnoty neznamenají automaticky sjednocení; $|t|\le a$ je oboustranná nerovnice.}
+\blok{Samostatná práce}
+\poznamka{Ve třídě doporučuji nejdříve úlohy a)--d); další jsou rezervou pro rychlejší žáky nebo volitelným dokončením po hodině. Neopisovat řešený vzor — vybrat postup.}
+\begin{zadaniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 19, položka 2
+\item $\displaystyle \log_{1{,}2}\left(4+\frac2x\right)\ge0$
+% Sbírka: oddíl 19, položka 5
+\item $\displaystyle \log_3(2x-1)\ge\log_3(4x+3)$
+% Sbírka: oddíl 19, položka 6
+\item $\displaystyle \log_{\frac13}(x+4)\le\log_{\frac13}(5x-4)$
+% Sbírka: oddíl 20, položka 3
+\item $\displaystyle \log_4^2(x+1)-9>0$
+% Sbírka: oddíl 20, položka 4
+\item $\displaystyle \log_{0{,}25}^2(x-1)-\log_{0{,}25}(x-1)\ge0$
+% Sbírka: oddíl 20, položka 6
+\item $\displaystyle \frac1{\log x}+\frac13\ge0$
+% Sbírka: oddíl 21, položka 2
+\item $\displaystyle |\log_3 x-1|\le2$
+% Sbírka: oddíl 19, položka 3
+\item $\displaystyle \log_x2>1$
+\end{enumerate}
+\end{zadaniBox}
+\blok{Úkol na doma}
+Vyřeš úlohy a)--e) a zapiš podmínky. Zbývající úlohy jsou procvičování navíc; podle rychlosti je můžeš dokončit doma. 
+\begin{zadaniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+% Sbírka: oddíl 19, položka 7
+\item $\displaystyle \log_{20}(x^2-3x)<\log_{20}x+\log_{20}5$
+% Sbírka: oddíl 19, položka 8
+\item $\displaystyle \log_{0{,}2}(x-3)>\log_{0{,}2}x-\log_{0{,}2}2$
+% Sbírka: oddíl 19, položka 9
+\item $\displaystyle \log5\cdot\log_{\frac14}(x+3)\ge0$
+% Sbírka: oddíl 19, položka 10
+\item $\displaystyle \log_5 0{,}4\cdot\log_{0{,}9}(x-1)\le0$
+% Sbírka: oddíl 20, položka 7
+\item $\displaystyle 3\log_3^2x-27\log_3x\ge\log_3x-9$
+% Sbírka: oddíl 20, položka 8
+\item $\displaystyle \log_{\frac12}^2(x-2)-16<0$
+% Sbírka: oddíl 21, položka 4
+\item $\displaystyle |2-\log x|>1$
+% Sbírka: oddíl 22, položka 1
+\item $\displaystyle 1\le\log_3x\le2$
+\end{enumerate}
+\end{zadaniBox}
+\poznamka{\textbf{Učitelovo vodítko:} U kvadratických nerovnic využij znaménka paraboly. U podílu logaritmů v nerovnici nenásob neznámým jmenovatelem bez znaménkového rozboru. Domácí sada má 8 různých zadání; základních pět úloh na přibližně 15--30 minut a zbytek jako volitelnou zásobu.}
+\end{document}

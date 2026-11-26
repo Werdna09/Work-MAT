@@ -1,0 +1,79 @@
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,mathtools}
+\usepackage{geometry}
+\geometry{left=19mm,right=19mm,top=21mm,bottom=21mm}
+\usepackage[dvipsnames]{xcolor}
+\usepackage{enumitem,tabularx,booktabs}
+\usepackage[most]{tcolorbox}
+\usepackage{fancyhdr,lastpage}
+\usepackage[hidelinks]{hyperref}
+\definecolor{deep}{HTML}{203955}
+\definecolor{teal}{HTML}{176E76}
+\definecolor{slate}{HTML}{506173}
+\definecolor{pale}{HTML}{F3F7F9}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\setlist[enumerate]{leftmargin=6mm,itemsep=5pt,topsep=3pt}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\sffamily\footnotesize\color{slate} MAT · 4. ročník · kombinatorika}
+\fancyhead[R]{\sffamily\footnotesize\color{slate} Hodina \LESSONNUM\, / 112}
+\fancyfoot[L]{\sffamily\footnotesize\color{slate} Výukový podklad · samostatný dokument}
+\fancyfoot[R]{\sffamily\footnotesize\color{slate} \thepage/\pageref{LastPage}}
+\renewcommand{\headrulewidth}{0.35pt}
+\renewcommand{\footrulewidth}{0pt}
+\newcommand{\sect}[1]{\par\vspace{2mm}{\Large\sffamily\bfseries\color{deep} #1}\par\vspace{-0.5mm}\noindent\color{teal}\rule{\linewidth}{0.7pt}\color{black}\vspace{1mm}}
+\tcbset{theobox/.style={enhanced,breakable,colback=pale,colframe=teal!45!white,boxrule=.6pt,arc=1mm,left=3mm,right=3mm,top=2mm,bottom=2mm}}
+\newcommand{\LESSONNUM}{39}
+\begin{document}
+
+{\Huge\sffamily\bfseries\color{deep} Binomická věta a koeficienty členů}\par
+{\sffamily\large\color{teal} Výukový podklad · 39. vyučovací hodina}\par
+\textbf{Hodinová dotace:} 45 minut\quad \textbf{Ročník:} 4. SPŠ\quad \textbf{Rozpis:} TP 2.3\par
+\begin{tcolorbox}[theobox]\textbf{Výukový cíl.} Dokázat význam binomických koeficientů a rozvíjet \((a+b)^n\) včetně záporného členu a vyhledávání koeficientů.\end{tcolorbox}
+\sect{Teorie a vysvětlení}
+Pro každé \(n\in\mathbb N_0\) platí \textbf{binomická věta}
+\[(a+b)^n=\sum_{k=0}^n\binom nk a^{n-k}b^k.\]
+V každém z \(n\) činitelů \((a+b)\) volíme \(a\), nebo \(b\). Aby vznikl člen \(a^{n-k}b^k\), musíme vybrat \(b\) přesně v \(k\) závorkách, což lze \(\binom nk\) způsoby.\par
+\textbf{Pravidlo práce:} mocnina prvního členu klesá od \(n\) k nule, mocnina druhého roste od nuly k \(n\), koeficienty jsou v řádku \(n\) Pascalova trojúhelníku. Pro rozdíl dosadíme \(b=-c\).
+\sect{Řešené příklady}
+\textbf{Příklad 1.} Rozviň \((x+2)^4\).\par
+\textit{Řešení.} Koeficienty \(1,4,6,4,1\). Členy \(x^4\), \(4x^3\cdot2\), \(6x^2\cdot2^2\), \(4x\cdot2^3\), \(2^4\). Dostáváme \(x^4+8x^3+24x^2+32x+16\).\par\smallskip
+\textbf{Příklad 2.} Rozviň \((2x-y)^3\).\par
+\textit{Řešení.} Položíme \(a=2x, b=-y\) a použijeme koeficienty \(1,3,3,1\): \(8x^3-12x^2y+6xy^2-y^3\).\par\smallskip
+\textbf{Příklad 3.} Najdi koeficient u \(x^3\) v \((x+2)^5\).\par
+\textit{Řešení.} Obecný člen je \(\binom5k x^{5-k}2^k\). Pro \(x^3\) potřebujeme \(5-k=3\), tedy \(k=2\). Koeficient \(\binom52\cdot2^2=10\cdot4=40\).\par\smallskip
+\textbf{Příklad 4.} Najdi koeficient u \(x^4\) v \((2x-1)^6\).\par
+\textit{Řešení.} Obecný člen \(\binom6k (2x)^{6-k}(-1)^k\). Pro \(x^4\): \(k=2\). Koeficient \(\binom62\cdot2^4\cdot(-1)^2=15\cdot16=240\).\par\smallskip
+\textbf{Příklad 5.} Použij binomickou větu ke zdůvodnění \(\sum_{k=0}^n\binom nk=2^n\).\par
+\textit{Řešení.} Vezmeme \(a=b=1\): \((1+1)^n=\sum_{k=0}^n\binom nk\cdot1^{n-k}\cdot1^k=\sum_{k=0}^n\binom nk\).\par\smallskip
+\clearpage\sect{Procvičování pro studenty}
+\begin{enumerate}
+\item Rozviň \((a+b)^3\).
+\item Rozviň \((x-1)^4\).
+\item Najdi koeficient u \(x^2\) v \((x+3)^4\).
+\item Najdi konstantní člen v \((2x+5)^3\).
+\item Najdi koeficient u \(x^3\) v \((1-2x)^5\).
+\end{enumerate}
+\sect{Řešení a zdůvodnění k procvičování}
+\begin{enumerate}
+\item \(a^3+3a^2b+3ab^2+b^3\).
+\item \(x^4-4x^3+6x^2-4x+1\).
+\item \(\binom42 3^2=6\cdot9=54\).
+\item Vzniká volbou \(5\) ve všech třech závorkách: \(5^3=125\).
+\item \(\binom53(-2)^3=10\cdot(-8)=-80\).
+\end{enumerate}
+\sect{Metodické poznámky}
+\textbf{Typické chyby:}
+\begin{itemize}[leftmargin=5mm,itemsep=1pt]
+\item Mocnina \(x\) určuje vhodný index \(k\); nelze číst přímo pouze koeficient z Pascalova trojúhelníku.
+\item U \((a-b)^n\) se znaménka střídají; záporné \(b\) umocňujeme v každém členu.
+\item Rozvoj má přesně \(n+1\) členů před případným slučováním.
+\end{itemize}
+\textbf{Doporučený průběh 45 minut:} 0–12 odvození; 12–25 rozvoje; 25–34 hledání koeficientu; 34–42 procvičení; 42–45 shrnutí.\par
+\textbf{Návaznost:} Příští hodina obsahuje krátké ověření variací, permutací a kombinací; binomickou větu upevníme v souhrnných úlohách.\par
+\vspace{2mm}\noindent{\footnotesize\color{slate} \textbf{Východiska:} rozpis výuky MAT, 4. ročník, hodiny 29--41; tematický plán SPŠ; srovnání tematického rozsahu a náročnosti s realisticky.cz, oddíl Kombinatorika (lekce 090101--090119). Výklad, příklady a řešení jsou nově autorsky sestavené, nikoli převzatá sbírka.}\par
+\end{document}

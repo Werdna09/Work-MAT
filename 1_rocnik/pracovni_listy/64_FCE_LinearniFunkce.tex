@@ -1,0 +1,99 @@
+% Pracovní list Work/MAT, 1. ročník, 64. hodina.
+% Autorské příklady; řešení je v samostatném souboru _reseni.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[czech]{babel}
+\usepackage{lmodern,microtype}
+\usepackage{amsmath,amssymb,geometry,enumitem,tabularx,booktabs,tikz}
+\usetikzlibrary{arrows.meta}
+\geometry{top=14mm,bottom=16mm,left=19mm,right=19mm}
+\setlength{\parindent}{0pt}\setlength{\parskip}{4pt}
+\setlist[enumerate]{leftmargin=1.55em,topsep=2pt,itemsep=2pt}
+\pagestyle{plain}
+\newcommand{\graf}{%
+\begin{tikzpicture}[x=.62cm,y=.62cm,>=Latex]
+\draw[step=1,gray!30,very thin] (-5,-5) grid (5,5);
+\draw[->] (-5.3,0)--(5.4,0) node[right] {$x$};
+\draw[->] (0,-5.3)--(0,5.4) node[above] {$y$};
+\foreach \i in {-4,-2,2,4}{\draw (\i,.11)--(\i,-.11) node[below,font=\scriptsize] {$\i$};\draw (.11,\i)--(-.11,\i) node[left,font=\scriptsize] {$\i$};}
+\end{tikzpicture}}
+\newcommand{\linka}{\par\vspace{2mm}\hrulefill\par}
+\begin{document}
+{\Large\bfseries Lineární funkce — samostatné procvičování}\hfill{\bfseries 64. hodina}\par
+\vspace{1mm}
+Jméno a příjmení: \rule{65mm}{.4pt}\hfill Třída: \rule{20mm}{.4pt}\par
+\smallskip
+\textit{Pracuj s pravítkem. Ke každému grafu napiš předpis přímo do obrázku.
+Body zapisuj ve tvaru $[x;y]$. Nepotřebuješ řešit všechny úlohy najednou — postupuj od 1. úlohy.}
+\section*{1. Grafy z předpisů}
+Do jedné soustavy sestroj grafy $f(x)=x-2$, $g(x)=-2x+1$, $h(x)=\frac12x+2$.
+Ke každému grafu urči dvě vhodné dvojice souřadnic. Čáry rozliš různým typem.
+\begin{center}\graf\end{center}
+\section*{2. Co nám říkají parametry?}
+Doplň tabulku podle předpisů z úlohy 1.
+\begin{center}
+\begin{tabularx}{.94\linewidth}{@{}lcccc@{}}\toprule
+Funkce & Směrnice $a$ & Absolutní člen $b$ & Roste / klesá / je konstantní & Bod na ose $y$\\\midrule
+$f$ & \rule{11mm}{.35pt} & \rule{11mm}{.35pt} & \rule{32mm}{.35pt} & \rule{17mm}{.35pt}\\[3mm]
+$g$ & \rule{11mm}{.35pt} & \rule{11mm}{.35pt} & \rule{32mm}{.35pt} & \rule{17mm}{.35pt}\\[3mm]
+$h$ & \rule{11mm}{.35pt} & \rule{11mm}{.35pt} & \rule{32mm}{.35pt} & \rule{17mm}{.35pt}\\\bottomrule
+\end{tabularx}
+\end{center}
+\section*{3. Předpis ze dvou bodů}
+Urči předpis $y=ax+b$ procházející a) $A[0;2]$ a $B[2;6]$, b) $C[-2;0]$ a $D[2;-2]$.
+Uveď výpočet směrnice i absolutního členu a zkontroluj jeden bod.
+\vspace{19mm}
+\newpage
+\section*{4. Předpis z grafu}
+Na obrázku jsou tři různé přímky: \textbf{plná} $p$, \textbf{čárkovaná} $q$ a
+\textbf{tečkovaná} $r$. Urči předpisy všech tří funkcí a napiš k nim dva body, které jsi použil.
+\begin{center}
+\begin{tikzpicture}[x=.85cm,y=.77cm,>=Latex]
+\draw[step=1,gray!25,very thin] (-4,-4) grid (4,4);
+\draw[->] (-4.35,0)--(4.4,0) node[right] {$x$};
+\draw[->] (0,-4.35)--(0,4.4) node[above] {$y$};
+\foreach \i in {-4,-3,-2,-1,1,2,3,4}{\draw (\i,.08)--(\i,-.08) node[below,font=\scriptsize] {$\i$};\draw (.08,\i)--(-.08,\i) node[left,font=\scriptsize] {$\i$};}
+\begin{scope}\clip (-4,-4) rectangle (4,4);
+\draw[very thick] (-4,-9)--(4,7);
+\draw[very thick,dashed] (-4,7)--(4,-1);
+\draw[very thick,densely dotted] (-4,-1)--(4,3);
+\end{scope}
+\node[fill=white,inner sep=1pt,font=\small] at (1.7,3.6) {$p$};
+\node[fill=white,inner sep=1pt,font=\small] at (3.3,.3) {$q$};
+\node[fill=white,inner sep=1pt,font=\small] at (-2.3,-.6) {$r$};
+\end{tikzpicture}
+\end{center}
+$p(x)=$\rule{33mm}{.4pt}\qquad $q(x)=$\rule{33mm}{.4pt}\qquad $r(x)=$\rule{33mm}{.4pt}
+\vspace{6mm}\linka
+\section*{5. Posouvání grafů}
+Do jedné soustavy sestroj $y=x$, $y=x+2$ a $y=x-1$. Popiš, co se změní,
+pokud ve funkci $y=x+b$ měníme pouze $b$.
+\begin{center}\graf\end{center}
+Vysvětlení: \rule{.78\linewidth}{.4pt}
+\newpage
+\section*{6. Parametr z konečné množiny}
+Je dána \emph{rodina funkcí} $y=ax+1$, kde $a\in\{-2;0;1\}$. Napiš všechny
+předpisy a sestroj jejich grafy do jedné soustavy.
+\begin{center}\graf\end{center}
+Kolik různých grafů vznikne? \rule{20mm}{.4pt}\quad Co mají společné? \rule{65mm}{.4pt}
+\section*{7. Parametr z intervalu}\textit{Rozšiřující úloha}
+Je dána rodina funkcí $y=x+b$, kde $b\in\langle-1;2\rangle$.
+Načrtni obě \emph{krajní přímky}, potom několika dalšími přímkami naznač i ostatní.
+Kolik různých grafů této rodině odpovídá? Je to jediná funkce?
+\begin{center}\graf\end{center}
+Odpověď: \rule{.82\linewidth}{.4pt}
+\newpage
+\section*{8. Omezený definiční obor}\textit{Rozšiřující úloha}
+Nakresli graf funkce $f(x)=-x+2$ jen pro $x\in\langle-2;1)$.
+Vyznač oba koncové body tak, aby bylo poznat, který do grafu patří.
+Urči $D(f)$ a $H(f)$.
+\begin{center}\graf\end{center}
+$D(f)=$\rule{50mm}{.4pt}\qquad $H(f)=$\rule{50mm}{.4pt}
+\section*{9. Dva body a posun}\textit{Dobrovolná rezerva}
+Urči předpis přímky procházející body $A[1;3]$ a $B[3;7]$. Porovnej jej s přímkou
+$y=2x-1$. Jsou rovnoběžné? Pokud ano, o kolik je jedna výše?
+\par\vspace{27mm}
+\noindent\textit{Po práci si zkontroluj:} Rozlišoval(a) jsem argument $x$ od parametru?
+Přidělil(a) jsem každému grafu předpis? Zohlednil(a) jsem otevřený krajní bod?
+\end{document}

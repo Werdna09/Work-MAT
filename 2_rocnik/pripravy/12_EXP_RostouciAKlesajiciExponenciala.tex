@@ -1,0 +1,116 @@
+% Work-MAT | 2. rocnik | hodina 12
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\usetikzlibrary{arrows.meta}
+\nastavPripravu{2. ročník}{Exponenciální funkce}{12}{Exponenciální funkce II: růst a pokles}
+\begin{document}
+\poznamka{Žáci již znají monotónnost a prostotu. Orientačně 6 min opakování, 12 min srovnávání, 10 min násobný růst, 12 min procvičení, 5 min shrnutí. Klíčové je nesměšovat konstantní procentní a konstantní absolutní přírůstek.}
+\blok{O základu rozhoduje jediné číslo}
+V předpise $a^x$ měníme argument, avšak \emph{základ} zůstává stejný. Pokud je $a>1$, větší exponent dává větší funkční hodnotu; pro $0<a<1$ je tomu naopak. Není nutné používat kalkulačku: často stačí poznat základ a porovnat exponenty.
+\begin{zadaniBox}[title={Věta - Porovnávání exponenciálních hodnot}]
+Nechť $u<v$. Pro $a>1$ platí $a^u<a^v$; pro $0<a<1$ platí $a^u>a^v$. V obou případech je funkce $a^x$ prostá.
+\end{zadaniBox}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Bez desetinných aproximací porovnej a) $2^{1{,}4}$ a $2^{1{,}6}$; b) $(0{,}4)^{1{,}4}$ a $(0{,}4)^{1{,}6}$.
+\tcblower
+Protože $2>1$, je $2^{1{,}4}<2^{1{,}6}$. Protože $0<0{,}4<1$, je $(0{,}4)^{1{,}4}>(0{,}4)^{1{,}6}$.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Porovnej $(\frac{1}{2})^{-2}$ s $(\frac{1}{2})^1$ a vysvětli, proč záporný exponent neznamená zápornou hodnotu.
+\tcblower
+$(\frac{1}{2})^{-2}=4>\frac{1}{2}=(\frac{1}{2})^1$. Záporný exponent převrací základ: $(\frac{1}{2})^{-2}=2^2$, nikoli záporná mocnina.
+\end{prikladReseniBox}
+\blok{Růst po stejných časových krocích}
+Exponenciála je vhodná pro veličiny, které se v každém kroku \emph{násobí stejným koeficientem}. Platí $a^{x+1}=a\cdot a^x$; proto má řada hodnot $100,110,121,133{,}1,\ldots$ stejný procentní, nikoli stejný číselný přírůstek.
+\begin{zadaniBox}[title={Věta - Násobný koeficient exponenciální funkce}]
+Je-li $f(x)=a^x$, kde $a>0$, $a\ne1$, potom pro všechna $x,h\in\mathbb R$ platí
+\[ f(x+h)=a^h f(x). \]
+Stejný přírůstek argumentu $h$ tedy vždy znamená stejný \emph{násobný koeficient} $a^h$.
+\end{zadaniBox}
+\begin{prikladReseniBox}[title={Příklad 3}]
+Množství materiálu je $200$ kusů a každý den se zvýší o $10\,\%$. Sestav předpis a spočti stav po dvou dnech.
+\tcblower
+$N(n)=200\cdot1{,}1^n$; $N(2)=200\cdot1{,}21=242$ kusů. Není správné přičíst dvakrát 20 kusů, protože druhých $10\,\%$ se počítá již z 220.
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Základní funkce $f(x)=\left(\frac{4}{5}\right)^x$:
+\begin{enumerate}[label=\alph*)]
+\item spočti poměr $\frac{f(x+2)}{f(x)}$;
+\item řekni, jaké procento původní hodnoty zůstane za dva kroky;
+\item vysvětli, zda jde o stále stejný absolutní úbytek.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{f(x+2)}{f(x)}=\left(\frac{4}{5}\right)^2=\frac{16}{25}=0{,}64$.
+\item Zůstane $64\,\%$, tedy ubyde $36\,\%$.
+\item Ne; úbytek závisí na aktuální hodnotě funkce.
+\end{enumerate}
+\end{prikladReseniBox}
+\poznamka{U poklesu pozor na význam základu: $a=0{,}9$ znamená, že zůstává $90\,\%$ předchozí hodnoty, nikoli že se přičítá stále stejné záporné číslo.}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item Porovnej $3^{-1}$ a $3^{-2}$.
+\item Porovnej $\left(\frac{1}{3}\right)^{-1}$ a $\left(\frac{1}{3}\right)^{-2}$.
+\item Porovnej $2^{1{,}6}$ a $2^{1{,}9}$.
+\item Porovnej $\left(\frac{3}{4}\right)^{1{,}6}$ a $\left(\frac{3}{4}\right)^{1{,}9}$.
+\item U $f(x)=\left(\frac{4}{5}\right)^x$ spočti $f(0)$, $f(2)$ a urči obor hodnot.
+\item U funkce $g(x)=3^x$ vypočti $\frac{g(x+3)}{g(x)}$.
+\item Počátečních 500 kusů klesá o $20\,\%$ v každém kroku. Kolik zbude po dvou krocích?
+\item Populace 40 jedinců se v každém kroku zdvojnásobí. Sestav model a urči stav po třech krocích.
+\item Předpis $N(n)=600\cdot0{,}95^n$: rozhodni, zda jde o růst, či pokles a o kolik procent za krok.
+\item Model $N(n)=70\cdot1{,}2^n$: spočti $N(0)$ a $N(2)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\frac{1}{3}>\frac{1}{9}$.
+\item $3<9$.
+\item $2^{1{,}6}<2^{1{,}9}$.
+\item $\left(\frac{3}{4}\right)^{1{,}6}>\left(\frac{3}{4}\right)^{1{,}9}$.
+\item $f(0)=1$, $f(2)=\frac{16}{25}$, $H(f)=(0;+\infty)$.
+\item $3^3=27$.
+\item $500\cdot\left(\frac{4}{5}\right)^2=320$.
+\item $N(n)=40\cdot2^n$, tedy $N(3)=320$.
+\item Klesá o $5\,\%$ za krok.
+\item $N(0)=70$, $N(2)=100{,}8$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Najdi základ $a$, jestliže $f(x)=a^x$ splňuje $f(2)=\frac{1}{16}$, a urči monotónnost.
+\tcblower
+$a^2=\frac{1}{16}$ a $a>0$, tedy $a=\frac{1}{4}$. Jelikož $0<a<1$, je funkce klesající.
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Rozšíření 2}]
+Pro které hodnoty parametru $p$ určuje předpis $f_p(x)=\left(\frac{p+2}{p-1}\right)^x$ exponenciální funkci? Kdy roste a kdy klesá?
+\tcblower
+Základ musí být kladný a různý od jedné. Nerovnice $\frac{p+2}{p-1}>0$ platí pro $p\in(-\infty;-2)\cup(1;+\infty)$. Rovnost základu jedné by znamenala $p+2=p-1$, což není možné. Pro $p>1$ je základ větší než jedna (funkce roste), pro $p<-2$ je mezi nulou a jednou (funkce klesá).
+\end{zadaniReseniBox}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Porovnej $\left(\frac{7}{10}\right)^3$ a $\left(\frac{7}{10}\right)^4$.
+\item Porovnej $4^{-\frac{1}{3}}$ a $4^{\frac{1}{3}}$.
+\item Vypočti $\frac{3^{x+2}}{3^x}$.
+\item Vypočti $\frac{\left(\frac{1}{2}\right)^{x+3}}{\left(\frac{1}{2}\right)^x}$.
+\item Klesá-li hmotnost každou hodinu o $5\,\%$, jaká část zbude po třech hodinách?
+\item Stav 250 kusů roste o $12\,\%$ za krok. Sestav předpis a určete stav po dvou krocích.
+\item Sestav funkci pro počáteční hodnotu 800 a pokles o $15\,\%$ za krok.
+\item Pro $f(x)=\left(\frac{3}{2}\right)^x$ urči, jak se změní hodnota při zvýšení $x$ o dvě.
+\item Vysvětli, proč řada $100,110,120,130$ nepředstavuje růst o $10\,\%$ za každý krok.
+\item Načrtni ve stejné soustavě grafy $y=2^x$ a $y=\left(\frac{1}{2}\right)^x$; označ monotónnost a průsečík s osou $y$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item První je větší: klesající funkce.
+\item $4^{-\frac{1}{3}}<4^{\frac{1}{3}}$; funkce se základem 4 roste.
+\item $9$.
+\item $\frac{1}{8}$.
+\item $0{,}95^3=0{,}857375$, tedy $85{,}7375\,\%$.
+\item $N(n)=250\cdot1{,}12^n$; $N(2)=313{,}6$.
+\item $N(n)=800\cdot0{,}85^n$.
+\item Vynásobí se $\left(\frac{3}{2}\right)^2=\frac{9}{4}$.
+\item Absolutní přírůstek je stálých 10, zatímco procentní přírůstek se mění.
+\item Rostoucí $2^x$, klesající $\left(\frac{1}{2}\right)^x$, obě procházejí $[0;1]$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol odhadem 20--25 minut. Z grafů stačí přehledný náčrtek se čtyřmi vhodnými body.}
+\end{document}

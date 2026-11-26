@@ -1,0 +1,94 @@
+\documentclass[a4paper,10pt,landscape]{article}
+
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage{geometry}
+\usepackage{enumitem}
+
+\geometry{a4paper,landscape,left=8mm,right=8mm,top=8mm,bottom=8mm}
+\pagestyle{empty}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt}
+\setlist[enumerate]{leftmargin=*,itemsep=2pt,topsep=2pt}
+
+% Sazba podle sablony/testy/A5x2.tex, beze změny společné šablony.
+% Zdroj zadání: přímý pokyn učitele v konverzaci 27. 10. 2026,
+% zpráva „Vytvoř písemný test z matematiky na téma aritmetická posloupnost“.
+% Učitelem uvedená banka: „Aritmetická posloupnost – 100 úloh“.
+% A1–A5: úlohy banky 22, 27, 31, 54, 64.
+% B1–B5: úlohy banky 23, 28, 32, 55, 65.
+% Banka nebyla v projektu nalezena; čísla jsou evidována podle učitele,
+% nebyla nezávisle porovnána s původním souborem banky. Přesným podkladem
+% pro znění a hodnoty je úplné zadání učitele v uvedené zprávě.
+% Starší verze tohoto konkrétního testu ani její bodování nebyly nalezeny.
+% import_testu/bezne/testPosloupnosti.tex obsahuje jiný test (3 úlohy).
+% Zařazení: 4_rocnik/tematicke_plany/SPS.pdf, s. 1, body 1.1–1.2.
+\newcommand{\TestTitle}{Aritmetická posloupnost}
+\newcommand{\TestHeader}[1]{%
+    {\bfseries TEST -- \TestTitle}\hfill{\bfseries Varianta #1}\\[2mm]
+    Jméno a příjmení: \rule{4.5cm}{0.4pt}\hfill Třída: \rule{1.5cm}{0.4pt}\\[2mm]
+    Datum: \rule{2.4cm}{0.4pt}\hfill Počet bodů: \rule{1.4cm}{0.4pt}\hfill Známka: \rule{1.4cm}{0.4pt}\\[1mm]
+    \hrule\vspace{3mm}
+}
+\newcommand{\AnswerSpace}[1]{\vspace{#1}}
+
+\begin{document}
+\noindent
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{A}
+
+    % ZADÁNÍ VARIANTY A
+    \begin{enumerate}
+        \item Jsou dány členy $a_4=6$, $a_{11}=34$.
+        Určete $d$, $a_1$ a $a_8$.
+        \AnswerSpace{26mm}
+
+        \item Určete $n\in\mathbb{N}$, pro které platí $a_n=77$,
+        jestliže $a_1=2$, $d=5$.
+        \AnswerSpace{22mm}
+
+        \item Najděte vzorec pro $n$-tý člen posloupnosti
+        $7,\ 11,\ 15,\ 19,\ldots$
+        \AnswerSpace{21mm}
+
+        \item Určete počet členů posloupnosti $4,\ 9,\ 14,\ldots,149$
+        a jejich součet.
+        \AnswerSpace{27mm}
+
+        \item Mezi čísla $2$ a $26$ vložte pět čísel tak, aby vzniklo sedm
+        po sobě jdoucích členů aritmetické posloupnosti.
+        \AnswerSpace{24mm}
+    \end{enumerate}
+\end{minipage}%
+\hfill\vrule width 0.4pt\hfill
+\begin{minipage}[t]{0.48\textwidth}
+    \small
+    \TestHeader{B}
+
+    % ZADÁNÍ VARIANTY B
+    \begin{enumerate}
+        \item Jsou dány členy $a_7=2$, $a_{10}=-2$.
+        Určete $d$, $a_1$ a $a_{20}$.
+        \AnswerSpace{26mm}
+
+        \item Určete $n\in\mathbb{N}$, pro které platí $a_n=-53$,
+        jestliže $a_1=11$, $d=-4$.
+        \AnswerSpace{22mm}
+
+        \item Najděte vzorec pro $n$-tý člen posloupnosti
+        $12,\ 7,\ 2,\ {-3},\ldots$
+        \AnswerSpace{21mm}
+
+        \item Určete počet členů posloupnosti $120,\ 113,\ 106,\ldots,-41$
+        a jejich součet.
+        \AnswerSpace{27mm}
+
+        \item Mezi čísla $-8$ a $34$ vložte šest čísel tak, aby vznikla
+        aritmetická posloupnost.
+        \AnswerSpace{24mm}
+    \end{enumerate}
+\end{minipage}
+\end{document}

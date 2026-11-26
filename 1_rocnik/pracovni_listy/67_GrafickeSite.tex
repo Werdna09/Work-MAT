@@ -1,0 +1,19 @@
+% V samostatném souboru, aby každý žák mohl obdržet potřebný počet kopií.
+\documentclass[11pt,a4paper]{article}
+\usepackage[T1]{fontenc}\usepackage[utf8]{inputenc}\usepackage[czech]{babel}
+\usepackage{lmodern,geometry,tikz,multicol}
+\usetikzlibrary{arrows.meta}
+\geometry{a4paper,left=12mm,right=12mm,top=15mm,bottom=15mm}
+\pagestyle{empty}\setlength{\parindent}{0pt}
+\newcommand{\sit}{\begin{tikzpicture}[x=.70cm,y=.70cm,>=Latex]
+\draw[step=1,gray!28,very thin] (-5,-5) grid (5,5);
+\draw[->] (-5.3,0)--(5.35,0) node[right] {$x$};
+\draw[->] (0,-5.3)--(0,5.35) node[above] {$y$};
+\foreach \k in {-4,-2,2,4}{\draw (\k,.10)--(\k,-.10) node[below,font=\scriptsize] {$\k$};\draw (.10,\k)--(-.10,\k) node[left,font=\scriptsize] {$\k$};}
+\end{tikzpicture}}
+\begin{document}
+{\bfseries Souřadnicové sítě k procvičování lineárních funkcí}\hfill 67. hodina\par
+\vspace{1mm}Jméno: \rule{60mm}{.4pt}\par\vspace{5mm}
+\begin{center}\sit\hspace{12mm}\sit\end{center}\vspace{9mm}
+\begin{center}\sit\hspace{12mm}\sit\end{center}
+\end{document}

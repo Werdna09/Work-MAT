@@ -1,0 +1,164 @@
+% Work/MAT — návrh revize hodiny 12, Co je množina.
+% Rozpis: 1_rocnik/tematicke_plany/Rozpis_vyuky_MAT_1_rocnik.tex, hodina 12.
+% Učebnice: ucebnice/01_Zakladni_poznatky/Mnoziny/Množiny.tex
+%  (Množiny; Způsoby zápisu množin; Druhy množin; Rovnost množin).
+% Realisticky.cz: metodická návaznost na lekci 010301 Množiny I;
+%  lokální PDF není v tomto prostředí dostupné k úplnému porovnání.
+% Záměrně použita vlastní formulace výkladu a samostatné úlohy;
+% podrobné podmnožiny, operace a diagramy náleží následujícím hodinám.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\nastavPripravu{1. ročník}{Množiny}{12}{Co je množina}
+\begin{document}
+\blok{Motivace: co patří do souboru?}
+Vybíráme čísla podle pravidla: \uv{všechna sudá přirozená čísla menší než 10}.
+Dokážeme pro každé přirozené číslo rozhodnout, zda vyhovuje. Naproti tomu
+\uv{pěkná čísla} nedává bez dalšího upřesnění jednoznačné pravidlo.
+
+\begin{definiceBox}[title={Definice - Množina}]
+\textbf{Množina} je v našem intuitivním pojetí soubor jednoznačně určených
+objektů. O každém uvažovaném objektu umíme rozhodnout, zda do množiny patří.
+\end{definiceBox}
+\begin{definiceBox}[title={Definice - Prvek množiny}]
+\textbf{Prvek množiny} je objekt, který do dané množiny patří.
+Množiny obvykle označujeme velkými písmeny ($A,B,M$), prvky malými
+písmeny ($a,b,x$) nebo konkrétními hodnotami.
+\end{definiceBox}
+
+Značení $a\in A$ znamená \uv{$a$ patří do $A$}, $a\notin A$ znamená
+\uv{$a$ nepatří do $A$}. V množině $A=\{2,4,6,8\}$ platí
+$4\in A$, $5\notin A$. \textbf{Na pořadí prvků nezáleží a opakování
+prvku množinu nemění.}
+\poznamka{Množina je prvotní pojem. Pro 1. ročník postačuje intuitivní
+výklad; netvrdíme, že jde o úplnou axiomatickou definici. Před zadáním
+formálního zápisu nech studenty samostatně vyslovit pravidlo výběru.}
+
+\blok{Jak lze množinu zadat?}
+\begin{definiceBox}[title={Definice - Zadání množiny výčtem}]
+\textbf{Zadání výčtem}: uvedeme všechny prvky konečné množiny ve
+složených závorkách, například $A=\{2,4,6,8\}$.
+\end{definiceBox}
+\begin{definiceBox}[title={Definice - Zadání množiny charakteristickou vlastností}]
+\textbf{Zadání charakteristickou vlastností}: uvedeme obor, ze kterého
+vybíráme, a podmínku, kterou musí prvky splňovat. Například
+\[A=\{x\in\mathbb N\mid x\text{ je sudé a }x<10\}.\]
+Svislou čáru čteme \uv{pro které platí}.
+\end{definiceBox}
+
+\poznamka{V projektu platí $\mathbb N=\{1,2,3,\ldots\}$;
+$\mathbb Z$ obsahuje i nulu a záporná celá čísla.
+U nekonečné množiny není zápis s \uv{$\ldots$} úplným konečným výčtem.
+Rozlišuj zápis množiny a prostý seznam několika jejích příkladů.}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+Zapiš výčtem $B=\{x\in\mathbb Z\mid -2\le x<3\}$.
+Která z čísel $-2,\,2,\,3,\,\tfrac12$ do $B$ patří?
+\tcblower
+$B=\{-2,-1,0,1,2\}$. Patří $-2$ a $2$; $3$ je vyloučeno
+ostrou mezí a $\tfrac12$ není celé číslo.
+\end{prikladReseniBox}
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Zapiš $C=\{-3,-1,1,3\}$ charakteristickou vlastností.
+\tcblower
+Například $C=\{x\in\mathbb Z\mid x\text{ je liché a }-3\le x\le3\}$.
+Nestačí napsat jen $-3\le x\le3$: zahrnuli bychom i další čísla.
+\end{prikladReseniBox}
+
+\blok{Prázdná, jednoprvková, konečná a nekonečná množina}
+\begin{definiceBox}[title={Definice - Prázdná množina}]
+\textbf{Prázdná množina} neobsahuje žádný prvek. Značíme ji
+$\varnothing$ nebo $\{\}$.
+\end{definiceBox}
+\begin{definiceBox}[title={Definice - Jednoprvková množina}]
+\textbf{Jednoprvková množina} má právě jeden prvek. Například
+$\{0\}$ obsahuje číslo nula; není prázdná.
+\end{definiceBox}
+\begin{definiceBox}[title={Definice - Konečná a nekonečná množina}]
+\textbf{Konečná množina} má konečně mnoho prvků; \textbf{nekonečná množina}
+není konečná. Příklady: $\{1,3,5\}$ je konečná, $\mathbb N$ nekonečná.
+\end{definiceBox}
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Urči množiny $D=\{x\in\mathbb N\mid x<1\}$ a
+$E=\{x\in\mathbb Z\mid -1<x<1\}$. Platí $D=E$?
+\tcblower
+$D=\varnothing$: žádné přirozené číslo není menší než $1$.
+$E=\{0\}$: jediným celým číslem mezi $-1$ a $1$ je nula.
+Proto $D\ne E$. Zápisy $0$, $\{0\}$ a $\varnothing$ nejsou zaměnitelné.
+\end{prikladReseniBox}
+
+\blok{Rovnost množin jako první kontrolní pravidlo}
+\begin{definiceBox}[title={Definice - Rovnost množin}]
+\textbf{Rovnost množin:} dvě množiny jsou si rovny právě tehdy,
+když mají přesně stejné prvky. Pořadí ani opakování nerozhodují.
+\end{definiceBox}
+\begin{prikladReseniBox}[title={Příklad 4}]
+Rozhodni, zda $\{1,2,3\}=\{3,2,1,2\}$ a zda
+$\{0\}=\varnothing$.
+\tcblower
+První rovnost platí: v obou množinách jsou právě prvky $1,2,3$.
+Druhá neplatí, protože levá množina má prvek $0$, pravá nemá žádný.
+\end{prikladReseniBox}
+
+\blok{Samostatné procvičení — základ hodiny}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item Pro $M=\{-3,0,4\}$ doplň $\in$ nebo $\notin$:
+$-3\ \ldots\ M$, $3\ \ldots\ M$, $0\ \ldots\ M$.
+\item Vypiš prvky $P=\{x\in\mathbb Z\mid -3<x\le2\}$.
+\item Zapiš $Q=\{2,4,6,8\}$ charakteristickou vlastností.
+\item Rozhodni o rovnosti $\{0,1,1,2\}$ a $\{2,0,1\}$.
+\item Která z množin $\{0\}$, $\varnothing$, $\mathbb Z$ je prázdná,
+která konečná a která nekonečná?
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $-3\in M$, $3\notin M$, $0\in M$.
+\item $P=\{-2,-1,0,1,2\}$.
+\item Například $Q=\{x\in\mathbb N\mid x\text{ je sudé a }x<10\}$.
+\item Ano. Opakované číslo $1$ není dalším prvkem.
+\item $\{0\}$ je konečná neprázdná, $\varnothing$ konečná prázdná,
+$\mathbb Z$ nekonečná.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Povinné jádro: motivace, význam prvku, dva zápisy, prázdná množina,
+P1 a P3, S1 a)–d). P2, P4 a S1 e) dle tempa. Cílem je vědomě pracovat
+s významem oboru, nikoli vyjmenovat co nejvíce definic.}
+
+\blok{Volitelná rezerva}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Urči výčtem, lze-li:
+\begin{enumerate}[label=\alph*)]
+\item $A=\{x\in\mathbb N\mid -1\le x<4\}$;
+\item $B=\{x\in\mathbb Z\mid -1\le x<4\}$;
+\item $C=\{x\in\mathbb R\mid -1\le x<4\}$.
+\end{enumerate}
+Které množiny jsou konečné?
+\tcblower
+$A=\{1,2,3\}$, $B=\{-1,0,1,2,3\}$,
+$C=\langle-1;4)$ je interval reálných čísel.
+Konečné jsou pouze $A,B$; $C$ je nekonečná.
+\end{zadaniReseniBox}
+
+\blok{Domácí procvičení}
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item Vypiš $A=\{x\in\mathbb Z\mid -4\le x<-1\}$.
+\item Zapiš $B=\{1,3,5,7\}$ charakteristickou vlastností.
+\item Urči $C=\{x\in\mathbb N\mid x<1\}$ a $D=\{x\in\mathbb Z\mid -1<x<1\}$.
+\item Je množina všech záporných celých čísel konečná? Vysvětli.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $A=\{-4,-3,-2\}$.
+\item Např. $B=\{x\in\mathbb N\mid x\text{ je liché a }x<8\}$.
+\item $C=\varnothing$, $D=\{0\}$.
+\item Ne, je nekonečná: pro každé záporné celé číslo lze nalézt další menší.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Navazující hodina může zavést podmnožinu a operace;
+v této přípravě je nevykládáme. Před zadáním konkrétních převzatých úloh
+z Realisticky.cz ověř místní lekci 010301 a případně odkaž na čísla úloh
+bez přepisu autorsky chráněných zadání.}
+\end{document}

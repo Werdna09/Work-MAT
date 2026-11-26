@@ -1,0 +1,113 @@
+\subsection{Polohové vztahy přímek v rovině}
+\label{subsec:Positional_relations_lines_plane}
+
+Dosud jsme se zabývali především popisem jedné přímky. Nyní budeme
+uvažovat dvě přímky v téže rovině a určovat jejich vzájemnou polohu.
+
+Při řešení budeme využívat údaje, které jednotlivé tvary rovnic
+poskytují: směrové vektory, normálové vektory a směrnice. V případě
+různoběžných přímek budeme také určovat jejich průsečík.
+
+\subsubsection{Možné vzájemné polohy dvou přímek}
+\label{subsubsec:Possible_relative_positions_lines}
+
+Dvě přímky v rovině mohou být \textbf{různoběžné},
+\textbf{rovnoběžné} nebo \textbf{totožné}. Mimoběžné přímky,
+které nemají společný bod a zároveň nejsou rovnoběžné, se mohou
+vyskytovat až v prostoru.
+
+\begin{definition}\label{def:Intersecting_lines_plane}
+    Dvě přímky v rovině nazýváme \textbf{různoběžnými}, jestliže mají
+    právě jeden společný bod, který nazýváme jejich
+    \textbf{průsečíkem}.
+\end{definition}
+
+\begin{definition}\label{def:Parallel_lines_plane}
+    Dvě různé přímky v rovině nazýváme \textbf{rovnoběžnými}, jestliže
+    mají stejný směr a nemají žádný společný bod.
+\end{definition}
+
+\begin{definition}\label{def:Coincident_lines_plane}
+    Dvě přímky v rovině nazýváme \textbf{totožnými}, jestliže mají
+    všechny body společné, a představují tedy tutéž množinu bodů.
+\end{definition}
+
+Jednotlivé možné vzájemné polohy dvou přímek v rovině jsou znázorněny
+na obrázku \ref{fig:Relative_positions_lines_plane}.
+
+\begin{figure}[H]
+    \centering
+
+    % -------------------------------------------------
+    % Různoběžné přímky
+    % -------------------------------------------------
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.9]
+
+            \coordinate (P) at (0,0);
+
+            \draw[thin, <->] (-2,-1.2) -- (2,1.2)
+                node[above right] {$p$};
+
+            \draw[thin, <->] (-1.8,1.5) -- (1.8,-1.5)
+                node[below right] {$q$};
+
+            \fill (P) circle (2pt)
+                node[below] {$P$};
+
+            \draw[vector] (0.5,0.3) -- (1.5,0.91) node[midway, above, sloped]{$\vec{u}_p$};
+            \draw[vector] (-0.5,0.4) -- (-1.2,1) node[midway, above, sloped] {$\vec{u}_q$};
+
+        \end{tikzpicture}
+
+        \small různoběžné
+    \end{minipage}
+    \hfill
+    % -------------------------------------------------
+    % Rovnoběžné přímky
+    % -------------------------------------------------
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.9]
+
+            \draw[thin, <->] (-2,0.7) -- (2,0.7)
+                node[above right] {$p$};
+
+            \draw[thin, <->] (-2,-0.7) -- (2,-0.7)
+                node[above right] {$q$};
+
+            \draw[vector] (0.5,0.7) -- (1.2,0.7) node[midway, above, sloped]{$\vec{u}_p$};
+            \draw[vector] (0.2,-0.7) -- (-1,-0.7) node[midway, above, sloped] {$\vec{u}_q$};
+
+        \end{tikzpicture}
+
+        \small rovnoběžné
+    \end{minipage}
+    \hfill
+    % -------------------------------------------------
+    % Totožné přímky
+    % -------------------------------------------------
+    \begin{minipage}{0.32\textwidth}
+        \centering
+        \begin{tikzpicture}[scale=0.9]
+
+            \draw[thin, <->] (-2,0) -- (2,0);
+            \node[below right] at (1.2,0) {$p = q$};
+
+            \draw[vector] (-0.5,0) -- (-1.75,0) node[midway, above, sloped]{$\vec{u}_p$};
+            \draw[vector] (1,0) -- (1.7,0) node[midway, above, sloped] {$\vec{u}_q$};
+
+        \end{tikzpicture}
+
+        \small totožné
+    \end{minipage}
+
+    \caption{Možné vzájemné polohy dvou přímek v rovině.}
+    \label{fig:Relative_positions_lines_plane}
+\end{figure}
+
+\input{parametrickaPrimkaVzajemnaPoloha.tex}
+\input{obecnaPrimkaVzajemnaPoloha.tex}
+\input{smernicovaPrimkaVzajemnaPoloha.tex}
+\input{vzajemnaPolohaRuzneTvary.tex}

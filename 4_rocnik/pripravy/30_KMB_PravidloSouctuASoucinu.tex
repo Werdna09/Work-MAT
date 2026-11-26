@@ -1,0 +1,123 @@
+\documentclass[11pt,a4paper]{article}
+
+\input{../../sablony/pripravy/priprava.sty}
+
+\nastavPripravu{4. ročník}{Kombinatorika}{30}{Pravidlo součtu a součinu}
+
+\begin{document}
+
+\blok{Motivace a návaznost}
+
+V jídelně lze vybrat jednu ze tří polévek nebo jednu ze čtyř svačin; při obědě si naopak vybíráme polévku i hlavní chod. Kdy sčítáme a kdy násobíme?
+
+\poznamka{Předpoklady: systematický výpis, rozlišení alternativ a kroků. Cíl: zdůvodnit pravidlo součtu nebo součinu a ošetřit omezení první pozice.}
+
+\blok{Výklad a odvození}
+
+\begin{definiceBox}
+\textbf{Pravidlo součtu:} rozdělíme-li všechny přípustné výsledky na nepřekrývající se skupiny o počtech $a_1,\ldots,a_r$, je jich celkem $a_1+\cdots+a_r$.
+\end{definiceBox}
+\begin{definiceBox}
+\textbf{Pravidlo součinu:} vytváříme-li výsledek postupně v $r$ krocích a každý dosavadní přípustný výběr má v kroku $i$ právě $a_i$ pokračování, je výsledků $a_1a_2\cdots a_r$.
+\end{definiceBox}
+Počet pokračování se někdy mění podle předchozí volby. Pak rozlišíme disjunktní případy a jejich počty sečteme. Kontrolní otázka: vede každý sled voleb právě k jednomu výsledku?
+
+\blok{Společně řešené příklady}
+
+\begin{prikladReseniBox}[title={Příklad 1}]
+V kiosku nabízejí čtyři různé nápoje a šest různých tyčinek. Kolika způsoby lze koupit právě jednu věc?
+\tcblower
+Buď nápoj, nebo tyčinka: $4+6=10$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 2}]
+Jaký je počet obědů sestavených z pěti polévek a čtyř hlavních chodů?
+\tcblower
+Volíme jedno z pěti a potom jedno ze čtyř: $5\cdot4=20$.
+\end{prikladReseniBox}
+
+
+
+\begin{prikladReseniBox}[title={Příklad 3}]
+Kolik trojciferných čísel s různými ciframi lze vytvořit z číslic $0,1,2,3,4$?
+\tcblower
+První cifra nemůže být nula: $4$ volby; druhá $4$; třetí $3$. Celkem $4\cdot4\cdot3=48$.
+\end{prikladReseniBox}
+
+
+
+\blok{Samostatná práce}
+
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+Kolik dresů sestavíme ze tří triček a dvou kraťasů?
+\tcblower
+$3\cdot2=6$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 2}]
+Z osmi červených a sedmi modrých rozlišitelných míčků vybíráme právě jeden. Kolik možností?
+\tcblower
+$8+7=15$.
+\end{zadaniReseniBox}
+
+
+
+\begin{zadaniReseniBox}[title={Samostatná práce 3}]
+Kolik čtyřmístných PINů lze vytvořit z číslic $0,1,2$, pokud se číslice nesmějí opakovat?
+\tcblower
+Žádný: pro čtyři místa máme jen tři různé symboly.
+\end{zadaniReseniBox}
+
+
+
+\blok{Rozšíření}
+
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+Z číslic $0,1,2,3$ tvoříme trojciferná sudá čísla bez opakování. Kolik jich je?
+\tcblower
+Poslední cifra 0: $3\cdot2=6$. Poslední cifra 2: první cifra 1 nebo 3 ($2$), druhá ze dvou zbývajících ($2$): $4$. Celkem $10$.
+\end{zadaniReseniBox}
+
+
+
+\blok{Domácí úkol}
+
+\poznamka{Doporučená práce doma: přibližně 15--30 minut. Úlohy jsou seřazeny od základních k náročnějším; učitel může poslední podúlohu označit jako volitelnou.}
+
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item V obchodě je 5 druhů pečiva a 6 druhů nápojů. Kolik různých dvojic pečivo--nápoj lze vytvořit?
+\item Mám si koupit buď jednu z 5 tužek, nebo jeden ze 4 sešitů. Kolik možností?
+\item Kolik dvojciferných čísel s různými ciframi lze vytvořit z číslic $0,1,2,3,4$?
+\item Kolik trojciferných lichých čísel bez opakování lze sestavit z číslic $0,1,2,3,4$?
+\item Kolik čtyřmístných PINů vytvoříš z číslic $0,1,2$ s opakováním?
+\item Kolik trojciferných čísel s navzájem různými ciframi vznikne z číslic $0,1,2,3,4$, je-li první cifra sudá a poslední lichá?
+
+\end{enumerate}
+
+\tcblower
+
+\begin{enumerate}[label=\alph*),leftmargin=*,itemsep=2pt]
+
+\item $5\cdot6=30$.
+\item $5+4=9$.
+\item $4\cdot4=16$.
+\item Poslední cifra 1 nebo 3: $2$ možnosti. První z ostatních nenulových: $3$; prostřední ze zbylých $3$. Celkem $2\cdot3\cdot3=18$.
+\item $3^4=81$.
+\item První cifra 2 nebo 4: dvě možnosti. Poslední 1 nebo 3: dvě možnosti. Prostřední jedna ze tří zbývajících: $2\cdot2\cdot3=12$.
+
+\end{enumerate}
+
+\end{zadaniReseniBox}
+
+\poznamka{Orientační práce v hodině: 0--10 min motivace; 10--20 min pravidla; 20--35 min příklady; 35--45 min samostatná práce a kontrola.}
+
+\poznamka{U poslední domácí úlohy zdůrazni rozdíl mezi pořadím číslic a volbou množiny číslic.}
+
+\end{document}

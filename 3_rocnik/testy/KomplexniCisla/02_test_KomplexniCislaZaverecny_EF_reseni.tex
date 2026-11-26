@@ -1,0 +1,153 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[czech]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath,amssymb}
+\usepackage[margin=18mm]{geometry}
+\setlength{\parindent}{0pt}
+
+\begin{document}
+\section*{Komplexní čísla E/F -- řešení}
+Podklad pro učitele k testu \texttt{02\_test\_KomplexniCislaZaverecny\_EF.tex}, 3.~ročník.
+
+Zdroj převzatých úloh: \texttt{ucebnice/06\_Komplexni\_cisla/Komplexní čísla.tex}.
+Úlohy E1 a F1 jsou úloha 1.3 g) a h), úlohy E4 a F4 jsou úloha 3.37 g) a h),
+úloha E5 je úloha 3.44 f). Úlohu E2 zadal učitel přímo; jejím vzorem je úloha
+1.3 e). Úloha F2 je vlastní obdobná úloha podle výslovného pokynu učitele.
+Úlohy E3 a F3 jsou vlastní tvorba podle učitelova požadavku na reálné
+koeficienty s odmocninami; postup vychází z části o kvadratických rovnicích
+v učebnici a z typu úlohy 4.49. Úloha F5 je vlastní obdobou úlohy 3.44 f)
+podle pokynu zachovat typ páté úlohy z variant C/D.
+
+\subsection*{Varianta E}
+\begin{enumerate}
+\item Protože $1-i\ne0$, můžeme dělit. Po usměrnění dostaneme
+\[
+\left(\frac{2+i}{1-i}\right)^2
+=\left(\frac{(2+i)(1+i)}2\right)^2
+=\left(\frac{1+3i}{2}\right)^2
+=-2+\frac32i.
+\]
+Kontrola: $\left(-2+\frac32i\right)(1-i)^2
+=\left(-2+\frac32i\right)(-2i)=(2+i)^2$.
+
+\item Jmenovatele $2-i$, $i$ a $1+2i$ jsou nenulové. Postupně upravíme
+\[
+\frac{i}{2-i}+\frac1i
+=\frac{-1+2i}{5}-i=\frac{-1-3i}{5},
+\qquad
+1+\frac{i}{2i+1}
+=1+\frac{2+i}{5}=\frac{7+i}{5}\ne0.
+\]
+Proto
+\[
+\left|\frac{\frac{i}{2-i}+\frac1i}{1+\frac{i}{2i+1}}\right|
+=\frac{|-1-3i|}{|7+i|}
+=\frac{\sqrt{10}}{\sqrt{50}}
+=\frac{\sqrt5}{5}.
+\]
+Kontrola přímým dělením: $\frac{-1-3i}{7+i}=\frac{-1-2i}{5}$,
+jehož absolutní hodnota je $\frac{\sqrt5}{5}$.
+
+\item Diskriminant rovnice $x^2-2\sqrt2x+5=0$ je
+\[
+D=(-2\sqrt2)^2-4\cdot5=8-20=-12.
+\]
+Odtud $x_{1,2}=\frac{2\sqrt2\pm2\sqrt3i}{2}
+=\sqrt2\pm\sqrt3i$.
+Kořeny jsou dva a jsou různé. Kontrola pomocí Viètových vztahů:
+jejich součet je $2\sqrt2$ a součin $2+3=5$.
+
+\item Číslo $\sqrt3+i$ má absolutní hodnotu $2$ a argument $\frac\pi6$.
+Moivreova věta dává
+\[
+(\sqrt3+i)^{10}
+=2^{10}\left(\cos\frac{5\pi}{3}+i\sin\frac{5\pi}{3}\right)
+=512-512\sqrt3i.
+\]
+Nezávislá algebraická kontrola: $(\sqrt3+i)^3=8i$, tedy
+$(\sqrt3+i)^{10}=(8i)^3(\sqrt3+i)
+=-512i(\sqrt3+i)=512-512\sqrt3i$.
+
+\item Zadané číslo je nenulové. Podle Moivreovy věty
+\[
+z^2=9\left(\cos\frac{7\pi}{3}+i\sin\frac{7\pi}{3}\right)
+=9\left(\frac12+\frac{\sqrt3}{2}i\right).
+\]
+Převrácením modulu a změnou znaménka argumentu dostáváme
+\[
+\frac1{z^2}
+=\frac19\left(\cos\frac{5\pi}{3}+i\sin\frac{5\pi}{3}\right)
+=\frac1{18}-\frac{\sqrt3}{18}i.
+\]
+Kontrola: $9(\frac12+\frac{\sqrt3}{2}i)
+(\frac1{18}-\frac{\sqrt3}{18}i)=1$.
+\end{enumerate}
+
+\newpage
+\subsection*{Varianta F}
+\begin{enumerate}
+\item Protože $1-i\ne0$, je podíl definován. Platí
+\[
+\frac{(1+i)^4}{(1-i)^2}
+=\frac{(2i)^2}{-2i}
+=\frac{-4}{-2i}=-2i.
+\]
+Kontrola zpětným násobením: $(-2i)(1-i)^2=(-2i)(-2i)=-4=(1+i)^4$.
+
+\item Jmenovatele $2+i$, $i$ a $1-2i$ jsou nenulové. Po úpravě
+\[
+\frac{i}{2+i}-\frac1i
+=\frac{1+2i}{5}+i=\frac{1+7i}{5},
+\qquad
+1+\frac{i}{1-2i}
+=1+\frac{-2+i}{5}=\frac{3+i}{5}\ne0.
+\]
+Tedy
+\[
+\left|\frac{\frac{i}{2+i}-\frac1i}{1+\frac{i}{1-2i}}\right|
+=\frac{|1+7i|}{|3+i|}
+=\frac{\sqrt{50}}{\sqrt{10}}=\sqrt5.
+\]
+Kontrola přímým dělením: $\frac{1+7i}{3+i}=1+2i$ a $|1+2i|=\sqrt5$.
+
+\item Diskriminant rovnice $x^2+2\sqrt3x+8=0$ je
+\[
+D=(2\sqrt3)^2-4\cdot8=12-32=-20.
+\]
+Kořeny jsou $x_{1,2}=\frac{-2\sqrt3\pm2\sqrt5i}{2}
+=-\sqrt3\pm\sqrt5i$.
+Jsou dva a jsou různé. Kontrola pomocí Viètových vztahů:
+jejich součet je $-2\sqrt3$ a součin $3+5=8$.
+
+\item Číslo $-1+i$ má absolutní hodnotu $\sqrt2$ a argument $\frac{3\pi}{4}$.
+Moivreova věta dává
+\[
+(-1+i)^{16}
+=(\sqrt2)^{16}\left(\cos12\pi+i\sin12\pi\right)=256.
+\]
+Nezávislá algebraická kontrola: $(-1+i)^2=-2i$, proto
+$(-1+i)^4=-4$, $(-1+i)^8=16$ a $(-1+i)^{16}=256$.
+
+\item Zadané číslo je nenulové. Podle Moivreovy věty
+\[
+z^2=9\left(\cos\frac{11\pi}{3}+i\sin\frac{11\pi}{3}\right)
+=9\left(\frac12-\frac{\sqrt3}{2}i\right).
+\]
+Po převrácení
+\[
+\frac1{z^2}
+=\frac19\left(\cos\frac\pi3+i\sin\frac\pi3\right)
+=\frac1{18}+\frac{\sqrt3}{18}i.
+\]
+Kontrola: $9(\frac12-\frac{\sqrt3}{2}i)
+(\frac1{18}+\frac{\sqrt3}{18}i)=1$.
+\end{enumerate}
+
+\subsection*{Kontrola a čas}
+Všechny jmenovatele jsou nenulové. U druhé úlohy je výsledek nezáporný,
+u třetí úlohy jsou vypsány oba kořeny; zkoušky jsou uvedeny u jednotlivých
+úloh. Obě varianty pokrývají stejné dovednosti a mají přibližně stejný rozsah.
+Orientační čas na úlohy 1--5 je postupně 3--5, 5--7, 4--6, 4--6 a 3--5 minut;
+včetně kontroly práce přibližně 25--35 minut. Odhad nebyl ověřen ve třídě.
+\end{document}

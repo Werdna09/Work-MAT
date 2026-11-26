@@ -1,0 +1,82 @@
+% Work-MAT | 2. rocnik | pripravovana hodina 60
+% Návaznost: uživatelské připravy.zip (hodiny 01–20), autorská učebnice na GitHubu.
+% Realisticky.cz: didaktická inspirace v posloupnosti a typech úloh; zadání jsou vlastní.
+\documentclass[11pt,a4paper]{article}
+\input{../../sablony/pripravy/priprava.sty}
+\usepackage{tikz}
+\nastavPripravu{2. ročník}{Goniometrické vzorce}{60}{Vzorce pro dvojnásobný úhel}
+\begin{document}
+\blok{Motivace a návaznost}
+Dvojnásobný úhel odvodíme ze součtových vzorců dosazením $\beta=\alpha$. Při počítání si žáci připomenou kvadranty.
+\poznamka{Orientační nabídka pro 45--55 minut: krátké zopakování a motivace, nový výklad, tři společné vzorové úlohy, samostatná práce. Vyber podle tempa třídy; zbývající zadání slouží jako rezerva.}
+\blok{Výklad}
+$\sin2x=2\sin x\cos x$ a $\cos2x=\cos^2x-\sin^2x=1-2\sin^2x=2\cos^2x-1$.
+\blok{Společné příklady}
+\begin{prikladReseniBox}[title={Příklad 1}]
+Vyřeš, resp. urči: $\sin60^\circ\text{ ze vzorce pro dvojnásobek}$.
+\tcblower
+\[\begin{aligned}2\sin30^\circ\cos30^\circ=2\cdot\frac{1}{2}\cdot\frac{\sqrt3}{2} \\ =\frac{\sqrt3}{2}\end{aligned}\]
+\end{prikladReseniBox}
+\begin{prikladReseniBox}[title={Příklad 2}]
+Vyřeš, resp. urči: $\cos120^\circ\text{ ze vzorce pro dvojnásobek}$.
+\tcblower
+\[\begin{aligned}1-2\sin^260^\circ=1-2\cdot\frac{3}{4} \\ =-\frac{1}{2}\end{aligned}\]
+\end{prikladReseniBox}
+\poznamka{Pro rychlejší žáky přidej druhé odvození kosinového vzorce; hlavní třída musí zvládnout použití jedné správné varianty.}
+\blok{Samostatné procvičování}
+\begin{zadaniReseniBox}[title={Samostatná práce 1}]
+\begin{enumerate}[label=\alph*)]
+\item $1-\sin^2x$.
+\item $1-\cos^2x$.
+\item $\sin^2x+\cos^2x$.
+\item $\frac{1-\cos^2x}{\sin x}$.
+\item $\frac{1-\sin^2x}{\cos x}$.
+\item $\operatorname{tg}x\cdot\cos x$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\cos^2x$.
+\item $\sin^2x$.
+\item $1$.
+\item $\sin x\;(\sin x\ne0)$.
+\item $\cos x\;(\cos x\ne0)$.
+\item $\sin x\;(\cos x\ne0)$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Dobrovolné rozšíření}
+\begin{zadaniReseniBox}[title={Rozšíření 1}]
+\begin{enumerate}[label=\alph*)]
+\item Navrhni obdobnou úlohu s jiným úhlem a zkontroluj výsledek graficky..
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $Srovnej s jednotkovou kružnicí nebo grafem.$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\blok{Úkol na doma}
+U každé úpravy napiš použitý vzorec a vysvětli případné podmínky, za kterých je vyjádření definované.
+\begin{zadaniReseniBox}[title={Domácí úkol}]
+\begin{enumerate}[label=\alph*)]
+\item $\operatorname{cotg}x\cdot\sin x$.
+\item $\sin(2x)$.
+\item $\cos(2x)$.
+\item $\cos(2x)$.
+\item $\sin(30^\circ+60^\circ)$.
+\item $\cos(45^\circ+45^\circ)$.
+\item $\sin(45^\circ-45^\circ)$.
+\item $\cos(60^\circ-30^\circ)$.
+\end{enumerate}
+\tcblower
+\begin{enumerate}[label=\alph*)]
+\item $\cos x\;(\sin x\ne0)$.
+\item $2\sin x\cos x$.
+\item $1-2\sin^2x$.
+\item $2\cos^2x-1$.
+\item $1$.
+\item $0$.
+\item $0$.
+\item $\frac{\sqrt3}{2}$.
+\end{enumerate}
+\end{zadaniReseniBox}
+\poznamka{Domácí úkol obsahuje 8 položek; předpokládaná domácí práce přibližně 15--30 minut. Po větších blocích jsou vědomě promíchané dříve probrané typy.}
+\end{document}
